@@ -5,7 +5,7 @@
 
 var cadreService = require('../services/cadre'),
     util = require('../util/util'),
-    log = require('../util/logger').logger("cadre-controller");
+    log = require('cds-logger').logger("cadre-controller");
 
 exports.save = function(req, res, next) {
     log.debug("save : logged user - " + req.user.data.userName);

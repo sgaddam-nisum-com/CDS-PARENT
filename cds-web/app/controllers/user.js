@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 var userService = require('../services/user'),
-    log = require('../util/logger').logger("user-controller");
+    log = require('cds-logger').logger("user-controller");
 
 exports.signin = function(req, res, next) {
     log.debug("signin");

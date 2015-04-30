@@ -10,7 +10,7 @@ var restService = require('./rest/service'),
     requireUtil = require("util"),
     header = cdsConfig.restUrl.contentType,
     properties = require("../controllers/properties"),
-    log = require('../util/logger').logger("office-service");
+    log = require('cds-logger').logger("office-service");
 
 exports.VnCVerificationList = function(params, token, callback) {
     log.debug("VnCVerificationList : " + (JSON.stringify(params)));

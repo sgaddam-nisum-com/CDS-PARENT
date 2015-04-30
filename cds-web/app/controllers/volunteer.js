@@ -4,7 +4,7 @@
  */
 
 var volunteerService = require('../services/volunteer'),
-    log = require('../util/logger').logger("volunteer-controller");
+    log = require('cds-logger').logger("volunteer-controller");
 
 
 exports.save = function(req, res, next) {

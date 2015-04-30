@@ -12,7 +12,7 @@ var restService = require('./rest/service'),
     util = require('../util/util'),
     errors = require('../../config/errors/error'),
     properties = require("../controllers/properties"),
-    log = require('../util/logger').logger("citizen-service");
+    log = require('cds-logger').logger("citizen-service");
 
 exports.savePersonalInf = function(params, token, callback) {
     log.debug("savePersonalInf : " + (JSON.stringify(params)));

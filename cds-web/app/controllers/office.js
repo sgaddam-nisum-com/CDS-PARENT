@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 var officeService = require('../services/office'),
-    log = require('../util/logger').logger("office-controller");
+    log = require('cds-logger').logger("office-controller");
 
 var citizenController = require('./citizen'),
     volunteerController = require('./volunteer'),

@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 var citizenService = require('../services/citizen'),
-    log = require('../util/logger').logger("citizen-controller"),
+    log = require('cds-logger').logger("citizen-controller"),
     imageService = require('../util/image'),
     util = require('../util/util'),
     errors = require('../../config/errors/error'),

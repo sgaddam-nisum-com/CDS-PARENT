@@ -5,7 +5,7 @@
 var Client = require('node-rest-client').Client,
     client = new Client(),
     cdsConfig = require('cds-config').restUrl,
-    log = require('../../util/logger').logger("resr-service"),
+    log = require('cds-logger').logger("resr-service"),
     util = require('../../util/util'),
     errors = require('../../../config/errors/error');
 

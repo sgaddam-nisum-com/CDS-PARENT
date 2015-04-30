@@ -9,7 +9,7 @@ var restService = require('./rest/service'),
     header = cdsConfig.restUrl.contentType,
     requireUtil = require("util"),
     properties = require("../controllers/properties"),
-    log = require('../util/logger').logger("volunteer-service");
+    log = require('cds-logger').logger("volunteer-service");
 
 exports.save = function(params, token, callback) {
     log.debug("save : " + (JSON.stringify(params)));
