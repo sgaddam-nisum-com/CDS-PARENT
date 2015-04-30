@@ -1,12 +1,12 @@
 /**
  * Generic require login routing middleware
  */
-var errors = require('cds-errors'),
+var cdsConfig = require('cds-config'),
     util = require('cds-util');
 
 exports.requiresLogin = function(req, res, next) {
     if (!req.isAuthenticated()) {
-        util.handleErrors(errors.session.expired, function(resp) {
+        util.handleErrors(cdsConfig.errors.session.expired, function(resp) {
             return res.json(resp);
         });
     } else {
@@ -30,7 +30,7 @@ exports.filterResponse = function(req, res) {
     var resp = req.resp;
     req.resp = null;
     if (resp.data.errorCode === '40105') {
-        util.handleErrors(errors.session.expired, function(resp) {
+        util.handleErrors(cdsConfig.errors.session.expired, function(resp) {
             return res.json(resp);
         });
     } else {

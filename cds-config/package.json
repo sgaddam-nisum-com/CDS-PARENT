@@ -1,7 +1,7 @@
 {
     "name": "cds-config",
     "version": "1.0.0",
-    "description": "cds config package",
+    "description": "cds config n errors package",
     "main": "./lib/config",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"

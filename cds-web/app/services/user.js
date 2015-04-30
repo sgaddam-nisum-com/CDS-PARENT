@@ -4,7 +4,7 @@
  */
 
 var restService = require('cds-rest-services'),
-    restUrls = require('cds-rest-services'),
+    restUrls = require('cds-rest-services').urls,
     cdsConfig = require('cds-config'),
     header = cdsConfig.restUrl.contentType,
     requireUtil = require("util"),
@@ -91,7 +91,7 @@ exports.resetPassword = function(params, token, callback) {
     });
 };
 
-exports.isUserExist = function(params, token, callback) {
+exports.isUserExist = function(params, orgId, callback) {
     log.debug("isUserExist : " + (JSON.stringify(params)));
     var headers = header;
     if (orgId)
@@ -112,7 +112,7 @@ exports.isUserExist = function(params, token, callback) {
     });
 };
 
-exports.isMobileExist = function(params, token, callback) {
+exports.isMobileExist = function(params, orgId, callback) {
     log.debug("isMobileExist : " + (JSON.stringify(params)));
     var headers = header;
     if (orgId)
@@ -133,7 +133,7 @@ exports.isMobileExist = function(params, token, callback) {
     });
 };
 
-exports.isMailExist = function(params, token, callback) {
+exports.isMailExist = function(params, orgId, callback) {
     log.debug("isMailExist : " + (JSON.stringify(params)));
     var headers = header;
     if (orgId)

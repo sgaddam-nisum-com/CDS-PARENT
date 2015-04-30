@@ -6,6 +6,8 @@ var dateFormat = require("date-format-lite"),
     format = 'MMMM DD, YYYY',
     deFormat = 'DD/MM/YYYY';
 
+var imageService = require("./image");
+
 exports.formatDate = function(dFormat, val) {
     try {
         if (dFormat) {
@@ -43,3 +45,5 @@ exports.handleErrors = function(obj, callback) {
         callback(res);
     }
 };
+
+exports = module.exports.image = imageService;

@@ -5,7 +5,6 @@
 var citizenService = require('../services/citizen'),
     log = require('cds-logger').logger("citizen-controller"),
     util = require('cds-util'),
-    errors = require('cds-errors'),
     cdsConfig = require('cds-config'),
     async = require("async");
 
@@ -20,9 +19,9 @@ exports.savePersonalInf = function(req, res, next) {
                     var source = req.files.photograph.path;
                     var target = cdsConfig.image.rootPath + cdsConfig.image.path;
                     var imageName = req.files.photograph.originalFilename;
-                    util.saveImage(source, target + imageName, function(err, path) {
+                    util.image.save(source, target + imageName, function(err, path) {
                         if (err) {
-                            err = errors.image.save;
+                            err = cdsConfig.errors.image.save;
                             util.handleErrors(err, function(resp) {
                                 res.json(resp);
                             });
@@ -88,9 +87,9 @@ exports.editPersonalInf = function(req, res, next) {
                     var source = req.files.photograph.path;
                     var target = cdsConfig.image.rootPath + cdsConfig.image.path;
                     var imageName = req.files.photograph.originalFilename;
-                    util.saveImage(source, target + imageName, function(err, path) {
+                    util.image.save(source, target + imageName, function(err, path) {
                         if (err) {
-                            err = errors.image.save;
+                            err = cdsConfig.errors.image.save;
                             util.handleErrors(err, function(resp) {
                                 res.json(resp);
                             });

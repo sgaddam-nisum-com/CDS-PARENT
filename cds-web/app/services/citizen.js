@@ -4,7 +4,7 @@
  */
 
 var restService = require('cds-rest-services'),
-    restUrls = require('cds-rest-services'),
+    restUrls = restService.urls,
     requireUtil = require("util"),
     cdsConfig = require('cds-config'),
     header = cdsConfig.restUrl.contentType,

@@ -12,7 +12,7 @@ exports.read = function(path, callback) {
 };
 
 //send file path using req.files.upload.path
-exports.saveImage = function(source, target, callback) {
+exports.save = function(source, target, callback) {
     fs.readFile(source, function(err, data) {
         if (err) {
             callback(err, null);

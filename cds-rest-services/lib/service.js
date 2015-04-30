@@ -4,10 +4,11 @@
 
 var Client = require('node-rest-client').Client,
     client = new Client(),
-    cdsConfig = require('cds-config').restUrl,
-    log = require('cds-logger').logger("resr-service"),
-    cdsUtil = require('cds-util'),
-    cdsErrors = require('cds-errors');
+    cdsConfig = require('cds-config'),
+    log = require('cds-logger').logger("rest-service"),
+    cdsUtil = require('cds-util');
+
+var urls = require("./urls");
 
 // set content-type header and data as json in args parameter
 exports.builbArgs = function(restService, params, headers, callback) {
@@ -37,22 +38,24 @@ exports.builbArgs = function(restService, params, headers, callback) {
 };
 
 // registering remote methods
-client.registerMethod("post", cdsConfig.host + '${childpath}', "POST");
-client.registerMethod("get", cdsConfig.host + '${childpath}', "GET");
-client.registerMethod("put", cdsConfig.host + '${childpath}', "PUT");
-client.registerMethod("delete", cdsConfig.host + '${childpath}', "DELETE");
+client.registerMethod("post", cdsConfig.restUrl.host + '${childpath}', "POST");
+client.registerMethod("get", cdsConfig.restUrl.host + '${childpath}', "GET");
+client.registerMethod("put", cdsConfig.restUrl.host + '${childpath}', "PUT");
+client.registerMethod("delete", cdsConfig.restUrl.host + '${childpath}', "DELETE");
 
 exports.makecall = function(args, callback) {
     client.methods[args.method.toLowerCase()](args, function(data, response) {
         data.httpStatusCode = response.statusCode;
-        cdsErrors.handleErrors(data, function(resp) {
+        cdsUtil.handleErrors(data, function(resp) {
             callback(resp);
         });
     }).on('error', function(err) {
         log.error(err);
-        var error = cdsErrors.rest.connection;
-        cdsErrors.handleErrors(error, function(resp) {
+        var error = cdsConfig.errors.rest.connection;
+        cdsUtil.handleErrors(error, function(resp) {
             callback(resp);
         });
     });
 };
+
+exports = module.exports.urls = urls;

@@ -58,25 +58,25 @@ exports.init = function(app, passport, auth) {
     app.put('/auth/citizen/editpersonalinf', citizenController.editPersonalInf, auth.filterResponse);
     app.get('/auth/citizen/getpersonalinf', citizenController.getPersonalInf, auth.filterResponse);
     app.delete('/auth/citizen/deletepersonalinf', citizenController.deletePersonalinf, auth.filterResponse);
-    
+
     app.post('/auth/citizen/saveworkinf', citizenController.saveWorkInf);
     app.put('/auth/citizen/editworkinf', citizenController.editWorkInf, auth.filterResponse);
     app.get('/auth/citizen/getworkinf', citizenController.getWorkInf, auth.filterResponse);
-    
+
     app.post('auth/citizen/savevoterinf', citizenController.saveVoterInf);
     app.put('/auth/citizen/editvoterinf', citizenController.editVoterInf, auth.filterResponse);
     app.get('/auth/citizen/getvoterinf', citizenController.getVoterInf, auth.filterResponse);
     app.delete('/auth/citizen/deletevoterinf', citizenController.deleteVoterInf, auth.filterResponse);
-    
+
     app.post('/auth/citizen/saveresidentialaddress', citizenController.saveResidentialAddress);
     app.put('/auth/citizen/editresidentialaddress', citizenController.editResidentialAddress, auth.filterResponse);
     app.get('/auth/citizen/getresidentialaddress', citizenController.getResidentialAddress, auth.filterResponse);
-    
+
     app.post('/auth/citizen/savefamily', citizenController.saveFamily);
     app.put('/auth/citizen/editfamily', citizenController.editFamily, auth.filterResponse);
     app.get('/auth/citizen/getfamily', citizenController.getFamily, auth.filterResponse);
     app.delete('/auth/citizen/deletefamily', citizenController.deleteFamily, auth.filterResponse);
-    
+
     app.post('/citizen/quickregistration', citizenController.quickRegistration);
 
     app.delete('/auth/citizen/delete', citizenController.delete, auth.filterResponse);
@@ -104,7 +104,7 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/cadre/partypositions', cadreController.partyPositions);
     app.get('/auth/cadre/bloodgroups', cadreController.bloodGroups);
 
-    app.post('/auth/cadre/save',   cadreController.save);
+    app.post('/auth/cadre/save', cadreController.save);
     app.put('/auth/cadre/edit', cadreController.edit, auth.filterResponse);
     app.get('/auth/cadre/get', cadreController.get, auth.filterResponse);
     app.delete('/auth/cadre/delete', cadreController.delete, auth.filterResponse);
