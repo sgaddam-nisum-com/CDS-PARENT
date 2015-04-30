@@ -4,5 +4,5 @@ var _ = require('lodash');
 
 // _.assign combines the two objects into a bigger object.
 module.exports = _.assign(
-    require(__dirname + '/../../config/errors/error-messages.js')
+    require(__dirname + '/error-messages.js')
 );

@@ -6,8 +6,8 @@ var Client = require('node-rest-client').Client,
     client = new Client(),
     cdsConfig = require('cds-config').restUrl,
     log = require('cds-logger').logger("resr-service"),
-    util = require('../../util/util'),
-    errors = require('../../../config/errors/error');
+    cdsUtil = require('cds-util'),
+    cdsErrors = require('cds-errors');
 
 // set content-type header and data as json in args parameter
 exports.builbArgs = function(restService, params, headers, callback) {
@@ -45,13 +45,13 @@ client.registerMethod("delete", cdsConfig.host + '${childpath}', "DELETE");
 exports.makecall = function(args, callback) {
     client.methods[args.method.toLowerCase()](args, function(data, response) {
         data.httpStatusCode = response.statusCode;
-        util.handleErrors(data, function(resp) {
+        cdsErrors.handleErrors(data, function(resp) {
             callback(resp);
         });
     }).on('error', function(err) {
         log.error(err);
-        var error = errors.rest.connection;
-        util.handleErrors(error, function(resp) {
+        var error = cdsErrors.rest.connection;
+        cdsErrors.handleErrors(error, function(resp) {
             callback(resp);
         });
     });

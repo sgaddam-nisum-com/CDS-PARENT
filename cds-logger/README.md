@@ -1,1 +1,1 @@
-# Cds Config file
+# Cds Logger file

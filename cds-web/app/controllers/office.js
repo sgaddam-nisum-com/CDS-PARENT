@@ -5,10 +5,6 @@
 var officeService = require('../services/office'),
     log = require('cds-logger').logger("office-controller");
 
-var citizenController = require('./citizen'),
-    volunteerController = require('./volunteer'),
-    cadreController = require('./cadre');
-
 exports.VnCVerificationList = function(req, res, next) {
     log.debug("VnCVerificationList : logged user - " + req.user.data.userName + " selected user - " + req.query.userId + " type : " + req.query.type);
     var userId = req.query.userId;

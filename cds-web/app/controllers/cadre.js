@@ -4,7 +4,7 @@
  */
 
 var cadreService = require('../services/cadre'),
-    util = require('../util/util'),
+    util = require('cds-util'),
     log = require('cds-logger').logger("cadre-controller");
 
 exports.save = function(req, res, next) {

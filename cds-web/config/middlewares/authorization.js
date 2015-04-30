@@ -1,8 +1,8 @@
 /**
  * Generic require login routing middleware
  */
-var errors = require('../errors/error'),
-    util = require('../../app/util/util');
+var errors = require('cds-errors'),
+    util = require('cds-util');
 
 exports.requiresLogin = function(req, res, next) {
     if (!req.isAuthenticated()) {

@@ -3,8 +3,8 @@
  * Module dependencies.
  */
 
-var restService = require('./rest/service'),
-    restUrls = require('./rest/urls'),
+var restService = require('cds-rest-services'),
+    restUrls = require('cds-rest-services'),
     cdsConfig = require('cds-config'),
     header = cdsConfig.restUrl.contentType,
     requireUtil = require("util"),

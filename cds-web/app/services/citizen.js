@@ -3,14 +3,11 @@
  * Module dependencies.
  */
 
-var restService = require('./rest/service'),
-    restUrls = require('./rest/urls'),
-    util = require("../util/util"),
+var restService = require('cds-rest-services'),
+    restUrls = require('cds-rest-services'),
     requireUtil = require("util"),
     cdsConfig = require('cds-config'),
     header = cdsConfig.restUrl.contentType,
-    util = require('../util/util'),
-    errors = require('../../config/errors/error'),
     properties = require("../controllers/properties"),
     log = require('cds-logger').logger("citizen-service");
 
