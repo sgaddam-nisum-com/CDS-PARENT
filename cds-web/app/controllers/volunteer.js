@@ -4,6 +4,7 @@
  */
 
 var volunteerService = require('../services/volunteer'),
+    cdsRegistration = require('cds-registration'),
     log = require('cds-logger').logger("volunteer-controller");
 
 
@@ -12,7 +13,7 @@ exports.save = function(req, res, next) {
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
 
-    volunteerService.save(params, token, function(resp) {
+    cdsRegistration.saveVolunteer(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -23,7 +24,7 @@ exports.edit = function(req, res, next) {
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
 
-    volunteerService.edit(params, token, function(resp) {
+    cdsRegistration.editVolunteer(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -31,11 +32,10 @@ exports.edit = function(req, res, next) {
 
 exports.get = function(req, res, next) {
     log.debug("get : logged user - " + req.user.data.userName);
+    var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
-    volunteerService.get({
-        userId: userId
-    }, token, function(resp) {
+    cdsRegistration.getVolunteer(userId, token, function(resp) {
         req.resp = resp;
         next();
     });

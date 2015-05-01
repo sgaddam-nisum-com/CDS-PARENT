@@ -4,6 +4,7 @@
  */
 
 var cadreService = require('../services/cadre'),
+    cdsRegistration = require('cds-registration'),
     util = require('cds-util'),
     log = require('cds-logger').logger("cadre-controller");
 
@@ -12,7 +13,7 @@ exports.save = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    cadreService.save(params, token, function(resp) {
+    cdsRegistration.saveCadre(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -23,7 +24,7 @@ exports.edit = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    cadreService.edit(params, token, function(resp) {
+    cdsRegistration.editCadre(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -34,9 +35,7 @@ exports.get = function(req, res, next) {
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
-    cadreService.get({
-        userId: userId
-    }, token, function(resp) {
+    cdsRegistration.getCadre(userId, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -68,7 +67,7 @@ exports.partyPositions = function(req, res, next) {
 exports.bloodGroups = function(req, res, next) {
     log.debug("bloodGroups : logged user - " + req.user.data.userName);
     var token = req.user ? req.user.data.token : null;
-    
+
     cadreService.bloodGroups(null, token, function(resp) {
         res.json(resp);
     });

@@ -1,14 +1,14 @@
 {
-    "name": "cds-config",
+    "name": "cds-registration",
     "version": "1.0.0",
-    "description": "cds config n errors properties/env management",
-    "main": "./lib/config",
+    "description": "cds registration management",
+    "main": "./lib/citizen",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/yc05s3g/cds-config.git"
+        "url": "git://github.com/yc05s3g/cds-registration.git"
     },
     "author": {
         "name": "Sandeep Gaddam",
@@ -16,8 +16,8 @@
     },
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/yc05s3g/cds-config/issues"
+        "url": "https://github.com/yc05s3g/cds-registration/issues"
     },
-    "homepage": "https://github.com/yc05s3g/cds-config",
+    "homepage": "https://github.com/yc05s3g/cds-registration",
     "dependencies": {}
 }
