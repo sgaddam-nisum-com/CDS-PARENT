@@ -14,11 +14,11 @@ exports.save = function(params, token, callback) {
     log.debug("save : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
-
+    
     //build url path     
     var url = {
-        path: requireUtil.format(restUrls.volunteer.saveVolunteer.path, params.userId),
-        method: restUrls.volunteer.saveVolunteer.method
+        path: requireUtil.format(restUrls.volunteer.save.path, params.userId),
+        method: restUrls.volunteer.save.method
     };
 
     restService.builbArgs(url, params, headers, function(args) {

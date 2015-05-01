@@ -228,7 +228,7 @@ exports.deleteFamily = function(req, res, next) {
 exports.quickRegistration = function(req, res, next) {
     log.debug("quickRegistration : user - ");
     var params = req.body;
-    var orgId = req.query.orgId;
+    var orgId = req.body.orgId;
 
     cdsRegistration.quickRegistration(params, orgId, function(resp) {
         res.json(resp);

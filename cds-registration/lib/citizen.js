@@ -8,15 +8,12 @@ var log = require('cds-logger').logger("cds-registration : citizen-controller"),
     async = require("async"),
     citizenService = require('./services/citizen');
 
-var cadre = require("./cadre");
-var volunteer = require("./volunteer");
-
 exports.savePersonalInf = function(params, files, token, fCallback) {
     log.debug("savePersonalInf");
 
     async.series({
             imagePath: function(callback) {
-                if (Object.keys(files).length > 0) {
+                if (files != null && Object.keys(files).length > 0) {
                     var source = files.photograph.path;
                     var target = cdsConfig.image.rootPath + cdsConfig.image.path;
                     var imageName = files.photograph.originalFilename;
@@ -81,7 +78,7 @@ exports.editPersonalInf = function(params, files, token, fCallback) {
 
     async.series({
             imagePath: function(callback) {
-                if (Object.keys(files).length > 0) {
+                if (files != null && Object.keys(files).length > 0) {
                     var source = files.photograph.path;
                     var target = cdsConfig.image.rootPath + cdsConfig.image.path;
                     var imageName = files.photograph.originalFilename;
@@ -321,6 +318,3 @@ exports.quickRegistration = function(params, orgId, callback) {
         callback(resp);
     });
 };
-
-exports = module.exports = volunteer;
-exports = module.exports = cadre;

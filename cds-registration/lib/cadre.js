@@ -6,6 +6,8 @@
 var cadreService = require('./services/cadre'),
     log = require('cds-logger').logger("cds-registration : cadre-controller");
 
+exports = module.exports = require("./volunteer");
+
 exports.saveCadre = function(params, token, callback) {
     log.debug("saveCadre  ");
     cadreService.save(params, token, function(resp) {

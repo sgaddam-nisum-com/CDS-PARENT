@@ -6,6 +6,7 @@
 var volunteerService = require('./services/volunteer'),
     log = require('cds-logger').logger("cds-registration : volunteer-controller");
 
+exports = module.exports = require("./citizen");
 
 exports.saveVolunteer = function(params, token, callback) {
     log.debug("saveVolunteer");
