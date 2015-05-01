@@ -13,7 +13,8 @@
         "npm": "1.2.x"
     },
     "scripts": {
-        "start": "node app.js"
+        "start": "node app.js",
+        "preinstall": "npm install ../cds-config ../cds-logger ../cds-registration ../cds-rest-services ../cds-util"
     },
     "dependencies": {
         "ejs": "1.0.0",
@@ -24,7 +25,7 @@
         "view-helpers": "^0.1.5",
         "lodash": "^3.5.0",
         "underscore": "^1.8.2",
-        "i18n-2": "^0.4.6",                
+        "i18n-2": "^0.4.6",
         "node-windows": "^0.1.7",
         "async": "^0.9.0",
         "node-linux": "^0.1.2",
