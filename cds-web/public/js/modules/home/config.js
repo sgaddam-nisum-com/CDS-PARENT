@@ -17,8 +17,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
     /*****Non authenticated views*****/
 
-
-
     $stateProvider
     .state('root',{        
          abstract: true,
@@ -36,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     /*Page id : CDS1*/
 
     .state('root.home',{
-        url: '/',
+        url: '',
         views: {           
             'content@': {
                 templateUrl: 'views/nonauth/home.html',

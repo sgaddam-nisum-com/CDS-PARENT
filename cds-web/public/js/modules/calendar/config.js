@@ -1,7 +1,7 @@
 /*global define*/
 'use strict';
 
-define(['appSignin','uiRouter','angularRoute'], function (app) {
+define(['appCalendar','uiRouter','angularRoute'], function (app) {
 
 
 app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){
@@ -52,21 +52,19 @@ app.config(function($stateProvider, $urlRouterProvider){
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/nonauth/common/header.html'
+                templateUrl: 'views/auth/common/header.html'
             },
             'footer': {
-                templateUrl: 'views/nonauth/common/footer.html'                
+                templateUrl: 'views/auth/common/footer.html'                
             }
         }
     })
 
-    .state('root.signin',{
+    .state('root.calendar',{
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/signin.html',
-                controller : "signinController as signinCtrl"
-            }
+                templateUrl: 'views/auth/calendar.html'            }
         },
         secured : false
     })

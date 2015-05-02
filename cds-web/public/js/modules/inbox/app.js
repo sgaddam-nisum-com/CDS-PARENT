@@ -6,9 +6,8 @@ define(['angular',
 	'uiRouterStyles',
 	'angularRoute',
 	"ngStorage",
-	'services/common/serviceLoader'
+	'services/common/serviceLoader',
 		], function (angular) {
-    var app = angular.module('CDSREGISTER', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule']);
-    
+    var app = angular.module('CDSINBOX', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule']);
     return app;
 });

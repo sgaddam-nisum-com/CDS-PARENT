@@ -17,7 +17,7 @@ exports.postrequest = function(req, res, next) {
     res.render('external/post-request.html', {});
 };
 exports.register = function(req, res, next) {
-    res.render('external/register.html', {});
+    res.render('index.html', {});
 };
 exports.dashboard = function(req, res, next) {
     res.render('external/dashboard.html', {});
@@ -25,6 +25,10 @@ exports.dashboard = function(req, res, next) {
 exports.forgotpwd = function(req, res, next) {
     res.render('external/forgot-password.html', {});
 };
-exports.register = function(req, res, next) {
-    res.render('register.html', {});
+exports.calendar = function(req, res, next) {
+    res.render('index.html', {});
+};
+
+exports.inbox = function(req, res, next) {
+    res.render('index.html', {});
 };

@@ -8,7 +8,7 @@ var userService = require('../services/user'),
 exports.signin = function(req, res, next) {
     log.debug("signin");
     if (!req.user) {
-        res.render('signin.html', {
+        res.render('index.html', {
             title: 'Login',
             message: req.flash('error'),
             greeting: req.i18n.__("greeting")

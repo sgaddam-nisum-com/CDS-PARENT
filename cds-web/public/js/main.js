@@ -1,6 +1,7 @@
 /*global require*/
 'use strict';
 
+
 require.config({
 	baseUrl : "js",
 	paths: {
@@ -9,6 +10,14 @@ require.config({
 		"configHome" : "modules/home/config",
 		"appSignin" : "modules/signin/app",
 		"configSignin" : "modules/signin/config",
+		"appRegister" : "modules/register/app",
+		"configRegister" : "modules/register/config",
+		"appCalendar" : "modules/calendar/app",
+		"configCalendar" : "modules/calendar/config",
+
+		"appInbox" : "modules/inbox/app",
+		"configInbox" : "modules/inbox/config",
+
 
 
 		/*Services, Controllers & directives*/		 		 		 
@@ -92,7 +101,13 @@ var routes = {
         },
         "/register": {
             module: {"app":"appRegister", "config":"configRegister","moduleName":"CDSREGISTER"}
-        }      
+        },
+        "/calendar": {
+            module: {"app":"appCalendar", "config":"configCalendar","moduleName":"CDSCALENDAR"}
+        },
+        "/inbox": {
+            module: {"app":"appInbox", "config":"configInbox","moduleName":"CDSINBOX"}
+        }        
     };
 
     function getRoute() {
@@ -104,6 +119,9 @@ var routes = {
     }
 
     var r = getRoute();
+
+    console.log(r);
+
     function start() {
         require( ['angular', r.module.app, r.module.config ], function ( angular ) {
         	angular.bootstrap(document, [r.module.moduleName]);

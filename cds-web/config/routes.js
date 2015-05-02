@@ -130,6 +130,9 @@ exports.init = function(app, passport, auth) {
     // Home route
     app.get('/', index.render);
     app.get('/register', index.register);
+    app.get('/calendar', index.calendar);
+    app.get('/inbox', index.inbox);
+
 
     app.get('/setlocale/:locale', function(req, res) {
         res.cookie('locale', req.params.locale);
