@@ -12,7 +12,8 @@ var express = require('express'),
     methodOverride = require('method-override'),
     session = require('express-session'),
     i18n = require('i18n-2'),
-    multipart = require('connect-multiparty');
+    multipart = require('connect-multiparty'),
+    multer = require('multer');
 
 var cdsConfig = require('cds-config');
 
@@ -43,6 +44,14 @@ module.exports = function(app, passport) {
     //Set views path, template engine and default layout
     app.set('views', pbc + '/views');
     app.engine('html', require('ejs').renderFile);
+
+    //file upload
+    app.use(multer({
+        dest: cdsConfig.image.rootPath + cdsConfig.image.path,
+        rename: function(fieldname, filename) {
+            return filename;
+        }
+    }));
 
     //Enable jsonp
     app.enable("jsonp callback");

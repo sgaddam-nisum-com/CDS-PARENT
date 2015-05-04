@@ -14,20 +14,8 @@ exports.savePersonalInf = function(params, files, token, fCallback) {
     async.series({
             imagePath: function(callback) {
                 if (files != null && Object.keys(files).length > 0) {
-                    var source = files.photograph.path;
-                    var target = cdsConfig.image.rootPath + cdsConfig.image.path;
-                    var imageName = files.photograph.originalFilename;
-                    util.image.save(source, target + imageName, function(err, path) {
-                        if (err) {
-                            err = cdsConfig.errors.image.save;
-                            util.handleErrors(err, function(resp) {
-                                res.json(resp);
-                            });
-                        } else {
-                            //to do
-                            callback(null, cdsConfig.image.path + imageName);
-                        }
-                    });
+                    var imageName = files.photograph.originalname;
+                    callback(null, cdsConfig.image.path + imageName);
                 } else {
                     callback(null, null);
                 }
@@ -79,20 +67,8 @@ exports.editPersonalInf = function(params, files, token, fCallback) {
     async.series({
             imagePath: function(callback) {
                 if (files != null && Object.keys(files).length > 0) {
-                    var source = files.photograph.path;
-                    var target = cdsConfig.image.rootPath + cdsConfig.image.path;
-                    var imageName = files.photograph.originalFilename;
-                    util.image.save(source, target + imageName, function(err, path) {
-                        if (err) {
-                            err = cdsConfig.errors.image.save;
-                            util.handleErrors(err, function(resp) {
-                                res.json(resp);
-                            });
-                        } else {
-                            //to do
-                            callback(null, cdsConfig.image.path + imageName);
-                        }
-                    });
+                    var imageName = files.photograph.originalname;
+                    callback(null, cdsConfig.image.path + imageName);
                 } else {
                     callback(null, null);
                 }
@@ -135,6 +111,15 @@ exports.editPersonalInf = function(params, files, token, fCallback) {
                 fCallback(resp);
             });
         });
+};
+
+exports.saveFile = function(files, callback) {
+    if (files != null && Object.keys(files).length > 0) {
+        var imageName = files.photograph.originalname;
+        callback(cdsConfig.image.path + imageName);
+    } else {
+        callback(null);
+    }
 };
 
 exports.getPersonalInf = function(userId, token, callback) {

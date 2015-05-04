@@ -37,7 +37,8 @@
         "method-override": "^2.3.2",
         "morgan": "^1.5.2",
         "serve-favicon": "^2.2.0",
-        "connect-multiparty": "^1.2.5"
+        "connect-multiparty": "^1.2.5",
+        "multer": "^0.1.8"
     },
     "devDependencies": {
         "grunt": "^0.4.5",
