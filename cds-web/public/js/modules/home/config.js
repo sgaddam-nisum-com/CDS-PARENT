@@ -44,17 +44,20 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         },
         secured : false
     })
-    // .state('root.signin',{
-    //     url: '/signin',
-    //     views: {           
-    //         'content@': {
-    //             templateUrl: 'views/nonauth/signin.html',
-    //             module:'CDSAUTH',
-    //             controller : "signinController as signinCtrl"
-    //         }
-    //     },
-    //     secured : false
-    // })
+
+     .state('root.alternatehome',{
+        url: '',
+        views: {           
+            'content@': {
+                templateUrl: 'views/nonauth/home.html',
+                controller : "homeController as homeCtrl"                
+            }
+             
+        },
+        secured : false
+    })
+
+  
     .state('root.knowyourmp',{
         url: '/knowyourmp',
         views: {           
@@ -83,10 +86,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         secured : false
     })
         .state('root.vision',{
-        url: '/vision',
+        url: '/mission-vision',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/vision.html'
+                templateUrl: 'views/nonauth/mission-vision.html'
             }
         },
         secured : false
@@ -118,135 +121,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         },
         secured : false
     })
-    // .state('auth',{        
-    //      abstract: true,
-    //      url : "",
-    //      views: {
-    //         'header': {
-    //             templateUrl: 'views/auth/common/header.html'
-    //         },
-    //         'footer': {
-    //             templateUrl: 'views/auth/common/footer.html'                
-    //         }
-    //     }
-    // })
-    // .state('auth.dashboard',{        
-    //      url : "/dashboard",
-    //      views: {
-    //         'content@': {
-    //             templateUrl: 'views/auth/dashboard.html'
-    //         }
-    //     },
-    //     secured : true
-    // })
-    // .state('auth.register', {
-    //     url: '/register',
-    //     views: {
-    //         'content@': {
-    //             templateUrl: 'views/auth/register/register.html',
-    //             controller : "leftNavController as leftNavCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // })
-    // .state('auth.register.personal', {
-    //     url: '/personal',
-    //     views: {
-    //         'formSubsection': {
-    //             templateUrl: 'views/auth/register/subsection/personal.html',
-    //             controller : "personalController as personalCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // })
-    // .state('auth.register.voter', {
-    //     url: '/voter',
-    //     views: {
-    //         'formSubsection': {
-    //             templateUrl: 'views/auth/register/subsection/voter.html',
-    //             controller : "voterController as voterCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // })
-    // .state('auth.register.address', {
-    //     url: '/address',
-    //     views: {
-    //         'formSubsection': {
-    //             templateUrl: 'views/auth/register/subsection/address.html',
-    //             controller : "addressController as addressCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // }) 
-    // .state('auth.register.volunteer', {
-    //     url: '/volunteer',
-    //     views: {
-    //         'formSubsection': {
-    //             templateUrl: 'views/auth/register/subsection/volunteer.html',
-    //             controller : "volunteerController as volunteerCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // })    
-    // .state('auth.register.family', {
-    //     url: '/family',
-    //     views: {
-    //         'formSubsection': {
-    //             templateUrl: 'views/auth/register/subsection/family.html',
-    //             controller : "familyController as familyCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // })    
-    // .state('auth.register.cadre', {
-    //     url: '/cadre',
-    //     views: {
-    //         'formSubsection': {
-    //             templateUrl: 'views/auth/register/subsection/cadre.html',
-    //             controller : "cadreController as cadreCtrl"
-    //         }
-    //     },
-    //      secured : true
-    // })
-    // .state('auth.register.work',{
-    //     url: '/work',
-    //     views:{
-    //         'formSubsection':{
-    //             templateUrl:'views/auth/register/subsection/work.html',
-    //             controller: "workController as workCtrl"
-    //         }
-    //     },
-    //      secured : true
-        
-    // })
-    // .state('auth.list', {
-    //     url: '/list',
-    //     views: {
-    //         'content@': {
-    //             templateUrl: 'views/auth/list/list.html',
-    //             controller : "listController as listCtrl"                
-    //         },
-    //     },
-    //      secured : true
- 
-    // })
-    // .state('auth.viewMember',{
-    //     url : "/user/view/:id",
-    //     views: {
-    //         'content@': {
-    //             templateUrl: 'views/auth/list/view-member.html',
-    //             controller : "viewController as viewCtrl"                
-    //         }
-    //     },
-    //      secured : true
-
-    // })
-
-// $locationProvider.html5Mode({
-//   enabled: true,
-//   requireBase: false
-// });
 
 });
 
