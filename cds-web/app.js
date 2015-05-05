@@ -6,10 +6,6 @@ var express = require('express'),
     http = require('http'),    
     path = require('path'),
     d = require('domain').create();
-
-//private modules
-var cdsConfig = require('cds-config');
-
 /**
  * Main application entry file.
  * Please note that the order of loading is important.
@@ -17,6 +13,9 @@ var cdsConfig = require('cds-config');
 
 // Load Configurations
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+//private modules
+var cdsConfig = require('cds-config');
 
 var auth = require('./config/middlewares/authorization');
 var passport = require('./config/passport');

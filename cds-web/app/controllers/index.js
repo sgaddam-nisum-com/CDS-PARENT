@@ -4,8 +4,7 @@
 
 exports.render = function(req, res, next) {
     res.render('index.html', {
-        msg: "Welcome",
-        greeting: req.i18n.__("greeting")
+        msg: "Welcome"
     });
 };
 

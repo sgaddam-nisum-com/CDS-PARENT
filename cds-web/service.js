@@ -1,7 +1,7 @@
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var Service = require('node-windows').Service,
     EventLogger = require('node-windows').EventLogger,
-    cdsConfig = require("cds-cdsConfig"),
+    cdsConfig = require("cds-config"),
     log = new EventLogger('CDS');
 
 // Create a new service object

@@ -1,6 +1,6 @@
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var Service = require('node-linux').Service,
-    cdsConfig = require("cds-cdsConfig");
+    cdsConfig = require("cds-config");
 
 // Create a new service object
 var svc = new Service({

@@ -9,7 +9,7 @@ module.exports = _.assign(
     // configuration variables that will be the same across all environments
     require('./env/all.js'),
     // configuration variables that are environment specific
-    require('./env/' + (process.env.NODE_ENV || 'development') + '.js') || {}
+    require('./env/' + (process.env.NODE_ENV) + '.js') || {}
     //appends errors messages
     //require(__dirname + '/errors/error-messages.js')
 );
