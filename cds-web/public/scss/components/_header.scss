@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'OpenSans-Semibold'; 
 }
 p {
-  font-size: 14px;
+  font-size: 13px;
 }
 header {
   background: #0174b7 url(../images/header-bg.jpg) repeat-x top left;
@@ -41,10 +41,11 @@ header {
   color: #999;  
 }
 header .phone {
-  background: url(../images/cds-sprite.png) 0 10px no-repeat;
+  background: url(../images/cds-sprite.png) 16px 8px no-repeat;
   height: 30px;
-  padding: 8px 0 0 18px;
+  padding: 7px 0 0 32px;
   font-size: 13px;
+  color: #fff;
 }
 header .top-nav{
   padding-right: 0;
@@ -96,10 +97,10 @@ header .top-nav ul li a.logout {
 
 
 header .navigation {
-  padding: 12px 0 0 0;
+  padding: 28px 0 0 0;
 }
 header .navigation h1.logo {
-  background: url(../images/cds-sprite.png) no-repeat 2px -534px;
+  background: url(../images/logo.png) no-repeat;
   width: 155px;
   height: 40px;
 }
@@ -112,7 +113,7 @@ header .main-navigation nav ul li{
   float: left; 
 }
 h1 {
-  color: #885600;
+  color: #16578f;
   font-size: 26px;
 }
 
@@ -120,7 +121,7 @@ h1 {
   background:#f0f2f4;
 }
 .headerLogo{
-  background:white;
+  background: #fff url(../images/headerBg.png) repeat-x;
 }
 
 .auth-header{

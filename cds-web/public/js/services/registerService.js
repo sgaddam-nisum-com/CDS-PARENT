@@ -1,4 +1,4 @@
-define(['services/serviceModule', "services/appUrlService"], function(serviceModule, appUrlService) {
+define(['services/serviceModule'], function(serviceModule) {
 
 	serviceModule.factory('registerService', ['$http', 'appUrlService',
 		function($http, appUrlService) {
