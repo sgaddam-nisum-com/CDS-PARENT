@@ -8,14 +8,14 @@ define(['directives/directiveModule','jquery'], function (directiveModule,$) {
 			restrict: "A",			
 			link: function(scope, elem, attrs) {				
 				function setFixedFooter(){
-					var sectionHt = $('#appSection').height()+20; 
+					var sectionHt = $('#appSection').outerHeight()+$('#appHeader').outerHeight()+20; 
 					var ctWindowHt = $(window).height();
-					if (sectionHt+100<=ctWindowHt){ 
-					    $(elem).css('top', ctWindowHt-40+'px');
+					var footerHeight = $('#appFooter').outerHeight();
+					if (sectionHt<ctWindowHt){ 
+					    $(elem).css('top', ctWindowHt-footerHeight+'px');
 					    $(elem).css({'display':'block', "position" : "absolute","width" : "100%"});
-					}else{
-					    
-					    $(elem).css({'display':'block', "position" : "relative", "width" : "100%","top":"0"});
+					}else{					    
+					    $(elem).css({'display':'block', "position" : "static", "width" : "100%"});
 					}
 				}	
 				setFixedFooter();

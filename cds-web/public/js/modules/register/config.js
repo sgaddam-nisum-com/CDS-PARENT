@@ -67,6 +67,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         views: {           
             'content@': {
                 templateUrl: 'views/nonauth/register.html',
+                controller : "registerController as registerCtrl"
                
             }
         },

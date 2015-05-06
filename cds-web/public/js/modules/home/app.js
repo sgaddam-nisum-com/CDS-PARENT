@@ -7,8 +7,9 @@ define(['angular',
 	'angularRoute',
 	"ngStorage",
 	'services/common/serviceLoader',
-	'controllers/homeController'
+	'controllers/homeController',
+	'directives/fixedFooterDirective'
 	], function (angular) {
-    var app = angular.module('CDSHOME', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule']);		
+    var app = angular.module('CDSHOME', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule',"directiveModule"]);		
     return app;
 });

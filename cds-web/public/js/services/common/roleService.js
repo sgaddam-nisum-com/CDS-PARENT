@@ -1,6 +1,6 @@
 'use strict';
 
-define(['services/common/serviceModule'], function(serviceModule) {
+define(['services/serviceModule'], function(serviceModule) {
     serviceModule.factory('roleService', ['$http',
         function($http) {
 
