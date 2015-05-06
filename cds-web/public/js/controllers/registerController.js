@@ -1,7 +1,7 @@
 'use strict';
 define(['controllers/controllerModule','formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function (controllerModule,formValidation, validationMap, errorJson, $) {
 
-	 controllerModule.controller('registerController', ['$scope','$location',"registerService", function($scope, $location,registerService){
+	 controllerModule.controller('registerController', ['$scope','$location',"registerService","cdsService","appUrlService", function($scope, $location,registerService, cdsService,appUrlService){
 		
 
 		 	this.showLoader = false;
@@ -26,6 +26,16 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             registerService.getEducationOptions(function(resp) {
                 $scope.educationOptions = resp.data;
             });
+
+            this.user = {};
+                                  
+
+            this.user.volunteerInterestedAreas = [{ interestId : "1", label : "Registration"},
+                                                { interestId : "2", label : "Registrati22"},
+                                                { interestId : "3", label : "Infra Arrangements"},
+                                                {interestId : "4", label : "Meeting organizations"}];
+
+            this.user.selectedInterest = this.user.volunteerInterestedAreas[0];
 
 
             var self = this;
@@ -62,6 +72,7 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             }
 
             this.save = function() {
+
                 cdsService.isRegistered = true;
                 if (formStack.isValid) {
 
@@ -75,7 +86,7 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                         data.append(fileObj.name, fileObj.value);
                     }
                     $.ajax({
-                        url: appUrls.savePersonalInfo,
+                        url: appUrlService.savePersonalInfo,
                         type: 'POST',
                         data: data,
                         cache: false,
@@ -87,8 +98,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                             $state.go('root.register.work');
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
-
-
 
                         }
                     });
@@ -120,10 +129,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
 
 
             }
-
-
-
-
 
 
 	}]);

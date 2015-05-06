@@ -1,91 +1,225 @@
-<form name="registration" id="registrationForm" ng-submit="registration.save()">
+<form name="registration" id="registrationForm" ng-submit="registerCtrl.save()">
   <div class="row registration-wrapper" style="padding-left:20px">
     <!-- Register Section -->
     <div class="large-12 medium-7 small-16 columns padding-none">
+      
       <h1>Register <span>to become a member.</span></h1>
+      
+      <!-- Name -->
+
       <div class="row">
         <div class="large-4 columns">
           <label class="right inline">Name:</label>
         </div>
         <div class="large-4 columns">
-          <input type="text" placeholder="First Name" class="name required" />
+          <input type="text" placeholder="First Name" class="name required"  ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
         </div>
         <div class="large-4 columns padding-none">
-          <input type="text" placeholder="Middle Name" class="" />
+          <input type="text" placeholder="Middle Name" class="" ng-model="registerCtrl.user.middleName" />
         </div>
         <div class="large-4 columns">
-          <input type="text" placeholder="Last Name" class="name required" />
+          <input type="text" placeholder="Last Name" class="name required" ng-model="registerCtrl.user.lastName" data-val="signupLastName" />
+        </div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
         </div>
       </div>
+
+      <!-- User Name -->
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">User Name:</label></div>
-        <div class="large-8 small-16 columns left"><input type="text" class="required" /></div>
+        <div class="large-8 small-16 columns left"><input type="text" id="userName" class="input loader-input" data-val="userName" name="userName" ng-model="registerCtrl.user.loginId" data-inputname="userName"></div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- Password -->
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">Password:</label></div>
-        <div class="large-8 small-16 columns left"><input type="password" class="required" /></div>
+        <div class="large-8 small-16 columns left"><input type="password" class="required" ng-model="registerCtrl.user.password" /></div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">Confirm Password:</label></div>
         <div class="large-8 small-16 columns left"><input type="password" /></div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- Date of birth -->
+
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">Date of Birth:</label></div>
-        <div class="large-8 small-16 columns left"><input type="text" class="required" /></div>
+        <div class="large-8 small-16 columns left"> 
+          
+          <input type="text" id="dob" class="input required" name="dob" data-val="dob" ng-model="registerCtrl.user.dateOfBirth" dob="registerCtrl.user.dateOfBirth">
+
+        </div>
+
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- Mobile number -->
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">Mobile Number:</label></div>
-        <div class="large-8 small-16 columns left"><input type="text" class="required" /></div>
+        <div class="large-8 small-16 columns left"><input type="text" id="mobile" class="input required loader-input" name="mobile" data-val="userMobile" ng-model="registerCtrl.user.mobileNumber" data-inputname="mobileNumber"></div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- Email address -->
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">Email Address:</label></div>
-        <div class="large-8 small-16 columns left"><input type="text" class="required"/></div>
+        <div class="large-8 small-16 columns left"> <input type="text" id="email" class="input loader-input" name="email" ng-model="registerCtrl.user.emailId" data-val="userEmail" data-inputname="email"></div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- Skype Id -->
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="inline right">Skype Id:</label></div>
-        <div class="large-8 small-16 columns left"><input type="text" class="required"/></div>
+        <div class="large-8 small-16 columns left"> <input type="text" id="skypeId" class="input" name="skypeId" ng-model="registerCtrl.user.skypeId" data-val="skypeId"></div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- Gender -->
+
       <div class="row">
         <div class="large-4 small-16 columns"><label class="right">Gender:</label></div>
-        <div class="large-8 small-16 columns gender left"><label><input type="radio" /> Male </label><label><input type="radio" /> Female </label> <label><input type="radio" /> Not to be disclosed</label></div>
+        <div class="large-9 small-16 columns gender left">
+          <input type="radio" name="gender" value="M" id="male" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)"><label for="male">Male</label>
+          <input type="radio" name="gender" value="F" id="female" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)"><label for="female">Female</label>
+          <input type="radio" name="gender" value="O" id="notToDisclose" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)"><label for="notToDisclose">Not to be disclosed</label>
+        </div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
       </div>
+
+      <!-- To be a Volunteer -->
+
       <div class="row">
         <div class="large-4 small-16 columns"> &nbsp; </div>
         <div class="large-8 small-16  left ">
-          <input type="radio" id="volunteer" class="showAreaOfinterest" name="specilization" value="volunteer"><label for="volunteer">Do you want to be a volunteer</label><br>
+          <input type="radio" id="volunteer" class="showAreaOfinterest" name="specilization" value="1" ng-model="registerCtrl.user.interestedAs">
+          <label for="volunteer">Do you want to be a volunteer</label><br>
+        </div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
         </div>
       </div>
+
+      <!-- To be a Cadre -->
+
       <div class="row">
         <div class="large-4 small-16 columns"> &nbsp; </div>
         <div class="large-8 small-16  left ">
-          <input type="radio" id="cadre" class="showAreaOfinterest" name="specilization" value="cadre"><label for="cadre">Do you want to register as a  Cadre</label><br>
+          <input type="radio" id="cadre" class="showAreaOfinterest" name="specilization" value="2" ng-model="registerCtrl.user.interestedAs">
+          <label for="cadre">Do you want to register as a  Cadre</label><br>
         </div>
-      </div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
+      </div>      
+
       <div class="row cadreRole">
         <div class="large-4 small-16 columns"> &nbsp;  </div>
         <div class="large-8 small-16 columns gender left" style="padding-left:38px">
-          <label for="newcadre"><input id="newcadre" type="radio" name="cadreRole" checked/> New </label>
-          <label for="existingcadre"><input id="existingcadre" type="radio" name="cadreRole"/> Existing </label>
+          <label for="newcadre"><input type="radio" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW">New</label>
+          <label for="existingcadre"><input type="radio" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING">Existing</label>
+        </div>
+        <div class="large-12 columns left">
+          <div class="error-class"><div class="error-content"></div></div>
         </div>
       </div>
+
+
+      <!-- Areas of Interests -->
+
+
       <div class="row areaOfInterest">
         <div class="large-4 columns">
           <label for="right-label" class="right inline">Select area of interest:</label>
         </div>
         <div class="large-8 columns left">
-          <select id="areaOfinterest" class="input" name="areaOfinterest" multiple>
-            <option value="">Registrations</option>
-            <option value="">Survey</option>
-            <option value="">Infra arrangements</option>
-            <option value="">Meeting organizations</option>
+
+          <select multiple ng-options="item.label for item in registerCtrl.user.volunteerInterestedAreas" ng-model="registerCtrl.user.selectedInterest">
+                <option value="">Select</option>
           </select>
+
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
+        <div class="large-12 columns left">
           <div class="error-class"><div class="error-content"></div></div>
         </div>
       </div>
+
+
+<!-- Photo upload -->
+
+  <div class="row" >
+        <div class="large-4 columns">
+          <label for="right-label" class="right inline">Upload Photo:</label>
+        </div>
+        <div class="large-12 columns left">
+          <input type="file" id="profilePhoto" name="photograph">
+          <div>
+            <input class="form-control mock-input" type="text" disabled="" style="background-color:#fff; width:40%">
+            <span class="group-span-filestyle input-group-btn mock-browse" tabindex="0">
+            <label class="btn btn-default " for="filestyle-1">Browse</label>
+            </span>
+          </div>
+          <div class="error-class"><div class="error-content"></div></div>
+        </div>
+        <label>Maximum file size is 1MB</label>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Submit section -->
+
       <div class="row">
         <div class="large-6 small-16 columns"></div>
-        <div class="large-10 small-16 columns button-wrapper"><a href="#"><input type="button" class="button small radius" value="Register" id="formSubmission"/></a></div>
+        <div class="large-10 small-16 columns button-wrapper"><input type="submit" class="button small radius" value="Register" id="formSubmission"/></div>
       </div>
+
     </div>
   </div>
   <div class="overlayWrapper" id="cdsOverlay" style="display:none;">
