@@ -234,7 +234,7 @@
 }
 
 /* line 1, ../scss/components/_footer.scss */
-footer #footerWrapper {
+footer {
   background: #444444;
   color: #999;
   padding: 20px 0;
@@ -1958,21 +1958,62 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
 }
 
 /* line 7, ../scss/components/_mission-vision.scss */
-.vision-mission img {
+.vision-mission img, .vision img {
   border: none;
   margin: 8px 0;
 }
 
 /* line 11, ../scss/components/_mission-vision.scss */
 .vision-mission h6 {
-  margin: 10px 0 0 0;
+  margin: 23px 0 0 0;
+  font-size: 14px;
 }
 
-/* line 14, ../scss/components/_mission-vision.scss */
+/* line 15, ../scss/components/_mission-vision.scss */
 .vision-mission .mission {
   background: #e5ecf2;
+  box-shadow: 1px 1px 1px #999;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
 }
 
+/* line 23, ../scss/components/_mission-vision.scss */
+.vision span {
+  color: #1bb2ea;
+}
+
+/* line 26, ../scss/components/_mission-vision.scss */
+.vision span.justice {
+  color: #f15a3f;
+}
+
+/* line 29, ../scss/components/_mission-vision.scss */
+.vision span.economic {
+  color: #048894;
+}
+
+/* line 32, ../scss/components/_mission-vision.scss */
+.vision span.green {
+  color: #75b224;
+}
+
+/* line 35, ../scss/components/_mission-vision.scss */
+.vision span.improve {
+  color: #0032a5;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* line 40, ../scss/components/_mission-vision.scss */
+  .vision-mission h6 {
+    font-size: 14px;
+  }
+
+  /* line 43, ../scss/components/_mission-vision.scss */
+  .vision-mission h6 {
+    margin: 18px 0 0 0;
+  }
+}
 /* line 3, ../scss/components/_knowourmp.scss */
 .content .MpName {
   font-weight: bold;
