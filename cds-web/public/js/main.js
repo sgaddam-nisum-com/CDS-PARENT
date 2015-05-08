@@ -47,7 +47,8 @@ require.config({
 		"errorMessages" : "lib/errorMessages",
 		"ngStorage" : "lib/ngStorage",
 		/*Foundation*/		
-		"slick" : "lib/slick"
+		"slick" : "lib/slick",
+		"simplyscroll" : "lib/jquery.simplyscroll"
 	},
 	shim: {
 		angular: {
