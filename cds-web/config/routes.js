@@ -132,6 +132,7 @@ exports.init = function(app, passport, auth) {
     app.get('/register', index.register);
     app.get('/calendar', index.calendar);
     app.get('/inbox', index.inbox);
+    app.get('/tasks', index.tasks);
 
 
     app.get('/setlocale/:locale', function(req, res) {

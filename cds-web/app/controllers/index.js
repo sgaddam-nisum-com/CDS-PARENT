@@ -31,3 +31,7 @@ exports.calendar = function(req, res, next) {
 exports.inbox = function(req, res, next) {
     res.render('index.html', {});
 };
+
+exports.tasks = function(req, res, next) {
+    res.render('index.html', {});
+};
