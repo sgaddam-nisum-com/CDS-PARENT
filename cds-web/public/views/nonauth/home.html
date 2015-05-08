@@ -1,10 +1,5 @@
-<div id="home-carousel" style="width:100%">
+<div id="home-carousel" slick-gallery-directive config="homeCtrl.galleryCaroselConfig">
         <div> <img src="images/bannerImg.jpg" alt="slider 1" class="web" />
-        <!-- <div class="mobile">
-          <img src="images/mobile-banner1.jpg" alt="slider 1"/>
-          <h4>Finding and Creating The Right Solution</h4>
-          <p>We are leading information technology services company drive to create business value for our customers through the innovative application of advanced technologies.</p>
-        </div> -->
           <div class="slide-overlay">
             <div class="slide-body-text">
               <h3>Centre clears ORR, flyovers construction in Vijayawada</h3>
@@ -14,11 +9,6 @@
         </div>
        
         <div> <img src="images/banner1.jpg" alt="slider 2" class="web" />
-        <!-- <div class="mobile">
-          <img src="images/mobile-banner2.jpg" alt="slider 2"  />
-          <h4>Revolutionary Automated ERP Testing Solution </h4>
-          <p>OSI Test Center eliminates the hurdles of time and money for your ERP testing problems with its easy to use, truly automated methodology.</p>
-        </div> -->
           <div class="slide-overlay">
             <div class="slide-body-text">
               <h3>Centre clears ORR, flyovers construction in Vijayawada</h3>
@@ -28,11 +18,6 @@
           </div>
         
         <div> <img src="images/banner2.jpg" alt="slider 2" class="web" />
-        <!-- <div class="mobile">
-          <img src="images/mobile-banner3.jpg" alt="slide 3" />
-          <h4>Access Your Oracle E-Business Suite Anywhere, Anytime </h4>
-          <p>With OSI's Enterprise Mobility Solutions, your critical business information can be available on your iOS and Android devices securely in real time.</p>
-        </div> -->
           <div class="slide-overlay">
             <div class="slide-body-text">
               <h3>Centre clears ORR, flyovers construction in Vijayawada</h3>
@@ -44,7 +29,7 @@
      
       <div class="activities">
           
-        <div id="activities-carousel">
+        <div id="activities-carousel" slick-gallery-directive config="homeCtrl.activitiesCarouselconfig">
           <div>
             <div class="row"> 
             <h1>Activities </h1>
@@ -91,7 +76,7 @@
         </div>
          <div class="row activities-nav">
           <div class="large-4 medium-6 small-12 small-centered columns right">
-            <a href="#" class="previous"><img src="images/previous.png" /> &nbsp; </a> <a href="#" class="next"><img src="images/next.png" /></a>
+            <a href="#" id="prevAct"><img src="images/previous.png" /> &nbsp; </a> <a href="#" id="nextAct"><img src="images/next.png" /></a>
           </div>
       </div>
       

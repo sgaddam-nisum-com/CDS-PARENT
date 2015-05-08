@@ -753,30 +753,36 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   height: 50px;
 }
 
-/* line 194, ../scss/components/_home.scss */
+/* line 193, ../scss/components/_home.scss */
+#home-carousel img {
+  width: 100%  !important;
+  max-height: 500px !important;
+}
+
+/* line 198, ../scss/components/_home.scss */
 .activities-header {
   font-size: 16px;
   color: #333;
 }
 
-/* line 198, ../scss/components/_home.scss */
+/* line 202, ../scss/components/_home.scss */
 .news-poll {
   background: #e5ecf2;
   margin: 20px 0 0 0;
   padding: 15px 0;
 }
 
-/* line 204, ../scss/components/_home.scss */
+/* line 208, ../scss/components/_home.scss */
 .slick-slide h1 {
   padding-left: 18px;
 }
 
-/* line 207, ../scss/components/_home.scss */
+/* line 211, ../scss/components/_home.scss */
 .slide-wrapper {
   position: relative;
 }
 
-/* line 210, ../scss/components/_home.scss */
+/* line 214, ../scss/components/_home.scss */
 .slide-overlay {
   position: absolute;
   bottom: 20px;
@@ -785,33 +791,33 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   padding: 15px;
 }
 
-/* line 217, ../scss/components/_home.scss */
+/* line 221, ../scss/components/_home.scss */
 .slide-body-text {
   color: #ffffff;
 }
 
-/* line 220, ../scss/components/_home.scss */
+/* line 224, ../scss/components/_home.scss */
 .slide-body-text h3 {
   color: #c7e249;
 }
 
-/* line 223, ../scss/components/_home.scss */
+/* line 227, ../scss/components/_home.scss */
 .vision-left li {
   font-size: 13px;
 }
 
 /* ============ Foundation Overrides ================= */
-/* line 229, ../scss/components/_home.scss */
+/* line 233, ../scss/components/_home.scss */
 .padding-none {
   padding: 0;
 }
 
-/* line 232, ../scss/components/_home.scss */
+/* line 236, ../scss/components/_home.scss */
 .top-bar {
   background: none;
 }
 
-/* line 235, ../scss/components/_home.scss */
+/* line 239, ../scss/components/_home.scss */
 .top-bar-section ul li {
   /*border-right: solid 1px #16578f;
   background: url(../images/menu-divider.png) no-repeat right center;*/
@@ -821,7 +827,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
 /*.top-bar-section ul li a.active {
   border-bottom: solid 5px #ffffff;
 }*/
-/* line 243, ../scss/components/_home.scss */
+/* line 247, ../scss/components/_home.scss */
 .top-bar-section ul li > a {
   font-family: 'OpenSans-Semibold';
   padding: 0 16px;
@@ -830,7 +836,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: #e5ecf2 url(../images/menu-active.png) no-repeat;
 }
 
-/* line 250, ../scss/components/_home.scss */
+/* line 254, ../scss/components/_home.scss */
 .top-bar-section ul li > a.active {
   font-family: 'OpenSans-Semibold';
   /*padding: 0 16px !important;*/
@@ -842,7 +848,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
 /*.top-bar-section ul li > a:last-child {
   padding-right: 0 !important;
 }*/
-/* line 260, ../scss/components/_home.scss */
+/* line 264, ../scss/components/_home.scss */
 .no-js .top-bar-section ul li:hover > a {
   color: #1c5776;
   background: #e5ecf2 url(../images/menu-divider.png) no-repeat right center;
@@ -852,13 +858,13 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   Development Started : 18th March 2015.
   Developer: Vanava Raju Adabala. 
   Stack: Mobile optimization using Foundation Frame work. */
-/* line 268, ../scss/components/_home.scss */
+/* line 272, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li:hover {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 272, ../scss/components/_home.scss */
+/* line 276, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li.active {
   background: url(../images/menu-active.png) no-repeat center bottom !important;
 }
@@ -866,12 +872,12 @@ body .navigation .top-bar-section ul li.active {
 /*body .navigation .top-bar-section ul li.active:hover {
   background: url(../images/menu-active.png) no-repeat center bottom !important;
 }*/
-/* line 278, ../scss/components/_home.scss */
+/* line 282, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li:last-child a {
   padding-right: 0;
 }
 
-/* line 281, ../scss/components/_home.scss */
+/* line 285, ../scss/components/_home.scss */
 body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: none;
   padding-left: 16px;
@@ -882,12 +888,12 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   /*body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     padding: 0 8px;
   }*/
-  /* line 291, ../scss/components/_home.scss */
+  /* line 295, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 294, ../scss/components/_home.scss */
+  /* line 298, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
@@ -898,18 +904,18 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   .content {
     padding: 0 8px;
   }*/
-  /* line 304, ../scss/components/_home.scss */
+  /* line 308, ../scss/components/_home.scss */
   .logo {
     /*width: 100%; */
     padding-bottom: 0;
   }
 
-  /* line 308, ../scss/components/_home.scss */
+  /* line 312, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 311, ../scss/components/_home.scss */
+  /* line 315, ../scss/components/_home.scss */
   .slide-overlay {
     position: absolute;
     bottom: 10px;
@@ -921,19 +927,19 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   /*.slide-body-text{
     color: #ffffff;
   }*/
-  /* line 321, ../scss/components/_home.scss */
+  /* line 325, ../scss/components/_home.scss */
   .slide-body-text h3 {
     color: #c7e249;
     font-size: 20px;
   }
 
-  /* line 325, ../scss/components/_home.scss */
+  /* line 329, ../scss/components/_home.scss */
   .slide-body-text p {
     margin: 0;
   }
 }
 @media only screen and (min-width: 360px) and (max-width: 640px) {
-  /* line 333, ../scss/components/_home.scss */
+  /* line 337, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -941,51 +947,51 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     border-radius: 3px;
   }
 
-  /* line 339, ../scss/components/_home.scss */
+  /* line 343, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 342, ../scss/components/_home.scss */
+  /* line 346, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
   }
 
-  /* line 346, ../scss/components/_home.scss */
+  /* line 350, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 349, ../scss/components/_home.scss */
+  /* line 353, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 353, ../scss/components/_home.scss */
+  /* line 357, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 357, ../scss/components/_home.scss */
+  /* line 361, ../scss/components/_home.scss */
   img {
     margin: 0 auto;
   }
 
-  /* line 360, ../scss/components/_home.scss */
+  /* line 364, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 368, ../scss/components/_home.scss */
+  /* line 372, ../scss/components/_home.scss */
   .register-signin ul li:first-child {
     display: none;
   }
 
-  /* line 371, ../scss/components/_home.scss */
+  /* line 375, ../scss/components/_home.scss */
   .register, .signin, .site-view, .contactus {
     font-size: 11px;
     padding-left: 21px;
@@ -994,27 +1000,27 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   /*.logo img {
     max-width: 80%;
   }*/
-  /* line 378, ../scss/components/_home.scss */
+  /* line 382, ../scss/components/_home.scss */
   #home-carousel {
     height: 130px;
   }
 
-  /* line 381, ../scss/components/_home.scss */
+  /* line 385, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 384, ../scss/components/_home.scss */
+  /* line 388, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
 
-  /* line 387, ../scss/components/_home.scss */
+  /* line 391, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 390, ../scss/components/_home.scss */
+  /* line 394, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -1022,45 +1028,45 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     border-radius: 3px;
   }
 
-  /* line 396, ../scss/components/_home.scss */
+  /* line 400, ../scss/components/_home.scss */
   .headerMobile {
     display: none;
   }
 
-  /* line 399, ../scss/components/_home.scss */
+  /* line 403, ../scss/components/_home.scss */
   .headerLogo .register-signin {
     display: none;
   }
 
-  /* line 402, ../scss/components/_home.scss */
+  /* line 406, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 405, ../scss/components/_home.scss */
+  /* line 409, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
   }
 
-  /* line 409, ../scss/components/_home.scss */
+  /* line 413, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 412, ../scss/components/_home.scss */
+  /* line 416, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 416, ../scss/components/_home.scss */
+  /* line 420, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 420, ../scss/components/_home.scss */
+  /* line 424, ../scss/components/_home.scss */
   body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     background: none;
   }
@@ -1068,17 +1074,17 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   /*.content {
     padding: 0 8px;
   }*/
-  /* line 426, ../scss/components/_home.scss */
+  /* line 430, ../scss/components/_home.scss */
   .slide-overlay {
     display: none;
   }
 
-  /* line 429, ../scss/components/_home.scss */
+  /* line 433, ../scss/components/_home.scss */
   .phone {
     display: none;
   }
 
-  /* line 432, ../scss/components/_home.scss */
+  /* line 436, ../scss/components/_home.scss */
   div.slideshow-container {
     height: auto;
   }

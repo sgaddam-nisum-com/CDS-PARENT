@@ -83,6 +83,9 @@ require.config({
 		"slick" : {
 			deps:["jquery"]
 		},
+		"simplyscroll" : {
+			deps:["jquery"]
+		},
 		"uiRouterStyles" : {
 			deps :["angular"]
 		}
