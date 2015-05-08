@@ -234,7 +234,7 @@
 }
 
 /* line 1, ../scss/components/_footer.scss */
-footer {
+footer #footerWrapper {
   background: #444444;
   color: #999;
   padding: 20px 0;
