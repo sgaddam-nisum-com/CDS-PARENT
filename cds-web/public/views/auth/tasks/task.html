@@ -1,0 +1,164 @@
+
+
+
+<style>
+  
+.login-user-info a{
+  color: #999;
+  padding:10px;
+  padding-left:15px;
+  width: 150px !important;
+}
+.login-user-info a:hover{
+  color: #fff;
+}
+.top-sub-links a{
+  font-weight: normal !important;
+}
+
+a:hover{
+  text-decoration: underline !important;
+}
+
+</style>
+   
+  
+<div id="app-wrapper">
+<div class="row">
+  <div class="large-16 columns">    
+    <h1>Tasks</h1>   
+  </div>
+</div>
+<div class="row">
+  <div class="search-filter">    
+      <div class="actions">        
+        <a href="#addTask"><span class="add">Add</span></a> 
+
+        <!-- |  <a href="#"><span class="filterTasks">Filter</span></a> -->
+      </div>
+  </div>
+</div>
+<div class="row">
+
+  <table id="myTasks">
+  <thead>
+    <tr class="headerRow">
+      <th class="sortArrow"><div >Id</th>
+      <th class="sortArrow">Name of the Task</th>
+      <th class="sortArrow">Prime Task Id</th>
+      <th class="sortArrow">Priority</th>
+      <th class="sortArrow">Location</th>
+      <th class="sortArrow">Assigned Date</th>
+      <th class="sortArrow">Target Date</th>
+      <th class="sortArrow">Assigned To</th>
+      <th class="sortArrow">Status</th>
+
+    </tr>
+  </thead>
+  <tbody>
+   <!--  <tr class="filterTasksDiv">
+      <td class="taskFilterRow"><input type="text" class="taskId" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskName" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskParentId" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskPriority" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskLocation" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskAssignedDate" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskTargetDate" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskCreatedBy" /></td>
+      <td class="taskFilterRow"><input type="text" class="taskStatus" /></td>
+    </tr> -->
+    <tr class="taskrow">
+      <td><a href="#viewTasks">T01128</a></td>
+      <td title="Meeting logistics coordination">Meeting logistics coordination</td>
+      <td>T01126</td>
+      <td>High</td>
+      <td>Vijayawada</td>
+      <td>22/04/2015 </td>
+      <td>02/05/2015</td>
+      <td>Srinivas Kongara</td>
+      <td><div class="taskStatusCompleted">Completed</div></td>
+    </tr>
+    <tr class="taskrow">
+      <td><a href="/viewTasks">T12245</a></td>
+      <td title="Need to conduct a rally to attract youth">Need to conduct a rally to attract youth</td>
+      <td></td>
+      <td>Medium</td>
+      <td>Vijayawada</td>
+      <td>21/04/2015</td>
+      <td>26/04/2015</td>
+      <td>Srinivas</td>
+      <td><div class="taskStatusInprogress">In-Progress</div></td>
+    </tr>
+    <tr class="taskrow">
+      <td><a href="/viewTasks">T01123</a></td>
+      <td title="Encouraging program towards swatch bharath">Encouraging program towards swatch...</td>
+      <td>T12245</td>
+      <td>Medium</td>
+      <td>Vijayawada</td>
+      <td>21/04/2015</td>
+      <td>26/04/2015</td>
+      <td>Naresh</td>
+      <td><div class="taskStatusCompleted">Completed</div></td>
+    </tr>
+    <tr class="taskrow">
+      <td><a href="viewTasks.html">T01126</a></td>
+      <td title="Need to get clarity on unemployment">Need to get clarity on unemployment</td>
+      <td></td>
+      <td>Low</td>
+      <td>Vijayawada</td>
+      <td>21/04/2015</td>
+      <td>26/04/2015</td>
+      <td>Krishna</td>
+      <td><div class="taskStatusInprogress">In-Progress</div></td>
+    </tr>
+    <tr class="taskrow">
+      <td><a href="/viewTasks">T01129</a></td>
+      <td title="Need to collect all graduate information within our constituency">Need to collect all graduate information...</td>
+      <td>T65669</td>
+      <td>Medium</td>
+      <td>Vijayawada</td>
+      <td>21/04/2015</td>
+      <td>26/04/2015</td>
+      <td>Narendra</td>
+      <td><div class="taskStatusCompleted taskCancelled">Cancelled</div></td>
+    </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<script src='js/jquery.js'></script>
+<script src='js/globalfooter.js'></script>
+<script>
+$(function(){
+    $(".filterTasksDiv").hide();
+    $(".filterTasks").on("click",function(){
+      $(this).toggleClass("filterSelected");
+       $(".filterTasksDiv").slideToggle();
+    })
+    $("#inboxMsgLink").click(function(event){
+      event.preventDefault();
+        $(".entireMessage:eq(0)").slideToggle('slow');
+        
+        
+        //$(".tasks-section li").css('font-weight','normal');
+    });
+
+   
+    $(".my-account").on("click", function(e){
+      e.stopPropagation();
+        $(".login-user-info").slideToggle();
+    });
+
+    $("body").on("click", function(){
+       $(".login-user-info").slideUp(); 
+    });
+
+
+
+});
+</script>
+</body>
+</html>

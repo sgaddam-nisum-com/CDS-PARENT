@@ -18,6 +18,8 @@ require.config({
 		"appInbox" : "modules/inbox/app",
 		"configInbox" : "modules/inbox/config",
 
+		"appTasks":"modules/tasks/app",
+		"configTasks":"modules/tasks/config",
 
 
 		/*Services, Controllers & directives*/		 		 		 
@@ -111,7 +113,10 @@ var routes = {
         },
         "/inbox": {
             module: {"app":"appInbox", "config":"configInbox","moduleName":"CDSINBOX"}
-        }        
+        },
+        "/tasks": {
+            module: {"app":"appTasks", "config":"configTasks","moduleName":"CDSTASKS"}
+        }         
     };
 
     function getRoute() {
@@ -123,9 +128,6 @@ var routes = {
     }
 
     var r = getRoute();
-
-    console.log(r);
-
     function start() {
         require( ['angular', r.module.app, r.module.config ], function ( angular ) {
         	angular.bootstrap(document, [r.module.moduleName]);
