@@ -70,6 +70,15 @@ app.config(function($stateProvider, $urlRouterProvider){
         },
         secured : false
     })
+    .state('root.forgotpassword',{
+        url: '/forgotpassword',
+        views: {           
+            'content@': {
+                templateUrl: 'views/nonauth/forgot-password.html',
+            }
+        },
+        secured : false
+    })
 
 });
 

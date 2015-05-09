@@ -8,10 +8,13 @@ require.config({
 
 		"appHome" : "modules/home/app",
 		"configHome" : "modules/home/config",
+		
 		"appSignin" : "modules/signin/app",
 		"configSignin" : "modules/signin/config",
+		
 		"appRegister" : "modules/register/app",
 		"configRegister" : "modules/register/config",
+		
 		"appCalendar" : "modules/calendar/app",
 		"configCalendar" : "modules/calendar/config",
 
@@ -20,6 +23,10 @@ require.config({
 
 		"appTasks":"modules/tasks/app",
 		"configTasks":"modules/tasks/config",
+
+		"appDashboard":"modules/dashboard/app",
+		"configDashboard":"modules/dashboard/config",
+
 
 
 		/*Services, Controllers & directives*/		 		 		 
@@ -116,6 +123,9 @@ var routes = {
         },
         "/tasks": {
             module: {"app":"appTasks", "config":"configTasks","moduleName":"CDSTASKS"}
+        },
+        "/dashboard": {
+            module: {"app":"appDashboard", "config":"configDashboard","moduleName":"CDSDASHBOARD"}
         }         
     };
 
@@ -124,7 +134,7 @@ var routes = {
         if ( typeof routes[ location.pathname ] !== "undefined" ) {
             module = routes[ location.pathname ];
         }
-                return module;
+        return module;
     }
 
     var r = getRoute();

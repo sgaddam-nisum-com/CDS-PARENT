@@ -19,7 +19,7 @@ exports.register = function(req, res, next) {
     res.render('index.html', {});
 };
 exports.dashboard = function(req, res, next) {
-    res.render('external/dashboard.html', {});
+    res.render('index.html', {});
 };
 exports.forgotpwd = function(req, res, next) {
     res.render('external/forgot-password.html', {});
@@ -35,3 +35,4 @@ exports.inbox = function(req, res, next) {
 exports.tasks = function(req, res, next) {
     res.render('index.html', {});
 };
+

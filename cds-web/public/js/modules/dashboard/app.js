@@ -6,10 +6,10 @@ define(['angular',
 	'uiRouterStyles',
 	'angularRoute',
 	"ngStorage",
-	'services/serviceLoader',
-	'controllers/signinController'
-		], function (angular) {
-    var app = angular.module('CDSAUTH', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule']);
-console.log(app)
+	'services/common/serviceLoader',
+	'controllers/dashboardController',
+	"directives/fixedFooterDirective"
+	], function (angular) {
+    var app = angular.module('CDSDASHBOARD', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule','directiveModule']);
     return app;
 });

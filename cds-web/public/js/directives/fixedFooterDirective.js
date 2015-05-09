@@ -11,8 +11,9 @@ define(['directives/directiveModule','jquery'], function (directiveModule,$) {
 					var sectionHt = $('#appSection').outerHeight()+$('#appHeader').outerHeight()+20; 
 					var ctWindowHt = $(window).height();
 					var footerHeight = $('#appFooter').outerHeight();
-					if (sectionHt<ctWindowHt){ 
-					    $(elem).css('top', ctWindowHt-footerHeight+'px');
+					var diffHeight = ctWindowHt - footerHeight;
+					if (sectionHt<diffHeight){ 
+					    $(elem).css('bottom', '0');
 					    $(elem).css({'display':'block', "position" : "absolute","width" : "100%"});
 					}else{					    
 					    $(elem).css({'display':'block', "position" : "static", "width" : "100%"});
