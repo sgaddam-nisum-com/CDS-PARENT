@@ -16,6 +16,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 //private modules
 var cdsConfig = require('cds-config');
+var log = require('cds-logger').logger("APP");
 
 var auth = require('./config/middlewares/authorization');
 var passport = require('./config/passport');
@@ -30,7 +31,8 @@ require('./config/express')(app, passport);
 require('./config/routes').init(app, passport, auth);
 
 d.on('error', function(err) {
-    console.log("Caught with some error : " + err)
+	log.error("Caught with some error : " + err)
+    console.log("Caught with some error : " + err);
 })
 
 //Start the app by listening on <port>
@@ -39,6 +41,9 @@ app.set('port', port);
 
 d.run(function() {
     http.createServer(app).listen(app.get('port'), function() {
+    	log.debug(cdsConfig.appname + " " + cdsConfig.app.description);
+    	log.debug('Express server listening on port ' + app.get('port'));
+
         console.log(cdsConfig.appname + " " + cdsConfig.app.description);
         console.log('Express server listening on port ' + app.get('port'));
     });
