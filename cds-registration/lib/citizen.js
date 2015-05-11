@@ -8,19 +8,10 @@ var log = require('cds-logger').logger("cds-registration : citizen-controller"),
     async = require("async"),
     citizenService = require('./services/citizen');
 
-exports.savePersonalInf = function(params, files, token, fCallback) {
+exports.savePersonalInf = function(params, token, fCallback) {
     log.debug("savePersonalInf");
 
     async.series({
-            imagePath: function(callback) {
-                if (files != null && Object.keys(files).length > 0) {
-                    var imageName = files.photograph.originalname;
-                    callback(null, cdsConfig.image.path + imageName);
-                } else {
-                    callback(null, null);
-                }
-
-            },
             dob: function(callback) {
                 var dob = params.dateOfBirth;
                 if (dob) { //change date format
@@ -42,12 +33,9 @@ exports.savePersonalInf = function(params, files, token, fCallback) {
             }
         },
         function(err, results) {
-            var imagePath = results.imagePath;
             dob = results.dob;
             education = results.education;
-            if (imagePath) {
-                params.photograph = imagePath;
-            }
+
             if (dob) {
                 params.dateOfBirth = dob;
             }
@@ -61,18 +49,10 @@ exports.savePersonalInf = function(params, files, token, fCallback) {
         });
 };
 
-exports.editPersonalInf = function(params, files, token, fCallback) {
+exports.editPersonalInf = function(params, token, fCallback) {
     log.debug("editPersonalInf ");
 
     async.series({
-            imagePath: function(callback) {
-                if (files != null && Object.keys(files).length > 0) {
-                    var imageName = files.photograph.originalname;
-                    callback(null, cdsConfig.image.path + imageName);
-                } else {
-                    callback(null, null);
-                }
-            },
             dob: function(callback) {
                 var dob = params.dateOfBirth;
                 if (dob) { //change date format
@@ -94,13 +74,8 @@ exports.editPersonalInf = function(params, files, token, fCallback) {
             }
         },
         function(err, results) {
-            var imagePath = results.imagePath;
             dob = results.dob;
             education = results.education;
-            if (imagePath) {
-                //to do
-                // params.photograph = imagePath;
-            }
             if (dob) {
                 params.dateOfBirth = dob;
             }
@@ -297,9 +272,28 @@ exports.getFamily = function(userId, token, callback) {
     });
 };
 
-exports.quickRegistration = function(params, orgId, callback) {
+exports.quickRegistration = function(params, files, orgId, fCallback) {
     log.debug("quickRegistration");
-    citizenService.quickRegistration(params, orgId, function(resp) {
-        callback(resp);
-    });
+
+    async.series({
+            imagePath: function(callback) {
+                if (files != null && Object.keys(files).length > 0) {
+                    var imageName = files.photograph.originalname;
+                    callback(null, cdsConfig.image.path + imageName);
+                } else {
+                    callback(null, null);
+                }
+
+            }
+        },
+        function(err, results) {
+            var imagePath = results.imagePath;
+            if (imagePath) {
+                params.photograph = imagePath;
+            }
+            citizenService.quickRegistration(params, orgId, function(resp) {
+                fCallback(resp);
+            });
+        });
+
 };

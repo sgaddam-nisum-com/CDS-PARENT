@@ -14,7 +14,7 @@ exports.savePersonalInf = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.savePersonalInf(params, req.files, token, function(resp) {
+    cdsRegistration.savePersonalInf(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -25,7 +25,7 @@ exports.editPersonalInf = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.editPersonalInf(params, req.files, token, function(resp) {
+    cdsRegistration.editPersonalInf(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -230,7 +230,7 @@ exports.quickRegistration = function(req, res, next) {
     var params = req.body;
     var orgId = req.body.orgId;
 
-    cdsRegistration.quickRegistration(params, orgId, function(resp) {
+    cdsRegistration.quickRegistration(params, req.files, orgId, function(resp) {
         res.json(resp);
     });
 };

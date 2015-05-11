@@ -3,7 +3,7 @@ module.exports = {
         description: "Testing environment is up..."
     },
     restUrl: {
-        host: 'http://192.168.6.191:8080/cds-rest/api/v1/', // here only the domain name        
+        host: 'http://192.168.24.160:8081/cds-rest/api/v1/', // here only the domain name        
         //port: '443',        
         contentType: {
             "Content-Type": "application/json"
@@ -22,7 +22,7 @@ module.exports = {
     },
     logger: {
         logAppender: "file",
-        logFilename: "/soft/nodeserver/logs/test/CDS.log",
+        logFilename: "/home/ositechuser/CDS/web/log/CDS.log",
         logCategory: "CDS",
         logLevel: "ERROR",
         maxLogSize: "75MB",
