@@ -230,7 +230,7 @@ exports.quickRegistration = function(req, res, next) {
     var params = req.body;
     var orgId = req.body.orgId;
 
-    cdsRegistration.quickRegistration(params, req.files, orgId, function(resp) {
+    cdsRegistration.quickRegistration(params, orgId, function(resp) {
         res.json(resp);
     });
 };

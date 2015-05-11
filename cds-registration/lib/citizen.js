@@ -272,28 +272,10 @@ exports.getFamily = function(userId, token, callback) {
     });
 };
 
-exports.quickRegistration = function(params, files, orgId, fCallback) {
+exports.quickRegistration = function(params, orgId, callback) {
     log.debug("quickRegistration");
 
-    async.series({
-            imagePath: function(callback) {
-                if (files != null && Object.keys(files).length > 0) {
-                    var imageName = files.photograph.originalname;
-                    callback(null, cdsConfig.image.path + imageName);
-                } else {
-                    callback(null, null);
-                }
-
-            }
-        },
-        function(err, results) {
-            var imagePath = results.imagePath;
-            if (imagePath) {
-                params.photograph = imagePath;
-            }
-            citizenService.quickRegistration(params, orgId, function(resp) {
-                fCallback(resp);
-            });
-        });
-
+    citizenService.quickRegistration(params, orgId, function(resp) {
+        callback(resp);
+    });
 };
