@@ -6,7 +6,7 @@ define(['directives/directiveModule'], function(directiveModule) {
 
             return {
                 restrict: "A",
-                scope: true,
+                
                 link: function(scope, elem, attrs) {
 
                  var self;

@@ -2,20 +2,17 @@
 define(['controllers/controllerModule','formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function (controllerModule,formValidation, validationMap, errorJson, $) {
 
 	 controllerModule.controller('registerController', ['$scope','$location',"registerService","cdsService","appUrlService", function($scope, $location,registerService, cdsService,appUrlService){
-		
 
 		 	this.showLoader = false;
             this.showImage = true;
 
             var self = this;
-
             this.user = {};                                
             this.InterestedAreas = [{ interestId : "1", label : "Registration"},
                                             { interestId : "2", label : "Registrati22"},
                                                 { interestId : "3", label : "Infra Arrangements"},
                                                 {interestId : "4", label : "Meeting organizations"}];
-           
-
+         
             var self = this;
             var config = {
                 initiate: false,

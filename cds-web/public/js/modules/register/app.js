@@ -9,7 +9,8 @@ define(['angular',
 	'services/common/serviceLoader',
 	'services/registerService',
 	"controllers/registerController",
-	"directives/fixedFooterDirective"
+	"directives/fixedFooterDirective",
+	"directives/resourceDirective"
 	], function (angular) {
     var app = angular.module('CDSREGISTER', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);
     
