@@ -10,12 +10,11 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             var self = this;
 
             this.user = {};                                
-            this.user.InterestedAreas = [{ interestId : "1", label : "Registration"},
-                                                { interestId : "2", label : "Registrati22"},
+            this.InterestedAreas = [{ interestId : "1", label : "Registration"},
+                                            { interestId : "2", label : "Registrati22"},
                                                 { interestId : "3", label : "Infra Arrangements"},
                                                 {interestId : "4", label : "Meeting organizations"}];
-
-            this.user.volunteerInterestedAreas = this.user.InterestedAreas[0];
+           
 
             var self = this;
             var config = {
@@ -27,20 +26,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             };
             var formStack = formValidation.init("#registrationForm", validationMap, errorJson, config);
 
-            var fileObj = {};
-
-            $(".mock-browse").on("click", function() {
-                $('#profilePhoto').trigger("click");
-            });
-
-            $('#profilePhoto').on('change', prepareUpload);
-
-            function prepareUpload(event) {
-                var pathValue = $(this).val().replace("C:\\fakepath\\", "");
-                $(".mock-input").val(pathValue);
-                fileObj.name = event.target.name;
-                fileObj.value = event.target.files[0];
-            }
 
             this.getGender = function(val) {
                 if (val == "F") {
@@ -50,32 +35,29 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                 }
             }
 
+
+            this.trackMembershipType = function(selectedId){
+               if(selectedId == "1"){                    
+                    self.hideCadreRole = true;
+                }else{
+                    self.hideCadreRole = false;
+                   self.user.cadreType = "NEW";
+                }
+
+            }
+
             this.save = function() {
 
                 if (formStack.isValid) {
 
-                    var data = new FormData();
+                    var requestObj = {};
 
-                    for (var key in self.user) {
-                        data.append(key, self.user[key]);
-                    }
-
-                    if (fileObj.value) {
-                        data.append(fileObj.name, fileObj.value);
-                    }
-                    $.ajax({
+                   $.ajax({
                         url: appUrlService.quickReg,
                         type: 'POST',
-                        data: data,
-                        cache: false,
+                        data: self.user,
                         dataType: 'json',
-                        processData: false, // Don't process the files
-                        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
                         success: function(data, textStatus, jqXHR) {
-/*                            cdsService.setUserId(data.data.id);
-                            $state.go('root.register.work');
-*/
-                            console.log(data);
 
                         },
                         error: function(jqXHR, textStatus, errorThrown) {

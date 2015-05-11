@@ -117,7 +117,7 @@
       <div class="row">
         <div class="large-4 small-16 columns"> &nbsp; </div>
         <div class="large-8 small-16  left ">
-          <input type="radio" id="volunteer" class="typeOfMembership" name="specilization" value="1" ng-model="registerCtrl.user.interestedAs">
+          <input type="radio" id="volunteer" class="typeOfMembership" name="specilization" value="1" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
           <label for="volunteer">Do you want to be a volunteer</label><br>
         </div>
         <div class="large-12 columns left">
@@ -130,7 +130,7 @@
       <div class="row">
         <div class="large-4 small-16 columns"> &nbsp; </div>
         <div class="large-8 small-16  left ">
-          <input type="radio" id="cadre" class="typeOfMembership" name="specilization" value="2" ng-model="registerCtrl.user.interestedAs">
+          <input type="radio" id="cadre" class="typeOfMembership" name="specilization" value="2" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
           <label for="cadre">Do you want to register as a  Cadre</label><br>
         </div>
         <div class="large-12 columns left">
@@ -138,7 +138,7 @@
         </div>
       </div>      
 
-      <div class="row cadreRole">
+      <div class="row cadreRole" ng-hide="registerCtrl.hideCadreRole">
         <div class="large-4 small-16 columns"> &nbsp;  </div>
         <div class="large-8 small-16 columns gender left" style="padding-left:38px">
           <label for="newcadre"><input type="radio" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW">New</label>
@@ -159,7 +159,7 @@
         </div>
         <div class="large-8 columns left">
 
-          <select multiple ng-options="item.label for item in registerCtrl.user.InterestedAreas" ng-model="registerCtrl.user.volunteerInterestedAreas">
+          <select multiple ng-options="item.label for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.user.volunteerInterestedAreas">
                 <option value="">Select</option>
           </select>
 
@@ -173,7 +173,7 @@
 
 <!-- Photo upload -->
 
-    <div class="row" >
+<!--     <div class="row" >
         <div class="large-4 columns">
           <label for="right-label" class="right inline">Upload Photo:</label>
         </div>
@@ -189,7 +189,7 @@
           <label>Maximum file size is 1MB</label>
         </div>
         
-    </div>
+    </div> -->
 
 
 
