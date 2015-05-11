@@ -20,6 +20,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				saveVolunteer : "/volunteer/save",
 				saveFamily : "/cadre/saveFamily",
 				saveCadre : "/cadre/save",
+				quickReg: "/citizen/quickregistration",
 
 				//View & Edit & Retrieve member info
 

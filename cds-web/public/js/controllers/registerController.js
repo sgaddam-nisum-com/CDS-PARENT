@@ -8,35 +8,14 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             this.showImage = true;
 
             var self = this;
-            //var sessionObj = $sessionStorage.cds.contextObj;
 
-
-           /* if (sessionObj.mode == "edit") {
-                handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
-           */ 
-
-
-/*            $('#left-nav-mobile').change(function() {
-                $state.go('root.register.work');
-            });
-*/
-            registerService.getEducationOptions(function(resp) {
-                $scope.educationOptions = resp.data;
-            });
-
-            this.user = {};
-                                  
-
-            this.user.volunteerInterestedAreas = [{ interestId : "1", label : "Registration"},
+            this.user = {};                                
+            this.user.InterestedAreas = [{ interestId : "1", label : "Registration"},
                                                 { interestId : "2", label : "Registrati22"},
                                                 { interestId : "3", label : "Infra Arrangements"},
                                                 {interestId : "4", label : "Meeting organizations"}];
 
-            this.user.selectedInterest = this.user.volunteerInterestedAreas[0];
-
+            this.user.volunteerInterestedAreas = this.user.InterestedAreas[0];
 
             var self = this;
             var config = {
@@ -73,7 +52,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
 
             this.save = function() {
 
-                cdsService.isRegistered = true;
                 if (formStack.isValid) {
 
                     var data = new FormData();
@@ -86,7 +64,7 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                         data.append(fileObj.name, fileObj.value);
                     }
                     $.ajax({
-                        url: appUrlService.savePersonalInfo,
+                        url: appUrlService.quickReg,
                         type: 'POST',
                         data: data,
                         cache: false,
@@ -94,8 +72,11 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                         processData: false, // Don't process the files
                         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
                         success: function(data, textStatus, jqXHR) {
-                            cdsService.setUserId(data.data.id);
+/*                            cdsService.setUserId(data.data.id);
                             $state.go('root.register.work');
+*/
+                            console.log(data);
+
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
 

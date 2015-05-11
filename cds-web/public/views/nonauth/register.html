@@ -117,7 +117,7 @@
       <div class="row">
         <div class="large-4 small-16 columns"> &nbsp; </div>
         <div class="large-8 small-16  left ">
-          <input type="radio" id="volunteer" class="showAreaOfinterest" name="specilization" value="1" ng-model="registerCtrl.user.interestedAs">
+          <input type="radio" id="volunteer" class="typeOfMembership" name="specilization" value="1" ng-model="registerCtrl.user.interestedAs">
           <label for="volunteer">Do you want to be a volunteer</label><br>
         </div>
         <div class="large-12 columns left">
@@ -130,7 +130,7 @@
       <div class="row">
         <div class="large-4 small-16 columns"> &nbsp; </div>
         <div class="large-8 small-16  left ">
-          <input type="radio" id="cadre" class="showAreaOfinterest" name="specilization" value="2" ng-model="registerCtrl.user.interestedAs">
+          <input type="radio" id="cadre" class="typeOfMembership" name="specilization" value="2" ng-model="registerCtrl.user.interestedAs">
           <label for="cadre">Do you want to register as a  Cadre</label><br>
         </div>
         <div class="large-12 columns left">
@@ -159,7 +159,7 @@
         </div>
         <div class="large-8 columns left">
 
-          <select multiple ng-options="item.label for item in registerCtrl.user.volunteerInterestedAreas" ng-model="registerCtrl.user.selectedInterest">
+          <select multiple ng-options="item.label for item in registerCtrl.user.InterestedAreas" ng-model="registerCtrl.user.volunteerInterestedAreas">
                 <option value="">Select</option>
           </select>
 
@@ -173,7 +173,7 @@
 
 <!-- Photo upload -->
 
-  <div class="row" >
+    <div class="row" >
         <div class="large-4 columns">
           <label for="right-label" class="right inline">Upload Photo:</label>
         </div>
@@ -186,30 +186,10 @@
             </span>
           </div>
           <div class="error-class"><div class="error-content"></div></div>
+          <label>Maximum file size is 1MB</label>
         </div>
-        <label>Maximum file size is 1MB</label>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+    </div>
 
 
 
