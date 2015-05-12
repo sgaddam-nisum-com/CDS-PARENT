@@ -7,15 +7,15 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             this.showImage = true;
 
             var self = this;
-            this.user = {};                                
-            this.InterestedAreas = [{ interestId : "1", label : "Registration"},
+            self.user = {}; 
+            self.user.orgId = 2;                               
+            self.InterestedAreas = [{ interestId : "1", label : "Registration"},
                                             { interestId : "2", label : "Registrati22"},
                                                 { interestId : "3", label : "Infra Arrangements"},
-                                                {interestId : "4", label : "Meeting organizations"}];
-         
+                                                {interestId : "4", label : "Meeting organizations"}];         
             var self = this;
             var config = {
-                initiate: false,
+                initiate: true,
                 blurValidation: false,
                 htmlValidation: false,
                 submitValidForm: false,
@@ -24,7 +24,7 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             var formStack = formValidation.init("#registrationForm", validationMap, errorJson, config);
 
 
-            this.getGender = function(val) {
+            self.getGender = function(val) {
                 if (val == "F") {
                     cdsService.gender = "female";
                 } else {
@@ -33,7 +33,7 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             }
 
 
-            this.trackMembershipType = function(selectedId){
+            self.trackMembershipType = function(selectedId){
                if(selectedId == "1"){                    
                     self.hideCadreRole = true;
                 }else{
@@ -43,7 +43,9 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
 
             }
 
-            this.save = function() {
+            self.save = function() {
+
+                console.log(formStack);
 
                 if (formStack.isValid) {
 

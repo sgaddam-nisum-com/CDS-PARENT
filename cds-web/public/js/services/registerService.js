@@ -7,7 +7,8 @@ define(['services/serviceModule'], function(serviceModule) {
 				checkUserNameExists: function(userName, cb, userAvailableMsg,userNotAvailableMsg) {
 					$http.get(appUrlService.getUserAvailability, {
 						params: {
-							userName: userName
+							userName: userName,
+							orgId : "2"
 						}
 					}).success(function(data) {	
 						cb(data,userAvailableMsg,userNotAvailableMsg);
@@ -18,7 +19,8 @@ define(['services/serviceModule'], function(serviceModule) {
 
 					$http.get(appUrlService.getMobileAvailability, {
 						params: {
-						mobileNumber: userMobile
+						mobileNumber: userMobile,
+						orgId : "2"
 						}
 					}).success(function(data) {
 						cb(data,userAvailableMsg,userNotAvailableMsg);
@@ -28,7 +30,8 @@ define(['services/serviceModule'], function(serviceModule) {
 				checkEmailExists: function(email, cb,userAvailableMsg,userNotAvailableMsg) {
 				 $http.get(appUrlService.getEmailAvailability, {
 				  params: {
-				   email: email
+				   email: email,
+				   orgId : "2"
 				  }
 				 }).success(function(data) {
 				  cb(data,userAvailableMsg,userNotAvailableMsg);
