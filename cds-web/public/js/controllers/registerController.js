@@ -8,14 +8,15 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
 
             var self = this;
             self.user = {}; 
-            self.user.orgId = 2;                               
+            self.user.orgId = 2;
+            self.user.sourceOfRegistration = "ONLINE",                               
             self.InterestedAreas = [{ interestId : "1", label : "Registration"},
                                             { interestId : "2", label : "Registrati22"},
                                                 { interestId : "3", label : "Infra Arrangements"},
                                                 {interestId : "4", label : "Meeting organizations"}];         
             var self = this;
             var config = {
-                initiate: true,
+                initiate: false,
                 blurValidation: false,
                 htmlValidation: false,
                 submitValidForm: false,
@@ -45,7 +46,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
 
             self.save = function() {
 
-                console.log(formStack);
 
                 if (formStack.isValid) {
 
