@@ -275,7 +275,17 @@ exports.getFamily = function(userId, token, callback) {
 exports.quickRegistration = function(params, orgId, callback) {
     log.debug("quickRegistration");
 
-    citizenService.quickRegistration(params, orgId, function(resp) {
-        callback(resp);
-    });
+    try {
+        var dob = params.dateOfBirth;
+        params.dateOfBirth = util.formatDate(null, dob);
+
+        delete params.orgId;
+
+        citizenService.quickRegistration(params, orgId, function(resp) {
+            callback(resp);
+        });
+    } catch (e) {
+        callback(e);
+    }
+
 };
