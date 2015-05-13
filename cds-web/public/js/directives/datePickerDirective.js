@@ -2,12 +2,12 @@
 'use strict';
 
 define(['directives/directiveModule','datepicker'], function (directiveModule) {
-	directiveModule.directive('dob', ["cdsService",function(cdsService){	
+	directiveModule.directive('datePickerDirective', ["cdsService",function(cdsService){	
 		var age;
 		return {	
 			restrict: "A",
 			scope:{
-				dob :'=' 
+				dob :'=datePickerDirective' 
 			},		
 			link: function(scope, elem, attrs) {
 						
@@ -26,6 +26,8 @@ define(['directives/directiveModule','datepicker'], function (directiveModule) {
 							cdsService.age = age;													                		
                     }
                 });
+
+                
 				$("#ui-datepicker-div").addClass("datePickerCustom");
 			}
 		}		

@@ -10,7 +10,8 @@ define(['angular',
 	'services/registerService',
 	"controllers/registerController",
 	"directives/fixedFooterDirective",
-	"directives/resourceDirective"
+	"directives/resourceDirective",
+	"directives/datePickerDirective"
 	], function (angular) {
     var app = angular.module('CDSREGISTER', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);
     
