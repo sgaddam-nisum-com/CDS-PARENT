@@ -57,7 +57,9 @@ define(['services/serviceModule'], function(serviceModule) {
 				},
 				getInterestedAreasOptions: function(cb) {
 				 $http.get(appUrlService.getInterestedAreasInfo, {
-
+				 	 params: {
+				   orgId: 2
+				  }
 				 }).success(function(resp) {
 				  cb(resp);
 				  
@@ -184,6 +186,7 @@ define(['services/serviceModule'], function(serviceModule) {
 					  cb(resp);					  
 					 })						
 				}
+				
 
 
 

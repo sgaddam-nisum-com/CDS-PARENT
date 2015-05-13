@@ -10,11 +10,12 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             self.user = {}; 
             self.user.orgId = 2;
             self.user.sourceOfRegistration = "ONLINE",                               
-            self.InterestedAreas = [{ interestId : "1", label : "Registration"},
-                                            { interestId : "2", label : "Registrati22"},
-                                                { interestId : "3", label : "Infra Arrangements"},
-                                                {interestId : "4", label : "Meeting organizations"}];         
-            var self = this;
+
+            registerService.getInterestedAreasOptions(function(resp){
+                self.InterestedAreas = resp.data;
+            });                                    
+            
+
             var config = {
                 initiate: false,
                 blurValidation: false,
@@ -22,6 +23,7 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                 submitValidForm: false,
                 runCallBack: false,
             };
+
             var formStack = formValidation.init("#registrationForm", validationMap, errorJson, config);
 
 

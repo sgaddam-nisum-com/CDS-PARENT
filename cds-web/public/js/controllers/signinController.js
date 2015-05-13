@@ -3,15 +3,15 @@
 
 define(['controllers/controllerModule','jquery'], function (controllerModule,$) {
 
-	 controllerModule.controller('signinController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage',"roleService", function($state,$http,appUrlService,cdsService,$scope,registerService,$sessionStorage, roleService){		
+	 controllerModule.controller('signinController', ['$state','$http',"appUrlService","cdsService",'$scope','$sessionStorage',"roleService", "$window", function($state,$http,appUrlService,cdsService,$scope,$sessionStorage, roleService, $window){		
 	 	var self = this;
-	 			
+	 		self.orgId = "2";	
 	 
 		this.signin = function(){
 			$http.post(appUrlService.signin, self.user)
 			.success(function(resp){												
 				if(resp.status == "success"){
-					$state.go("auth.dashboard");	
+					$window.location.href = "/dashboard";
 				}else{					
 					self.user={};
 					console.log("invalid credentials")
