@@ -3,6 +3,8 @@
  * Module dependencies.
  */
 var userService = require('../services/user'),
+    taskMgmt = require('cds-task-management'),
+    roleMgmt = require('cds-role-management'),
     log = require('cds-logger').logger("user-controller");
 
 exports.signin = function(req, res, next) {
@@ -138,7 +140,7 @@ exports.createTask = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    userService.createTask(params, token, function(resp) {
+    taskMgmt.createTask(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -149,7 +151,7 @@ exports.editTask = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    userService.editTask(params, token, function(resp) {
+    taskMgmt.editTask(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -160,7 +162,7 @@ exports.deleteTask = function(req, res, next) {
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    userService.deleteTask({
+    taskMgmt.deleteTask({
         id: tid
     }, token, function(resp) {
         req.resp = resp;
@@ -173,7 +175,7 @@ exports.getTask = function(req, res, next) {
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    userService.getTask({
+    taskMgmt.getTask({
         id: tid
     }, token, function(resp) {
         req.resp = resp;
@@ -186,7 +188,7 @@ exports.viewTask = function(req, res, next) {
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    userService.viewTask({
+    taskMgmt.viewTask({
         id: tid
     }, token, function(resp) {
         req.resp = resp;
@@ -199,7 +201,7 @@ exports.viewTasks = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    userService.viewTasks(params, token, function(resp) {
+    taskMgmt.viewTasks(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -211,7 +213,7 @@ exports.getRole = function(req, res, next) {
     var id = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    userService.getRole({
+    roleMgmt.getRole({
         id: id
     }, token, function(resp) {
         req.resp = resp;
@@ -224,7 +226,7 @@ exports.deactivateRole = function(req, res, next) {
     var id = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    userService.deactivateRole({
+    roleMgmt.deactivateRole({
         id: id
     }, token, function(resp) {
         req.resp = resp;
@@ -236,7 +238,7 @@ exports.getRoles = function(req, res, next) {
     log.debug("getRoles : logged user - " + req.user.data.userName);
     var token = req.user ? req.user.data.token : null;
 
-    userService.getRoles(null, token, function(resp) {
+    roleMgmt.getRoles(null, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -247,7 +249,7 @@ exports.saveRole = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    userService.saveRole(params, token, function(resp) {
+    roleMgmt.saveRole(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -258,7 +260,7 @@ exports.updateRole = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    userService.updateRole(params, token, function(resp) {
+    roleMgmt.updateRole(params, token, function(resp) {
         req.resp = resp;
         next();
     });
