@@ -1,51 +1,52 @@
 /*global define*/
 'use strict';
 
-define(['appDashboard','uiRouter','angularRoute'], function (app) {
+
+define(['appProfile','uiRouter','angularRoute'], function (app) {
 
 
-app.run(["$rootScope", "$sessionStorage",function($rootScope, $sessionStorage){
+  
+app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){
 
        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
                 
 
-  /*         var checkUserSession = cdsService.getUserSession();
-           console.log(checkUserSession)			
-			checkUserSession.success(function(resp){					                                                    
+       /*    var checkUserSession = cdsService.getUserSession();
+           console.log(checkUserSession)            
+            checkUserSession
+            .success(function(resp){                                                                        
                          
                   if(resp.status == "success"){  
                    
                     cdsService.userAuthenticated = true;
-					cdsService.user = resp.data.user;
-					var userRole = "citizen";                    
+                    cdsService.user = resp.data.user;
+                    var userRole = "citizen";                    
                     var privilegeStateArray = roleService.getPrivilegeStateArray(cdsService.user.privileges);                  
-				    var isValidModule = roleService.checkValidModule(toState.name,privilegeStateArray);
+                    var isValidModule = roleService.checkValidModule(toState.name,privilegeStateArray);
                                  
-				if(toState.secured && !isValidModule || toState.name == "root.signin"){                					 
-					 event.preventDefault();
+                if(toState.secured && !isValidModule || toState.name == "root.signin"){                                  
+                     event.preventDefault();
                      $state.go("auth.dashboard");                      
-			     }  
+                 }  
              }else{                
                 if(toState.secured){
                     event.preventDefault();                                    
                      $state.go("root.signin");                    
                 }              
-             }	
-            })
-*/	
+             }  
+            })*/
+    
         });
 
 }]);
 
 app.config(function($stateProvider, $urlRouterProvider){
- 
     $urlRouterProvider
     .otherwise('/');
     
 
+
     /*****Non authenticated views*****/
-
-
 
     $stateProvider
     .state('root',{        
@@ -53,21 +54,19 @@ app.config(function($stateProvider, $urlRouterProvider){
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/auth/common/header.html',
-                controller : "headerController as headerCtrl"
+                templateUrl: 'views/auth/common/header.html'
             },
             'footer': {
-                templateUrl: 'views/auth/common/footer.html',
-                controller : "footerController as footerCtrl"                
+                templateUrl: 'views/auth/common/footer.html'                
             }
         }
     })
-    .state('root.dashboard',{
+
+    .state('root.profile',{
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/dashboard.html',
-                controller : "dashboardController as dashboardCtrl"
+                templateUrl: 'views/auth/profile.html',                               
             }
         },
         secured : false

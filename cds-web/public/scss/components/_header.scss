@@ -47,9 +47,25 @@ header .phone {
   font-size: 13px;
   color: #fff;
 }
+
+header .auth-header .phone {
+  background: url(../images/cds-sprite.png) 16px 5px no-repeat;
+  height: 30px;
+  padding: 2px 0 0 32px;
+  font-size: 13px;
+  color: #fff;
+}
+
+
 header .top-nav{
   padding-right: 0;
 }
+
+header .auth-header .top-nav li{
+  font-size: 13px;
+  color: #fff;
+}
+
 header .top-nav ul {
   margin: 0;
 }
@@ -76,13 +92,13 @@ header .top-nav ul li a.help {
   height: 20px;
   padding: 0 0 0 25px;
   margin: 0 18px 0 0;
-  color: #999;
+  color: #fff;
 }
 header .top-nav ul li a.my-account {
   background: url(../images/cds-sprite.png) no-repeat 0 -72px;
   height: 20px;
   padding: 0 8px 0 25px;
-  color: #999;
+  color: #fff;
 }
 
 header .top-nav ul li a.post {
@@ -126,4 +142,22 @@ h1 {
 
 .auth-header{
   padding-top: 8px;
+}
+
+.login-user-info{
+  display:none;
+  position: absolute; 
+  background: #394F60; 
+  padding: 10px; 
+  z-index: 10; 
+  width: 150px; 
+  right: 0; 
+  top: 29px
+}
+.nav-down-arrow{
+  background: none; 
+  width: 25px; 
+  height: 25px; 
+  display: inline-block; 
+  float: right;
 }

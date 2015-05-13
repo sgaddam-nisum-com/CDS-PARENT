@@ -8,7 +8,10 @@ define(['angular',
 	"ngStorage",
 	'services/common/serviceLoader',
 	'controllers/dashboardController',
-	"directives/fixedFooterDirective"
+	"directives/fixedFooterDirective",
+	"controllers/headerController",
+	"controllers/footerController",
+	"directives/navDropdownDirective"
 	], function (angular) {
     var app = angular.module('CDSDASHBOARD', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule','directiveModule']);
     return app;

@@ -8,6 +8,7 @@ define(['services/serviceModule'], function(serviceModule) {
             var roleStateMap = {
                 "admin": [],
                 "citizen": ["auth.dashboard", "auth.list"]
+
             }
 
             var privilegeMap = {
@@ -64,13 +65,11 @@ define(['services/serviceModule'], function(serviceModule) {
                 getInitialState: function(role) {
 
                     switch (role) {
-                        case "admin":
-                            return "admin";
-                            break;
-
                         case "citizen":
                             return "citizen";
                             break;
+                        default :
+                            return "default";    
                     }
                 },
 
@@ -98,7 +97,36 @@ define(['services/serviceModule'], function(serviceModule) {
 
 	               		}
 	               		return privilegeStateArray;
+                },
+
+                getTopRole : function(appRoles){
+                    
+                    var topRole, rolesArray=[];                   
+                    appRoles = appRoles || [];
+                    
+                    for(var i=0; i<appRoles.length; i++){
+                        rolesArray.push(appRoles[i].roleName);
+                    }
+
+                    if(rolesArray.indexOf("Office Manager") > -1){
+                        topRole = "Office Manager";
+                    }else if(rolesArray.indexOf("Office Executive") > -1){
+                        topRole = "Office Executive";
+                    }else if(rolesArray.indexOf("Cadre") > -1){
+                        topRole = "Cadre";   
+                    }else if(appRoles.roleName === "Volunteer"){
+                        topRole = "Volunteer";   
+                    }else{
+                        topRole = "Citizen";
+                    }
+                    return topRole;
                 }
+
+
+             
+
+
+
 
             };
         }

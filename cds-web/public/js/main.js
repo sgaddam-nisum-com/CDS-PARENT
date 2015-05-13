@@ -27,6 +27,8 @@ require.config({
 		"appDashboard":"modules/dashboard/app",
 		"configDashboard":"modules/dashboard/config",
 
+		"appProfile":"modules/profile/app",
+		"configProfile":"modules/profile/config",
 
 
 		/*Services, Controllers & directives*/		 		 		 
@@ -126,7 +128,10 @@ var routes = {
         },
         "/dashboard": {
             module: {"app":"appDashboard", "config":"configDashboard","moduleName":"CDSDASHBOARD"}
-        }         
+        },
+        "/profile": {
+            module: {"app":"appProfile", "config":"configProfile","moduleName":"CDSUSERPROFILE"}
+        }                  
     };
 
     function getRoute() {

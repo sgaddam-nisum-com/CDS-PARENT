@@ -1,48 +1,53 @@
-<div class="auth-header">
-      <div class="row">
-  <div class="large-7 small-7 columns phone">
-          Office:  +1234567890
-        </div>
-        <div class="large-9 small-9 columns top-nav">
-          <nav>
-            <ul class="right">
-              <li><a href="/" class="home">Home</a></li>
-              <li><a href="#" class="help">Help</a></li>
-              <li><a href="#" class="my-account">My Account</a></li>
-              <li><a href="postrequest" class="post">Post a Request</a></li>
-              <li><a href="/signout" class="logout">Logout</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="row navigation">
-        <nav class="top-bar" data-topbar="">
-          <ul class="title-area">
-            <!-- Title Area -->
-            <li class="name">
-              <a href="#/"><h1 class="logo"></h1></a>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="">&nbsp;</a></li>
-          </ul>
-          
-        <section class="top-bar-section clear" style="left: 0%;">
-            <ul class="right">
-              <li><a href="#">Constituency</a></li>
-              <li class="active"><a href="#/list">Manage</a></li>
-              <li><a href="#">Issues</a></li>
-              <li class="has-dropdown not-click"><a href="#">Relationship</a>
-                <ul class="dropdown subnav-left">
-                  <li class="title back js-generated"><a href="javascript:void(0)">Back</a></li>
-                  <li class="mobile-option"><a href="#">Home</a></li>
-                  <li><a href="#">Opportunities</a></li>
-                </ul>
-              </li>
-              <li><a class="last" href="#">Services</a></li>
-              <li class="mobile-option"><a href="#">Operations</a></li>
-              <li class="mobile-option"><a href="#">Configuration</a></li>
-            </ul>
-          </section>
-          </nav>
-    </div>
+<div class="row auth-header">
+  
+  <div class="large-7 small-8 columns phone">
+    Office:  +91 9949 666 666
+  </div>  
+  
+  <div class="large-9 small-9 columns top-nav">
+    <nav>
+      <ul class="right top-sub-links">
+        <li>Welcome Raghunath ( {{defRole}} )</li>
+        <!-- <li><a href="home.html" class="home">Home</a></li> -->
+        <li><a href="#" class="help">Help</a></li>
+        <li nav-dropdown-directive>
+            <a href="#" class="my-account">My Account
+            <span class="nav-down-arrow">&nabla;</span></a>
+  
+            <div class="login-user-info"> 
+                <div><a href="personal.html">Edit Profile</a></div>
+                <div><a href="viewprofile.html">View Profile</a></div>
+                <div><a href="signout">Signout</a></div>
+            </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+</div>
+
+<div class="headerLogo">
+<div class="row">
+  <div class="large-5 medium-5 small-8 columns">
+    <a href="/" class="logo"><img src="images/logo.png" alt="logo" /></a>
+  </div>
+  <div class="large-11 medium-16 small-16 columns navigation">
+    <nav class="top-bar" data-topbar="">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          &nbsp;
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="">&nbsp;</a></li>
+      </ul>
+      
+      <section class="top-bar-section clear" style="left: 0%;">
+        <ul>          
+          <li ng-repeat="navItem in headerCtrl.navItems"><a href="{{navItem.url}}">{{navItem.name}}</a></li>
+      </ul>
+  </section>
+</nav>
+</div>
+</div>
 </div>

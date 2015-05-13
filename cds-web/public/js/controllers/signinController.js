@@ -11,7 +11,18 @@ define(['controllers/controllerModule','jquery'], function (controllerModule,$) 
 			$http.post(appUrlService.signin, self.user)
 			.success(function(resp){												
 				if(resp.status == "success"){
-					$window.location.href = "/dashboard";
+		
+					var defRole = roleService.getTopRole(resp.data.user.appRoles);
+					
+					defRole = "Citizen"	;
+
+					if(defRole == "Citizen"){
+						$window.location.href = "/profile";		
+					}else{
+						$window.location.href = "/dashboard";	
+					}
+
+
 				}else{					
 					self.user={};
 					console.log("invalid credentials")

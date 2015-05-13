@@ -372,17 +372,32 @@ header .phone {
   color: #fff;
 }
 
-/* line 50, ../scss/components/_header.scss */
+/* line 51, ../scss/components/_header.scss */
+header .auth-header .phone {
+  background: url(../images/cds-sprite.png) 16px 5px no-repeat;
+  height: 30px;
+  padding: 2px 0 0 32px;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* line 60, ../scss/components/_header.scss */
 header .top-nav {
   padding-right: 0;
 }
 
-/* line 53, ../scss/components/_header.scss */
+/* line 64, ../scss/components/_header.scss */
+header .auth-header .top-nav li {
+  font-size: 13px;
+  color: #fff;
+}
+
+/* line 69, ../scss/components/_header.scss */
 header .top-nav ul {
   margin: 0;
 }
 
-/* line 56, ../scss/components/_header.scss */
+/* line 72, ../scss/components/_header.scss */
 header .top-nav ul li {
   float: left;
   list-style: none;
@@ -391,14 +406,14 @@ header .top-nav ul li {
   padding: 0 0px 0 20px;
 }
 
-/* line 63, ../scss/components/_header.scss */
+/* line 79, ../scss/components/_header.scss */
 header .top-nav ul li:first-child {
   background: none;
   padding-left: 0px;
   padding-right: 20px;
 }
 
-/* line 68, ../scss/components/_header.scss */
+/* line 84, ../scss/components/_header.scss */
 header .top-nav ul li a.home {
   background: url(../images/cds-sprite.png) no-repeat 0 -23px;
   height: 20px;
@@ -406,79 +421,100 @@ header .top-nav ul li a.home {
   color: #999;
 }
 
-/* line 74, ../scss/components/_header.scss */
+/* line 90, ../scss/components/_header.scss */
 header .top-nav ul li a.help {
   background: url(../images/cds-sprite.png) no-repeat 0 -47px;
   height: 20px;
   padding: 0 0 0 25px;
   margin: 0 18px 0 0;
-  color: #999;
+  color: #fff;
 }
 
-/* line 81, ../scss/components/_header.scss */
+/* line 97, ../scss/components/_header.scss */
 header .top-nav ul li a.my-account {
   background: url(../images/cds-sprite.png) no-repeat 0 -72px;
   height: 20px;
   padding: 0 8px 0 25px;
-  color: #999;
+  color: #fff;
 }
 
-/* line 88, ../scss/components/_header.scss */
+/* line 104, ../scss/components/_header.scss */
 header .top-nav ul li a.post {
   padding: 0 15px 0 0;
   color: #999;
 }
 
-/* line 92, ../scss/components/_header.scss */
+/* line 108, ../scss/components/_header.scss */
 header .top-nav ul li a.logout {
   padding: 0 15px 0 20px;
   color: #999;
   background: url(../images/logout.png) no-repeat 0 2px;
 }
 
-/* line 99, ../scss/components/_header.scss */
+/* line 115, ../scss/components/_header.scss */
 header .navigation {
   padding: 28px 0 0 0;
 }
 
-/* line 102, ../scss/components/_header.scss */
+/* line 118, ../scss/components/_header.scss */
 header .navigation h1.logo {
   background: url(../images/logo.png) no-repeat;
   width: 155px;
   height: 40px;
 }
 
-/* line 107, ../scss/components/_header.scss */
+/* line 123, ../scss/components/_header.scss */
 header .main-navigation nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 111, ../scss/components/_header.scss */
+/* line 127, ../scss/components/_header.scss */
 header .main-navigation nav ul li {
   list-style: none;
   float: left;
 }
 
-/* line 115, ../scss/components/_header.scss */
+/* line 131, ../scss/components/_header.scss */
 h1 {
   color: #16578f;
   font-size: 26px;
 }
 
-/* line 120, ../scss/components/_header.scss */
+/* line 136, ../scss/components/_header.scss */
 .headerMobile {
   background: #f0f2f4;
 }
 
-/* line 123, ../scss/components/_header.scss */
+/* line 139, ../scss/components/_header.scss */
 .headerLogo {
   background: #fff url(../images/headerBg.png) repeat-x;
 }
 
-/* line 127, ../scss/components/_header.scss */
+/* line 143, ../scss/components/_header.scss */
 .auth-header {
   padding-top: 8px;
+}
+
+/* line 147, ../scss/components/_header.scss */
+.login-user-info {
+  display: none;
+  position: absolute;
+  background: #394F60;
+  padding: 10px;
+  z-index: 10;
+  width: 150px;
+  right: 0;
+  top: 29px;
+}
+
+/* line 157, ../scss/components/_header.scss */
+.nav-down-arrow {
+  background: none;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  float: right;
 }
 
 /* line 1, ../scss/components/_home.scss */

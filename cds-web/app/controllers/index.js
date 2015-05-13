@@ -36,3 +36,6 @@ exports.tasks = function(req, res, next) {
     res.render('index.html', {});
 };
 
+exports.profile = function(req, res, next) {
+    res.render('index.html', {});
+};
