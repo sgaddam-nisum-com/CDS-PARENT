@@ -54,12 +54,11 @@ exports.delete = function(req, res, next) {
 };
 
 exports.areasIntrestedToVolunteer = function(req, res, next) {
-    log.debug("areasIntrestedToVolunteer : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("areasIntrestedToVolunteer :" );
+    var orgId = req.query.orgId;
 
-    volunteerService.areasIntrestedToVolunteer(null, token, function(resp) {
-        req.resp = resp;
-        next();
+    volunteerService.areasIntrestedToVolunteer(orgId, function(resp) {
+		res.json(resp);
     });
 };
 

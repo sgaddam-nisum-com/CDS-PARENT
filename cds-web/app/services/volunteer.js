@@ -52,12 +52,12 @@ exports.performanceGrades = function(params, token, callback) {
     });
 };
 
-exports.areasIntrestedToVolunteer = function(params, token, callback) {
-    log.debug("areasIntrestedToVolunteer : " + (JSON.stringify(params)));
+exports.areasIntrestedToVolunteer = function(orgId, callback) {
+    log.debug("areasIntrestedToVolunteer" );
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.volunteer.areasIntrestedToVolunteer, params, headers, function(args) {
+    restService.builbArgs(restUrls.volunteer.areasIntrestedToVolunteer, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
