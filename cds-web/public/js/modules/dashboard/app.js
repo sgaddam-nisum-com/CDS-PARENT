@@ -8,7 +8,6 @@ define(['angular',
 	"ngStorage",
 	'services/common/serviceLoader',
 	'controllers/dashboardController',
-	"directives/fixedFooterDirective",
 	"controllers/headerController",
 	"controllers/footerController",
 	"directives/navDropdownDirective"

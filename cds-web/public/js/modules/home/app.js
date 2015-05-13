@@ -8,7 +8,6 @@ define(['angular',
 	"ngStorage",
 	'services/common/serviceLoader',
 	'controllers/homeController',
-	'directives/fixedFooterDirective',
 	'directives/verticalScrollDirective',
 	'directives/slickGalleryDirective'	
 	], function (angular) {

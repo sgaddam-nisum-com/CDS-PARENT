@@ -9,7 +9,6 @@ define(['angular',
 	'services/common/serviceLoader',
 	'services/registerService',
 	"controllers/registerController",
-	"directives/fixedFooterDirective",
 	"directives/resourceDirective",
 	"directives/datePickerDirective",
 	"directives/navDropdownDirective"

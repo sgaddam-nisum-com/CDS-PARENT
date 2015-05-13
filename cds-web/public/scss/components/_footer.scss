@@ -1,3 +1,19 @@
+
+/******Do not change. Styles to make footer at bottom on variable section height. ***********/
+/******Difference height : Header height + Footer height************************************/
+html, body{
+    height:100%
+}
+#appSection{
+  min-height:calc(100% - 234px) !important;
+}
+#appFooter{
+  width: 100% !important;
+}
+/*****************************************************************************************/
+
+
+
 footer #footerWrapper{
   background: #444444;
   color: #999;
