@@ -66,6 +66,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
         this.errorArray = [];
         this.invalidFieldsArray = [];
         this.invalidMethodsArray = [];
+        this.clearErrorClass = clearErrorClass;
         this.reset = function() {
             this.invalidFieldsArray = [];
             this.invalidMethodsArray = [];
@@ -325,12 +326,10 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
             singleFieldHandler.closest('.row').removeClass("error-field");
             singleFieldHandler.closest('.row').find(".error-content").empty();
-            singleFieldHandler.closest('.row').find(".error-icon").hide();
             singleFieldHandler.closest('.row').find("[data-val]").addClass("error-clear-border").removeClass("error-field");
 
         } else {
             formHandler.find(".error-content").empty();
-            formHandler.find(".error-icon").hide();
             formHandler.find('.row.error-field').addClass("error-clear-border").removeClass("error-field");
         }
 

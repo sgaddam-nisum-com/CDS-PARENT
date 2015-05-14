@@ -10,26 +10,43 @@ define(['directives/directiveModule'], function(directiveModule) {
                 link: function(scope, elem, attrs) {
 
                  var self;
+
                  resetStatus();   
 
-                    function availableSuccessCb(resp,userAvailableMsg,userNotAvailableMsg) {
+                    function availableSuccessCb(resp,userAvailableMsg,userNotAvailableMsg,inputName) {
+
                         $(self).next(".loader-container").remove();                           
                     
 						if (resp.status == "success") {
 						   if(resp.data.status){
 								$(self).closest(".row").addClass("error-field");
 								$(self).after("<span class='status-message error-state'>"+userNotAvailableMsg+"</span>");   
+						  		setValidity(inputName, false);	
 						   }
 						   else{
 							   $(self).closest(".row").removeClass("error-field");
 								$(self).after("<span class='status-message'>"+userAvailableMsg+"</span>");
+								setValidity(inputName, true);
 						   }                               
 
                         } else {
                             $(self).closest(".row").addClass("error-field");
-                          $(self).after("<span class='status-message error-state'>Something went wrong. Please try again.</span>");                               
+                          $(self).after("<span class='status-message error-state'>Something went wrong. Please try again.</span>");
+                          setValidity(inputName, false);                               
                         }
                     }
+
+                    function setValidity(inputField, result ){
+                    		if(inputField == "userName"){
+                    			scope.isValidUsername = result;
+                    		}else if(inputField == "email"){
+                    			scope.isValidEmail = result;
+                    		}else {
+                    			scope.isValidMobileNo = result;
+                    		}
+                    		
+                    }
+
 
                     function resetStatus(){
 
@@ -40,8 +57,15 @@ define(['directives/directiveModule'], function(directiveModule) {
                     }
 
 
+                    scope.$on("clearServiceErrors",function(){
+                    	console.log("called");
+                    	//$(".error-field").removeClass("error-field");
+                    	$(".status-message").remove();
+                    });
+
+
                     $(elem).on("blur",".loader-input", function() {
-                    	
+                    	scope.$broadcast("clearErrors");
                         self = this;
                         resetStatus();
 						var userInput = $(elem).find(".loader-input").val().trim();
@@ -69,6 +93,8 @@ define(['directives/directiveModule'], function(directiveModule) {
 								$("#submitPersonalInfo").on("click", function(){
 									resetStatus();
 								});
+						}else{
+							scope.$broadcast("clearErrors");
 						}
 
 

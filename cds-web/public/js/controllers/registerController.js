@@ -9,15 +9,28 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             var self = this;
             self.user = {}; 
             self.user.orgId = 2;
-            self.user.sourceOfRegistration = "ONLINE",                               
-
+            self.user.sourceOfRegistration = "ONLINE";
+            self.isValidUsername = true;
+            self.isValidEmail = true;
+            self.isValidMobileNo = true;                         
+            self.isNotValid = false;
             registerService.getInterestedAreasOptions(function(resp){
                 self.InterestedAreas = resp.data;
             });                                    
             
 
+            self.isValidForm = function(){
+            	if(self.isValidUsername && self.isValidEmail && self.isValidMobileNo){
+            		return true;
+            	}
+            	return;
+            }
+
+
+
+
             var config = {
-                initiate: false,
+                initiate: true,
                 blurValidation: false,
                 htmlValidation: false,
                 submitValidForm: false,
@@ -25,6 +38,12 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             };
 
             var formStack = formValidation.init("#registrationForm", validationMap, errorJson, config);
+
+
+            $scope.$on("clearErrors", function(){
+            	formStack.clearErrorClass(formStack,false);
+            	self.isNotValid = false;
+            });
 
 
             self.getGender = function(val) {
@@ -48,8 +67,9 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
 
             self.save = function() {
 
+            	$scope.$broadcast("clearServiceErrors");
 
-                if (formStack.isValid) {
+                if (formStack.isValid && self.isValidForm()) {
 
                     var requestObj = {};
 
@@ -66,6 +86,8 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                         }
                     });
 
+                }else{
+                	self.isNotValid = true;
                 }
             };
 

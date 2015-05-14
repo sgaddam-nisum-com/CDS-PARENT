@@ -5,21 +5,33 @@
       
       <h1>Register <span>to become a member.</span></h1>
       
+      <!-- Global error messages -->
+
+      <div class="row" ng-if="registerCtrl.isNotValid">
+        <div class="large-12 right columns error-class">Please ensure that all the required fields are valid.</div>
+      </div>
+
+
       <!-- Name -->
 
       <div class="row">
         <div class="large-4 columns">
           <label class="right inline">Name:</label>
         </div>
-        <div class="large-4 columns">
-          <input type="text" placeholder="First Name" class="name required"  ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
-        </div>
-        <div class="large-4 columns padding-none">
-          <input type="text" placeholder="Middle Name" class="" ng-model="registerCtrl.user.middleName" />
-        </div>
-        <div class="large-4 columns">
+
+        <div class="large-4 columns right">
           <input type="text" placeholder="Last Name" class="name required" ng-model="registerCtrl.user.lastName" data-val="signupLastName" />
         </div>
+
+        <div class="large-4 columns padding-none right">
+          <input type="text" placeholder="Middle Name" class="" ng-model="registerCtrl.user.middleName" />
+        </div>
+
+
+           <div class="large-4 columns">
+          <input type="text" placeholder="First Name" class="name required"  ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
+        </div>
+
         <div class="large-12 columns left">
           <div class="error-class"><div class="error-content"></div></div>
         </div>

@@ -11,7 +11,7 @@ define(['services/serviceModule'], function(serviceModule) {
 							orgId : "2"
 						}
 					}).success(function(data) {	
-						cb(data,userAvailableMsg,userNotAvailableMsg);
+						cb(data,userAvailableMsg,userNotAvailableMsg, "userName");
 					});
 				},
 
@@ -23,7 +23,7 @@ define(['services/serviceModule'], function(serviceModule) {
 						orgId : "2"
 						}
 					}).success(function(data) {
-						cb(data,userAvailableMsg,userNotAvailableMsg);
+						cb(data,userAvailableMsg,userNotAvailableMsg, "mobileNo");
 					});
 				},
 
@@ -34,7 +34,7 @@ define(['services/serviceModule'], function(serviceModule) {
 				   orgId : "2"
 				  }
 				 }).success(function(data) {
-				  cb(data,userAvailableMsg,userNotAvailableMsg);
+				  cb(data,userAvailableMsg,userNotAvailableMsg, "email");
 				 });
 				},
 
