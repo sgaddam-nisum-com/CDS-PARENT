@@ -7,7 +7,7 @@
   <div class="large-9 small-9 columns top-nav">
     <nav>
       <ul class="right top-sub-links">
-        <li>Welcome Raghunath ( {{defRole}} )</li>
+        <li>Welcome <span ng-bind="userName"></span> (<span ng-bind="defRole"></span> )</li>
         <!-- <li><a href="home.html" class="home">Home</a></li> -->
         <li><a href="#" class="help">Help</a></li>
         <li nav-dropdown-directive>
@@ -46,7 +46,7 @@
         <ul>          
           <li ng-repeat="navItem in headerCtrl.navItems"><a href="{{navItem.url}}">{{navItem.name}}</a></li>
       </ul>
-  </section>
+    </section>
 </nav>
 </div>
 </div>

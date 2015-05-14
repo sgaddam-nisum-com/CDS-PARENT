@@ -7,7 +7,9 @@ define(['services/serviceModule'], function(serviceModule) {
 
             var roleStateMap = {
                 "admin": [],
-                "citizen": ["auth.dashboard", "auth.list"]
+                "citizen": ["auth.dashboard", "auth.list"],
+                "cadre" : [],
+                "officeExecutive" : []
 
             }
 

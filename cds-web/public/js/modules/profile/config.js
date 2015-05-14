@@ -54,7 +54,8 @@ app.config(function($stateProvider, $urlRouterProvider){
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/auth/common/header.html'
+                templateUrl: 'views/auth/common/header.html',
+                controller : "headerController as headerCtrl"
             },
             'footer': {
                 templateUrl: 'views/auth/common/footer.html'                
@@ -66,7 +67,8 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/profile.html',                               
+                templateUrl: 'views/auth/profile.html',
+                controller : "profileController as profileCtrl"                               
             }
         },
         secured : false

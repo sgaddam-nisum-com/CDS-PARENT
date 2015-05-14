@@ -8,12 +8,12 @@ define(['angular',
 	"ngStorage",
 	'services/common/serviceLoader',
 	'services/registerService',
-	"controllers/registerController",
+	"controllers/profileController",
 	"directives/resourceDirective",
 	"directives/datePickerDirective",
-	"directives/navDropdownDirective"
+	"directives/navDropdownDirective",
+	"controllers/headerController"
 	], function (angular) {
-    var app = angular.module('CDSUSERPROFILE', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);
-    
+    var app = angular.module('CDSUSERPROFILE', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);    
     return app;
 });

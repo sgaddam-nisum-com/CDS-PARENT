@@ -171,7 +171,7 @@
         </div>
         <div class="large-8 columns left">
 
-          <select multiple ng-options="item.volInterestAreaName for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.user.volunteerInterestedAreas">
+          <select multiple ng-options="item.volInterestAreaName for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.selectedInterests" ng-change="registerCtrl.setInterestArea()">
                 <option value="">Select</option>
           </select>
 
@@ -214,43 +214,5 @@
 
     </div>
   </div>
-  <div class="overlayWrapper" id="cdsOverlay" style="display:none;">
-    <div class="row collapse" style="margin-top:10px"><div class="large-4 columns"><div >Dear Srinivas,</div></div></div>
-    <div class="row separator"><div class="large-2 columns"> &nbsp; </div><div class="large-14 columns"></div></div>
-    <div class="row collapse" style="margin-top:10px">
-      <div class="large-16 columns">Welcome to Vijayawada Constituency Portal.</div></div>
-      <div class="row collapse"><div class="large-16 columns">
-        Thanks for signing in for better tomorrow and showing interest towards to become Party Cadre.
-      </div></div>
-      <div class="row collapse" style="margin-top:10px"><div class="large-16 columns">
-        To get a party cadre, please contact :
-        
-        <div class="row" style="">
-          <div class="large-10 columns large-centered">address line1</div>
-          <div class="large-10 columns large-centered">address line 2</div>
-          <div class="large-10 columns large-centered">address line 3</div>
-        </div>
-      </div></div>
-      <div class="row collapse" style="margin-top:10px"><div class="large-16 columns">
-        
-        Once you get confirmation from Party office about cadre membership, please update the same in portal using link provide below.
-        <br>
-        <a style="text-decoration:underline; margin-left:20px" href="cadre.html">http://www.cds.com/updatecadredetails/</a>
-      </div></div>
-      <div class="row collapse" style="margin-top:10px"><div class="large-16 columns">
-        We sincerely look forward to work with you in future.
-        
-        <br><br>
-        Sincerely,
-        <br>
-        Front Office Executive
-        <br>
-        Nani Office
-      </div></div>
-      <div class="row separator"><div class="large-2 columns"> &nbsp; </div><div class="large-14 columns"></div></div>
-      <div class="row" style="margin-top:10px">
-        <div class="large-4 columns right" style="text-align:right">  <a style="width:100px" href="inbox.html" class="radius small button">Ok</a></div>
-      </div>
-      
-    </div>
+  
   </form>

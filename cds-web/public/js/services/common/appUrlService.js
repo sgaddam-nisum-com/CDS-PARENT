@@ -9,7 +9,7 @@ define(['services/serviceModule'], function (serviceModule) {
 
 
 				signin : "/signin",
-				getUserSession: "/user/getuserfromsession",
+				getUserSession: "/auth/user/getuserfromsession",
 
 				//Create User module
 

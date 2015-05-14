@@ -16,8 +16,18 @@ define(['services/serviceModule'], function (serviceModule) {
 			getUserId:function(){
 				return userId;
 			},
-			getUserSession : function(){
-				return $http.get(appUrlService.getUserSession);				
+			getUserSession : function(cb){				
+
+				 $http.get(appUrlService.getUserSession, {
+				 	 params: {
+				   		orgId: 2
+				  	}
+				 }).success(function(resp) {
+				  cb(resp);
+				  
+				 })
+
+
 			}
 			
 			

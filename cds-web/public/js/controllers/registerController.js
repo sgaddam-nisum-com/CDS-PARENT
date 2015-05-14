@@ -1,7 +1,7 @@
 'use strict';
 define(['controllers/controllerModule','formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function (controllerModule,formValidation, validationMap, errorJson, $) {
 
-	 controllerModule.controller('registerController', ['$scope','$location',"registerService","cdsService","appUrlService", function($scope, $location,registerService, cdsService,appUrlService){
+	 controllerModule.controller('registerController', ['$scope','$location',"registerService","cdsService","appUrlService","roleService","$window", function($scope, $location,registerService, cdsService,appUrlService,roleService,$window){
 
 		 	this.showLoader = false;
             this.showImage = true;
@@ -14,10 +14,25 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             self.isValidEmail = true;
             self.isValidMobileNo = true;                         
             self.isNotValid = false;
+
+            
             registerService.getInterestedAreasOptions(function(resp){
                 self.InterestedAreas = resp.data;
             });                                    
             
+
+            self.user.volunteerInterestedAreas = [];            
+
+
+            self.setInterestArea = function(){                    
+             for(var i=0; i<self.selectedInterests.length; i++){
+                var interestArea = {};              
+                interestArea["interestId"] = self.selectedInterests[i].interestId;
+                 self.user.volunteerInterestedAreas.push(interestArea);           
+                }
+            }
+            
+
 
             self.isValidForm = function(){
             	if(self.isValidUsername && self.isValidEmail && self.isValidMobileNo){
@@ -25,9 +40,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
             	}
             	return;
             }
-
-
-
 
             var config = {
                 initiate: true,
@@ -78,7 +90,21 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                         type: 'POST',
                         data: self.user,
                         dataType: 'json',
-                        success: function(data, textStatus, jqXHR) {
+                        success: function(resp, textStatus, jqXHR) {    
+                            if(resp.status == "success"){  
+
+                               if(self.user.cadreType == "NEW"){
+                                    $window.location.href = "/profile"; 
+                                }else{
+                                    $window.location.href = "/profile"; 
+                                }
+
+                             }else{
+
+
+
+
+                             }
 
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
