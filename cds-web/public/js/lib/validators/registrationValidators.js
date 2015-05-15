@@ -29,7 +29,7 @@ define(['validation'], function(validation) {
           
         },
         userName : {
-            required : true,
+            required : false,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true
@@ -59,7 +59,7 @@ define(['validation'], function(validation) {
         userEmail: {
             required : false,
             email: true,
-            key_error_msgs: false
+            key_error_msgs: true
         },
         skypeId:{
             required : false,
