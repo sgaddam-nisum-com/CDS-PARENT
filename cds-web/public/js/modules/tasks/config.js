@@ -9,8 +9,7 @@ app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cds
        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
                 
 
-           var checkUserSession = cdsService.getUserSession();
-           console.log(checkUserSession)			
+           var checkUserSession = cdsService.getUserSession();          			
 			checkUserSession
 			.success(function(resp){					                                                    
                          
@@ -64,7 +63,9 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/task.html'            }
+                templateUrl: 'views/auth/tasks/task.html',
+                controller : "taskController as taskCtrl" 
+            }
         },
         secured : false
     })
@@ -73,7 +74,9 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/viewTasks',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/viewTasks.html'            }
+                templateUrl: 'views/auth/tasks/viewTasks.html',
+                controller : "taskController as taskCtrl"
+            }
         },
         secured : false
     })
@@ -82,7 +85,9 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/addTask',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/addTask.html'            }
+                templateUrl: 'views/auth/tasks/addTask.html',
+                controller : "taskController as taskCtrl"
+            }
         },
         secured : false
     })

@@ -60,6 +60,10 @@ define(['services/serviceModule'], function (serviceModule) {
 				getPerformanceGradeInfo : "/volunteer/performancegrades",
 				getCareerAspirationInfo :"/citizen/careeraspirations",
 				getSkillGapsInfo : "/citizen/skillgaps",
+				
+				getTaskCategories : "/citizen/taskCategories",
+				saveTaskInfo : "/auth/user/createtask",
+				getTasksList :"/auth/user/viewtasks",
 
 
 				deleteUser : "/volunteer/delete"
