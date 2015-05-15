@@ -32,8 +32,12 @@ define(['jquery'], function($) {
   "skypeId-required": "Its a required field. Minimum should be 5 max allowed",
   "userQualification-required" : "Its a required field. Minimum should be 5 max allowed",
   "userQualification-minCharacters" : "Min Should be 5",
-  "userQualification-maxCharacters" :"Max allowed 16"
-  
+  "userQualification-maxCharacters" :"Max allowed 16",
+  "password-eq" : "Confirm password field should be matched with password" ,
+  "userPassword-required" : "Password is a required field",
+  "userPassword-minCharacters" : "Password should contain min 6 characters",
+  "gender-radio" : "Please select Gender type",
+  "membershipType-radio" : "Please select membership type"
  }
 
 });

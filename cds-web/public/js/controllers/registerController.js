@@ -1,5 +1,5 @@
 'use strict';
-define(['controllers/controllerModule','formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function (controllerModule,formValidation, validationMap, errorJson, $) {
+define(['controllers/controllerModule','formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors', 'jquery'], function (controllerModule,formValidation, validationMap, errorJson, $) {
 
 	 controllerModule.controller('registerController', ['$scope','$location',"registerService","cdsService","appUrlService","roleService","$window", function($scope, $location,registerService, cdsService,appUrlService,roleService,$window){
 
@@ -100,9 +100,6 @@ define(['controllers/controllerModule','formValidation', 'validators/personalVal
                                 }
 
                              }else{
-
-
-
 
                              }
 

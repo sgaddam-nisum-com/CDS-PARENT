@@ -53,14 +53,41 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
             console.error("No form fields to be validated");
         }
     }
+    
+
+    /*Eq fields are type of  password : confirm password*/
+
+    function getEqFields(formHandler){
+        var requiredEqFields = formHandler.find("[data-eq]");
+        if (requiredEqFields.length) {
+            return requiredEqFields;
+        } else {
+            console.error("No form Eq fields to be validated");
+        }
+
+    }
+
+
+    /*Radio buttons validation*/
+
+    function getRadioFields(formHandler){
+        var requiredRadioFields = formHandler.find("[data-radio]");
+
+        if (requiredRadioFields.length) {
+            return requiredRadioFields;
+        } else {
+            console.error("No form Eq fields to be validated");
+        }
+
+    }
 
 
     function validateForm(formHandler, validatorMap, errorMap, config) {
-
-
         this.config = getAppConf(config)
         this.formEl = returnFormObj(formHandler);
         this.requiredFormFields = getReqFields(this.formEl);
+        this.requiredEqFields = getEqFields(this.formEl);
+        this.requiredRadioFields = getRadioFields(this.formEl);
         this.errorMap = errorMap;
         this.validatorMap = validatorMap;
         this.errorArray = [];
@@ -162,6 +189,8 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
         formStack.reset();
         clearErrorClass(formStack, focusout);
         runValidation(formStack);
+        runEqValidation(formStack);
+        runRadioValidation(formStack);
         generateErrorObj(formStack);
         if (formStack.invalidFieldsArray.length) {
             showError(formStack);
@@ -227,6 +256,76 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
     }
 
 
+    function runEqValidation(formStack){
+         
+         var eqFields = formStack.requiredEqFields,
+         eqSet = [];
+
+         for(var i=0; i<eqFields.length; i++){
+
+
+             var eqAttr = $(eqFields[i]).data("eq");   
+            if(eqSet.indexOf(eqAttr)== -1){
+                eqSet.push(eqAttr);
+            }            
+         }
+
+  
+
+         for(var i=0; i<eqSet.length; i++){
+         var eqSetFields = $('[data-eq ='+eqSet[i]+']');   
+            
+          
+
+               if(eqSetFields[0].value !== eqSetFields[1].value){
+                    var validator = $(eqSetFields[0]).data("eq");                   
+                    
+                    formStack.invalidMethodsArray.push(validator + "-eq");
+                    formStack.invalidFieldsArray.push($(eqSetFields[1]));
+             
+
+             }
+         };
+
+    }
+
+    function runRadioValidation(formStack){
+
+        var radioFields = formStack.requiredRadioFields,
+         radioSet = [];
+
+         for(var i=0; i<radioFields.length; i++){
+
+
+             var radioAttr = $(radioFields[i]).data("radio");   
+            if(radioSet.indexOf(radioAttr)== -1){
+                radioSet.push(radioAttr);
+            }            
+         }
+
+      
+
+         for(var i=0; i<radioSet.length; i++){
+         var radioSetFields = $('[data-radio='+radioSet[i]+']');   
+         var currentRadioChecked = false;   
+
+            for(var j=0; j<radioSetFields.length; j++){
+                if(radioSetFields[j].checked){
+                currentRadioChecked = radioSetFields[j].checked;
+                break;
+                }
+            }
+
+            if(!currentRadioChecked){
+                var validator = $(radioSetFields[0]).data("radio");                                       
+                formStack.invalidMethodsArray.push(validator + "-radio");
+                formStack.invalidFieldsArray.push($(radioSetFields[0]));     
+            }
+
+         };
+
+
+    }
 
     function generateErrorObj(formStack) {
         var globalErrorObj, errorObjNode, errorKeyArray;
@@ -243,6 +342,9 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
 
         if (invalidFieldsArray.length) {
+                
+          
+
             for (i = 0; i < invalidMethodsArray.length; i++) {
                 errorKeyArray = invalidMethodsArray[i].split("-");
 
@@ -265,6 +367,10 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
             }
 
         }
+
+
+
+
         formStack.globalErrorObj = globalErrorObj;
         return globalErrorObj;
     };
@@ -281,7 +387,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
             for (var j = 0; j < invalidFieldsArray.length; j++) {
                 var fieldHandler = $(invalidFieldsArray[j]);
-                var validator = invalidFieldsArray[j].attr("data-val");
+                var validator = invalidFieldsArray[j].attr("data-val") ||invalidFieldsArray[j].attr("data-eq") || invalidFieldsArray[j].attr("data-radio") ;
                 var interimArray = [];
                 for (var k = 0; k < errorFieldMessages.length; k++) {
                     if (errorFieldMessages[k].fieldDataVal == validator) {

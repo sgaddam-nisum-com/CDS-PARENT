@@ -70,7 +70,12 @@ define(['validation'], function(validation) {
 		userQualification:{
 			required:false,			
 			key_error_msgs:true
-		}
+		},
+        userPassword : {
+            required : true,
+            minCharacters: 6,
+            key_error_msgs:true
+        }
     }
 
 });
