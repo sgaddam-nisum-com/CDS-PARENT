@@ -9,7 +9,8 @@ define(['angular',
 	'services/common/serviceLoader',
 	'controllers/homeController',
 	'directives/verticalScrollDirective',
-	'directives/slickGalleryDirective'	
+	'directives/slickGalleryDirective',
+	"directives/galleryDirective"	
 	], function (angular) {
     var app = angular.module('CDSHOME', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule',"directiveModule"]);		
     return app;

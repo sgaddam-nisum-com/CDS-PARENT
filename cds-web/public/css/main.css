@@ -2110,6 +2110,267 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   overflow: hidden;
 }
 
+/* galleryDirective */
+/* line 5, ../scss/components/_gallery.scss */
+div#container {
+  overflow: hidden;
+}
+
+/* line 8, ../scss/components/_gallery.scss */
+div.content {
+  display: none;
+  clear: both;
+}
+
+/* line 13, ../scss/components/_gallery.scss */
+div.content a, div.navigation a {
+  text-decoration: none;
+}
+
+/* line 16, ../scss/components/_gallery.scss */
+div.content a:hover, div.content a:active {
+  text-decoration: underline;
+}
+
+/* line 20, ../scss/components/_gallery.scss */
+div.navigation a.pageLink {
+  height: 77px;
+  line-height: 77px;
+}
+
+/* line 25, ../scss/components/_gallery.scss */
+div.controls {
+  margin-top: 5px;
+  height: 23px;
+}
+
+/* line 29, ../scss/components/_gallery.scss */
+div.controls a {
+  padding: 5px;
+}
+
+/* line 32, ../scss/components/_gallery.scss */
+div.ss-controls {
+  float: left;
+}
+
+/* line 35, ../scss/components/_gallery.scss */
+div.nav-controls {
+  float: right;
+}
+
+/* line 39, ../scss/components/_gallery.scss */
+div.slideshow-container {
+  position: relative;
+  clear: both;
+  float: left;
+  height: 532px;
+}
+
+/* line 46, ../scss/components/_gallery.scss */
+div.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("images/loader.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 54, ../scss/components/_gallery.scss */
+div.slideshow span.image-wrapper {
+  display: block;
+  /*  position: absolute;
+    top: -34px;
+    right: 100px;*/
+}
+
+/* line 60, ../scss/components/_gallery.scss */
+div.slideshow a.advance-link {
+  display: block;
+  text-align: center;
+}
+
+/* line 65, ../scss/components/_gallery.scss */
+div.slideshow a.advance-link:hover,
+div.slideshow a.advance-link:active,
+div.slideshow a.advance-link:visited {
+  text-decoration: none;
+}
+
+/* line 70, ../scss/components/_gallery.scss */
+div.slideshow a.advance-link:focus {
+  outline: none;
+}
+
+/* line 74, ../scss/components/_gallery.scss */
+div.slideshow img {
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* line 78, ../scss/components/_gallery.scss */
+div.caption-container {
+  float: right;
+  position: relative;
+  margin-top: 30px;
+}
+
+/* line 83, ../scss/components/_gallery.scss */
+span.image-caption {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 90, ../scss/components/_gallery.scss */
+div.caption-container, span.image-caption {
+  width: 334px;
+}
+
+/* line 94, ../scss/components/_gallery.scss */
+div.caption {
+  padding: 0 12px;
+}
+
+/* line 98, ../scss/components/_gallery.scss */
+div.image-title {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* line 102, ../scss/components/_gallery.scss */
+div.image-desc {
+  line-height: 1.3em;
+  padding-top: 12px;
+}
+
+/* line 106, ../scss/components/_gallery.scss */
+div.download {
+  margin-top: 8px;
+}
+
+/* line 109, ../scss/components/_gallery.scss */
+div.photo-index {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 12px;
+}
+
+/*div.navigation {
+  left: -50%;
+}*/
+/* line 119, ../scss/components/_gallery.scss */
+div.navigation a.pageLink {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 2px;
+  width: 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* line 128, ../scss/components/_gallery.scss */
+div.navigation a.pageLink:focus {
+  outline: none;
+}
+
+/* line 132, ../scss/components/_gallery.scss */
+ul.thumbs {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 138, ../scss/components/_gallery.scss */
+ul.thumbs li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* line 144, ../scss/components/_gallery.scss */
+a.thumb {
+  padding: 1px;
+  display: block;
+}
+
+/* line 148, ../scss/components/_gallery.scss */
+a.thumb:focus {
+  outline: none;
+}
+
+/* line 151, ../scss/components/_gallery.scss */
+ul.thumbs img {
+  border: none;
+  display: block;
+}
+
+/* line 155, ../scss/components/_gallery.scss */
+div.pagination {
+  clear: both;
+  position: relative;
+  left: -50%;
+}
+
+/* line 160, ../scss/components/_gallery.scss */
+div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 2px;
+  padding: 4px 7px 2px 7px;
+  border: 1px solid #ccc;
+}
+
+/* line 168, ../scss/components/_gallery.scss */
+div.pagination a:hover {
+  text-decoration: none;
+}
+
+/* line 171, ../scss/components/_gallery.scss */
+div.pagination span.current {
+  font-weight: bold;
+}
+
+/* line 174, ../scss/components/_gallery.scss */
+div.pagination span.ellipsis {
+  border: none;
+  padding: 5px 0 3px 2px;
+}
+
+/* line 179, ../scss/components/_gallery.scss */
+div.gallery-gutter {
+  clear: both;
+  padding-bottom: 20px;
+}
+
+/* line 184, ../scss/components/_gallery.scss */
+div.navigation a.prev {
+  background-image: url(../images/prevPageArrow.gif);
+  width: 42px;
+}
+
+/* line 188, ../scss/components/_gallery.scss */
+div.navigation a.next {
+  background-image: url(../images/nextPageArrow.gif);
+  /*position: relative;
+    left: 114px;
+    bottom: 110px;*/
+  width: 42px;
+}
+
+/* line 196, ../scss/components/_gallery.scss */
+.navigation-container {
+  padding: 20px 0 0 0;
+}
+
+/*gallery styles ending*/
 /* UI components */
 /* line 1, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker {

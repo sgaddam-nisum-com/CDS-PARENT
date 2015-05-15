@@ -59,7 +59,10 @@ require.config({
 		"ngStorage" : "lib/ngStorage",
 		/*Foundation*/		
 		"slick" : "lib/slick",
-		"simplyscroll" : "lib/jquery.simplyscroll"
+		"simplyscroll" : "lib/jquery.simplyscroll",
+		"gallery" : "lib/jqueryGallery"
+
+
 	},
 	shim: {
 		angular: {
@@ -99,7 +102,17 @@ require.config({
 		},
 		"uiRouterStyles" : {
 			deps :["angular"]
+		},
+		"gallery.jquery.galleriffic" : {
+			deps:["jquery"]
+		},
+		"gallery.jquery.history" : {
+			deps:["jquery"]
+		},
+		"gallery.jquery.opacityrollover" : {
+			deps:["jquery"]
 		}
+
 	}
 });
 

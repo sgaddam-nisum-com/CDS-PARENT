@@ -26,10 +26,16 @@ define(['services/serviceModule'], function (serviceModule) {
 				  cb(resp);
 				  
 				 })
-
-
+			},
+			getProfileInfo : function(userId, cb){
+				 $http.get(appUrlService.getUserSession, {
+				 	 params: {
+				   		userId: userId
+				  	}
+				 }).success(function(resp) {
+				  cb(resp);				  
+				 })
 			}
-			
 			
 		};
 	}]);
