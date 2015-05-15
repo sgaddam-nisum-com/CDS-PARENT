@@ -170,12 +170,12 @@ exports.deleteTask = function(req, res, next) {
     });
 };
 
-exports.getTask = function(req, res, next) {
-    log.debug("getTask : logged user - " + req.user.data.userName);
+exports.addAttachmentToTask = function(req, res, next) {
+    log.debug("addAttachmentToTask : logged user - " + req.user.data.userName);
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.getTask({
+    taskMgmt.addAttachmentToTask({
         id: tid
     }, token, function(resp) {
         req.resp = resp;
@@ -183,12 +183,12 @@ exports.getTask = function(req, res, next) {
     });
 };
 
-exports.viewTask = function(req, res, next) {
-    log.debug("viewTask : logged user - " + req.user.data.userName);
+exports.deleteAttachmentFromTask = function(req, res, next) {
+    log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.userName);
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.viewTask({
+    taskMgmt.deleteAttachmentFromTask({
         id: tid
     }, token, function(resp) {
         req.resp = resp;
@@ -196,12 +196,112 @@ exports.viewTask = function(req, res, next) {
     });
 };
 
-exports.viewTasks = function(req, res, next) {
-    log.debug("viewTasks : logged user - " + req.user.data.userName);
+exports.addCommentToTask = function(req, res, next) {
+    log.debug("addCommentToTask : logged user - " + req.user.data.userName);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.viewTasks(params, token, function(resp) {
+    taskMgmt.addCommentToTask(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.updateCommentToTask = function(req, res, next) {
+    log.debug("updateCommentToTask : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.updateCommentToTask(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.deleteCommentToTask = function(req, res, next) {
+    log.debug("deleteCommentToTask : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.deleteCommentToTask(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.getStatuses = function(req, res, next) {
+    log.debug("getStatuses : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getStatuses(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+
+exports.getTaskDetails = function(req, res, next) {
+    log.debug("getTaskDetails : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getTaskDetails(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.getTasks = function(req, res, next) {
+    log.debug("getTasks : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getTasks(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.getMyTasks = function(req, res, next) {
+    log.debug("getMyTasks : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getMyTasks(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.requestTypes = function(req, res, next) {
+    log.debug("requestTypes : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.requestTypes(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.taskCategories = function(req, res, next) {
+    log.debug("taskCategories : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.taskCategories(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.taskPriority = function(req, res, next) {
+    log.debug("taskPriority : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.taskPriority(params, token, function(resp) {
         req.resp = resp;
         next();
     });

@@ -56,7 +56,7 @@ exports.viewUserInfo = function(req, res, next) {
     var token = req.user ? req.user.data.token : null;
 
     officeService.viewUserInfo({
-        citizenId: userId
+        userId: userId
     }, token, function(resp) {
         req.resp = resp;
         next();

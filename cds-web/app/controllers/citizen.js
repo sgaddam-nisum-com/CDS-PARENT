@@ -225,13 +225,13 @@ exports.deleteFamily = function(req, res, next) {
     });
 };
 
-exports.quickRegistration = function(req, res, next) {
+exports.quickRegistration = function(req, res, next, callback) {
     log.debug("quickRegistration : user - ");
     var params = req.body;
     var orgId = req.body.orgId;
 
     cdsRegistration.quickRegistration(params, orgId, function(resp) {
-        res.json(resp);
+        callback(resp);
     });
 };
 

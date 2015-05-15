@@ -17,10 +17,10 @@ exports.getRole = function(params, token, callback) {
         headers[cdsConfig.token] = token;
 
     //build url path
-    var path = requireUtil.format(restUrls.user.getRole.path, params.id);
+    var path = requireUtil.format(restUrls.role.getRole.path, params.id);
     var url = {
         path: path,
-        method: restUrls.user.getRole.method
+        method: restUrls.role.getRole.method
     };
 
     restService.builbArgs(url, null, headers, function(args) {
@@ -35,10 +35,10 @@ exports.deactivateRole = function(params, token, callback) {
         headers[cdsConfig.token] = token;
 
     //build url path
-    var path = requireUtil.format(restUrls.user.deactivateRole.path, params.id);
+    var path = requireUtil.format(restUrls.role.deactivateRole.path, params.id);
     var url = {
         path: path,
-        method: restUrls.user.deactivateRole.method
+        method: restUrls.role.deactivateRole.method
     };
 
     restService.builbArgs(url, null, headers, function(args) {
@@ -52,7 +52,7 @@ exports.getRoles = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.getRoles, null, headers, function(args) {
+    restService.builbArgs(restUrls.role.getRoles, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -63,7 +63,7 @@ exports.saveRole = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.saveRole, params, headers, function(args) {
+    restService.builbArgs(restUrls.role.saveRole, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -74,7 +74,7 @@ exports.updateRole = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.updateRole, params, headers, function(args) {
+    restService.builbArgs(restUrls.role.updateRole, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

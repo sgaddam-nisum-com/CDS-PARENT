@@ -98,3 +98,13 @@ exports.cadreWorksheet = function(req, res, next) {
         next();
     });
 };
+
+exports.cadres = function(req, res, next) {
+    log.debug("cadres : logged user - " + req.user.data.userName);
+    var token = req.user ? req.user.data.token : null;
+
+    cadreService.cadres(token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};

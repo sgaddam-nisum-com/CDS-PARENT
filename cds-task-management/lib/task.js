@@ -15,7 +15,7 @@ exports.createTask = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.createTask, params, headers, function(args) {
+    restService.builbArgs(restUrls.task.createTask, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -26,7 +26,13 @@ exports.editTask = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.editTask, params, headers, function(args) {
+    //build url path
+    var url = {
+        path: requireUtil.format(restUrls.task.editTask.path, params.taskId),
+        method: restUrls.task.editTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -37,40 +43,189 @@ exports.deleteTask = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.deleteTask, params, headers, function(args) {
+    var url = {
+        path: requireUtil.format(restUrls.task.deleteTask.path, params.taskId),
+        method: restUrls.task.deleteTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.getTask = function(params, token, callback) {
-    log.debug("getTask : " + (JSON.stringify(params)));
+exports.addAttachmentToTask = function(params, token, callback) {
+    log.debug("addAttachmentToTask : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.getTask, params, headers, function(args) {
+    var url = {
+        path: requireUtil.format(restUrls.task.addAttachmentToTask.path, params.taskId),
+        method: restUrls.task.addAttachmentToTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.viewTask = function(params, token, callback) {
-    log.debug("viewTask : " + (JSON.stringify(params)));
+exports.deleteAttachmentFromTask = function(params, token, callback) {
+    log.debug("deleteAttachmentFromTask : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.viewTask, params, headers, function(args) {
+    var url = {
+        path: requireUtil.format(restUrls.task.deleteAttachmentFromTask.path, params.taskId),
+        method: restUrls.task.deleteAttachmentFromTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.viewTasks = function(params, token, callback) {
-    log.debug("viewTasks : " + (JSON.stringify(params)));
+exports.addCommentToTask = function(params, token, callback) {
+    log.debug("addCommentToTask : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.user.viewTasks, params, headers, function(args) {
+    var url = {
+        path: requireUtil.format(restUrls.task.addCommentToTask.path, params.taskId),
+        method: restUrls.task.addCommentToTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.updateCommentToTask = function(params, token, callback) {
+    log.debug("updateCommentToTask : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.task.updateCommentToTask.path, params.taskId),
+        method: restUrls.task.updateCommentToTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.deleteCommentToTask = function(params, token, callback) {
+    log.debug("deleteCommentToTask : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.task.deleteCommentToTask.path, params.taskId),
+        method: restUrls.task.deleteCommentToTask.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.getStatuses = function(params, token, callback) {
+    log.debug("getStatuses : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.task.getStatuses.path, params.statusType),
+        method: restUrls.task.getStatuses.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.getTaskDetails = function(params, token, callback) {
+    log.debug("getTaskDetails : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.task.getTaskDetails.path, params.taskId),
+        method: restUrls.task.getTaskDetails.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.getTasks = function(params, token, callback) {
+    log.debug("getTasks : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.task.getTasks.path, params.loginId),
+        method: restUrls.task.getTasks.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.getMyTasks = function(params, token, callback) {
+    log.debug("getMyTasks : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.task.getMyTasks.path, params.loginId),
+        method: restUrls.task.getMyTasks.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.requestTypes = function(params, token, callback) {
+    log.debug("requestTypes : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    restService.builbArgs(restUrls.task.requestTypes, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.taskCategories = function(params, token, callback) {
+    log.debug("taskCategories : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    restService.builbArgs(restUrls.task.taskCategories, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.taskPriority = function(params, token, callback) {
+    log.debug("taskPriority : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    restService.builbArgs(restUrls.task.taskPriority, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

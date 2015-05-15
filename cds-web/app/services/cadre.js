@@ -77,3 +77,13 @@ exports.cadreWorksheet = function(params, token, callback) {
         restService.makecall(args, callback);
     });
 };
+
+exports.cadres = function(params, token, callback) {
+    log.debug("cadres ");
+    var headers = header;
+    headers[cdsConfig.token] = token;
+
+    restService.builbArgs(restUrls.cadre.cadres, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};

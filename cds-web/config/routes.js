@@ -35,12 +35,21 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/user/view', userController.viewUser, auth.filterResponse);
     app.get('/auth/user/resetpassword', userController.resetPassword, auth.filterResponse);
 
-    app.post('/auth/user/createtask', userController.createTask, auth.filterResponse);
-    app.put('/auth/user/edittask', userController.editTask, auth.filterResponse);
-    app.delete('/auth/user/deletetask', userController.deleteTask, auth.filterResponse);
-    app.get('/auth/user/gettask', userController.getTask, auth.filterResponse);
-    app.get('/auth/user/viewtask', userController.viewTask, auth.filterResponse);
-    app.get('/auth/user/viewtasks', userController.viewTasks, auth.filterResponse);
+    app.post('/auth/user/createtask', userController.createTask);
+    app.put('/auth/user/edittask', userController.editTask);
+    app.delete('/auth/user/deletetask', userController.deleteTask);
+    app.post('/auth/user/addattachmenttotask', userController.addAttachmentToTask);
+    app.delete('/auth/user/deleteattachmentfromtask', userController.deleteAttachmentFromTask);
+    app.post('/auth/user/addcommenttotask', userController.addCommentToTask);
+    app.put('/auth/user/updatecommenttotask', userController.updateCommentToTask);
+    app.delete('/auth/user/deletecommenttotask', userController.deleteCommentToTask);
+    app.get('/auth/user/statuses', userController.getStatuses);
+    app.get('/auth/user/taskdetails', userController.getTaskDetails);
+    app.get('/auth/user/tasks', userController.getTasks);
+    app.get('/auth/user/mytasks', userController.getMyTasks);
+    app.get('/auth/user/requesttypes', userController.requestTypes);
+    app.get('/auth/user/taskcategories', userController.taskCategories);
+    app.get('/auth/user/taskpriority', userController.taskPriority);
 
     app.post('/auth/user/viewrole', userController.getRole, auth.filterResponse);
     app.delete('/auth/user/deactivaterole', userController.deactivateRole, auth.filterResponse);
@@ -77,7 +86,7 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/citizen/getfamily', citizenController.getFamily, auth.filterResponse);
     app.delete('/auth/citizen/deletefamily', citizenController.deleteFamily, auth.filterResponse);
 
-    app.post('/citizen/quickregistration', citizenController.quickRegistration);
+    //app.post('/citizen/quickregistration', citizenController.quickRegistration);
 
     app.delete('/auth/citizen/delete', citizenController.delete, auth.filterResponse);
 
@@ -111,6 +120,7 @@ exports.init = function(app, passport, auth) {
 
     app.get('/auth/cadre/cadreWorksheet', cadreController.cadreWorksheet, auth.filterResponse);
     app.get('/auth/cadre/ispartymembershipidexist', cadreController.cadreWorksheet);
+    app.get('/auth/cadre/cadres', cadreController.cadres);
 
     //office executive routes    
     app.put('/auth/office/manager/vnc/verify', officeController.verifyVnC, auth.filterResponse);
@@ -126,6 +136,23 @@ exports.init = function(app, passport, auth) {
             failureRedirect: '/',
             failureFlash: 'failure message...'
         }));
+
+    app.post('/citizen/quickregistration', function(req, res, next) {
+        req.body.username = req.body.mobileNumber;
+        citizenController.quickRegistration(req, res, next, function(resp) {
+            console.log(resp)
+            if (resp.status === "failure") {
+                res.json(resp);
+            } else {
+                passport.authenticate('local', {
+                    successRedirect: '/auth/success',
+                    failureRedirect: '/',
+                    failureFlash: 'failure message...'
+                });
+
+            }
+        });
+    });
 
     // Home route
     app.get('/', index.render);

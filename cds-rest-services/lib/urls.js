@@ -103,7 +103,7 @@ module.exports = {
             method: "POST"
         },
         viewUserInfo: {
-            path: "userinfo/%s/getuserinformation",
+            path: "userinfo/%s/userinformation",
             method: "GET"
         }
     },
