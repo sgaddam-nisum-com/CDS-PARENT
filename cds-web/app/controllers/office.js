@@ -52,7 +52,9 @@ exports.rejectVnC = function(req, res, next) {
 
 exports.viewUserInfo = function(req, res, next) {
     log.debug("rejectVnC : logged user - " + req.user.data.userName + " selected user - " + req.query.userId);
-    var userId = req.query.userId;
+        
+    
+    var userId = req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     officeService.viewUserInfo({

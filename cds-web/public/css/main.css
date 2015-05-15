@@ -2116,50 +2116,44 @@ div#container {
   overflow: hidden;
 }
 
-/* line 8, ../scss/components/_gallery.scss */
-div.content {
-  display: none;
-  clear: both;
-}
-
-/* line 13, ../scss/components/_gallery.scss */
+/* line 9, ../scss/components/_gallery.scss */
 div.content a, div.navigation a {
   text-decoration: none;
 }
 
-/* line 16, ../scss/components/_gallery.scss */
+/* line 12, ../scss/components/_gallery.scss */
 div.content a:hover, div.content a:active {
   text-decoration: underline;
 }
 
-/* line 20, ../scss/components/_gallery.scss */
+/* line 16, ../scss/components/_gallery.scss */
 div.navigation a.pageLink {
   height: 77px;
   line-height: 77px;
 }
 
-/* line 25, ../scss/components/_gallery.scss */
+/* line 21, ../scss/components/_gallery.scss */
 div.controls {
   margin-top: 5px;
   height: 23px;
 }
 
-/* line 29, ../scss/components/_gallery.scss */
+/* line 25, ../scss/components/_gallery.scss */
 div.controls a {
   padding: 5px;
 }
 
-/* line 32, ../scss/components/_gallery.scss */
+/* line 28, ../scss/components/_gallery.scss */
 div.ss-controls {
   float: left;
 }
 
-/* line 35, ../scss/components/_gallery.scss */
+/* line 31, ../scss/components/_gallery.scss */
 div.nav-controls {
   float: right;
 }
 
-/* line 39, ../scss/components/_gallery.scss */
+/* line 35, ../scss/components/_gallery.scss */
 div.slideshow-container {
   position: relative;
   clear: both;
@@ -2167,7 +2161,7 @@ div.slideshow-container {
   height: 532px;
 }
 
-/* line 46, ../scss/components/_gallery.scss */
+/* line 42, ../scss/components/_gallery.scss */
 div.loader {
   position: absolute;
   top: 0;
@@ -2177,7 +2171,7 @@ div.loader {
   background-position: center;
 }
 
-/* line 54, ../scss/components/_gallery.scss */
+/* line 50, ../scss/components/_gallery.scss */
 div.slideshow span.image-wrapper {
   display: block;
   /*  position: absolute;
@@ -2185,38 +2179,38 @@ div.slideshow span.image-wrapper {
     right: 100px;*/
 }
 
-/* line 60, ../scss/components/_gallery.scss */
+/* line 56, ../scss/components/_gallery.scss */
 div.slideshow a.advance-link {
   display: block;
   text-align: center;
 }
 
-/* line 65, ../scss/components/_gallery.scss */
+/* line 61, ../scss/components/_gallery.scss */
 div.slideshow a.advance-link:hover,
 div.slideshow a.advance-link:active,
 div.slideshow a.advance-link:visited {
   text-decoration: none;
 }
 
-/* line 70, ../scss/components/_gallery.scss */
+/* line 66, ../scss/components/_gallery.scss */
 div.slideshow a.advance-link:focus {
   outline: none;
 }
 
-/* line 74, ../scss/components/_gallery.scss */
+/* line 70, ../scss/components/_gallery.scss */
 div.slideshow img {
   border-style: solid;
   border-width: 1px;
 }
 
-/* line 78, ../scss/components/_gallery.scss */
+/* line 74, ../scss/components/_gallery.scss */
 div.caption-container {
   float: right;
   position: relative;
   margin-top: 30px;
 }
 
-/* line 83, ../scss/components/_gallery.scss */
+/* line 79, ../scss/components/_gallery.scss */
 span.image-caption {
   display: block;
   position: absolute;
@@ -2224,34 +2218,34 @@ span.image-caption {
   left: 0;
 }
 
-/* line 90, ../scss/components/_gallery.scss */
+/* line 86, ../scss/components/_gallery.scss */
 div.caption-container, span.image-caption {
   width: 334px;
 }
 
-/* line 94, ../scss/components/_gallery.scss */
+/* line 90, ../scss/components/_gallery.scss */
 div.caption {
   padding: 0 12px;
 }
 
-/* line 98, ../scss/components/_gallery.scss */
+/* line 94, ../scss/components/_gallery.scss */
 div.image-title {
   font-weight: bold;
   font-size: 1.4em;
 }
 
-/* line 102, ../scss/components/_gallery.scss */
+/* line 98, ../scss/components/_gallery.scss */
 div.image-desc {
   line-height: 1.3em;
   padding-top: 12px;
 }
 
-/* line 106, ../scss/components/_gallery.scss */
+/* line 102, ../scss/components/_gallery.scss */
 div.download {
   margin-top: 8px;
 }
 
-/* line 109, ../scss/components/_gallery.scss */
+/* line 105, ../scss/components/_gallery.scss */
 div.photo-index {
   position: absolute;
   bottom: 0;
@@ -2262,7 +2256,7 @@ div.photo-index {
 /*div.navigation {
   left: -50%;
 }*/
-/* line 119, ../scss/components/_gallery.scss */
+/* line 115, ../scss/components/_gallery.scss */
 div.navigation a.pageLink {
   display: block;
   position: relative;
@@ -2273,12 +2267,12 @@ div.navigation a.pageLink {
   background-repeat: no-repeat;
 }
 
-/* line 128, ../scss/components/_gallery.scss */
+/* line 124, ../scss/components/_gallery.scss */
 div.navigation a.pageLink:focus {
   outline: none;
 }
 
-/* line 132, ../scss/components/_gallery.scss */
+/* line 128, ../scss/components/_gallery.scss */
 ul.thumbs {
   position: relative;
   float: left;
@@ -2286,7 +2280,7 @@ ul.thumbs {
   padding: 0;
 }
 
-/* line 138, ../scss/components/_gallery.scss */
+/* line 134, ../scss/components/_gallery.scss */
 ul.thumbs li {
   float: left;
   padding: 0;
@@ -2294,31 +2288,31 @@ ul.thumbs li {
   list-style: none;
 }
 
-/* line 144, ../scss/components/_gallery.scss */
+/* line 140, ../scss/components/_gallery.scss */
 a.thumb {
   padding: 1px;
   display: block;
 }
 
-/* line 148, ../scss/components/_gallery.scss */
+/* line 144, ../scss/components/_gallery.scss */
 a.thumb:focus {
   outline: none;
 }
 
-/* line 151, ../scss/components/_gallery.scss */
+/* line 147, ../scss/components/_gallery.scss */
 ul.thumbs img {
   border: none;
   display: block;
 }
 
-/* line 155, ../scss/components/_gallery.scss */
+/* line 151, ../scss/components/_gallery.scss */
 div.pagination {
   clear: both;
   position: relative;
   left: -50%;
 }
 
-/* line 160, ../scss/components/_gallery.scss */
+/* line 156, ../scss/components/_gallery.scss */
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
   position: relative;
   display: block;
@@ -2328,35 +2322,35 @@ div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
   border: 1px solid #ccc;
 }
 
-/* line 168, ../scss/components/_gallery.scss */
+/* line 164, ../scss/components/_gallery.scss */
 div.pagination a:hover {
   text-decoration: none;
 }
 
-/* line 171, ../scss/components/_gallery.scss */
+/* line 167, ../scss/components/_gallery.scss */
 div.pagination span.current {
   font-weight: bold;
 }
 
-/* line 174, ../scss/components/_gallery.scss */
+/* line 170, ../scss/components/_gallery.scss */
 div.pagination span.ellipsis {
   border: none;
   padding: 5px 0 3px 2px;
 }
 
-/* line 179, ../scss/components/_gallery.scss */
+/* line 175, ../scss/components/_gallery.scss */
 div.gallery-gutter {
   clear: both;
   padding-bottom: 20px;
 }
 
-/* line 184, ../scss/components/_gallery.scss */
+/* line 180, ../scss/components/_gallery.scss */
 div.navigation a.prev {
   background-image: url(../images/prevPageArrow.gif);
   width: 42px;
 }
 
-/* line 188, ../scss/components/_gallery.scss */
+/* line 184, ../scss/components/_gallery.scss */
 div.navigation a.next {
   background-image: url(../images/nextPageArrow.gif);
   /*position: relative;
@@ -2365,7 +2359,7 @@ div.navigation a.next {
   width: 42px;
 }
 
-/* line 196, ../scss/components/_gallery.scss */
+/* line 192, ../scss/components/_gallery.scss */
 .navigation-container {
   padding: 20px 0 0 0;
 }

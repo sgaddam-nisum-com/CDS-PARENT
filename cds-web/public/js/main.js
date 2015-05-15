@@ -103,13 +103,13 @@ require.config({
 		"uiRouterStyles" : {
 			deps :["angular"]
 		},
-		"gallery.jquery.galleriffic" : {
+		"gallery/jquery.galleriffic" : {
 			deps:["jquery"]
 		},
-		"gallery.jquery.history" : {
+		"gallery/jquery.history" : {
 			deps:["jquery"]
 		},
-		"gallery.jquery.opacityrollover" : {
+		"gallery/jquery.opacityrollover" : {
 			deps:["jquery"]
 		}
 

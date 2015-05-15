@@ -45,6 +45,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         secured : false
     })
 
+    .state('root.homeHash',{
+        url: '/',
+        views: {           
+            'content@': {
+                templateUrl: 'views/nonauth/home.html',
+                controller : "homeController as homeCtrl"                
+            }
+             
+        },
+        secured : false
+    })
+
      .state('root.alternatehome',{
         url: '',
         views: {           
@@ -104,7 +116,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         secured : false
     })
         .state('root.gallery',{
-        url: '/gallery',
+        url:'/gallery',
         views: {           
             'content@': {
                 templateUrl: 'views/nonauth/gallery.html'
