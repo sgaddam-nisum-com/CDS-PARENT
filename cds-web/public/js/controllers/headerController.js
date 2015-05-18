@@ -11,9 +11,9 @@ define(['controllers/controllerModule'], function (controllerModule) {
  		function initiateUserSession(resp){
  			
  			self.showHeader = true;
+ 			
  			if(resp.status == "failure"){
- 				self.isUserAuthenticated = false;
- 				
+ 				self.isUserAuthenticated = false; 				
  				return;
  			}
  				self.isUserAuthenticated = true;

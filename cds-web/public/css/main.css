@@ -505,33 +505,28 @@ header .main-navigation nav ul li {
   color: red !important;
 }
 
-/* line 142, ../scss/components/_header.scss */
-.top-bar-section ul {
-  float: right;
-}
-
-/* line 148, ../scss/components/_header.scss */
+/* line 143, ../scss/components/_header.scss */
 h1 {
   color: #16578f;
   font-size: 26px;
 }
 
-/* line 153, ../scss/components/_header.scss */
+/* line 148, ../scss/components/_header.scss */
 .headerMobile {
   background: #f0f2f4;
 }
 
-/* line 156, ../scss/components/_header.scss */
+/* line 151, ../scss/components/_header.scss */
 .headerLogo {
   background: #fff url(../images/headerBg.png) repeat-x;
 }
 
-/* line 160, ../scss/components/_header.scss */
+/* line 155, ../scss/components/_header.scss */
 .auth-header {
   padding-top: 8px;
 }
 
-/* line 164, ../scss/components/_header.scss */
+/* line 159, ../scss/components/_header.scss */
 .login-user-info {
   display: none;
   position: absolute;
@@ -543,7 +538,7 @@ h1 {
   top: 29px;
 }
 
-/* line 174, ../scss/components/_header.scss */
+/* line 169, ../scss/components/_header.scss */
 .nav-down-arrow {
   background: none;
   width: 25px;
@@ -2395,6 +2390,316 @@ div.navigation a.next {
 }
 
 /*gallery styles ending*/
+/* line 1, ../scss/components/_task.scss */
+#accordion a span.title {
+  float: left;
+  display: block;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+/* line 8, ../scss/components/_task.scss */
+#accordion a span.ui-icon {
+  position: static;
+  height: 20px;
+  margin-top: 0px;
+  margin-top: 3px;
+}
+
+/* line 14, ../scss/components/_task.scss */
+#accordion h3 a .ui-icon {
+  float: right;
+}
+
+/* line 16, ../scss/components/_task.scss */
+#accordion a span.title {
+  float: left;
+  display: block;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+/* line 23, ../scss/components/_task.scss */
+#accordion a span.ui-icon {
+  position: static;
+  height: 20px;
+  margin-top: 0px;
+  margin-top: 3px;
+}
+
+/* line 29, ../scss/components/_task.scss */
+#accordion h3 a .ui-icon {
+  float: right;
+}
+
+/* line 32, ../scss/components/_task.scss */
+.navigation {
+  text-align: right;
+}
+
+/* line 35, ../scss/components/_task.scss */
+.top-bar-section ul li {
+  background: none;
+  display: inline-block;
+  float: none;
+}
+
+/* line 40, ../scss/components/_task.scss */
+.view-tasks img {
+  border: none;
+  margin: 0;
+}
+
+/* line 44, ../scss/components/_task.scss */
+.view-tasks {
+  padding: 25px 0 0 0;
+}
+
+/* line 47, ../scss/components/_task.scss */
+.view-tasks h6 {
+  margin: 0 0 5px 0;
+}
+
+/* line 50, ../scss/components/_task.scss */
+.new-task {
+  background: url(../images/newtaskBtn.jpg) no-repeat;
+  width: 100px;
+  height: 26px;
+  border: none;
+}
+
+/* line 56, ../scss/components/_task.scss */
+.actions {
+  background: url(../images/actionsBtn.jpg) no-repeat;
+  width: 72px;
+  height: 26px;
+  border: none;
+  display: none;
+}
+
+/* line 63, ../scss/components/_task.scss */
+.task-links {
+  background: #e6eaeb;
+  padding: 8px 15px !important;
+  margin: 10px 0 10px 0;
+}
+
+/* line 68, ../scss/components/_task.scss */
+.task-links a {
+  font-size: 13px;
+  margin: 0 10px 0 0;
+  padding: 0 10px 0 0;
+  color: #16578f;
+  border-right: solid 1px #16578f;
+  text-decoration: underline;
+}
+
+/* line 76, ../scss/components/_task.scss */
+.task-links a:last-child {
+  border: none;
+}
+
+/* line 79, ../scss/components/_task.scss */
+.tasks-list {
+  margin: 0 0 15px 0 !important;
+}
+
+/* line 82, ../scss/components/_task.scss */
+.tasks-list input {
+  margin: 0 10px 0 0;
+}
+
+/* line 85, ../scss/components/_task.scss */
+.tasks-list .task-title {
+  font-size: 15px;
+  font-weight: bold;
+  background: #cddae6;
+  padding: 10px !important;
+  border-radius: 3px 3px 0 0;
+}
+
+/* line 92, ../scss/components/_task.scss */
+.task-details {
+  background: #eef2f6;
+  border: solid 1px #cfddeb;
+  padding: 10px !important;
+}
+
+/* line 97, ../scss/components/_task.scss */
+.task-status-info {
+  background: #ffffff;
+  border: solid 1px #cddae6;
+  padding: 8px;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}
+
+/* line 104, ../scss/components/_task.scss */
+.task-status-info ul li {
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+  border-right: solid 1px #cccccc;
+}
+
+/* line 110, ../scss/components/_task.scss */
+.task-status-info ul li:last-child {
+  border: none;
+}
+
+/* line 113, ../scss/components/_task.scss */
+.task-status-info ul li span {
+  font-weight: bold;
+  padding: 0 0 0 5px;
+}
+
+/* line 4, ../scss/components/_view-tasks.scss */
+.task-details ul li {
+  font-size: 13px;
+}
+
+/* line 7, ../scss/components/_view-tasks.scss */
+.task-details select {
+  padding: 7px 3px !important;
+  height: auto;
+}
+
+/* line 11, ../scss/components/_view-tasks.scss */
+.task-details .calender {
+  background: #fff url(../images/calender-icon.png) no-repeat right center;
+}
+
+/* line 14, ../scss/components/_view-tasks.scss */
+.task-description h6, .attachements h6 {
+  margin: 15px 0 10px 0;
+  font-size: 14px;
+  color: #0888b5;
+}
+
+/* line 19, ../scss/components/_view-tasks.scss */
+.attachements {
+  display: none;
+}
+
+/* line 22, ../scss/components/_view-tasks.scss */
+.attachements ul li {
+  font-size: 13px;
+}
+
+/* line 28, ../scss/components/_view-tasks.scss */
+.comments .head {
+  background: #f5f5f5;
+  border: solid 1px #ccc;
+  padding: 5px 10px;
+  margin: 0 0 15px 0;
+}
+
+/* line 34, ../scss/components/_view-tasks.scss */
+.comments .head a.add-comments {
+  background: url(../images/commentsIcon.png) no-repeat 0 3px;
+  color: #333;
+  padding: 0 0 0 20px;
+  margin: 0 15px 0 0;
+  font-size: 12px;
+}
+
+/* line 41, ../scss/components/_view-tasks.scss */
+.comments .head a.attachments {
+  background: url(../images/attachmentsIcon.png) no-repeat 0 4px;
+  color: #333;
+  padding: 0 0 0 20px;
+  margin: 0 15px 0 0;
+  font-size: 12px;
+}
+
+/* line 48, ../scss/components/_view-tasks.scss */
+.comments-list ul {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* line 52, ../scss/components/_view-tasks.scss */
+.comments-list ul li {
+  list-style: none;
+}
+
+/* line 55, ../scss/components/_view-tasks.scss */
+.comments-list ul li .info {
+  border-bottom: solid 1px #ccc;
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+}
+
+/* line 61, ../scss/components/_view-tasks.scss */
+.user-information {
+  border: solid 1px #ccc;
+  background: #f1f1f1;
+  padding: 20px;
+  position: relative;
+  height: 90%;
+}
+
+/* line 68, ../scss/components/_view-tasks.scss */
+.user-information .arrow {
+  background: url(../images/user-info-arrow.png) no-repeat 0 0;
+  position: absolute;
+  left: -13px;
+  top: 30px;
+  width: 13px;
+  height: 27px;
+}
+
+/* line 76, ../scss/components/_view-tasks.scss */
+.user-information h5 {
+  margin: 0 0 15px 0;
+}
+
+/* line 79, ../scss/components/_view-tasks.scss */
+.user-information img {
+  border: solid 5px #ffffff;
+  margin: 0 0 15px 10px;
+}
+
+/* line 83, ../scss/components/_view-tasks.scss */
+.user-information .details ul {
+  font-size: 13px;
+  margin: 0;
+  color: #333;
+}
+
+/* line 88, ../scss/components/_view-tasks.scss */
+.user-information .details ul li {
+  list-style: none;
+}
+
+/* line 91, ../scss/components/_view-tasks.scss */
+.user-information .details ul li span {
+  padding: 0 0 0 10px;
+  font-weight: bold;
+}
+
+/* line 1, ../scss/components/_add-task.scss */
+.fields-form {
+  background: #cddae6;
+  border: solid 1px #eef2f6;
+  padding: 25px;
+  border-radius: 5px;
+  margin: 35px 0 0 0;
+  font-size: 14px;
+}
+
+/* line 9, ../scss/components/_add-task.scss */
+.fields-form h6 {
+  padding: 0 0 10px 0;
+  margin: 0 0 20px 0;
+  border-bottom: dotted 1px #16578f;
+}
+
+/* line 14, ../scss/components/_add-task.scss */
+.calender {
+  background: #fff url(../images/calender-icon.png) no-repeat right center;
+}
+
 /* UI components */
 /* line 1, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker {

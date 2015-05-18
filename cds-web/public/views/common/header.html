@@ -16,7 +16,7 @@
     </nav>
     
 
-    <nav ng-if="headerCtrl.isUserAuthenticated" ng-show="headerCtrl.showHeader">
+    <nav ng-if="headerCtrl.isUserAuthenticated">
       
       <ul class="right top-sub-links">
         <li>Welcome <span ng-bind="userName"></span> (<span ng-bind="defRole"></span> )</li>
@@ -62,7 +62,7 @@
               <li class="not-click"><a href="/#gallery">Gallery</a></li>
             </ul>
           </section>
-          <section class="top-bar-section clear" style="left: 0%;" ng-if="headerCtrl.isUserAuthenticated" ng-show="headerCtrl.showHeader">
+          <section class="top-bar-section clear" style="left: 0%;" ng-if="headerCtrl.isUserAuthenticated">
             <ul>
               <li ng-repeat="navItem in headerCtrl.navItems" ng-class="{'active': navItem.activeHeader}" ><a href="{{navItem.url}}">{{navItem.name}}</a></li>
             </ul>

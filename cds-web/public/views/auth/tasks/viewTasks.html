@@ -1,137 +1,90 @@
-
-<div id="app-wrapper">
-
-<div class="row">
-  <div class="large-16 columns">    
-    <h1>View Task</h1>   
-  </div>
-</div>
-<div class="row">         
-  <div class="large-12 columns" role="content">     
-    <article>
-      <h6>T01128: Meeting logistics coordination</h6> 
-      <div class="status">
-        <div class="row statusProgress">
-            <div class="large-2 columns statusHeading">Status:</div>
-            <div class="row large-6 columns left">
-                <div class="row statusPointers">
-                  <div class="row large-10 columns">
-                    <div class="row"><span class="statusIcon"> </span>In-Progress <a href="#">Change</a></div>
-                  </div>
+<section id="appSection">
+      
+      <div class="row content view-tasks">
+        <div class="large-12 medium-12 small-16 columns">
+            <div class="row collapse">
+              <div class="large-16 columns">
+                <h6>View Task</h6>
+              </div>
+            </div>
+            <div class="row tasks-list collapse">
+              <div class="large-16 columns task-title">
+                0123  Task Title / Request Title
+              </div>
+              <div class="large-16 columns">
+                <div class="task-details">
+                  <ul class="large-block-grid-3">
+                    <li>Status:  <select><option>In-Progress</option> <option>Open</option> <option>Closed</option></select></li>
+                    <li>Priority:  <select><option>Medium</option> <option>Low</option> <option>High</option></select></li>
+                    <li>Assigned to:  <select><option>R Rao</option> <option>S Steve</option> <option>John</option></select></li>
+                    <li>Assigned Date:  <input type="text" class="calender" /></li>
+                    <li>Target Date:  <input type="text" class="calender" /></li>
+                    <li>Work Location:  <select><option>Vijayawada</option> <option>Hyderabad</option></select></li>
+                  </ul>
                 </div>
-                 
             </div>
-        </div> 
-
-         
-        <div class="row statusDetails">
-          <div class="large-4 columns">
-            Posted on:22/04/2015
-          </div>
-          <div class="large-4 columns">
-            Estimated:10 days
-          </div>
-          <div class="large-3 columns">
-            Spent:2 days
-          </div>
-          <div class="large-5 columns">
-            Remaining: 8 days 
-          </div>
-        </div>
-      </div>    
-      
-      <div class="row">
-        <div class="large-16 columns">
-          <div class="labelHead">Description</div>
-          <div id="accordion"><p>Arrange necessary logistics for all the members in the party to visit meeting at Auto Nagar on 02/05/2015</p></div>                 
-        </div>         
-      </div>
-      <div class="row">
-        <div class="large-16 columns attachmentContent">
-          <div class="labelHead">Attachments</div>
-          <div class="large-2 columns left attachment">Photo1.png</div>  
-          <div class="large-2 columns left attachment">Photo2.png</div>
-          <div class="large-2 columns left attachment">Photo3.png</div>
-          <div class="large-2 columns left attachment">Photo4.png</div> 
-          <div class="large-4 columns left attachment">Applicationform-abc.pdf</div>                 
-        </div>         
-      </div>
-      <div class="rowd">
-        <img src="images/comments.png" />
-      </div>
-      <div class="row">
-        <div class="large-16 columns">
-          <accordion id="accordion">
-            <p><b>Srinivas Kongara on 24/04/2015 09:30am</b></p>
-            <div>
-              <p>
-                Coordinated with bus services.
-                </p>
+            <div class="large-16 columns task-description">
+              <h6>Description</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam arius. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.</p> 
             </div>
-            <p><b>You on 24/04/2015 09:20am</b></p>
-            <div>
-              <p>
-              Please look into car services.
-              </p>
+            <div class="large-16 columns attachements">
+              <h6>Attachements</h6>
+              <ul class="large-block-grid-3">
+                    <li>Status: </li>
+                    <li>Priority: </li>
+                    <li>Assigned to: </li>
+                  </ul>
             </div>
-             
-            </accordion>
+              <div class="large-16 columns comments">
+                <h6>Comments</h6>
+                <div class="head">
+                  <a href="#" class="add-comments">Add Comments</a>
+                  <a href="#" class="attachments">Attachments</a>
+                </div>
+              </div>
+              <div class="large-16 columns comments-list">
+                <ul>
+                  <li>
+                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
+                  </li>
+                  <li>
+                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
+                  </li>
+                  <li>
+                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
+                  </li>
+                  <li>
+                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
+                  </li>
+                  <li>
+                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="large-8 columns"><img src="images/loadmore.png" /></div>
+
+
+          <div class="large-4 medium-12 small-16 columns">
+            <div class="user-information">
+              <div class="arrow"></div>
+              <h5>Srinivas Kongara</h5>
+                <img src="images/image.png" />
+                <div class="details">
+                  <ul>
+                    <li>Age/Gender <span>29 Male</span></li>
+                    <li>Phone <span>123456789</span></li>
+                    <li>Email <span>abcd@gmail.com</span></li>
+                    <li>Location <span>Benz Circle</span></li>
+                    <li>Constituency <span>Vijayawada</span></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
       </div>
-    </article>     
-</div>
- <aside class="large-4 columns userData"> 
-  Assign To
-    <div class="panel">
-      <h5>Srinivas Kongara</h5>
-      <img src="images/image.png" />
-      <div class="userInformation">
-        <div>Age/Gender:29/Male</div>
-        <div>Phone:123456789</div>
-        <div>Email:abd@gmail.com</div>
-        <div>Location:Village name</div>
-        <div>Constituency: Vijayawada</div>
-      </div>
-    </div>
-  </aside> 
-</div>
-</div>
-
-
-<script src='js/jquery.js'></script>
-<script src='js/globalfooter.js'></script>
- <script >
-$(function(){
-    $("#inboxMsgLink").click(function(event){
-      event.preventDefault();
-        $(".entireMessage").slideToggle('slow');
-      
-        $("#inboxMsgLink").css('font-weight','normal');
-    });
-
-     $("#inboxMsgLinkTwo").click(function(event){
-      event.preventDefault();
-        $(".entireMessageTwo").slideToggle('slow');      
-        $("#inboxMsgLinkTwo ").css('font-weight','normal');
-    });
-
-   
-    $(".my-account").on("click", function(e){
-      e.stopPropagation();
-        $(".login-user-info").slideToggle();
-    });
-
-    $("body").on("click", function(){
-       $(".login-user-info").slideUp(); 
-    });
-
-
-
-});
-
-
- </script>
-
-</body>
-</html>
+</section>

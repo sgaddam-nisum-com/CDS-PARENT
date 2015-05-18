@@ -11,7 +11,8 @@ define(['controllers/controllerModule','jquery'], function (controllerModule,$) 
 			cdsService.getProfileInfo(initiateProfile);
 
 			function initiateProfile(resp){
-				self.user = resp.data.user.citizen;
+				console.log(resp);
+				self.user = resp.data;
 			}	 		
 
 
