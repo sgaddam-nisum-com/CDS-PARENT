@@ -39,4 +39,12 @@ passport.use(new LocalStrategy({
     }
 ));
 
+passport.use("signup", new LocalStrategy({
+        passReqToCallback: true
+    },
+    function(req, username, password, done) {
+        return done(null, req.resp);
+    }
+));
+
 module.exports = passport;

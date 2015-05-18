@@ -171,14 +171,15 @@ exports.init = function(app, passport, auth) {
             if (resp.status === "failure") {
                 res.json(resp);
             } else {
-                passport.authenticate('local', {
-                    successRedirect: '/auth/success',
-                    failureRedirect: '/',
-                    failureFlash: 'failure message...'
-                });
+                req.resp = resp;
+                next();
             }
         });
-    });
+    }, passport.authenticate('signup', {
+        successRedirect: '/auth/success',
+        failureRedirect: '/',
+        failureFlash: 'failure message...'
+    }));
 
     // Home route
     app.get('/', index.render);
