@@ -60,8 +60,28 @@ require.config({
 		/*Foundation*/		
 		"slick" : "lib/slick",
 		"simplyscroll" : "lib/jquery.simplyscroll",
-		"gallery" : "lib/jqueryGallery"
+		"gallery" : "lib/jqueryGallery",
 
+		/*Dashboard*/
+
+		"angularDashboard" : "lib/dashboard/angular-dashboard",
+		"dataModel" : "lib/dashboard/datamodel",
+		"angularCookies" : "lib/dashboard/angular-cookies",
+		"angularResource" : "lib/dashboard/angular-resource",
+		"angularSanitize" : "lib/dashboard/angular-sanitize",
+		"angularNvd3" :"lib/dashboard/angularjs-nvd3-directives",
+		"d3" : "lib/dashboard/d3",
+		"nvd3" : "lib/dashboard/nv.d3",
+		"angularBootstrap" : "lib/dashboard/ui-bootstrap-tpls",
+		"angularSortable" : "lib/dashboard/sortable",
+		"jqueryUI" : "lib/dashboard/jquery-ui",
+		"angularWidgets" : "lib/dashboard/angular-widgets",
+		"angularTable" : "lib/dashboard/angular-table",
+		"pnotifyCore" :"lib/dashboard/pnotify.core",
+		"pnotify" : "lib/dashboard/pnotify",
+		"visibly" : "lib/dashboard/visibly",
+		"visibilityCore" : "lib/dashboard/visibility.core",
+		"widgetOptions" :"lib/dashboard/widgetOptions"
 
 	},
 	shim: {
@@ -157,7 +177,7 @@ var routes = {
 
     var r = getRoute();
     function start() {
-        require( ['angular', r.module.app, r.module.config ], function ( angular ) {
+        require( ["jquery",'angular', r.module.app, r.module.config ], function ( $,angular ) {
         	angular.bootstrap(document, [r.module.moduleName]);
            
         } );
