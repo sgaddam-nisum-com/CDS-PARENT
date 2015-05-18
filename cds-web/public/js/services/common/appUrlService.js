@@ -61,7 +61,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				getCareerAspirationInfo :"/citizen/careeraspirations",
 				getSkillGapsInfo : "/citizen/skillgaps",
 				
-				getTaskCategories : "/citizen/taskCategories",
+				getTaskCategories : "/auth/user/taskcategories",
 				saveTaskInfo : "/auth/user/createtask",
 				getTasksList :"/auth/user/viewtasks",
 
