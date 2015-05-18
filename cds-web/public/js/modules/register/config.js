@@ -54,10 +54,12 @@ app.config(function($stateProvider, $urlRouterProvider){
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/nonauth/common/header.html'
+                templateUrl: 'views/common/header.html',
+                controller : "headerController as headerCtrl"
             },
             'footer': {
-                templateUrl: 'views/nonauth/common/footer.html'                
+                templateUrl: 'views/common/footer.html'
+
             }
         }
     })

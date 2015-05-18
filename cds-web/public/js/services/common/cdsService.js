@@ -27,11 +27,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				  
 				 })
 			},
-			getProfileInfo : function(userId, cb){
-				 $http.get(appUrlService.getUserSession, {
-				 	 params: {
-				   		userId: userId
-				  	}
+			getProfileInfo : function(cb){
+				 $http.get(appUrlService.getProfileInfo, {
 				 }).success(function(resp) {
 				  cb(resp);				  
 				 })

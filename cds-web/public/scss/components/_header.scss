@@ -128,6 +128,23 @@ header .main-navigation nav ul li{
   list-style: none;
   float: left; 
 }
+
+.navigation .top-bar-section ul li:hover {
+  background: url(../images/home-menu-active.png) no-repeat center bottom !important;
+  color: red !important;
+}
+
+.navigation .top-bar-section ul li:active {
+  background: url(../images/home-menu-active.png) no-repeat center bottom !important;
+  color: red !important;
+}
+
+.top-bar-section ul{
+  float : right;
+}
+
+
+
 h1 {
   color: #16578f;
   font-size: 26px;

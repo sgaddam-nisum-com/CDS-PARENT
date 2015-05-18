@@ -8,8 +8,11 @@ define(['controllers/controllerModule','jquery'], function (controllerModule,$) 
 			
 	 		var self = this;
 
-	 		
+			cdsService.getProfileInfo(initiateProfile);
 
+			function initiateProfile(resp){
+				self.user = resp.data.user.citizen;
+			}	 		
 
 
 

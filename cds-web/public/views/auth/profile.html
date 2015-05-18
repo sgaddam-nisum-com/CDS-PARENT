@@ -1,26 +1,25 @@
 <div class="row" id="app-wrapper">
 	<h1>Profile Information</h1>
-	<div class="content-wrapper">
-		
+	<div class="content-wrapper">		
 		<div class="row" style="font-size:13px;">
 			<div class="large-12 columns">
 				<div class="member-info row" style="margin-left:0px; margin-bottom:10px;">
-					<span class="left">Shiva Shankar Audam</span>
+					<span class="left" ng-bind="profileCtrl.user.firstName+'  '+profileCtrl.user.lastName"></span>
 				</div>
 				<div class="row">
-					<div class="large-4 columns"> Age/Gender :</div><div class="columns large-1">:</div><div class="large-4 columns left">27 / M</div>
+					<div class="large-4 columns"> Age/Gender :</div><div class="columns large-1">:</div><div class="large-4 columns left"><span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.gender"></span></div>
 				</div>
 				<div class="row">
-					<div class="large-4 columns"> Phone :</div><div class="columns large-1">:</div><div class="large-4 columns left">+91 8886867695</div>
+					<div class="large-4 columns"> Phone :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.phoneNumber">+91 8886867695</div>
 				</div>
 				<div class="row">
-					<div class="large-4 columns"> Email :</div><div class="columns large-1">:</div><div class="large-4 columns left"><a href="mailto:{{viewCtrl.user.emailId}}">snarala@outlook.com</a></div>
+					<div class="large-4 columns"> Email :</div><div class="columns large-1">:</div><div class="large-4 columns left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
 				</div>
 				<div class="row">
-					<div class="large-4 columns"> Location :</div><div class="columns large-1">:</div><div class="large-4 columns left">Hyderabad</div>
+					<div class="large-4 columns"> Location :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.workingLocation">Hyderabad</div>
 				</div>
 				<div class="row">
-					<div class="large-4 columns"> Constituency :</div><div class="columns large-1">:</div><div class="large-4 columns left">Vijayawada</div>
+					<div class="large-4 columns"> Constituency :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.constituency">Vijayawada</div>
 				</div>
 				<div class="row">
 					<div class="large-4 columns"> Position in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left">Mandal President</div>
@@ -29,7 +28,7 @@
 					<div class="large-4 columns"> Responsibility in Party :</div><div class="columns large-1">:</div><div class="large-4 columns left">Student Union Organization</div>
 				</div>
 				<div class="row">
-					<div class="large-4 columns"> Skype Id :</div><div class="columns large-1">:</div><div class="large-4 columns left">saudam</div>
+					<div class="large-4 columns"> Skype Id :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.skypeId">saudam</div>
 				</div>
 				<div class="row" style="margin-top :20px;margin-bottom :20px">
 					<div class="large-4 columns">  <a href="#" class="view-more">View more details</a></div><div class="columns large-1"></div><div class="large-4 columns left"></div>

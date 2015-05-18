@@ -274,8 +274,17 @@ body .navigation .top-bar-section ul li:hover{
   color: red !important;
 }
 body .navigation .top-bar-section ul li.active {
-  background: url(../images/menu-active.png) no-repeat center bottom !important;
+  background: url(../images/home-menu-active.png) no-repeat center bottom !important;
 }
+
+.top-bar-section li:not(.has-form) a:hover:not(.button),
+.top-bar-section li.active:not(.has-form) a:hover:not(.button){
+  background: none repeat scroll 0 0 #16578f;
+  color:#fff;
+}
+
+
+
 /*body .navigation .top-bar-section ul li.active:hover {
   background: url(../images/menu-active.png) no-repeat center bottom !important;
 }*/
@@ -286,6 +295,12 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: none;
   padding-left: 16px;
   padding-right: 16px;
+  color : #16578f;
+}
+
+
+body .navigation .top-bar-section ul li:active a{
+ color: #25577A !important;
 }
 
 @media only screen and (min-width: 640px) and (max-width: 1024px) {

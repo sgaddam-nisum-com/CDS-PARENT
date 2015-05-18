@@ -1,4 +1,4 @@
-define(['controllers/controllerModule','formValidation','validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function(controllerModule,formValidation,validationMap, errorJson, $) {
+define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
 
     controllerModule.controller('taskController', ['$state', '$http', "appUrlService", "cdsService", '$scope', "taskService", "$sessionStorage",
         function($state, $http, appUrls, cdsService, $scope, taskService, $sessionStorage) {
@@ -11,7 +11,7 @@ define(['controllers/controllerModule','formValidation','validators/personalVali
                 submitValidForm: false,
                 runCallBack: false,
             };
-            var formStack = formValidation.init("#myTaskForm", validationMap, errorJson, config);
+            
             taskService.getTaskCategories(function(resp) {
                 $scope.taskCategoryOptions = resp.data;
             });

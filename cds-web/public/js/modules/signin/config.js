@@ -8,11 +8,10 @@ app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cds
 
        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
                 
-
-           var checkUserSession = cdsService.getUserSession();
-           console.log(checkUserSession)			
-			checkUserSession
-			.success(function(resp){					                                                    
+/*
+     var checkUserSession = cdsService.getUserSession();
+ 	
+			checkUserSession.success(function(resp){					                                                    
                          
                   if(resp.status == "success"){  
                    
@@ -32,7 +31,7 @@ app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cds
                      $state.go("root.signin");                    
                 }              
              }	
-            })
+            })*/
 	
         });
 
@@ -52,10 +51,11 @@ app.config(function($stateProvider, $urlRouterProvider){
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/nonauth/common/header.html'
+                templateUrl: 'views/common/header.html',
+                controller : "headerController as headerCtrl"
             },
             'footer': {
-                templateUrl: 'views/nonauth/common/footer.html'                
+                templateUrl: 'views/common/footer.html'                
             }
         }
     })

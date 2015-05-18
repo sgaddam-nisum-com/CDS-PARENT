@@ -6,12 +6,24 @@ define(['services/serviceModule'], function(serviceModule) {
 
 
             var roleStateMap = {
-                "admin": [],
-                "citizen": ["auth.dashboard", "auth.list"],
-                "cadre" : [],
-                "officeExecutive" : []
-
+                "Admin": [],
+                "Citizen": ["Requests"],
+                "Cadre" : ["Dashboard", "Tasks","Calendar"],                
+                "Office Executive" : ["Dashboard","Tasks","Calendar" ,"Requests","Registrants"],
+                "Office Manager" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"]
             }
+
+
+            var navItemsMaps = {
+
+                                Dashboard : {name : "Dashboard" , url : "/dashboard"}, 
+                                Tasks : {name : "Tasks" , url : "/tasks"},
+                                Calendar :  {name : "Calendar" , url : "#"},
+                                Requests : {name : "Requests" , url : "#"}
+                            }
+                            
+
+
 
             var privilegeMap = {
 
@@ -122,13 +134,21 @@ define(['services/serviceModule'], function(serviceModule) {
                         topRole = "Citizen";
                     }
                     return topRole;
+                },
+
+                getNavArray : function(role){
+                    
+                    console.log(role);
+                    var navArray = [];
+                    var roleStateArray = roleStateMap[role];
+
+                    for(var i=0; i<roleStateArray.length; i++){
+                        navArray.push(navItemsMaps[roleStateArray[i]]);
+                    }
+
+                    console.log(navArray);
+                    return navArray;
                 }
-
-
-             
-
-
-
 
             };
         }
