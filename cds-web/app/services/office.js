@@ -27,7 +27,13 @@ exports.verifyCadre = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.office.verifyVnC, params, headers, function(args) {
+    //build url path
+    var url = {
+        path: requireUtil.format(restUrls.office.verifyVnC.path, params.userId),
+        method: restUrls.office.verifyVnC.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -38,24 +44,39 @@ exports.rejectVnC = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.office.rejectVnC, params, headers, function(args) {
+    var url = {
+        path: requireUtil.format(restUrls.office.rejectVnC.path, params.userId),
+        method: restUrls.office.rejectVnC.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.viewUserInfo = function(params, token, callback) {
-    log.debug("viewUserInfo : " + (JSON.stringify(params)));
+exports.holdVnC = function(params, token, callback) {
+    log.debug("holdVnC : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
 
-    var path = requireUtil.format(restUrls.office.viewUserInfo.path, params.userId);
     var url = {
-        path: path,
-        method: restUrls.office.viewUserInfo.method
+        path: requireUtil.format(restUrls.office.holdVnC.path, params.userId),
+        method: restUrls.office.holdVnC.method
     };
 
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(restUrls.office.holdVnC, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+exports.assignCadreForApproval = function(token, callback) {
+    log.debug("assignCadreForApproval : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    restService.builbArgs(restUrls.office.assignCadreForApproval, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

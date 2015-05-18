@@ -184,3 +184,20 @@ exports.getPrivileges = function(token, callback) {
         restService.makecall(args, callback);
     });
 };
+
+exports.viewUserInfo = function(params, token, callback) {
+    log.debug("viewUserInfo : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    var path = requireUtil.format(restUrls.user.viewUserInfo.path, params.userId);
+    var url = {
+        path: path,
+        method: restUrls.user.viewUserInfo.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};

@@ -13,6 +13,10 @@ module.exports = {
         rootPath: "./public/images/",
         path: "profile/"
     },
+    attachments: {
+        rootPath: "./public/images/",
+        path: "attachments/"
+    },
     db: {
         host: 'localhost', // Host name for database connection. 
         port: 3307, // Port number for database connection. 

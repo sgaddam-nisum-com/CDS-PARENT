@@ -118,7 +118,8 @@ exports.userTypes = function(req, res, next) {
     var orgId = req.query.orgId;
 
     userService.userTypes(null, orgId, function(resp) {
-        res.json(resp);
+        req.resp = resp;
+        next();
     });
 };
 
@@ -252,6 +253,17 @@ exports.getTaskDetails = function(req, res, next) {
     });
 };
 
+exports.getTeamTasks = function(req, res, next) {
+    log.debug("getTasks : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getTasks(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
 exports.getTasks = function(req, res, next) {
     log.debug("getTasks : logged user - " + req.user.data.userName);
     var params = req.body;
@@ -263,12 +275,12 @@ exports.getTasks = function(req, res, next) {
     });
 };
 
-exports.getMyTasks = function(req, res, next) {
-    log.debug("getMyTasks : logged user - " + req.user.data.userName);
+exports.getAssignedTasks = function(req, res, next) {
+    log.debug("getAssignedTasks : logged user - " + req.user.data.userName);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.getMyTasks(params, token, function(resp) {
+    taskMgmt.getAssignedTasks(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -302,6 +314,17 @@ exports.taskPriority = function(req, res, next) {
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.taskPriority(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
+exports.updateTasksStatus = function(req, res, next) {
+    log.debug("updateTasksStatus : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.updateTasksStatus(params, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -393,4 +416,19 @@ exports.getUserFromSession = function(req, res, next) {
     //remove non accesible data for browser
     delete user.token;
     res.json(user);
+};
+
+exports.viewUserInfo = function(req, res, next) {
+    log.debug("viewUserInfo : logged user - " + req.user.data.userName + " selected user - " + req.query.userId);
+
+
+    var userId = req.user.data.user.appUserId;
+    var token = req.user ? req.user.data.token : null;
+
+    userService.viewUserInfo({
+        userId: userId
+    }, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
 };

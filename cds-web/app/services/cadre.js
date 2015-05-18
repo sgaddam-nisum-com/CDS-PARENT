@@ -62,8 +62,8 @@ exports.isPartyMemberShipIdExist = function(params, token, callback) {
     });
 };
 
-exports.cadreWorksheet = function(params, token, callback) {
-    log.debug("cadreWorksheet : " + (JSON.stringify(params)));
+exports.getCadreWorksheet = function(params, token, callback) {
+    log.debug("getCadreWorksheet : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
 
@@ -78,12 +78,12 @@ exports.cadreWorksheet = function(params, token, callback) {
     });
 };
 
-exports.cadres = function(params, token, callback) {
-    log.debug("cadres ");
+exports.getCadreLeads = function(params, token, callback) {
+    log.debug("getCadreLeads ");
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.cadre.cadres, params, headers, function(args) {
+    restService.builbArgs(restUrls.cadre.leadersincadre, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

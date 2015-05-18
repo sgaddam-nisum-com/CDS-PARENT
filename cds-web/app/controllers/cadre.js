@@ -86,12 +86,12 @@ exports.isPartyMemberShipIdExist = function(req, res, next) {
     });
 };
 
-exports.cadreWorksheet = function(req, res, next) {
-    log.debug("cadreWorksheet : logged user - " + req.user.data.userName + " cadre id - " + req.query.userId);
+exports.getCadreWorksheet = function(req, res, next) {
+    log.debug("getCadreWorksheet : logged user - " + req.user.data.userName + " cadre id - " + req.query.userId);
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
-    cadreService.cadreWorksheet({
+    cadreService.getCadreWorksheet({
         userId: userId
     }, token, function(resp) {
         req.resp = resp;
@@ -99,11 +99,11 @@ exports.cadreWorksheet = function(req, res, next) {
     });
 };
 
-exports.cadres = function(req, res, next) {
-    log.debug("cadres : logged user - " + req.user.data.userName);
+exports.getCadreLeads = function(req, res, next) {
+    log.debug("getCadreLeads : logged user - " + req.user.data.userName);
     var token = req.user ? req.user.data.token : null;
 
-    cadreService.cadres(token, function(resp) {
+    cadreService.getCadreLeads(token, function(resp) {
         req.resp = resp;
         next();
     });

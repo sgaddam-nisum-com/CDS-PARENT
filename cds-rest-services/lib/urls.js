@@ -40,30 +40,86 @@ module.exports = {
             path: "user/resetpassword/%s/",
             method: "GET"
         },
+        getPrivileges: {
+            path: "lookup/privileges",
+            method: "GET"
+        },
+        viewUserInfo: {
+            path: "userinfo/%s/userinformation",
+            method: "GET"
+        }
+    },
+    task: {
         createTask: {
-            path: "user/%s/",
+            path: "tasks/",
             method: "POST"
         },
         editTask: {
-            path: "user/%s/",
-            method: "POST"
+            path: "tasks/%s/",
+            method: "PUT"
         },
         deleteTask: {
-            path: "user/%s/",
+            path: "tasks/",
+            method: "DELETE"
+        },
+        addAttachmentToTask: {
+            path: "tasks/%s/attachments/",
             method: "POST"
         },
-        getTask: {
-            path: "user/%s/",
+        deleteAttachmentFromTask: {
+            path: "tasks/%s/attachments/",
+            method: "DELETE"
+        },
+        addCommentToTask: {
+            path: "tasks/%s/comments/",
             method: "POST"
         },
-        viewTask: {
-            path: "user/%s/",
-            method: "POST"
+        updateCommentToTask: {
+            path: "tasks/%s/comments/",
+            method: "PUT"
         },
-        viewTasks: {
-            path: "user/%s/",
-            method: "POST"
+        deleteCommentToTask: {
+            path: "tasks/%s/comments/",
+            method: "DELETE"
         },
+        getStatuses: {
+            path: "%s/statuses/",
+            method: "GET"
+        },
+        getTaskDetails: {
+            path: "tasks/%s/",
+            method: "GET"
+        },
+        getTasks: {
+            path: "tasks/%s/tasks/",
+            method: "GET"
+        },
+        getAssignedTasks: {
+            path: "tasks/%s/mytasks/",
+            method: "GET"
+        },
+        getTeamTasks: {
+            path: "reporteestasks/",
+            method: "GET"
+        },
+        updateTasksStatus: {
+            path: "%s/updatetaskstatus/",
+            method: "PUT"
+        },
+        requestTypes: {
+            path: "requestsTypes/",
+            method: "GET"
+        },
+        taskCategories: {
+            path: "taskCategories/",
+            method: "GET"
+        },
+        taskPriority: {
+            path: "priorities/",
+            method: "GET"
+        }
+    },
+    role: {
         getRole: {
             path: "roles/%s/",
             method: "GET"
@@ -83,27 +139,53 @@ module.exports = {
         updateRole: {
             path: "roles/%s/",
             method: "PUT"
-        },
-        getPrivileges: {
-            path: "lookup/privileges",
-            method: "GET"
         }
     },
-    office: {        
+    office: {
         vnCVerificationList: {
-            path: "user/vnc",
-            method: "POST"
+            path: "user/dashboard/eventpendingcadres/assignTo",
+            method: "GET"
         },
         verifyVnC: {
-            path: "user/approval",
+            path: "userstatuschange/%s/cadre/approve/",
             method: "POST"
         },
         rejectVnC: {
-            path: "user/reject",
+            path: "userstatuschange/%s/cadre/reject",
             method: "POST"
         },
-        viewUserInfo: {
-            path: "userinfo/%s/userinformation",
+        holdVnC: {
+            path: "userstatuschange/%s/cadre/waitingforinfo",
+            method: "POST"
+        },
+        assignCadreForApproval: {
+            path: "userstatuschange/cadre/assign",
+            method: "POST"
+        }
+    },
+    dashboard: {
+        viewMessage: {
+            path: "user/dashboard/inboxdetails/%s/",
+            method: "GET"
+        },
+        notifications: {
+            path: "user/dashboard/getnotificationslist/",
+            method: "GET"
+        },
+        messageCount: {
+            path: "user/dashboard/gettaskscount/",
+            method: "GET"
+        },
+        tasksByAge: {
+            path: "user/%s/taskreports/priorityagereports",
+            method: "GET"
+        },
+        tasksTrendRPerMonth: {
+            path: "user/dashboard/gettaskstrendreportspermonth",
+            method: "GET"
+        },
+        cadresTrendRPerMonth: {
+            path: "user/dashboard/getcadrestrendreportspermonth",
             method: "GET"
         }
     },
@@ -338,6 +420,10 @@ module.exports = {
         },
         isPartyMemberShipIdExist: {
             path: "user/partymemberidexists/%s",
+            method: "GET"
+        },
+        leadersincadre: {
+            path: "leadersincadre/",
             method: "GET"
         }
     }
