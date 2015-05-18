@@ -35,7 +35,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				getUserFamilyInfo : "/cadre/getfamily",
 				getUserCadreInfo : "/cadre/get",
 
-				getProfileInfo : "/auth/office/manager/viewuserinfo",
+				getProfileInfo : "/auth/user/viewuserinfo",
 
 
 

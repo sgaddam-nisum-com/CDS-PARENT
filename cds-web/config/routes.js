@@ -22,7 +22,7 @@ exports.init = function(app, passport, auth) {
     app.get('/signin', userController.signin);
     app.get('/signout', userController.signout);
     app.get('/auth/success', function(req, res) {
-        index.officehome(req, res);
+        index.home(req, res);
     });
 
     app.get('/auth/user/getuserfromsession', userController.getUserFromSession);
@@ -176,7 +176,6 @@ exports.init = function(app, passport, auth) {
                     failureRedirect: '/',
                     failureFlash: 'failure message...'
                 });
-
             }
         });
     });
