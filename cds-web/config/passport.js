@@ -32,7 +32,6 @@ passport.use(new LocalStrategy({
                     message: 'Unknown user'
                 });
             } else {
-                user.data.userName = username;
                 done(null, user);
             }
         });

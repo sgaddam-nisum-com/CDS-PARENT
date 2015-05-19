@@ -111,15 +111,15 @@ module.exports = {
             method: "PUT"
         },
         requestTypes: {
-            path: "requestsTypes/",
+            path: "lookup/requestsTypes/",
             method: "GET"
         },
         taskCategories: {
-            path: "taskCategories/",
+            path: "lookup/taskCategories/",
             method: "GET"
         },
         taskPriority: {
-            path: "priorities/",
+            path: "lookup/priorities/",
             method: "GET"
         }
     },

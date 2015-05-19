@@ -31,7 +31,7 @@ exports.init = function(app, passport, auth) {
     app.get('/user/isemailexist', userController.isMailExist);
 
     app.get('/auth/user/userslist', userController.usersList, auth.filterResponse);
-    app.get('/auth/user/usertypes', userController.userTypes, auth.filterResponse);
+    app.get('/user/usertypes', userController.userTypes);
 
     app.get('/auth/user/myprofile', userController.myProfile, auth.filterResponse);
     app.put('/auth/user/updateprofile', userController.updateProfile, auth.filterResponse);
@@ -58,9 +58,10 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/user/statuses', userController.getStatuses, auth.filterResponse);
     app.get('/auth/user/taskdetails', userController.getTaskDetails, auth.filterResponse);
     app.get('/auth/user/updatetasksstatus', userController.updateTasksStatus, auth.filterResponse);
-    app.get('/auth/user/requesttypes', userController.requestTypes, auth.filterResponse);
-    app.get('/auth/user/taskcategories', userController.taskCategories, auth.filterResponse);
-    app.get('/auth/user/taskpriority', userController.taskPriority, auth.filterResponse);
+
+    app.get('/user/requesttypes', userController.requestTypes);
+    app.get('/user/taskcategories', userController.taskCategories);
+    app.get('/user/taskpriority', userController.taskPriority);
 
     app.get('/auth/user/teamtasks', userController.getTeamTasks, auth.filterResponse);
     app.get('/auth/user/tasks', userController.getTasks, auth.filterResponse);
@@ -111,13 +112,11 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/citizen/getfamily', citizenController.getFamily, auth.filterResponse);
     app.delete('/auth/citizen/deletefamily', citizenController.deleteFamily, auth.filterResponse);
 
-    //app.post('/citizen/quickregistration', citizenController.quickRegistration);
-
     app.delete('/auth/citizen/delete', citizenController.delete, auth.filterResponse);
 
     app.get('/auth/citizen/viewcitizen', citizenController.viewCitizen, auth.filterResponse);
     app.get('/auth/citizen/getvoterinfbytext', citizenController.getVoterInfByText);
-    app.get('/auth/citizen/careeraspirations', citizenController.careerAspirations);
+    app.get('/citizen/careeraspirations', citizenController.careerAspirations);
     app.get('/auth/citizen/skillgaps', citizenController.skillGaps);
 
     //volunteer routes
@@ -130,13 +129,13 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/volunteer/get', volunteerController.get, auth.filterResponse);
     app.delete('/auth/volunteer/delete', volunteerController.delete, auth.filterResponse);
 
-    app.get('/auth/volunteer/isvolunteeridexist', volunteerController.isVolunteerIdExist);
-    app.get('/auth/volunteer/performancegrades', volunteerController.performanceGrades);
+    app.get('/volunteer/isvolunteeridexist', volunteerController.isVolunteerIdExist);
+    app.get('/volunteer/performancegrades', volunteerController.performanceGrades);
     app.get('/auth/volunteer/volunteersheet', volunteerController.volunteerSheet, auth.filterResponse);
 
     //cadre routes    
-    app.get('/auth/cadre/partypositions', cadreController.partyPositions);
-    app.get('/auth/cadre/bloodgroups', cadreController.bloodGroups);
+    app.get('/cadre/partypositions', cadreController.partyPositions);
+    app.get('/cadre/bloodgroups', cadreController.bloodGroups);
 
     app.post('/auth/cadre/save', cadreController.save);
     app.put('/auth/cadre/edit', cadreController.edit, auth.filterResponse);
@@ -144,7 +143,7 @@ exports.init = function(app, passport, auth) {
     app.delete('/auth/cadre/delete', cadreController.delete, auth.filterResponse);
 
     app.get('/auth/cadre/cadreWorksheet', cadreController.getCadreWorksheet, auth.filterResponse);
-    app.get('/auth/cadre/ispartymembershipidexist', cadreController.isPartyMemberShipIdExist, auth.filterResponse);
+    app.get('/cadre/ispartymembershipidexist', cadreController.isPartyMemberShipIdExist);
     app.get('/auth/cadre/cadreleads', cadreController.getCadreLeads, auth.filterResponse);
 
     //office executive routes    

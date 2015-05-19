@@ -12,8 +12,7 @@ var restService = require('cds-rest-services'),
 exports.createTask = function(params, files, token, callback) {
     log.debug("createTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     saveAttachments(files, function(imgPaths) {
         params.taskAttachments = imgPaths;
@@ -26,8 +25,7 @@ exports.createTask = function(params, files, token, callback) {
 exports.editTask = function(params, token, callback) {
     log.debug("editTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     //build url path
     var url = {
@@ -43,8 +41,7 @@ exports.editTask = function(params, token, callback) {
 exports.deleteTask = function(params, token, callback) {
     log.debug("deleteTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     restService.builbArgs(restUrls.task.deleteTask, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -54,8 +51,7 @@ exports.deleteTask = function(params, token, callback) {
 exports.addAttachmentToTask = function(params, files, token, callback) {
     log.debug("addAttachmentToTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.addAttachmentToTask.path, params.taskId),
@@ -90,8 +86,7 @@ var saveAttachments = function(files, callback) {
 exports.deleteAttachmentFromTask = function(params, token, callback) {
     log.debug("deleteAttachmentFromTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.deleteAttachmentFromTask.path, params.taskId),
@@ -106,8 +101,7 @@ exports.deleteAttachmentFromTask = function(params, token, callback) {
 exports.addCommentToTask = function(params, token, callback) {
     log.debug("addCommentToTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.addCommentToTask.path, params.taskId),
@@ -122,8 +116,7 @@ exports.addCommentToTask = function(params, token, callback) {
 exports.updateCommentToTask = function(params, token, callback) {
     log.debug("updateCommentToTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.updateCommentToTask.path, params.taskId),
@@ -138,8 +131,7 @@ exports.updateCommentToTask = function(params, token, callback) {
 exports.deleteCommentToTask = function(params, token, callback) {
     log.debug("deleteCommentToTask : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.deleteCommentToTask.path, params.taskId),
@@ -154,8 +146,7 @@ exports.deleteCommentToTask = function(params, token, callback) {
 exports.getStatuses = function(params, token, callback) {
     log.debug("getStatuses : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.getStatuses.path, params.statusType),
@@ -170,8 +161,7 @@ exports.getStatuses = function(params, token, callback) {
 exports.getTaskDetails = function(params, token, callback) {
     log.debug("getTaskDetails : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.getTaskDetails.path, params.taskId),
@@ -186,8 +176,7 @@ exports.getTaskDetails = function(params, token, callback) {
 exports.getAssignedTasks = function(params, token, callback) {
     log.debug("getAssignedTasks : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.getAssignedTasks.path, params.loginId),
@@ -202,8 +191,7 @@ exports.getAssignedTasks = function(params, token, callback) {
 exports.getSupervisorTasks = function(params, token, callback) {
     log.debug("getSupervisorTasks : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     restService.builbArgs(restUrls.task.getSupervisorTasks, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -213,8 +201,7 @@ exports.getSupervisorTasks = function(params, token, callback) {
 exports.getTasks = function(params, token, callback) {
     log.debug("getTasks : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.getTasks.path, params.loginId),
@@ -229,8 +216,7 @@ exports.getTasks = function(params, token, callback) {
 exports.getTeamTasks = function(params, token, callback) {
     log.debug("getTeamTasks : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     restService.builbArgs(restUrls.task.getTeamTasks, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -240,8 +226,7 @@ exports.getTeamTasks = function(params, token, callback) {
 exports.updateTasksStatus = function(params, token, callback) {
     log.debug("updateTasksStatus : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.token] = token;
 
     var url = {
         path: requireUtil.format(restUrls.task.updateTasksStatus.path, params.taskId),
@@ -253,33 +238,30 @@ exports.updateTasksStatus = function(params, token, callback) {
     });
 };
 
-exports.requestTypes = function(params, token, callback) {
+exports.requestTypes = function(params, orgId, callback) {
     log.debug("requestTypes : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.task.requestTypes, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.taskCategories = function(params, token, callback) {
+exports.taskCategories = function(params, orgId, callback) {
     log.debug("taskCategories : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.task.taskCategories, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.taskPriority = function(params, token, callback) {
+exports.taskPriority = function(params, orgId, callback) {
     log.debug("taskPriority : " + (JSON.stringify(params)));
     var headers = header;
-    if (token)
-        headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.task.taskPriority, params, headers, function(args) {
         restService.makecall(args, callback);

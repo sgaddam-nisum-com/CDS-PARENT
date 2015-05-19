@@ -55,34 +55,32 @@ exports.delete = function(req, res, next) {
 };
 
 exports.partyPositions = function(req, res, next) {
-    log.debug("partyPositions : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("partyPositions");
+    var orgId = req.body.orgId;
 
-    cadreService.partyPositions(null, token, function(resp) {
-        req.resp = resp;
-        next();
+    cadreService.partyPositions(orgId, function(resp) {
+        res.json(resp);
     });
 };
 
 exports.bloodGroups = function(req, res, next) {
-    log.debug("bloodGroups : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("bloodGroups");
+    var orgId = req.body.orgId;
 
-    cadreService.bloodGroups(null, token, function(resp) {
+    cadreService.bloodGroups(orgId, function(resp) {
         res.json(resp);
     });
 };
 
 exports.isPartyMemberShipIdExist = function(req, res, next) {
-    log.debug("isPartyMemberShipIdExist : logged user - " + req.user.data.userName);
+    log.debug("isPartyMemberShipIdExist");
     var partyMemberShipId = req.query.partyMemberShipId;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.body.orgId;
 
     cadreService.isPartyMemberShipIdExist({
         partyMemberShipId: partyMemberShipId
-    }, token, function(resp) {
-        req.resp = resp;
-        next();
+    }, orgId, function(resp) {
+        res.json(resp);
     });
 };
 

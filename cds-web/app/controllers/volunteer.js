@@ -63,41 +63,40 @@ exports.areasIntrestedToVolunteer = function(req, res, next) {
 };
 
 exports.volunteerCategory = function(req, res, next) {
-    log.debug("volunteerCategory : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("volunteerCategory");
+    var orgId = req.query.orgId;
 
-    volunteerService.volunteerCategory(null, token, function(resp) {
+    volunteerService.volunteerCategory(orgId, function(resp) {
         res.json(resp);
     });
 };
 
 exports.volunteerLeads = function(req, res, next) {
-    log.debug("volunteerLeads : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("volunteerLeads");
+    var orgId = req.body.orgId;
 
-    volunteerService.volunteerLeads(null, token, function(resp) {
+    volunteerService.volunteerLeads(orgId, function(resp) {
         res.json(resp);
     });
 };
 
 exports.isVolunteerIdExist = function(req, res, next) {
-    log.debug("isVolunteerIdExist : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("isVolunteerIdExist");
+    var orgId = req.body.orgId;
 
     volunteerService.isVolunteerIdExist({
         volunteerId: volunteerId
-    }, token, function(resp) {
+    }, orgId, function(resp) {
         res.json(resp);
     });
 };
 
 exports.performanceGrades = function(req, res, next) {
-    log.debug("performanceGrades : logged user - " + req.user.data.userName);
-    var token = req.user ? req.user.data.token : null;
+    log.debug("performanceGrades");
+    var orgId = req.body.orgId;
 
-    volunteerService.performanceGrades(null, token, function(resp) {
-        req.resp = resp;
-        next();
+    volunteerService.performanceGrades(orgId, function(resp) {
+        res.json(resp);
     });
 };
 

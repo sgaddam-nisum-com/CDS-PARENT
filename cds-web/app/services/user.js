@@ -153,8 +153,8 @@ exports.isMailExist = function(params, orgId, callback) {
     });
 };
 
-exports.userTypes = function(params, orgId, callback) {
-    log.debug("userTypes : " + (JSON.stringify(params)));
+exports.userTypes = function(orgId, callback) {
+    log.debug("userTypes");
     var headers = header;
     if (orgId)
         headers[cdsConfig.orgId] = orgId;

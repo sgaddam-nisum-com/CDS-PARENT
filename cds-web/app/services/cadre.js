@@ -26,30 +26,30 @@ exports.delete = function(params, token, callback) {
     });
 };
 
-exports.partyPositions = function(params, token, callback) {
-    log.debug("partyPositions : " + (JSON.stringify(params)));
+exports.partyPositions = function(orgId, callback) {
+    log.debug("partyPositions");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.cadre.partyPositions, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.bloodGroups = function(params, token, callback) {
-    log.debug("bloodGroups : " + (JSON.stringify(params)));
+exports.bloodGroups = function(orgId, callback) {
+    log.debug("bloodGroups");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.cadre.bloodGroups, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.isPartyMemberShipIdExist = function(params, token, callback) {
-    log.debug("isPartyMemberShipIdExist : " + (JSON.stringify(params)));
+exports.isPartyMemberShipIdExist = function(params, orgId, callback) {
+    log.debug("isPartyMemberShipIdExist");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     //build url path
     var url = {

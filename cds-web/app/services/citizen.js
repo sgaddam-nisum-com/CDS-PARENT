@@ -47,7 +47,6 @@ exports.getVoterInfByText = function(params, token, callback) {
 exports.deleteVoterInf = function(params, token, callback) {
     log.debug("deleteVoterInf : " + (JSON.stringify(params)));
     var headers = header;
-
     headers[cdsConfig.token] = token;
 
     //build url path
@@ -61,10 +60,10 @@ exports.deleteVoterInf = function(params, token, callback) {
     });
 };
 
-exports.getAddressByPincode = function(params, token, callback) {
+exports.getAddressByPincode = function(params, orgId, callback) {
     log.debug("getAddressByPincode : " + (JSON.stringify(params)));
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     //build url path
     var url = {
@@ -93,20 +92,20 @@ exports.deleteFamily = function(params, token, callback) {
     });
 };
 
-exports.getQualifications = function(params, token, callback) {
-    log.debug("getQualifications : " + (JSON.stringify(params)));
+exports.getQualifications = function(orgId, callback) {
+    log.debug("getQualifications");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.citizen.qualifications, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.getOccupations = function(params, token, callback) {
-    log.debug("getOccupations : " + (JSON.stringify(params)));
+exports.getOccupations = function(orgId, callback) {
+    log.debug("getOccupations");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.citizen.occupations, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -148,20 +147,20 @@ exports.viewCitizen = function(params, token, callback) {
     });
 };
 
-exports.careerAspirations = function(params, token, callback) {
-    log.debug("careerAspirations : " + (JSON.stringify(params)));
+exports.careerAspirations = function(orgId, callback) {
+    log.debug("careerAspirations");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.citizen.careerAspirations, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.skillGaps = function(params, token, callback) {
-    log.debug("skillGaps : " + (JSON.stringify(params)));
+exports.skillGaps = function(orgId, callback) {
+    log.debug("skillGaps");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.citizen.skillGaps, null, headers, function(args) {
         restService.makecall(args, callback);

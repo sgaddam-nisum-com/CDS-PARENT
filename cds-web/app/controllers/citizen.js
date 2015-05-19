@@ -247,25 +247,23 @@ exports.getQualifications = function(req, res, next) {
 };
 
 exports.getAddressByPincode = function(req, res, next) {
-    log.debug("getAddressByPincode : logged user - " + (req.user ? req.user.data.userName : "") + " q - " + req.query.q);
+    log.debug("getAddressByPincode");
     var q = req.query.q;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.body.orgId;
 
     citizenService.getAddressByPincode({
         q: q
-    }, token, function(resp) {
-        req.resp = resp;
-        next();
+    }, orgId, function(resp) {
+        res.json(resp);
     });
 };
 
 exports.getOccupations = function(req, res, callback) {
-    log.debug("getOccupations : logged user - " + (req.user ? req.user.data.userName : ""));
-    var token = req.user ? req.user.data.token : null;
+    log.debug("getOccupations");
+    var orgId = req.body.orgId;
 
-    citizenService.getOccupations(null, token, function(resp) {
-        req.resp = resp;
-        next();
+    citizenService.getOccupations(orgId, function(resp) {
+        req.json(resp);
     });
 };
 
@@ -296,20 +294,19 @@ exports.viewCitizen = function(req, res, next) {
 };
 
 exports.careerAspirations = function(req, res, next) {
-    log.debug("careerAspirations : logged user - " + (req.user ? req.user.data.userName : ""));
-    var token = req.user ? req.user.data.token : null;
+    log.debug("careerAspirations");
+    var orgId = req.body.orgId;
 
-    citizenService.careerAspirations(null, token, function(resp) {
+    citizenService.careerAspirations( orgId, function(resp) {
         res.json(resp);
     });
 };
 
 exports.skillGaps = function(req, res, next) {
-    log.debug("skillGaps : logged user - " + (req.user ? req.user.data.userName : ""));
-    var token = req.user ? req.user.data.token : null;
+    log.debug("skillGaps");
+    var orgId = req.body.orgId;
 
-    citizenService.skillGaps(null, token, function(resp) {
-        req.resp = resp;
-        next();
+    citizenService.skillGaps(orgId, function(resp) {
+        res.json(resp);
     });
 };

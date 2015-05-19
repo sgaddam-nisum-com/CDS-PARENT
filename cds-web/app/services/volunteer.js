@@ -29,7 +29,7 @@ exports.delete = function(params, token, callback) {
 exports.isVolunteerIdExist = function(params, token, callback) {
     log.debug("isVolunteerIdExist : " + (JSON.stringify(params)));
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     //build url path
     var url = {
@@ -42,10 +42,10 @@ exports.isVolunteerIdExist = function(params, token, callback) {
     });
 };
 
-exports.performanceGrades = function(params, token, callback) {
-    log.debug("performanceGrades : " + (JSON.stringify(params)));
+exports.performanceGrades = function(orgId, callback) {
+    log.debug("performanceGrades");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.volunteer.performanceGrades, null, headers, function(args) {
         restService.makecall(args, callback);
@@ -62,20 +62,20 @@ exports.areasIntrestedToVolunteer = function(orgId, callback) {
     });
 };
 
-exports.volunteerCategory = function(params, token, callback) {
-    log.debug("volunteerCategory : " + (JSON.stringify(params)));
+exports.volunteerCategory = function(orgId, callback) {
+    log.debug("volunteerCategory ");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.volunteer.category, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.volunteerLeads = function(params, token, callback) {
-    log.debug("volunteerLeads : " + (JSON.stringify(params)));
+exports.volunteerLeads = function(orgId, callback) {
+    log.debug("volunteerLeads : ");
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     restService.builbArgs(restUrls.volunteer.leads, params, headers, function(args) {
         restService.makecall(args, callback);

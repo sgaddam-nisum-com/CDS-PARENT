@@ -117,9 +117,8 @@ exports.userTypes = function(req, res, next) {
     log.debug("userTypes : orgId - " + req.query.orgId);
     var orgId = req.query.orgId;
 
-    userService.userTypes(null, orgId, function(resp) {
-        req.resp = resp;
-        next();
+    userService.userTypes(orgId, function(resp) {
+        req.json(resp);
     });
 };
 
@@ -298,35 +297,32 @@ exports.getSupervisorTasks = function(req, res, next) {
 };
 
 exports.requestTypes = function(req, res, next) {
-    log.debug("requestTypes : logged user - " + req.user.data.userName);
+    log.debug("requestTypes");
     var params = req.body;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.query.orgId;
 
-    taskMgmt.requestTypes(params, token, function(resp) {
-        req.resp = resp;
-        next();
+    taskMgmt.requestTypes(params, orgId, function(resp) {
+        res.json(resp);
     });
 };
 
 exports.taskCategories = function(req, res, next) {
-    log.debug("taskCategories : logged user - " + req.user.data.userName);
+    log.debug("taskCategories");
     var params = req.body;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.query.orgId;
 
-    taskMgmt.taskCategories(params, token, function(resp) {
-        req.resp = resp;
-        next();
+    taskMgmt.taskCategories(params, orgId, function(resp) {
+        res.json(resp);
     });
 };
 
 exports.taskPriority = function(req, res, next) {
-    log.debug("taskPriority : logged user - " + req.user.data.userName);
+    log.debug("taskPriority");
     var params = req.body;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.query.orgId;
 
-    taskMgmt.taskPriority(params, token, function(resp) {
-        req.resp = resp;
-        next();
+    taskMgmt.taskPriority(params, orgId, function(resp) {
+        res.json(resp);
     });
 };
 
