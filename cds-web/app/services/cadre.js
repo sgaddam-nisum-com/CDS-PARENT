@@ -87,3 +87,18 @@ exports.getCadreLeads = function(token, callback) {
         restService.makecall(args, callback);
     });
 };
+
+exports.getCadresList = function(params, token, callback) {
+    log.debug("getCadresList ");
+    var headers = header;
+    headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.cadre.cadres.path, params.q),
+        method: restUrls.cadre.cadres.method
+    };
+    
+    restService.builbArgs(url, null, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};

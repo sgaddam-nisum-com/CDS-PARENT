@@ -106,3 +106,17 @@ exports.getCadreLeads = function(req, res, next) {
         next();
     });
 };
+
+exports.getCadresList = function(req, res, next) {
+    log.debug("getCadresList : logged user - " + req.user.data.userName);
+    
+    var token = req.user ? req.user.data.token : null;
+    var q = req.query.q;
+
+    cadreService.getCadresList({
+        q: q
+    }, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};

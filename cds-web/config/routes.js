@@ -145,6 +145,7 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/cadre/cadreWorksheet', cadreController.getCadreWorksheet, auth.filterResponse);
     app.get('/cadre/ispartymembershipidexist', cadreController.isPartyMemberShipIdExist);
     app.get('/auth/cadre/cadreleads', cadreController.getCadreLeads, auth.filterResponse);
+    app.get('/auth/cadre/cadres', cadreController.getCadresList, auth.filterResponse);
 
     //office executive routes    
     app.put('/auth/office/vnc/verify', officeController.verifyVnC, auth.filterResponse);

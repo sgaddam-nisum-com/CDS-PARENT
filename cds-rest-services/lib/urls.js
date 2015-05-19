@@ -427,7 +427,11 @@ module.exports = {
             method: "GET"
         },
         leadersincadre: {
-            path: "leadersincadre/",
+            path: "lookup/leadersincadre/",
+            method: "GET"
+        },
+        cadres: {
+            path: "lookup/cadres/%s/",
             method: "GET"
         }
     }
