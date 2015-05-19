@@ -14,6 +14,14 @@ exports.requiresLogin = function(req, res, next) {
     }
 };
 
+exports.requiresLoginForPage = function(req, res, next) {
+    if (!req.isAuthenticated()) {
+        res.redirect('/signin');
+    } else {
+        next();
+    }
+};
+
 /**
  * User authorizations routing middleware
  */

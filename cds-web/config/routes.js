@@ -185,11 +185,11 @@ exports.init = function(app, passport, auth) {
     // Home route
     app.get('/', index.render);
     app.get('/register', index.register);
-    app.get('/calendar', index.calendar);
-    app.get('/inbox', index.inbox);
-    app.get('/tasks', index.tasks);
-    app.get('/dashboard', index.dashboard);
-    app.get('/profile', index.profile);
+    app.get('/calendar', auth.requiresLoginForPage, index.calendar);
+    app.get('/inbox', auth.requiresLoginForPage, index.inbox);
+    app.get('/tasks', auth.requiresLoginForPage, index.tasks);
+    app.get('/dashboard', auth.requiresLoginForPage, index.dashboard);
+    app.get('/profile', auth.requiresLoginForPage, index.profile);
 
 
     app.get('/setlocale/:locale', function(req, res) {
