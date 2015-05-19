@@ -24,10 +24,9 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         title : "Cadre Verifications",
         style: {
           width: '33%'
-        },
-        templateUrl : "views/dashboard/cadre-verifications.html",
+        },       
         enableVerticalResize : true,
-        directive : "cadreVerificationDirective"
+        directive : "cadre-verification-directive"
       },
        {
         name: 'My Tasks',
@@ -35,8 +34,8 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         style: {
           width: '33%'
         },
-        templateUrl : "views/dashboard/self-tasks.html",
-        directive : "selfTaskDirective"
+      
+        directive : "self-task-directive"
       },
       {
         name: 'My Team Tasks',
@@ -44,8 +43,8 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         style: {
           width: '33%'
         },
-        templateUrl : "views/dashboard/team-tasks.html",
-        directive :"teamTasksDirective"
+     
+        directive :"team-tasks-directive"
       }
     ];
 
