@@ -26,7 +26,8 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
           width: '33%'
         },       
         enableVerticalResize : true,
-        directive : "cadre-verification-directive"
+        directive : "cadre-verification-directive",
+        templateUrl : "views/dashboard/cadre-verifications.html"
       },
        {
         name: 'My Tasks',
@@ -45,7 +46,40 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         },
      
         directive :"team-tasks-directive"
-      }
+      },
+
+      {
+        name: 'Age wise Tasks',
+        title : "Age wise Tasks",
+        style: {
+          width: '33%'
+        },
+        directive :"tasksage-chart-directive",
+        templateUrl : "views/dashboard/tasksage-chart.html"
+      },
+       
+       {
+        name: 'My Tasks View',
+        title : "My Tasks",
+        style: {
+          width: '33%'
+        },
+        directive :"mytasks-chart-directive",
+        templateUrl : "views/dashboard/mytasks-chart.html"
+      },
+
+       {
+        name: 'Tasks trend',
+        title : "Tasks trend",
+        style: {
+          width: '33%'
+        },
+        directive :"taskstrend-chart-directive",
+        templateUrl : "views/dashboard/taskstrend-chart.html"
+      },
+
+
+
     ];
 
 

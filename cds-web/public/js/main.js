@@ -82,7 +82,9 @@ require.config({
 		"visibly" : "lib/dashboard/visibly",
 		"visibilityCore" : "lib/dashboard/visibility.core",
 		"widgetOptions" :"lib/dashboard/widgetOptions",
-		"foundation" : "lib/foundation.min"
+		"foundation" : "lib/foundation.min",
+		"chartJs" : "lib/charts/chart",
+		"angularCharts" : "lib/charts/angular-chart"
 
 	},
 	shim: {
