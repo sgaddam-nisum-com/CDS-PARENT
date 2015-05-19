@@ -1657,6 +1657,9 @@ angular.module('ui.bootstrap.dropdown', [])
       setIsOpen = angular.noop,
       toggleInvoker = $attrs.onToggle ? $parse($attrs.onToggle) : angular.noop;
 
+
+
+
   this.init = function( element ) {
     self.$element = element;
 
@@ -1671,6 +1674,7 @@ angular.module('ui.bootstrap.dropdown', [])
   };
 
   this.toggle = function( open ) {
+   
     return scope.isOpen = arguments.length ? !!open : !scope.isOpen;
   };
 
@@ -1710,11 +1714,11 @@ angular.module('ui.bootstrap.dropdown', [])
   });
 }])
 
-/*.directive('dropdown', function() {
+.directive('dropdown', function() {
   return {
     restrict: 'CA',
     controller: 'DropdownController',
-    link: function(scope, element, attrs, dropdownCtrl) {
+    link: function(scope, element, attrs, dropdownCtrl) {      
       dropdownCtrl.init( element );
     }
   };
@@ -1754,7 +1758,7 @@ angular.module('ui.bootstrap.dropdown', [])
       });
     }
   };
-});*/
+});
 
 angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
 

@@ -1,6 +1,6 @@
 
 
-define(["angular","pnotifyCore"],function(angular){
+define(["angular","pnotify"],function(angular){
 
 angular.module('ui.notify', []).
   provider('notificationService', [ function() {

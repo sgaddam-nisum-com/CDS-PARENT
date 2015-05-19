@@ -21,24 +21,31 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
 	 	var widgetDefinitions = [
       {
         name: 'Cadre Verifications',
+        title : "Cadre Verifications",
         style: {
           width: '33%'
         },
-        templateUrl : "views/dashboard/cadre-verifications.html"
+        templateUrl : "views/dashboard/cadre-verifications.html",
+        enableVerticalResize : true,
+        directive : "cadreVerificationDirective"
       },
        {
         name: 'My Tasks',
+        title : "My Tasks",
         style: {
           width: '33%'
         },
-        templateUrl : "views/dashboard/self-tasks.html"
+        templateUrl : "views/dashboard/self-tasks.html",
+        directive : "selfTaskDirective"
       },
       {
         name: 'My Team Tasks',
+         title : "My Team Tasks",
         style: {
           width: '33%'
         },
-        templateUrl : "views/dashboard/team-tasks.html"
+        templateUrl : "views/dashboard/team-tasks.html",
+        directive :"teamTasksDirective"
       }
     ];
 
@@ -53,7 +60,10 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
     $scope.dashboardOptions = {
       widgetButtons: false,
       widgetDefinitions: widgetDefinitions,
-      defaultWidgets: [defaultWidgets[0]]
+      defaultWidgets: defaultWidgets,
+      hideWidgetName : true,
+      hideWidgetSettings : true,
+      enableEditTitle : false
     };
 
 // random scope value (scope-watch widget)

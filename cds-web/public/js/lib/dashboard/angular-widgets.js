@@ -15,12 +15,12 @@
  */
 
 
-define(["angular","angularTable","pnotify","visibly"],function(angular){
+define(["angular","angularTable"],function(angular){
 
 
 angular.module('ui.widgets', ['datatorrent.mlhrTable', 'nvd3ChartDirectives']);
-angular.module('ui.websocket', ['ui.visibility', 'ui.notify']);
-angular.module('ui.models', ['ui.visibility', 'ui.websocket']);
+angular.module('ui.websocket', []);
+angular.module('ui.models', []);
 
 /*
  * Copyright (c) 2014 DataTorrent, Inc. ALL Rights Reserved.
@@ -41,39 +41,7 @@ angular.module('ui.models', ['ui.visibility', 'ui.websocket']);
 'use strict';
 
 angular.module('ui.models')
-  .factory('RandomBaseDataModel', function (WidgetDataModel, Visibility) {
-    function RandomBaseDataModel() {
-    }
 
-    RandomBaseDataModel.prototype = Object.create(WidgetDataModel.prototype);
-    RandomBaseDataModel.prototype.constructor = WidgetDataModel;
-
-    angular.extend(RandomBaseDataModel.prototype, {
-      init: function () {
-        this.stopUpdates = false;
-        this.visibilityListener = Visibility.change(function (e, state) {
-          if (state === 'hidden') {
-            this.stopUpdates = true;
-          } else {
-            this.stopUpdates = false;
-          }
-        }.bind(this));
-      },
-
-      updateScope: function (data) {
-        if (!this.stopUpdates) {
-          WidgetDataModel.prototype.updateScope.call(this, data);
-        }
-      },
-
-      destroy: function () {
-        WidgetDataModel.prototype.destroy.call(this);
-        Visibility.unbind(this.visibilityListener);
-      }
-    });
-
-    return RandomBaseDataModel;
-  })
   .factory('RandomPercentageDataModel', function (RandomBaseDataModel, $interval) {
     function RandomPercentageDataModel() {
     }

@@ -19,7 +19,8 @@ define(['services/serviceModule'], function(serviceModule) {
                                 Dashboard : {name : "Dashboard" , url : "/dashboard"}, 
                                 Tasks : {name : "Tasks" , url : "/tasks"},
                                 Calendar :  {name : "Calendar" , url : "#"},
-                                Requests : {name : "Requests" , url : "#"}
+                                Requests : {name : "Requests" , url : "#"},
+                                Registrants:{name : "Registrants" ,url : "#"}
                             }
                             
 
@@ -138,7 +139,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
                 getNavArray : function(role){
                     
-                    console.log(role);
+                    
                     var navArray = [];
                     var roleStateArray = roleStateMap[role];
 
@@ -146,7 +147,6 @@ define(['services/serviceModule'], function(serviceModule) {
                         navArray.push(navItemsMaps[roleStateArray[i]]);
                     }
 
-                    console.log(navArray);
                     return navArray;
                 }
 

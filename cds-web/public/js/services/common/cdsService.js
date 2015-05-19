@@ -23,8 +23,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				   		orgId: 2
 				  	}
 				 }).success(function(resp) {
-				  cb(resp);
-				  
+				  cb(resp);				  
 				 })
 			},
 			getProfileInfo : function(cb){

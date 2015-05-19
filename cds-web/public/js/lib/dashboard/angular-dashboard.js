@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-define(["jquery","angular","angularBootstrap","angularSortable","foundation"],function($){
+define(["jquery","angular","angularBootstrap","angularSortable"],function($){
 
 
 
@@ -51,11 +51,7 @@ angular.module('ui.dashboard')
 
         // from dashboard="options"
 
-
-
-
         scope.options = scope.$eval(attrs.dashboard);
-
 
         // Deep options
         scope.options.settingsModalOptions = scope.options.settingsModalOptions || {};
@@ -115,14 +111,14 @@ angular.module('ui.dashboard')
 
           var defaultWidgetDefinition = scope.widgetDefs.getByName(widgetToInstantiate.name);
           
-
+        
           if (!defaultWidgetDefinition) {
             throw 'Widget ' + widgetToInstantiate.name + ' is not found.';
           }
 
           // Determine the title for the new widget
           var title;
-          if (!widgetToInstantiate.title && !defaultWidgetDefinition.title) {
+          if (!widgetToInstantiate.title && !defaultWidgetDefinition.title) {             
             widgetToInstantiate.title = 'Widget ' + count++;
           }
 
@@ -263,7 +259,7 @@ angular.module('ui.dashboard')
          */
         scope.resetWidgetsToDefault = function () {
           scope.loadWidgets(scope.defaultWidgets);
-          scope.saveDashboard();
+         scope.saveDashboard();
         };
 
         // Set default widgets array
@@ -335,15 +331,9 @@ angular.module('ui.dashboard')
       controller: 'DashboardWidgetCtrl',
 
       link: function (scope) {
-
-        
+       
         var widget = scope.widget;
-
-
-
-
         var dataModelType = widget.dataModelType;
-
 
         // set up data source
         if (dataModelType) {
@@ -411,15 +401,13 @@ angular.module('ui.dashboard')
 
         var widget = $scope.widget;
 
-
-
         // First, build template string
         var templateString = '';
 
         if (widget.templateUrl) {
 
           // Use ng-include for templateUrl
-          templateString = '<div ng-include="\'' + widget.templateUrl + '\'"></div>';
+          templateString = '<div  '+ widget.directive +'  ng-include="\'' + widget.templateUrl + '\'"></div>';
 
         } else if (widget.template) {
 
@@ -595,13 +583,17 @@ angular.module('ui.dashboard')
 
       // replaces widget title with input
       $scope.editTitle = function(widget) {
-        var widgetElm = $element.find('.widget');
-        widget.editingTitle = true;
-        // HACK: get the input to focus after being displayed.
-        $timeout(function() {
-          widgetElm.find('form.widget-title input:eq(0)').focus()[0].setSelectionRange(0, 9999);
-        });
+          if($scope.options.enableEditTitle){
+            var widgetElm = $element.find('.widget');
+            widget.editingTitle = true;
+            // HACK: get the input to focus after being displayed.
+            $timeout(function() {
+              widgetElm.find('form.widget-title input:eq(0)').focus()[0].setSelectionRange(0, 9999);
+            });
+            }
+            else{return;}
       };
+
 
       // saves whatever is in the title input as the new title
       $scope.saveTitleEdit = function(widget) {

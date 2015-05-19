@@ -191,7 +191,6 @@ exports.init = function(app, passport, auth) {
     app.get('/dashboard', auth.requiresLoginForPage, index.dashboard);
     app.get('/profile', auth.requiresLoginForPage, index.profile);
 
-
     app.get('/setlocale/:locale', function(req, res) {
         res.cookie('locale', req.params.locale);
         req.i18n.setLocaleFromCookie();

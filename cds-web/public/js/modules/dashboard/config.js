@@ -4,7 +4,7 @@
 define(['appDashboard','uiRouter','angularRoute'], function (app) {
 
 
-app.run(["$rootScope", "$sessionStorage",function($rootScope, $sessionStorage){
+app.run(["$rootScope", function($rootScope){
 
        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
                 

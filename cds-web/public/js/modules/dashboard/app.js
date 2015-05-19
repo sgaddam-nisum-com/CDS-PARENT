@@ -5,7 +5,7 @@ define(['angular',
 	'uiRouter',
 	'uiRouterStyles',
 	'angularRoute',
-	"ngStorage",
+	
 	'services/common/serviceLoader',
 	'controllers/dashboardController',
 	"controllers/headerController",
@@ -17,13 +17,13 @@ define(['angular',
 	"angularResource",
 	"angularSanitize",
 	"angularNvd3",
-	'angularWidgets',
+	
 	"widgetOptions"
 	], function (angular) {
     var app = angular.module('CDSDASHBOARD', ['ui.router',
     										'uiRouterStyles',
     										'ngRoute',
-    										'ngStorage',
+    										
     										'serviceModule',
     										'controllerModule',
     										'directiveModule',
@@ -33,8 +33,6 @@ define(['angular',
     										"ngResource",
     										"ngSanitize",
     										"nvd3ChartDirectives",
-    										"ui.widgets",
-    										"ui.models"
     										]);
     return app;
 });

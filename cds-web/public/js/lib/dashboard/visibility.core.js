@@ -1,6 +1,4 @@
-;(function (global) {
-    "use strict";
-
+define([],function(){
     var lastId = -1;
 
     // Visibility.js allow you to know, that your web page is in the background
@@ -185,7 +183,8 @@
     if ( typeof(module) != 'undefined' && module.exports ) {
         module.exports = self;
     } else {
-        global.Visibility = self;
+        window.Visibility = self;
     }
 
-})(this);
+
+});
