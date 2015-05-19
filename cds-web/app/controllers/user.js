@@ -141,7 +141,7 @@ exports.createTask = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.createTask(params, token, function(resp) {
+    taskMgmt.createTask(params, req.files, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -178,7 +178,7 @@ exports.addAttachmentToTask = function(req, res, next) {
 
     taskMgmt.addAttachmentToTask({
         id: tid
-    }, token, function(resp) {
+    }, req.files, token, function(resp) {
         req.resp = resp;
         next();
     });

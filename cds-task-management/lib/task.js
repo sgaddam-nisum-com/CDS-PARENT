@@ -9,14 +9,17 @@ var restService = require('cds-rest-services'),
     log = require('cds-logger').logger("cds-task-management");
 
 
-exports.createTask = function(params, token, callback) {
+exports.createTask = function(params, files, token, callback) {
     log.debug("createTask : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.task.createTask, params, headers, function(args) {
-        restService.makecall(args, callback);
+    saveAttachments(files, function(imgPaths) {
+        params.taskAttachments = imgPaths;
+        restService.builbArgs(restUrls.task.createTask, params, headers, function(args) {
+            restService.makecall(args, callback);
+        });
     });
 };
 
@@ -59,7 +62,15 @@ exports.addAttachmentToTask = function(params, files, token, callback) {
         method: restUrls.task.addAttachmentToTask.method
     };
 
+    saveAttachments(files, function(imgPaths) {
+        restService.builbArgs(url, imgPaths, headers, function(args) {
+            restService.makecall(args, callback);
+        });
+    });
+};
 
+//internal image saver
+var saveAttachments = function(files, callback) {
     if (files != null && Object.keys(files).length > 0) {
         var images = [];
         for (var i = 0; i < Object.keys(files).length; i++) {
@@ -67,18 +78,14 @@ exports.addAttachmentToTask = function(params, files, token, callback) {
             images.push = {
                 attachmentName: cdsConfig.image.path + imageName
             };
+            if (i === (Object.keys(files).length - 1)) {
+                callback(images);
+            }
         }
-
-        restService.builbArgs(url, images, headers, function(args) {
-            restService.makecall(args, callback);
-        });
-
     } else {
-        callback(null);
+        callback([]);
     }
-
-
-};
+}
 
 exports.deleteAttachmentFromTask = function(params, token, callback) {
     log.debug("deleteAttachmentFromTask : " + (JSON.stringify(params)));
