@@ -19,10 +19,6 @@ define(['angular',
 	"angularNvd3",
 	'angularWidgets',
 	"widgetOptions"
-
-
-
-
 	], function (angular) {
     var app = angular.module('CDSDASHBOARD', ['ui.router',
     										'uiRouterStyles',
@@ -31,18 +27,14 @@ define(['angular',
     										'serviceModule',
     										'controllerModule',
     										'directiveModule',
+    										"ui.dashboard",
     										"app.service",
     										"ngCookies",
     										"ngResource",
     										"ngSanitize",
     										"nvd3ChartDirectives",
-    										"ui.dashboard",
     										"ui.widgets",
     										"ui.models"
-
-
-
-
     										]);
     return app;
 });

@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-define(["angular","angularBootstrap","angularSortable"],function(){
+define(["jquery","angular","angularBootstrap","angularSortable","foundation"],function($){
+
 
 
 angular.module('ui.dashboard', ['ui.bootstrap', 'ui.sortable']);
@@ -25,9 +26,8 @@ angular.module('ui.dashboard')
 
     return {
       restrict: 'A',
-      templateUrl: function(element, attr) {
-        
-        return attr.templateUrl ? attr.templateUrl : 'components/directives/dashboard/dashboard.html';
+      templateUrl: function(element, attr) {        
+        return attr.templateUrl ? attr.templateUrl : 'views/dashboard/dashboard-layout.html';
       },
       scope: true,
 

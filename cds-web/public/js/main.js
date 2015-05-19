@@ -81,7 +81,8 @@ require.config({
 		"pnotify" : "lib/dashboard/pnotify",
 		"visibly" : "lib/dashboard/visibly",
 		"visibilityCore" : "lib/dashboard/visibility.core",
-		"widgetOptions" :"lib/dashboard/widgetOptions"
+		"widgetOptions" :"lib/dashboard/widgetOptions",
+		"foundation" : "lib/foundation.min"
 
 	},
 	shim: {
@@ -131,6 +132,9 @@ require.config({
 		},
 		"gallery/jquery.opacityrollover" : {
 			deps:["jquery"]
+		},
+		"foundation" : {
+			deps : ["jquery"]
 		}
 
 	}

@@ -1710,7 +1710,7 @@ angular.module('ui.bootstrap.dropdown', [])
   });
 }])
 
-.directive('dropdown', function() {
+/*.directive('dropdown', function() {
   return {
     restrict: 'CA',
     controller: 'DropdownController',
@@ -1754,7 +1754,7 @@ angular.module('ui.bootstrap.dropdown', [])
       });
     }
   };
-});
+});*/
 
 angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
 

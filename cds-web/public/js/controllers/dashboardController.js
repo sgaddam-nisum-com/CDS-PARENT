@@ -20,82 +20,25 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
 
 	 	var widgetDefinitions = [
       {
-        name: 'wt-time',
-        style: {
-          width: '20%'
-        }
-      },
-      {
-        name: 'wt-random',
+        name: 'Cadre Verifications',
         style: {
           width: '33%'
-        }
-      },
-      {
-        name: 'wt-scope-watch',
-        attrs: {
-          value: 'randomValue'
         },
-        style: {
-          width: '34%'
-        }
+        templateUrl : "views/dashboard/cadre-verifications.html"
       },
-      {
-        name: 'wt-line-chart',
-        dataAttrName: 'chart',
-        dataModelType: RandomTimeSeriesDataModel,
+       {
+        name: 'My Tasks',
         style: {
-          width: '50%'
-        }
-      },
-      {
-        name: 'wt-gauge',
-        attrs: {
-          value: 'percentage'
+          width: '33%'
         },
-        style: {
-          width: '250px'
-        }
+        templateUrl : "views/dashboard/self-tasks.html"
       },
       {
-        name: 'wt-top-n',
-        dataAttrName: 'data',
-        dataModelType: RandomTopNDataModel,
+        name: 'My Team Tasks',
         style: {
-          width: '30%'
-        }
-      },
-      {
-        name: 'progressbar',
-        attrs: {
-          class: 'progress-striped',
-          type: 'success',
-          value: 'percentage'
+          width: '33%'
         },
-        style: {
-          width: '20%'
-        }
-      },
-      {
-        name: 'progressbar2',
-        template: '<div progressbar class="progress-striped" type="info" value="percentage">{{percentage}}%</div>',
-        style: {
-          width: '30%'
-        }
-      },
-      {
-        name: 'URLtemplate',
-        templateUrl: 'template/percentage.html'
-      },
-      {
-        name: 'wt-pie-chart',
-        style: {
-          width: '350px',
-          height: '350px'
-        },
-        attrs: {
-          data: 'pieChartData'
-        }
+        templateUrl : "views/dashboard/team-tasks.html"
       }
     ];
 
@@ -108,9 +51,9 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
 
 
     $scope.dashboardOptions = {
-      widgetButtons: true,
+      widgetButtons: false,
       widgetDefinitions: widgetDefinitions,
-      defaultWidgets: [defaultWidgets[7]]
+      defaultWidgets: [defaultWidgets[0]]
     };
 
 // random scope value (scope-watch widget)
