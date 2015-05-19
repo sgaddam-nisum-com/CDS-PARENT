@@ -4,8 +4,7 @@ define(['services/serviceModule'], function(serviceModule) {
 		function($http, appUrlService) {
 			return {
 				getTaskCategories: function(cb) {
-					$http.get(appUrlService.getEducationInfo, {
-
+					$http.get(appUrlService.getTaskCategories, {
 
 					}).success(function(resp) {
 					  cb(resp)
