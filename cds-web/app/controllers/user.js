@@ -286,6 +286,17 @@ exports.getAssignedTasks = function(req, res, next) {
     });
 };
 
+exports.getSupervisorTasks = function(req, res, next) {
+    log.debug("getSupervisorTasks : logged user - " + req.user.data.userName);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getSupervisorTasks(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
 exports.requestTypes = function(req, res, next) {
     log.debug("requestTypes : logged user - " + req.user.data.userName);
     var params = req.body;

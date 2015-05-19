@@ -192,6 +192,17 @@ exports.getAssignedTasks = function(params, token, callback) {
     });
 };
 
+exports.getSupervisorTasks = function(params, token, callback) {
+    log.debug("getSupervisorTasks : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    restService.builbArgs(restUrls.task.getSupervisorTasks, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
 exports.getTasks = function(params, token, callback) {
     log.debug("getTasks : " + (JSON.stringify(params)));
     var headers = header;

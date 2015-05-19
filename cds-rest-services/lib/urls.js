@@ -98,6 +98,10 @@ module.exports = {
             path: "tasks/%s/mytasks/",
             method: "GET"
         },
+        getSupervisorTasks: {
+            path: "tasks/tasksforsupervisor/",
+            method: "GET"
+        },
         getTeamTasks: {
             path: "reporteestasks/",
             method: "GET"

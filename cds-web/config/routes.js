@@ -65,6 +65,7 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/user/teamtasks', userController.getTeamTasks, auth.filterResponse);
     app.get('/auth/user/tasks', userController.getTasks, auth.filterResponse);
     app.get('/auth/user/assignedtasks', userController.getAssignedTasks, auth.filterResponse);
+    app.get('/auth/user/tasksforsupervisor', userController.getSupervisorTasks, auth.filterResponse);
 
     app.post('/auth/user/viewrole', userController.getRole, auth.filterResponse);
     app.delete('/auth/user/deactivaterole', userController.deactivateRole, auth.filterResponse);
