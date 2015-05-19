@@ -143,8 +143,8 @@ exports.init = function(app, passport, auth) {
     app.delete('/auth/cadre/delete', cadreController.delete, auth.filterResponse);
 
     app.get('/auth/cadre/cadreWorksheet', cadreController.getCadreWorksheet, auth.filterResponse);
-    app.get('/auth/cadre/ispartymembershipidexist', cadreController.isPartyMemberShipIdExist);
-    app.get('/auth/cadre/cadreleads', cadreController.getCadreLeads);
+    app.get('/auth/cadre/ispartymembershipidexist', cadreController.isPartyMemberShipIdExist, auth.filterResponse);
+    app.get('/auth/cadre/cadreleads', cadreController.getCadreLeads, auth.filterResponse);
 
     //office executive routes    
     app.put('/auth/office/vnc/verify', officeController.verifyVnC, auth.filterResponse);

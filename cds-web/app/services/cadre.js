@@ -78,12 +78,12 @@ exports.getCadreWorksheet = function(params, token, callback) {
     });
 };
 
-exports.getCadreLeads = function(params, token, callback) {
+exports.getCadreLeads = function(token, callback) {
     log.debug("getCadreLeads ");
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.cadre.leadersincadre, params, headers, function(args) {
+    restService.builbArgs(restUrls.cadre.leadersincadre, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
