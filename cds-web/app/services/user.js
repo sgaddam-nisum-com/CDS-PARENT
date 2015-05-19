@@ -159,7 +159,7 @@ exports.userTypes = function(orgId, callback) {
     if (orgId)
         headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.user.userTypes, params, headers, function(args) {
+    restService.builbArgs(restUrls.user.userTypes, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
