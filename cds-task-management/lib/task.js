@@ -6,6 +6,8 @@ var restService = require('cds-rest-services'),
     restUrls = require('cds-rest-services').urls,
     cdsConfig = require('cds-config'),
     header = cdsConfig.restUrl.contentType,
+    requireUtil = require("util"),
+    util = require('cds-util'),
     log = require('cds-logger').logger("cds-task-management");
 
 
@@ -15,6 +17,7 @@ exports.createTask = function(params, files, token, callback) {
     headers[cdsConfig.token] = token;
 
     saveAttachments(files, function(imgPaths) {
+        params.taskWorkAllocation.toDate = util.formatDate(null, params.taskWorkAllocation.toDate);
         params.taskAttachments = imgPaths;
         restService.builbArgs(restUrls.task.createTask, params, headers, function(args) {
             restService.makecall(args, callback);

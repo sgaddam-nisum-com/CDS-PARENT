@@ -19,7 +19,7 @@ exports.signin = function(req, res, next) {
 };
 
 exports.myProfile = function(req, res, next) {
-    log.debug("myProfile : logged user - " + req.user.data.userName);
+    log.debug("myProfile : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -30,7 +30,7 @@ exports.myProfile = function(req, res, next) {
 };
 
 exports.updateProfile = function(req, res, next) {
-    log.debug("updateProfile : logged user - " + req.user.data.userName);
+    log.debug("updateProfile : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -57,7 +57,7 @@ exports.resetPassword = function(req, res, next) {
 };
 
 exports.viewUser = function(req, res, next) {
-    log.debug("viewUser : logged user - " + req.user.data.userName);
+    log.debug("viewUser : logged user - " + req.user.data.user.appUserId);
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
@@ -123,7 +123,7 @@ exports.userTypes = function(req, res, next) {
 };
 
 exports.usersList = function(req, res, next) {
-    log.debug("usersList : logged user - " + req.user.data.userName);
+    log.debug("usersList : logged user - " + req.user.data.user.appUserId);
     var params = req.query;
     params.limit = req.query.limit;
 
@@ -136,7 +136,7 @@ exports.usersList = function(req, res, next) {
 };
 
 exports.createTask = function(req, res, next) {
-    log.debug("createTask : logged user - " + req.user.data.userName);
+    log.debug("createTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -147,7 +147,7 @@ exports.createTask = function(req, res, next) {
 };
 
 exports.editTask = function(req, res, next) {
-    log.debug("editTask : logged user - " + req.user.data.userName);
+    log.debug("editTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -158,7 +158,7 @@ exports.editTask = function(req, res, next) {
 };
 
 exports.deleteTask = function(req, res, next) {
-    log.debug("deleteTask : logged user - " + req.user.data.userName);
+    log.debug("deleteTask : logged user - " + req.user.data.user.appUserId);
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
@@ -171,7 +171,7 @@ exports.deleteTask = function(req, res, next) {
 };
 
 exports.addAttachmentToTask = function(req, res, next) {
-    log.debug("addAttachmentToTask : logged user - " + req.user.data.userName);
+    log.debug("addAttachmentToTask : logged user - " + req.user.data.user.appUserId);
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
@@ -184,7 +184,7 @@ exports.addAttachmentToTask = function(req, res, next) {
 };
 
 exports.deleteAttachmentFromTask = function(req, res, next) {
-    log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.userName);
+    log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.user.appUserId);
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
@@ -197,7 +197,7 @@ exports.deleteAttachmentFromTask = function(req, res, next) {
 };
 
 exports.addCommentToTask = function(req, res, next) {
-    log.debug("addCommentToTask : logged user - " + req.user.data.userName);
+    log.debug("addCommentToTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -208,7 +208,7 @@ exports.addCommentToTask = function(req, res, next) {
 };
 
 exports.updateCommentToTask = function(req, res, next) {
-    log.debug("updateCommentToTask : logged user - " + req.user.data.userName);
+    log.debug("updateCommentToTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -219,7 +219,7 @@ exports.updateCommentToTask = function(req, res, next) {
 };
 
 exports.deleteCommentToTask = function(req, res, next) {
-    log.debug("deleteCommentToTask : logged user - " + req.user.data.userName);
+    log.debug("deleteCommentToTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -230,7 +230,7 @@ exports.deleteCommentToTask = function(req, res, next) {
 };
 
 exports.getStatuses = function(req, res, next) {
-    log.debug("getStatuses : logged user - " + req.user.data.userName);
+    log.debug("getStatuses : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -242,7 +242,7 @@ exports.getStatuses = function(req, res, next) {
 
 
 exports.getTaskDetails = function(req, res, next) {
-    log.debug("getTaskDetails : logged user - " + req.user.data.userName);
+    log.debug("getTaskDetails : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -253,7 +253,7 @@ exports.getTaskDetails = function(req, res, next) {
 };
 
 exports.getTeamTasks = function(req, res, next) {
-    log.debug("getTasks : logged user - " + req.user.data.userName);
+    log.debug("getTasks : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -264,7 +264,7 @@ exports.getTeamTasks = function(req, res, next) {
 };
 
 exports.getTasks = function(req, res, next) {
-    log.debug("getTasks : logged user - " + req.user.data.userName);
+    log.debug("getTasks : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -275,7 +275,7 @@ exports.getTasks = function(req, res, next) {
 };
 
 exports.getAssignedTasks = function(req, res, next) {
-    log.debug("getAssignedTasks : logged user - " + req.user.data.userName);
+    log.debug("getAssignedTasks : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -286,7 +286,7 @@ exports.getAssignedTasks = function(req, res, next) {
 };
 
 exports.getSupervisorTasks = function(req, res, next) {
-    log.debug("getSupervisorTasks : logged user - " + req.user.data.userName);
+    log.debug("getSupervisorTasks : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -327,7 +327,7 @@ exports.taskPriority = function(req, res, next) {
 };
 
 exports.updateTasksStatus = function(req, res, next) {
-    log.debug("updateTasksStatus : logged user - " + req.user.data.userName);
+    log.debug("updateTasksStatus : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -339,7 +339,7 @@ exports.updateTasksStatus = function(req, res, next) {
 
 //roles
 exports.getRole = function(req, res, next) {
-    log.debug("getRole : logged user - " + req.user.data.userName);
+    log.debug("getRole : logged user - " + req.user.data.user.appUserId);
     var id = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
@@ -352,7 +352,7 @@ exports.getRole = function(req, res, next) {
 };
 
 exports.deactivateRole = function(req, res, next) {
-    log.debug("deactivateRole : logged user - " + req.user.data.userName);
+    log.debug("deactivateRole : logged user - " + req.user.data.user.appUserId);
     var id = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
@@ -365,7 +365,7 @@ exports.deactivateRole = function(req, res, next) {
 };
 
 exports.getRoles = function(req, res, next) {
-    log.debug("getRoles : logged user - " + req.user.data.userName);
+    log.debug("getRoles : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     roleMgmt.getRoles(null, token, function(resp) {
@@ -375,7 +375,7 @@ exports.getRoles = function(req, res, next) {
 };
 
 exports.saveRole = function(req, res, next) {
-    log.debug("saveRole : logged user - " + req.user.data.userName);
+    log.debug("saveRole : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -386,7 +386,7 @@ exports.saveRole = function(req, res, next) {
 };
 
 exports.updateRole = function(req, res, next) {
-    log.debug("updateRole : logged user - " + req.user.data.userName);
+    log.debug("updateRole : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -397,7 +397,7 @@ exports.updateRole = function(req, res, next) {
 };
 
 exports.getPrivileges = function(req, res, next) {
-    log.debug("getPrivileges : logged user - " + req.user.data.userName);
+    log.debug("getPrivileges : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     userService.getPrivileges(token, function(resp) {
@@ -426,7 +426,7 @@ exports.getUserFromSession = function(req, res, next) {
 };
 
 exports.viewUserInfo = function(req, res, next) {
-    log.debug("viewUserInfo : logged user - " + req.user.data.userName + " selected user - " + req.query.userId);
+    log.debug("viewUserInfo : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId);
 
 
     var userId = req.user.data.user.appUserId;

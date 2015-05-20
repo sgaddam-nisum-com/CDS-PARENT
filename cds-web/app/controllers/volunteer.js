@@ -9,7 +9,7 @@ var volunteerService = require('../services/volunteer'),
 
 
 exports.save = function(req, res, next) {
-    log.debug("save : logged user - " + req.user.data.userName);
+    log.debug("save : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
 
@@ -20,7 +20,7 @@ exports.save = function(req, res, next) {
 };
 
 exports.edit = function(req, res, next) {
-    log.debug("edit : logged user - " + req.user.data.userName);
+    log.debug("edit : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
 
@@ -31,7 +31,7 @@ exports.edit = function(req, res, next) {
 };
 
 exports.get = function(req, res, next) {
-    log.debug("get : logged user - " + req.user.data.userName);
+    log.debug("get : logged user - " + req.user.data.user.appUserId);
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
@@ -42,7 +42,7 @@ exports.get = function(req, res, next) {
 };
 
 exports.delete = function(req, res, next) {
-    log.debug("delete : logged user - " + req.user.data.userName);
+    log.debug("delete : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     volunteerService.delete({
@@ -101,7 +101,7 @@ exports.performanceGrades = function(req, res, next) {
 };
 
 exports.volunteerSheet = function(req, res, next) {
-    log.debug("volunteerSheet : logged user - " + req.user.data.userName);
+    log.debug("volunteerSheet : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var volunteerId = req.query.volunteerId;
 

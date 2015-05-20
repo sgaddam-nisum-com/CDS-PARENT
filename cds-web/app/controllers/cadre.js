@@ -9,7 +9,7 @@ var cadreService = require('../services/cadre'),
     log = require('cds-logger').logger("cadre-controller");
 
 exports.save = function(req, res, next) {
-    log.debug("save : logged user - " + req.user.data.userName);
+    log.debug("save : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -20,7 +20,7 @@ exports.save = function(req, res, next) {
 };
 
 exports.edit = function(req, res, next) {
-    log.debug("edit : logged user - " + req.user.data.userName);
+    log.debug("edit : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -31,7 +31,7 @@ exports.edit = function(req, res, next) {
 };
 
 exports.get = function(req, res, next) {
-    log.debug("get : logged user - " + req.user.data.userName);
+    log.debug("get : logged user - " + req.user.data.user.appUserId);
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
@@ -42,7 +42,7 @@ exports.get = function(req, res, next) {
 };
 
 exports.delete = function(req, res, next) {
-    log.debug("delete : logged user - " + req.user.data.userName);
+    log.debug("delete : logged user - " + req.user.data.user.appUserId);
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
@@ -85,7 +85,7 @@ exports.isPartyMemberShipIdExist = function(req, res, next) {
 };
 
 exports.getCadreWorksheet = function(req, res, next) {
-    log.debug("getCadreWorksheet : logged user - " + req.user.data.userName + " cadre id - " + req.query.userId);
+    log.debug("getCadreWorksheet : logged user - " + req.user.data.user.appUserId + " cadre id - " + req.query.userId);
     var userId = req.query.userId;
     var token = req.user ? req.user.data.token : null;
 
@@ -98,7 +98,7 @@ exports.getCadreWorksheet = function(req, res, next) {
 };
 
 exports.getCadreLeads = function(req, res, next) {
-    log.debug("getCadreLeads : logged user - " + req.user.data.userName);
+    log.debug("getCadreLeads : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     cadreService.getCadreLeads(token, function(resp) {
@@ -108,7 +108,7 @@ exports.getCadreLeads = function(req, res, next) {
 };
 
 exports.getCadresList = function(req, res, next) {
-    log.debug("getCadresList : logged user - " + req.user.data.userName);
+    log.debug("getCadresList : logged user - " + req.user.data.user);
     
     var token = req.user ? req.user.data.token : null;
     var q = req.query.q;

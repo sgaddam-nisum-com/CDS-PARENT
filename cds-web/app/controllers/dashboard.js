@@ -8,7 +8,7 @@ var dashboardService = require('../services/dashboard'),
     log = require('cds-logger').logger("dashboard-controller");
 
 exports.viewMessage = function(req, res, next) {
-    log.debug("save : logged user - " + req.user.data.userName);
+    log.debug("save : logged user - " + req.user.data.user.appUserId);
     var params = req.body.msgId;
     var token = req.user ? req.user.data.token : null;
 
@@ -21,7 +21,7 @@ exports.viewMessage = function(req, res, next) {
 };
 
 exports.notifications = function(req, res, next) {
-    log.debug("notifications : logged user - " + req.user.data.userName);
+    log.debug("notifications : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     dashboardService.notifications(token, function(resp) {
@@ -31,7 +31,7 @@ exports.notifications = function(req, res, next) {
 };
 
 exports.messageCount = function(req, res, next) {
-    log.debug("messageCount : logged user - " + req.user.data.userName);
+    log.debug("messageCount : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     dashboardService.messageCount(token, function(resp) {
@@ -41,7 +41,7 @@ exports.messageCount = function(req, res, next) {
 };
 
 exports.tasksByAge = function(req, res, next) {
-    log.debug("tasksByAge : logged user - " + req.user.data.userName);
+    log.debug("tasksByAge : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var userId = req.body.userId;
 
@@ -54,7 +54,7 @@ exports.tasksByAge = function(req, res, next) {
 };
 
 exports.tasksTrendRPerMonth = function(req, res, next) {
-    log.debug("tasksTrendRPerMonth : logged user - " + req.user.data.userName);
+    log.debug("tasksTrendRPerMonth : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var userId = req.body.userId;
 
@@ -65,7 +65,7 @@ exports.tasksTrendRPerMonth = function(req, res, next) {
 };
 
 exports.cadresTrendRPerMonth = function(req, res, next) {
-    log.debug("cadresTrendRPerMonth : logged user - " + req.user.data.userName);
+    log.debug("cadresTrendRPerMonth : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var userId = req.body.userId;
 

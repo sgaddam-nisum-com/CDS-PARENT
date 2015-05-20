@@ -6,7 +6,7 @@ var officeService = require('../services/office'),
     log = require('cds-logger').logger("office-controller");
 
 exports.VnCVerificationList = function(req, res, next) {
-    log.debug("VnCVerificationList : logged user - " + req.user.data.userName + " selected user - " + req.query.userId + " type : " + req.query.type);
+    log.debug("VnCVerificationList : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId + " type : " + req.query.type);
     var userId = req.query.userId;
     var type = req.query.type;
     var token = req.user ? req.user.data.token : null;
@@ -21,7 +21,7 @@ exports.VnCVerificationList = function(req, res, next) {
 };
 
 exports.assignCadreForApproval = function(req, res, next) {
-    log.debug("assignCadreForApproval : logged user - " + req.user.data.userName + " selected user - " + req.query.userId + " type : " + req.query.type);
+    log.debug("assignCadreForApproval : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId + " type : " + req.query.type);
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
@@ -32,7 +32,7 @@ exports.assignCadreForApproval = function(req, res, next) {
 };
 
 exports.verifyVnC = function(req, res, next) {
-    log.debug("verifyVnC : logged user - " + req.user.data.userName + " selected user - " + req.query.userId + " type : " + req.query.type);
+    log.debug("verifyVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId + " type : " + req.query.type);
     var userId = req.query.userId;
     var type = req.query.type;
     var token = req.user ? req.user.data.token : null;
@@ -47,7 +47,7 @@ exports.verifyVnC = function(req, res, next) {
 };
 
 exports.rejectVnC = function(req, res, next) {
-    log.debug("rejectVnC : logged user - " + req.user.data.userName + " selected user - " + req.query.userId);
+    log.debug("rejectVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId);
     var userId = req.query.userId;
     var type = req.query.type;
     var token = req.user ? req.user.data.token : null;
@@ -62,7 +62,7 @@ exports.rejectVnC = function(req, res, next) {
 };
 
 exports.holdVnC = function(req, res, next) {
-    log.debug("holdVnC : logged user - " + req.user.data.userName + " selected user - " + req.query.userId);
+    log.debug("holdVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId);
     var userId = req.query.userId;
     var type = req.query.type;
     var token = req.user ? req.user.data.token : null;
@@ -77,7 +77,7 @@ exports.holdVnC = function(req, res, next) {
 };
 
 exports.getServiceCentreEmployeeDetails = function(req, res, next) {
-    log.debug("getServiceCentreEmployeeDetails : logged user - " + req.user.data.userName);
+    log.debug("getServiceCentreEmployeeDetails : logged user - " + req.user.data.user.appUserId);
     var sId = req.query.sId;
     var token = req.user ? req.user.data.token : null;
 
@@ -90,7 +90,7 @@ exports.getServiceCentreEmployeeDetails = function(req, res, next) {
 };
 
 exports.getServiceCentreDetails = function(req, res, next) {
-    log.debug("getServiceCentreDetails : logged user - " + req.user.data.userName);
+    log.debug("getServiceCentreDetails : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
 
     officeService.getServiceCentreDetails(token, function(resp) {
