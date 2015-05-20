@@ -13,8 +13,6 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
             } else {
                 handleUserCreation();
             }
-            
-
 
 		var config = {
             initiate :false,

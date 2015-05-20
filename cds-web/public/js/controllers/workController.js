@@ -6,14 +6,10 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){		
 
 		var self = this;
-        var sessionObj = $sessionStorage.cds.contextObj;
+        
 
-         if (sessionObj.mode == "edit") {
-                handleUserEdit();
-           	} else {
-                handleUserCreation();
-           }
-
+        handleUserEdit();
+        
 
 		this.age = cdsService.age;
 		this.gender = cdsService.gender;		
@@ -57,10 +53,8 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 		}
 
 		 function handleUserEdit() {		 	
-                var currentUserId = sessionObj.userId;
-           		registerService.getWorkInfo(currentUserId, function(resp) {
-                    
-           			console.log(resp.data);
+
+           		registerService.getWorkInfo(function(resp) {                   
                     self.user = resp.data;                    
                 });
             }

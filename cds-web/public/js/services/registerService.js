@@ -135,17 +135,17 @@ define(['services/serviceModule'], function(serviceModule) {
 					  
 					 })
 				},
-				getPersonalInfo : function(userId, cb){
+				getPersonalInfo : function(cb){
 					 $http.get(appUrlService.getUserPersonalInfo, {
-					 	params : {userId : userId}
+					 	
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })		
 				},
-				getWorkInfo: function(userId, cb){				
+				getWorkInfo: function(cb){				
 
 					 $http.get(appUrlService.getUserWorkInfo, {
-					 	params : {userId : userId}
+					 	
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })

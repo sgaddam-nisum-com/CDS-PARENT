@@ -8,15 +8,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
             this.showImage = true;
 
             var self = this;
-            $sessionStorage.cds = $sessionStorage.cds || {};
-            var sessionObj = $sessionStorage.cds.contextObj || {};
+        
 
-
-            if (sessionObj.mode == "edit") {
                 handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
             
 
 
@@ -100,27 +94,13 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
 
             function handleUserEdit() {
-                self.showImage = false;
-                var currentUserId = sessionObj.userId;
-                registerService.getPersonalInfo(currentUserId, function(resp) {
+                self.showImage = false;                
+                registerService.getPersonalInfo(function(resp) {
                     self.user = resp.data;
-
                 });
             }
 
 
-            function handleUserCreation() {
-
-
-
-
-            }
-
-            function responseParser(resp) {
-
-
-
-            }
 
 
 
