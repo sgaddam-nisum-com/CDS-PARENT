@@ -9,7 +9,8 @@ define(['controllers/controllerModule'], function (controllerModule) {
 		cdsService.getUserSession(initiateUserSession);
 
  		function initiateUserSession(resp){
- 			
+ 			 
+
  			self.showHeader = true;
  			
  			if(resp.status == "failure"){
@@ -18,21 +19,21 @@ define(['controllers/controllerModule'], function (controllerModule) {
  			}
  				self.isUserAuthenticated = true;
  				
- 			$rootScope.userName = resp.data.userName;	 			
+ 			$rootScope.userName = resp.data.user.citizen.firstName;	 			
  			var defRole = $rootScope.defRole = roleService.getTopRole(resp.data.user.appRoles);
  			self.navItems = roleService.getNavArray(defRole);
  			for(var i=0; i<self.navItems.length; i++){
- 				self.navItems[i].activeHeader = false;
- 				
+ 				self.navItems[i].activeHeader = false; 				
  				if(location.href.toLowerCase().indexOf(self.navItems[i].name.toLowerCase())>-1){
  					self.navItems[i].activeHeader = true;
  				}
-
  			}
-
- 			console.log(self.navItems);
-
 		}
+
+
+
+
+
 
 	}]);
 

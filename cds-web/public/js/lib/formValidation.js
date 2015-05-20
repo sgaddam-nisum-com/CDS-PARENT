@@ -62,7 +62,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
         if (requiredEqFields.length) {
             return requiredEqFields;
         } else {
-            console.error("No form Eq fields to be validated");
+            //console.error("No form Eq fields to be validated");
         }
 
     }
@@ -76,7 +76,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
         if (requiredRadioFields.length) {
             return requiredRadioFields;
         } else {
-            console.error("No form Eq fields to be validated");
+            //console.error("No form Eq fields to be validated");
         }
 
     }
@@ -258,7 +258,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
     function runEqValidation(formStack){
          
-         var eqFields = formStack.requiredEqFields,
+         var eqFields = formStack.requiredEqFields || [],
          eqSet = [];
 
          for(var i=0; i<eqFields.length; i++){
@@ -291,7 +291,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
     function runRadioValidation(formStack){
 
-        var radioFields = formStack.requiredRadioFields,
+        var radioFields = formStack.requiredRadioFields || [],
          radioSet = [];
 
          for(var i=0; i<radioFields.length; i++){

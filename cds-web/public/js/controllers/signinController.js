@@ -1,13 +1,35 @@
 
 'use strict';
 
-define(['controllers/controllerModule','jquery'], function (controllerModule,$) {
+define(['controllers/controllerModule','jquery','formValidation', 'validators/signinValidators', 'errorMessages/signinErrors'], function (controllerModule,$,formValidation, validationMap, errorJson) {
 
 	 controllerModule.controller('signinController', ['$state','$http',"appUrlService","cdsService",'$scope','$sessionStorage',"roleService", "$window", function($state,$http,appUrlService,cdsService,$scope,$sessionStorage, roleService, $window){		
 	 	var self = this;
-	 		self.orgId = "2";	
+	 		self.orgId = "2";
+	 		self.isNotValid = false;	
+	 	 
+	 		/*Vaalidation configuration*/
+
+	 	 var config = {
+            initiate: true,
+            blurValidation: false,
+            htmlValidation: false,
+            submitValidForm: false,
+            runCallBack: false,
+        };	
+
+
+        var formStack = formValidation.init("#loginForm", validationMap, errorJson, config);
+        $scope.$on("clearErrors", function(){
+        	formStack.clearErrorClass(formStack,false);
+        	self.isNotValid = false;
+        });
+
 	 
 		this.signin = function(){
+			$scope.$broadcast("clearServiceErrors");
+
+			if (formStack.isValid) {
 			$http.post(appUrlService.signin, self.user)
 			.success(function(resp){												
 				if(resp.status == "success"){
@@ -20,19 +42,16 @@ define(['controllers/controllerModule','jquery'], function (controllerModule,$) 
 					}
 
 				}else{					
-					self.user={};
-					console.log("invalid credentials")
+					self.user={};					
+					self.isNotValid = true;
+					$("#globalErrorContainer").html("Username or Password is invalid");
 				}				
 			})
 			.error(function(){
 				
-			});	
+			});			
+		  }
 		}
-		
-	
-
-	 	
-
 	}]);
 
 });
