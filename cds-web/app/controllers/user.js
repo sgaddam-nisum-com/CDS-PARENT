@@ -231,10 +231,12 @@ exports.deleteCommentToTask = function(req, res, next) {
 
 exports.getStatuses = function(req, res, next) {
     log.debug("getStatuses : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var statusType = req.query.statustype;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.getStatuses(params, token, function(resp) {
+    taskMgmt.getStatuses({
+        statusType: statusType
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -243,10 +245,12 @@ exports.getStatuses = function(req, res, next) {
 
 exports.getTaskDetails = function(req, res, next) {
     log.debug("getTaskDetails : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var taskId = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.getTaskDetails(params, token, function(resp) {
+    taskMgmt.getTaskDetails({
+        taskId: taskId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
