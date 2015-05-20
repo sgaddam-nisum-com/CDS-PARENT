@@ -181,12 +181,7 @@ exports.getAssignedTasks = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    var url = {
-        path: requireUtil.format(restUrls.task.getAssignedTasks.path, params.loginId),
-        method: restUrls.task.getAssignedTasks.method
-    };
-
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(restUrls.task.getAssignedTasks, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -206,12 +201,7 @@ exports.getTasks = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    var url = {
-        path: requireUtil.format(restUrls.task.getTasks.path, params.loginId),
-        method: restUrls.task.getTasks.method
-    };
-
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(restUrls.task.getTasks, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

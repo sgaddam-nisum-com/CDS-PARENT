@@ -91,11 +91,11 @@ module.exports = {
             method: "GET"
         },
         getTasks: {
-            path: "tasks/%s/tasks/",
+            path: "tasks/alltasks/",
             method: "GET"
         },
         getAssignedTasks: {
-            path: "tasks/%s/mytasks/",
+            path: "tasks/mytasks/",
             method: "GET"
         },
         getSupervisorTasks: {
