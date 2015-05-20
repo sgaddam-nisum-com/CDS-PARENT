@@ -1,16 +1,14 @@
 'use strict';
 
 define(['directives/directiveModule'], function(directiveModule) {
-    directiveModule.directive('cadreVerificationDirective', [
-            function() {
-
-             
+    directiveModule.directive('selfTasksDirective', [
+            function() {     
 
                 return {
                     restrict: "A",                    
                     link: function(scope, elem, attrs) {
 
-                         scope.gridOptions = {
+                  scope.gridOptions = {
                             paginationPageSizes: [5, 20, 30],
                             paginationPageSize: 5,
                             columnDefs: [{
@@ -68,10 +66,6 @@ define(['directives/directiveModule'], function(directiveModule) {
                             }]
                         };
 
-
-                       
-                       
-                      
 
 
 

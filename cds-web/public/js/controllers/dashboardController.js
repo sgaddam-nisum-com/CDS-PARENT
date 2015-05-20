@@ -34,9 +34,9 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         title : "My Tasks",
         style: {
           width: '33%'
-        },
-      
-        directive : "self-task-directive"
+        },      
+        directive : "self-tasks-directive",
+        templateUrl : "views/dashboard/self-tasks.html"
       },
       {
         name: 'My Team Tasks',
@@ -156,10 +156,6 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
     $scope.value = $scope.values[0];
 
 
-
-
-
-	
 
 	 	
 

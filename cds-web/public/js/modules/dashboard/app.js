@@ -13,6 +13,7 @@ define(['angular',
 	"directives/dashboard/tasksageChartDirective",
 	"directives/dashboard/mytasksChartDirective",
 	"directives/dashboard/taskstrendChartDirective",
+	"directives/dashboard/selfTasksDirective",
 	"directives/navDropdownDirective",
 	"angularDashboard",
 	"dataModel",
@@ -21,7 +22,8 @@ define(['angular',
 	"angularSanitize",
 	"angularNvd3",	
 	"widgetOptions",
-	"angularCharts"
+	"angularCharts",
+	"angularGrid"
 	], function (angular) {
     var app = angular.module('CDSDASHBOARD', ['ui.router',
     										'uiRouterStyles',
@@ -36,6 +38,9 @@ define(['angular',
     										"ngResource",
     										"ngSanitize",
     										"nvd3ChartDirectives",
+    										'ngTouch', 
+    										'ui.grid', 
+    										'ui.grid.pagination'
     										]);
     return app;
 });

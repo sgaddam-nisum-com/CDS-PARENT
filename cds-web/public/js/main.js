@@ -84,7 +84,10 @@ require.config({
 		"widgetOptions" :"lib/dashboard/widgetOptions",
 		"foundation" : "lib/foundation.min",
 		"chartJs" : "lib/charts/chart",
-		"angularCharts" : "lib/charts/angular-chart"
+		"angularCharts" : "lib/charts/angular-chart",
+		"angularAnimate" : "lib/uiGrid/angular-animate",
+		"angularTouch" : "lib/uiGrid/angular-touch",
+		"angularGrid" : "lib/uiGrid/ui-grid"
 
 	},
 	shim: {
