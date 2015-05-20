@@ -21,9 +21,6 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             taskService.getTaskPriorities(function(resp){
                 $scope.taskPriorities = resp.data;
             });
-            // taskService.getCadres(function(resp){
-            //     $scope.availableCadres = resp.data;
-            // })
             
              $scope.taskLists = [{
 
@@ -55,37 +52,27 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
             this.newTask = function(){
                 $state.go('root.addTask');
-            }
+            };
             this.viewTask = function(){
                 $state.go('root.viewTasks');
-            }
+            };
 
-            this.save = function() {
-                
-                //if (formStack.isValid) {
-
-                    var data = new FormData();                    
-                    for (var key in self.user) {
-                        data.append(key, self.user[key]);
-                    }
-                    console.log(angular.copy(self.user));
-                    console.log(cdsService.getUserId());
-                    $.ajax({
-                        url: appUrls.saveTaskInfo,
-                        type: 'POST',
-                        data: data,
+            this.save = function() {             
+                   
+                   $http.post(
+                        appUrls.saveTaskInfo,                        
+                    {
+                        data: self.user,
                         cache: false,
                         dataType: 'json',
                         processData: false, // Don't process the files
                         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
-                        success: function(data, textStatus, jqXHR) {
+                    }).success(function(data, textStatus, jqXHR) {
                             
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
+                     }).error(function(jqXHR, textStatus, errorThrown) {
 
-                        }
-                    });
-                //}
+                     })
+               
             };
         }
     ]);
