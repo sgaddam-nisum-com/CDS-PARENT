@@ -97,12 +97,10 @@ exports.saveFile = function(files, callback) {
     }
 };
 
-exports.getPersonalInf = function(userId, token, callback) {
+exports.getPersonalInf = function(params, token, callback) {
     log.debug("getPersonalInf");
 
-    citizenService.getPersonalInf({
-        userId: userId
-    }, token, function(resp) {
+    citizenService.getPersonalInf(params, token, function(resp) {
         var dob = resp.data.dateOfBirth;
         if (dob) { //change date format
             resp.data.dateOfBirth = util.deFormatDate(null, dob);
@@ -131,11 +129,9 @@ exports.editWorkInf = function(params, token, callback) {
     });
 };
 
-exports.getWorkInf = function(userId, token, callback) {
-    log.debug("getWorkInf : user id - " + userId);
-    citizenService.getWorkInf({
-        userId: userId
-    }, token, function(resp) {
+exports.getWorkInf = function(params, token, callback) {
+    log.debug("getWorkInf");
+    citizenService.getWorkInf(params, token, function(resp) {
         callback(resp);
     });
 };
@@ -156,12 +152,10 @@ exports.editVoterInf = function(params, token, callback) {
     });
 };
 
-exports.getVoterInf = function(userId, token, callback) {
-    log.debug("getVoterInf : user id - " + userId);
+exports.getVoterInf = function(params, token, callback) {
+    log.debug("getVoterInf");
 
-    citizenService.getVoterInf({
-        userId: userId
-    }, token, function(resp) {
+    citizenService.getVoterInf(params, token, function(resp) {
         callback(resp);
     });
 };
@@ -183,12 +177,10 @@ exports.editResidentialAddress = function(params, token, callback) {
 };
 
 
-exports.getResidentialAddress = function(userId, token, callback) {
-    log.debug("getResidentialAddress : user id - " + userId);
+exports.getResidentialAddress = function(params, token, callback) {
+    log.debug("getResidentialAddress");
 
-    citizenService.getResidentialAddress({
-        userId: userId
-    }, token, function(resp) {
+    citizenService.getResidentialAddress(params, token, function(resp) {
         callback(resp);
     });
 };
@@ -239,12 +231,10 @@ exports.editFamily = function(params, token, callback) {
     });
 };
 
-exports.getFamily = function(userId, token, callback) {
-    log.debug("getFamily : user id - " + (userId));
+exports.getFamily = function(params, token, callback) {
+    log.debug("getFamily");
 
-    citizenService.getFamily({
-        userId: userId
-    }, token, function(resp) {
+    citizenService.getFamily(params, token, function(resp) {
 
         var marriageDate = resp.data[0].marriageDate;
         if (marriageDate) { //change date format

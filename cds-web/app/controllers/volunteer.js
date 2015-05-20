@@ -32,10 +32,12 @@ exports.edit = function(req, res, next) {
 
 exports.get = function(req, res, next) {
     log.debug("get : logged user - " + req.user.data.user.appUserId);
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getVolunteer(userId, token, function(resp) {
+    cdsRegistration.getVolunteer({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -44,6 +46,7 @@ exports.get = function(req, res, next) {
 exports.delete = function(req, res, next) {
     log.debug("delete : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
+    var userId = req.query.userId || req.user.data.user.appUserId;
 
     volunteerService.delete({
         userId: userId
@@ -54,11 +57,11 @@ exports.delete = function(req, res, next) {
 };
 
 exports.areasIntrestedToVolunteer = function(req, res, next) {
-    log.debug("areasIntrestedToVolunteer :" );
+    log.debug("areasIntrestedToVolunteer :");
     var orgId = req.query.orgId;
 
     volunteerService.areasIntrestedToVolunteer(orgId, function(resp) {
-		res.json(resp);
+        res.json(resp);
     });
 };
 

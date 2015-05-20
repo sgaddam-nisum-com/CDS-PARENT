@@ -32,10 +32,12 @@ exports.edit = function(req, res, next) {
 
 exports.get = function(req, res, next) {
     log.debug("get : logged user - " + req.user.data.user.appUserId);
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getCadre(userId, token, function(resp) {
+    cdsRegistration.getCadre({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -43,7 +45,7 @@ exports.get = function(req, res, next) {
 
 exports.delete = function(req, res, next) {
     log.debug("delete : logged user - " + req.user.data.user.appUserId);
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     cadreService.delete({
@@ -109,7 +111,7 @@ exports.getCadreLeads = function(req, res, next) {
 
 exports.getCadresList = function(req, res, next) {
     log.debug("getCadresList : logged user - " + req.user.data.user.appUserId);
-    
+
     var token = req.user ? req.user.data.token : null;
     var q = req.query.q;
 

@@ -33,10 +33,12 @@ exports.editPersonalInf = function(req, res, next) {
 
 exports.getPersonalInf = function(req, res, next) {
     log.debug("getPersonalInf : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getPersonalInf(userId, token, function(resp) {
+    cdsRegistration.getPersonalInf({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -44,7 +46,7 @@ exports.getPersonalInf = function(req, res, next) {
 
 exports.deletePersonalinf = function(req, res, next) {
     log.debug("deletePersonalinf : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     citizenService.deletePersonalinf({
@@ -71,7 +73,6 @@ exports.editWorkInf = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-
     cdsRegistration.editWorkInf(params, token, function(resp) {
         req.resp = resp;
         next();
@@ -80,10 +81,12 @@ exports.editWorkInf = function(req, res, next) {
 
 exports.getWorkInf = function(req, res, next) {
     log.debug("getWorkInf : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getWorkInf(userId, token, function(resp) {
+    cdsRegistration.getWorkInf({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -113,10 +116,12 @@ exports.editVoterInf = function(req, res, next) {
 
 exports.getVoterInf = function(req, res, next) {
     log.debug("getVoterInf : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getVoterInf(userId, token, function(resp) {
+    cdsRegistration.getVoterInf({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -124,7 +129,7 @@ exports.getVoterInf = function(req, res, next) {
 
 exports.deleteVoterInf = function(req, res, next) {
     log.debug("deleteVoterInf : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     citizenService.deleteVoterInf({
@@ -171,10 +176,12 @@ exports.editResidentialAddress = function(req, res, next) {
 
 exports.getResidentialAddress = function(req, res, next) {
     log.debug("getResidentialAddress : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getResidentialAddress(userId, token, function(resp) {
+    cdsRegistration.getResidentialAddress({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -203,10 +210,12 @@ exports.editFamily = function(req, res, next) {
 
 exports.getFamily = function(req, res, next) {
     log.debug("getFamily : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
-    cdsRegistration.getFamily(userId, token, function(resp) {
+    cdsRegistration.getFamily({
+        userId: userId
+    }, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -214,7 +223,7 @@ exports.getFamily = function(req, res, next) {
 
 exports.deleteFamily = function(req, res, next) {
     log.debug("deleteFamily : logged user - " + (req.user.data.user.appUserId));
-    var userId = req.query.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     citizenService.deleteFamily({

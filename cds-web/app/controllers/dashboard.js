@@ -12,7 +12,7 @@ exports.viewMessage = function(req, res, next) {
     var params = req.query.msgId;
     var token = req.user ? req.user.data.token : null;
 
-    dashboardService.saveCadre({
+    dashboardService.viewMessage({
         msgId: msgId
     }, token, function(resp) {
         req.resp = resp;
@@ -43,7 +43,7 @@ exports.messageCount = function(req, res, next) {
 exports.tasksByAge = function(req, res, next) {
     log.debug("tasksByAge : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
-    var userId = req.body.userId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
 
     dashboardService.tasksByAge({
         userId: userId
@@ -56,7 +56,6 @@ exports.tasksByAge = function(req, res, next) {
 exports.tasksTrendRPerMonth = function(req, res, next) {
     log.debug("tasksTrendRPerMonth : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
-    var userId = req.body.userId;
 
     dashboardService.tasksTrendRPerMonth(token, function(resp) {
         req.resp = resp;
@@ -67,7 +66,6 @@ exports.tasksTrendRPerMonth = function(req, res, next) {
 exports.cadresTrendRPerMonth = function(req, res, next) {
     log.debug("cadresTrendRPerMonth : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
-    var userId = req.body.userId;
 
     dashboardService.cadresTrendRPerMonth(token, function(resp) {
         req.resp = resp;

@@ -24,12 +24,10 @@ exports.editVolunteer = function(params, token, callback) {
     });
 };
 
-exports.getVolunteer = function(userId, token, callback) {
-    log.debug("getVolunteer : user id - " + userId);
+exports.getVolunteer = function(params, token, callback) {
+    log.debug("getVolunteer");
 
-    volunteerService.get({
-        userId: userId
-    }, token, function(resp) {
+    volunteerService.get(params, token, function(resp) {
         callback(resp);
     });
 };

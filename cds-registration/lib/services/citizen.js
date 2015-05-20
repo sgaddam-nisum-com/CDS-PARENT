@@ -15,7 +15,12 @@ exports.savePersonalInf = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.citizen.savePersonalInf, params, headers, function(args) {
+    var url = {
+        path: requireUtil.format(restUrls.citizen.savePersonalInf.path, params.userId),
+        method: restUrls.citizen.savePersonalInf.method
+    };
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -164,7 +169,7 @@ exports.saveResidentialAddress = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.saveResidentialAddress.path, params[0].userId),
+        path: requireUtil.format(restUrls.citizen.saveResidentialAddress.path, params.userId),
         method: restUrls.citizen.saveResidentialAddress.method
     };
 
@@ -183,7 +188,7 @@ exports.editResidentialAddress = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.saveResidentialAddress.path, params[0].userId),
+        path: requireUtil.format(restUrls.citizen.saveResidentialAddress.path, params.userId),
         method: restUrls.citizen.saveResidentialAddress.method
     };
 
@@ -202,7 +207,7 @@ exports.getResidentialAddress = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.getResidentialAddress.path, params[0].userId),
+        path: requireUtil.format(restUrls.citizen.getResidentialAddress.path, params.userId),
         method: restUrls.citizen.getResidentialAddress.method
     };
 
@@ -218,7 +223,7 @@ exports.saveFamily = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.saveFamily.path, params[0].userId),
+        path: requireUtil.format(restUrls.citizen.saveFamily.path, params.userId),
         method: restUrls.citizen.saveFamily.method
     };
 
@@ -237,7 +242,7 @@ exports.editFamily = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.editFamily.path, params[0].userId),
+        path: requireUtil.format(restUrls.citizen.editFamily.path, params.userId),
         method: restUrls.citizen.editFamily.method
     };
 
@@ -256,7 +261,7 @@ exports.getFamily = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.getFamily.path, params[0].userId),
+        path: requireUtil.format(restUrls.citizen.getFamily.path, params.userId),
         method: restUrls.citizen.getFamily.method
     };
 

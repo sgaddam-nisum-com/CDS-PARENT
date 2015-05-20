@@ -23,12 +23,10 @@ exports.editCadre = function(params, token, callback) {
     });
 };
 
-exports.getCadre = function(userId, token, callback) {
-    log.debug("getCadre : user id - " + userId);
+exports.getCadre = function(params, token, callback) {
+    log.debug("getCadre");
 
-    cadreService.get({
-        userId: userId
-    }, token, function(resp) {
+    cadreService.get(params, token, function(resp) {
         callback(resp);
     });
 };

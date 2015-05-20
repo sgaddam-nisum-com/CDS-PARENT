@@ -46,7 +46,7 @@ exports.messageCount = function(token, callback) {
     });
 };
 
-exports.tasksByAge = function(token, callback) {
+exports.tasksByAge = function(params, token, callback) {
     log.debug("tasksByAge : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
