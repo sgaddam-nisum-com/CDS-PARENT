@@ -11,7 +11,9 @@ define(['angular',
 	'directives/verticalScrollDirective',
 	'directives/slickGalleryDirective',
 	"directives/galleryDirective",
-	'controllers/headerController',	
+	'controllers/headerController',
+	"directives/navDropdownDirective"
+
 	], function (angular) {
     var app = angular.module('CDSHOME', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule','controllerModule',"directiveModule"]);		
     return app;
