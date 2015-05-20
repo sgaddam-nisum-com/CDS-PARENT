@@ -108,7 +108,7 @@ exports.getCadreLeads = function(req, res, next) {
 };
 
 exports.getCadresList = function(req, res, next) {
-    log.debug("getCadresList : logged user - " + req.user.data.user);
+    log.debug("getCadresList : logged user - " + req.user.data.user.appUserId);
     
     var token = req.user ? req.user.data.token : null;
     var q = req.query.q;
