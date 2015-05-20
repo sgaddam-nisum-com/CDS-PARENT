@@ -226,7 +226,7 @@ exports.deleteFamily = function(req, res, next) {
 };
 
 exports.quickRegistration = function(req, res, next, callback) {
-    log.debug("quickRegistration : user - ");
+    log.debug("quickRegistration");
     var params = req.body;
     var orgId = req.body.orgId;
 
@@ -236,13 +236,11 @@ exports.quickRegistration = function(req, res, next, callback) {
 };
 
 exports.getQualifications = function(req, res, next) {
-    log.debug("getQualifications : logged user - " + (req.user.data.user.appUserId));
+    log.debug("getQualifications");
+    var orgId = req.body.orgId;
 
-    var token = req.user ? req.user.data.token : null;
-
-    citizenService.getQualifications(null, token, function(resp) {
-        req.resp = resp;
-        next();
+    citizenService.getQualifications(orgId, function(resp) {
+        req.json(resp);
     });
 };
 
@@ -297,7 +295,7 @@ exports.careerAspirations = function(req, res, next) {
     log.debug("careerAspirations");
     var orgId = req.body.orgId;
 
-    citizenService.careerAspirations( orgId, function(resp) {
+    citizenService.careerAspirations(orgId, function(resp) {
         res.json(resp);
     });
 };

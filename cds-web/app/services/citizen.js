@@ -97,7 +97,7 @@ exports.getQualifications = function(orgId, callback) {
     var headers = header;
     headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.citizen.qualifications, params, headers, function(args) {
+    restService.builbArgs(restUrls.citizen.qualifications, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -107,7 +107,7 @@ exports.getOccupations = function(orgId, callback) {
     var headers = header;
     headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.citizen.occupations, params, headers, function(args) {
+    restService.builbArgs(restUrls.citizen.occupations, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
