@@ -27,7 +27,7 @@ exports.editPersonalInf = function(params, token, callback) {
 
     //build url path
     var url = {
-        path: requireUtil.format(restUrls.citizen.editPersonalInf.path, params.loginId),
+        path: requireUtil.format(restUrls.citizen.editPersonalInf.path, params.userId),
         method: restUrls.citizen.editPersonalInf.method
     };
 
@@ -43,7 +43,7 @@ exports.getPersonalInf = function(params, token, callback) {
 
     //build url path
     var url = {
-        path: requireUtil.format(restUrls.citizen.getPersonalInf.path, params.loginId),
+        path: requireUtil.format(restUrls.citizen.getPersonalInf.path, params.userId),
         method: restUrls.citizen.getPersonalInf.method
     };
 

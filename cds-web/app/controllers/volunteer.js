@@ -73,7 +73,7 @@ exports.volunteerCategory = function(req, res, next) {
 
 exports.volunteerLeads = function(req, res, next) {
     log.debug("volunteerLeads");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     volunteerService.volunteerLeads(orgId, function(resp) {
         res.json(resp);
@@ -82,7 +82,7 @@ exports.volunteerLeads = function(req, res, next) {
 
 exports.isVolunteerIdExist = function(req, res, next) {
     log.debug("isVolunteerIdExist");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     volunteerService.isVolunteerIdExist({
         volunteerId: volunteerId
@@ -93,7 +93,7 @@ exports.isVolunteerIdExist = function(req, res, next) {
 
 exports.performanceGrades = function(req, res, next) {
     log.debug("performanceGrades");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     volunteerService.performanceGrades(orgId, function(resp) {
         res.json(resp);

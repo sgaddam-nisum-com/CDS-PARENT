@@ -9,7 +9,7 @@ var dashboardService = require('../services/dashboard'),
 
 exports.viewMessage = function(req, res, next) {
     log.debug("save : logged user - " + req.user.data.user.appUserId);
-    var params = req.body.msgId;
+    var params = req.query.msgId;
     var token = req.user ? req.user.data.token : null;
 
     dashboardService.saveCadre({

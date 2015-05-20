@@ -237,17 +237,17 @@ exports.quickRegistration = function(req, res, next, callback) {
 
 exports.getQualifications = function(req, res, next) {
     log.debug("getQualifications");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     citizenService.getQualifications(orgId, function(resp) {
-        req.json(resp);
+        res.json(resp);
     });
 };
 
 exports.getAddressByPincode = function(req, res, next) {
     log.debug("getAddressByPincode");
     var q = req.query.q;
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     citizenService.getAddressByPincode({
         q: q
@@ -258,10 +258,10 @@ exports.getAddressByPincode = function(req, res, next) {
 
 exports.getOccupations = function(req, res, callback) {
     log.debug("getOccupations");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     citizenService.getOccupations(orgId, function(resp) {
-        req.json(resp);
+        res.json(resp);
     });
 };
 
@@ -293,7 +293,7 @@ exports.viewCitizen = function(req, res, next) {
 
 exports.careerAspirations = function(req, res, next) {
     log.debug("careerAspirations");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     citizenService.careerAspirations(orgId, function(resp) {
         res.json(resp);
@@ -302,7 +302,7 @@ exports.careerAspirations = function(req, res, next) {
 
 exports.skillGaps = function(req, res, next) {
     log.debug("skillGaps");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     citizenService.skillGaps(orgId, function(resp) {
         res.json(resp);
