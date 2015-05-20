@@ -30,6 +30,9 @@ require.config({
 		"appProfile":"modules/profile/app",
 		"configProfile":"modules/profile/config",
 
+		"editprofile":"modules/editprofile/app",
+		"configeditprofile":"modules/editprofile/config",
+
 
 		/*Services, Controllers & directives*/		 		 		 
 		 "angular": 'lib/angular',
@@ -173,6 +176,9 @@ var routes = {
         },
         "/profile": {
             module: {"app":"appProfile", "config":"configProfile","moduleName":"CDSUSERPROFILE"}
+        },
+        "/editprofile": {
+        	module: {"app":"editprofile", "config":"configeditprofile","moduleName":"CDSEDITPROFILE"}
         }                  
     };
 

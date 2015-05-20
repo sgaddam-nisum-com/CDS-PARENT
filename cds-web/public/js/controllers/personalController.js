@@ -8,7 +8,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
             this.showImage = true;
 
             var self = this;
-            var sessionObj = $sessionStorage.cds.contextObj;
+            $sessionStorage.cds = $sessionStorage.cds || {};
+            var sessionObj = $sessionStorage.cds.contextObj || {};
 
 
             if (sessionObj.mode == "edit") {

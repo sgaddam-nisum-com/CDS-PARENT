@@ -190,6 +190,7 @@ exports.init = function(app, passport, auth) {
     app.get('/tasks', auth.requiresLoginForPage, index.tasks);
     app.get('/dashboard', auth.requiresLoginForPage, index.dashboard);
     app.get('/profile', auth.requiresLoginForPage, index.profile);
+    app.get('/editprofile', auth.requiresLoginForPage, index.editprofile);
 
     app.get('/setlocale/:locale', function(req, res) {
         res.cookie('locale', req.params.locale);

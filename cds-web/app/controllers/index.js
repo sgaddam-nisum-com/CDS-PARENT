@@ -16,26 +16,31 @@ exports.postrequest = function(req, res, next) {
     res.render('external/post-request.html', {});
 };
 exports.register = function(req, res, next) {
-    res.render('index.html', {});
+    res.render('layouts/index.html', {});
 };
 exports.dashboard = function(req, res, next) {
     res.render('layouts/dashboard.html', {});
 };
 exports.forgotpwd = function(req, res, next) {
-    res.render('external/forgot-password.html', {});
+    res.render('layouts/forgot-password.html', {});
 };
 exports.calendar = function(req, res, next) {
-    res.render('index.html', {});
+    res.render('layouts/index.html', {});
 };
 
 exports.inbox = function(req, res, next) {
-    res.render('index.html', {});
+    res.render('layouts/index.html', {});
 };
 
 exports.tasks = function(req, res, next) {
-    res.render('index.html', {});
+    res.render('layouts/index.html', {});
 };
 
 exports.profile = function(req, res, next) {
-    res.render('index.html', {});
+    res.render('layouts/index.html', {});
 };
+
+exports.editprofile = function(req, res, next) {
+    res.render('layouts/index.html', {});
+};
+
