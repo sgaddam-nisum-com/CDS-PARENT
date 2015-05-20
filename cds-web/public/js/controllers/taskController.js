@@ -59,14 +59,10 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
             this.save = function() {             
                    
-                   $http.post(
-                        appUrls.saveTaskInfo,                        
-                    {
-                        data: self.user,
-                        cache: false,
-                        dataType: 'json',
-                        processData: false, // Don't process the files
-                        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+                   $http({
+                        url : appUrls.saveTaskInfo,                        
+                        method : "POST",
+                        data: self.user
                     }).success(function(data, textStatus, jqXHR) {
                             
                      }).error(function(jqXHR, textStatus, errorThrown) {
