@@ -2,43 +2,122 @@
 	<h1>Profile Information</h1>
 	<div class="content-wrapper">		
 		<div class="row" style="font-size:13px;">
-			<div class="large-12 columns">
+			<div class="large-16 columns">
+				
+			<div class="large-12 columns" >
+				
+				<!-- User profile section -->
 				<div class="member-info row" style="margin-left:0px; margin-bottom:10px;">
-					<span class="left" ng-bind="profileCtrl.user.firstName+'  '+profileCtrl.user.lastName"></span>
-				</div>
+					<strong><span class="left" ng-bind="profileCtrl.user.firstName+'  '+profileCtrl.user.lastName"></span></strong></div>
+				
 				<div class="row">
-					<div class="large-4 columns"> Age/Gender :</div><div class="columns large-1">:</div><div class="large-4 columns left"><span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.gender"></span></div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Age/Gender :</div>
+						<div class="columns large-1">:</div><div class="large-4 columns left">
+						<span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.gender"></span></div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Date of Birth :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.dateOfBirth">Date of Birth</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Aadhar ID :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.aadharId">aadharId</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Phone :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.mobileNumber">+91 8886867695</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Email :</div><div class="columns large-1">:</div><div class="large-4 columns left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Location :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.workingLocation">Hyderabad</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Constituency :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.constituency">Vijayawada</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Position in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left">Mandal President</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Responsibility in Party :</div><div class="columns large-1">:</div><div class="large-4 columns left">Student Union Organization</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Skype Id :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.skypeId">saudam</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Marital status :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.martialStatus">martialStatus</div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Education :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.education.qualification">martialStatus</div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="large-4 columns"> Phone :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.mobileNumber">+91 8886867695</div>
+				<!-- /User profile section -->
+				<div  class="large-16 columns accordion" accordion>
+				<!-- WORKING INFO section -->
+				<div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;"> 
+					<strong><span class="left">WORKING INFO</span></strong>
 				</div>
-				<div class="row">
-					<div class="large-4 columns"> Email :</div><div class="columns large-1">:</div><div class="large-4 columns left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
+				<div class="row accordion-content">
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Occupation :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.occupation"></div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Working Organization :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.workingOrganization"></div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Working Location :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.workingLocation"></div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="large-4 columns"> Location :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.workingLocation">Hyderabad</div>
+				<!-- /WORKING INFO section -->
+
+				<!-- CADRE section -->
+				<div class="row accordion-head" style="margin-top:10px; margin-left:0px; margin-bottom:10px;"> 
+					<strong><span class="left">CADRE</span></strong>
 				</div>
-				<div class="row">
-					<div class="large-4 columns"> Constituency :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.constituency">Vijayawada</div>
+				<div class="row accordion-content">
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Party Membership Id :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.partyMembershipId"></div>
+					</div>
+					<div class="large-16 columns">
+						<div class="large-4 columns"> Blood Group :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.bloodGroup"></div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="large-4 columns"> Position in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left">Mandal President</div>
+				<!-- /CADRE section -->
 				</div>
-				<div class="row">
-					<div class="large-4 columns"> Responsibility in Party :</div><div class="columns large-1">:</div><div class="large-4 columns left">Student Union Organization</div>
-				</div>
-				<div class="row">
-					<div class="large-4 columns"> Skype Id :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.skypeId">saudam</div>
-				</div>
-				<div class="row" style="margin-top :20px;margin-bottom :20px">
-					<div class="large-4 columns">  <a href="#" class="view-more">View more details</a></div><div class="columns large-1"></div><div class="large-4 columns left"></div>
-				</div>
+
 			</div>
 			<div class="large-4 columns members">
-				<img src="images/profile/shivashankar.jpg" title="members"  class="photo1"/>
+				<img src="images/profile/11.jpg" title="members"  class="photo1"/>
 			</div>
-			
+			<!-- <div class="large-16 columns">
+				<div class="row edit-profile">
+					<div class="large-4 columns">
+						<ul>
+							<li>Personal</li>
+							<li>Work Information</li>
+							<li>Voter Information</li>
+							<li>Volunteer</li>
+							<li>Family</li>
+							<li>Cadre</li>
+						</ul>
+					</div>
+					<div class="large-12 columns">
+						12 columns
+					</div>
+				</div>
+			</div> -->
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
 		<div id="additionalDetails" style="display:none; font-size:13px; margin-bottom:20px">
 			<div class="row">
 				<div class="large-3 columns"> Village</div><div class="columns large-1">:</div><div class="large-4 columns left">Jakkampet</div>

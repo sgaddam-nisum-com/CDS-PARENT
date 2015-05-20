@@ -2700,6 +2700,35 @@ div.navigation a.next {
   background: #fff url(../images/calender-icon.png) no-repeat right center;
 }
 
+/* line 1, ../scss/components/_accordion.scss */
+.accordion-head {
+  border: 1px solid gray;
+  padding: 0px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #16578F;
+  border-radius: 4px;
+  border: 1px solid gray;
+  height: 30px;
+  padding: 5px 0px 0px 12px;
+}
+
+/* line 12, ../scss/components/_accordion.scss */
+.accordion-content {
+  /*height: 170px;*/
+}
+
+/* line 15, ../scss/components/_accordion.scss */
+.edit-profile {
+  border: 1px solid red;
+}
+
+/* line 18, ../scss/components/_accordion.scss */
+.edit-profile ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
 /* UI components */
 /* line 1, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker {
