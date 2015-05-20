@@ -1,29 +1,68 @@
 'use strict';
 
 define(['directives/directiveModule', 'autocomplete'], function(directiveModule) {
-    directiveModule.directive('autoCompleteDirective', ["cdsService",
-            function(cdsService) {
-                console.log("here");
-                var availableTags = [{
+    directiveModule.directive('autoCompleteDirective', ["cdsService","taskService",
+            function(cdsService,taskService) { 
 
-                    "Name": "Shiva",
-                    "label": "Hyderabad, madhapur, 502001",                    
-                }, {
-                    "Name":"Gangadhar",
-                    "label": "Hyd, patacheru, 502002"
-                }, {
+                function cadreStringifier(cadreArray) {
+                    var cadreObjArray = [];
 
-                    "Name": "Ramesh",
-                    "label": "Hyd, xxx, 502001"
-                }];
-             
+                    for (var i = 0; i < cadreArray.length; i++) {
+                        var cadreObj = {};
+                        var cadreString = "";
+                        cadreString = cadreArray[i].firstName+","+cadreArray[i].lastName+","+cadreArray[i].mobileNumber;
+                        cadreObj.value = cadreArray[i].firstName+","+cadreArray[i].lastName;
+                        cadreObj.label = cadreString;
+                        cadreObj.fieldValueObj = cadreArray[i];
+                        cadreObj.model = cadreArray[i].citizenId;                                             
+                        cadreObjArray.push(cadreObj);
+                    };
+                    return cadreObjArray;
+                }                    
 
                 return {
-                    restrict: "A",
-                    link: function(scope, elem, attrs) {                        
-                        $(elem).autocomplete({
-                            source:availableTags
+                    restrict: "A",                    
+                    link: function(scope, elem, attrs) {
+
+                         $("#searchIcon").on("click", function(e) {
+                            e.stopPropagation();
+
+                            var userInput = $(elem).find('input').val().trim();
+                            console.log(userInput);
+                            
+                            taskService.getCadres(userInput, function(resp) {
+                                console.log(resp);
+                                var cadreMap = cadreStringifier(resp.data);
+                                console.log(cadreMap);
+                                enableAutoComplete(elem, cadreMap);
+                            });
+                            
+
+                           
                         });
+                         function enableAutoComplete(elem, cadreMap) {
+
+                            var autoCompleteInstance = $(elem).find("input").autocomplete("instance");
+                            if (autoCompleteInstance) {
+                                $(elem).find("input").autocomplete("enable");
+                            }
+
+                            $(elem).find("input").autocomplete({
+                                appendTo: "#autoCompleteContainer",
+                                source: cadreMap,
+                                select: function(e, data) {
+                                    
+                                    scope.$apply(function(){
+                                        scope.taskCtrl.user.taskWorkAllocation.citizenId = data.item.model;                                        
+                                    });
+
+                                }
+                            }).focus(function() {
+                                $(this).autocomplete('search', $(this).val())
+                            });
+
+                            $(elem).find("input").trigger('focus');
+                        }                        
                        
                     }
                 }

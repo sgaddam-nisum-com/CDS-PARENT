@@ -13,8 +13,9 @@
         </div>
         <div class="row">
           <div class="large-6 columns">Assign To :</div>
-          <div class="large-10 columns">
-            <input type="text" id="cadreId" class="input requestor" name="cadreName" ng-model="taskCtrl.user.taskWorkAllocation.citizenId" auto-complete-directive>
+          <div class="large-10 columns" auto-complete-directive>
+            <input type="text" id="cadreId" class="input" name="cadreName" ng-model="taskCtrl.user.taskWorkAllocation.citizenId">
+            <img src="images/searchicon.png" class="search-icon" id="searchIcon">
           </div>
         </div>
         <div class="row">
@@ -40,11 +41,8 @@
         <div class="row">
           <div class="large-6 columns">Priority :</div>
           <div class="large-10 columns">
-            <select ng-model="taskCtrl.user.priorityId">
-              <option>Select</option>
-              <option>High</option>
-              <option>Medium</option>
-              <option>Low</option>
+            <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities">
+              <option>Select Priority</option>              
             </select>
           </div>
         </div>
@@ -63,20 +61,20 @@
         <div class="row">
           <div class="large-6 columns">Prime ID# :</div>
           <div class="large-10 columns">
-            <input type="text" id="parentId" class="input" name="parentId" ng-model="taskCtrl.user.taskWorkAllocation.citizenId">
+            <input type="text" id="parentId" class="input" name="parentId" ng-model="taskCtrl.user.taskWorkAllocation.taskPrimeId">
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns">Comment Type :</div>
           <div class="large-10 columns">
-            <input type="radio" name="commentType" value="Private" id="Private" ng-model="taskCtrl.user.commentType"><label for="Private">Private</label>
-            <input type="radio" name="commentType" value="Public" id="Public" ng-model="taskCtrl.user.commentType"><label for="Public">Public</label>          
+            <input type="radio" name="commentType" value="Private" id="Private" ng-model="taskCtrl.user.comments.commentType"><label for="Private">Private</label>
+            <input type="radio" name="commentType" value="Public" id="Public" ng-model="taskCtrl.user.comments.commentType"><label for="Public">Public</label>          
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns">Additional Comments :</div>
           <div class="large-10 columns">
-            <textarea id="description" class="input" name="description" ng-model="taskCtrl.user.commentDescription"></textarea>
+            <textarea id="description" class="input" name="description" ng-model="taskCtrl.user.comments.commentDescription"></textarea>
           </div>
         </div>        
         <div class="row">

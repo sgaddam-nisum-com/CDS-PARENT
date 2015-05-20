@@ -61,9 +61,13 @@ define(['services/serviceModule'], function (serviceModule) {
 				getCareerAspirationInfo :"/citizen/careeraspirations",
 				getSkillGapsInfo : "/citizen/skillgaps",
 				
-				getTaskCategories : "/auth/user/taskcategories",
+				getTaskCategories : "/user/taskcategories",
 				saveTaskInfo : "/auth/user/createtask",
-				getTasksList :"/auth/user/viewtasks",
+				getTasksList :"/auth/user/tasks",
+				getCadreLeads : "/auth/cadre/cadreleads",
+				getTaskPriorities :"/user/taskpriority",
+				getCadreList :"/auth/cadre/cadres",
+
 
 
 				deleteUser : "/volunteer/delete"

@@ -18,6 +18,13 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             taskService.getTasks(function(resp){
                 $scope.taskLists = resp.data;
             });
+            taskService.getTaskPriorities(function(resp){
+                $scope.taskPriorities = resp.data;
+            });
+            // taskService.getCadres(function(resp){
+            //     $scope.availableCadres = resp.data;
+            // })
+            
              $scope.taskLists = [{
 
                 status:"OPEN",
@@ -55,14 +62,14 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
             this.save = function() {
                 
-                if (formStack.isValid) {
+                //if (formStack.isValid) {
 
-                    var data = new FormData();
-
+                    var data = new FormData();                    
                     for (var key in self.user) {
                         data.append(key, self.user[key]);
                     }
-                    console.log(data);
+                    console.log(angular.copy(self.user));
+                    console.log(cdsService.getUserId());
                     $.ajax({
                         url: appUrls.saveTaskInfo,
                         type: 'POST',
@@ -72,13 +79,13 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                         processData: false, // Don't process the files
                         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
                         success: function(data, textStatus, jqXHR) {
-                           
+                            
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
 
                         }
                     });
-                }
+                //}
             };
         }
     ]);
