@@ -4,8 +4,7 @@
 define(['angular',
 	'uiRouter',
 	'uiRouterStyles',
-	'angularRoute',
-	
+	'angularRoute',	
 	'services/common/serviceLoader',
 	'controllers/dashboardController',
 	"controllers/headerController",
