@@ -56,7 +56,7 @@ exports.delete = function(req, res, next) {
 
 exports.partyPositions = function(req, res, next) {
     log.debug("partyPositions");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     cadreService.partyPositions(orgId, function(resp) {
         res.json(resp);
@@ -65,7 +65,7 @@ exports.partyPositions = function(req, res, next) {
 
 exports.bloodGroups = function(req, res, next) {
     log.debug("bloodGroups");
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     cadreService.bloodGroups(orgId, function(resp) {
         res.json(resp);
@@ -75,7 +75,7 @@ exports.bloodGroups = function(req, res, next) {
 exports.isPartyMemberShipIdExist = function(req, res, next) {
     log.debug("isPartyMemberShipIdExist");
     var partyMemberShipId = req.query.partyMemberShipId;
-    var orgId = req.body.orgId;
+    var orgId = req.query.orgId;
 
     cadreService.isPartyMemberShipIdExist({
         partyMemberShipId: partyMemberShipId
