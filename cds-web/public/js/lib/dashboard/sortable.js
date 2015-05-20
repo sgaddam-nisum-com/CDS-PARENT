@@ -1,4 +1,4 @@
-define(["jquery","angular","jqueryUI"],function($,angular){
+define(["jquery","angular","sortable"],function($,angular){
 /*
  jQuery UI Sortable plugin wrapper
 

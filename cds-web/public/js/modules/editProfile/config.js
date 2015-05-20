@@ -24,7 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
          views: {
             'header': {
                 templateUrl: 'views/common/header.html',
-               /* controller : "headerController as headerCtrl"*/
+               controller : "headerController as headerCtrl"
             },
             'footer': {
                 templateUrl: 'views/common/footer.html'                

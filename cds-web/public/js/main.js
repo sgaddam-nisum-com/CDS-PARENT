@@ -91,7 +91,11 @@ require.config({
 		"angularAnimate" : "lib/uiGrid/angular-animate",
 		"angularTouch" : "lib/uiGrid/angular-touch",
 		"angularGrid" : "lib/uiGrid/ui-grid",
-		"accordion" : "lib/jqueryui/accordion"
+		"accordion" : "lib/jqueryui/accordion",
+
+		"sortable" : "lib/jqueryui/sortable",
+		"mouse" : "lib/jqueryui/mouse"
+
 	},
 	shim: {
 		angular: {
