@@ -90,8 +90,8 @@ require.config({
 		"angularCharts" : "lib/charts/angular-chart",
 		"angularAnimate" : "lib/uiGrid/angular-animate",
 		"angularTouch" : "lib/uiGrid/angular-touch",
-		"angularGrid" : "lib/uiGrid/ui-grid"
-
+		"angularGrid" : "lib/uiGrid/ui-grid",
+		"accordion" : "lib/jqueryui/accordion"
 	},
 	shim: {
 		angular: {

@@ -12,7 +12,8 @@ define(['angular',
 	"directives/resourceDirective",
 	"directives/datePickerDirective",
 	"directives/navDropdownDirective",
-	"controllers/headerController"
+	"controllers/headerController",
+	"directives/accordionDirective"
 	], function (angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);    
     return app;
