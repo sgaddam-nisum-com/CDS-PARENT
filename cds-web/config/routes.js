@@ -185,12 +185,12 @@ exports.init = function(app, passport, auth) {
     // Home route
     app.get('/', index.render);
     app.get('/register', index.register);
-    app.get('/calendar', auth.requiresLoginForPage, index.calendar);
-    app.get('/inbox', auth.requiresLoginForPage, index.inbox);
-    app.get('/tasks', auth.requiresLoginForPage, index.tasks);
-    app.get('/dashboard', auth.requiresLoginForPage, index.dashboard);
-    app.get('/profile', auth.requiresLoginForPage, index.profile);
-    app.get('/editprofile', auth.requiresLoginForPage, index.editprofile);
+    app.get('/calendar', auth.user.hasAuthorizationToPage, index.calendar);
+    app.get('/inbox', auth.user.hasAuthorizationToPage, index.inbox);
+    app.get('/tasks', auth.user.hasAuthorizationToPage, index.tasks);
+    app.get('/dashboard', auth.user.hasAuthorizationToPage, index.dashboard);
+    app.get('/profile', auth.user.hasAuthorizationToPage, index.profile);
+    app.get('/editprofile', auth.user.hasAuthorizationToPage, index.editprofile);
 
     app.get('/setlocale/:locale', function(req, res) {
         res.cookie('locale', req.params.locale);
