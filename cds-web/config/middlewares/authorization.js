@@ -37,9 +37,10 @@ exports.user = {
 exports.filterResponse = function(req, res) {
     var resp = req.resp;
     req.resp = null;
+    res.statusCode = resp.data.httpStatusCode;
     if (resp.data.errorCode === '40105') {
         util.handleErrors(cdsConfig.errors.session.expired, function(resp) {
-            return res.json(resp);
+            res.json(resp);
         });
     } else {
         res.json(resp);
