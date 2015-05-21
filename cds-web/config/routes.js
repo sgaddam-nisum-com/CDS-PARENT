@@ -115,7 +115,7 @@ exports.init = function(app, passport, auth) {
     app.delete('/auth/citizen/delete', citizenController.delete, auth.filterResponse);
 
     app.get('/auth/citizen/viewcitizen', citizenController.viewCitizen, auth.filterResponse);
-    app.get('/auth/citizen/getvoterinfbytext', citizenController.getVoterInfByText);
+    app.get('/auth/citizen/getvoterinfbytext', citizenController.getVoterInfByText, auth.filterResponse);
     app.get('/citizen/careeraspirations', citizenController.careerAspirations);
     app.get('/citizen/skillgaps', citizenController.skillGaps);
 
