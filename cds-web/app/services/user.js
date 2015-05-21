@@ -11,7 +11,7 @@ var restService = require('cds-rest-services'),
     log = require('cds-logger').logger("user-service");
 
 exports.authenticate = function(params, callback) {
-    log.debug("authenticate : " + (JSON.stringify(params)));
+    log.debug("authenticate");
     restService.builbArgs(restUrls.user.authenticate, params, header, function(args) {
         restService.makecall(args, callback);
     });
