@@ -230,15 +230,14 @@ exports.deleteCommentToTask = function(req, res, next) {
 };
 
 exports.getStatuses = function(req, res, next) {
-    log.debug("getStatuses : logged user - " + req.user.data.user.appUserId);
+    log.debug("getStatuses");
     var statusType = req.query.statustype;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.query.orgId;
 
     taskMgmt.getStatuses({
         statusType: statusType
-    }, token, function(resp) {
-        req.resp = resp;
-        next();
+    }, orgId, function(resp) {
+        res.json(resp);
     });
 };
 

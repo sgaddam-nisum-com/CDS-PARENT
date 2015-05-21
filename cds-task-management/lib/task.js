@@ -146,10 +146,10 @@ exports.deleteCommentToTask = function(params, token, callback) {
     });
 };
 
-exports.getStatuses = function(params, token, callback) {
+exports.getStatuses = function(params, orgId, callback) {
     log.debug("getStatuses : " + (JSON.stringify(params)));
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     var url = {
         path: requireUtil.format(restUrls.task.getStatuses.path, params.statusType),

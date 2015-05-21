@@ -55,7 +55,7 @@ exports.init = function(app, passport, auth) {
     app.post('/auth/user/addcommenttotask', userController.addCommentToTask, auth.filterResponse);
     app.put('/auth/user/updatecommenttotask', userController.updateCommentToTask, auth.filterResponse);
     app.delete('/auth/user/deletecommenttotask', userController.deleteCommentToTask, auth.filterResponse);
-    app.get('/auth/user/statuses', userController.getStatuses, auth.filterResponse);
+    app.get('/user/statuses', userController.getStatuses);
     app.get('/auth/user/taskdetails', userController.getTaskDetails, auth.filterResponse);
     app.get('/auth/user/updatetasksstatus', userController.updateTasksStatus, auth.filterResponse);
 

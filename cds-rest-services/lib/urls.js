@@ -83,7 +83,7 @@ module.exports = {
             method: "DELETE"
         },
         getStatuses: {
-            path: "%s/statuses/",
+            path: "lookup/%s/statuses/",
             method: "GET"
         },
         getTaskDetails: {
