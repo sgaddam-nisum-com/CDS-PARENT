@@ -58,25 +58,18 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
             this.save = function() {
                 cdsService.isRegistered = true;
-                if (formStack.isValid) {
+             
+                console.log(self.user);
 
-                    var data = new FormData();
 
-                    for (var key in self.user) {
-                        data.append(key, self.user[key]);
-                    }
+                if (true) {
 
-                    if (fileObj.value) {
-                        data.append(fileObj.name, fileObj.value);
-                    }
                     $.ajax({
-                        url: appUrls.savePersonalInfo,
-                        type: 'POST',
-                        data: data,
+                        url: appUrls.updatePersonalInfo,
+                        type: 'PUT',
+                        data: self.user,
                         cache: false,
                         dataType: 'json',
-                        processData: false, // Don't process the files
-                        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
                         success: function(data, textStatus, jqXHR) {
                             cdsService.setUserId(data.data.id);
                             $state.go('root.register.work');

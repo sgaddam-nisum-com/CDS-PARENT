@@ -21,8 +21,14 @@ exports.savePersonalInf = function(req, res, next) {
 };
 
 exports.editPersonalInf = function(req, res, next) {
+
+
+
     log.debug("editPersonalInf : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
+    
+    console.log(params);
+
     var token = req.user ? req.user.data.token : null;
 
     cdsRegistration.editPersonalInf(params, token, function(resp) {

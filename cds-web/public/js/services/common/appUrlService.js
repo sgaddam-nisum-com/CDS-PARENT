@@ -13,13 +13,25 @@ define(['services/serviceModule'], function (serviceModule) {
 
 				//Create User module
 
-				savePersonalInfo : '/citizen/savepersonalinf',
+				savePersonalInfo : '/auth/citizen/savepersonalinf',
 				saveWorkInfo : "/citizen/saveworkinf",
 				saveVoterInfo : "/citizen/savevoterinf",
 				saveresidentialaddress : "/citizen/saveresidentialaddress",
 				saveVolunteer : "/volunteer/save",
 				saveFamily : "/cadre/saveFamily",
 				saveCadre : "/cadre/save",
+
+
+				updatePersonalInfo : '/auth/citizen/editpersonalinf',
+				saveWorkInfo : "/citizen/saveworkinf",
+				saveVoterInfo : "/citizen/savevoterinf",
+				saveresidentialaddress : "/citizen/saveresidentialaddress",
+				saveVolunteer : "/volunteer/save",
+				saveFamily : "/cadre/saveFamily",
+				saveCadre : "/cadre/save",
+
+
+
 				quickReg: "/citizen/quickregistration",
 
 				//View & Edit & Retrieve member info
