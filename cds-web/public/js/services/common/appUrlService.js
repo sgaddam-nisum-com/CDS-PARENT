@@ -45,8 +45,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				
 
 				
-				getEducationInfo :"/citizen/qualifications",
-				getOccupationInfo : "/citizen/occupations",
+				getEducationOptions :"/citizen/qualifications",
+				getOccupationOptions : "/citizen/occupations",
 				
 				getInterestedAreasInfo : "/volunteer/interestedAreasToVolunteer",
 				 
@@ -58,8 +58,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				getVolunteerCategoryInfo: "/volunteer/volunteercategory",
 				getLeadInfo : "/volunteer/volunteerleads",
 				getPerformanceGradeInfo : "/volunteer/performancegrades",
-				getCareerAspirationInfo :"/citizen/careeraspirations",
-				getSkillGapsInfo : "/citizen/skillgaps",
+				getCareerAspirationOptions :"/citizen/careeraspirations",
+				getSkillGapsOptions : "/citizen/skillgaps",
 				
 				getTaskCategories : "/user/taskcategories",
 				saveTaskInfo : "/auth/user/createtask",

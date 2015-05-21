@@ -41,15 +41,20 @@ define(['services/serviceModule'], function(serviceModule) {
 
 				getEducationOptions: function(cb) {
 
-				 $http.get(appUrlService.getEducationInfo, {
-
+				 $http.get(appUrlService.getEducationOptions, {
+				 	params:{
+				 		orgId : 2
+				 	}
 
 				 }).success(function(resp) {
 				  cb(resp)
 				 });
 				},
 				getOccupationOptions: function(cb) {
-				 $http.get(appUrlService.getOccupationInfo, {
+				 $http.get(appUrlService.getOccupationOptions, {
+				 	params:{
+				 		orgId : "2"
+				 	}
 
 				 }).success(function(resp) {
 				  cb(resp);
@@ -58,7 +63,7 @@ define(['services/serviceModule'], function(serviceModule) {
 				getInterestedAreasOptions: function(cb) {
 				 $http.get(appUrlService.getInterestedAreasInfo, {
 				 	 params: {
-				   orgId: 2
+				   			orgId: 2
 				  }
 				 }).success(function(resp) {
 				  cb(resp);
@@ -121,15 +126,21 @@ define(['services/serviceModule'], function(serviceModule) {
 					 })
 				},
 				getCareerAspirationOptions:function(cb){
-					 $http.get(appUrlService.getCareerAspirationInfo, {
+					 $http.get(appUrlService.getCareerAspirationOptions, {
+
+					 	 params: {
+				   			orgId: 2
+				  	}
 
 					 }).success(function(resp) {
 					  cb(resp);					
 					 })
 				},
 				getSkillGapsOptions:function(cb){
-					 $http.get(appUrlService.getSkillGapsInfo, {
-
+					 $http.get(appUrlService.getSkillGapsOptions, {
+					 	 params: {
+				   			orgId: 2
+				  }
 					 }).success(function(resp) {
 					  cb(resp);
 					  
