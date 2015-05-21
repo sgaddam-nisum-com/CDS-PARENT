@@ -235,26 +235,27 @@ exports.getFamily = function(params, token, callback) {
     log.debug("getFamily");
 
     citizenService.getFamily(params, token, function(resp) {
-
-        var marriageDate = resp.data[0].marriageDate;
-        if (marriageDate) { //change date format
-            resp.data[0].marriageDate = util.deFormatDate(null, marriageDate);
-        }
-        if (resp.data[0].education && resp.data[0].education.educationId) {
-            resp.data[0].educationId = resp.data[0].education.educationId;
-        }
-
-        var dateOfBirth = resp.data[0].dateOfBirth;
-        if (dateOfBirth) { //change date format
-            resp.data[0].dateOfBirth = util.deFormatDate(null, dateOfBirth);
-        }
-
-        for (var i = 1; i < resp.data.length; i++) {
-            if (resp.data[i].dateOfBirth) {
-                resp.data[i].dateOfBirth = util.deFormatDate(null, resp.data[i].dateOfBirth);
+        if (resp.data.status === "success") {
+            var marriageDate = resp.data[0].marriageDate;
+            if (marriageDate) { //change date format
+                resp.data[0].marriageDate = util.deFormatDate(null, marriageDate);
             }
-            if (resp.data[i].education && resp.data[i].education.educationId) {
-                resp.data[i].educationId = resp.data[i].education.educationId;
+            if (resp.data[0].education && resp.data[0].education.educationId) {
+                resp.data[0].educationId = resp.data[0].education.educationId;
+            }
+
+            var dateOfBirth = resp.data[0].dateOfBirth;
+            if (dateOfBirth) { //change date format
+                resp.data[0].dateOfBirth = util.deFormatDate(null, dateOfBirth);
+            }
+
+            for (var i = 1; i < resp.data.length; i++) {
+                if (resp.data[i].dateOfBirth) {
+                    resp.data[i].dateOfBirth = util.deFormatDate(null, resp.data[i].dateOfBirth);
+                }
+                if (resp.data[i].education && resp.data[i].education.educationId) {
+                    resp.data[i].educationId = resp.data[i].education.educationId;
+                }
             }
         }
 
