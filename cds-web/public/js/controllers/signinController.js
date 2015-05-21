@@ -32,7 +32,9 @@ define(['controllers/controllerModule','jquery','formValidation', 'validators/si
 			if (formStack.isValid) {
 			$http.post(appUrlService.signin, self.user)
 			.success(function(resp){												
+
 				if(resp.status == "success"){
+
 					var defRole = roleService.getTopRole(resp.data.user.appRoles);
 					
 					if(defRole == "Citizen"){

@@ -7425,11 +7425,11 @@ svg {
   height: auto;
 }
 
-
-
 @import "bootstrap/pnotify.core";
 @import "bootstrap/nv.d3";
-@import "bootstrap/ng-grid";
 @import "bootstrap/angular-dashboard";
 @import "bootstrap/widgets";
+@import "bootstrap/ui-grid";
+@import "bootstrap/angular-chart";
 @import "bootstrap/overrides";
+

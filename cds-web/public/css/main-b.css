@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* line 5, ../scss/main-b.scss */
 article,
@@ -9610,603 +9611,6 @@ Interactive Layer
   stroke: #ccc;
 }
 
-/* line 1, ../scss/bootstrap/_ng-grid.scss */
-.ngGrid {
-  background-color: #fdfdfd;
-}
-
-/* line 4, ../scss/bootstrap/_ng-grid.scss */
-.ngGrid input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 8, ../scss/bootstrap/_ng-grid.scss */
-.ngGrid input {
-  vertical-align: top;
-}
-
-/* line 11, ../scss/bootstrap/_ng-grid.scss */
-.ngGrid.unselectable {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-/* line 18, ../scss/bootstrap/_ng-grid.scss */
-.ngViewport {
-  overflow: auto;
-  min-height: 20px;
-}
-
-/* line 22, ../scss/bootstrap/_ng-grid.scss */
-.ngViewport:focus {
-  outline: none;
-}
-
-/* line 25, ../scss/bootstrap/_ng-grid.scss */
-.ngCanvas {
-  position: relative;
-}
-
-/* line 28, ../scss/bootstrap/_ng-grid.scss */
-.ngVerticalBar {
-  position: absolute;
-  right: 0;
-  width: 0;
-}
-
-/* line 33, ../scss/bootstrap/_ng-grid.scss */
-.ngVerticalBarVisible {
-  width: 1px;
-  background-color: #d4d4d4;
-}
-
-/* line 37, ../scss/bootstrap/_ng-grid.scss */
-#testDataLength {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -100000;
-}
-
-/* line 43, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderContainer {
-  position: relative;
-  overflow: hidden;
-  font-weight: bold;
-  background-color: inherit;
-}
-
-/* line 49, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderCell {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background-color: inherit;
-}
-
-/* line 55, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderCell.pinned {
-  z-index: 1;
-}
-
-/* line 58, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderSortColumn {
-  position: absolute;
-  overflow: hidden;
-}
-
-/* line 62, ../scss/bootstrap/_ng-grid.scss */
-.ngTopPanel {
-  position: relative;
-  z-index: 1;
-  background-color: #eaeaea;
-  border-bottom: 1px solid #d4d4d4;
-}
-
-/* line 68, ../scss/bootstrap/_ng-grid.scss */
-.ngSortButtonDown {
-  position: absolute;
-  top: 3px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  border-color: gray transparent;
-  border-style: solid;
-  border-width: 0 5px 5px 5px;
-  height: 0;
-  width: 0;
-}
-
-/* line 81, ../scss/bootstrap/_ng-grid.scss */
-.ngNoSort {
-  cursor: default;
-}
-
-/* line 84, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderButton {
-  position: absolute;
-  right: 2px;
-  top: 8px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  z-index: 1;
-  background-color: #9fbbb4;
-  cursor: pointer;
-}
-
-/* line 97, ../scss/bootstrap/_ng-grid.scss */
-.ngSortButtonUp {
-  position: absolute;
-  top: 3px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  border-color: gray transparent;
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
-  height: 0;
-  width: 0;
-}
-
-/* line 110, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderScroller {
-  position: absolute;
-  background-color: inherit;
-}
-
-/* line 114, ../scss/bootstrap/_ng-grid.scss */
-.ngSortPriority {
-  position: absolute;
-  top: -5px;
-  left: 1px;
-  font-size: 6pt;
-  font-weight: bold;
-}
-
-/* line 121, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderGrip {
-  cursor: col-resize;
-  width: 10px;
-  right: -5px;
-  top: 0;
-  height: 100%;
-  position: absolute;
-  background-color: transparent;
-}
-
-/* line 130, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderText {
-  padding: 5px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  white-space: nowrap;
-  -ms-text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-/* line 141, ../scss/bootstrap/_ng-grid.scss */
-.ngHeaderButtonArrow {
-  position: absolute;
-  top: 4px;
-  left: 3px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6.5px 4.5px 0 4.5px;
-  border-color: #4d4d4d transparent transparent transparent;
-}
-
-/* line 151, ../scss/bootstrap/_ng-grid.scss */
-.ngPinnedIcon {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAAAmElEQVQoU33PQapBURjA8UtkwJuaWYGSgfQWYBMvczPmTCzAAGVuaA228BZhRCkDGSmE31FucuRfvzq3vr5zT/JSjSU7DsypEPXDkDVn2hSIytJhw4kWGaLCxgHh2gt/RBuLzNhz5caWPjnSqqw4EraFfwznf8qklWjwy4IRTerkiQoPGtPl40OehcEJvcfXl8LglLfBJLkDcMgbgHlHhK8AAAAASUVORK5CYII=);
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  height: 10px;
-  width: 10px;
-}
-
-/* line 160, ../scss/bootstrap/_ng-grid.scss */
-.ngUnPinnedIcon {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAAAlElEQVQoU33PPQrCQBRF4fFnI2KfZVi5ARvdgo1l6mwmkCJVOgluwd5OwUoDtnoOxAei8cLXTN7cvEl/skCNDCMPfsUPO5zQwOHIDEvYtMURHe6wOVLgigvOePRyeDkyR4ln7wZ//7XfFBu8B23+aDJjrHGAwza7hjtHJvDmHg7b7Bru7AMjK7Rw2ObBVHDY5oGk9AKQNB2zy8MBTgAAAABJRU5ErkJggg==);
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  right: 5px;
-  top: 5px;
-}
-
-/* line 169, ../scss/bootstrap/_ng-grid.scss */
-.ngColMenu {
-  right: 2px;
-  padding: 5px;
-  top: 25px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #bdd0cb;
-  position: absolute;
-  border: 2px solid #d4d4d4;
-  z-index: 1;
-}
-
-/* line 181, ../scss/bootstrap/_ng-grid.scss */
-.ngColListCheckbox {
-  position: relative;
-  right: 3px;
-  top: 4px;
-}
-
-/* line 186, ../scss/bootstrap/_ng-grid.scss */
-.ngColList {
-  list-style-type: none;
-  margin-top: 2px;
-  margin-left: 8px;
-}
-
-/* line 191, ../scss/bootstrap/_ng-grid.scss */
-.ngColListItem {
-  white-space: nowrap;
-}
-
-/* line 194, ../scss/bootstrap/_ng-grid.scss */
-.ngMenuText {
-  position: relative;
-  top: 2px;
-  left: 2px;
-}
-
-/* line 199, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupPanel {
-  background-color: #eaeaea;
-  overflow: hidden;
-  border-bottom: 1px solid #d4d4d4;
-}
-
-/* line 204, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupPanelDescription {
-  margin-top: 5px;
-  margin-left: 5px;
-}
-
-/* line 208, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupList {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 213, ../scss/bootstrap/_ng-grid.scss */
-.ngAggHeader {
-  position: absolute;
-  border: none;
-}
-
-/* line 217, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupElement {
-  float: left;
-  height: 100%;
-  width: 100%;
-}
-
-/* line 222, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupIcon {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAEFJREFUKFNjoAhISkr+h2J5JDZODNXGwGBsbPwfhIGAA8bGh6HaGBiAGhxAGJmND4M1gQCSM0adCsVQbcPcqQwMALWDGyDvWPefAAAAAElFTkSuQmCC);
-  background-repeat: no-repeat;
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  right: -2px;
-  top: 2px;
-}
-
-/* line 231, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupedByIcon {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAElJREFUKFNjoAhISkr+R8LyaHwMDNXGwGBsbPwfhoGAA5mPDUO1oWpE52PDYE0gALTFAYbR+dgwWBMIoPlh1I9ADNU2NPzIwAAAFQYI9E4OLvEAAAAASUVORK5CYII=);
-  background-repeat: no-repeat;
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  right: -2px;
-  top: 2px;
-}
-
-/* line 240, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupName {
-  background-color: #fdfdfd;
-  border: 1px solid #d4d4d4;
-  padding: 3px 10px;
-  float: left;
-  margin-left: 0;
-  margin-top: 2px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  font-weight: bold;
-}
-
-/* line 252, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupArrow {
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-left: 6px solid black;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  float: right;
-}
-
-/* line 263, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupingNumber {
-  position: absolute;
-  right: -10px;
-  top: -2px;
-}
-
-/* line 268, ../scss/bootstrap/_ng-grid.scss */
-.ngAggArrowCollapsed {
-  position: absolute;
-  left: 8px;
-  bottom: 10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 8.7px;
-  border-color: transparent transparent transparent #000000;
-}
-
-/* line 278, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupItem {
-  float: left;
-}
-
-/* line 281, ../scss/bootstrap/_ng-grid.scss */
-.ngGroupItem:first-child {
-  margin-left: 2px;
-}
-
-/* line 284, ../scss/bootstrap/_ng-grid.scss */
-.ngRemoveGroup {
-  width: 5px;
-  -moz-opacity: 0.4;
-  opacity: 0.4;
-  margin-top: -1px;
-  margin-left: 5px;
-}
-
-/* line 291, ../scss/bootstrap/_ng-grid.scss */
-.ngRemoveGroup:hover {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  -moz-opacity: 0.7;
-  opacity: 0.7;
-}
-
-/* line 298, ../scss/bootstrap/_ng-grid.scss */
-.ngAggArrowExpanded {
-  position: absolute;
-  left: 8px;
-  bottom: 10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 9px 9px;
-  border-color: transparent transparent #000000 transparent;
-}
-
-/* line 308, ../scss/bootstrap/_ng-grid.scss */
-.ngAggregate {
-  position: absolute;
-  background-color: #c9dde1;
-  border-bottom: 1px solid beige;
-  overflow: hidden;
-  top: 0;
-  bottom: 0;
-  right: -1px;
-  left: 0;
-}
-
-/* line 318, ../scss/bootstrap/_ng-grid.scss */
-.ngAggregateText {
-  position: absolute;
-  left: 27px;
-  top: 5px;
-  line-height: 20px;
-  white-space: nowrap;
-}
-
-/* line 325, ../scss/bootstrap/_ng-grid.scss */
-.ngRow {
-  position: absolute;
-  border-bottom: 1px solid #d4d4d4;
-}
-
-/* line 329, ../scss/bootstrap/_ng-grid.scss */
-.ngRow.odd {
-  background-color: #fdfdfd;
-}
-
-/* line 332, ../scss/bootstrap/_ng-grid.scss */
-.ngRow.even {
-  background-color: #f3f3f3;
-}
-
-/* line 335, ../scss/bootstrap/_ng-grid.scss */
-.ngRow.selected {
-  background-color: #c9dde1;
-}
-
-/* line 338, ../scss/bootstrap/_ng-grid.scss */
-.ngCell {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background-color: inherit;
-}
-
-/* line 345, ../scss/bootstrap/_ng-grid.scss */
-.ngCell.pinned {
-  z-index: 1;
-}
-
-/* line 348, ../scss/bootstrap/_ng-grid.scss */
-.ngCellText {
-  padding: 5px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  white-space: nowrap;
-  -ms-text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-/* line 359, ../scss/bootstrap/_ng-grid.scss */
-.ngSelectionCell {
-  margin-top: 9px;
-  margin-left: 6px;
-}
-
-/* line 363, ../scss/bootstrap/_ng-grid.scss */
-.ngSelectionHeader {
-  position: absolute;
-  top: 11px;
-  left: 6px;
-}
-
-/* line 368, ../scss/bootstrap/_ng-grid.scss */
-.ngCellElement:focus {
-  outline: 0;
-  background-color: #b3c4c7;
-}
-
-/* line 372, ../scss/bootstrap/_ng-grid.scss */
-.ngRow.canSelect {
-  cursor: pointer;
-}
-
-/* line 375, ../scss/bootstrap/_ng-grid.scss */
-.ngSelectionCheckbox {
-  margin-top: 9px;
-  margin-left: 6px;
-}
-
-/* line 379, ../scss/bootstrap/_ng-grid.scss */
-.ngFooterPanel {
-  background-color: #eaeaea;
-  padding: 0;
-  border-top: 1px solid #d4d4d4;
-  position: relative;
-}
-
-/* line 385, ../scss/bootstrap/_ng-grid.scss */
-.nglabel {
-  display: block;
-  float: left;
-  font-weight: bold;
-  padding-right: 5px;
-}
-
-/* line 391, ../scss/bootstrap/_ng-grid.scss */
-.ngTotalSelectContainer {
-  float: left;
-  margin: 5px;
-  margin-top: 7px;
-}
-
-/* line 396, ../scss/bootstrap/_ng-grid.scss */
-.ngFooterSelectedItems {
-  padding: 2px;
-}
-
-/* line 399, ../scss/bootstrap/_ng-grid.scss */
-.ngFooterTotalItems.ngnoMultiSelect {
-  padding: 0 !important;
-}
-
-/* line 402, ../scss/bootstrap/_ng-grid.scss */
-.ngGridMaxPagesNumber {
-  vertical-align: middle;
-}
-
-/* line 405, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerFirstBar {
-  width: 10px;
-  border-left: 2px solid #4d4d4d;
-  margin-top: -6px;
-  height: 12px;
-  margin-left: -3px;
-}
-
-/* line 412, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerButton {
-  height: 25px;
-  min-width: 26px;
-}
-
-/* line 416, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerFirstTriangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 8.7px 5px 0;
-  border-color: transparent #4d4d4d transparent transparent;
-  margin-left: 2px;
-}
-
-/* line 424, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerNextTriangle {
-  margin-left: 1px;
-}
-
-/* line 427, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerPrevTriangle {
-  margin-left: 0;
-}
-
-/* line 430, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerLastTriangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 8.7px;
-  border-color: transparent transparent transparent #4d4d4d;
-  margin-left: -1px;
-}
-
-/* line 438, ../scss/bootstrap/_ng-grid.scss */
-.ngPagerLastBar {
-  width: 10px;
-  border-left: 2px solid #4d4d4d;
-  margin-top: -6px;
-  height: 12px;
-  margin-left: 1px;
-}
-
-/* line 445, ../scss/bootstrap/_ng-grid.scss */
-.ngFooterTotalItems {
-  padding: 2px;
-}
-
 /* line 1, ../scss/bootstrap/_angular-dashboard.scss */
 .dashboard-widget-area {
   margin: 10px 0 30px;
@@ -10332,7 +9736,1900 @@ Interactive Layer
   border: 1px solid #d4d4d4;
 }
 
+/*!
+ * ui-grid - v3.0.0-rc.21-c0d9b48 - 2015-05-19
+ * Copyright (c) 2015 ; License: MIT 
+ */
+/* line 5, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid {
+  border: 1px solid #d4d4d4;
+  box-sizing: content-box;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 17, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-vertical-bar {
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+/* line 22, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell:not(:last-child) .ui-grid-vertical-bar,
+.ui-grid-cell:not(:last-child) .ui-grid-vertical-bar {
+  width: 1px;
+}
+
+/* line 26, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell:not(:last-child) .ui-grid-vertical-bar {
+  background-color: #d4d4d4;
+}
+
+/* line 29, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-cell:not(:last-child) .ui-grid-vertical-bar {
+  background-color: #d4d4d4;
+}
+
+/* line 32, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell:last-child .ui-grid-vertical-bar {
+  right: -1px;
+  width: 1px;
+  background-color: #d4d4d4;
+}
+
+/* line 37, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-clearfix:before,
+.ui-grid-clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 42, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-clearfix:after {
+  clear: both;
+}
+
+/* line 45, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-invisible {
+  visibility: hidden;
+}
+
+/* line 48, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-top-panel-background {
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+  background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+}
+
+/* line 56, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header {
+  border-bottom: 1px solid #d4d4d4;
+  box-sizing: border-box;
+}
+
+/* line 60, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-top-panel {
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+  background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+  -webkit-border-top-right-radius: -1px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: -1px;
+  -moz-border-radius-topright: -1px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: -1px;
+  border-top-right-radius: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: -1px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 86, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-viewport {
+  overflow: hidden;
+}
+
+/* line 89, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-canvas:before,
+.ui-grid-header-canvas:after {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+
+/* line 95, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-canvas:after {
+  clear: both;
+}
+
+/* line 98, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell-wrapper {
+  position: relative;
+  display: table;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* line 104, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell-row {
+  display: table-row;
+  position: relative;
+}
+
+/* line 108, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  border-right: 1px solid;
+  border-color: #d4d4d4;
+  display: table-cell;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 0;
+}
+
+/* line 121, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell:last-child {
+  border-right: 0;
+}
+
+/* line 124, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell .sortable {
+  cursor: pointer;
+}
+
+/* line 127, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header .ui-grid-vertical-bar {
+  top: 0;
+  bottom: 0;
+}
+
+/* line 131, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu-button {
+  position: absolute;
+  right: 1px;
+  top: 0;
+}
+
+/* line 136, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu-button .ui-grid-icon-angle-down {
+  vertical-align: sub;
+}
+
+/* line 139, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu-button-last-col {
+  margin-right: 25px;
+}
+
+/* line 142, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu {
+  position: absolute;
+}
+
+/* Slide up/down animations */
+/* line 146, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu .ui-grid-menu .ui-grid-menu-mid.ng-hide-add,
+.ui-grid-column-menu .ui-grid-menu .ui-grid-menu-mid.ng-hide-remove {
+  -webkit-transition: all 0.05s linear;
+  -moz-transition: all 0.05s linear;
+  -o-transition: all 0.05s linear;
+  transition: all 0.05s linear;
+  display: block !important;
+}
+
+/* line 154, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu .ui-grid-menu .ui-grid-menu-mid.ng-hide-add.ng-hide-add-active,
+.ui-grid-column-menu .ui-grid-menu .ui-grid-menu-mid.ng-hide-remove {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 162, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-menu .ui-grid-menu .ui-grid-menu-mid.ng-hide-add,
+.ui-grid-column-menu .ui-grid-menu .ui-grid-menu-mid.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -o-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Slide up/down animations */
+/* line 171, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid.ng-hide-add,
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid.ng-hide-remove {
+  -webkit-transition: all 0.05s linear;
+  -moz-transition: all 0.05s linear;
+  -o-transition: all 0.05s linear;
+  transition: all 0.05s linear;
+  display: block !important;
+}
+
+/* line 179, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid.ng-hide-add.ng-hide-add-active,
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid.ng-hide-remove {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 187, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid.ng-hide-add,
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -o-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 195, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container {
+  padding: 4px 10px;
+  position: relative;
+}
+
+/* line 199, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container .ui-grid-filter-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 205, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container .ui-grid-filter-button [class^="ui-grid-icon"] {
+  position: absolute;
+  top: 50%;
+  line-height: 32px;
+  margin-top: -16px;
+  right: 10px;
+  opacity: 0.66;
+}
+
+/* line 213, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container .ui-grid-filter-button [class^="ui-grid-icon"]:hover {
+  opacity: 1;
+}
+
+/* line 216, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container .ui-grid-filter-button-select {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 222, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container .ui-grid-filter-button-select [class^="ui-grid-icon"] {
+  position: absolute;
+  top: 50%;
+  line-height: 32px;
+  margin-top: -16px;
+  right: 0px;
+  opacity: 0.66;
+}
+
+/* line 230, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-container .ui-grid-filter-button-select [class^="ui-grid-icon"]:hover {
+  opacity: 1;
+}
+
+/* line 233, ../scss/bootstrap/_ui-grid.scss */
+input[type="text"].ui-grid-filter-input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 255, ../scss/bootstrap/_ui-grid.scss */
+input[type="text"].ui-grid-filter-input:hover {
+  border: 1px solid #d4d4d4;
+}
+
+/* line 258, ../scss/bootstrap/_ui-grid.scss */
+select.ui-grid-filter-select {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 90%;
+  border: 1px solid #d4d4d4;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 280, ../scss/bootstrap/_ui-grid.scss */
+select.ui-grid-filter-select:hover {
+  border: 1px solid #d4d4d4;
+}
+
+/* line 283, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-filter-cancel-button-hidden select.ui-grid-filter-select {
+  width: 100%;
+}
+
+/* line 286, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-render-container {
+  position: inherit;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 304, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-render-container:focus {
+  outline: none;
+}
+
+/* line 307, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-viewport {
+  min-height: 20px;
+  position: relative;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 313, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-viewport:focus {
+  outline: none !important;
+}
+
+/* line 316, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-canvas {
+  position: relative;
+  padding-top: 1px;
+}
+
+/* line 320, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row:nth-child(odd) .ui-grid-cell {
+  background-color: #fdfdfd;
+}
+
+/* line 323, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row:nth-child(even) .ui-grid-cell {
+  background-color: #f3f3f3;
+}
+
+/* line 326, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row:last-child .ui-grid-cell {
+  border-bottom-color: #d4d4d4;
+  border-bottom-style: solid;
+}
+
+/* line 330, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-no-row-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 10%;
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+  background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #d4d4d4;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* line 362, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-no-row-overlay > * {
+  position: absolute;
+  display: table;
+  margin: auto 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.66;
+}
+
+/* line 373, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-cell {
+  overflow: hidden;
+  float: left;
+  background-color: inherit;
+  border-right: 1px solid;
+  border-color: #d4d4d4;
+  box-sizing: border-box;
+}
+
+/* line 381, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-cell:last-child {
+  border-right: 0;
+}
+
+/* line 384, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-cell-contents {
+  padding: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 396, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-cell-contents-hidden {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* line 402, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row .ui-grid-cell.ui-grid-row-header-cell {
+  background-color: #f0f0ee;
+  border-bottom: solid 1px #d4d4d4;
+}
+
+/* line 406, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-panel-background {
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+  background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+}
+
+/* line 414, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-panel {
+  position: relative;
+  border-bottom: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
+  overflow: hidden;
+  font-weight: bold;
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+  background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+  -webkit-border-top-right-radius: -1px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: -1px;
+  -moz-border-radius-topright: -1px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: -1px;
+  border-top-right-radius: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: -1px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 442, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-grid-footer {
+  float: left;
+  width: 100%;
+}
+
+/* line 446, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-viewport {
+  overflow: hidden;
+}
+
+/* line 449, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-canvas {
+  position: relative;
+}
+
+/* line 452, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-canvas:before,
+.ui-grid-footer-canvas:after {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+
+/* line 458, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-canvas:after {
+  clear: both;
+}
+
+/* line 461, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-cell-wrapper {
+  position: relative;
+  display: table;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* line 467, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-cell-row {
+  display: table-row;
+}
+
+/* line 470, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-cell {
+  overflow: hidden;
+  background-color: inherit;
+  border-right: 1px solid;
+  border-color: #d4d4d4;
+  box-sizing: border-box;
+  display: table-cell;
+}
+
+/* line 478, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-footer-cell:last-child {
+  border-right: 0;
+}
+
+/* line 481, ../scss/bootstrap/_ui-grid.scss */
+input[type="text"].ui-grid-filter-input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 503, ../scss/bootstrap/_ui-grid.scss */
+input[type="text"].ui-grid-filter-input:hover {
+  border: 1px solid #d4d4d4;
+}
+
+/* line 506, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #f3f3f3;
+  border: 1px solid #d4d4d4;
+  cursor: pointer;
+  height: 31px;
+  font-weight: normal;
+}
+
+/* line 517, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button .ui-grid-icon-container {
+  margin-top: 3px;
+}
+
+/* line 520, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button .ui-grid-menu {
+  right: 0;
+}
+
+/* line 523, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid {
+  overflow: scroll;
+  max-height: 300px;
+  border: 1px solid #d4d4d4;
+}
+
+/* line 528, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu {
+  z-index: 2;
+  position: absolute;
+  padding: 0 10px 20px 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* line 535, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu .ui-grid-menu-inner {
+  background: #f3f3f3;
+  border: 1px solid #d4d4d4;
+  position: relative;
+  white-space: nowrap;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 12px 12px -14px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 12px 12px -14px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 12px 12px -14px rgba(0, 0, 0, 0.2);
+}
+
+/* line 547, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu .ui-grid-menu-inner ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 552, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu .ui-grid-menu-inner ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* line 556, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu .ui-grid-menu-inner ul li:hover {
+  -webkit-box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+}
+
+/* line 561, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active {
+  -webkit-box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+  background-color: #cecece;
+}
+
+/* line 567, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-menu .ui-grid-menu-inner ul li:not(:last-child) {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/* line 570, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-sortarrow {
+  right: 5px;
+  position: absolute;
+  width: 20px;
+  top: 0;
+  bottom: 0;
+  background-position: center;
+}
+
+/* line 578, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-sortarrow.down {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+@font-face {
+  font-family: 'ui-grid';
+  src: url("fonts/ui-grid.eot");
+  src: url("fonts/ui-grid.eot#iefix") format("embedded-opentype"), url("fonts/ui-grid.woff") format("woff"), url("fonts/ui-grid.ttf?") format("truetype"), url("fonts/ui-grid.svg?#ui-grid") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'ui-grid';
+    src: url('../font/ui-grid.svg?12312827#ui-grid') format('svg');
+  }
+}
+*/
+/* line 602, ../scss/bootstrap/_ui-grid.scss */
+[class^="ui-grid-icon"]:before,
+[class*=" ui-grid-icon"]:before {
+  font-family: "ui-grid";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* line 627, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-blank::before {
+  width: 1em;
+  content: ' ';
+}
+
+/*
+* RTL Styles
+*/
+/* line 634, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-header-cell,
+.ui-grid[dir=rtl] .ui-grid-footer-cell,
+.ui-grid[dir=rtl] .ui-grid-cell {
+  float: right !important;
+}
+
+/* line 639, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-column-menu-button {
+  position: absolute;
+  left: 1px;
+  top: 0;
+  right: inherit;
+}
+
+/* line 645, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-cell:first-child,
+.ui-grid[dir=rtl] .ui-grid-header-cell:first-child,
+.ui-grid[dir=rtl] .ui-grid-footer-cell:first-child {
+  border-right: 0;
+}
+
+/* line 650, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-cell:last-child,
+.ui-grid[dir=rtl] .ui-grid-header-cell:last-child {
+  border-right: 1px solid #d4d4d4;
+  border-left: 0;
+}
+
+/* line 655, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-header-cell:first-child .ui-grid-vertical-bar,
+.ui-grid[dir=rtl] .ui-grid-footer-cell:first-child .ui-grid-vertical-bar,
+.ui-grid[dir=rtl] .ui-grid-cell:first-child .ui-grid-vertical-bar {
+  width: 0;
+}
+
+/* line 660, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-menu-button {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: auto;
+  background: #f3f3f3;
+  border: 1px solid #d4d4d4;
+  cursor: pointer;
+  min-height: 27px;
+  font-weight: normal;
+}
+
+/* line 671, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-menu-button .ui-grid-menu {
+  left: 0;
+  right: auto;
+}
+
+/* line 675, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-filter-container .ui-grid-filter-button {
+  right: initial;
+  left: 0;
+}
+
+/* line 679, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-filter-container .ui-grid-filter-button [class^="ui-grid-icon"] {
+  right: initial;
+  left: 10px;
+}
+
+/*
+   Animation example, for spinners
+*/
+/* line 686, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-animate-spin {
+  -moz-animation: ui-grid-spin 2s infinite linear;
+  -o-animation: ui-grid-spin 2s infinite linear;
+  -webkit-animation: ui-grid-spin 2s infinite linear;
+  animation: ui-grid-spin 2s infinite linear;
+  display: inline-block;
+}
+
+@-moz-keyframes ui-grid-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes ui-grid-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-o-keyframes ui-grid-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-ms-keyframes ui-grid-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes ui-grid-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 816, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-cell-focus {
+  outline: 0;
+  background-color: #b3c4c7;
+}
+
+/* line 820, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-focuser {
+  width: 0px;
+  height: 0px;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 848, ../scss/bootstrap/_ui-grid.scss */
+div.ui-grid-cell input {
+  border-radius: inherit;
+  padding: 0;
+  width: 100%;
+  color: inherit;
+  height: auto;
+  font: inherit;
+  outline: none;
+}
+
+/* line 857, ../scss/bootstrap/_ui-grid.scss */
+div.ui-grid-cell input:focus {
+  color: inherit;
+  outline: none;
+}
+
+/* line 861, ../scss/bootstrap/_ui-grid.scss */
+div.ui-grid-cell input[type="checkbox"] {
+  margin: 9px 0 0 6px;
+  width: auto;
+}
+
+/* line 865, ../scss/bootstrap/_ui-grid.scss */
+div.ui-grid-cell input.ng-invalid {
+  border: 1px solid #fc8f8f;
+}
+
+/* line 868, ../scss/bootstrap/_ui-grid.scss */
+div.ui-grid-cell input.ng-valid {
+  border: 1px solid #d4d4d4;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 895, ../scss/bootstrap/_ui-grid.scss */
+.expandableRow .ui-grid-row:nth-child(odd) .ui-grid-cell {
+  background-color: #fdfdfd;
+}
+
+/* line 898, ../scss/bootstrap/_ui-grid.scss */
+.expandableRow .ui-grid-row:nth-child(even) .ui-grid-cell {
+  background-color: #f3f3f3;
+}
+
+/* line 901, ../scss/bootstrap/_ui-grid.scss */
+.scrollFiller {
+  float: left;
+  border: 1px solid #d4d4d4;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 953, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-group-header-row {
+  font-weight: bold !important;
+}
+
+/* line 956, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-grouping-row-header-buttons.ui-grid-group-header {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1008, ../scss/bootstrap/_ui-grid.scss */
+.movingColumn {
+  position: absolute;
+  top: 0;
+  border: 1px solid #d4d4d4;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.2);
+}
+
+/* line 1014, ../scss/bootstrap/_ui-grid.scss */
+.movingColumn .ui-grid-icon-angle-down {
+  display: none;
+}
+
+/* line 1018, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-panel {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/* line 1026, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-container {
+  float: left;
+}
+
+/* line 1029, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control {
+  margin-right: 10px;
+  margin-left: 10px;
+  min-width: 135px;
+  float: left;
+}
+
+/* line 1035, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control button {
+  height: 25px;
+  min-width: 26px;
+}
+
+/* line 1039, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control input {
+  height: 26px;
+  width: 50px;
+  vertical-align: top;
+}
+
+/* line 1044, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control .first-bar {
+  width: 10px;
+  border-left: 2px solid #4d4d4d;
+  margin-top: -6px;
+  height: 12px;
+  margin-left: -3px;
+}
+
+/* line 1051, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control .first-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 8.7px 5px 0;
+  border-color: transparent #4d4d4d transparent transparent;
+  margin-left: 2px;
+}
+
+/* line 1059, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control .next-triangle {
+  margin-left: 1px;
+}
+
+/* line 1062, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control .prev-triangle {
+  margin-left: 0;
+}
+
+/* line 1065, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control .last-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8.7px;
+  border-color: transparent transparent transparent #4d4d4d;
+  margin-left: -1px;
+}
+
+/* line 1073, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-control .last-bar {
+  width: 10px;
+  border-left: 2px solid #4d4d4d;
+  margin-top: -6px;
+  height: 12px;
+  margin-left: 1px;
+}
+
+/* line 1080, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-row-count-picker {
+  float: left;
+}
+
+/* line 1083, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-row-count-picker select {
+  height: 26px;
+  width: 60px;
+}
+
+/* line 1087, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-row-count-picker .ui-grid-pager-row-count-label {
+  margin-top: 3px;
+}
+
+/* line 1090, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-count-container {
+  float: right;
+  margin-top: 4px;
+  min-width: 50px;
+}
+
+/* line 1095, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pager-count-container .ui-grid-pager-count {
+  margin-right: 10px;
+  margin-left: 10px;
+  float: right;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1124, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container {
+  position: absolute;
+  display: inline;
+  top: 0;
+}
+
+/* line 1129, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left {
+  float: left;
+  left: 0;
+}
+
+/* line 1133, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-right {
+  float: right;
+  right: 0;
+}
+
+/* line 1137, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child {
+  box-sizing: border-box;
+  border-right: 1px solid;
+  border-width: 1px;
+  border-right-color: #aeaeae;
+}
+
+/* line 1143, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child {
+  box-sizing: border-box;
+  border-right: 1px solid;
+  border-width: 1px;
+  border-right-color: #aeaeae;
+}
+
+/* line 1149, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:not(:last-child) .ui-grid-vertical-bar,
+.ui-grid-pinned-container .ui-grid-cell:not(:last-child) .ui-grid-vertical-bar {
+  width: 1px;
+}
+
+/* line 1153, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:not(:last-child) .ui-grid-vertical-bar {
+  background-color: #d4d4d4;
+}
+
+/* line 1156, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:not(:last-child) .ui-grid-vertical-bar {
+  background-color: #aeaeae;
+}
+
+/* line 1159, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child .ui-grid-vertical-bar {
+  right: -1px;
+  width: 1px;
+  background-color: #aeaeae;
+}
+
+/* line 1164, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-right .ui-grid-header-cell:first-child {
+  box-sizing: border-box;
+  border-left: 1px solid;
+  border-width: 1px;
+  border-left-color: #aeaeae;
+}
+
+/* line 1170, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-right .ui-grid-cell:first-child {
+  box-sizing: border-box;
+  border-left: 1px solid;
+  border-width: 1px;
+  border-left-color: #aeaeae;
+}
+
+/* line 1176, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-right .ui-grid-header-cell:not(:first-child) .ui-grid-vertical-bar,
+.ui-grid-pinned-container .ui-grid-cell:not(:first-child) .ui-grid-vertical-bar {
+  width: 1px;
+}
+
+/* line 1180, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-right .ui-grid-header-cell:not(:first-child) .ui-grid-vertical-bar {
+  background-color: #d4d4d4;
+}
+
+/* line 1183, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-right .ui-grid-cell:not(:last-child) .ui-grid-vertical-bar {
+  background-color: #aeaeae;
+}
+
+/* line 1186, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-pinned-container.ui-grid-pinned-container-first .ui-grid-header-cell:first-child .ui-grid-vertical-bar {
+  left: -1px;
+  width: 1px;
+  background-color: #aeaeae;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1215, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-resizer {
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  position: absolute;
+  cursor: col-resize;
+}
+
+/* line 1222, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-resizer.left {
+  left: 0;
+}
+
+/* line 1225, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-column-resizer.right {
+  right: 0;
+}
+
+/* line 1228, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+  border-right: 1px solid #d4d4d4;
+}
+
+/* line 1231, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+  border-right: 0;
+}
+
+/* line 1234, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid[dir=rtl] .ui-grid-header-cell:last-child .ui-grid-column-resizer.left {
+  border-left: 1px solid #d4d4d4;
+}
+
+/* line 1237, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid.column-resizing {
+  cursor: col-resize;
+}
+
+/* line 1240, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid.column-resizing .ui-grid-resize-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #aeaeae;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1271, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row-saving .ui-grid-cell {
+  color: #848484 !important;
+}
+
+/* line 1274, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row-dirty .ui-grid-cell {
+  color: #610b38;
+}
+
+/* line 1277, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row-error .ui-grid-cell {
+  color: #ff0000 !important;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1304, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-row.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
+  background-color: #c9dde1;
+}
+
+/* line 1307, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-disable-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+/* line 1316, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-selection-row-header-buttons {
+  cursor: pointer;
+  opacity: 0.1;
+}
+
+/* line 1320, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-selection-row-header-buttons.ui-grid-row-selected {
+  opacity: 1;
+}
+
+/* line 1323, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-selection-row-header-buttons.ui-grid-all-selected {
+  opacity: 1;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1350, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-tree-row-header-buttons.ui-grid-tree-header {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* This file contains variable declarations (do not remove this line) */
+/*-- VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/**
+* @section Grid styles
+*/
+/**
+* @section Header styles
+*/
+/** @description Colors for header gradient */
+/**
+* @section Grid body styles
+*/
+/** @description Colors used for row alternation */
+/**
+* @section Sort arrow colors
+*/
+/**
+* @section Scrollbar styles
+*/
+/**
+* @section font library path
+*/
+/*-- END VARIABLES (DO NOT REMOVE THESE COMMENTS) --*/
+/* line 1378, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-tree-header-row {
+  font-weight: bold !important;
+}
+
+/* line 1382, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-plus-squared:before {
+  content: '\c350';
+}
+
+/* '∞ìÉ' */
+/* line 1386, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-minus-squared:before {
+  content: '\c351';
+}
+
+/* '∞ìæ' */
+/* line 1390, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-search:before {
+  content: '\c352';
+}
+
+/* '∞ìÆ' */
+/* line 1394, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-cancel:before {
+  content: '\c353';
+}
+
+/* '∞ìô' */
+/* line 1398, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-info-circled:before {
+  content: '\c354';
+}
+
+/* '∞ìö' */
+/* line 1402, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-lock:before {
+  content: '\c355';
+}
+
+/* '∞ìò' */
+/* line 1406, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-lock-open:before {
+  content: '\c356';
+}
+
+/* '∞ìû' */
+/* line 1410, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-pencil:before {
+  content: '\c357';
+}
+
+/* '∞ìù' */
+/* line 1414, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-down-dir:before {
+  content: '\c358';
+}
+
+/* '∞ìÿ' */
+/* line 1418, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-up-dir:before {
+  content: '\c359';
+}
+
+/* '∞ìÖ' */
+/* line 1422, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-left-dir:before {
+  content: '\c35a';
+}
+
+/* '∞ìÜ' */
+/* line 1426, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-right-dir:before {
+  content: '\c35b';
+}
+
+/* '∞ì¢' */
+/* line 1430, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-left-open:before {
+  content: '\c35c';
+}
+
+/* '∞ì£' */
+/* line 1434, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-right-open:before {
+  content: '\c35d';
+}
+
+/* '∞ì¥' */
+/* line 1438, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-angle-down:before {
+  content: '\c35e';
+}
+
+/* '∞ì₧' */
+/* line 1442, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-filter:before {
+  content: '\c35f';
+}
+
+/* '∞ìƒ' */
+/* line 1446, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-sort-alt-up:before {
+  content: '\c360';
+}
+
+/* '∞ìá' */
+/* line 1450, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-sort-alt-down:before {
+  content: '\c361';
+}
+
+/* '∞ìí' */
+/* line 1454, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-ok:before {
+  content: '\c362';
+}
+
+/* '∞ìó' */
+/* line 1458, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-menu:before {
+  content: '\c363';
+}
+
+/* '∞ìú' */
+/* line 1462, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-indent-left:before {
+  content: '\e800';
+}
+
+/* 'εáÇ' */
+/* line 1466, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-indent-right:before {
+  content: '\e801';
+}
+
+/* 'εáü' */
+/* line 1470, ../scss/bootstrap/_ui-grid.scss */
+.ui-grid-icon-spin5:before {
+  content: '\ea61';
+}
+
+/* 'ε⌐í' */
+/* line 1, ../scss/bootstrap/_angular-chart.scss */
+.chart-legend, .bar-legend, .line-legend, .pie-legend, .radar-legend, .polararea-legend, .doughnut-legend {
+  list-style-type: none;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* line 1, ../scss/bootstrap/_angular-chart.scss */
+.chart-legend li, .bar-legend li, .line-legend li, .pie-legend li, .radar-legend li, .polararea-legend li, .doughnut-legend li {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  padding: 2px 8px 2px 28px;
+  font-size: smaller;
+  cursor: default;
+}
+
+/* line 1, ../scss/bootstrap/_angular-chart.scss */
+.chart-legend li span, .bar-legend li span, .line-legend li span, .pie-legend li span, .radar-legend li span, .polararea-legend li span, .doughnut-legend li span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=angular-chart.css.map */
 /* line 1, ../scss/bootstrap/_overrides.scss */
 body {
   padding-top: 0px;
+}
+
+/* line 5, ../scss/bootstrap/_overrides.scss */
+.container {
+  width: 1000px;
+}
+
+/* line 9, ../scss/bootstrap/_overrides.scss */
+.right {
+  float: right;
+}
+
+/* line 13, ../scss/bootstrap/_overrides.scss */
+.left {
+  float: left;
+}
+
+/* line 17, ../scss/bootstrap/_overrides.scss */
+.top-bar-section li {
+  line-height: 45px;
+}
+
+/* line 20, ../scss/bootstrap/_overrides.scss */
+.top-bar-section ul {
+  margin-bottom: 0px;
+}
+
+/* line 24, ../scss/bootstrap/_overrides.scss */
+nav ul ul a {
+  color: #fff;
+}
+
+/* line 28, ../scss/bootstrap/_overrides.scss */
+.top-sub-links li a {
+  color: #ffffff !important;
+}
+
+/* line 32, ../scss/bootstrap/_overrides.scss */
+.subscribe-btn, .subscribe {
+  width: 300px;
 }
