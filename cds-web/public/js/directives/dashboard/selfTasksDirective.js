@@ -1,14 +1,26 @@
 'use strict';
 
 define(['directives/directiveModule'], function(directiveModule) {
-    directiveModule.directive('selfTasksDirective', [
-            function() {     
-
+     directiveModule.directive('selfTasksDirective', ['dashboardService',
+            function(dashboardService) {
+                var griddata = [],
+                temp = {};
+                dashboardService.getTasks(function(resp) {
+                    var tasks = resp.data.tasks;
+                    for (var i = 0; i < tasks.length; i++) {
+                        temp = {
+                            taskId: tasks[i].taskId,
+                            task:tasks[i].taskName,
+                            createdate:tasks[i].createdDate
+                        }
+                        griddata.push(temp);
+                    }
+                });
                 return {
-                    restrict: "A",                    
+                    restrict: "A",
                     link: function(scope, elem, attrs) {
 
-                  scope.gridOptions = {
+                        scope.gridOptions = {
                             paginationPageSizes: [5, 20, 30],
                             paginationPageSize: 5,
                             columnDefs: [{
@@ -16,59 +28,10 @@ define(['directives/directiveModule'], function(directiveModule) {
                             }, {
                                 name: 'task'
                             }, {
-                                name: 'date'
+                                name: 'createdate'
                             }],
-                            data: [{
-                                "taskId": "R1321",
-                                "task": "Request for Adhar",
-                                "date": "20/2/15"
-
-                            }, {
-                                "taskId": "R1322",
-                                "task": "Request for ligiting",
-                                "date": "21/2/15"
-                            }, {
-                                "taskId": "R1323",
-                                "task": "Request for Roads",
-                                "date": "22/2/15"
-                            }, {
-                                "taskId": "R1324",
-                                "task": "Request for Cleaning",
-                                "date": "23/2/15"
-                            }, {
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            }]
+                            data: griddata
                         };
-
-
-
-
                     }
                 }
             }
