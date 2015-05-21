@@ -30,7 +30,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				getUserPersonalInfo : "/auth/citizen/getpersonalinf",
 				getUserWorkInfo : "/auth/citizen/getworkinf",
 				getUserVoterInfo : "/auth/citizen/getvoterinf",
-				getUserAddressInfo : "/auth/citizen/getresidentialaddress",
+				getUserAddressInfo : "/citizen/getresidentialaddress",
 				getUserVolunteerInfo : "/auth/volunteer/get",
 				getUserFamilyInfo : "/auth/cadre/getfamily",
 				getUserCadreInfo : "/auth/cadre/get",

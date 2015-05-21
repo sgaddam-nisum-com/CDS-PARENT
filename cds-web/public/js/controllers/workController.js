@@ -55,7 +55,9 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 		 function handleUserEdit() {		 	
 
            		registerService.getWorkInfo(function(resp) {                   
-                    self.user = resp.data;                    
+                    self.user = resp.data;
+                    self.user.occupationId = resp.data.occupation.occupationId;                    
+                    
                 });
             }
 

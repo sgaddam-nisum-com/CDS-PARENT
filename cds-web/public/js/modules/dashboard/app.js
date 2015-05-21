@@ -41,7 +41,8 @@ define(['angular',
     										"nvd3ChartDirectives",
     										'ngTouch', 
     										'ui.grid', 
-    										'ui.grid.pagination'
+    										'ui.grid.pagination',
+    										"ui.bootstrap"
     										]);
     return app;
 });

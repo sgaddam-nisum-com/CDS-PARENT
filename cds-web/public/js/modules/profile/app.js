@@ -21,7 +21,9 @@ define(['angular',
 	"controllers/addressController",
 	"controllers/volunteerController",
 	"controllers/familyController",
-	"controllers/cadreController"
+	"controllers/cadreController",
+	"directives/voterDirective",
+	"directives/addressDirective"
 
 	], function (angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);    

@@ -84,7 +84,8 @@ define(['services/serviceModule'], function(serviceModule) {
 
 				 $http.get(appUrlService.getAddress, {
 				  params: {
-				   q: userInput
+				   q: userInput,
+				   orgId :2
 				  }
 				 }).success(function(data) {
 				  cb(data);
@@ -94,7 +95,8 @@ define(['services/serviceModule'], function(serviceModule) {
 				getConstituencyInfo: function(userInput, cb) {
 				 $http.get(appUrlService.getConstituencyInfo, {
 				  params: {
-				   q: userInput
+				   q: userInput,
+				   orgId :2
 				  }
 				 }).success(function(data) {
 				  cb(data);

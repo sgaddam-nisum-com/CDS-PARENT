@@ -141,7 +141,7 @@ exports.deleteVoterInf = function(req, res, next) {
 };
 
 exports.getVoterInfByText = function(req, res, next) {
-    log.debug("getVoterInfByText : logged user - " + (req.user.data.user.appUserId) + " q - " + req.query.q);
+    log.debug("getVoterInfByText : - "+ " q - " + req.query.q);
     var q = req.query.q;
     var orgId = req.query.orgId;
 
