@@ -37,7 +37,7 @@ exports.deFormatDate = function(dFormat, val) {
 exports.handleErrors = function(obj, callback) {
     var res = {};
     res.data = obj;
-    if ((obj.httpStatusCode >= 200 && obj.httpStatusCode <= 300) || obj.httpStatusCode === 404) {
+    if ((obj.httpStatusCode >= 200 && obj.httpStatusCode <= 300)) {
         res.status = 'success';
         callback(res);
     } else {
