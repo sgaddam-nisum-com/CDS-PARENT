@@ -72,7 +72,9 @@ define(['services/serviceModule'], function(serviceModule) {
 				},
 				getPartyPositionsOptions: function(cb) {
 				 $http.get(appUrlService.getPartyPositionsInfo, {
-
+				 	 params: {
+				   			orgId: 2
+				  }
 				 }).success(function(resp) {
 				  cb(resp);
 				  
@@ -105,6 +107,9 @@ define(['services/serviceModule'], function(serviceModule) {
 				},	
 				getVolunteerCategoryOptions: function(cb) {
 				 $http.get(appUrlService.getVolunteerCategoryInfo, {
+				 	  params: {				 
+				   orgId :2
+				  }
 
 				 }).success(function(resp) {
 				  cb(resp);
@@ -113,7 +118,9 @@ define(['services/serviceModule'], function(serviceModule) {
 				},
 				getLeadOptions:function(cb){
 					 $http.get(appUrlService.getLeadInfo, {
-
+					 	 params: {				 
+				   orgId :2
+				  }
 					 }).success(function(resp) {
 					  cb(resp);
 					  
@@ -121,6 +128,9 @@ define(['services/serviceModule'], function(serviceModule) {
 				},
 				getPerformanceGradeOptions:function(cb){
 					 $http.get(appUrlService.getPerformanceGradeInfo, {
+					 	 params: {				 
+				   orgId :2
+				  }
 
 					 }).success(function(resp) {
 					  cb(resp);

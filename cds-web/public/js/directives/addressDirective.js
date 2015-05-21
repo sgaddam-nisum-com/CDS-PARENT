@@ -1,8 +1,13 @@
 'use strict';
 
 define(['directives/directiveModule', 'autocomplete'], function(directiveModule) {
+    
+
+   
+
     directiveModule.directive('autocompleteAddressDirective', ["registerService",
-            function(registerService) {
+      
+            function(registerService) {         
 
                 var availableTags = [{
 
