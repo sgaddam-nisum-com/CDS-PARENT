@@ -26,7 +26,7 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 					data: self.user	
 				}).success(function(data, status, headers, config){
 					console.log("success");
-					$state.go('root.register.address');
+					$state.go('root.profile.editprofile.address');
 				}).error(function(data, status, headers, config){
 					
 				

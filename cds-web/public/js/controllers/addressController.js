@@ -9,7 +9,7 @@ define(['controllers/controllerModule','formValidation','validators/addressValid
         handleUserEdit();
 
 		var config = {
-            initiate :true,
+            initiate :false,
             blurValidation: false,
             htmlValidation : false,
             submitValidForm : false,
@@ -39,16 +39,14 @@ define(['controllers/controllerModule','formValidation','validators/addressValid
 			if(formStack.isValid){								
 
 				$http({
-					method: "post",
-					url: appUrls.saveresidentialaddress,
+					method: "PUT",
+					url: appUrls.updateResidentialAddress,
 					data: requestObj	
 				}).success(function(data, status, headers, config){
 					console.log("success");
-					$state.go('root.register.volunteer');
+					$state.go('root.profile.editprofile.volunteer');
 				}).error(function(data, status, headers, config){
-					console.log("failed");
-					$state.go('root.register.volunteer');	
-
+					
 				});
 			} 
 		}

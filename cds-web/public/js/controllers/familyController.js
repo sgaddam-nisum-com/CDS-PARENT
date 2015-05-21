@@ -38,12 +38,12 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 			if(formStack.isValid){								
 
 				$http({
-					method: "post",
-					url: appUrls.saveFamily,
+					method: "PUT",
+					url: appUrls.updateFamily,
 					data: requestObj
 				}).success(function(data, status, headers, config){
 					console.log("success");
-					$state.go('root.register.cadre');
+					$state.go('root.profile.editprofile.cadre');
 				}).error(function(data, status, headers, config){
 					
 

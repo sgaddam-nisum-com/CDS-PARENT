@@ -25,9 +25,9 @@ define(['services/serviceModule'], function (serviceModule) {
 				updatePersonalInfo : '/auth/citizen/editpersonalinf',
 				updateWorkInfo : "/auth/citizen/editworkinf",
 				updateVoterInfo : "/auth/citizen/editvoterinf",
-				updateresidentialaddress : "/auth/citizen/editresidentialaddress",
+				updateResidentialAddress : "/auth/citizen/editresidentialaddress",
 				updateVolunteer : "/auth/volunteer/edit",
-				updateFamily : "/auth/cadre/editFamily",
+				updateFamily : "/auth/citizen/editfamily",
 				updateCadre : "/auth/cadre/edit",
 
 

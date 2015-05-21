@@ -5,7 +5,7 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
         handleUserEdit();
 
 		var config = {
-            initiate :true,
+            initiate :false,
             blurValidation: false,
             htmlValidation : false,
             submitValidForm : false,
@@ -38,15 +38,14 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 			if(formStack.isValid){								
 
 				$http({
-					method: "post",
-					url: appUrls.saveVolunteer,
+					method: "PUT",
+					url: appUrls.updateVolunteer,
 					data: requestObj	
 				}).success(function(data, status, headers, config){
 					console.log("success");
-					$state.go('root.register.family');
+					$state.go('root.profile.editprofile.family');
 				}).error(function(data, status, headers, config){
-					console.log("failed");
-					$state.go('root.register.family');	
+					
 
 				});
 			} 
