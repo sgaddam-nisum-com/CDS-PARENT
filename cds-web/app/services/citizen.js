@@ -27,10 +27,10 @@ exports.deletePersonalinf = function(params, token, callback) {
     });
 };
 
-exports.getVoterInfByText = function(params, token, callback) {
+exports.getVoterInfByText = function(params, orgId, callback) {
     log.debug("getVoterInfByText : " + (JSON.stringify(params)));
     var headers = header;
-    headers[cdsConfig.token] = token;
+    headers[cdsConfig.orgId] = orgId;
 
     //build url path
     var url = {

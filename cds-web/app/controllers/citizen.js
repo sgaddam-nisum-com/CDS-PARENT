@@ -143,13 +143,12 @@ exports.deleteVoterInf = function(req, res, next) {
 exports.getVoterInfByText = function(req, res, next) {
     log.debug("getVoterInfByText : logged user - " + (req.user.data.user.appUserId) + " q - " + req.query.q);
     var q = req.query.q;
-    var token = req.user ? req.user.data.token : null;
+    var orgId = req.query.orgId;
 
     citizenService.getVoterInfByText({
         q: q
-    }, token, function(resp) {
-        req.resp = resp;
-        next();
+    }, orgId, function(resp) {
+        res.json(resp);
     });
 };
 
