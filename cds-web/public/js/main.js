@@ -147,7 +147,11 @@ require.config({
 		},
 		"foundation" : {
 			deps : ["jquery"]
+		},
+		"angularDashboard" : {
+			deps : ["angularBootstrap"]
 		}
+
 
 	}
 });

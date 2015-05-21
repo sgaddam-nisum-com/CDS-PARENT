@@ -6,18 +6,7 @@ define(['controllers/controllerModule','formValidation','validators/addressValid
 	 controllerModule.controller('addressController', ['$state','$http',"registerService","appUrlService","cdsService","$sessionStorage","$scope", function($state,$http,registerService,appUrls,cdsService,$sessionStorage,$scope){
 		var self = this;
 
-		/******Session manager****/
-
-		var sessionObj = $sessionStorage.cds.contextObj;
-
-
-            if (sessionObj.mode == "edit") {
-                handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
-            
-        /**************************/    
+        handleUserEdit();
 
 		var config = {
             initiate :true,
@@ -66,13 +55,8 @@ define(['controllers/controllerModule','formValidation','validators/addressValid
 
 
 		   function handleUserEdit() {
-                self.showImage = false;
-                var currentUserId = sessionObj.userId;
-                registerService.getAddressInfo(currentUserId, function(resp) {
-                    var htmlResponse = responseParser(resp.data);
-                	console.log(htmlResponse);
-                    self.user = htmlResponse;
-
+                registerService.getAddressInfo( function(resp) {
+                    self.user = resp.data;
                 });
             }
 

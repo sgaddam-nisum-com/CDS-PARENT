@@ -2,18 +2,8 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 
 	controllerModule.controller('cadreController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage", function($state,$http,appUrls,$scope,registerService,cdsService,$sessionStorage){
 		var self = this;
-
-		   var sessionObj = $sessionStorage.cds.contextObj;
-
-
-            if (sessionObj.mode == "edit") {
-                handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
-            
-
-
+        handleUserEdit();
+        
 		var config = {
             initiate :true,
             blurValidation: false,
@@ -49,11 +39,8 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 
 
 		  function handleUserEdit() {
-                self.showImage = false;
-                var currentUserId = sessionObj.userId;
-                registerService.getCadreInfo(currentUserId, function(resp) {
+                registerService.getCadreInfo( function(resp) {
                     self.user = resp.data;
-
                 });
             }
 

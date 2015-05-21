@@ -2,17 +2,7 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 
 	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage", function($state,$http,appUrls,$scope,registerService,cdsService,$sessionStorage){
 		var self = this;
-
-		 var sessionObj = $sessionStorage.cds.contextObj;
-
-
-            if (sessionObj.mode == "edit") {
-                handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
-
-
+        handleUserEdit();
 
 		var config = {
             initiate :true,
@@ -63,15 +53,9 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 		};
 
 		   function handleUserEdit() {
-                self.user = {};
-                self.user.volunteerInterestedAreas = {};
-                self.showImage = false;
-                var currentUserId = sessionObj.userId;
-                registerService.getVolunteerInfo(currentUserId, function(resp) {
-                  
-                  self.user.volunteer = resp.data;
-                  //self.user.volunteerInterestedAreas.interestId = resp.data.volunteerInterestedAreas[0].interestId;
-                  
+                registerService.getVolunteerInfo(function(resp) {
+                	self.user = {};
+                 	self.user.volunteer = resp.data;
                 });
             }
 

@@ -4,15 +4,8 @@
 define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
 
 	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
-		 var self = this;
-		 var sessionObj = $sessionStorage.cds.contextObj;
-
-
-		  if (sessionObj.mode == "edit") {
-                handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
+	 	var self = this;
+        handleUserEdit();
 
 		var config = {
             initiate :false,
@@ -42,14 +35,11 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 			} 
 		}
 
-		 function handleUserEdit() {
-                self.showImage = false;
-                var currentUserId = sessionObj.userId;
-                registerService.getVoterInfo(currentUserId, function(resp) {
-                    self.user = resp.data;
-
-                });
-            }
+	 	function handleUserEdit() {
+            registerService.getVoterInfo(function(resp) {
+                self.user = resp.data;
+            });
+        }
 
 
             function handleUserCreation() {

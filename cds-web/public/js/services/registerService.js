@@ -161,43 +161,41 @@ define(['services/serviceModule'], function(serviceModule) {
 					  cb(resp);					  
 					 })
 				},
-				getVoterInfo: function(userId, cb){				
+				getVoterInfo: function(cb){				
 
 					 $http.get(appUrlService.getUserVoterInfo, {
-					 	params : {userId : userId}
+
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })
 				},
-				getAddressInfo : function(userId, cb){
+				getAddressInfo : function(cb){
 					 $http.get(appUrlService.getUserAddressInfo, {
-					 	params : {userId : userId}
+
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })	
 				},
-				getVolunteerInfo : function(userId, cb){
+				getVolunteerInfo : function(cb){
 					 $http.get(appUrlService.getUserVolunteerInfo, {
-					 	params : {userId : userId}
+					 	
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })	
 				},
-				getFamilyInfo : function(userId, cb){
+				getFamilyInfo : function(cb){
 					 $http.get(appUrlService.getUserFamilyInfo, {
-					 	params : {userId : userId}
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })	
 				},
-				getCadreInfo : function(userId, cb){
+				getCadreInfo : function( cb ){
 					 $http.get(appUrlService.getUserCadreInfo, {
-					 	params : {userId : userId}
+					 	
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })						
 				}
-				
 
 
 

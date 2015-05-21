@@ -2,18 +2,8 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 	controllerModule.controller('familyController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
 		var self = this;
-
-		  var sessionObj = $sessionStorage.cds.contextObj;
-
-
-            if (sessionObj.mode == "edit") {
-                handleUserEdit();
-            } else {
-                handleUserCreation();
-            }
-            
-
-
+		
+        handleUserEdit();
 
 		var config = {
             initiate :false,
@@ -63,13 +53,8 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 
 		  function handleUserEdit() {
-                self.showImage = false;
-                var currentUserId = sessionObj.userId;
-                registerService.getFamilyInfo(currentUserId, function(resp) {
+                registerService.getFamilyInfo( function(resp) {
                     self.user = resp.data;
-                    //responseParser()
-                    console.log(resp.data);
-
                 });
             }
 
