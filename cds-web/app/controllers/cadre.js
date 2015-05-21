@@ -77,11 +77,11 @@ exports.bloodGroups = function(req, res, next) {
 exports.isPartyMemberShipIdExist = function(req, res, next) {
     log.debug("isPartyMemberShipIdExist");
     var partyMemberShipId = req.query.partyMemberShipId;
-    var orgId = req.query.orgId;
+    var token = req.user ? req.user.data.token : null;
 
     cadreService.isPartyMemberShipIdExist({
         partyMemberShipId: partyMemberShipId
-    }, orgId, function(resp) {
+    }, token, function(resp) {
         res.json(resp);
     });
 };

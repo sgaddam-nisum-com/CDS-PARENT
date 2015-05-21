@@ -67,7 +67,7 @@ exports.volunteerCategory = function(orgId, callback) {
     var headers = header;
     headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.volunteer.category, params, headers, function(args) {
+    restService.builbArgs(restUrls.volunteer.category, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -77,7 +77,7 @@ exports.volunteerLeads = function(orgId, callback) {
     var headers = header;
     headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.volunteer.leads, params, headers, function(args) {
+    restService.builbArgs(restUrls.volunteer.leads, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

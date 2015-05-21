@@ -31,7 +31,7 @@ exports.partyPositions = function(orgId, callback) {
     var headers = header;
     headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.cadre.partyPositions, params, headers, function(args) {
+    restService.builbArgs(restUrls.cadre.partyPositions, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -41,15 +41,15 @@ exports.bloodGroups = function(orgId, callback) {
     var headers = header;
     headers[cdsConfig.orgId] = orgId;
 
-    restService.builbArgs(restUrls.cadre.bloodGroups, params, headers, function(args) {
+    restService.builbArgs(restUrls.cadre.bloodGroups, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
 
-exports.isPartyMemberShipIdExist = function(params, orgId, callback) {
+exports.isPartyMemberShipIdExist = function(params, token, callback) {
     log.debug("isPartyMemberShipIdExist");
     var headers = header;
-    headers[cdsConfig.orgId] = orgId;
+    headers[cdsConfig.token] = token;
 
     //build url path
     var url = {
