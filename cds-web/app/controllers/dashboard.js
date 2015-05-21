@@ -64,13 +64,11 @@ exports.tasksTrendRPerMonth = function(req, res, next) {
     var type = req.query.type;
 
     dashboardService.tasksTrendRPerMonth({
-            type: type
-        }
-        token,
-        function(resp) {
-            req.resp = resp;
-            next();
-        });
+        type: type
+    }, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
 };
 
 exports.cadresTrendRPerMonth = function(req, res, next) {
