@@ -21,15 +21,10 @@ exports.savePersonalInf = function(req, res, next) {
 };
 
 exports.editPersonalInf = function(req, res, next) {
-
-
-
     log.debug("editPersonalInf : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
-    
-    console.log(params);
-
     var token = req.user ? req.user.data.token : null;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.editPersonalInf(params, token, function(resp) {
         req.resp = resp;
@@ -78,6 +73,7 @@ exports.editWorkInf = function(req, res, next) {
     log.debug("editWorkInf : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.editWorkInf(params, token, function(resp) {
         req.resp = resp;
@@ -113,6 +109,7 @@ exports.editVoterInf = function(req, res, next) {
     log.debug("editVoterInf : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.editVoterInf(params, token, function(resp) {
         req.resp = resp;
@@ -147,7 +144,7 @@ exports.deleteVoterInf = function(req, res, next) {
 };
 
 exports.getVoterInfByText = function(req, res, next) {
-    log.debug("getVoterInfByText : - "+ " q - " + req.query.q);
+    log.debug("getVoterInfByText : - " + " q - " + req.query.q);
     var q = req.query.q;
     var orgId = req.query.orgId;
 
@@ -172,6 +169,7 @@ exports.editResidentialAddress = function(req, res, next) {
     log.debug("editResidentialAddress : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.editResidentialAddress(params, token, function(resp) {
         req.resp = resp;
@@ -207,6 +205,7 @@ exports.editFamily = function(req, res, next) {
     log.debug("editFamily : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.editFamily(params, token, function(resp) {
         req.resp = resp;

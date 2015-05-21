@@ -23,6 +23,7 @@ exports.edit = function(req, res, next) {
     log.debug("edit : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.editVolunteer(params, token, function(resp) {
         req.resp = resp;

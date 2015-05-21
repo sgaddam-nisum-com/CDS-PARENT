@@ -36,10 +36,15 @@ exports.notifications = function(token, callback) {
     });
 };
 
-exports.messageCount = function(token, callback) {
+exports.messageCount = function(params, token, callback) {
     log.debug("messageCount : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.dashboard.messageCount.path, params.type),
+        method: restUrls.dashboard.messageCount.method
+    };
 
     restService.builbArgs(restUrls.dashboard.messageCount, null, headers, function(args) {
         restService.makecall(args, callback);
@@ -61,10 +66,15 @@ exports.tasksByAge = function(params, token, callback) {
     });
 };
 
-exports.tasksTrendRPerMonth = function(token, callback) {
+exports.tasksTrendRPerMonth = function(params, token, callback) {
     log.debug("tasksTrendRPerMonth : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.dashboard.tasksTrendRPerMonth.path, params.type),
+        method: restUrls.dashboard.tasksTrendRPerMonth.method
+    };
 
     restService.builbArgs(restUrls.dashboard.tasksTrendRPerMonth, null, headers, function(args) {
         restService.makecall(args, callback);
