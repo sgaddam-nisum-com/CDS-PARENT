@@ -3,9 +3,6 @@
 
 
 <div>
-    <div class="row">
-    <div class="col-lg-7"><h1>Dashboard</h1></div>
-    <div class="col-lg-5"><br />
     <div class="btn-toolbar" ng-if="!options.hideToolbar">
         
 
@@ -39,7 +36,7 @@
 
         <button ng-click="clear();" type="button" class="btn btn-info">Clear</button>
     </div>
-</div></div>
+
     <div ui-sortable="sortableOptions" ng-model="widgets" class="dashboard-widget-area">
         <div ng-repeat="widget in widgets" ng-style="widget.containerStyle" class="widget-container" widget>
            
@@ -67,4 +64,4 @@
 
         </div>
     </div>
- 
+</div>

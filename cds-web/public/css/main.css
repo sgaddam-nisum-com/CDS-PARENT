@@ -234,6 +234,45 @@
 }
 
 /* Bootstap overrides */
+/* line 172, ../scss/components/_dashboard.scss */
+.widget-container {
+  height: 455px;
+}
+
+/* line 175, ../scss/components/_dashboard.scss */
+.widget {
+  border-radius: 3px;
+  border: solid 1px #4c8ac7;
+}
+
+/* line 179, ../scss/components/_dashboard.scss */
+.panel-default > .panel-heading {
+  background: #4c8ac7;
+  color: #ffffff;
+}
+
+/* line 183, ../scss/components/_dashboard.scss */
+.panel-title {
+  font-size: 14px;
+}
+
+/* line 186, ../scss/components/_dashboard.scss */
+.panel-heading {
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+/* line 190, ../scss/components/_dashboard.scss */
+.subscribe {
+  padding: 8px !important;
+}
+
+/* line 193, ../scss/components/_dashboard.scss */
+.ui-grid-pager-row-count-picker {
+  font-size: 12px;
+  padding: 10px 0 0 10px;
+}
+
 /******Do not change. Styles to make footer at bottom on variable section height. ***********/
 /******Difference height : Header height + Footer height************************************/
 /* line 4, ../scss/components/_footer.scss */
