@@ -21,16 +21,15 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 			if(formStack.isValid){								
 
 				$http({
-					method: "post",
-					url: appUrls.saveVoterInfo,
+					method: "PUT",
+					url: appUrls.updateVoterInfo,
 					data: self.user	
 				}).success(function(data, status, headers, config){
 					console.log("success");
 					$state.go('root.register.address');
 				}).error(function(data, status, headers, config){
-					console.log("failed");
-					$state.go('root.register.address');	
-
+					
+				
 				});
 			} 
 		}

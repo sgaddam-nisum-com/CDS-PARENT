@@ -62,26 +62,20 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                 console.log(self.user);
 
 
-                if (true) {
+                $http({
+                    method: "PUT",
+                    url: appUrls.updatePersonalInfo,
+                    data: self.user 
+                }).success(function(data, status, headers, config){
+                    console.log("success");
+                    $state.go('root.profile.editprofile.work');
+                }).error(function(data, status, headers, config){
+                   
 
-                    $.ajax({
-                        url: appUrls.updatePersonalInfo,
-                        type: 'PUT',
-                        data: self.user,
-                        cache: false,
-                        dataType: 'json',
-                        success: function(data, textStatus, jqXHR) {
-                            cdsService.setUserId(data.data.id);
-                            $state.go('root.register.work');
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
+                });
 
 
-
-                        }
-                    });
-
-                }
+             
             };
 
 

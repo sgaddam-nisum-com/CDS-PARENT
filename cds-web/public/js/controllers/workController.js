@@ -38,15 +38,15 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 			if(formStack.isValid){								
 				self.user.userId = cdsService.getUserId();				
 				$http({
-					method: "post",
-					url: appUrls.saveWorkInfo,
+					method: "PUT",
+					url: appUrls.updateWorkInfo,
 					data: self.user	
 				}).success(function(data, status, headers, config){
 					console.log("success");
-					$state.go('root.register.voter');
+					$state.go('root.profile.editprofile.voter');
 				}).error(function(data, status, headers, config){
 					console.log("failed");
-					$state.go('root.register.voter');	
+				
 
 				});
 			} 
