@@ -44,9 +44,11 @@ exports.tasksByAge = function(req, res, next) {
     log.debug("tasksByAge : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var userId = req.query.userId || req.user.data.user.appUserId;
+    var criteria = req.query.criteria;
 
     dashboardService.tasksByAge({
-        userId: userId
+        userId: userId,
+        criteria: criteria
     }, token, function(resp) {
         req.resp = resp;
         next();

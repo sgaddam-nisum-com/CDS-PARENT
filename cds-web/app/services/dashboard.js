@@ -56,7 +56,7 @@ exports.tasksByAge = function(params, token, callback) {
         method: restUrls.dashboard.tasksByAge.method
     };
 
-    restService.builbArgs(url, null, headers, function(args) {
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
