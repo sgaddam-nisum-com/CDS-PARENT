@@ -149,7 +149,7 @@ exports.init = function(app, passport, auth) {
 
     //office executive routes    
     app.put('/auth/office/vnc/verify', officeController.verifyVnC, auth.filterResponse);
-    app.put('/auth/office/vnc/holdVnC', officeController.holdVnC, auth.filterResponse);
+    app.put('/auth/office/vnc/holdvnC', officeController.holdVnC, auth.filterResponse);
     app.put('/auth/office/vnc/reject', officeController.rejectVnC, auth.filterResponse);
     app.put('/auth/office/vnc/verificationlist', officeController.VnCVerificationList, auth.filterResponse);
     app.put('/auth/office/vnc/assigncadreforapproval', officeController.assignCadreForApproval, auth.filterResponse);
