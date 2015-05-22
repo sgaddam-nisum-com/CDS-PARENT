@@ -11,21 +11,35 @@ define(['services/serviceModule'], function(serviceModule) {
                     });
                 },
                 getTasksByAge: function(cb) {
-                    $http.get(appUrlService.getTasksList, {
-
+                    $http.get(appUrlService.getTasksByAge, {
+                        params: {
+                            criteria: 'all'
+                        }
 
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
                 getTasksByTrend: function(cb) {
-                    $http.get(appUrlService.getTasksList, {
-
+                    $http.get(appUrlService.getTasksByTrend, {
+                        params: {
+                            type: 'all'
+                        }
 
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
+                getTaskState: function(cb) {
+                    $http.get(appUrlService.getTaskState, {
+                        params: {
+                            type: 'all'
+                        }
+
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+                }
 
             }
 

@@ -90,6 +90,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				getMyTasksList :"/auth/user/assignedtasks",
 				deleteTask : "/auth/user/deletetask",
 				updateTask : "/auth/user/updatetasksstatus",
+				getTaskState:"/auth/dashboard/messageCount",
 
 				deleteUser : "/volunteer/delete"
 
