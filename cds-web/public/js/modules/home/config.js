@@ -11,8 +11,8 @@ app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cds
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
  
-    $urlRouterProvider
-    .otherwise('/');
+   /* $urlRouterProvider
+    .otherwise('/');*/
     
 
     /*****Non authenticated views*****/
@@ -45,30 +45,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         },
         secured : false
     })
-
-    .state('root.homeHash',{
-        url: '/',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/home.html',
-                controller : "homeController as homeCtrl"                
-            }
-             
-        },
-        secured : false
-    })
-
-     .state('root.alternatehome',{
-        url: '',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/home.html',
-                controller : "homeController as homeCtrl"                
-            }
-             
-        },
-        secured : false
-    })
+ 
 
   
     .state('root.knowyourmp',{

@@ -437,6 +437,8 @@
 			// @param {Boolean} dontPause Specifies whether to pause the slideshow.
 			// @param {Boolean} bypassHistory Specifies whether to delegate navigation to the history plugin when history is enabled.  
 			next: function(dontPause, bypassHistory) {
+				
+
 				this.gotoIndex(this.getNextIndex(this.currentImage.index), dontPause, bypassHistory);
 				return this;
 			},

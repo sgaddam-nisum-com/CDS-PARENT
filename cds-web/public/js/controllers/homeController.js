@@ -6,12 +6,7 @@ define(['controllers/controllerModule','jquery','slick'], function (controllerMo
 
 	 controllerModule.controller('homeController', [function(){		
 
-	 	/*Main gallery settings */
-	 	this.galleryCaroselConfig = {
-	 		
-	 	};
-
-	 	/*Activity gallery settings*/
+	 	 	/*Activity gallery settings*/
 	 	this.activitiesCarouselconfig = {
 	 			  dots: false,
 			      infinite: true,
@@ -25,27 +20,6 @@ define(['controllers/controllerModule','jquery','slick'], function (controllerMo
 			      prevBtnSelector : "#prevAct",
 			      nextBtnSelector : "#nextAct"
 	 	};
-
-
-	 /*		$(document).ready(function(){
-			  	var slider = $('#home-carousel').slick({
-			      dots: true,
-				  infinite: true,
-				  speed: 500,
-				  fade: true,
-				  cssEase: 'linear',
-				  autoplay:true,
-				  autoplaySpeed : 1500,				 				 
-			  	})
-			  	.on("mouseout",function(){			  		
-			  	 	slider.slick('slickPlay');			 
-			  	}) ;
-
-			  	$('#home-carousel img').css("width","100%");
-			});*/
-		
-
-
 	}]);
 
 });

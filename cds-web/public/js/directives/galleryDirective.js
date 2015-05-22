@@ -23,6 +23,8 @@ define(['directives/directiveModule','jquery','gallery/jquery.galleriffic','gall
           fadeSpeed:         'fast',
           exemptionSelector: '.selected'
         });
+
+        $(".navigation-container").css({"margin-left" : "35px", "height" : "135px", overflow : "hidden"});
         
         // Initialize Advanced Galleriffic Gallery
         var gallery = $('#thumbs').galleriffic({
@@ -61,8 +63,8 @@ define(['directives/directiveModule','jquery','gallery/jquery.galleriffic','gall
             this.fadeTo('fast', 0.0, callback);
           },
           onPageTransitionIn:        function() {
-            var prevPageLink = this.find('a.prev').css('visibility', 'hidden');
-            var nextPageLink = this.find('a.next').css('visibility', 'hidden');
+            var prevPageLink = this.find('a.prev').css('visibility', 'visible');
+            var nextPageLink = this.find('a.next').css('visibility', 'visible');
             
             // Show appropriate next / prev page links
             if (this.displayedPage > 0)
