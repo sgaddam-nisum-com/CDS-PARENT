@@ -103,7 +103,7 @@ module.exports = {
             method: "GET"
         },
         getTeamTasks: {
-            path: "reporteestasks/",
+            path: "tasks/reporteestasks/",
             method: "GET"
         },
         updateTasksStatus: {

@@ -76,7 +76,7 @@ exports.tasksTrendRPerMonth = function(params, token, callback) {
         method: restUrls.dashboard.tasksTrendRPerMonth.method
     };
 
-    restService.builbArgs(restUrls.dashboard.tasksTrendRPerMonth, null, headers, function(args) {
+    restService.builbArgs(url, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

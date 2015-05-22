@@ -260,7 +260,7 @@ exports.getTeamTasks = function(req, res, next) {
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
 
-    taskMgmt.getTasks(params, token, function(resp) {
+    taskMgmt.getTeamTasks(params, token, function(resp) {
         req.resp = resp;
         next();
     });
