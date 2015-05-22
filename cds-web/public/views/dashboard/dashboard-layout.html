@@ -1,7 +1,4 @@
 
-
-
-
 <div>
     <div class="row">
     <div class="col-lg-7"><h1>Dashboard</h1></div>
@@ -41,7 +38,7 @@
     </div>
 </div></div>
     <div ui-sortable="sortableOptions" ng-model="widgets" class="dashboard-widget-area">
-        <div ng-repeat="widget in widgets" ng-style="widget.containerStyle" class="widget-container" widget>
+        <div ng-repeat="widget in widgets" ng-style="widget.containerStyle" class="widget-container {{widget.class}}" widget>
            
             <div class="widget panel panel-default">
                 <div class="widget-header panel-heading" >

@@ -27,7 +27,9 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
           height:"270px"
         },
         directive :"tasksage-chart-directive",
-        templateUrl : "views/dashboard/tasksage-chart.html"
+        templateUrl : "views/dashboard/tasksage-chart.html",
+        "class" : "d-widget tasks-age"  
+            
       },
        
        {
@@ -38,7 +40,10 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
           height:"270px"
         },
         directive :"mytasks-chart-directive",
-        templateUrl : "views/dashboard/mytasks-chart.html"
+        templateUrl : "views/dashboard/mytasks-chart.html",
+          "class" : "d-widget self-tasks"
+    
+        
       },
 
        {
@@ -49,42 +54,49 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
           height:"270px"
         },
         directive :"taskstrend-chart-directive",
-        templateUrl : "views/dashboard/taskstrend-chart.html"
+        templateUrl : "views/dashboard/taskstrend-chart.html",
+  
+          "class" : "d-widget tasks-trend"
+    
+        
       },
       {
         name: 'Cadre Verifications',
         title : "Cadre Verifications",
         style: {
-          width: '75%'
+          width: '66%'
         },       
         enableVerticalResize : true,
         directive : "cadre-verification-directive",
-        templateUrl : "views/dashboard/cadre-verifications.html"
+        templateUrl : "views/dashboard/cadre-verifications.html",
+       
+          "class" : "d-widget cadre-verifications"
+    
+        
       },
        {
         name: 'Alerts / Notifications',
         title : "Alerts / Notifications",
         style: {
-          width: '25%'
+          width: '34%'
         },      
         directive : "self-tasks-directive",
-        templateUrl : "views/dashboard/self-tasks.html"
+        templateUrl : "views/dashboard/self-tasks.html",
+  
+          "class" : "d-widget notifications"
+    
+        
       },
       {
         name: 'My Team Tasks',
          title : "My Team Tasks",
         style: {
           width: '100%'
-        },
-     
-        directive :"team-tasks-directive"
-      }
-
-
-      
-
-
-
+        },    
+        directive :"team-tasks-directive",
+       "class" : "d-widget team-tasks"
+        
+      }   
     ];
 
 
