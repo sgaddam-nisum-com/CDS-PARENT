@@ -9,9 +9,11 @@ define(['angular',
 	'services/common/serviceLoader',
 	"services/taskService",	
 	"controllers/taskController",
+	"controllers/viewTaskController",
 	"controllers/headerController",
 	"directives/autoCompleteDirective",
-	"directives/navDropdownDirective"
+	"directives/navDropdownDirective",
+	"directives/datePickerDirective"
 	
 		], function (angular) {
     var app = angular.module('CDSTASKS', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);

@@ -83,6 +83,11 @@ define(['services/serviceModule'], function (serviceModule) {
 				getTasksByAge:"/auth/dashboard/tasksByAge",
 				getTasksByTrend:"/auth/dashboard/tasksTrendRPerMonth",
 
+				getTaskDetails : "/auth/user/taskdetails",
+				getTeamTasks :"/auth/user/teamtasks",
+				getAllTasks : "/auth/user/tasks",
+				getTaskStatuses: "/user/statuses",
+				getMyTasksList :"/auth/user/assignedtasks",
 
 				deleteUser : "/volunteer/delete"
 

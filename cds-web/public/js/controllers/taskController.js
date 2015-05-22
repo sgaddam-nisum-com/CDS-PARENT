@@ -15,50 +15,42 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             taskService.getTaskCategories(function(resp) {
                 $scope.taskCategoryOptions = resp.data;
             });
-            taskService.getTasks(function(resp){
-                $scope.taskLists = resp.data;
+            taskService.getMyTasks(function(resp){
+                $scope.myTaskLists = resp.data.tasks;               
             });
             taskService.getTaskPriorities(function(resp){
                 $scope.taskPriorities = resp.data;
             });
-            
-             $scope.taskLists = [{
-
-                status:"OPEN",
-                Priority: "MEDIUM",
-                AssignedTo:"Jon Steve",
-                AssignedDate :" 5/14/2015",
-                TargetDate:"5/20/2015",
-                location: "Hyderabad",
-                createdBy : "Rao on mar 23 2015"
-                
-            }, {
-                status:"IN_PROGRESS",
-                Priority: "MEDIUM",
-                AssignedTo:"Jon Steve",
-                AssignedDate :" 5/14/2015",
-                TargetDate:"5/20/2015",
-                location: "Hyderabad",
-                createdBy : "Rao on mar 23 2015"
-            }, {
-                status:"ASSIGNED",
-                Priority: "MEDIUM",
-                AssignedTo:"Jon Steve",
-                AssignedDate :" 5/14/2015",
-                TargetDate:"5/20/2015",
-                location: "Hyderabad",
-                createdBy : "Rao on mar 23 2015"
-            }];
-
+            taskService.getTeamTasks(function(resp){
+                $scope.teamTasks = resp.data.tasks;                
+            });
+            taskService.getAllTasks(function(resp){
+                $scope.allTasks = resp.data.tasks;                
+            });
+           
             this.newTask = function(){
                 $state.go('root.addTask');
             };
-            this.viewTask = function(){
-                $state.go('root.viewTasks');
+            this.viewTask = function(params){                
+                $state.go('root.viewTasks',{"taskId":params});
             };
+            this.viewTeamTasks = function(){
+                $state.go('root.teamTasks');                
+            };
+            this.viewAllTasks = function(){                
+                $state.go('root.allTasks');                
+            }
 
-            this.save = function() {             
-                   
+            this.save = function() {  
+
+            
+            var commentsObj= angular.copy(self.user.comments);
+            commentsObj.commentBy = 103; 
+            commentsObj.commentTo = 104;
+            var commentsArray = [];
+            commentsArray.push(commentsObj);
+            self.user.comments = commentsArray;
+
                    $http({
                         url : appUrls.saveTaskInfo,                        
                         method : "POST",

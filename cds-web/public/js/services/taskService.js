@@ -13,9 +13,8 @@ define(['services/serviceModule'], function(serviceModule) {
 					  cb(resp)
 					});
 				},
-				getTasks: function(cb) {
-					$http.get(appUrlService.getTasksList, {
-
+				getMyTasks: function(cb) {
+					$http.get(appUrlService.getMyTasksList, {
 
 					}).success(function(resp) {
 					  cb(resp)
@@ -33,21 +32,48 @@ define(['services/serviceModule'], function(serviceModule) {
 				getCadres : function(userInput, cb){
 					$http.get(appUrlService.getCadreList,{
 						params: {
-						   q: userInput
+						   q: "dk"
 						}
 					}).success(function(resp){
 						cb(resp);
 					});
 				},
+				getTaskDetails : function(taskId, cb){
+					$http.get(appUrlService.getTaskDetails,{
+						params: {
+						   id:taskId
+						}
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
+				getTeamTasks : function(cb){
+					$http.get(appUrlService.getTeamTasks,{
+						
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
+				getAllTasks : function(cb){
+					$http.get(appUrlService.getAllTasks,{
+						
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
+				getTaskStatuses: function(cb){
+					$http.get(appUrlService.getTaskStatuses,{
+						params: {
+						   statustype:"task",
+						   orgId:2
+						}
+						
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
 
-				// getCadreNames : function(cb){
-				// 	$http.get(appUrlService.getCadreLeads,{
-
-				// 	}).success(function(resp){
-				// 		console.log(resp);
-				// 		cb(resp);
-				// 	})
-				// }
+				
    			}
 
   		}

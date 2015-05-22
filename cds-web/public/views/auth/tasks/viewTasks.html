@@ -1,5 +1,5 @@
-<section id="appSection">
-      
+<form name="viewTask" id="viewTaskForm" ng-submit="viewTaskCtrl.save()">
+<section id="appSection">      
       <div class="row content view-tasks">
         <div class="large-12 medium-12 small-16 columns">
             <div class="row collapse">
@@ -8,17 +8,30 @@
               </div>
             </div>
             <div class="row tasks-list collapse">
-              <div class="large-16 columns task-title">
-                0123  Task Title / Request Title
+              <div class="large-16 columns task-title" >
+                {{viewTaskCtrl.taskDetails.taskName}}                
               </div>
               <div class="large-16 columns">
                 <div class="task-details">
                   <ul class="large-block-grid-3">
-                    <li>Status:  <select><option>In-Progress</option> <option>Open</option> <option>Closed</option></select></li>
-                    <li>Priority:  <select><option>Medium</option> <option>Low</option> <option>High</option></select></li>
-                    <li>Assigned to:  <select><option>R Rao</option> <option>S Steve</option> <option>John</option></select></li>
-                    <li>Assigned Date:  <input type="text" class="calender" /></li>
-                    <li>Target Date:  <input type="text" class="calender" /></li>
+                    <li>Status: 
+                                      
+                     <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.statusId" ng-options="taskStatus.statusId as  taskStatus.statusName for taskStatus in viewTaskCtrl.taskStatuses">
+                        <option>Select Status</option>            
+                      </select>
+                    </li>
+                    <li>Priority: 
+                      <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities">
+                            <option>Select Priority</option>            
+                      </select>
+                    </li>
+                    <li>Assigned to:
+                      <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities">
+                            <option>Select Priority</option>            
+                      </select>
+                    </li>
+                    <li>Assigned Date:  <input type="text" class="calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate"/></li>
+                    <li>Target Date:  <input type="text" class="calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" /></li>
                     <li>Work Location:  <select><option>Vijayawada</option> <option>Hyderabad</option></select></li>
                   </ul>
                 </div>

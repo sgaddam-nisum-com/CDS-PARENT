@@ -72,11 +72,11 @@ app.config(function($stateProvider, $urlRouterProvider){
     })
 
     .state('root.viewTasks',{
-        url: '/viewTasks',
+        url: '/viewTasks/:taskId',        
         views: {           
             'content@': {
                 templateUrl: 'views/auth/tasks/viewTasks.html',
-                controller : "taskController as taskCtrl"
+                controller : "viewTaskController as viewTaskCtrl"
             }
         },
         secured : false
@@ -87,6 +87,26 @@ app.config(function($stateProvider, $urlRouterProvider){
         views: {           
             'content@': {
                 templateUrl: 'views/auth/tasks/addTask.html',
+                controller : "taskController as taskCtrl"
+            }
+        },
+        secured : false
+    })
+    .state('root.teamTasks',{
+        url: '/teamTasks',
+        views: {           
+            'content@': {
+                templateUrl: 'views/auth/tasks/teamTask.html',
+                controller : "taskController as taskCtrl"
+            }
+        },
+        secured : false
+    })
+    .state('root.allTasks',{
+        url: '/allTasks',
+        views: {           
+            'content@': {
+                templateUrl: 'views/auth/tasks/allTasks.html',
                 controller : "taskController as taskCtrl"
             }
         },

@@ -11,19 +11,25 @@
             </div>
             <div class="row collapse">
               <div class="large-16 columns task-links">
-                <a href="#">My Tasks</a> <a href="#">My Team Task</a> <a href="#">All tasks</a>
+                <a href="#">My Tasks</a> <a ng-click="taskCtrl.viewTeamTasks()">My Team Task</a> <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
               </div>
             </div>
-            <div class="row tasks-list collapse" ng-repeat="task in taskLists">
+            <div class="row tasks-list collapse" ng-repeat="task in myTaskLists">
               <div class="large-16 columns task-title">
-                <input type="checkbox" />0123  Task Title / Request Title <span class="right"><img src="images/edit-icon.png" alt="edit" ng-click="taskCtrl.viewTask(task.location)"/></span>
+                <input type="checkbox" />{{task.taskName}}<span class="right"><img src="images/edit-icon.png" alt="edit" ng-click="taskCtrl.viewTask(task.taskId)"/></span>
               </div>
               <div class="large-16 columns task-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.
-Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.</p>
+                <p>{{task.taskDescription}}</p>
               <div class="task-status-info">
                 <ul class="large-block-grid-4">
-                  <li ng-repeat="(key, val) in task">{{key}}: <span>{{val}}</span></li>                  
+                  <li>Status: <span>{{task.taskWorkAllocation.status}}</span></li>
+                  <li>Priority: <span>{{task.priorityName}}</span></li>
+                  <li>Assigned To : <span>{{task.taskWorkAllocation.firstName + " " +task.taskWorkAllocation.lastName}}</span></li>
+                  <li>Assigned Date: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
+                  <li>Target Date: <span>{{task.toDate}}</span></li>
+                  <li>Work Allocation: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
+                  <li>Created By: <span>{{task.createdDate}}</span></li>  
+                                  
                 </ul>
               </div>
             </div>
