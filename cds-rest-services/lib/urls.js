@@ -150,7 +150,7 @@ module.exports = {
             path: "user/dashboard/eventpendingcadres/assignTo",
             method: "GET"
         },
-        verifyVnC: {
+        approveVnC: {
             path: "userstatuschange/%s/cadre/approve/",
             method: "POST"
         },
@@ -160,7 +160,7 @@ module.exports = {
         },
         holdVnC: {
             path: "userstatuschange/%s/cadre/waitingforinfo",
-            method: "POST"
+            method: "PUT"
         },
         assignCadreForApproval: {
             path: "userstatuschange/cadre/assign",

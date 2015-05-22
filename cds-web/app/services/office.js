@@ -21,16 +21,16 @@ exports.VnCVerificationList = function(params, token, callback) {
     });
 };
 
-exports.verifyCadre = function(params, token, callback) {
-    log.debug("verifyCadre : " + (JSON.stringify(params)));
+exports.approveVnC = function(params, token, callback) {
+    log.debug("approveVnC : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
 
     //build url path
     var url = {
-        path: requireUtil.format(restUrls.office.verifyVnC.path, params.userId),
-        method: restUrls.office.verifyVnC.method
+        path: requireUtil.format(restUrls.office.approveVnC.path, params.userId),
+        method: restUrls.office.approveVnC.method
     };
 
     restService.builbArgs(url, params, headers, function(args) {

@@ -31,13 +31,13 @@ exports.assignCadreForApproval = function(req, res, next) {
     });
 };
 
-exports.verifyVnC = function(req, res, next) {
-    log.debug("verifyVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId + " type : " + req.query.type);
+exports.approveVnC = function(req, res, next) {
+    log.debug("approveVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId + " type : " + req.query.type);
     var userId = req.query.userId;
     var type = req.query.type;
     var token = req.user ? req.user.data.token : null;
 
-    officeService.verifyVnC({
+    officeService.approveVnC({
         citizenId: userId,
         approvalType: type
     }, token, function(resp) {
