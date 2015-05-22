@@ -32,7 +32,7 @@ define(['services/serviceModule'], function(serviceModule) {
 				getCadres : function(userInput, cb){
 					$http.get(appUrlService.getCadreList,{
 						params: {
-						   q: "dk"
+						   q: userInput
 						}
 					}).success(function(resp){
 						cb(resp);
@@ -72,7 +72,16 @@ define(['services/serviceModule'], function(serviceModule) {
 						cb(resp);
 					});
 				},
-
+				deleteTask:function(taskId, cb){
+					$http.get(appUrlService.deleteTask,{
+						params: {
+						   id:taskId
+						}
+						
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
 				
    			}
 

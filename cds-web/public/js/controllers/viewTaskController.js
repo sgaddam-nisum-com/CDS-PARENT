@@ -24,6 +24,19 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             taskService.getTaskPriorities(function(resp){
                 self.taskPriorities = resp.data;
             });
+            this.save = function() {            
+                console.log("here");
+                console.log(self);
+                $http({
+                    url : appUrls.saveTaskInfo,                        
+                    method : "POST",
+                    data: self.user
+                }).success(function(data, textStatus, jqXHR) {
+                        $state.go("root.allTasks");
+                }).error(function(jqXHR, textStatus, errorThrown) {
+
+                })               
+            };
 
         }
     ]);

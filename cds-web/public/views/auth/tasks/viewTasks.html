@@ -9,7 +9,10 @@
             </div>
             <div class="row tasks-list collapse">
               <div class="large-16 columns task-title" >
-                {{viewTaskCtrl.taskDetails.taskName}}                
+                {{viewTaskCtrl.taskDetails.taskName}} 
+                <div class="right">
+                  <button class="submit">Update</button>
+                </div>               
               </div>
               <div class="large-16 columns">
                 <div class="task-details">
@@ -30,15 +33,20 @@
                             <option>Select Priority</option>            
                       </select>
                     </li>
-                    <li>Assigned Date:  <input type="text" class="calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate"/></li>
-                    <li>Target Date:  <input type="text" class="calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" /></li>
-                    <li>Work Location:  <select><option>Vijayawada</option> <option>Hyderabad</option></select></li>
+                    <li>Assigned Date:  <input type="text" class="calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate"/>
+                    </li>
+                    <li>Target Date:  <input type="text" class="calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" />
+                    </li>
+                    <li>Work Location: 
+                      <input type="text" ng-model="viewTaskCtrl.taskDetails.location" />
+                      
+                    </li>
                   </ul>
                 </div>
             </div>
             <div class="large-16 columns task-description">
               <h6>Description</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam arius. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.</p> 
+              <p>{{viewTaskCtrl.taskDetails.taskDescription}}</p> 
             </div>
             <div class="large-16 columns attachements">
               <h6>Attachements</h6>
@@ -56,26 +64,10 @@
                 </div>
               </div>
               <div class="large-16 columns comments-list">
-                <ul>
+                <ul ng-repeat="comment in viewTaskCtrl.taskDetails.comments">
                   <li>
-                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
-                  </li>
-                  <li>
-                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
-                  </li>
-                  <li>
-                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
-                  </li>
-                  <li>
-                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
-                  </li>
-                  <li>
-                    <div class="info">Srinivas <span class="right">25/03/2014</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. </p>
+                    <div class="info">{{comment.commentedByFN+" "+comment.commentedByLN}} <span class="right">{{comment.commentedOn}}</span></div>
+                    <p>{{comment.commentDescription}}</p>
                   </li>
                 </ul>
               </div>
@@ -86,18 +78,21 @@
           <div class="large-4 medium-12 small-16 columns">
             <div class="user-information">
               <div class="arrow"></div>
-              <h5>Srinivas Kongara</h5>
+              <h5>{{viewTaskCtrl.taskDetails.taskWorkAllocation.firstName+" "+viewTaskCtrl.taskDetails.taskWorkAllocation.lastName}}</h5>
                 <img src="images/image.png" />
                 <div class="details">
                   <ul>
-                    <li>Age/Gender <span>29 Male</span></li>
-                    <li>Phone <span>123456789</span></li>
-                    <li>Email <span>abcd@gmail.com</span></li>
-                    <li>Location <span>Benz Circle</span></li>
-                    <li>Constituency <span>Vijayawada</span></li>
+                    <li>Age/Gender: <span>{{viewTaskCtrl.taskDetails.taskWorkAllocation.age}}  {{viewTaskCtrl.taskDetails.taskWorkAllocation.gender}}</span>
+                    </li>
+                    <li>Phone: <span>{{viewTaskCtrl.taskDetails.taskWorkAllocation.phoneNumber}}</span></li>
+                    <li>Email: <span>{{viewTaskCtrl.taskDetails.taskWorkAllocation.emailId}}</span></li>
+                    <li>Location: <span>{{viewTaskCtrl.taskDetails.location}}</span></li>
+                    <li>Constituency: <span>{{viewTaskCtrl.taskDetails.taskWorkAllocation.constituency}}</span>
+                    </li>
                   </ul>
                 </div>
             </div>
           </div>
       </div>
 </section>
+</form>

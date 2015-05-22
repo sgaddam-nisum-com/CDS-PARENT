@@ -40,26 +40,29 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             this.viewAllTasks = function(){                
                 $state.go('root.allTasks');                
             }
+            this.deleteTask = function(params){
+                taskService.deleteTask(params, function(resp){                     
+                    console.log(resp);               
+                });                
+            }
 
-            this.save = function() {  
-
+            this.save = function() { 
             
-            var commentsObj= angular.copy(self.user.comments);
-            commentsObj.commentBy = 103; 
-            commentsObj.commentTo = 104;
-            var commentsArray = [];
-            commentsArray.push(commentsObj);
-            self.user.comments = commentsArray;
+                var commentsObj= angular.copy(self.user.comments);
+                commentsObj.commentTo = 104;
+                var commentsArray = [];
+                commentsArray.push(commentsObj);
+                self.user.comments = commentsArray;
 
-                   $http({
-                        url : appUrls.saveTaskInfo,                        
-                        method : "POST",
-                        data: self.user
-                    }).success(function(data, textStatus, jqXHR) {
-                            
-                     }).error(function(jqXHR, textStatus, errorThrown) {
+                $http({
+                    url : appUrls.saveTaskInfo,                        
+                    method : "POST",
+                    data: self.user
+                }).success(function(data, textStatus, jqXHR) {
+                        $state.go("root.allTasks");
+                }).error(function(jqXHR, textStatus, errorThrown) {
 
-                     })
+                })
                
             };
         }

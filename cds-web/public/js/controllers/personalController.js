@@ -7,12 +7,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
             this.showLoader = false;
             this.showImage = true;
 
-            var self = this;
+            var self = this,
+            dataJson;
         
 
-                handleUserEdit();
-            
-
+            handleUserEdit();
 
             $('#left-nav-mobile').change(function() {
                 $state.go('root.register.work');
@@ -57,10 +56,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
             }
 
             this.save = function() {
-                cdsService.isRegistered = true;
-             
-                console.log(self.user);
 
+                cdsService.isRegistered = true;
 
                 $http({
                     method: "PUT",
@@ -82,8 +79,25 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
             function handleUserEdit() {
                 self.showImage = false;                
+                self.user = {};
                 registerService.getPersonalInfo(function(resp) {
-                    self.user = resp.data;
+                  
+                    $scope.dataJson = dataJson = resp.data;
+
+                    self.user.firstName = dataJson.firstName;
+                    self.user.middleName = dataJson.middleName;
+                    self.user.lastName = dataJson.lastName;
+                    self.user.loginId = dataJson.loginId;
+                    self.user.gender = dataJson.gender;
+                    self.user.dateOfBirth = dataJson.dateOfBirth;
+                    self.user.mobileNumber = dataJson.mobileNumber;
+                    self.user.phoneNumber = dataJson.phoneNumber;
+                    self.user.emailId = dataJson.emailId;
+                    self.user.skypeId = dataJson.skypeId;
+                    self.user.maritalStatus = dataJson.maritalStatus;
+                    self.user.educationId = dataJson.educationId;
+
+
                 });
             }
 

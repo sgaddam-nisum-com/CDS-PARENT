@@ -19,7 +19,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				saveresidentialaddress : "/citizen/saveresidentialaddress",
 				saveVolunteer : "/volunteer/save",
 				saveFamily : "/cadre/saveFamily",
-				saveCadre : "/cadre/save",
+				saveCadre : "/auth/cadre/save",
 
 
 				updatePersonalInfo : '/auth/citizen/editpersonalinf',
@@ -88,6 +88,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				getAllTasks : "/auth/user/tasks",
 				getTaskStatuses: "/user/statuses",
 				getMyTasksList :"/auth/user/assignedtasks",
+				deleteTask : "/auth/user/deletetask",
+				updateTask : "/auth/user/updatetasksstatus",
 
 				deleteUser : "/volunteer/delete"
 

@@ -1,5 +1,3 @@
-'use strict';
-
 define(['directives/directiveModule'], function(directiveModule) {
     directiveModule.directive('resourceDirective', ["registerService",
         function(registerService) {
@@ -11,10 +9,10 @@ define(['directives/directiveModule'], function(directiveModule) {
 
                  var self;
 
-                 resetStatus();   
-
+                 resetStatus();
+                 
+    
                     function availableSuccessCb(resp,userAvailableMsg,userNotAvailableMsg,inputName) {
-
                         $(self).next(".loader-container").remove();                           
                     
 						if (resp.status == "success") {
@@ -64,42 +62,57 @@ define(['directives/directiveModule'], function(directiveModule) {
                     });
 
 
+     
+
                     $(elem).on("blur",".loader-input", function() {
-                    	scope.$broadcast("clearErrors");
-                        self = this;
-                        resetStatus();
-						var userInput = $(elem).find(".loader-input").val().trim();
-						if(userInput){
-							$(this).after("<span class='loader-container'><img src='images/cds-loader.gif'></span>");
-								var inputName = $(elem).find(".loader-input").data("inputname");
-								
-								var userAvailableMsg,
-									userNotAvailableMsg;
+                            
+                        var curElemValue = $(this).val().trim();
 
-								if (inputName == "userName") {
-									userAvailableMsg="Username is available.";
-									userNotAvailableMsg = "Username not available";
-									registerService.checkUserNameExists(userInput, availableSuccessCb, userAvailableMsg,userNotAvailableMsg);
-								} else if (inputName == "mobileNumber") {
-									userAvailableMsg="Mobile Number is available for registration.";
-									userNotAvailableMsg = "Mobile Number is not available for registration.";
-									registerService.checkMobileNoExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);
-								} else {
-									userAvailableMsg="Email is available for registration.";
-									userNotAvailableMsg = "Email is not available for registration.";
-									registerService.checkEmailExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);
-								}
-							
-								$("#submitPersonalInfo").on("click", function(){
-									resetStatus();
-								});
-						}else{
-							scope.$broadcast("clearErrors");
-						}
+                        console.log(curElemValue);
+                    var userInput = $(elem).find(".loader-input").val().trim();
+                    var inputName = $(elem).find(".loader-input").data("inputname");
 
+                     if((inputName == "userName" && curElemValue != scope.dataJson.loginId) || (inputName == "mobileNumber" && curElemValue != scope.dataJson.mobileNumber) || (inputName == "email" && curElemValue != scope.dataJson.emailId)){
+
+                              	scope.$broadcast("clearErrors");
+                                self = this;
+
+                                resetStatus();
+        						
+        						if(userInput){
+        							$(this).after("<span class='loader-container'><img src='images/cds-loader.gif'></span>");
+        								
+        								
+        								var userAvailableMsg,
+        									userNotAvailableMsg;
+
+        								if (inputName == "userName") {
+        									userAvailableMsg="Username is available.";
+        									userNotAvailableMsg = "Username not available";
+        									registerService.checkUserNameExists(userInput, availableSuccessCb, userAvailableMsg,userNotAvailableMsg);
+        								} else if (inputName == "mobileNumber") {
+        									userAvailableMsg="Mobile Number is available for registration.";
+        									userNotAvailableMsg = "Mobile Number is not available for registration.";
+        									registerService.checkMobileNoExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);
+        								} else {
+        									userAvailableMsg="Email is available for registration.";
+        									userNotAvailableMsg = "Email is not available for registration.";
+        									registerService.checkEmailExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);
+        								}
+        							
+        								$("#submitPersonalInfo").on("click", function(){
+        									resetStatus();
+        								});
+        						}else{
+        							scope.$broadcast("clearErrors");
+        						}
+                             }else{
+
+                                resetStatus();
+                             }   
 
                     });
-
+             
 
                 }
             }

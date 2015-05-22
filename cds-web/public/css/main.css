@@ -2600,6 +2600,12 @@ div.navigation a.next {
   padding: 0 0 0 5px;
 }
 
+/* line 118, ../scss/components/_task.scss */
+.noTasks {
+  text-align: center;
+  font-size: 40px;
+}
+
 /* line 4, ../scss/components/_view-tasks.scss */
 .task-details ul li {
   font-size: 13px;
@@ -2722,6 +2728,11 @@ div.navigation a.next {
 /* line 91, ../scss/components/_view-tasks.scss */
 .user-information .details ul li span {
   padding: 0 0 0 10px;
+  font-weight: bold;
+}
+
+/* line 96, ../scss/components/_view-tasks.scss */
+.selectedTaskTab {
   font-weight: bold;
 }
 

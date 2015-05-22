@@ -11,10 +11,15 @@
             </div>
             <div class="row collapse">
               <div class="large-16 columns task-links">
-                <a href="#">My Tasks</a> <a ng-click="taskCtrl.viewTeamTasks()">My Team Task</a> <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
+                <a href="#">My Tasks</a> 
+                <a ng-click="taskCtrl.viewTeamTasks()" class="selectedTaskTab">My Team Tasks</a> 
+                <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
               </div>
             </div>
-            <div class="row tasks-list collapse" ng-repeat="task in teamTasks">              
+            <div class="row tasks-list collapse noTasks" ng-if="teamTasks.length == 0">
+                  No tasks to show
+            </div>
+            <div class="row tasks-list collapse" ng-if="teamTasks.length > 0" ng-repeat="task in teamTasks">              
               <div class="large-16 columns task-title">
                 <input type="checkbox" />{{task.taskName}}<span class="right"><img src="images/edit-icon.png" alt="edit" ng-click="taskCtrl.viewTask(task.taskId)"/></span>
               </div>

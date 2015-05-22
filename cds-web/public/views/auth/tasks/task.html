@@ -11,69 +11,33 @@
             </div>
             <div class="row collapse">
               <div class="large-16 columns task-links">
-                <a href="#">My Tasks</a> <a ng-click="taskCtrl.viewTeamTasks()">My Team Task</a> <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
+                <a href="#" class="selectedTaskTab">My Tasks</a> 
+                <a ng-click="taskCtrl.viewTeamTasks()">My Team Tasks</a> 
+                <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
               </div>
             </div>
-            <div class="row tasks-list collapse" ng-repeat="task in myTaskLists">
+            <div class="row tasks-list collapse noTasks" ng-if="myTaskLists.length == 0">
+                  No tasks to show
+            </div>
+            <div class="row tasks-list collapse" ng-if="myTaskLists.length > 0" ng-repeat="task in myTaskLists">
               <div class="large-16 columns task-title">
                 <input type="checkbox" />{{task.taskName}}<span class="right"><img src="images/edit-icon.png" alt="edit" ng-click="taskCtrl.viewTask(task.taskId)"/></span>
               </div>
               <div class="large-16 columns task-details">
                 <p>{{task.taskDescription}}</p>
-              <div class="task-status-info">
-                <ul class="large-block-grid-4">
-                  <li>Status: <span>{{task.taskWorkAllocation.status}}</span></li>
-                  <li>Priority: <span>{{task.priorityName}}</span></li>
-                  <li>Assigned To : <span>{{task.taskWorkAllocation.firstName + " " +task.taskWorkAllocation.lastName}}</span></li>
-                  <li>Assigned Date: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
-                  <li>Target Date: <span>{{task.taskWorkAllocation.toDate}}</span></li>
-                  <li>Work Allocation: <span>{{task.location}}</span></li>
-                  <li>Created By: <span>{{task.createdByFName}} {{task.createdByLName}}</span></li>  
-                                  
-                </ul>
+                  <div class="task-status-info">
+                    <ul class="large-block-grid-4">
+                      <li>Status: <span>{{task.taskWorkAllocation.status}}</span></li>
+                      <li>Priority: <span>{{task.priorityName}}</span></li>
+                      <li>Assigned To : <span>{{task.taskWorkAllocation.firstName + " " +task.taskWorkAllocation.lastName}}</span></li>
+                      <li>Assigned Date: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
+                      <li>Target Date: <span>{{task.toDate}}</span></li>
+                      <li>Work Allocation: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
+                      <li>Created By: <span>{{task.createdDate}}</span></li>                                
+                    </ul>
+                </div>
               </div>
-            </div>
-            </div>
-            <!-- <div class="row tasks-list collapse">
-              <div class="large-16 columns task-title">
-                <input type="checkbox" />0123  Task Title / Request Title <span class="right"><img src="images/edit-icon.png" alt="edit" />
-              </div>
-              <div class="large-16 columns task-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.
-Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.</p>
-              <div class="task-status-info">
-                <ul class="large-block-grid-4">
-                  <li>Status:  <span>In-Progress</span></li>
-                  <li>Priority:  <span>Medium</span></li>
-                  <li>Assigned to:  <span>R R Rao</span></li>
-                  <li>Assigned Date:  <span>01/10/2014</span></li>
-                  <li>Target Date:  <span>10/12/2014</span></li>
-                  <li>Work Location:  <span>01/10/2014</span></li>
-                  <li>Created By:  <span>10/12/2014</span></li>
-                </ul>
-              </div>
-            </div>
-            </div> -->
-            <!-- <div class="row tasks-list collapse">
-              <div class="large-16 columns task-title">
-                <input type="checkbox" />0123  Task Title / Request Title <span class="right"><img src="images/edit-icon.png" alt="edit" />
-              </div>
-              <div class="large-16 columns task-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin neque ac posuere ornare. Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.
-Proin velit enim, consequat quis lo quis, actor molestie mauris. Nam varius.</p>
-              <div class="task-status-info">
-                <ul class="large-block-grid-4">
-                  <li>Status:  <span>In-Progress</span></li>
-                  <li>Priority:  <span>Medium</span></li>
-                  <li>Assigned to:  <span>R R Rao</span></li>
-                  <li>Assigned Date:  <span>01/10/2014</span></li>
-                  <li>Target Date:  <span>10/12/2014</span></li>
-                  <li>Work Location:  <span>01/10/2014</span></li>
-                  <li>Created By:  <span>10/12/2014</span></li>
-                </ul>
-              </div>
-            </div>
-            </div> -->
+            </div>            
           </div>
       </div>
 </section>
