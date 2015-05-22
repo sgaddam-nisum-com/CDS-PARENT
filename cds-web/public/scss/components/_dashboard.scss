@@ -170,10 +170,11 @@
 
 /* Bootstap overrides */
 .widget-container {
-	height: 455px;
+	max-height: 455px;
+  overflow: hidden;
 }
 .widget {
-	border-radius: 3px;
+	border-radius: 0px;
 	border: solid 1px #4c8ac7;
 }
 .panel-default > .panel-heading {
@@ -184,8 +185,8 @@
 	font-size: 14px;
 }
 .panel-heading {
-	border-top-left-radius: 1px;
-	border-top-right-radius: 1px;
+	border-radius: 0px;
+	border-radius: 0px;
 }
 .subscribe {
 	padding: 8px !important;
@@ -193,4 +194,8 @@
 .ui-grid-pager-row-count-picker {
 	font-size: 12px;
 	padding: 10px 0 0 10px;
+}
+.configure-btn{
+  float: right !important;
+  margin-left: 10px;
 }

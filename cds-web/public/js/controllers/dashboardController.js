@@ -19,40 +19,12 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
 	 			
 
 	 	var widgetDefinitions = [
-      {
-        name: 'Cadre Verifications',
-        title : "Cadre Verifications",
-        style: {
-          width: '33%'
-        },       
-        enableVerticalResize : true,
-        directive : "cadre-verification-directive",
-        templateUrl : "views/dashboard/cadre-verifications.html"
-      },
-       {
-        name: 'My Tasks',
-        title : "My Tasks",
-        style: {
-          width: '33%'
-        },      
-        directive : "self-tasks-directive",
-        templateUrl : "views/dashboard/self-tasks.html"
-      },
-      {
-        name: 'My Team Tasks',
-         title : "My Team Tasks",
-        style: {
-          width: '33%'
-        },
-     
-        directive :"team-tasks-directive"
-      },
-
-      {
+    {
         name: 'Age wise Tasks',
         title : "Age wise Tasks",
         style: {
-          width: '33%'
+          width: '33%',
+          height:"270px"
         },
         directive :"tasksage-chart-directive",
         templateUrl : "views/dashboard/tasksage-chart.html"
@@ -62,7 +34,8 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         name: 'My Tasks View',
         title : "My Tasks",
         style: {
-          width: '33%'
+          width: '33%',
+          height:"270px"
         },
         directive :"mytasks-chart-directive",
         templateUrl : "views/dashboard/mytasks-chart.html"
@@ -72,11 +45,43 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         name: 'Tasks trend',
         title : "Tasks trend",
         style: {
-          width: '33%'
+          width: '34%',
+          height:"270px"
         },
         directive :"taskstrend-chart-directive",
         templateUrl : "views/dashboard/taskstrend-chart.html"
       },
+      {
+        name: 'Cadre Verifications',
+        title : "Cadre Verifications",
+        style: {
+          width: '75%'
+        },       
+        enableVerticalResize : true,
+        directive : "cadre-verification-directive",
+        templateUrl : "views/dashboard/cadre-verifications.html"
+      },
+       {
+        name: 'Alerts / Notifications',
+        title : "Alerts / Notifications",
+        style: {
+          width: '25%'
+        },      
+        directive : "self-tasks-directive",
+        templateUrl : "views/dashboard/self-tasks.html"
+      },
+      {
+        name: 'My Team Tasks',
+         title : "My Team Tasks",
+        style: {
+          width: '100%'
+        },
+     
+        directive :"team-tasks-directive"
+      }
+
+
+      
 
 
 

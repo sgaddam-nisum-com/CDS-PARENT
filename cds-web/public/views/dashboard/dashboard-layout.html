@@ -5,11 +5,11 @@
 <div>
     <div class="row">
     <div class="col-lg-7"><h1>Dashboard</h1></div>
-    <div class="col-lg-5"><br />
+    <div class="col-lg-5 text-right"><br />
     <div class="btn-toolbar" ng-if="!options.hideToolbar">
         
 
-        <div class="btn-group" ng-if="!options.widgetButtons">
+        <div class="btn-group configure-btn" ng-if="!options.widgetButtons">
             <span class="dropdown" on-toggle="toggled(open)">
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 Configure <span class="caret"></span>
@@ -32,19 +32,19 @@
 
 
 
-        <button class="btn btn-warning" ng-click="resetWidgetsToDefault()">Default Widgets</button>
+        <button class="btn btn-warning" ng-click="resetWidgetsToDefault()">Refresh</button>
 
         <button ng-if="options.storage && options.explicitSave" ng-click="options.saveDashboard()" class="btn btn-success" ng-disabled="!options.unsavedChangeCount">{{ !options.unsavedChangeCount ? "all saved" : "save changes (" + options.unsavedChangeCount + ")" }}
         </button>
 
-        <button ng-click="clear();" type="button" class="btn btn-info">Clear</button>
+       <!--  <button ng-click="clear();" type="button" class="btn btn-info">Clear</button> -->
     </div>
 </div></div>
     <div ui-sortable="sortableOptions" ng-model="widgets" class="dashboard-widget-area">
         <div ng-repeat="widget in widgets" ng-style="widget.containerStyle" class="widget-container" widget>
            
             <div class="widget panel panel-default">
-                <div class="widget-header panel-heading">
+                <div class="widget-header panel-heading" >
                     <h3 class="panel-title">
                         
                         <!-- add ng-dblclick="editTitle(widget)" to enable edit title feature -->

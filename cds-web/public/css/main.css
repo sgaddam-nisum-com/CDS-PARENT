@@ -236,41 +236,48 @@
 /* Bootstap overrides */
 /* line 172, ../scss/components/_dashboard.scss */
 .widget-container {
-  height: 455px;
+  max-height: 455px;
+  overflow: hidden;
 }
 
-/* line 175, ../scss/components/_dashboard.scss */
+/* line 176, ../scss/components/_dashboard.scss */
 .widget {
-  border-radius: 3px;
+  border-radius: 0px;
   border: solid 1px #4c8ac7;
 }
 
-/* line 179, ../scss/components/_dashboard.scss */
+/* line 180, ../scss/components/_dashboard.scss */
 .panel-default > .panel-heading {
   background: #4c8ac7;
   color: #ffffff;
 }
 
-/* line 183, ../scss/components/_dashboard.scss */
+/* line 184, ../scss/components/_dashboard.scss */
 .panel-title {
   font-size: 14px;
 }
 
-/* line 186, ../scss/components/_dashboard.scss */
+/* line 187, ../scss/components/_dashboard.scss */
 .panel-heading {
-  border-top-left-radius: 1px;
-  border-top-right-radius: 1px;
+  border-radius: 0px;
+  border-radius: 0px;
 }
 
-/* line 190, ../scss/components/_dashboard.scss */
+/* line 191, ../scss/components/_dashboard.scss */
 .subscribe {
   padding: 8px !important;
 }
 
-/* line 193, ../scss/components/_dashboard.scss */
+/* line 194, ../scss/components/_dashboard.scss */
 .ui-grid-pager-row-count-picker {
   font-size: 12px;
   padding: 10px 0 0 10px;
+}
+
+/* line 198, ../scss/components/_dashboard.scss */
+.configure-btn {
+  float: right !important;
+  margin-left: 10px;
 }
 
 /******Do not change. Styles to make footer at bottom on variable section height. ***********/
