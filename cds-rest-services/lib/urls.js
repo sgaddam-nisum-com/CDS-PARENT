@@ -189,7 +189,7 @@ module.exports = {
             method: "GET"
         },
         cadresTrendRPerMonth: {
-            path: "user/dashboard/getcadrestrendreportspermonth",
+            path: "user/dashboard/cadresandvolunteerstrendreportspermonth",
             method: "GET"
         }
     },

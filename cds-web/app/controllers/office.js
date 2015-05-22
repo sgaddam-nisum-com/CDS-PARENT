@@ -78,7 +78,7 @@ exports.holdVnC = function(req, res, next) {
 
 exports.getServiceCentreEmployeeDetails = function(req, res, next) {
     log.debug("getServiceCentreEmployeeDetails : logged user - " + req.user.data.user.appUserId);
-    var sId = req.query.sId;
+    var sId = req.query.id;
     var token = req.user ? req.user.data.token : null;
 
     officeService.getServiceCentreEmployeeDetails({
