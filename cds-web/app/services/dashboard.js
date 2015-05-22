@@ -46,7 +46,7 @@ exports.messageCount = function(params, token, callback) {
         method: restUrls.dashboard.messageCount.method
     };
 
-    restService.builbArgs(restUrls.dashboard.messageCount, null, headers, function(args) {
+    restService.builbArgs(url, null, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -82,7 +82,7 @@ exports.tasksTrendRPerMonth = function(params, token, callback) {
 };
 
 exports.cadresTrendRPerMonth = function(token, callback) {
-    log.debug("cadresTrendRPerMonth : " + (JSON.stringify(params)));
+    log.debug("cadresTrendRPerMonth");
     var headers = header;
     headers[cdsConfig.token] = token;
 
