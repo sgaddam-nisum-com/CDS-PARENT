@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['directives/directiveModule','jquery'], function (directiveModule,$) {
 	directiveModule.directive('fixedFooterDirective', ["$location","$rootScope", function($location, $rootScope){	

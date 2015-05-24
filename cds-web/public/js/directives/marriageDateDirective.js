@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['directives/directiveModule','datepicker'], function (directiveModule) {
 	directiveModule.directive('marriageDate', ["cdsService",function(cdsService){	

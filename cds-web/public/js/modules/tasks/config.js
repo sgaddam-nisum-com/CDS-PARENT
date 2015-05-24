@@ -1,5 +1,5 @@
 /*global define*/
-'use strict';
+ 
 
 define(['appTasks','uiRouter','angularRoute'], function (app) {
 

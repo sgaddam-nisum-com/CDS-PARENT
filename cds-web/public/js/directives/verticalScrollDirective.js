@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['directives/directiveModule','simplyscroll'], function (directiveModule,simplyscroll) {
 	directiveModule.directive('verticalScrollDirective', function(){			

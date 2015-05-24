@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['directives/directiveModule','slick',"jquery"], function (directiveModule,slick,$) {
 	directiveModule.directive('slickGalleryDirective', function(){			

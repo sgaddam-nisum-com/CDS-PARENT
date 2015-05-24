@@ -38,7 +38,7 @@ angular.module('ui.models', []);
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.models')
 
@@ -286,7 +286,7 @@ angular.module('ui.models')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.models')
   .factory('WebSocketDataModel', function (WidgetDataModel, webSocket) {
@@ -420,7 +420,7 @@ angular.module('ui.models')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.visibility', [])
   .factory('Visibility', function ($window) {
@@ -442,7 +442,7 @@ angular.module('ui.visibility', [])
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.websocket')
   .factory('Visibility', function ($window) {
@@ -1132,7 +1132,7 @@ function Gauge(element, configuration)
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtBarChart', function ($filter) {
@@ -1195,7 +1195,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtGauge', function () {
@@ -1266,7 +1266,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtHistoricalChart', function () {
@@ -1303,7 +1303,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtLineChart', function () {
@@ -1395,7 +1395,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtMetricsChart', function ($filter, MetricsChartHistory) {
@@ -1601,7 +1601,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtNvd3LineChart', function ($filter) {
@@ -1693,7 +1693,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtPieChart', function () {
@@ -1740,7 +1740,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtRandom', function ($interval) {
@@ -1777,7 +1777,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtScopeWatch', function () {
@@ -1807,7 +1807,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtSelect', function () {
@@ -1851,7 +1851,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtTime', function ($interval) {
@@ -1889,7 +1889,7 @@ angular.module('ui.widgets')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.widgets')
   .directive('wtTopN', function () {

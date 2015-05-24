@@ -1,3 +1,6 @@
+
+
+define(["angular"],function(angular){
 /*
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
@@ -4118,3 +4121,5 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "    </li>\n" +
     "</ul>");
 }]);
+
+});

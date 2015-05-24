@@ -1,4 +1,4 @@
-'use strict';
+ 
 define(['controllers/controllerModule'], function (controllerModule) {
 
 	 controllerModule.controller('leftNavController', ['$http','$location',"cdsService",'$rootScope', function($http,$location,cdsService,$rootScope){

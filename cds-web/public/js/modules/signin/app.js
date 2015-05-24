@@ -1,5 +1,5 @@
 /*global define*/
-'use strict';
+ 
 
 define(['angular',
 	'uiRouter',

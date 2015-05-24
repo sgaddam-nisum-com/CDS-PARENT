@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['controllers/controllerModule','formValidation','validators/addressValidators','errorMessages/addressErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
 

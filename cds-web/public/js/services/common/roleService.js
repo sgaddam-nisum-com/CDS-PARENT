@@ -1,4 +1,3 @@
-'use strict';
 
 define(['services/serviceModule'], function(serviceModule) {
     serviceModule.factory('roleService', ['$http',

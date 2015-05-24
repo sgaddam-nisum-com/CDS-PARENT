@@ -1,7 +1,7 @@
 /*global define*/
-'use strict';
+ 
 
-define(['appHome','uiRouter','angularRoute'], function (app) {
+define(['appHome'], function (app) {
 
 
 app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){

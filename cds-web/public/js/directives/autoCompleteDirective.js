@@ -1,4 +1,4 @@
-'use strict';
+ 
 
 define(['directives/directiveModule', 'autocomplete'], function(directiveModule) {
     directiveModule.directive('autoCompleteDirective', ["cdsService","taskService",

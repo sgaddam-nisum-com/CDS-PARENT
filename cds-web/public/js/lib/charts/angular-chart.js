@@ -2,7 +2,7 @@
 
 
 (function (factory) {
-  'use strict';
+   
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['angular', 'chartJs'], factory);
@@ -14,7 +14,7 @@
     factory(angular, Chart);
   }
 }(function (angular, Chart) {
-  'use strict';
+   
 
   Chart.defaults.global.responsive = true;
   Chart.defaults.global.multiTooltipTemplate = '<%if (datasetLabel){%><%=datasetLabel%>: <%}%><%= value %>';

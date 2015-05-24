@@ -1,5 +1,5 @@
 /*global define*/
-'use strict';
+ 
 
 
 define(['appRegister','uiRouter','angularRoute'], function (app) {

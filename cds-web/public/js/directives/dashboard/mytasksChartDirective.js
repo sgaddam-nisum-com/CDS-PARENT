@@ -1,4 +1,4 @@
-'use strict';
+ 
 
 define(['directives/directiveModule'], function(directiveModule) {
     directiveModule.directive('mytasksChartDirective', ['dashboardService',

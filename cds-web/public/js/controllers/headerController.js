@@ -1,4 +1,3 @@
-'use strict';
 define(['controllers/controllerModule'], function (controllerModule) {
 
 	 controllerModule.controller('headerController', ['$rootScope','$http','$location','cdsService',"roleService", function($rootScope,$http,$location, cdsService,roleService){

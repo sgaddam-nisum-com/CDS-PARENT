@@ -4,7 +4,7 @@
  * Inspired by https://github.com/tennisgent/angular-route-styles
  */
 
-'use strict';
+ 
 
 define(['angular'],function(){
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-define(["jquery","angular","angularBootstrap","angularSortable"],function($){
+define(["jquery","angular","angularBootstrap","angularSortable"],function($,angular){
 
 
 
@@ -323,7 +323,7 @@ $templateCache.put("components/directives/dashboardLayouts/dashboardLayouts.html
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .directive('widget', ['$injector', function ($injector) {
@@ -386,7 +386,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .controller('DashboardWidgetCtrl', ['$scope', '$element', '$compile', '$window', '$timeout',
@@ -633,7 +633,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .directive('dashboardLayouts', ['LayoutStorage', '$timeout', '$modal',
@@ -783,7 +783,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .controller('SaveChangesModalCtrl', ['$scope', '$modalInstance', 'layout', function ($scope, $modalInstance, layout) {
@@ -815,7 +815,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .controller('WidgetSettingsCtrl', ['$scope', '$modalInstance', 'widget', function ($scope, $modalInstance, widget) {
@@ -851,7 +851,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .factory('WidgetModel', ["$log", function ($log) {
@@ -968,7 +968,7 @@ angular.module('ui.dashboard')
 
 /**************************************************************************************************************************/
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .factory('WidgetDefCollection', function () {
@@ -1024,7 +1024,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .factory('WidgetDataModel', function () {
@@ -1069,7 +1069,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .factory('LayoutStorage', function() {
@@ -1322,7 +1322,7 @@ angular.module('ui.dashboard')
  * limitations under the License.
  */
 
-'use strict';
+ 
 
 angular.module('ui.dashboard')
   .factory('DashboardState', ['$log', '$q', function ($log, $q) {

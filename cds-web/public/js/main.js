@@ -1,5 +1,5 @@
 /*global require*/
-'use strict';
+ 
 
 
 require.config({
@@ -200,8 +200,11 @@ var routes = {
 
     var r = getRoute();
     function start() {
-        require( ["jquery",'angular', r.module.app, r.module.config ], function ( $,angular ) {
-        	angular.bootstrap(document, [r.module.moduleName]);
+        require( ["jquery",'angular'], function ( $,angular ) {        	
+        	require([r.module.config],function(){
+        		angular.bootstrap(document, [r.module.moduleName]);	
+        	});
+        	
            
         } );
     }

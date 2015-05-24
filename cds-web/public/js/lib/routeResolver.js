@@ -3,7 +3,7 @@
 * and provider that can dynamically load views and controllers.
 *
 */
-'use strict';
+ 
 
 define(['angular'], function (angular) {
 

@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['controllers/controllerModule','jquery'], function (controllerModule,$) {
 

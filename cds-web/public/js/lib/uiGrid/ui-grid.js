@@ -6,12 +6,12 @@
 define(["angular","angularAnimate","angularTouch"],function(angular){
 
 (function () {
-  'use strict';
+   
   angular.module('ui.grid.i18n', []);
   angular.module('ui.grid', ['ui.grid.i18n']);
 })();
 (function () {
-  'use strict';
+   
   angular.module('ui.grid').constant('uiGridConstants', {
     LOG_DEBUG_MESSAGES: true,
     LOG_WARN_MESSAGES: true,
@@ -702,7 +702,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 
 })();
 (function(){
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridFilter', ['$compile', '$templateCache', function ($compile, $templateCache) {
 
@@ -730,7 +730,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 })();
 
 (function () {
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridFooterCell', ['$timeout', 'gridUtil', 'uiGridConstants', '$compile',
   function ($timeout, gridUtil, uiGridConstants, $compile) {
@@ -811,7 +811,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 })();
 
 (function () {
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridFooter', ['$templateCache', '$compile', 'uiGridConstants', 'gridUtil', '$timeout', function ($templateCache, $compile, uiGridConstants, gridUtil, $timeout) {
 
@@ -876,7 +876,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 
 })();
 (function () {
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridGridFooter', ['$templateCache', '$compile', 'uiGridConstants', 'gridUtil', '$timeout', function ($templateCache, $compile, uiGridConstants, gridUtil, $timeout) {
 
@@ -914,7 +914,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 
 })();
 (function(){
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridGroupPanel', ["$compile", "uiGridConstants", "gridUtil", function($compile, uiGridConstants, gridUtil) {
     var defaultTemplate = 'ui-grid/ui-grid-group-panel';
@@ -950,7 +950,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 
 })();
 (function(){
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridHeaderCell', ['$compile', '$timeout', '$window', '$document', 'gridUtil', 'uiGridConstants', 'ScrollEvent',
   function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants, ScrollEvent) {
@@ -1307,7 +1307,7 @@ function ($timeout, gridUtil, uiGridConstants, uiGridColumnMenuService) {
 })();
 
 (function(){
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridHeader', ['$templateCache', '$compile', 'uiGridConstants', 'gridUtil', '$timeout', 'ScrollEvent',
     function($templateCache, $compile, uiGridConstants, gridUtil, $timeout, ScrollEvent) {
@@ -2092,7 +2092,7 @@ function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants) {
 
 })();
 (function () {
-  'use strict';
+   
 
   var module = angular.module('ui.grid');
 
@@ -2269,7 +2269,7 @@ function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants) {
 })();
 
 (function(){
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridRow', ['gridUtil', function(gridUtil) {
     return {
@@ -2339,7 +2339,7 @@ function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants) {
 
 })();
 (function(){
-// 'use strict';
+//  
 
   /**
    * @ngdoc directive
@@ -2419,7 +2419,7 @@ function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants) {
 
 })();
 (function(){
-  'use strict';
+   
 
   angular.module('ui.grid').directive('uiGridViewport', ['gridUtil','ScrollEvent','uiGridConstants', '$log',
     function(gridUtil, ScrollEvent, uiGridConstants, $log) {
@@ -2573,7 +2573,7 @@ angular.module('ui.grid')
 
 })();
 (function () {
-  'use strict';
+   
 
   angular.module('ui.grid').controller('uiGridController', ['$scope', '$element', '$attrs', 'gridUtil', '$q', 'uiGridConstants',
                     '$templateCache', 'gridClassFactory', '$timeout', '$parse', '$compile',
@@ -2907,7 +2907,7 @@ function uiGridDirective($compile, $templateCache, $timeout, $window, gridUtil, 
 })();
 
 (function(){
-  'use strict';
+   
 
   // TODO: rename this file to ui-grid-pinned-container.js
 
@@ -8393,7 +8393,7 @@ angular.module('ui.grid')
 })();
 
 (function () {
-  'use strict';
+   
   /**
    *  @ngdoc object
    *  @name ui.grid.service:gridClassFactory
@@ -12572,7 +12572,7 @@ module.filter('px', function() {
 })();
 
 (function() {
-  'use strict';
+   
   /**
    *  @ngdoc overview
    *  @name ui.grid.autoResize
@@ -12638,7 +12638,7 @@ module.filter('px', function() {
   }]);
 })();
 (function () {
-  'use strict';
+   
   var module = angular.module('ui.grid.cellNav', ['ui.grid']);
 
   function RowCol(row, col) {
@@ -13578,7 +13578,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -14729,7 +14729,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -15188,7 +15188,7 @@ module.filter('px', function() {
 /* global console */
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -16361,7 +16361,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -18012,7 +18012,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -18758,7 +18758,7 @@ module.filter('px', function() {
   ]);  
 })();
 (function() {
-  'use strict';
+   
   /**
    *  @ngdoc overview
    *  @name ui.grid.infiniteScroll
@@ -19281,7 +19281,7 @@ module.filter('px', function() {
 
 })();
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -19765,7 +19765,7 @@ module.filter('px', function() {
 })();
 
 (function() {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -20183,7 +20183,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -20428,7 +20428,7 @@ module.filter('px', function() {
 })();
 
 (function(){
-  'use strict';
+   
 
   var module = angular.module('ui.grid.resizeColumns', ['ui.grid']);
 
@@ -20984,7 +20984,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -21691,7 +21691,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -22455,7 +22455,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -23390,7 +23390,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -24801,7 +24801,7 @@ module.filter('px', function() {
 })();
 
 (function () {
-  'use strict';
+   
 
   /**
    * @ngdoc overview
@@ -25000,7 +25000,7 @@ module.filter('px', function() {
 })();
 
 angular.module('ui.grid').run(['$templateCache', function($templateCache) {
-  'use strict';
+   
 
   $templateCache.put('ui-grid/ui-grid-filter',
     "<div class=\"ui-grid-filter-container\" ng-repeat=\"colFilter in col.filters\" ng-class=\"{'ui-grid-filter-cancel-button-hidden' : colFilter.disableCancelFilterButton === true }\"><div ng-if=\"colFilter.type !== 'select'\"><input type=\"text\" class=\"ui-grid-filter-input\" ng-model=\"colFilter.term\" ng-attr-placeholder=\"{{colFilter.placeholder || ''}}\"><div class=\"ui-grid-filter-button\" ng-click=\"colFilter.term = null\" ng-if=\"!colFilter.disableCancelFilterButton\"><i class=\"ui-grid-icon-cancel\" ng-show=\"colFilter.term !== undefined && colFilter.term !== null && colFilter.term !== ''\">&nbsp;</i></div></div><div ng-if=\"colFilter.type === 'select'\"><select class=\"ui-grid-filter-select\" ng-model=\"colFilter.term\" ng-attr-placeholder=\"{{colFilter.placeholder || ''}}\" ng-options=\"option.value as option.label for option in colFilter.selectOptions\"><option value=\"\"></option></select><div class=\"ui-grid-filter-button-select\" ng-click=\"colFilter.term = null\" ng-if=\"!colFilter.disableCancelFilterButton\"><i class=\"ui-grid-icon-cancel\" ng-show=\"colFilter.term !== undefined && colFilter.term != null\">&nbsp;</i></div></div></div>"

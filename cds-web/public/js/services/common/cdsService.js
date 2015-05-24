@@ -1,5 +1,4 @@
 
-'use strict';
 
 define(['services/serviceModule'], function (serviceModule) {
 	serviceModule.factory('cdsService', ['$http',"appUrlService",function($http, appUrlService){	

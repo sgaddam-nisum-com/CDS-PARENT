@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['controllers/controllerModule','jquery','formValidation', 'validators/signinValidators', 'errorMessages/signinErrors'], function (controllerModule,$,formValidation, validationMap, errorJson) {
 

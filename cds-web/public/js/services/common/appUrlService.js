@@ -1,5 +1,5 @@
 
-'use strict';
+
 
 define(['services/serviceModule'], function (serviceModule) {
 

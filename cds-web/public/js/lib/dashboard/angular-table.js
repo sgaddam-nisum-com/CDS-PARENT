@@ -1,4 +1,4 @@
-'use strict';
+ 
 // Source: dist/controllers/MlhrTableController.js
 /*
 * Copyright (c) 2013 DataTorrent, Inc. ALL Rights Reserved.

@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['directives/directiveModule','accordion'], function (directiveModule) {
 	directiveModule.directive('accordion', ["cdsService",function(cdsService){			

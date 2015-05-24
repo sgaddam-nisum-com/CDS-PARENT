@@ -1,5 +1,5 @@
 
-'use strict';
+ 
 
 define(['directives/directiveModule','jquery','gallery/jquery.galleriffic','gallery/jquery.history','gallery/jquery.opacityrollover'], function (directiveModule,$,galleriffic,history,opacityrollover) {
 	directiveModule.directive('galleryDirective', ["cdsService",function(cdsService){	
