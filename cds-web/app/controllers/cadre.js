@@ -23,6 +23,7 @@ exports.save = function(req, res, next) {
 exports.edit = function(req, res, next) {
     log.debug("edit : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
+    params.userId = params.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     cdsRegistration.editCadre(params, token, function(resp) {
