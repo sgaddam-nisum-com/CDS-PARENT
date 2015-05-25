@@ -16,6 +16,11 @@ exports.VnCVerificationList = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
+    var url = {
+        path: requireUtil.format(restUrls.office.vnCVerificationList.path, params.type),
+        method: restUrls.office.vnCVerificationList.method
+    };
+
     restService.builbArgs(restUrls.office.vnCVerificationList, params, headers, function(args) {
         restService.makecall(args, callback);
     });

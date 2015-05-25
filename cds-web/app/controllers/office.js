@@ -6,14 +6,12 @@ var officeService = require('../services/office'),
     log = require('cds-logger').logger("office-controller");
 
 exports.VnCVerificationList = function(req, res, next) {
-    log.debug("VnCVerificationList : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId + " type : " + req.query.type);
-    var userId = req.query.userId;
+    log.debug("VnCVerificationList : logged user - " + req.user.data.user.appUserId + " type : " + req.query.type);
     var type = req.query.type;
     var token = req.user ? req.user.data.token : null;
 
     officeService.VnCVerificationList({
-        citizenId: userId,
-        approvalType: type
+        type: type
     }, token, function(resp) {
         req.resp = resp;
         next();
