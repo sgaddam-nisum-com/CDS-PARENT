@@ -6,11 +6,9 @@
 
  
 
-define(['angular'],function(){
+define([],function(){
 
-angular
-  .module('uiRouterStyles', ['ui.router'])
-  .directive('head', ['$rootScope', '$compile', '$state', '$interpolate',
+angular.module('uiRouterStyles', ['ui.router']).directive('head', ['$rootScope', '$compile', '$state', '$interpolate',
     function($rootScope, $compile, $state, $interpolate) {
       return {
         restrict: 'E',

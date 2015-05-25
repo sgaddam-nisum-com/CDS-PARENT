@@ -1,7 +1,7 @@
 
  
 
-define(['controllers/controllerModule','jquery','slick'], function (controllerModule,$,slick) {
+define(['controllers/controllerModule','jquery'], function (controllerModule,$) {
 
 
 	 controllerModule.controller('homeController', [function(){		

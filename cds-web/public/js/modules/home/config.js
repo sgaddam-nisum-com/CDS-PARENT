@@ -3,16 +3,10 @@
 
 define(['appHome'], function (app) {
 
-
-app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){
-
-       
-}]);
-
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
  
-   /* $urlRouterProvider
-    .otherwise('/');*/
+    $urlRouterProvider
+    .otherwise('/');
     
 
     /*****Non authenticated views*****/
@@ -35,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     /*Page id : CDS1*/
 
     .state('root.home',{
-        url: '',
+        url: '/',
         views: {           
             'content@': {
                 templateUrl: 'views/nonauth/home.html',
@@ -45,9 +39,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         },
         secured : false
     })
- 
-
-  
     .state('root.knowyourmp',{
         url: '/knowyourmp',
         views: {           

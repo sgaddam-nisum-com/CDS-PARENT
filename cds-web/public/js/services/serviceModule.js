@@ -1,3 +1,3 @@
-define(["angular"],function(angular){
+define([],function(){
 	return angular.module("serviceModule",[]);
 });
