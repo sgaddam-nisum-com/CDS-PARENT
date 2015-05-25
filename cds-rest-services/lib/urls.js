@@ -152,11 +152,11 @@ module.exports = {
         },
         approveVnC: {
             path: "userstatuschange/%s/cadre/approve/",
-            method: "POST"
+            method: "PUT"
         },
         rejectVnC: {
             path: "userstatuschange/%s/cadre/reject",
-            method: "POST"
+            method: "PUT"
         },
         holdVnC: {
             path: "userstatuschange/%s/cadre/waitingforinfo",

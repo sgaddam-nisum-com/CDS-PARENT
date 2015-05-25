@@ -151,8 +151,8 @@ exports.init = function(app, passport, auth) {
     app.put('/auth/office/vnc/approve', officeController.approveVnC, auth.filterResponse);
     app.put('/auth/office/vnc/holdvnc', officeController.holdVnC, auth.filterResponse);
     app.put('/auth/office/vnc/reject', officeController.rejectVnC, auth.filterResponse);
-    app.put('/auth/office/vnc/verificationlist', officeController.VnCVerificationList, auth.filterResponse);
-    app.put('/auth/office/vnc/assigncadreforapproval', officeController.assignCadreForApproval, auth.filterResponse);
+    app.get('/auth/office/vnc/verificationlist', officeController.VnCVerificationList, auth.filterResponse);
+    app.post('/auth/office/vnc/assigncadreforapproval', officeController.assignCadreForApproval, auth.filterResponse);
 
     app.put('/auth/office/servicecentredetails', officeController.getServiceCentreDetails, auth.filterResponse);
     app.put('/auth/office/servicecentreempdetails', officeController.getServiceCentreEmployeeDetails, auth.filterResponse);
