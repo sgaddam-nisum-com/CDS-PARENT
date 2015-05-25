@@ -1,9 +1,13 @@
 define(['controllers/controllerModule','formValidation','validators/familyValidators','errorMessages/familyErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
 	controllerModule.controller('familyController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
-		var self = this;
 		
-        handleUserEdit();
+		var self = this,
+		   dataJson={};
+		
+		dataJson.reqMethod = "POST";
+        dataJson.reqURL = appUrls.saveCadre;
+        handleGetFamily();
 
 		var config = {
             initiate :false,
@@ -20,7 +24,30 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 		
 		this.save = function(){
 			
-			var requestObj = [];
+			var requestData = [];
+			
+			requestData.push(self.user.spouseData);
+			
+			for(var j=0; j<self.user.childData.length; j++){
+				requestData.push(self.user.childData[j]);		
+			}
+			
+			$http({
+				method: "POST",
+				url: appUrls.updateFamily,
+				data: requestData
+			}).success(function(data, status, headers, config){
+
+				
+			}).error(function(data, status, headers, config){
+				
+
+			});
+
+
+
+
+		/*	
 			if(self.user.spouse) {
 				self.user.spouse.relationType = "Wife";
 				self.user.spouse.citizenId = cdsService.getUserId();
@@ -48,36 +75,33 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 					
 
 				});
-			} 
+			} */
+		
+
+
+
+
 		}
 
 
-		  function handleUserEdit() {
-                registerService.getFamilyInfo( function(resp) {
-                    self.user = resp.data;
-                });
-            }
+		  function handleGetFamily() {             
+              	registerService.getFamilyInfo( function(resp) {                  
+                 dataJson= resp.data;
+                 self.user = {};
+                 self.user.childData = [];
+                 self.users = resp.data;        
 
+                 for(var i=0; i<self.users.length; i++){
+                 	if(self.users[i].relationId==1){
+                 		self.user.spouseData = self.users[i];                 		
+                 	}else{
+                 		self.user.childData.push(self.users[i]);                 		
+                 	}
+                 };
 
-            function handleUserCreation() {
+				 });
 
-
-
-
-            }
-
-            function responseParser(resp) {
-
-            	var modelObj = resp
-
-
-            }
-
-
-
-
-
-
+          }
 
 	}]);
 
