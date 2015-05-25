@@ -3,7 +3,7 @@
  */
 
 exports.render = function(req, res, next) {
-    res.render('index.html', {
+    res.render('layouts/index.html', {
         msg: "Welcome"
     });
 };
