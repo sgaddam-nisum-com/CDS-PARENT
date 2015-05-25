@@ -4,11 +4,13 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 		
 
 		var self = this,
-		   dataJson;
+		   dataJson={};
         
 		self.user = {};
-		self.user.cadre={};
-        handleUserEdit();
+		self.user.cadre={};        
+        dataJson.reqMethod = "POST";
+        dataJson.reqURL = appUrls.saveCadre;
+        handleGetCadre();
         
 		var config = {
             initiate :true,
@@ -34,8 +36,8 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 			if(formStack.isValid){								
 
 				$http({
-					method: "POST",
-					url: appUrls.saveCadre,
+					method: dataJson.reqMethod,
+					url: dataJson.reqURL,
 					data: self.user	
 				}).success(function(data, status, headers, config){
 					console.log("success");
@@ -47,11 +49,15 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 		}
 
 
-		  function handleUserEdit() {
+		  function handleGetCadre() {
             
                 registerService.getCadreInfo( function(resp) {                  
-                	console.log(resp.data);
                     dataJson= resp.data;
+
+                    if(dataJson.cadreId){
+                    	dataJson.reqMethod = "PUT";
+                    	dataJson.reqURL =appUrls.updateCadre; 
+                    }
                
                 self.user.cadre = {};    
 	        	self.user.interestedAsCadre = "1";    
@@ -62,10 +68,19 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 	            self.user.cadre.partyMembershipId =dataJson.partyMembershipId;
 	            self.user.cadre.partyResponsibility =dataJson.partyResponsibility;
 				self.user.cadre.performanceGradeId =dataJson.performanceGradeId;
+				 
+
+
 				 });
             }
 
+             function handleUserEdit() {
 
+
+
+
+
+             }
          
 
 
