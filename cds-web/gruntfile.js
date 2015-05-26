@@ -80,19 +80,25 @@ module.exports = function(grunt) {
                 "shadow": true
             }
         },
-        requirejs: {
+       requirejs: {
+           	compile:{
             options: {
-                baseUrl: 'public/js',
-                name: "modules/home/dep",
-                removeCombined: false,
+                appDir:"public/js",
+                baseUrl: './',
+                dir :"public/build",
+                removeCombined: true,
                 findNestedDependencies: true,
-                mainConfigFile: "public/js/requireConfig.js"
-            },
-            production: {
-                options: {
-                    out: "public/js/min/home/dep.js"
-                }
+                mainConfigFile: "public/js/requireConfig.js",
+                skipDirOptimize :true,
+                modules :[
+                    {
+                            name:"depModules/home/dep"
+                    }
+                   
+
+                ]
             }
+         }
         },
         watch: {
             files: ['<%=jsDir%>*.js', '<%=scssDir%>*.scss'],
@@ -108,7 +114,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.registerTask("optimize", ["requirejs:production"]);
+    grunt.registerTask("optimize", ["requirejs"]);
 
     // Default task(s).
     grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'watch']);
