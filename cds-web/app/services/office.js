@@ -21,7 +21,7 @@ exports.VnCVerificationList = function(params, token, callback) {
         method: restUrls.office.vnCVerificationList.method
     };
 
-    restService.builbArgs(restUrls.office.vnCVerificationList, params, headers, function(args) {
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -70,7 +70,7 @@ exports.holdVnC = function(params, token, callback) {
         method: restUrls.office.holdVnC.method
     };
 
-    restService.builbArgs(restUrls.office.holdVnC, params, headers, function(args) {
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
