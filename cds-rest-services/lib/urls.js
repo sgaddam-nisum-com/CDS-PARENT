@@ -199,7 +199,7 @@ module.exports = {
             method: "GET"
         },
         savePersonalInf: {
-            path: "user/registration/self/",
+            path: "user/",
             method: "POST"
         },
         editPersonalInf: {
@@ -214,16 +214,8 @@ module.exports = {
             path: "user/%s/",
             method: "GET"
         },
-        selfEditPersonalInf: {
-            path: "user/registration/self/%s/",
-            method: "PUT"
-        },
-        selfGetPersonalInf: {
-            path: "user/registration/self/%s/",
-            method: "GET"
-        },
         saveWorkInf: {
-            path: "user/registration/self/%s/workinfo",
+            path: "user/%s/workinfo",
             method: "PUT"
         },
         editWorkInf: {
@@ -234,16 +226,8 @@ module.exports = {
             path: "user/%s/workinfo",
             method: "GET"
         },
-        selfEditWorkInf: {
-            path: "user/registration/self/%s/workinfo",
-            method: "PUT"
-        },
-        selfGetWorkInf: {
-            path: "user/registration/self/%s/workinfo",
-            method: "GET"
-        },
         saveVoterInf: {
-            path: "user/registration/self/%s/voter",
+            path: "user/%s/voter",
             method: "POST"
         },
         editVoterInf: {
@@ -258,20 +242,12 @@ module.exports = {
             path: "user/%s/voter",
             method: "DELETE"
         },
-        selfEditVoterInf: {
-            path: "user/registration/self/%s/voter",
-            method: "PUT"
-        },
-        selfGetVoterInf: {
-            path: "user/registration/self/%s/voter",
-            method: "GET"
-        },
         getVoterInfByText: {
             path: "lookup/%s/constituency",
             method: "GET"
         },
         saveResidentialAddress: {
-            path: "user/registration/self/%s/postaladdress",
+            path: "user/%s/postaladdress",
             method: "POST"
         },
         editResidentialAddress: {
@@ -286,16 +262,8 @@ module.exports = {
             path: "user/%s/",
             method: "DELETE"
         },
-        selfEditResidentialAddress: {
-            path: "user/registration/self/%s/postaladdress",
-            method: "PUT"
-        },
-        selfGetResidentialAddress: {
-            path: "user/registration/self/%s/postaladdress",
-            method: "GET"
-        },
         saveFamily: {
-            path: "user/registration/self/%s/relation",
+            path: "user/%s/relation",
             method: "POST"
         },
         editFamily: {
@@ -309,14 +277,6 @@ module.exports = {
         deleteFamily: {
             path: "user/%s/relation",
             method: "DELETE"
-        },
-        selfEditFamily: {
-            path: "user/registration/self/%s/relation",
-            method: "PUT"
-        },
-        selfGetFamily: {
-            path: "user/registration/self/%s/relation",
-            method: "GET"
         },
         occupations: {
             path: "lookup/occupation/",
@@ -337,10 +297,6 @@ module.exports = {
         skillGaps: {
             path: "lookup/skillgaps",
             method: "GET"
-        },
-        completeRegistration: {
-            path: "user/registration/self/%s/completeregistration",
-            method: "POST"
         },
         quickRegistration: {
             path: "user/registration/self/quickreg",
