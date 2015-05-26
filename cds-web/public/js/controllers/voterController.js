@@ -4,8 +4,15 @@
 define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
 
 	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
-	 	var self = this;
-        handleUserEdit();
+	 		var self = this,
+		   dataJson={};
+
+
+		self.user = {};
+		 
+      
+
+        handleGetVoter();
 
 		var config = {
             initiate :false,
@@ -17,12 +24,12 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 		var formStack = formValidation.init("#voterRegistrationForm", validationMap, errorJson, config);
 		
 		this.save = function(){
-			self.user.userId = cdsService.getUserId();
+		
 			if(formStack.isValid){								
 
 				$http({
-					method: "PUT",
-					url: appUrls.updateVoterInfo,
+					method:dataJson.reqMethod,
+					url:dataJson.reqURL,
 					data: self.user	
 				}).success(function(data, status, headers, config){
 					console.log("success");
@@ -34,27 +41,30 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 			} 
 		}
 
-	 	function handleUserEdit() {
+	 	function handleGetVoter() {
             registerService.getVoterInfo(function(resp) {
-                self.user = resp.data;
+                dataJson= resp.data;
+
+                 if(dataJson.voterId){
+                    	dataJson.reqMethod = "PUT";
+                    	dataJson.reqURL =appUrls.updateVoterInfo; 
+                    }else{
+                    	  dataJson.reqMethod = "POST";
+        				 dataJson.reqURL = appUrls.saveVoterInfo;
+                    }
+
+                           	
+	           	self.user.addressLine1 = dataJson.addressLine1;
+	           	self.user.addressLine2 = dataJson.addressLine2;
+	           	self.user.voterCardId = dataJson.voterCardId;         	
+	           	self.user.treeDataId = 35;
+
+
             });
         }
 
 
-            function handleUserCreation() {
-
-
-
-
-            }
-
-            function responseParser(resp) {
-
-
-
-            }
-
-
+      
 
 
 

@@ -60,10 +60,13 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
                     }
                
                 self.user.cadre = {};    
-	        	self.user.interestedAsCadre = "1";    
+	        	self.user.interestedAsCadre = "1";  
+
+	        	if(dataJson.citizen){  
 	            self.user.healthInsurance = dataJson.citizen.healthInsurance;
 	            self.user.lifeInsurance = dataJson.citizen.lifeInsurance;
 	            self.user.bloodGroupId =dataJson.citizen.bloodGroup.bloodGroupId;	            
+	        }
 	            self.user.cadre.positionId =dataJson.partyDesigination.positionId;
 	            self.user.cadre.partyMembershipId =dataJson.partyMembershipId;
 	            self.user.cadre.partyResponsibility =dataJson.partyResponsibility;

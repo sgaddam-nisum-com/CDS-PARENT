@@ -39,6 +39,33 @@ define(['services/serviceModule'], function(serviceModule) {
                     }).success(function(resp) {
                         cb(resp);
                     });
+                },
+                getAllCadreVerifications:function(cb){
+                    $http.get(appUrlService.getCadreVerifications, {
+                        params: {
+                            type:'All'
+                        }
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+                },
+                 getSelfCadreVerifications:function(cb){
+                    $http.get(appUrlService.getCadreVerifications, {
+                        params: {
+                            type:'AssignedToMe'
+                        }
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+                },
+                 getServiceCenterCadreVerifications:function(cb){
+                    $http.get(appUrlService.getCadreVerifications, {
+                        params: {
+                            type:'ServiceCenter'
+                        }
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
                 }
 
             }

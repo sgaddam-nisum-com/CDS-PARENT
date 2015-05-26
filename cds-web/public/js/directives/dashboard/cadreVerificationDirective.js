@@ -1,77 +1,42 @@
  
 
 define(['directives/directiveModule'], function(directiveModule) {
-    directiveModule.directive('cadreVerificationDirective', [
-            function() {
+    directiveModule.directive('cadreVerificationDirective', ["dashboardService", function(dashboardService) {
 
+                    var dataJSON = {};
+                  dataJSON.verificationList = [];                  
+                  dashboardService.getAllCadreVerifications(function(resp) {
+                        for(var i=0; i <resp.data.length; i++){
+                            var verficationObj = {};
+                            verficationObj.Name = resp.data[i].firstName;
+                            verficationObj["Mobile No"] = resp.data[i].mobileNumber;
+                            verficationObj.Date= resp.data[i].raisedDate;
+                            verficationObj.Status = "Verify";
+                            console.log(verficationObj);
+                            dataJSON.verificationList.push(verficationObj);
+                        };
+
+                });
                 return {
                     restrict: "A",                    
                     link: function(scope, elem, attrs) {
-
+                        scope.list = dataJSON.verificationList;
                          scope.gridOptions = {
-                            paginationPageSizes: [5, 20, 30],
-                            paginationPageSize: 5,
+                            paginationPageSizes: [8, 20, 30],
+                            paginationPageSize: 8,
                             columnDefs: [{
-                                name: 'taskId'
+                                name: 'Name'
                             }, {
-                                name: 'task'
+                                name: 'Mobile No'
                             }, {
-                                name: 'date'
-                            }],
-                            data: [{
-                                "taskId": "R1321",
-                                "task": "Request for Adhar",
-                                "date": "20/2/15"
-
-                            }, {
-                                "taskId": "R1322",
-                                "task": "Request for ligiting",
-                                "date": "21/2/15"
-                            }, {
-                                "taskId": "R1323",
-                                "task": "Request for Roads",
-                                "date": "22/2/15"
-                            }, {
-                                "taskId": "R1324",
-                                "task": "Request for Cleaning",
-                                "date": "23/2/15"
-                            }, {
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            },{
-                                "taskId": "R1325",
-                                "task": "Request for voter cards",
-                                "date": "24/2/15"
-                            }]
+                                name: 'Date'
+                            },
+                            {
+                                name: 'Status'
+                            }                            
+                            ],
+                            data: dataJSON.verificationList
                         };
-
-
-                       
-                       
-                      
-
-
 
                     }
                 }

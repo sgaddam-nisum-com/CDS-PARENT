@@ -15,7 +15,7 @@ define(['services/serviceModule'], function (serviceModule) {
 
 				savePersonalInfo : '/auth/citizen/savepersonalinf',
 				saveWorkInfo : "/citizen/saveworkinf",
-				saveVoterInfo : "/citizen/savevoterinf",
+				saveVoterInfo : "/auth/citizen/savevoterinf",
 				saveresidentialaddress : "/citizen/saveresidentialaddress",
 				saveVolunteer : "/volunteer/save",
 				saveFamily : "/cadre/saveFamily",
@@ -92,7 +92,14 @@ define(['services/serviceModule'], function (serviceModule) {
 				updateTask : "/auth/user/updatetasksstatus",
 				getTaskState:"/auth/dashboard/messageCount",
 
-				deleteUser : "/volunteer/delete"
+				deleteUser : "/volunteer/delete",
+
+				/*Office executive*/
+
+				getCadreVerifications : "/auth/office/vnc/verificationlist",
+
+
+
 
 			};
 		

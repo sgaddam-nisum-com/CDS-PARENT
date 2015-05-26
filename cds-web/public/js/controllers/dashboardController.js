@@ -74,7 +74,7 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
     
         
       },*/
-      {
+    /*  {
         name: 'My Team Tasks',
          title : "My Team Tasks",
         style: {
@@ -83,7 +83,7 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         directive :"team-tasks-directive",
        "class" : "d-widget team-tasks"
         
-      }   
+      }   */
     ];
 
 
