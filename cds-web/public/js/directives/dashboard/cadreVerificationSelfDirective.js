@@ -12,7 +12,6 @@ define(['directives/directiveModule'], function(directiveModule) {
                             verficationObj["Mobile No"] = resp.data[i].mobileNumber;
                             verficationObj.Date= resp.data[i].raisedDate;
                             verficationObj.Status = "Verify";
-                            console.log(verficationObj);
                             dataJSON.verificationList.push(verficationObj);
                         };
 

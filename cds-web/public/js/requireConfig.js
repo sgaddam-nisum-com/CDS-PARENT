@@ -7,7 +7,6 @@ require.config({
 
 		"appHome" : "modules/home/app",
 		"configHome" : "modules/home/config",
-
 		
 		"appSignin" : "modules/signin/app",
 		"configSignin" : "modules/signin/config",
@@ -32,7 +31,6 @@ require.config({
 
 		"editprofile":"modules/editprofile/app",
 		"configeditprofile":"modules/editprofile/config",
-
 
 		/*Services, Controllers & directives*/		 		 		 
 		 "angular": 'lib/min/angular.min',
@@ -88,7 +86,7 @@ require.config({
 		"foundation" : "lib/foundation.min",
 		"chartJs" : "lib/charts/chart",
 		"angularCharts" : "lib/charts/angular-chart",
-	
+		
 		"angularTouch" : "lib/uiGrid/angular-touch",
 		"angularGrid" : "lib/uiGrid/ui-grid",
 		"accordion" : "lib/jqueryui/accordion",

@@ -6,19 +6,19 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
 	 	var self = this;
 	 
 	 	var widgetDefinitions = [
-    /*{
+    {
         name: 'Age wise Tasks',
         title : "Age wise Tasks",
         style: {
-          width: '33%',
-          height:"270px"
+          width: '66%',
+          
         },
         directive :"tasksage-chart-directive",
         templateUrl : "views/dashboard/tasksage-chart.html",
         "class" : "d-widget tasks-age"  
             
       },
-       
+    /*   
        {
         name: 'My Tasks View',
         title : "My Tasks",
@@ -51,7 +51,7 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         name: 'Cadre Verifications (All)',
         title : "Cadre Verifications (All)",
         style: {
-          width: '50%'
+          width: '33%'
         },       
         enableVerticalResize : true,
         directive : "cadre-verification-all-directive",
@@ -65,7 +65,7 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         name: 'Cadre Verifications (Service Center)',
         title : "Cadre Verifications (Service Center)",
         style: {
-          width: '50%'
+          width: '33%'
         },       
         enableVerticalResize : true,
         directive : "cadre-verification-office-directive",
@@ -79,7 +79,7 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         name: 'Cadre Verifications (Assigned to me)',
         title : "Cadre Verifications (Assigned to me)",
         style: {
-          width: '50%'
+          width: '33%'
         },       
         enableVerticalResize : true,
         directive : "cadre-verification-self-directive",
