@@ -1,8 +1,6 @@
 
 define(['appDashboard'], function (app) {
 
-
-
 app.config(function($stateProvider, $urlRouterProvider){
  
     $urlRouterProvider
@@ -24,7 +22,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         }
     })
     .state('root.dashboard',{
-        url: '',
+        url: '/',
         views: {           
             'content@': {
                 templateUrl: 'views/auth/dashboard.html',

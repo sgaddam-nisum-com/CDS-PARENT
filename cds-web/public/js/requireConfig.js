@@ -1,6 +1,3 @@
-
-
-
 require.config({
 	baseUrl : "js",
 	paths: {
@@ -33,7 +30,7 @@ require.config({
 		"configeditprofile":"modules/editprofile/config",
 
 		/*Services, Controllers & directives*/		 		 		 
-		 "angular": 'lib/min/angular.min',
+		 "angular": 'lib/angular',
 		'angularRoute' : 'lib/angular-route',
 		'angularAnimate' : 'lib/angular-animate',
 		'angularResource' : 'lib/angular-resource',

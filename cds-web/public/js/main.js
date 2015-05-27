@@ -6,28 +6,28 @@ var routes = {
             module: {"app":"appHome", "config":"configHome","root" : "home","moduleName":"CDSHOME"}
         },
         "/signin": {
-            module: {"app":"appSignin", "config":"configSignin","root" : "home","moduleName":"CDSSIGNIN"}
+            module: {"app":"appSignin", "config":"configSignin","root" : "signin","moduleName":"CDSSIGNIN"}
         },
         "/register": {
-            module: {"app":"appRegister", "config":"configRegister","root" : "home","moduleName":"CDSREGISTER"}
+            module: {"app":"appRegister", "config":"configRegister","root" : "signin","moduleName":"CDSREGISTER"}
         },
         "/calendar": {
-            module: {"app":"appCalendar", "config":"configCalendar","root" : "home","moduleName":"CDSCALENDAR"}
+            module: {"app":"appCalendar", "config":"configCalendar","root" : "calendar","moduleName":"CDSCALENDAR"}
         },
         "/inbox": {
-            module: {"app":"appInbox", "config":"configInbox","root" : "home","moduleName":"CDSINBOX"}
+            module: {"app":"appInbox", "config":"configInbox","root" : "inbox","moduleName":"CDSINBOX"}
         },
         "/tasks": {
-            module: {"app":"appTasks", "config":"configTasks","root" : "home","moduleName":"CDSTASKS"}
+            module: {"app":"appTasks", "config":"configTasks","root" : "tasks","moduleName":"CDSTASKS"}
         },
         "/dashboard": {
-            module: {"app":"appDashboard", "config":"configDashboard","root" : "home","moduleName":"CDSDASHBOARD"}
+            module: {"app":"appDashboard", "config":"configDashboard","root" : "dashboard","moduleName":"CDSDASHBOARD"}
         },
         "/profile": {
-            module: {"app":"appProfile", "config":"configProfile","root" : "home","moduleName":"CDSUSERPROFILE"}
+            module: {"app":"appProfile", "config":"configProfile","root" : "profile","moduleName":"CDSUSERPROFILE"}
         },
         "/editprofile": {
-        	module: {"app":"editprofile", "config":"configeditprofile","root" : "home","moduleName":"CDSEDITPROFILE"}
+        	module: {"app":"editprofile", "config":"configeditprofile","root" : "editprofile","moduleName":"CDSEDITPROFILE"}
         }                  
     };
 

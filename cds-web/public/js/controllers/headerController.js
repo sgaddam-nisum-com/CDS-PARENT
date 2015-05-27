@@ -8,7 +8,6 @@ define(['controllers/controllerModule'], function (controllerModule) {
 		cdsService.getUserSession(initiateUserSession);
 
  		function initiateUserSession(resp){
- 			 
 
  			self.showHeader = true;
  			cdsService.userInfo=resp.data.user;
