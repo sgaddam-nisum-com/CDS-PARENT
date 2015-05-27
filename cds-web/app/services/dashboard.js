@@ -27,7 +27,7 @@ exports.viewMessage = function(params, token, callback) {
 };
 
 exports.notifications = function(token, callback) {
-    log.debug("notifications : " + (JSON.stringify(params)));
+    //log.debug("notifications : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
 

@@ -2,6 +2,22 @@ define(['services/serviceModule'], function(serviceModule) {
     serviceModule.factory('dashboardService', ['$http', 'appUrlService',
         function($http, appUrlService) {
             return {
+
+                getMyTasks: function(cb) {
+                    $http.get(appUrlService.getMyTasksList, {
+
+                    }).success(function(resp) {
+                      cb(resp)
+                    });
+                },
+                getTeamTasks : function(cb){
+                    $http.get(appUrlService.getTeamTasks,{
+                        
+                    }).success(function(resp){
+                        cb(resp);
+                    });
+                },
+
                 getTasks: function(cb) {
                     $http.get(appUrlService.getTasksList, {
 
@@ -66,6 +82,13 @@ define(['services/serviceModule'], function(serviceModule) {
                     }).success(function(resp) {
                         cb(resp);
                     });
+                },
+                getNotifications:function(cb){
+                     $http.get(appUrlService.getNotifications, {
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+
                 }
 
             }

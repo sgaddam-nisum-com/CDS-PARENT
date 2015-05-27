@@ -4,6 +4,9 @@ define(['directives/directiveModule', 'autocomplete'], function(directiveModule)
     directiveModule.directive('autoCompleteDirective', ["cdsService","taskService",
             function(cdsService,taskService) { 
 
+
+
+
                 function cadreStringifier(cadreArray) {
                     var cadreObjArray = [];
 
@@ -24,6 +27,9 @@ define(['directives/directiveModule', 'autocomplete'], function(directiveModule)
                     restrict: "A",                    
                     link: function(scope, elem, attrs) {
 
+
+                         console.log("ehello");
+
                          $("#searchIcon").on("click", function(e) {
                             e.stopPropagation();
 
@@ -42,10 +48,19 @@ define(['directives/directiveModule', 'autocomplete'], function(directiveModule)
                         });
                          function enableAutoComplete(elem, cadreMap) {
 
+
+
+
                             var autoCompleteInstance = $(elem).find("input").autocomplete("instance");
+
+                                console.log(autoCompleteInstance);
+
                             if (autoCompleteInstance) {
                                 $(elem).find("input").autocomplete("enable");
                             }
+
+
+                            console.log(cadreMap);
 
                             $(elem).find("input").autocomplete({
                                 appendTo: "#autoCompleteContainer",

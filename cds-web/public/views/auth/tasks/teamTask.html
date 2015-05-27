@@ -31,9 +31,9 @@
                   <li>Priority: <span>{{task.priorityName}}</span></li>
                   <li>Assigned To : <span>{{task.taskWorkAllocation.firstName + " " +task.taskWorkAllocation.lastName}}</span></li>
                   <li>Assigned Date: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
-                  <li>Target Date: <span>{{task.toDate}}</span></li>
-                  <li>Work Allocation: <span>{{task.taskWorkAllocation.assignDate}}</span></li>
-                  <li>Created By: <span>{{task.createdDate}}</span></li> 
+                  <li>Target Date: <span>{{task.taskWorkAllocation.toDate}}</span></li>
+                  <li>Work location: <span>{{task.location}}</span></li>
+                  <li>Created By: <span>{{task.createdByFName}}</span></li> 
                 </ul>
               </div>
             </div>

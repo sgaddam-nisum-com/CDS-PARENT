@@ -2,118 +2,23 @@
 
 define(['controllers/controllerModule','jquery',"underscore"], function (controllerModule,$,_) {
 
-	 controllerModule.controller('dashboardController', ["$scope","$interval",function($scope,$interval){		
+	 controllerModule.controller('dashboardController', ["$scope","$rootScope","$interval","dashboardWidgetService","cdsService",function($scope,$rootScope,$interval,dashboardWidgetService,cdsService){		
 	 	var self = this;
-	 
-	 	var widgetDefinitions = [
-    {
-        name: 'Age wise Tasks',
-        title : "Age wise Tasks",
-        style: {
-          width: '66%',
-          
-        },
-        directive :"tasksage-chart-directive",
-        templateUrl : "views/dashboard/tasksage-chart.html",
-        "class" : "d-widget tasks-age"  
-            
-      },
-    /*   
-       {
-        name: 'My Tasks View',
-        title : "My Tasks",
-        style: {
-          width: '33%',
-          height:"270px"
-        },
-        directive :"mytasks-chart-directive",
-        templateUrl : "views/dashboard/mytasks-chart.html",
-          "class" : "d-widget self-tasks"
+   
+    $scope.dashboardOptions ={};
     
-        
-      },
 
-       {
-        name: 'Tasks trend',
-        title : "Tasks trend",
-        style: {
-          width: '34%',
-          height:"270px"
-        },
-        directive :"taskstrend-chart-directive",
-        templateUrl : "views/dashboard/taskstrend-chart.html",
-  
-          "class" : "d-widget tasks-trend"
-    
-        
-      },*/
-      {
-        name: 'Cadre Verifications (All)',
-        title : "Cadre Verifications (All)",
-        style: {
-          width: '33%'
-        },       
-        enableVerticalResize : true,
-        directive : "cadre-verification-all-directive",
-        templateUrl : "views/dashboard/cadre-verifications-all.html",
-       
-          "class" : "d-widget cadre-verifications-all"
-    
-        
-      },
-        {
-        name: 'Cadre Verifications (Service Center)',
-        title : "Cadre Verifications (Service Center)",
-        style: {
-          width: '33%'
-        },       
-        enableVerticalResize : true,
-        directive : "cadre-verification-office-directive",
-        templateUrl : "views/dashboard/cadre-verifications-office.html",
-       
-          "class" : "d-widget cadre-verifications-all"
-    
-        
-      },
-        {
-        name: 'Cadre Verifications (Assigned to me)',
-        title : "Cadre Verifications (Assigned to me)",
-        style: {
-          width: '33%'
-        },       
-        enableVerticalResize : true,
-        directive : "cadre-verification-self-directive",
-        templateUrl : "views/dashboard/cadre-verifications-self.html",
-       
-          "class" : "d-widget cadre-verifications-all"
-    
-        
+   $scope.$on("userAuthenticated", function(e, userRole){
+
+      var widgetDefinitions=[];
+
+      if(userRole == "Cadre"){
+        widgetDefinitions =dashboardWidgetService.cadre; 
+      }else if(userRole == "Office Executive"){
+        widgetDefinitions =dashboardWidgetService.officeExecutive; 
+      }else if(userRole == "Office Manager"){
+        widgetDefinitions =dashboardWidgetService.officeManager;
       }
-     /*  {
-        name: 'Alerts / Notifications',
-        title : "Alerts / Notifications",
-        style: {
-          width: '34%'
-        },      
-        directive : "self-tasks-directive",
-        templateUrl : "views/dashboard/self-tasks.html",
-  
-          "class" : "d-widget notifications"
-    
-        
-      },*/
-    /*  {
-        name: 'My Team Tasks',
-         title : "My Team Tasks",
-        style: {
-          width: '100%'
-        },    
-        directive :"team-tasks-directive",
-       "class" : "d-widget team-tasks"
-        
-      }   */
-    ];
-
 
     var defaultWidgets = _.map(widgetDefinitions, function (widgetDef) {
       return {
@@ -153,8 +58,7 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
     $scope.value = $scope.values[0];
 
 
-
-	 	
+   });
 
 	}]);
 

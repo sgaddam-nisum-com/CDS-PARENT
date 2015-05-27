@@ -11,6 +11,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
  			 
 
  			self.showHeader = true;
+ 			cdsService.userInfo=resp.data.user;
  			
  			if(resp.status == "failure"){
  				self.isUserAuthenticated = false; 				
@@ -27,6 +28,8 @@ define(['controllers/controllerModule'], function (controllerModule) {
  					self.navItems[i].activeHeader = true;
  				}
  			}
+		
+ 			 $rootScope.$broadcast('userAuthenticated', defRole);
 		}
 
 

@@ -172,6 +172,7 @@
 .widget-container {
 	max-height: 455px;
   overflow: hidden;
+  font-size: 11px;
 }
 .widget {
 	border-radius: 0px;
@@ -193,9 +194,36 @@
 }
 .ui-grid-pager-row-count-picker {
 	font-size: 12px;
-	padding: 10px 0 0 10px;
+	
+}
+
+.ui-grid-pager-panel{
+  
 }
 .configure-btn{
   float: right !important;
   margin-left: 10px;
+}
+
+.ui-grid-canvas div{
+  font-size: 11px;
+  
+}
+
+.ui-grid-cell-contents{
+  padding-left:5px;
+}
+.row-link{
+ padding-left:5px;
+  cursor: pointer;
+  display: block;
+  margin-top : 5px;
+}
+
+.events-banner .panel-body{
+  padding:0;
+}
+
+.events-banner .events-banner-img{
+  width:100%;
 }

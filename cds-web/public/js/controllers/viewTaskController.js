@@ -25,18 +25,45 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 self.taskPriorities = resp.data;
             });
             this.save = function() {            
-                console.log("here");
-                console.log(self);
-                $http({
-                    url : appUrls.saveTaskInfo,                        
-                    method : "POST",
-                    data: self.user
+
+                console.log(cdsService.userInfo);
+                console.log(self.taskDetails);
+                var reqObj={}
+              
+              reqObj.statusId = self.taskDetails.taskWorkAllocation.statusId;
+              reqObj.completedPercent = self.taskDetails.taskWorkAllocation.completedPercent; 
+              reqObj.priorityId =self.taskDetails.taskWorkAllocation.priorityId; 
+              reqObj.citizenId = cdsService.userInfo.appUserId;
+              reqObj.taskId = taskId;
+
+              $http({
+                    url : appUrls.updateTask,                        
+                    method : "PUT",
+                    data: reqObj
                 }).success(function(data, textStatus, jqXHR) {
                         $state.go("root.allTasks");
                 }).error(function(jqXHR, textStatus, errorThrown) {
 
-                })               
+                })  
+           
+
+
             };
+
+            this.saveComment= function(){
+
+                var currentComment = {};
+                currentComment.commentDescription = self.currentComment;
+                
+    
+                self.taskDetails.comments.push();
+
+
+
+            }
+
+
+
 
         }
     ]);

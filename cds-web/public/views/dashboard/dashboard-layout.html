@@ -13,7 +13,7 @@
               </button>
               <ul class="dropdown-menu" role="menu">
                 <li ng-repeat="widget in widgetDefs">
-                  <a href="#" ng-click="addWidgetInternal($event, widget);" class="dropdown-toggle"><span class="label label-primary">{{widget.name}}</span></a>
+                  <a href="#" ng-click="addWidgetInternal($event, widget);" class="dropdown-toggle"><span class="configure-text"  style="text-align:left; display:block">{{widget.name}}</span></a>
                 </li>
               </ul>
             </span>
@@ -29,7 +29,7 @@
 
 
 
-        <button class="btn btn-warning" ng-click="resetWidgetsToDefault()">Refresh</button>
+        <button class="btn btn-warning" ng-click="resetWidgetsToDefault()">Reload</button>
 
         <button ng-if="options.storage && options.explicitSave" ng-click="options.saveDashboard()" class="btn btn-success" ng-disabled="!options.unsavedChangeCount">{{ !options.unsavedChangeCount ? "all saved" : "save changes (" + options.unsavedChangeCount + ")" }}
         </button>

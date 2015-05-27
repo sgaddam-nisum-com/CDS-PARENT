@@ -7,6 +7,9 @@ define(['directives/directiveModule'], function(directiveModule) {
                     lineData = [];
                 dashboardService.getTasksByTrend(function(resp) {
                     trendList = resp.data;
+
+                    console.log(resp.data);
+
                     for (var i = 0; i < trendList.length; i++) {
                         if (trendList[i].monthName == "Jan") {
                             lineData[0] = trendList[i].count;
@@ -46,7 +49,6 @@ define(['directives/directiveModule'], function(directiveModule) {
                         }
                     }
                 });
-
 
                 return {
                     restrict: "A",

@@ -99,6 +99,9 @@ define(['services/serviceModule'], function (serviceModule) {
 				getCadreVerifications : "/auth/office/vnc/verificationlist",
 
 
+				/*dashboard*/
+
+				getNotifications : "/auth/dashboard/notifications"
 
 
 			};

@@ -107,7 +107,7 @@ module.exports = {
             method: "GET"
         },
         updateTasksStatus: {
-            path: "%s/updatetaskstatus/",
+            path: "tasks/%s/updatetaskstatus/",
             method: "PUT"
         },
         requestTypes: {

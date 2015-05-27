@@ -238,46 +238,74 @@
 .widget-container {
   max-height: 455px;
   overflow: hidden;
+  font-size: 11px;
 }
 
-/* line 176, ../scss/components/_dashboard.scss */
+/* line 177, ../scss/components/_dashboard.scss */
 .widget {
   border-radius: 0px;
   border: solid 1px #4c8ac7;
 }
 
-/* line 180, ../scss/components/_dashboard.scss */
+/* line 181, ../scss/components/_dashboard.scss */
 .panel-default > .panel-heading {
   background: #4c8ac7;
   color: #ffffff;
 }
 
-/* line 184, ../scss/components/_dashboard.scss */
+/* line 185, ../scss/components/_dashboard.scss */
 .panel-title {
   font-size: 14px;
 }
 
-/* line 187, ../scss/components/_dashboard.scss */
+/* line 188, ../scss/components/_dashboard.scss */
 .panel-heading {
   border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 191, ../scss/components/_dashboard.scss */
+/* line 192, ../scss/components/_dashboard.scss */
 .subscribe {
   padding: 8px !important;
 }
 
-/* line 194, ../scss/components/_dashboard.scss */
+/* line 195, ../scss/components/_dashboard.scss */
 .ui-grid-pager-row-count-picker {
   font-size: 12px;
-  padding: 10px 0 0 10px;
 }
 
-/* line 198, ../scss/components/_dashboard.scss */
+/* line 203, ../scss/components/_dashboard.scss */
 .configure-btn {
   float: right !important;
   margin-left: 10px;
+}
+
+/* line 208, ../scss/components/_dashboard.scss */
+.ui-grid-canvas div {
+  font-size: 11px;
+}
+
+/* line 213, ../scss/components/_dashboard.scss */
+.ui-grid-cell-contents {
+  padding-left: 5px;
+}
+
+/* line 216, ../scss/components/_dashboard.scss */
+.row-link {
+  padding-left: 5px;
+  cursor: pointer;
+  display: block;
+  margin-top: 5px;
+}
+
+/* line 223, ../scss/components/_dashboard.scss */
+.events-banner .panel-body {
+  padding: 0;
+}
+
+/* line 227, ../scss/components/_dashboard.scss */
+.events-banner .events-banner-img {
+  width: 100%;
 }
 
 /******Do not change. Styles to make footer at bottom on variable section height. ***********/
