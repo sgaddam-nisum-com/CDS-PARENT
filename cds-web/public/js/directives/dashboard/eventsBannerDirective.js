@@ -7,15 +7,10 @@ define(['directives/directiveModule'], function(directiveModule) {
                 return {
                     restrict: "A",
                     link: function(scope, elem, attrs) {                      
-
-               
                         
                         dashboardService.getMyTasks(function(resp) {                          
                             
                         });
-
-
-                      
                
                     }
                 }
