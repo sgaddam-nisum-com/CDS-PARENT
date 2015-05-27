@@ -58,7 +58,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                 getServiceCenterCadreVerifications:function(cb){
+                 getOfficeCadreVerifications:function(cb){
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
                             type:'ServiceCenter'

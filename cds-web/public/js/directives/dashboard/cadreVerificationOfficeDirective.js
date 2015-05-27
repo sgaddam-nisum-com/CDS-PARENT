@@ -1,11 +1,11 @@
  
 
 define(['directives/directiveModule'], function(directiveModule) {
-    directiveModule.directive('cadreVerificationDirective', ["dashboardService", function(dashboardService) {
+    directiveModule.directive('cadreVerificationOfficeDirective', ["dashboardService", function(dashboardService) {
 
-                    var dataJSON = {};
-                  dataJSON.verificationList = [];                  
-                  dashboardService.getAllCadreVerifications(function(resp) {
+                var dataJSON = {};
+                dataJSON.verificationList = [];                  
+                dashboardService.getOfficeCadreVerifications(function(resp) {
                         for(var i=0; i <resp.data.length; i++){
                             var verficationObj = {};
                             verficationObj.Name = resp.data[i].firstName;
@@ -16,7 +16,8 @@ define(['directives/directiveModule'], function(directiveModule) {
                             dataJSON.verificationList.push(verficationObj);
                         };
 
-                });
+                 });
+                
                 return {
                     restrict: "A",                    
                     link: function(scope, elem, attrs) {

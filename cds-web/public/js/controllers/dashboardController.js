@@ -48,19 +48,47 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
         
       },*/
       {
-        name: 'Cadre Verifications',
-        title : "Cadre Verifications",
+        name: 'Cadre Verifications (All)',
+        title : "Cadre Verifications (All)",
         style: {
-          width: '66%'
+          width: '50%'
         },       
         enableVerticalResize : true,
-        directive : "cadre-verification-directive",
-        templateUrl : "views/dashboard/cadre-verifications.html",
+        directive : "cadre-verification-all-directive",
+        templateUrl : "views/dashboard/cadre-verifications-all.html",
        
-          "class" : "d-widget cadre-verifications"
+          "class" : "d-widget cadre-verifications-all"
     
         
       },
+        {
+        name: 'Cadre Verifications (Service Center)',
+        title : "Cadre Verifications (Service Center)",
+        style: {
+          width: '50%'
+        },       
+        enableVerticalResize : true,
+        directive : "cadre-verification-office-directive",
+        templateUrl : "views/dashboard/cadre-verifications-office.html",
+       
+          "class" : "d-widget cadre-verifications-all"
+    
+        
+      },
+        {
+        name: 'Cadre Verifications (Assigned to me)',
+        title : "Cadre Verifications (Assigned to me)",
+        style: {
+          width: '50%'
+        },       
+        enableVerticalResize : true,
+        directive : "cadre-verification-self-directive",
+        templateUrl : "views/dashboard/cadre-verifications-self.html",
+       
+          "class" : "d-widget cadre-verifications-all"
+    
+        
+      }
      /*  {
         name: 'Alerts / Notifications',
         title : "Alerts / Notifications",
