@@ -1,7 +1,8 @@
 /*global define*/
  
 
-define(['angular',
+define([
+	'angular',
 	'uiRouter',
 	'uiRouterStyles',
 	'angularRoute',
@@ -13,9 +14,9 @@ define(['angular',
 	"controllers/headerController",
 	"directives/autoCompleteDirective",
 	"directives/navDropdownDirective",
-	"directives/datePickerDirective"
-	
-		], function (angular) {
-    var app = angular.module('CDSTASKS', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);
+	"directives/datePickerDirective",
+	"angularBootstrap"	
+	], function (angular) {
+    var app = angular.module('CDSTASKS', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule","ui.bootstrap"]);
     return app;
 });

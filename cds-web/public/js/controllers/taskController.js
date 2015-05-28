@@ -27,6 +27,15 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             taskService.getAllTasks(function(resp){
                 $scope.allTasks = resp.data.tasks;                
             });
+
+
+            this.showCadresList = function(){
+
+                alert("hello");
+
+            }
+
+
            
             this.newTask = function(){
                 $state.go('root.addTask');
@@ -46,8 +55,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 });                
             }
 
-            this.save = function() { 
-            
+            this.save = function() {             
                 var commentsObj= angular.copy(self.user.comments);
                 commentsObj.commentTo = 104;
                 var commentsArray = [];

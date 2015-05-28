@@ -13,9 +13,9 @@
         </div>
         <div class="row">
           <div class="large-6 columns">Assign To :</div>
-          <div class="large-10 columns" auto-complete-directive>
-            <input type="text" id="cadreId" class="input" name="cadreName" ng-model="taskCtrl.user.taskWorkAllocation.citizenId">
-            <img src="images/searchicon.png" class="search-icon" id="searchIcon">
+          <div class="large-10 columns">
+            <input type="text" id="cadreId" class="input" name="cadreName" ng-model="taskCtrl.user.taskWorkAllocation.citizenId" >
+            <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="taskCtrl.showCadresList()">
           </div>
         </div>
         <div class="row">
