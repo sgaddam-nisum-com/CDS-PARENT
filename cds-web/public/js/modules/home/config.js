@@ -5,9 +5,9 @@ define(['appHome'], function (app) {
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
  
-/*    $urlRouterProvider
-    .otherwise('/');*/
-    
+   /* $urlRouterProvider
+    .otherwise('/');
+   */ 
 
     /*****Non authenticated views*****/
 
@@ -28,8 +28,20 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
     /*Page id : CDS1*/
 
-    .state('root.home',{
+     .state('root.homeDot',{
         url: '',
+        views: {           
+            'content@': {
+                templateUrl: 'views/nonauth/home.html',
+                controller : "homeController as homeCtrl"                
+            }
+             
+        },
+        secured : false
+    })
+
+    .state('root.home',{
+        url: '/',
         views: {           
             'content@': {
                 templateUrl: 'views/nonauth/home.html',
