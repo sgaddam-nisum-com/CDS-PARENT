@@ -50,16 +50,32 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
             };
 
-            this.saveComment= function(){
+             this.saveComment= function(){
 
+      
                 var currentComment = {};
-                currentComment.commentDescription = self.currentComment;
+                currentComment.commentDescription = self.comments.commentDescription;
+                currentComment.commentBy = cdsService.userInfo.appUserId;
+                currentComment.commentType = "public";
+                currentComment.taskId = taskId;
                 
-    
-                self.taskDetails.comments.push();
+      
+                $http({
+                    url : appUrls.addCommentToTask,                        
+                    method : "POST",
+                    data: currentComment
+                }).success(function(data, textStatus, jqXHR) {
+                    
+                    console.log(currentComment);
+                    self.taskDetails.comments.push(currentComment);
+                }).error(function(jqXHR, textStatus, errorThrown) {
+                    
+                });
+                self.comments.commentDescription = "";
+            }
 
-
-
+            this.clear = function(){
+                self.comments.commentDescription = "";
             }
 
 

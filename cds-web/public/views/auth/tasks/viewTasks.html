@@ -66,34 +66,32 @@
             </div>
           </form>
             <div class="row">
-               <div class="large-16 columns comments">
-                <h6>Comments</h6>
-                <div class="head">
-                  <a href="#" class="add-comments">Add Comments</a>
-                  <a href="#" class="attachments">Attachments</a>
-                </div>
 
-          <!--       <textarea ng-model="viewTaskCtrl.currentComment" cols="40" rows="3"></textarea>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <p>Number of characters left: <span ng-bind="viewTaskCtrl.left()"></span></p>
-                    </div>
-                    <div class="large-8 columns">
-                        <div class="right">
-                            <button ng-click="viewTaskCtrl.saveComment()" class="primary small radius">Save</button>
-                            <button ng-click="viewTaskCtrl.clear()" class="primary small radius">Clear</button>
+            <div class="large-16 columns comments">
+                <!-- <h6>Add Comments</h6> -->
+                 <div class="head">
+                    <a href class="add-comments">Add Comments</a>
+                    <!-- <a href ng-model="collapsed" ng-click="collapsed=!collapsed" class="add-comments">Add Comments</a> -->
+                    <!-- <a href="#" class="attachments">Attachments</a> -->
+                    
+                </div> 
+                <div class="row" >
+                    <div class="large-16 columns">
+                        <textarea required ng-model="viewTaskCtrl.comments.commentDescription" cols="30" rows="2" class="task-comments"></textarea>
+                        <div class="row">
+                            <div class="large-8 columns">
+                                <p>Number of characters left: <span> {{400 - viewTaskCtrl.comments.commentDescription.length}} </span></p>
+                            </div>
+                            <div class="large-8 columns">
+                                <div class="right">
+                                    <button ng-click="viewTaskCtrl.saveComment()" class="primary tiny radius">Save</button>
+                                    <button ng-click="viewTaskCtrl.clear()" class="primary tiny radius">Clear</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div> -->
-
-
-
-              </div>
-
-            
-
-
-
+                </div>
+            </div>
 
               <div class="large-16 columns comments-list">
                 <ul >

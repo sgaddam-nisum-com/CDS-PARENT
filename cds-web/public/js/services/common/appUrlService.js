@@ -101,8 +101,8 @@ define(['services/serviceModule'], function (serviceModule) {
 
 				/*dashboard*/
 
-				getNotifications : "/auth/dashboard/notifications"
-
+				getNotifications : "/auth/dashboard/notifications",
+				addCommentToTask : "/auth/user/addcommenttotask"
 
 			};
 		

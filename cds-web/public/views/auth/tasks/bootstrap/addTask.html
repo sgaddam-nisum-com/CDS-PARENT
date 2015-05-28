@@ -1,0 +1,90 @@
+<form name="task" id="myTaskForm" ng-submit="taskCtrl.save()">
+    <div class="row">
+          <div class="large-16 columns">
+            <h6>Add Tasks</h6>
+          </div>    
+        </div>
+    <div class="row">
+      <div class="large-9 columns large-centered fields-form">        
+        <div class="row">
+          <div class="large-6 columns">Task Id :</div>
+          <div class="large-10 columns"><input type="text" id="Tilte" disabled="" class="input" name="title" ng-model="taskCtrl.user.taskId">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Assign To :</div>
+          <div class="large-10 columns">
+            <input type="text" id="cadreId" class="input" name="cadreName" ng-model="taskCtrl.user.taskWorkAllocation.citizenId" >
+            <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="taskCtrl.showCadresList()">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Category :</div>
+          <div class="large-10 columns">
+            <select ng-model="taskCtrl.user.taskCategoryId" ng-options="taskCategory.taskCategoryId as  taskCategory.taskCategoryCode for taskCategory in taskCategoryOptions">
+              <option>Select Category</option>            
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Task Name :</div>
+          <div class="large-10 columns">
+            <input type="text" id="Tilte" class="input" name="title" ng-model="taskCtrl.user.taskName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Description :</div>
+          <div class="large-10 columns">
+            <textarea id="description" class="input" name="description" ng-model="taskCtrl.user.taskDescription"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Priority :</div>
+          <div class="large-10 columns">
+            <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities">
+              <option>Select Priority</option>              
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Specify Location :</div>
+          <div class="large-10 columns">
+            <input type="text" id="location" class="input" name="location" ng-model="taskCtrl.user.location">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Target Date :</div>
+          <div class="large-10 columns">
+            <input type="text" id="Tilte" name="title" class="input calender-icon" ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Prime ID# :</div>
+          <div class="large-10 columns">
+            <input type="text" id="parentId" class="input" name="parentId" ng-model="taskCtrl.user.taskWorkAllocation.taskPrimeId">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Comment Type :</div>
+          <div class="large-10 columns">
+            <input type="radio" name="commentType" value="Private" id="Private" ng-model="taskCtrl.user.comments.commentType"><label for="Private">Private</label>
+            <input type="radio" name="commentType" value="Public" id="Public" ng-model="taskCtrl.user.comments.commentType"><label for="Public">Public</label>          
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">Additional Comments :</div>
+          <div class="large-10 columns">
+            <textarea id="description" class="input" name="description" ng-model="taskCtrl.user.comments.commentDescription"></textarea>
+          </div>
+        </div>        
+        <div class="row">
+          <div class="large-6 columns"></div>
+          <div class="large-10 columns">
+            <button class="radius small button submit left">Save</button>
+          <!-- <a class="radius small button cancel left" href="/tasks">Back</a> -->
+          </div>
+        </div>
+
+      </div>  
+    </div>
+</form>
