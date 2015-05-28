@@ -129,9 +129,6 @@ require.config({
 		},
 		"angularDashboard" : {
 			deps : ["angularBootstrap"]
-		},
-		"configHome" : {
-			deps : ["min/home/dep"]
 		}
 	}
 });

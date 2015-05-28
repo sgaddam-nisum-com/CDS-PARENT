@@ -1,5 +1,5 @@
 /*global define*/
-require([	
+define([	
 	'directives/verticalScrollDirective',
 	'directives/slickGalleryDirective',
 	"directives/galleryDirective",
