@@ -59,7 +59,9 @@ define(['directives/directiveModule'], function(directiveModule) {
                         scope.data = [
                             lineData,
                         ];
+                        scope.legend =true;
                         scope.options = {
+                            legend : true,
                             bezierCurve: false,
                             //bezierCurveTension: 0.9,
                         };

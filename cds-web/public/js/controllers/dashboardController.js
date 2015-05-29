@@ -2,7 +2,7 @@
 
 define(['controllers/controllerModule','jquery',"underscore"], function (controllerModule,$,_) {
 
-	 controllerModule.controller('dashboardController', ["$scope","$interval","dashboardWidgetService",function($scope,$interval,dashboardWidgetService){		
+	 controllerModule.controller('dashboardController', ["$scope","$compile","$interval","dashboardWidgetService",function($scope,$compile,$interval,dashboardWidgetService){		
 	 	
     var self = this;
    
@@ -14,6 +14,8 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
    $scope.$on("userAuthenticated", function(e, userRole){
      
         console.log(userRole);
+
+        var userRole = "Office Manager"
 
       if(userRole == "Cadre"){
         self.widgetDefinitions =dashboardWidgetService.cadre; 
@@ -41,28 +43,8 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
       hideWidgetSettings : true,
       enableEditTitle : false
     };
-
-
-
-    $scope.addWidget = function (directive) {
-      $scope.dashboardOptions.addWidget({
-        name: directive
-      });
-    };
-  
-  $scope.addWidgetScopeWatch = function () {
-      $scope.dashboardOptions.addWidget({
-        name: 'scope-watch',
-        attrs: {
-          value: 'randomValue'
-        }
-      });
-    };
-
-
- $scope.values = ['option1', 'option2', 'option3'];
-    $scope.value = $scope.values[0];
-
+     var dashboardEl = $compile( "<div dashboard='dashboardOptions'></div>" )( $scope );
+    $("#dashboardWidget").html(dashboardEl);
 
    });
 

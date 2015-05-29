@@ -213,6 +213,11 @@ angular.module('ui.dashboard')
         scope.addWidgetInternal = function (event, widgetDef) {
           event.preventDefault();
 
+          for(var i=0; i<scope.widgets.length; i++){
+            if(scope.widgets[i].name == widgetDef.name){
+                return;
+            }
+          }
           scope.addWidget(widgetDef);
         };
 

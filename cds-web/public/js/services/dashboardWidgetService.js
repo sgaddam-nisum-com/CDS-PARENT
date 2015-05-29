@@ -243,6 +243,7 @@ define(['services/serviceModule'], function(serviceModule) {
                             width: '50%',
                             height: "320px"
                         },
+                        
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
 
