@@ -1,8 +1,9 @@
 define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
 
-    controllerModule.controller('taskController', ['$state', '$http', "appUrlService", "cdsService", '$scope', "taskService", "$sessionStorage",
-        function($state, $http, appUrls, cdsService, $scope, taskService, $sessionStorage) {
+    controllerModule.controller('taskController', ["$rootScope",'$state', '$http', "appUrlService", "cdsService", '$scope', "taskService", "$sessionStorage","appModalService",
+        function($rootScope,$state, $http, appUrls, cdsService, $scope, taskService, $sessionStorage, appModalService) {
            
+   
             var self = this;
             var config = {
                 initiate: false,
@@ -11,6 +12,11 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 submitValidForm: false,
                 runCallBack: false,
             };
+
+                 self.user = {}
+
+            self.user.taskWorkAllocation = {}
+            
             
             taskService.getTaskCategories(function(resp) {
                 $scope.taskCategoryOptions = resp.data;
@@ -28,11 +34,16 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 $scope.allTasks = resp.data.tasks;                
             });
 
+            this.showCadresList = function(queryString){
+                $rootScope.queryString = queryString;
+                $rootScope.name="helllo";
+                cadreModal = appModalService.init("cadreList.html","cadreListController", $rootScope,{class:"cadre-overlay"} )();
 
-            this.showCadresList = function(){
-
-                alert("hello");
-
+                cadreModal.result.then(function(val, id){
+                    self.assignedToCitizenName = val;
+                     self.user.taskWorkAllocation.citizenId = id; 
+                });
+             
             }
 
 

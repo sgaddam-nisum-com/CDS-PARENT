@@ -15,7 +15,9 @@ define([
 	"directives/autoCompleteDirective",
 	"directives/navDropdownDirective",
 	"directives/datePickerDirective",
-	"angularBootstrap"	
+	"angularBootstrap",
+	"services/common/appModalService",
+	"modalControllers/cadreListController"	
 	], function (angular) {
     var app = angular.module('CDSTASKS', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule","ui.bootstrap"]);
     return app;

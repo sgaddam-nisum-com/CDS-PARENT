@@ -64,9 +64,10 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                     url : appUrls.addCommentToTask,                        
                     method : "POST",
                     data: currentComment
-                }).success(function(data, textStatus, jqXHR) {
-                    
-                    console.log(currentComment);
+                }).success(function(resp, textStatus, jqXHR) {
+                    currentComment.commentedByFN = resp.data.commentedByFN;
+                    currentComment.commentedByLN = resp.data.commentedByLN;
+                    currentComment.commentedOn = resp.data.commentedOn;
                     self.taskDetails.comments.push(currentComment);
                 }).error(function(jqXHR, textStatus, errorThrown) {
                     

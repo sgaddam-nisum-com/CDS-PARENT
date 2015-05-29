@@ -1,33 +1,38 @@
-define(['services/serviceModule'], function (serviceModule) {
+define(['services/serviceModule'], function(serviceModule) {
 
-serviceModule.factory('appModalService', function($modal) {
- var templatePath = "views/modalTemplates/";
- return {
-  setTemplatePath: function(path) {
-   templatePath = path;
-  },
+    serviceModule.factory('appModalService', ["$modal",
+        function($modal) {
+            var templatePath = "views/modalTemplates/";
+            return {
+                setTemplatePath: function(path) {
+                    templatePath = path;
+                },
 
-  init: function(tempName, modalController, localScope, config) {    
-    
-    if(config && config.templatePath){
-      templatePath = config.templatePath;
-    }
+                init: function(tempName, modalController, localScope, config) {
 
-   return function() {
-    var modalInstance = $modal.open({
-     templateUrl: templatePath + tempName,
-     controller: modalController,
-     resolve: {
-      callerScope: function() {
-       return localScope;
-      }
-     }
-    });   
+                    var config = config ||{};
+                    if (config && config.templatePath) {
+                        templatePath = config.templatePath;
+                    }
+                    config.class=config.class|| "";
 
-   }
-  
- }
- };
-});
+
+                    return function() {
+
+                        var modalInstance = $modal.open({
+                            templateUrl: templatePath + tempName,
+                            controller: modalController,
+                            windowClass:config.class
+
+                        });
+                        console.log(modalInstance);
+                        return modalInstance;
+                        
+                    }
+
+                }
+            };
+        }
+    ]);
 
 });
