@@ -14,14 +14,14 @@
         <div class="row">
           <div class="large-6 columns">Assign To :</div>
           <div class="large-10 columns">
-            <input type="text" id="cadreId" class="input" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" >
+            <input type="text" autocomplete="off" id="cadreId" class="input required" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" / >
             <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="taskCtrl.showCadresList(taskCtrl.assignedToCitizenName)">
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns">Category :</div>
           <div class="large-10 columns">
-            <select ng-model="taskCtrl.user.taskCategoryId" ng-options="taskCategory.taskCategoryId as  taskCategory.taskCategoryCode for taskCategory in taskCategoryOptions">
+            <select ng-model="taskCtrl.user.taskCategoryId" ng-options="taskCategory.taskCategoryId as  taskCategory.taskCategoryCode for taskCategory in taskCategoryOptions" class="required">
               <option>Select Category</option>            
             </select>
           </div>
@@ -29,19 +29,19 @@
         <div class="row">
           <div class="large-6 columns">Task Name :</div>
           <div class="large-10 columns">
-            <input type="text" id="Tilte" class="input" name="title" ng-model="taskCtrl.user.taskName">
+            <input type="text" id="Tilte" class="input required" name="title" ng-model="taskCtrl.user.taskName">
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns">Description :</div>
           <div class="large-10 columns">
-            <textarea id="description" class="input" name="description" ng-model="taskCtrl.user.taskDescription"></textarea>
+            <textarea id="description" class="input required" name="description" ng-model="taskCtrl.user.taskDescription"></textarea>
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns">Priority :</div>
           <div class="large-10 columns">
-            <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities">
+            <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities" class="required">
               <option>Select Priority</option>              
             </select>
           </div>
@@ -55,7 +55,10 @@
         <div class="row">
           <div class="large-6 columns">Target Date :</div>
           <div class="large-10 columns">
-            <input type="text" id="Tilte" name="title" class="input calender-icon" ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive>
+          
+          <input type="text" id="dob" class="input required" name="dob" data-val="dob" ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive="registerCtrl.user.dateOfBirth">
+
+
           </div>
         </div>
         <div class="row">

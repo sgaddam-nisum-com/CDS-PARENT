@@ -1,9 +1,13 @@
 define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
 
-    controllerModule.controller('viewTaskController', ['$state', '$http',"$stateParams", "appUrlService", "cdsService", '$scope', "taskService", "$sessionStorage",
-        function($state, $http,stateParams, appUrls, cdsService, $scope, taskService, $sessionStorage) {
+    controllerModule.controller('viewTaskController', ['$state',"$rootScope", '$http',"$stateParams", "appUrlService", "cdsService", '$scope', "taskService","appModalService",
+        function($state,$rootScope, $http,stateParams, appUrls, cdsService, $scope, taskService,appModalService) {
            console.log(stateParams);
             var self = this;
+
+            self.taskDetails = {};
+            self.taskDetails.taskWorkAllocation = {};
+
             var taskId = stateParams.taskId;
             var config = {
                 initiate: false,
@@ -13,7 +17,8 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 runCallBack: false,
             };            
             taskService.getTaskDetails(taskId, function(resp){
-                self.taskDetails = resp.data;
+            self.taskDetails = resp.data;
+                self.assignedToCitizenName = angular.copy(self.taskDetails.taskWorkAllocation.firstName) +" "+ angular.copy(self.taskDetails.taskWorkAllocation.lastName);
             });  
             taskService.getTaskStatuses(function(resp){
                 self.taskStatuses = resp.data; 
@@ -24,6 +29,25 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             taskService.getTaskPriorities(function(resp){
                 self.taskPriorities = resp.data;
             });
+
+
+
+            this.showCadresList = function(queryString){
+                $rootScope.queryString = queryString;
+                $rootScope.name="helllo";
+                cadreModal = appModalService.init("cadreList.html","cadreListController", $rootScope,{class:"cadre-overlay"} )();
+
+                cadreModal.result.then(function(val, id){
+                    self.assignedToCitizenName = val;
+                    self.taskDetails.taskWorkAllocation.citizenId = id; 
+                },function(){                               
+                    self.assignedToCitizenName ="";
+                    self.taskDetails.taskWorkAllocation.citizenId=null;
+                });
+             
+            }
+
+
             this.save = function() {            
 
                 console.log(cdsService.userInfo);
@@ -34,6 +58,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
               reqObj.completedPercent = self.taskDetails.taskWorkAllocation.completedPercent; 
               reqObj.priorityId =self.taskDetails.taskWorkAllocation.priorityId; 
               reqObj.citizenId = cdsService.userInfo.appUserId;
+              reqObj.reassignedTo=
               reqObj.taskId = taskId;
 
               $http({

@@ -33,7 +33,7 @@ exports.inbox = function(req, res, next) {
 };
 
 exports.tasks = function(req, res, next) {
-    res.render('layouts/index.html', {});
+    res.render('layouts/tasks.html', {});
 };
 
 exports.profile = function(req, res, next) {

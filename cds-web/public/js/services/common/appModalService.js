@@ -22,7 +22,8 @@ define(['services/serviceModule'], function(serviceModule) {
                         var modalInstance = $modal.open({
                             templateUrl: templatePath + tempName,
                             controller: modalController,
-                            windowClass:config.class
+                            windowClass:config.class,
+                            keyboard:false
 
                         });
                         console.log(modalInstance);

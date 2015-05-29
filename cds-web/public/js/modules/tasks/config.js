@@ -1,38 +1,13 @@
 /*global define*/
  
 
-define(['appTasks','uiRouter','angularRoute'], function (app) {
+define(['appTasks'], function (app) {
 
 
-app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){
+app.run(["$rootScope", "$state","$location","roleService","cdsService",function($rootScope,$state,$location,roleService,cdsService){
 
        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
-                
-
-        /*   var checkUserSession = cdsService.getUserSession();          			
-			checkUserSession
-			.success(function(resp){					                                                    
-                         
-                  if(resp.status == "success"){  
-                   
-                    cdsService.userAuthenticated = true;
-					cdsService.user = resp.data.user;
-					var userRole = "citizen";                    
-                    var privilegeStateArray = roleService.getPrivilegeStateArray(cdsService.user.privileges);                  
-				    var isValidModule = roleService.checkValidModule(toState.name,privilegeStateArray);
-                                 
-				if(toState.secured && !isValidModule || toState.name == "root.signin"){                					 
-					 event.preventDefault();
-                     $state.go("auth.dashboard");                      
-			     }  
-             }else{                
-                if(toState.secured){
-                    event.preventDefault();                                    
-                     $state.go("root.signin");                    
-                }              
-             }	
-            })*/
-	
+      
         });
 
 }]);
@@ -40,7 +15,7 @@ app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cds
 app.config(function($stateProvider, $urlRouterProvider){
  
     $urlRouterProvider
-    .otherwise('/');
+    .otherwise('');
     
 
     /*****Non authenticated views*****/
@@ -51,11 +26,11 @@ app.config(function($stateProvider, $urlRouterProvider){
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/common/header.html',
+                templateUrl: 'views/common/bootstrap/header.html',
                 controller : "headerController as headerCtrl"
             },
             'footer': {
-                templateUrl: 'views/common/footer.html'                
+                templateUrl: 'views/common/bootstrap/footer.html'                
             }
         }
     })
@@ -64,7 +39,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/task.html',
+                templateUrl: 'views/auth/tasks/bootstrap/task.html',
                 controller : "taskController as taskCtrl" 
             }
         },
@@ -75,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/viewTasks/:taskId',        
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/viewTasks.html',
+                templateUrl: 'views/auth/tasks/bootstrap/viewTasks.html',
                 controller : "viewTaskController as viewTaskCtrl"
             }
         },
@@ -86,7 +61,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/addTask',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/addTask.html',
+                templateUrl: 'views/auth/tasks/bootstrap/addTask.html',
                 controller : "taskController as taskCtrl"
             }
         },
@@ -96,7 +71,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/teamTasks',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/teamTask.html',
+                templateUrl: 'views/auth/tasks/bootstrap/teamTask.html',
                 controller : "taskController as taskCtrl"
             }
         },
@@ -106,7 +81,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/allTasks',
         views: {           
             'content@': {
-                templateUrl: 'views/auth/tasks/allTasks.html',
+                templateUrl: 'views/auth/tasks/bootstrap/allTasks.html',
                 controller : "taskController as taskCtrl"
             }
         },

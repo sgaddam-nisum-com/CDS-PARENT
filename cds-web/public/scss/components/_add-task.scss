@@ -2,8 +2,7 @@
 	background: #cddae6;
 	border: solid 1px #eef2f6;
 	padding: 25px;
-	border-radius: 5px;
-	margin: 35px 0 0 0;
+	border-radius: 5px;	
 	font-size: 14px;
 }
 .fields-form h6 {
@@ -13,4 +12,10 @@
 }
 .calender {
 	background: #fff url(../images/calender-icon.png) no-repeat right center;
+}
+.cadre-search-icon{
+	 right: 25px;
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
 }

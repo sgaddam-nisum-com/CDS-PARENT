@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed',
+                    style: 'expanded',
                     /* nested / compact/ compressed / expanded  */
                     trace: true,
                     debugInfo: false,

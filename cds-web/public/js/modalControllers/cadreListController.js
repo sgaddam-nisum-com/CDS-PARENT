@@ -2,8 +2,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
 	 controllerModule.controller('cadreListController', ["$scope","$modalInstance","$rootScope","taskService",function($scope, $modalInstance,$rootScope,taskService){
 
-
-	 		
+ 		
 	 			$scope.showNoRecordsMsg = false;
 
 	 		   function cadreStringifier(cadreArray) {
@@ -24,16 +23,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
                 }  
 
 
-
-
-
-
-
-
                var queryString = $rootScope.queryString;
-
-               
-
 
 			  taskService.getCadres(queryString, function(resp) {                                
 				
@@ -44,11 +34,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
 
             });
-
-			  $scope.closeOverlay = function(){
-			  	$modalInstance.dismiss('cancel');
-			  	$scope.showNoRecordsMsg = false;
-			  }
+		
 
 			  $scope.ok = function (value, id) {  
 			  	console.log(value);
@@ -57,9 +43,9 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
   			};
 
-			  $scope.cancel = function () {
-			    $modalInstance.dismiss('cancel');
-			    $scope.showNoRecordsMsg = false;
+			  $scope.cancel = function () {			  	
+			  	$scope.showNoRecordsMsg = false;			  	 			   			    
+			    $modalInstance.dismiss("cancel");
 			  };
 
 

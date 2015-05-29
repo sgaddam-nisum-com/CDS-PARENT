@@ -1,7 +1,7 @@
 define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
 
-    controllerModule.controller('taskController', ["$rootScope",'$state', '$http', "appUrlService", "cdsService", '$scope', "taskService", "$sessionStorage","appModalService",
-        function($rootScope,$state, $http, appUrls, cdsService, $scope, taskService, $sessionStorage, appModalService) {
+    controllerModule.controller('taskController', ["$rootScope",'$state', '$http', "appUrlService", "cdsService", '$scope', "taskService", "appModalService",
+        function($rootScope,$state, $http, appUrls, cdsService, $scope, taskService,appModalService) {
            
    
             var self = this;
@@ -16,7 +16,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                  self.user = {}
 
             self.user.taskWorkAllocation = {}
-            
+            self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
             
             taskService.getTaskCategories(function(resp) {
                 $scope.taskCategoryOptions = resp.data;
@@ -36,12 +36,14 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
             this.showCadresList = function(queryString){
                 $rootScope.queryString = queryString;
-                $rootScope.name="helllo";
                 cadreModal = appModalService.init("cadreList.html","cadreListController", $rootScope,{class:"cadre-overlay"} )();
 
                 cadreModal.result.then(function(val, id){
                     self.assignedToCitizenName = val;
                      self.user.taskWorkAllocation.citizenId = id; 
+                },function(){                               
+                    self.assignedToCitizenName ="";
+                    self.user.taskWorkAllocation.citizenId = null;
                 });
              
             }
@@ -66,10 +68,16 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 });                
             }
 
-            this.save = function() {             
+            this.save = function() { 
+
+
+
                 var commentsObj= angular.copy(self.user.comments);
                 commentsObj.commentTo = 104;
                 var commentsArray = [];
+                
+                console.log(self.user);
+
                 commentsArray.push(commentsObj);
                 self.user.comments = commentsArray;
 

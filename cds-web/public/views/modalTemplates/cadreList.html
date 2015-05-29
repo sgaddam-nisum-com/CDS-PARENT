@@ -1,6 +1,6 @@
 <div class="container-fluid cadre-list">
 	
-	<div class="close-overlay" ng-click="closeOverlay()">X</div>
+	<div class="close-overlay" ng-click="cancel()">X</div>
 
 	<div class="row  list-header">
 		<div class="col-md-10">
@@ -17,6 +17,15 @@
 	<div class="no-records row cadre-list-row" ng-show="showNoRecordsMsg" >
 		<div class="col-md-12 cadre-list-item">
 			<span> No Records found. Please refine your search.</span>
+		</div>
+	</div>
+
+
+	
+
+	<div class="row">
+		<div class="col-md-3 right">
+			<button type="button" class="btn btn-primary" ng-click="cancel()">Cancel</button>
 		</div>
 	</div>
 

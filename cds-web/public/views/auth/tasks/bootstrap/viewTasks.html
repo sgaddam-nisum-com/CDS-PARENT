@@ -1,0 +1,142 @@
+<section id="appSection">
+    <div class="container">
+        <div class="row content view-tasks">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <h4>View Task</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form name="viewTask" id="viewTaskForm" ng-submit="viewTaskCtrl.save()">
+                            <div class="row task-view-header tasks-list">
+                                <div class="col-lg-12  task-title">
+                                    {{viewTaskCtrl.taskDetails.taskName}}
+                                    <div class="right">
+                                        <button class="submit">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <div class="task-details">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Status:</label>
+                                                    <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.statusId" ng-options="taskStatus.statusId as  taskStatus.statusName for taskStatus in viewTaskCtrl.taskStatuses" class="form-control">
+                                                        <option>Select Status</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Priority:</label>
+                                                    <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities" class="form-control">
+                                                        <option>Select Priority</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Assigned Date:</label>
+                                                    <input type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Target Date:</label>
+                                                    <input type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Work Location:</label>
+                                                    <input type="text" ng-model="viewTaskCtrl.taskDetails.location" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Assigned to:</label>
+                                                    
+            <input autocomplete="off" type="text" id="cadreId" class="form-control input required" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
+            <img src="images/searchicon.png" class="cadre-search-icon" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12  task-description">
+                                    <h6>Description</h6>
+                                    <p>{{viewTaskCtrl.taskDetails.taskDescription}}</p>
+                                </div>
+                                <div class="col-lg-12  attachements">
+                                    <h6>Attachements</h6>
+                                    <ul class="col-lg-block-grid-3">
+                                        <li>Status: </li>
+                                        <li>Priority: </li>
+                                        <li>Assigned to: </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12  comments">
+                        <h6>Comments</h6>
+                        <div class="head">
+                            <a href="#" class="add-comments">Add Comments</a>
+                            <a href="#" class="attachments">Attachments</a>
+                        </div>
+                        <div class="form-group">
+                            <textarea ng-model="viewTaskCtrl.comments.commentDescription" cols="40" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <p>Number of characters left: <span> {{400 - viewTaskCtrl.comments.commentDescription.length}} </span></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right">
+                                    <button ng-click="viewTaskCtrl.saveComment()" class="btn">Save</button>
+                                    <button ng-click="viewTaskCtrl.clear()" class="btn">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12  comments-list">
+                        <ul>
+                            <li ng-repeat="comment in viewTaskCtrl.taskDetails.comments">
+                                <div class="info">{{comment.commentedByFN+" "+comment.commentedByLN}} <span class="right">{{comment.commentedOn}}</span></div>
+                                <p>{{comment.commentDescription}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="user-information">
+                    <div class="arrow"></div>
+                    <h5>{{viewTaskCtrl.taskDetails.taskWorkAllocation.firstName+" "+viewTaskCtrl.taskDetails.taskWorkAllocation.lastName}}</h5>
+                    <img src="images/image.png" class="img-responsive" />
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <div> Age/Gender: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.age}}  {{viewTaskCtrl.taskDetails.taskWorkAllocation.gender}}</strong>
+                            </div>
+                            <div>Phone: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.phoneNumber}}</strong> </div>
+                            <div>Email: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.emailId}}
+                            </strong></div>
+                            <div> Location: <strong>{{viewTaskCtrl.taskDetails.location}}</strong></div>
+                            <div>Constituency: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.constituency}}</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

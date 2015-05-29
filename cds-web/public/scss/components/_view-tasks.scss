@@ -48,6 +48,7 @@
 .comments-list ul {
 	margin: 0;
 	font-size: 13px;
+	padding:0;
 }
 .comments-list ul li{
 	list-style: none;
@@ -95,4 +96,23 @@
 
 .selectedTaskTab{
 	font-weight:bold;
+}
+
+
+
+/* Bootstrap overrides */
+
+.task-view-header{
+	width:100%;
+	margin-left:0;
+	margin-bottom:0 !important;
+}
+
+
+.comments-list{
+	margin-top:25px;
+}
+
+.comments .head{
+	margin-bottom : 30px;
 }

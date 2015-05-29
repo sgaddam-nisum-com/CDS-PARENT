@@ -77,7 +77,7 @@
 	border: none;
 }
 .tasks-list {
-	margin: 0 0 15px 0 !important;
+	margin-bottom : 15px !important;
 }
 .tasks-list input {
 	margin: 0 10px 0 0;
@@ -123,10 +123,7 @@
 .task-comments{
 	min-height: 60px; 	
 }
-.comments .head{
-	margin-bottom:-1px !important;
-	width:145px;
-}
+
 
 .comments-list{
 	max-height: 500px;
@@ -179,4 +176,16 @@ cursor : pointer;
 
 .modal-dialog{
 
+}
+
+
+.col-centered{
+	float: none;
+margin: 0 auto;
+}
+
+
+.ui-datepicker-calendar{
+	width:100%;
+	background-color:#fff;
 }
