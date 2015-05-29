@@ -3,28 +3,28 @@ var routes = {
         
         /*Home page & static pages*/
         "/": {
-            module: {"app":"appHome", "config":"configHome","root" : "home","moduleName":"CDSHOME"}
+            module: {"app":"appHome", "config":"configHome","moduleName":"CDSHOME"}
         },
         "/signin": {
-            module: {"app":"appSignin", "config":"configSignin","root" : "signin","moduleName":"CDSSIGNIN"}
+            module: {"app":"appSignin", "config":"configSignin","moduleName":"CDSSIGNIN"}
         },
         "/register": {
-            module: {"app":"appRegister", "config":"configRegister","root" : "register","moduleName":"CDSREGISTER"}
+            module: {"app":"appRegister", "config":"configRegister","moduleName":"CDSREGISTER"}
         },
         "/calendar": {
-            module: {"app":"appCalendar", "config":"configCalendar","root" : "calendar","moduleName":"CDSCALENDAR"}
+            module: {"app":"appCalendar", "config":"configCalendar","moduleName":"CDSCALENDAR"}
         },
         "/inbox": {
-            module: {"app":"appInbox", "config":"configInbox","root" : "inbox","moduleName":"CDSINBOX"}
+            module: {"app":"appInbox", "config":"configInbox","moduleName":"CDSINBOX"}
         },
         "/tasks": {
-            module: {"app":"appTasks", "config":"configTasks","root" : "tasks","moduleName":"CDSTASKS"}
+            module: {"app":"appTasks", "config":"configTasks","moduleName":"CDSTASKS"}
         },
         "/dashboard": {
-            module: {"app":"appDashboard", "config":"configDashboard","root" : "dashboard","moduleName":"CDSDASHBOARD"}
+            module: {"app":"appDashboard", "config":"configDashboard","moduleName":"CDSDASHBOARD"}
         },
         "/profile": {
-            module: {"app":"appProfile", "config":"configProfile","root" : "profile","moduleName":"CDSUSERPROFILE"}
+            module: {"app":"appProfile", "config":"configProfile","moduleName":"CDSUSERPROFILE"}
         }                
     };
 
@@ -39,9 +39,10 @@ var routes = {
     var r = getRoute();
     function start() {
         require( ["jquery",'angular',"require"], function ( $,angular,require ) {        	
-        	require([r.module.config, cds.depModuleRootPath+"/"+r.module.root+"/dep" ],function(){
-        		angular.bootstrap(document, [r.module.moduleName]);	
-        	});           
+                           
+            require([r.module.config],function(){
+                angular.bootstrap(document, [r.module.moduleName]);     
+            });           
         } );
     }
 

@@ -89,7 +89,8 @@ require.config({
 		"accordion" : "lib/jqueryui/accordion",
 
 		"sortable" : "lib/jqueryui/sortable",
-		"mouse" : "lib/jqueryui/mouse"
+		"mouse" : "lib/jqueryui/mouse",
+		"evPointer" : "utils/evPointer"
 
 	},
 	shim: {
@@ -129,6 +130,9 @@ require.config({
 		},
 		"angularDashboard" : {
 			deps : ["angularBootstrap"]
+		},
+		"evPointer":{
+			deps:["jquery"]
 		}
 	}
 });
