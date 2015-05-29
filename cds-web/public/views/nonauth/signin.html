@@ -2,42 +2,30 @@
    <!-- Signin Section -->
    
    <div class="large-10 columns"><img src="images/signin-banner.jpg"></div>
-
-
    <div class="large-6 medium-7 small-16 columns padding-none">
       <form ng-submit = "signinCtrl.signin()" id="loginForm" name="login">
          <h1>Sign In
-            <span>If you are already a member.</span>
+         <span>If you are already a member.</span>
          </h1>
          
-            <!-- Global error messages -->
-
+         <!-- Global error messages -->
          <div class="row" ng-show="signinCtrl.isNotValid">
-           <div class="large-12 right columns error-class" id="globalErrorContainer">Please ensure that all the required fields are valid.</div>
+            <div class="large-12 right columns error-class" id="globalErrorContainer">Please ensure that all the required fields are valid.</div>
          </div>
-
-
          <!-- UserName -->
-
-
-
          <div class="row">
             <div class="large-4 small-16 columns padding-none">
                <label class="inline right">User Name:</label>
             </div>
             <div class="large-12 small-16 columns">
                <input type="text" class="required" name="username" ng-model="signinCtrl.user.username" data-val="signInUsername"
-                />
+               />
             </div>
             <div class="large-12 columns right">
                <div class="error-class"><div class="error-content"></div></div>
             </div>
          </div>
-
-
          <!-- Password -->
-
-
          <div class="row">
             <div class="large-4 small-16 columns padding-none">
                <label class="inline right" name="password" >Password:</label>
@@ -46,22 +34,24 @@
                <input type="password" class="required" name="password" value=""  ng-model="signinCtrl.user.password"  id="inputPassword" data-val="signPassword"/>
                <div>
                   <div class="error-class"><div class="error-content"></div></div>
-              </div>
+               </div>
                <div class="large-16 small-16"><input type="checkbox" /> Remember me</div>
             </div>
-
          </div>
          <div class="row">
             <div class="large-4
-               small-16 columns"></div>
-            <div class="large-12 small-16 columns
-               button-wrapper">             
+            small-16 columns"></div>
+            <div class="large-12 small-16 columns button-wrapper">
                <input type="submit" class="button small radius"
-               value="Sign In"/> <a href="#" class="right forgot-password">Forgot
+               value="Sign In"/> 
+
+            <!--    <a href="#" class="right forgot-password">Forgot
                Password?</a>
+             -->
+
             </div>
          </div>
       </form>
    </div>
-  
+   
 </div>
