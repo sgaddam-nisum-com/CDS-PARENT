@@ -7,6 +7,7 @@ define(['directives/directiveModule'], function(directiveModule) {
                 
                 link: function(scope, elem, attrs) {
 
+                 scope.dataJson = {}   
                  var self;
 
                  resetStatus();
