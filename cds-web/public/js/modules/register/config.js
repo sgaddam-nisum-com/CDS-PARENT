@@ -2,11 +2,11 @@
  
 
 
-define(['appRegister','uiRouter','angularRoute'], function (app) {
+define(['appRegister'], function (app) {
 
 
   
-app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){
+app.run(["$rootScope","$state","$location","roleService","cdsService",function($rootScope, $state,$location,roleService,cdsService){
 
        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
                 

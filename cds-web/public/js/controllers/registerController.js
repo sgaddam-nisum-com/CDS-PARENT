@@ -1,7 +1,7 @@
  
-define(['controllers/controllerModule','formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors', 'jquery'], function (controllerModule,formValidation, validationMap, errorJson, $) {
+define(['controllers/controllerModule','formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors'], function (controllerModule,formValidation, validationMap, errorJson) {
 
-	 controllerModule.controller('registerController', ['$scope','$location',"registerService","cdsService","appUrlService","roleService","$window", function($scope, $location,registerService, cdsService,appUrlService,roleService,$window){
+	 controllerModule.controller('registerController', ['$scope',"registerService","cdsService","appUrlService","roleService","$window", function($scope, registerService, cdsService,appUrlService,roleService,$window){
 
 		 	this.showLoader = false;
             this.showImage = true;

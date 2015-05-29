@@ -1,15 +1,9 @@
 /*global define*/
-require([	
-	'directives/verticalScrollDirective',
-	'directives/slickGalleryDirective',
-	"directives/galleryDirective",
-	'controllers/headerController',
-	'controllers/homeController',
-	"directives/navDropdownDirective",
-	'uiRouter',
+define(['uiRouter',
 	'uiRouterStyles',
-	"ngStorage",
-	'services/common/serviceLoader'
+	'services/common/serviceLoader',
+	'controllers/signinController',
+	"controllers/headerController"	
 	], function () {  
 });
 

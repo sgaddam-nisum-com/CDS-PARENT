@@ -9,7 +9,7 @@ var routes = {
             module: {"app":"appSignin", "config":"configSignin","root" : "signin","moduleName":"CDSSIGNIN"}
         },
         "/register": {
-            module: {"app":"appRegister", "config":"configRegister","root" : "signin","moduleName":"CDSREGISTER"}
+            module: {"app":"appRegister", "config":"configRegister","root" : "register","moduleName":"CDSREGISTER"}
         },
         "/calendar": {
             module: {"app":"appCalendar", "config":"configCalendar","root" : "calendar","moduleName":"CDSCALENDAR"}
@@ -25,10 +25,7 @@ var routes = {
         },
         "/profile": {
             module: {"app":"appProfile", "config":"configProfile","root" : "profile","moduleName":"CDSUSERPROFILE"}
-        },
-        "/editprofile": {
-        	module: {"app":"editprofile", "config":"configeditprofile","root" : "editprofile","moduleName":"CDSEDITPROFILE"}
-        }                  
+        }                
     };
 
     function getRoute() {
@@ -41,7 +38,7 @@ var routes = {
 
     var r = getRoute();
     function start() {
-        require( ["jquery",'angular'], function ( $,angular ) {        	
+        require( ["jquery",'angular',"require"], function ( $,angular,require ) {        	
         	require([r.module.config, cds.depModuleRootPath+"/"+r.module.root+"/dep" ],function(){
         		angular.bootstrap(document, [r.module.moduleName]);	
         	});           

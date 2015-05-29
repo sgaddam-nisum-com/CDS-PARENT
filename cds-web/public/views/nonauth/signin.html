@@ -26,7 +26,7 @@
                <label class="inline right">User Name:</label>
             </div>
             <div class="large-12 small-16 columns">
-               <input type="text" name="username" ng-model="signinCtrl.user.username" data-val="signInUsername"
+               <input type="text" class="required" name="username" ng-model="signinCtrl.user.username" data-val="signInUsername"
                 />
             </div>
             <div class="large-12 columns right">
@@ -43,7 +43,7 @@
                <label class="inline right" name="password" >Password:</label>
             </div>
             <div class="large-12 small-16 columns">
-               <input type="password" name="password" value=""  ng-model="signinCtrl.user.password"  id="inputPassword" data-val="signPassword"/>
+               <input type="password" class="required" name="password" value=""  ng-model="signinCtrl.user.password"  id="inputPassword" data-val="signPassword"/>
                <div>
                   <div class="error-class"><div class="error-content"></div></div>
               </div>
