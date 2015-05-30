@@ -24,7 +24,10 @@ define(["evPointer",
     "angularSanitize",
     "widgetOptions",
     "angularCharts",
-    "angularGrid"], function () {
+    "angularGrid",
+    "directives/dashboard/testD",
+    "d3"
+    ], function () {
     var app = angular.module('CDSDASHBOARD', ['ui.router',
     										"chart.js",
     										'serviceModule',

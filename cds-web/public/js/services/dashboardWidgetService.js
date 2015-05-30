@@ -224,6 +224,24 @@ define(['services/serviceModule'], function(serviceModule) {
                 ],
 
                 "officeManager" :  [
+
+
+                /*D3 implementation in test*/
+                /* {
+                        name: 'sample',
+                        title: "sample",
+                        style: {
+                            width: '50%',
+                            height: "320px"
+                        },
+                        directive: "test-d",
+                        templateUrl: "views/dashboard/test-d.html",
+                        "class": "testd"
+
+                    },
+*/
+
+
                 {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
@@ -243,7 +261,7 @@ define(['services/serviceModule'], function(serviceModule) {
                             width: '50%',
                             height: "320px"
                         },
-                        
+
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
 

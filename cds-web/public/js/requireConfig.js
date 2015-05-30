@@ -68,7 +68,7 @@ require.config({
 
 		"angularSanitize" : "lib/dashboard/angular-sanitize",
 		"angularNvd3" :"lib/dashboard/angularjs-nvd3-directives",
-		"d3" : "lib/dashboard/d3",
+		"d3" : "lib/dashboard/d3.v3.min",
 		"nvd3" : "lib/dashboard/nv.d3",
 		"angularBootstrap" : "lib/dashboard/ui-bootstrap-tpls",
 		"angularSortable" : "lib/dashboard/sortable",
