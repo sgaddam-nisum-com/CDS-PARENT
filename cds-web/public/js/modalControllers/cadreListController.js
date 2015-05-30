@@ -34,12 +34,18 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
 
             });
+
+
+			  
+
 		
 
 			  $scope.ok = function (value, id) {  
-			  	console.log(value);
-			  	$rootScope.selectedCadreValue = value;
-    			$modalInstance.close(value, id);
+			  	
+			  	var selObj = {value : value, id:id};
+
+			  	$rootScope.selectedCadreValue = selObj.value;
+    			$modalInstance.close(selObj);
 
   			};
 

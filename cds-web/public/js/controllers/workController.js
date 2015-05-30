@@ -3,9 +3,10 @@
 
 define(['controllers/controllerModule','formValidation','validators/workValidators','errorMessages/workErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
-	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){		
+	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService', function($state,$http,appUrls,cdsService,$scope,registerService){		
 
-		var self = this;
+		var self = this,
+		dataJson = {};
         
 
         handleUserEdit();
@@ -53,28 +54,16 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 		}
 
 		 function handleUserEdit() {		 	
+		 	self.user = {};
+           		registerService.getWorkInfo(function(resp) {                                      
+           			dataJson = resp.data;
 
-           		registerService.getWorkInfo(function(resp) {                   
-                    self.user = resp.data;
-                    self.user.occupationId = resp.data.occupation.occupationId;                    
+                  	self.user.occupationId = dataJson.occupation.occupationId;                    
+                    self.user.workingOrganization = dataJson.workingOrganization;
+                    self.user.workingLocation = dataJson.workingLocation;
                     
                 });
             }
-
-
-            function handleUserCreation() {
-
-            	
-
-
-            }
-
-            function responseParser(resp) {
-
-
-
-            }
-
 
 
 	}]);

@@ -1,6 +1,6 @@
 define(['controllers/controllerModule','formValidation','validators/volunteerValidators','errorMessages/volunteerErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
-	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage", function($state,$http,appUrls,$scope,registerService,cdsService,$sessionStorage){
+	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService",function($state,$http,appUrls,$scope,registerService,cdsService){
 		var self = this;
         handleUserEdit();
 

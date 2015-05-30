@@ -37,12 +37,11 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 $rootScope.name="helllo";
                 cadreModal = appModalService.init("cadreList.html","cadreListController", $rootScope,{class:"cadre-overlay"} )();
 
-                cadreModal.result.then(function(val, id){
-                    self.assignedToCitizenName = val;
-                    self.taskDetails.taskWorkAllocation.citizenId = id; 
+                cadreModal.result.then(function(selObj){
+                    self.assignedToCitizenName = selObj.value;                    
+                    self.taskDetails.taskWorkAllocation.reassignedTo =selObj.id; 
                 },function(){                               
-                    self.assignedToCitizenName ="";
-                    self.taskDetails.taskWorkAllocation.citizenId=null;
+                    self.assignedToCitizenName ="";                    
                 });
              
             }
@@ -57,8 +56,8 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
               reqObj.statusId = self.taskDetails.taskWorkAllocation.statusId;
               reqObj.completedPercent = self.taskDetails.taskWorkAllocation.completedPercent; 
               reqObj.priorityId =self.taskDetails.taskWorkAllocation.priorityId; 
-              reqObj.citizenId = cdsService.userInfo.appUserId;
-              reqObj.reassignedTo=
+              reqObj.citizenId = self.taskDetails.taskWorkAllocation.citizenId;
+              reqObj.reassignedTo=self.taskDetails.taskWorkAllocation.reassignedTo || self.taskDetails.taskWorkAllocation.citizenId;
               reqObj.taskId = taskId;
 
               $http({

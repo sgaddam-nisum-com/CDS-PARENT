@@ -3,9 +3,6 @@
 
 define(['angular',
 	'uiRouter',
-	'uiRouterStyles',
-	'angularRoute',
-	"ngStorage",
 	'services/common/serviceLoader',
 	'services/registerService',
 	"controllers/profileController",
@@ -26,6 +23,6 @@ define(['angular',
 	"directives/addressDirective"
 
 	], function (angular) {
-    var app = angular.module('CDSUSERPROFILE', ['ui.router','uiRouterStyles','ngRoute','ngStorage','serviceModule',"controllerModule","directiveModule"]);    
+    var app = angular.module('CDSUSERPROFILE', ['ui.router','serviceModule',"controllerModule","directiveModule"]);    
     return app;
 });

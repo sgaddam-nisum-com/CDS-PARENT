@@ -1,79 +1,88 @@
+define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors'], function(controllerModule, formValidation, validationMap, errorJson) {
 
- 
+    controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope",
+        function($state, $http, registerService, appUrls, cdsService, $scope) {
+            var self = this,
+                dataJson = {};
+                 self.user = {};
 
-define(['controllers/controllerModule','formValidation','validators/addressValidators','errorMessages/addressErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
+            handleUserEdit();
 
-	 controllerModule.controller('addressController', ['$state','$http',"registerService","appUrlService","cdsService","$sessionStorage","$scope", function($state,$http,registerService,appUrls,cdsService,$sessionStorage,$scope){
-		var self = this;
+            var config = {
+                initiate: false,
+                blurValidation: false,
+                htmlValidation: false,
+                submitValidForm: false,
+                runCallBack: false,
+            };
+            var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
 
-        handleUserEdit();
+           
+           
+            this.save = function() {
+             
+                var requestObj = [];
 
-		var config = {
-            initiate :false,
-            blurValidation: false,
-            htmlValidation : false,
-            submitValidForm : false,
-            runCallBack : false,
-        };
-		var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
-		
-			self.user={};
-			//For resident country
-			self.user.nriAddress = false;
-			
+                requestObj[0] = {};
+                requestObj[0].postalAddress ={};
 
+        	 if (self.user.iaddressarray.length && self.user.postalAddress.postalAddressId && self.user.iaddressarray[0].addressLine1)  {       
+                
+                requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
+                requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
+                
+                requestObj[0].postalAddress.postalAddressId = self.user.postalAddress.postalAddressId ;
+                requestObj[0]['nriAddress'] = false;
+               
+             if (formStack.isValid) {
 
-		this.save = function(){
-			
-			if(self.nri) self.nri.nriCountry ="USA"; 
+                    $http({
+                        method: "PUT",
+                        url: appUrls.updateResidentialAddress,
+                        data: requestObj
+                    }).success(function(data, status, headers, config) {
+                        console.log("success");
+                        $state.go('root.profile.editprofile.volunteer');
+                    }).error(function(data, status, headers, config) {
 
-			var requestObj = [];
-			
-			requestObj[0]={};
-			requestObj[0]['userId'] = cdsService.getUserId();
-			requestObj[1] = angular.copy(self.user);			
-			if(self.nri){
-				requestObj[2] = angular.copy(self.nri);
-			}
-
-			if(formStack.isValid){								
-
-				$http({
-					method: "PUT",
-					url: appUrls.updateResidentialAddress,
-					data: requestObj	
-				}).success(function(data, status, headers, config){
-					console.log("success");
-					$state.go('root.profile.editprofile.volunteer');
-				}).error(function(data, status, headers, config){
-					
-				});
-			} 
-		}
+                    });
+                }
+            }
+            }
 
 
-		   function handleUserEdit() {
-                registerService.getAddressInfo( function(resp) {
-                    self.user = resp.data;
+            function handleUserEdit() {
+                registerService.getAddressInfo(function(resp) {
+                    self.user.iaddressarray = [];                    
+                    self.user.postalAddress = {};
+                    
+                    self.user.iaddressarray.push({});
+                    /*self.user.naddressarray.push({});*/
+                    self.showSubAddressInfo = false;
+
+                    if (resp.status == "success") {
+                    	self.showSubAddressInfo = true;
+                        dataJson = resp.data;
+                       	self.user.iaddressarray = [];                       
+                        /*Set address array to 1 now . Need to confirm on tiles integration*/
+                        for (var i = 0; i < 1; i++) {
+                            if (!dataJson[i].nriAddress) {
+                                self.user.iaddressarray.push(dataJson[i]);
+                            } else {
+                                self.user.naddressarray.push(dataJson[i]);
+                            }
+                        }
+
+                   
+                    }
+
                 });
             }
 
 
-            function handleUserCreation() {
+   
 
-            }
-
-            function responseParser(resp) {
-            	if(resp.length){
-            		var modelObj = resp[0];            	
-            		//External obj reference            		
-            		$scope.voterNodeObj = angular.copy(modelObj.postalAddress);	            		
-            		return modelObj;	
-            	} 	            	
-            }
-
-
-	}]);
+        }
+    ]);
 
 });
-

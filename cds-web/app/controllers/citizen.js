@@ -167,7 +167,11 @@ exports.saveResidentialAddress = function(req, res, next) {
 
 exports.editResidentialAddress = function(req, res, next) {
     log.debug("editResidentialAddress : logged user - " + (req.user.data.user.appUserId));
-    var params = req.body;
+    var params = {};
+    
+    params.data = req.body;    
+
+
     var token = req.user ? req.user.data.token : null;
     params.userId = params.userId || req.user.data.user.appUserId;
 

@@ -188,18 +188,14 @@ exports.editResidentialAddress = function(params, token, callback) {
 
     //build url path    
     var url = {
-        path: requireUtil.format(restUrls.citizen.saveResidentialAddress.path, params.userId),
-        method: restUrls.citizen.saveResidentialAddress.method
+        path: requireUtil.format(restUrls.citizen.editResidentialAddress.path, params.userId),
+        method: restUrls.citizen.editResidentialAddress.method
     };
 
-    //remove userid from params
-    params.splice(0, 1);
-
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(url, params.data, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
-
 exports.getResidentialAddress = function(params, token, callback) {
     log.debug("getResidentialAddress : " + (JSON.stringify(params)));
     var headers = header;

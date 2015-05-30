@@ -3,7 +3,7 @@
 
 define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
 
-	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService','$sessionStorage', function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
+	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService', function($state,$http,appUrls,cdsService,$scope,registerService){
 	 		var self = this,
 		   dataJson={};
 

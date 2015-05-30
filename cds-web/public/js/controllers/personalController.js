@@ -1,14 +1,14 @@
 define(['controllers/controllerModule', 'formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function(controllerModule, formValidation, validationMap, errorJson, $) {
 
-    controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage",
-        function($state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage) {
+    controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', 
+            function($state, $http, appUrls, cdsService, $scope, registerService) {
 
 
             this.showLoader = false;
             this.showImage = true;
 
             var self = this,
-            dataJson;
+            dataJson={};
         
 
             handleUserEdit();
@@ -95,8 +95,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     self.user.emailId = dataJson.emailId;
                     self.user.skypeId = dataJson.skypeId;
                     self.user.maritalStatus = dataJson.maritalStatus;
-                    self.user.educationId = dataJson.educationId;
-
+                    self.user.educationId = dataJson.education.educationId;                    
 
                 });
             }

@@ -38,9 +38,12 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 $rootScope.queryString = queryString;
                 cadreModal = appModalService.init("cadreList.html","cadreListController", $rootScope,{class:"cadre-overlay"} )();
 
-                cadreModal.result.then(function(val, id){
-                    self.assignedToCitizenName = val;
-                     self.user.taskWorkAllocation.citizenId = id; 
+
+                console.log(cadreModal);
+
+                cadreModal.result.then(function(selObj){
+                    self.assignedToCitizenName = selObj.value;
+                    self.user.taskWorkAllocation.citizenId = selObj.id;                    
                 },function(){                               
                     self.assignedToCitizenName ="";
                     self.user.taskWorkAllocation.citizenId = null;

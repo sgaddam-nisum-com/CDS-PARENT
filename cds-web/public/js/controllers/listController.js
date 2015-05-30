@@ -9,7 +9,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
 		};
 	}]);
 
-	 controllerModule.controller('listController', ["$http",'userDetailsService','userTypeService','ngDialog','$scope',"$sessionStorage","$state", function($http,userDetailsService, userTypeService, ngDialog, $scope,$sessionStorage,$state){
+	 controllerModule.controller('listController', ["$http",'userDetailsService','userTypeService','ngDialog','$scope',"$state", function($http,userDetailsService, userTypeService, ngDialog, $scope,$state){
 		
 
 		this.minAge = 18;
