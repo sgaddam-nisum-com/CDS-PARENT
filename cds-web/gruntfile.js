@@ -100,6 +100,18 @@ module.exports = function(grunt) {
             }
          }
         },
+        ngtemplates:      {
+		  app:            {
+		    src:         ['public/views/common/header.html','public/views/common/footer.html'],
+		    dest:         'public/js/templates/app-template.js',
+		    options:      {
+		      bootstrap:  function(module, script) {
+		        return 'define(module, [], function() { return { init: ' + script + ' }; });';
+		      },
+		       htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+		    }
+		  }
+		},
         watch: {
             files: ['<%=jsDir%>*.js', '<%=scssDir%>*.scss'],
             tasks: ['concat', 'uglify', 'sass']
@@ -115,6 +127,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.registerTask("optimize", ["requirejs"]);
+    grunt.loadNpmTasks('grunt-angular-templates');
 
     // Default task(s).
     grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'watch']);
