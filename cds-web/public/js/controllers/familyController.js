@@ -50,15 +50,15 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 			if(self.user.childData.length && self.user.childData[0].firstName){
 
 			for(var j=0; j<self.user.childData.length; j++){				
-				childData[j].relationType = "Kid";
-				childData[j].educationId = self.user.childData[j].education.educationId;
-				childData[j].firstName = self.user.childData[j].firstName;
-				childData[j].middleName = self.user.childData[j].middleName;
-				childData[j].lastName = self.user.childData[j].lastName;
-				childData[j].gender = self.user.childData[j].gender;		
-				childData[j].marriageDate = self.user.childData[j].marriageDate;
-				childData[j].dateOfBirth = self.user.childData[j].dateOfBirth;
-				requestData.push(self.user.childData[j]);	
+				childObj.relationType = "Kid";
+				childObj.educationId = self.user.childData[j].education.educationId;
+				childObj.firstName = self.user.childData[j].firstName;
+				childObj.middleName = self.user.childData[j].middleName;
+				childObj.lastName = self.user.childData[j].lastName;
+				childObj.gender = self.user.childData[j].gender;		
+				childObj.marriageDate = self.user.childData[j].marriageDate;
+				childObj.dateOfBirth = self.user.childData[j].dateOfBirth;
+				requestData.push(childObj);	
 			}
 
 		}
@@ -102,8 +102,11 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
                  dataJson= resp.data;
                  self.user = {};
+                 self.user.childData= [];
                  /*To show primary field*/
-                 self.user.childData = [{}];
+                 if(dataJson.length<2){
+                	 self.user.childData = [{}];
+             		}
                  
                  if(resp.status=="success"){
 
