@@ -231,7 +231,7 @@ exports.getFamily = function(params, token, callback) {
                     resp.data[i].educationId = resp.data[i].education.educationId;
                 }
                 if (resp.data[i].marriageDate) {
-                    resp.data[i].marriageDate = util.formatDate(null, resp.data[i].marriageDate);
+                    resp.data[i].marriageDate = util.deFormatDate(null, resp.data[i].marriageDate);
                 }
             }
         }
