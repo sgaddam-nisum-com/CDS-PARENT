@@ -8,6 +8,7 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 		   dataJson={};
 
 
+
 		self.user = {};
 		 
       
@@ -25,6 +26,17 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 		
 		this.save = function(){
 		
+
+			var reqObj = {};
+
+
+		/*	reqObj.voterCardId = 
+			reqObj.treeDataId = 
+			reqObj.addressLine1 = 
+			reqObj.addressLine2 = 
+
+*/
+
 			if(formStack.isValid){								
 
 				$http({

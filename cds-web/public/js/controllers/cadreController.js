@@ -8,12 +8,10 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
         
 		self.user = {};
 		self.user.cadre={};        
-        dataJson.reqMethod = "POST";
-        dataJson.reqURL = appUrls.saveCadre;
         handleGetCadre();
         
 		var config = {
-            initiate :true,
+            initiate :false,
             blurValidation: false,
             htmlValidation : false,
             submitValidForm : false,
@@ -57,6 +55,9 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
                     if(dataJson.cadreId){
                     	dataJson.reqMethod = "PUT";
                     	dataJson.reqURL =appUrls.updateCadre; 
+                    }else{
+                    	 dataJson.reqMethod = "POST";
+        				 dataJson.reqURL = appUrls.saveCadre;		
                     }
                
                 self.user.cadre = {};    
@@ -66,13 +67,12 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 	            self.user.healthInsurance = dataJson.citizen.healthInsurance;
 	            self.user.lifeInsurance = dataJson.citizen.lifeInsurance;
 	            self.user.bloodGroupId =dataJson.citizen.bloodGroup.bloodGroupId;	            
-	        }
+	        	}
+
 	            self.user.cadre.positionId =dataJson.partyDesigination.positionId;
 	            self.user.cadre.partyMembershipId =dataJson.partyMembershipId;
 	            self.user.cadre.partyResponsibility =dataJson.partyResponsibility;
 				self.user.cadre.performanceGradeId =dataJson.performanceGradeId;
-				 
-
 
 				 });
             }

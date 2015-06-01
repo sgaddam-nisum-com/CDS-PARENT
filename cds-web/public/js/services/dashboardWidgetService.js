@@ -282,22 +282,22 @@ define(['services/serviceModule'], function(serviceModule) {
                     },
 
                     {
-                        name: 'Cadre Verifications (All)',
-                        title: "Cadre Verifications (All)",
+                        name: 'Cadre Verifications (New)',
+                        title: "Cadre Verifications (New)",
                         style: {
                             width: '100%',
                             height: "432px"
                         },
                         enableVerticalResize: true,
-                        directive: "cadre-verification-all-directive",
-                        templateUrl: "views/dashboard/cadre-verifications-all.html",
+                        directive: "cadre-verification-new-directive",
+                        templateUrl: "views/dashboard/cadre-verifications-new.html",
 
                         "class": "d-widget cadre-verifications-all"
 
 
                     },
 
-                    {
+            /*        {
                         name: 'Cadre Verifications (Service Center)',
                         title: "Cadre Verifications (Service Center)",
                         style: {
@@ -309,17 +309,17 @@ define(['services/serviceModule'], function(serviceModule) {
                         templateUrl: "views/dashboard/cadre-verifications-office.html",
                         "class": "d-widget cadre-verifications-all"
 
-                    },
+                    },*/
 
                     {
-                        name: 'Cadre Verifications (Assigned to me)',
-                        title: "Cadre Verifications (Assigned to me)",
+                        name: 'Cadre Verifications (Existing)',
+                        title: "Cadre Verifications (Existing)",
                         style: {
                             width: '100%'
                         },
                         enableVerticalResize: true,
-                        directive: "cadre-verification-self-directive",
-                        templateUrl: "views/dashboard/cadre-verifications-self.html",
+                        directive: "cadre-verification-existing-directive",
+                        templateUrl: "views/dashboard/cadre-verifications-existing.html",
 
                         "class": "d-widget cadre-verifications-all"
 

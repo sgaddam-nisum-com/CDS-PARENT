@@ -65,6 +65,24 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
+                 getNewCadreVerifications:function(cb){
+                    $http.get(appUrlService.getCadreVerifications, {
+                        params: {
+                            type:'newcadres'
+                        }
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+                },
+                getExistingCadreVerifications:function(cb){
+                    $http.get(appUrlService.getCadreVerifications, {
+                        params: {
+                            type:'pendingverificationcadres'
+                        }
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+                },
                  getSelfCadreVerifications:function(cb){
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
