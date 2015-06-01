@@ -80,3 +80,18 @@ exports.cadresTrendRPerMonth = function(req, res, next) {
         next();
     });
 };
+
+exports.cadrePickedStatus = function(req, res, next) {
+    //log.debug("cadrePickedStatus : logged user - " + req.user.data.user.appUserId);
+    var token = req.user ? req.user.data.token : null;
+    var type = req.query.type;
+    var userId = req.query.userId;
+
+    dashboardService.cadrePickedStatus({
+        userId: userId,
+        type: type
+    }, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};

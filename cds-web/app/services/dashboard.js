@@ -90,3 +90,18 @@ exports.cadresTrendRPerMonth = function(token, callback) {
         restService.makecall(args, callback);
     });
 };
+
+exports.cadrePickedStatus = function(params, token, callback) {
+    log.debug("cadrePickedStatus");
+    var headers = header;
+    headers[cdsConfig.token] = token;
+
+    var url = {
+        path: requireUtil.format(restUrls.dashboard.cadrePickedStatus.path, params.userId, params.type),
+        method: restUrls.dashboard.cadrePickedStatus.method
+    };
+
+    restService.builbArgs(url, null, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};

@@ -191,6 +191,10 @@ module.exports = {
         cadresTrendRPerMonth: {
             path: "user/dashboard/cadresandvolunteerstrendreportspermonth",
             method: "GET"
+        },
+        cadrePickedStatus: {
+            path: "user/dashboard/%s/cadrespicked/%s/",
+            method: "PUT"
         }
     },
     citizen: {

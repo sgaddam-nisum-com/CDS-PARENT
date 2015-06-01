@@ -78,10 +78,11 @@ exports.init = function(app, passport, auth) {
     //dashboard
     app.get('/auth/dashboard/viewMessage', dashboardController.viewMessage, auth.filterResponse);
     app.get('/auth/dashboard/notifications', dashboardController.notifications, auth.filterResponse);
-    app.get('/auth/dashboard/messageCount', dashboardController.messageCount, auth.filterResponse);
-    app.get('/auth/dashboard/tasksByAge', dashboardController.tasksByAge, auth.filterResponse);
-    app.get('/auth/dashboard/tasksTrendRPerMonth', dashboardController.tasksTrendRPerMonth, auth.filterResponse);
-    app.get('/auth/dashboard/cadresTrendRPerMonth', dashboardController.cadresTrendRPerMonth, auth.filterResponse);
+    app.get('/auth/dashboard/messagecount', dashboardController.messageCount, auth.filterResponse);
+    app.get('/auth/dashboard/tasksbyage', dashboardController.tasksByAge, auth.filterResponse);
+    app.get('/auth/dashboard/taskstrendrpermonth', dashboardController.tasksTrendRPerMonth, auth.filterResponse);
+    app.get('/auth/dashboard/cadrestrendrpermonth', dashboardController.cadresTrendRPerMonth, auth.filterResponse);
+    app.get('/auth/dashboard/cadrepickedstatus', dashboardController.cadrePickedStatus, auth.filterResponse);
 
 
     //citizen routes   
