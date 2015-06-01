@@ -50,20 +50,18 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 			if(self.user.childData.length && self.user.childData[0].firstName){
 
 			for(var j=0; j<self.user.childData.length; j++){				
-				childObj.relationType = "Kid";
-				childObj.educationId = self.user.childData[j].education.educationId;
-				childObj.firstName = self.user.childData[j].firstName;
-				childObj.middleName = self.user.childData[j].middleName;
-				childObj.lastName = self.user.childData[j].lastName;
-				childObj.gender = self.user.childData[j].gender;		
-				childObj.marriageDate = self.user.childData[j].marriageDate;
-				childObj.dateOfBirth = self.user.childData[j].dateOfBirth;
+				childData[j].relationType = "Kid";
+				childData[j].educationId = self.user.childData[j].education.educationId;
+				childData[j].firstName = self.user.childData[j].firstName;
+				childData[j].middleName = self.user.childData[j].middleName;
+				childData[j].lastName = self.user.childData[j].lastName;
+				childData[j].gender = self.user.childData[j].gender;		
+				childData[j].marriageDate = self.user.childData[j].marriageDate;
+				childData[j].dateOfBirth = self.user.childData[j].dateOfBirth;
 				requestData.push(self.user.childData[j]);	
 			}
 
 		}
-
-
 
 			$http({
 				method: reqMethod,
@@ -81,35 +79,6 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 
 
-		/*	
-			if(self.user.spouse) {
-				self.user.spouse.relationType = "Wife";
-				self.user.spouse.citizenId = cdsService.getUserId();
-			}
-			if(self.user.child) {				
-				self.user.child.relationType = "Kid";
-				self.user.child.citizenId = cdsService.getUserId();				
-			}
-			requestObj[0] = {};			
-			requestObj[0]['userId'] = cdsService.getUserId();
-			requestObj[1] = angular.copy(self.user.spouse);		
-			
-			requestObj[2] = angular.copy(self.user.child);
-			
-			if(formStack.isValid){								
-
-				$http({
-					method: "PUT",
-					url: appUrls.updateFamily,
-					data: requestObj
-				}).success(function(data, status, headers, config){
-					console.log("success");
-					$state.go('root.profile.editprofile.cadre');
-				}).error(function(data, status, headers, config){
-					
-
-				});
-			} */
 		
 
 
@@ -141,7 +110,7 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
                  self.users = resp.data; 
 
                  for(var i=0; i<self.users.length; i++){
-                 	if(self.users[i].relationId==1){
+                 	if(self.users[i].relationType=="Wife"){
                  		self.user.spouseData = self.users[i];                 		
                  	}else{
                  		self.user.childData.push(self.users[i]);                 		
