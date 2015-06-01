@@ -28,13 +28,11 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 			
 			var requestData = [];
 
-
-/*			for(var j=0; j<self.user.childData.length; j++){				
-				requestData.push(self.user.childData[j]);		
-			}
-*/			
+			
 
 			var spouseObj = {};
+			var childObj = {};
+			
 
 			spouseObj.relationType = "Wife";
 			spouseObj.educationId = self.user.spouseData.education.educationId;
@@ -47,11 +45,25 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 			requestData.push(spouseObj);
 
+			console.log(self.user.childData);
+
+			if(self.user.childData.length && self.user.childData[0].firstName){
+
+			for(var j=0; j<self.user.childData.length; j++){				
+				childObj.relationType = "Kid";
+				childObj.educationId = self.user.childData[j].education.educationId;
+				childObj.firstName = self.user.childData[j].firstName;
+				childObj.middleName = self.user.childData[j].middleName;
+				childObj.lastName = self.user.childData[j].lastName;
+				childObj.gender = self.user.childData[j].gender;		
+				childObj.marriageDate = self.user.childData[j].marriageDate;
+				childObj.dateOfBirth = self.user.childData[j].dateOfBirth;
+				requestData.push(self.user.childData[j]);	
+			}
+
+		}
 
 
-
-
-			console.log(dataJson);
 
 			$http({
 				method: reqMethod,
@@ -104,6 +116,14 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 
 		}
+
+
+	/*	this.addChildSection = function(event){
+				event.preventDefault();
+				self.user.childData.push({});
+
+		}
+*/
 
 
 		  function handleGetFamily() {             
