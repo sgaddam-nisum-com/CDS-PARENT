@@ -187,19 +187,12 @@ exports.getResidentialAddress = function(params, token, callback) {
 
 exports.saveFamily = function(params, token, callback) {
     log.debug("saveFamily");
-    var marriageDate = params[1].marriageDate;
-    var dateOfBirth = params[1].dateOfBirth;
-
-    if (marriageDate) {
-        params[1].marriageDate = util.formatDate(null, marriageDate);
-    }
-    if (dateOfBirth) {
-        params[1].dateOfBirth = util.formatDate(null, dateOfBirth);
-    }
-
-    for (var i = 2; i < params.length; i++) {
+    for (var i = 0; i < params.length; i++) {
         if (params[i].dateOfBirth) {
             params[i].dateOfBirth = util.formatDate(null, params[i].dateOfBirth);
+        }
+        if (params[i].marriageDate) {
+            params[i].marriageDate = util.formatDate(null, params[i].marriageDate);
         }
     }
 
@@ -210,19 +203,13 @@ exports.saveFamily = function(params, token, callback) {
 
 exports.editFamily = function(params, token, callback) {
     log.debug("editFamily");
-    var marriageDate = params[1].marriageDate;
-    var dateOfBirth = params[1].dateOfBirth;
 
-    if (marriageDate) {
-        params[1].marriageDate = util.formatDate(null, marriageDate);
-    }
-    if (dateOfBirth) {
-        params[1].dateOfBirth = util.formatDate(null, dateOfBirth);
-    }
-
-    for (var i = 2; i < params.length; i++) {
+    for (var i = 0; i < params.length; i++) {
         if (params[i].dateOfBirth) {
             params[i].dateOfBirth = util.formatDate(null, params[i].dateOfBirth);
+        }
+        if (params[i].marriageDate) {
+            params[i].marriageDate = util.formatDate(null, params[i].marriageDate);
         }
     }
 
@@ -236,25 +223,15 @@ exports.getFamily = function(params, token, callback) {
 
     citizenService.getFamily(params, token, function(resp) {
         if (resp.data.status === "success") {
-            var marriageDate = resp.data[0].marriageDate;
-            if (marriageDate) { //change date format
-                resp.data[0].marriageDate = util.deFormatDate(null, marriageDate);
-            }
-            if (resp.data[0].education && resp.data[0].education.educationId) {
-                resp.data[0].educationId = resp.data[0].education.educationId;
-            }
-
-            var dateOfBirth = resp.data[0].dateOfBirth;
-            if (dateOfBirth) { //change date format
-                resp.data[0].dateOfBirth = util.deFormatDate(null, dateOfBirth);
-            }
-
-            for (var i = 1; i < resp.data.length; i++) {
+            for (var i = 0; i < resp.data.length; i++) {
                 if (resp.data[i].dateOfBirth) {
                     resp.data[i].dateOfBirth = util.deFormatDate(null, resp.data[i].dateOfBirth);
                 }
                 if (resp.data[i].education && resp.data[i].education.educationId) {
                     resp.data[i].educationId = resp.data[i].education.educationId;
+                }
+                if (resp.data[i].marriageDate) {
+                    resp.data[i].marriageDate = util.formatDate(null, resp.data[i].marriageDate);
                 }
             }
         }
