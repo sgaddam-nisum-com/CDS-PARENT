@@ -7,7 +7,7 @@
 					<label for="right-label" class="right inline">Volunteer ID#:</label>
 				</div>
 				<div class="large-12 columns left">
-					<input type="text" id="volunteerCodeNumber" class="input" name="volunteerCodeNumber" data-val="volunteerId" ng-model="volunteerCtrl.user.volunteer.volunteerCodeNumber">
+					<input type="text" id="volunteerCodeNumber" class="input" name="volunteerCodeNumber" data-val="volunteerId" ng-model="volunteerCtrl.user.volunteerCodeNumber">
 					<div class="error-class"><div class="error-content"></div></div>
 				</div>
 				
@@ -17,8 +17,8 @@
 					<label for="left-label" class="right">Are you interested in Volunteer work:</label>
 				</div>
 				<div class="large-12 columns">
-					<input type="radio" name="interested" value="1" ng-model="volunteerCtrl.user.interestedAsVolunteer" id="interestedYes"><label for="interestedYes">Yes</label>
-					<input type="radio" name="interested" value="0" ng-model="volunteerCtrl.user.interestedAsVolunteer" id="interestedNo"><label for="interestedNo">No</label>
+					<input type="radio" name="interested" value="1" ng-model="volunteerCtrl.user.citizen.interestedAsVolunteer" id="interestedYes"><label for="interestedYes">Yes</label>
+					<input type="radio" name="interested" value="0" ng-model="volunteerCtrl.user.citizen.interestedAsVolunteer" id="interestedNo"><label for="interestedNo">No</label>
 				</div>
 			</div>       
 			<div class="row">
@@ -26,7 +26,7 @@
 					<label class="right">Which areas are you interested to Volunteer:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="areaOfInterest" class="input" name="areaOfInterest" ng-model="volunteerCtrl.user.volunteerInterestedAreas.interestId" data-val="areaOfInterest" ng-options="areaOfInterest.interestId as areaOfInterest.volInterestAreaName for areaOfInterest in interestedAreasOptions">
+					<select id="areaOfInterest" class="input" name="areaOfInterest" ng-model="volunteerCtrl.user.interestedAreas" data-val="areaOfInterest" ng-options="areaOfInterest.interestId as areaOfInterest.volInterestAreaName for areaOfInterest in interestedAreasOptions">
 						<option value="">Select Area of Interest</option>						
 					</select>
 					<div class="error-class"><div class="error-content"></div></div>
@@ -38,7 +38,7 @@
 					<label class="right inline">Volunteer Category:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="volunteerCategory" class="input" name="volunteerCategory" ng-model="volunteerCtrl.user.volunteer.volunteerCategoryId" ng-options="volunteerCategory.voluteerCatergoryId as volunteerCategory.volunteerCategoryName for volunteerCategory in volunteerCategoryOptions">
+					<select id="volunteerCategory" class="input" name="volunteerCategory" ng-model="volunteerCtrl.user.volunteerCategoryId" ng-options="volunteerCategory.voluteerCatergoryId as volunteerCategory.volunteerCategoryName for volunteerCategory in volunteerCategoryOptions">
 						<option value="">Select Volunteer Category</option>						
 					</select>
 				</div>
@@ -49,7 +49,7 @@
 					<label class="right inline">Lead Id:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="leadId" class="input" name="leadId" ng-model="volunteerCtrl.user.volunteer.volunteerLeadId"  ng-options="lead.citizenId as lead.firstName for lead in leadOptions">
+					<select id="leadId" class="input" name="leadId" ng-model="volunteerCtrl.user.volunteerLeadId"  ng-options="lead.citizenId as lead.firstName for lead in leadOptions">
 						<option value="">Select Area of Interest</option>						
 					</select>					
 				</div>				
@@ -59,7 +59,7 @@
 					<label class="right inline">Performance Grade:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="grade" class="input" name="grade" ng-model="volunteerCtrl.user.volunteer.performanceGradeId"  ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions">
+					<select id="grade" class="input" name="grade" ng-model="volunteerCtrl.user.performanceGradeId"  ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions">
 						<option value="">Select Performance Grade</option>						
 					</select>					
 				</div>

@@ -1,7 +1,11 @@
 define(['controllers/controllerModule','formValidation','validators/volunteerValidators','errorMessages/volunteerErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
 	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService",function($state,$http,appUrls,$scope,registerService,cdsService){
-		var self = this;
+		var self = this,
+		dataJson;
+
+
+
         handleUserEdit();
 
 		var config = {
@@ -52,27 +56,31 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 		};
 
 		   function handleUserEdit() {
+
                 registerService.getVolunteerInfo(function(resp) {
-                	self.user = {};
-                 	self.user.volunteer = resp.data;
+                	
+                	dataJson = resp.data;
+                	if(resp.data.volunteerId){
+                		dataJson.reqMethod = "PUT";
+                		dataJson.reqUrl = appUrls.updateVolunteer;
+                	}else{
+	              		dataJson.reqMethod = "POST";
+                		dataJson.reqUrl = appUrls.saveVolunteer;
+                	}
+                		
+                	self.user= {};
+
+                	self.user = resp.data;
+                	self.user.interestedAreas = resp.data.volunteerInterestedAreas[0].interestId;	
+                	self.user.volunteerCategoryId = resp.data.volunteerCategory.voluteerCatergoryId;	
+                	self.user.volunteerLeadId = resp.data.volunteerLeadId;
                 });
-            }
-
-
-            function handleUserCreation() {
-
-
-
-
-            }
-
-            function responseParser(resp) {
-
-
+  
 
             }
 
 
+         
 
 	}]);
 
