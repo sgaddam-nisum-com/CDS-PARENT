@@ -26,9 +26,13 @@
 					<label class="right">Which areas are you interested to Volunteer:</label>
 				</div>                    
 				<div class="large-12 columns right">
+
 					<select id="areaOfInterest" class="input" name="areaOfInterest" ng-model="volunteerCtrl.user.interestedAreas" data-val="areaOfInterest" ng-options="areaOfInterest.interestId as areaOfInterest.volInterestAreaName for areaOfInterest in interestedAreasOptions">
 						<option value="">Select Area of Interest</option>						
 					</select>
+
+
+
 					<div class="error-class"><div class="error-content"></div></div>
 				</div>
 				
@@ -38,9 +42,13 @@
 					<label class="right inline">Volunteer Category:</label>
 				</div>                    
 				<div class="large-12 columns right">
+					
+
 					<select id="volunteerCategory" class="input" name="volunteerCategory" ng-model="volunteerCtrl.user.volunteerCategoryId" ng-options="volunteerCategory.voluteerCatergoryId as volunteerCategory.volunteerCategoryName for volunteerCategory in volunteerCategoryOptions">
 						<option value="">Select Volunteer Category</option>						
 					</select>
+			
+
 				</div>
 				
 			</div>
@@ -50,7 +58,7 @@
 				</div>                    
 				<div class="large-12 columns right">
 					<select id="leadId" class="input" name="leadId" ng-model="volunteerCtrl.user.volunteerLeadId"  ng-options="lead.citizenId as lead.firstName for lead in leadOptions">
-						<option value="">Select Area of Interest</option>						
+						<option value="">Select Lead</option>						
 					</select>					
 				</div>				
 			</div>

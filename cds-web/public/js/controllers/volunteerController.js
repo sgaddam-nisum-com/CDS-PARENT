@@ -31,19 +31,28 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 		});
 		
 		this.save = function(){
-			self.user.userId = cdsService.getUserId();
+			
 			var requestObj = {};
-			requestObj = angular.copy(self.user);
+			
+
+			requestObj.interestedAsVolunteer = self.user.citizen.interestedAsVolunteer;
 			requestObj.volunteerInterestedAreas =[];
-			requestObj.volunteerInterestedAreas[0]= angular.copy(self.user.volunteerInterestedAreas);
+			requestObj.volunteerInterestedAreas[0]= {interestId : self.user.interestedAreas};
+			requestObj.volunteer = {
+				"volunteerId":self.user.volunteerId,
+				"volunteerCategoryId":self.user.volunteerCategoryId,
+				"volunteerLeadId":self.user.volunteerLeadId,
+				"volunteerCodeNumber": self.user.volunteerCodeNumber ,
+				"performanceGradeId":self.user.performanceGradeId
+			};	
 			
 			
 			console.log(requestObj);
 			if(formStack.isValid){								
 
 				$http({
-					method: "PUT",
-					url: appUrls.updateVolunteer,
+					method: dataJson.reqMethod,
+					url: dataJson.reqUrl,
 					data: requestObj	
 				}).success(function(data, status, headers, config){
 					console.log("success");
@@ -71,6 +80,8 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
                 	self.user= {};
 
                 	self.user = resp.data;
+
+
                 	self.user.interestedAreas = resp.data.volunteerInterestedAreas[0].interestId;	
                 	self.user.volunteerCategoryId = resp.data.volunteerCategory.voluteerCatergoryId;	
                 	self.user.volunteerLeadId = resp.data.volunteerLeadId;
