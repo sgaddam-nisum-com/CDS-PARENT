@@ -10,7 +10,7 @@ var userService = require('../services/user'),
 exports.signin = function(req, res, next) {
     log.debug("signin");
     if (!req.user) {
-        res.render('index.html', {
+        res.render('layouts/index.html', {
             title: 'Login'
         });
     } else {

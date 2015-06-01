@@ -24,20 +24,31 @@ module.exports = function(grunt) {
                 src: ['<%=jsDir%>*.js'],
                 dest: '<%=jsDistDir%><%= pkg.name.toLowerCase() %>.js'
             }
-            /* ,
-                        css: {
-                            src: ['<%=cssDir%>*.css'],
-                            dest: '<%=cssDistDir%><%= pkg.name.toLowerCase() %>.css'
-                        } */
         },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name.toLowerCase() %> <%=grunt.template.today("dd-mm-yyyy") %> */\n'
             },
             dist: {
-                files: {
-                    '<%=jsDistDir%><%= pkg.name.toLowerCase() %>.min.js': ['<%= concat.js.dest %>']
-                }
+               files: [{
+                  expand: true,
+                  cwd: 'public/js/src',
+                  src: ['**/*.js', "!templates/**/*.js" ],
+                  dest: 'public/js/min'
+              }]
+            }
+        },
+
+        copy: {
+            getProd: {
+                files: [{
+                     expand: true,
+                    cwd: 'public/js/src/templates',
+                    src: '**/*.js',
+                    dest: 'public/js/min/templates',
+                    flatten: true,
+                    filter: 'isFile'
+                }]
             }
         },
         /* ,
@@ -128,6 +139,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.registerTask("optimize", ["requirejs"]);
     grunt.loadNpmTasks('grunt-angular-templates');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task(s).
     grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'watch']);
