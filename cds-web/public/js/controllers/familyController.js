@@ -36,8 +36,8 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 			var spouseObj = {};
 
-			spouseObj.relationType = self.user.spouseData.relationType;
-			spouseObj.educationId = self.user.spouseData.educationId;
+			spouseObj.relationType = "Wife";
+			spouseObj.educationId = self.user.spouseData.education.educationId;
 			spouseObj.firstName = self.user.spouseData.firstName;
 			spouseObj.lastName = self.user.spouseData.lastName;
 			spouseObj.middleName = self.user.spouseData.middleName;
