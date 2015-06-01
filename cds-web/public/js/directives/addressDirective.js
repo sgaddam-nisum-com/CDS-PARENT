@@ -90,8 +90,11 @@ define(['directives/directiveModule', 'autocomplete'], function(directiveModule)
                                 select: function(e, data) {
                                     
                                     scope.$apply(function(){
+                                        console.log(data);
+
                                         scope.addressCtrl.user.postalAddress.postalAddressId = data.item.model;
                                         scope.voterNodeObj = data.item.fieldValueObj;
+                                        console.log(scope.voterNodeObj);
                                     });
 
 

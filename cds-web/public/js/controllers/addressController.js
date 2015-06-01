@@ -26,8 +26,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                 requestObj[0] = {};
                 requestObj[0].postalAddress ={};
 
-        	 if (self.user.iaddressarray.length && self.user.postalAddress.postalAddressId && self.user.iaddressarray[0].addressLine1)  {       
-                
+        	 if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1)  {       
+                console.log("hello");
                 requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
                 requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
                 
@@ -60,10 +60,30 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     /*self.user.naddressarray.push({});*/
                     self.showSubAddressInfo = false;
 
+
+
                     if (resp.status == "success") {
+
+
+                         if(resp.data.length){ 
+                              
+                                    $scope.voterNodeObj = resp.data[0].postalAddress;    
+                                
+                                
+                        }
+
+                        console.log(resp)
+
+
                     	self.showSubAddressInfo = true;
                         dataJson = resp.data;
-                       	self.user.iaddressarray = [];                       
+                       	self.user.iaddressarray = [];  
+
+                        self.user.postalAddress = {};
+                        self.user.postalAddress.postalAddressId = resp.data[0].postalAddress.postalAddressId;
+
+                        console.log(self.user.postalAddress.postalAddressId);
+
                         /*Set address array to 1 now . Need to confirm on tiles integration*/
                         for (var i = 0; i < 1; i++) {
                             if (!dataJson[i].nriAddress) {
@@ -73,8 +93,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                             }
                         }
 
-                   
                     }
+
+                        console.log(self.user);
+
+
 
                 });
             }

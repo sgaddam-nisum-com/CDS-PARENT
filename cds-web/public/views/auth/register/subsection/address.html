@@ -1,6 +1,11 @@
 <form name="address" id="addressRegistrationForm" ng-submit="addressCtrl.save()">
 	<div class="row rightContent">
 		<div class="large-16 columns formContent">
+
+
+
+			<input type="text" ng-model="addressCtrl.user.postalAddress.postalAddressId" />
+
 			
 			<div class="row arrress-wrapper" ng-repeat="address in addressCtrl.user.iaddressarray" style="margin-bottom:30px;" >
 				<div class="large-12 columns">
@@ -12,11 +17,15 @@
 						
 						<div class="large-12 columns left">
 							
-							<input type="text" ng-model="addressCtrl.user.postalAddress.postalAddressId" />
-							<div id="autoCompleteContainer">									
+							
+							
+
+							<div id="autoCompleteContainer" autocomplete-address-directive>									
 									<input type="text" id="postalAddress" class="input" name="postalAddress" data-val="postalAddress"  placeholder="Search by pincode">
 										<img src="images/searchicon.png" class="search-icon" id="searchIcon">
 							</div>
+
+
 							<div class="error-class"><div class="error-content"></div></div>
 						</div>
 					</div>
@@ -43,14 +52,14 @@
 						</div>
 					</div>
 					
-					<div ng-show="addressCtrl.showSubAddressInfo">
+					<!-- <div ng-show="addressCtrl.showSubAddressInfo">
 
 					<div class="row">
 						<div class="large-4 columns">
 							<label for="right-label" class="right inline">Taluk:</label>
 						</div>
 						<div class="large-12 columns left">
-							<!-- <input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.taluk"> -->
+						<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.taluk">
 							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.taluk"></span>
 							<div class="error-class"><div class="error-content"></div></div>
 						</div>
@@ -60,7 +69,7 @@
 							<label for="right-label" class="right inline">Division:</label>
 						</div>
 						<div class="large-12 columns left">
-							<!-- <input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.divisionName"> -->
+							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.divisionName">
 							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.divisionName"></span>
 							<div class="error-class"><div class="error-content"></div></div>
 						</div>
@@ -70,7 +79,7 @@
 							<label for="right-label" class="right inline">District:</label>
 						</div>
 						<div class="large-12 columns left">
-							<!-- <input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.district"> -->
+							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.district">
 							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.district"></span>
 							<div class="error-class"><div class="error-content"></div></div>
 						</div>
@@ -80,7 +89,7 @@
 							<label for="right-label" class="right inline">Village:</label>
 						</div>
 						<div class="large-12 columns left">
-							<!-- <input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.officeName"> -->
+							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.officeName">
 							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.officeName"></span>
 							<div class="error-class"><div class="error-content"></div></div>
 						</div>
@@ -90,17 +99,35 @@
 							<label for="right-label" class="right inline">Pincode:</label>
 						</div>
 						<div class="large-12 columns left">
-							<!-- <input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.pincodeNumber"> -->
+							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.pincodeNumber">
 							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.pincodeNumber"></span>
 							<div class="error-class"><div class="error-content"></div></div>
 						</div>
 					</div>
-				</div>
+				</div>  -->
+
+
+
+
+			
+
+
+
+
+
 
 
 				</div>
 			</div>
 			
+				<div class="row" ng-repeat="(key, value) in voterNodeObj">
+				<div class="large-4 columns">
+					<label for="right-label" class="right inline">{{key}}:</label>
+				</div>
+				<div class="large-12 columns left">
+					<span class="address-line">{{value}}</span>
+				</div>
+			</div>
 			
 			<!-- <div class="row">
 				<div class="large-4 columns">
@@ -114,7 +141,7 @@
 
 
 
-
+<!-- 
 			<div class="row" ng-repeat="address in addressCtrl.user.naddressarray">
 				<div class="columns large-16 columns">
 
@@ -164,7 +191,7 @@
 
 
 
-
+ -->
 
 
 
@@ -173,15 +200,8 @@
 
 			
 			
-			<!-- <div class="row" ng-repeat="(key, value) in voterNodeObj">
-				<div class="large-4 columns">
-					<label for="right-label" class="right inline">{{key}}:</label>
-				</div>
-				<div class="large-12 columns left">
-					<span class="address-line">{{value}}</span>
-				</div>
-			</div>
-			-->
+		
+			
 		<!-- 	<div class="row">
 				<div class="large-4 columns">
 					&nbsp;

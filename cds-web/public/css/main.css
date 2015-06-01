@@ -2085,6 +2085,7 @@ body .navigation .top-bar-section ul li:active a {
   width: 350px !important;
   background-image: none !important;
   background-color: #eaeaea;
+  z-index: 200;
 }
 
 /* line 90, ../scss/components/_voter.scss */
@@ -2095,6 +2096,8 @@ body .navigation .top-bar-section ul li:active a {
   margin-bottom: 5px;
   padding: 5px;
   word-wrap: break-word;
+  border:1px solid #ddd;
+  list-style: none;
 }
 
 /* line 99, ../scss/components/_voter.scss */
