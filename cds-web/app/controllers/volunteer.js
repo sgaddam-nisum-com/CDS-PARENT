@@ -12,6 +12,7 @@ exports.save = function(req, res, next) {
     log.debug("save : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.saveVolunteer(params, token, function(resp) {
         req.resp = resp;
