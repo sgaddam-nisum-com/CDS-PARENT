@@ -99,7 +99,7 @@ exports.init = function(app, passport, auth) {
     app.put('/auth/citizen/editworkinf', citizenController.editWorkInf, auth.filterResponse);
     app.get('/auth/citizen/getworkinf', citizenController.getWorkInf, auth.filterResponse);
 
-    app.post('auth/citizen/savevoterinf', citizenController.saveVoterInf, auth.filterResponse);
+    app.post('/auth/citizen/savevoterinf', citizenController.saveVoterInf, auth.filterResponse);
     app.put('/auth/citizen/editvoterinf', citizenController.editVoterInf, auth.filterResponse);
     app.get('/auth/citizen/getvoterinf', citizenController.getVoterInf, auth.filterResponse);
     app.delete('/auth/citizen/deletevoterinf', citizenController.deleteVoterInf, auth.filterResponse);
