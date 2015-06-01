@@ -1,300 +1,84 @@
-/*global define*/
-'use strict';
 
-define(['angular','uiRouter','uiRouterStyles','angularRoute','services/serviceLoader','services/appUrlService','services/cdsService','directives/directiveLoader','controllers/controllerLoader','angularAnimate','angularResource','ngDialog',"ngStorage"], function (angular) {
-    var app = angular.module('CDSHOME', ['ngRoute','serviceModule','directiveModule',"controllerModule",'ngAnimate','ngResource','ui.router','uiRouterStyles','ngDialog','ngStorage']);
-    return app;
-});
-;/*global define*/
-'use strict';
-
-define(['app','uiRouter','angularRoute'], function (app) {
-
-
-app.run(["$rootScope", "$sessionStorage","$state","$location","roleService","cdsService",function($rootScope, $sessionStorage,$state,$location,roleService,cdsService){
-
-       $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){           
-                
-
-           var checkUserSession = cdsService.getUserSession();			
-			checkUserSession
-			.success(function(resp){					                                                    
-                         
-                  if(resp.status == "success"){  
-                   
-                    cdsService.userAuthenticated = true;
-					cdsService.user = resp.data.user;
-					var userRole = "citizen";                    
-                    var privilegeStateArray = roleService.getPrivilegeStateArray(cdsService.user.privileges);                  
-				    var isValidModule = roleService.checkValidModule(toState.name,privilegeStateArray);
-                                 
-				if(toState.secured && !isValidModule || toState.name == "root.signin"){                					 
-					 event.preventDefault();
-                     $state.go("auth.dashboard");                      
-			     }  
-             }else{                
-                if(toState.secured){
-                    event.preventDefault();                                    
-                     $state.go("root.signin");                    
-                }              
-             }	
-            })
-	
-        });
-
-}]);
-
-app.config(function($stateProvider, $urlRouterProvider){
- 
-    $urlRouterProvider
-    .otherwise('/');
-    
-
-    /*****Non authenticated views*****/
-
-
-
-    $stateProvider
-    .state('root',{        
-         abstract: true,
-         url : "",
-         views: {
-            'header': {
-                templateUrl: 'views/nonauth/common/header.html'
-            },
-            'footer': {
-                templateUrl: 'views/nonauth/common/footer.html'                
-            }
-        }
-    })
-
-    /*Page id : CDS1*/
-
-    .state('root.home',{
-        url: '/',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/home.html',
-                controller : "homeController as homeCtrl"                
-            }
-             
-        },
-        secured : false
-    })
-    .state('root.signin',{
-        url: '/signin',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/signin.html',
-                controller : "signinController as signinCtrl"
-            }
-        },
-        secured : false
-    })
-    .state('root.knowyourmp',{
-        url: '/knowyourmp',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/knowyourmp.html'
-            }
-        },
-        secured : false
-    })
-        .state('root.parliament',{
-        url: '/parliament',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/parliament.html'
-            }
-        },
-        secured : false
-    })
-        .state('root.aboutconstituency',{
-        url: '/aboutconstituency',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/aboutconstituency.html'
-            }
-        },
-        secured : false
-    })
-        .state('root.vision',{
-        url: '/vision',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/vision.html'
-            }
-        },
-        secured : false
-    })
-        .state('root.initiatives',{
-        url: '/initiatives',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/initiatives.html'
-            }
-        },
-        secured : false
-    })
-        .state('root.gallery',{
-        url: '/gallery',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/gallery.html'
-            }
-        },
-        secured : false
-    })
-        .state('root.contactus',{
-        url: '/contactus',
-        views: {           
-            'content@': {
-                templateUrl: 'views/nonauth/contactus.html'
-            }
-        },
-        secured : false
-    })
-    .state('auth',{        
-         abstract: true,
-         url : "",
-         views: {
-            'header': {
-                templateUrl: 'views/auth/common/header.html'
-            },
-            'footer': {
-                templateUrl: 'views/auth/common/footer.html'                
-            }
-        }
-    })
-    .state('auth.dashboard',{        
-         url : "/dashboard",
-         views: {
-            'content@': {
-                templateUrl: 'views/auth/dashboard.html'
-            }
-        },
-        secured : true
-    })
-    .state('auth.register', {
-        url: '/register',
-        views: {
-            'content@': {
-                templateUrl: 'views/auth/register/register.html',
-                controller : "leftNavController as leftNavCtrl"
-            }
-        },
-         secured : true
-    })
-    .state('auth.register.personal', {
-        url: '/personal',
-        views: {
-            'formSubsection': {
-                templateUrl: 'views/auth/register/subsection/personal.html',
-                controller : "personalController as personalCtrl"
-            }
-        },
-         secured : true
-    })
-    .state('auth.register.voter', {
-        url: '/voter',
-        views: {
-            'formSubsection': {
-                templateUrl: 'views/auth/register/subsection/voter.html',
-                controller : "voterController as voterCtrl"
-            }
-        },
-         secured : true
-    })
-    .state('auth.register.address', {
-        url: '/address',
-        views: {
-            'formSubsection': {
-                templateUrl: 'views/auth/register/subsection/address.html',
-                controller : "addressController as addressCtrl"
-            }
-        },
-         secured : true
-    }) 
-    .state('auth.register.volunteer', {
-        url: '/volunteer',
-        views: {
-            'formSubsection': {
-                templateUrl: 'views/auth/register/subsection/volunteer.html',
-                controller : "volunteerController as volunteerCtrl"
-            }
-        },
-         secured : true
-    })    
-    .state('auth.register.family', {
-        url: '/family',
-        views: {
-            'formSubsection': {
-                templateUrl: 'views/auth/register/subsection/family.html',
-                controller : "familyController as familyCtrl"
-            }
-        },
-         secured : true
-    })    
-    .state('auth.register.cadre', {
-        url: '/cadre',
-        views: {
-            'formSubsection': {
-                templateUrl: 'views/auth/register/subsection/cadre.html',
-                controller : "cadreController as cadreCtrl"
-            }
-        },
-         secured : true
-    })
-    .state('auth.register.work',{
-        url: '/work',
-        views:{
-            'formSubsection':{
-                templateUrl:'views/auth/register/subsection/work.html',
-                controller: "workController as workCtrl"
-            }
-        },
-         secured : true
+var routes = {
         
-    })
-    .state('auth.list', {
-        url: '/list',
-        views: {
-            'content@': {
-                templateUrl: 'views/auth/list/list.html',
-                controller : "listController as listCtrl"                
-            },
+        /*Home page & static pages*/
+        "/": {
+            module: {"app":"appHome", "config":"configHome","moduleName":"CDSHOME"}
         },
-         secured : true
- 
-    })
-    .state('auth.viewMember',{
-        url : "/user/view/:id",
-        views: {
-            'content@': {
-                templateUrl: 'views/auth/list/view-member.html',
-                controller : "viewController as viewCtrl"                
-            }
+        "/signin": {
+            module: {"app":"appSignin", "config":"configSignin","moduleName":"CDSSIGNIN"}
         },
-         secured : true
+        "/register": {
+            module: {"app":"appRegister", "config":"configRegister","moduleName":"CDSREGISTER"}
+        },
+        "/calendar": {
+            module: {"app":"appCalendar", "config":"configCalendar","moduleName":"CDSCALENDAR"}
+        },
+        "/inbox": {
+            module: {"app":"appInbox", "config":"configInbox","moduleName":"CDSINBOX"}
+        },
+        "/tasks": {
+            module: {"app":"appTasks", "config":"configTasks","moduleName":"CDSTASKS"}
+        },
+        "/dashboard": {
+            module: {"app":"appDashboard", "config":"configDashboard","moduleName":"CDSDASHBOARD"}
+        },
+        "/profile": {
+            module: {"app":"appProfile", "config":"configProfile","moduleName":"CDSUSERPROFILE"}
+        }                
+    };
 
-    })
+    function getRoute() {
+        var module;
+        if ( typeof routes[ location.pathname ] !== "undefined" ) {
+            module = routes[ location.pathname ];
+        }
+        return module;
+    }
+
+    var r = getRoute();
+    function start() {
+        require( ["jquery",'angular',"require"], function ( $,angular,require ) {        	
+                           
+            require([r.module.config],function(){
+                angular.bootstrap(document, [r.module.moduleName]);     
+            });           
+        } );
+    }
+
+    start();
 
 
-});
-
-});
-;/*global require*/
-'use strict';
-
-require.config({
+;require.config({
 	baseUrl : "js",
 	paths: {
 
 		"appHome" : "modules/home/app",
 		"configHome" : "modules/home/config",
+		
 		"appSignin" : "modules/signin/app",
 		"configSignin" : "modules/signin/config",
+		
+		"appRegister" : "modules/register/app",
+		"configRegister" : "modules/register/config",
+		
+		"appCalendar" : "modules/calendar/app",
+		"configCalendar" : "modules/calendar/config",
 
+		"appInbox" : "modules/inbox/app",
+		"configInbox" : "modules/inbox/config",
+
+		"appTasks":"modules/tasks/app",
+		"configTasks":"modules/tasks/config",
+
+		"appDashboard":"modules/dashboard/app",
+		"configDashboard":"modules/dashboard/config",
+
+		"appProfile":"modules/profile/app",
+		"configProfile":"modules/profile/config",
+
+		"editprofile":"modules/editprofile/app",
+		"configeditprofile":"modules/editprofile/config",
 
 		/*Services, Controllers & directives*/		 		 		 
 		 "angular": 'lib/angular',
@@ -323,7 +107,42 @@ require.config({
 		"errorMessages" : "lib/errorMessages",
 		"ngStorage" : "lib/ngStorage",
 		/*Foundation*/		
-		"slick" : "lib/slick"
+		"slick" : "lib/slick",
+		"simplyscroll" : "lib/jquery.simplyscroll",
+		"gallery" : "lib/jqueryGallery",
+
+		/*Dashboard*/
+
+		"angularDashboard" : "lib/dashboard/angular-dashboard",
+		"dataModel" : "lib/dashboard/datamodel",
+		"angularCookies" : "lib/dashboard/angular-cookies",
+
+		"angularSanitize" : "lib/dashboard/angular-sanitize",
+		"angularNvd3" :"lib/dashboard/angularjs-nvd3-directives",
+		"d3" : "lib/dashboard/d3.v3.min",
+		"nvd3" : "lib/dashboard/nv.d3",
+		"angularBootstrap" : "lib/dashboard/ui-bootstrap-tpls",
+		"angularSortable" : "lib/dashboard/sortable",
+		"jqueryUI" : "lib/dashboard/jquery-ui",
+		"angularWidgets" : "lib/dashboard/angular-widgets",
+		"angularTable" : "lib/dashboard/angular-table",
+		"pnotify" :"lib/dashboard/pnotify.core",
+		"angularPnotify" : "lib/dashboard/angular-pnotify",
+		"visibly" : "lib/dashboard/visibly",
+		"visibilityCore" : "lib/dashboard/visibility.core",
+		"widgetOptions" :"lib/dashboard/widgetOptions",
+		"foundation" : "lib/foundation.min",
+		"chartJs" : "lib/charts/chart",
+		"angularCharts" : "lib/charts/angular-chart",
+		
+		"angularTouch" : "lib/uiGrid/angular-touch",
+		"angularGrid" : "lib/uiGrid/ui-grid",
+		"accordion" : "lib/jqueryui/accordion",
+
+		"sortable" : "lib/jqueryui/sortable",
+		"mouse" : "lib/jqueryui/mouse",
+		"evPointer" : "utils/evPointer"
+
 	},
 	shim: {
 		angular: {
@@ -331,71 +150,41 @@ require.config({
 		},
 		'angularAnimate' : {
 			exports : 'angular-animate',
-			deps : ['angular']
+			
 		},
 		'angularResource' : {
-			exports : 'resource',
-			deps: ['angular']
-		},
-		'angularRoute': {
-			deps: ['angular']
-		},
-		'uiRouter':{
-            deps: ['angular']
-        },
+			exports : 'resource',			
+		},	
+		
 		'underscore' : {
             exports : '_'
 		},
-		'ngDialog' : {
-			deps : ['angular']
+		
+		"slick" : {
+			deps:["jquery"]
 		},
-		'ngStorage' : {
-			deps : ['angular']
+		"simplyscroll" : {
+			deps:["jquery"]
+		},
+		
+		"gallery/jquery.galleriffic" : {
+			deps:["jquery"]
+		},
+		"gallery/jquery.history" : {
+			deps:["jquery"]
+		},
+		"gallery/jquery.opacityrollover" : {
+			deps:["jquery"]
 		},
 		"foundation" : {
 			deps : ["jquery"]
 		},
-		"slick" : {
-			deps:["jquery"]
+		"angularDashboard" : {
+			deps : ["angularBootstrap"]
 		},
-		"uiRouterStyles" : {
-			deps :["angular"]
+		"evPointer":{
+			deps:["jquery"]
 		}
 	}
 });
-
-
-
-var routes = {
-        
-        /*Home page & static pages*/
-        "/": {
-            module: {"app":"appHome", "config":"configHome","moduleName":"CDSHOME"}
-        },
-        "/signin": {
-            module: {"app":"appSignin", "config":"configSignin","moduleName":"CDSSIGNIN"}
-        },
-        "/register": {
-            module: {"app":"appRegister", "config":"configRegister","moduleName":"CDSREGISTER"}
-        }      
-    };
-
-    function getRoute() {
-        var module;
-        if ( typeof routes[ location.pathname ] !== "undefined" ) {
-            module = routes[ location.pathname ];
-        }
-                return module;
-    }
-
-    var r = getRoute();
-    function start() {
-        require( ['angular', r.module.app, r.module.config ], function ( angular ) {
-        	angular.bootstrap(document, [r.module.moduleName]);
-           
-        } );
-    }
-
-    start();
-
 

@@ -15,12 +15,7 @@ exports.savePersonalInf = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    var url = {
-        path: requireUtil.format(restUrls.citizen.savePersonalInf.path, params.userId),
-        method: restUrls.citizen.savePersonalInf.method
-    };
-
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(restUrls.citizen.savePersonalInf, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -174,7 +169,7 @@ exports.saveResidentialAddress = function(params, token, callback) {
     };
 
     //remove userid from params
-    params.splice(0, 1);
+    delete params.userId;
 
     restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -192,7 +187,9 @@ exports.editResidentialAddress = function(params, token, callback) {
         method: restUrls.citizen.editResidentialAddress.method
     };
 
-    restService.builbArgs(url, params.data, headers, function(args) {
+    delete params.userId;
+
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -224,7 +221,7 @@ exports.saveFamily = function(params, token, callback) {
     };
 
     //remove userid from params
-    params.splice(0, 1);
+    delete params.userId;
 
     restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -243,7 +240,7 @@ exports.editFamily = function(params, token, callback) {
     };
 
     //remove userid from params
-    params.splice(0, 1);
+    delete params.userId;
 
     restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);

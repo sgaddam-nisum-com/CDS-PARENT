@@ -138,16 +138,16 @@ exports.init = function(app, passport, auth) {
     app.get('/cadre/bloodgroups', cadreController.bloodGroups);
 
     app.post('/auth/cadre/save', cadreController.save);
-     app.put('/auth/cadre/edit', cadreController.edit, auth.filterResponse);
-     app.get('/auth/cadre/get', cadreController.get, auth.filterResponse);
+    app.put('/auth/cadre/edit', cadreController.edit, auth.filterResponse);
+    app.get('/auth/cadre/get', cadreController.get, auth.filterResponse);
     app.delete('/auth/cadre/delete', cadreController.delete, auth.filterResponse);
 
-/*    app.route('/auth/cadre')
-        .get(cadreController.get, auth.filterResponse)
-        .post(cadreController.save)
-        .put(cadreController.edit, auth.filterResponse)
-        .delete(cadreController.delete, auth.filterResponse);
-*/
+    /*    app.route('/auth/cadre')
+            .get(cadreController.get, auth.filterResponse)
+            .post(cadreController.save)
+            .put(cadreController.edit, auth.filterResponse)
+            .delete(cadreController.delete, auth.filterResponse);
+    */
     app.get('/auth/cadre/cadreWorksheet', cadreController.getCadreWorksheet, auth.filterResponse);
     app.get('/auth/cadre/ispartymembershipidexist', cadreController.isPartyMemberShipIdExist, auth.filterResponse);
     app.get('/auth/cadre/cadreleads', cadreController.getCadreLeads, auth.filterResponse);
@@ -175,7 +175,6 @@ exports.init = function(app, passport, auth) {
     app.post('/citizen/quickregistration', function(req, res, next) {
         req.body.username = req.body.mobileNumber;
         citizenController.quickRegistration(req, res, next, function(resp) {
-            console.log(resp)
             if (resp.status === "failure") {
                 res.json(resp);
             } else {

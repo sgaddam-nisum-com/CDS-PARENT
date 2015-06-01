@@ -147,7 +147,7 @@ module.exports = {
     },
     office: {
         vnCVerificationList: {
-            path: "user/dashboard/eventpendingcadres/%s/",
+            path: "user/dashboard/%s/",
             method: "GET"
         },
         approveVnC: {
