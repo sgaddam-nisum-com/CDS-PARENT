@@ -7,7 +7,7 @@ var cdsConfig = require('cds-config'),
 exports.requiresLogin = function(req, res, next) {
     if (!req.isAuthenticated()) {
         util.handleErrors(cdsConfig.errors.session.expired, function(resp) {
-            return res.json(resp);
+            res.json(resp);
         });
     } else {
         next();

@@ -125,7 +125,7 @@ exports.init = function(app, passport, auth) {
     app.get('/volunteer/volunteercategory', volunteerController.volunteerCategory);
     app.get('/volunteer/volunteerleads', volunteerController.volunteerLeads);
 
-    app.post('/auth/volunteer/save', volunteerController.save);
+    app.post('/auth/volunteer/save', volunteerController.save, auth.filterResponse);
     app.put('/auth/volunteer/edit', volunteerController.edit, auth.filterResponse);
     app.get('/auth/volunteer/get', volunteerController.get, auth.filterResponse);
     app.delete('/auth/volunteer/delete', volunteerController.delete, auth.filterResponse);
@@ -138,7 +138,7 @@ exports.init = function(app, passport, auth) {
     app.get('/cadre/partypositions', cadreController.partyPositions);
     app.get('/cadre/bloodgroups', cadreController.bloodGroups);
 
-    app.post('/auth/cadre/save', cadreController.save);
+    app.post('/auth/cadre/save', cadreController.save, auth.filterResponse);
     app.put('/auth/cadre/edit', cadreController.edit, auth.filterResponse);
     app.get('/auth/cadre/get', cadreController.get, auth.filterResponse);
     app.delete('/auth/cadre/delete', cadreController.delete, auth.filterResponse);

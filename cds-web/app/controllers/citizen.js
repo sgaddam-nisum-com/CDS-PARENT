@@ -98,6 +98,7 @@ exports.saveVoterInf = function(req, res, next) {
     log.debug("saveVoterInf : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
     var token = req.user ? req.user.data.token : null;
+    params.userId = params.userId || req.user.data.user.appUserId;
 
     cdsRegistration.saveVoterInf(params, token, function(resp) {
         req.resp = resp;
