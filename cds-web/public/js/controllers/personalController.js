@@ -13,6 +13,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
             handleUserEdit();
 
+
+
             $('#left-nav-mobile').change(function() {
                 $state.go('root.register.work');
             });
@@ -65,6 +67,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     data: self.user 
                 }).success(function(data, status, headers, config){
                     console.log("success");
+
+                    /*Set marriage status to persist in family section*/
+
+                  cdsService.isMarried = self.user.maritalStatus;  
+
                     $state.go('root.profile.editprofile.work');
                 }).error(function(data, status, headers, config){
                    
@@ -83,7 +90,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                 registerService.getPersonalInfo(function(resp) {
                   
                     $scope.dataJson = dataJson = resp.data;
-
                     self.user.firstName = dataJson.firstName;
                     self.user.middleName = dataJson.middleName;
                     self.user.lastName = dataJson.lastName;
@@ -95,7 +101,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     self.user.emailId = dataJson.emailId;
                     self.user.skypeId = dataJson.skypeId;
                     self.user.maritalStatus = dataJson.maritalStatus;
-                    self.user.educationId = dataJson.education.educationId;                    
+                    self.user.educationId = dataJson.education.educationId;  
+                    cdsService.isMarried = self.user.maritalStatus ;                  
 
                 });
             }

@@ -4,9 +4,10 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 		
 		var self = this,
 		   dataJson={};
-		
-		dataJson.reqMethod = "POST";
-        dataJson.reqURL = appUrls.saveCadre;
+
+
+		var reqMethod = "PUT";
+        var reqURL = appUrls.updateFamily;
         handleGetFamily();
 
 		var config = {
@@ -20,23 +21,44 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 		registerService.getEducationOptions(function(resp){				
 			$scope.educationOptions = resp.data;			
 		});
+		
 		var formStack = formValidation.init("#familyRegistrationForm", validationMap, errorJson, config);
 		
 		this.save = function(){
 			
 			var requestData = [];
-			
-			requestData.push(self.user.spouseData);
-			
-			for(var j=0; j<self.user.childData.length; j++){
+
+
+/*			for(var j=0; j<self.user.childData.length; j++){				
 				requestData.push(self.user.childData[j]);		
 			}
-			
+*/			
+
+			var spouseObj = {};
+
+			spouseObj.relationType = self.user.spouseData.relationType;
+			spouseObj.educationId = self.user.spouseData.educationId;
+			spouseObj.firstName = self.user.spouseData.firstName;
+			spouseObj.lastName = self.user.spouseData.lastName;
+			spouseObj.middleName = self.user.spouseData.middleName;
+			spouseObj.gender = self.user.spouseData.gender;		
+			spouseObj.marriageDate = self.user.spouseData.marriageDate;
+			spouseObj.dateOfBirth = self.user.spouseData.dateOfBirth;
+
+			requestData.push(spouseObj);
+
+
+
+
+
+			console.log(dataJson);
+
 			$http({
-				method: "POST",
-				url: appUrls.updateFamily,
+				method: reqMethod,
+				 url: reqURL,
 				data: requestData
 			}).success(function(data, status, headers, config){
+
 
 				
 			}).error(function(data, status, headers, config){
@@ -86,10 +108,17 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 		  function handleGetFamily() {             
               	registerService.getFamilyInfo( function(resp) {                  
+				
+				console.log(resp);                 
+
                  dataJson= resp.data;
                  self.user = {};
-                 self.user.childData = [];
-                 self.users = resp.data;        
+                 /*To show primary field*/
+                 self.user.childData = [{}];
+                 
+                 if(resp.status=="success"){
+
+                 self.users = resp.data; 
 
                  for(var i=0; i<self.users.length; i++){
                  	if(self.users[i].relationId==1){
@@ -98,6 +127,9 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
                  		self.user.childData.push(self.users[i]);                 		
                  	}
                  };
+       
+
+             	}
 
 				 });
 
