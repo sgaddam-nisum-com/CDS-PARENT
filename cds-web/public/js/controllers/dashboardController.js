@@ -13,9 +13,6 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
 
    $scope.$on("userAuthenticated", function(e, userRole){
      
-        console.log(userRole);
-
-        var userRole = "Office Manager"
 
       if(userRole == "Cadre"){
         self.widgetDefinitions =dashboardWidgetService.cadre; 
