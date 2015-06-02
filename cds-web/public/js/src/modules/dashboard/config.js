@@ -1,7 +1,7 @@
 
 define(['appDashboard'], function (app) {
 
-app.config(function($stateProvider, $urlRouterProvider){
+app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $urlRouterProvider){
  
     $urlRouterProvider
     .otherwise('');
@@ -32,6 +32,6 @@ app.config(function($stateProvider, $urlRouterProvider){
         secured : false
     })
 
-});
+}]);
 
 });

@@ -1,5 +1,5 @@
 require.config({
-	baseUrl : "js",
+
 	paths: {
 
 		"appHome" : "modules/home/app",

@@ -39,6 +39,9 @@ d.on('error', function(err) {
 var port = cdsConfig.port;
 app.set('port', port);
 
+
+
+
 d.run(function() {
     http.createServer(app).listen(app.get('port'), function() {
     	log.debug(cdsConfig.appname + " " + cdsConfig.app.description);
@@ -48,6 +51,8 @@ d.run(function() {
         console.log('Express server listening on port ' + app.get('port'));
     });
 });
+
+process.env.useMinifiedAssets = false;
 
 //expose app
 module.exports = app;

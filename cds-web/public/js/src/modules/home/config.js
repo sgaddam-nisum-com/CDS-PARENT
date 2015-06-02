@@ -3,7 +3,7 @@
 
 define(['appHome'], function (app) {
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function($stateProvider, $urlRouterProvider, $locationProvider){
  
    /* $urlRouterProvider
     .otherwise('/');
@@ -115,6 +115,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         secured : false
     })
 
-});
+}]);
 
 });
