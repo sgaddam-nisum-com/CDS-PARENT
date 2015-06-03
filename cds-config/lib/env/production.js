@@ -3,7 +3,7 @@ module.exports = {
         description: "Production environment is up..."
     },
     restUrl: {
-        host: 'http://10.10.10.58:8080/cds-rest/api/v1/', // here only the domain name        
+        host: 'http://10.10.10.58:8081/cds-rest/api/v1/', // here only the domain name        
         //port: '443',        
         contentType: {
             "Content-Type": "application/json"
