@@ -97,14 +97,9 @@ require.config({
 		angular: {
 			exports: 'angular'
 		},
-		'angularAnimate' : {
-			exports : 'angular-animate',
-			
-		},
 		'angularResource' : {
 			exports : 'resource',			
 		},	
-		
 		'underscore' : {
             exports : '_'
 		}

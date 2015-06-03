@@ -7,7 +7,6 @@ define([
     'services/dashboardService',
     'services/registerService',
     'services/common/appUrlService',
-
     'controllers/dashboardController',
     "controllers/headerController",
     "controllers/footerController",

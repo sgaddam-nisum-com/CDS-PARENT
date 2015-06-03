@@ -17,19 +17,19 @@
         },
          {
             name: "configDashboard",
-            exclude:["lib/jquery","lib/angular.min"]
+            exclude:["lib/jquery","lib/angular"]
         },
                  {
             name: "configRegister",
-            exclude:["lib/jquery","lib/angular.min"]
+            exclude:["lib/jquery","lib/angular"]
         },
                  {
             name: "configProfile",
-            exclude:["lib/jquery","lib/angular.min"]
+            exclude:["lib/jquery","lib/angular"]
         },
                  {
             name: "configTasks",
-            exclude:["lib/jquery","lib/angular.min"]
+            exclude:["lib/jquery","lib/angular"]
         }
     ]
 })

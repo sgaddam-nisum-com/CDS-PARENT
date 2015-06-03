@@ -1038,16 +1038,29 @@ body .navigation .top-bar-section ul li:active a {
   color: #25577A !important;
 }
 
+/* line 307, ../scss/components/_home.scss */
+.gallery-content {
+  min-height: 175px;
+  text-align: justify;
+}
+
+/* line 312, ../scss/components/_home.scss */
+.view-more-link {
+  font-size: 12px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
+
 @media only screen and (min-width: 640px) and (max-width: 1024px) {
   /*body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     padding: 0 8px;
   }*/
-  /* line 310, ../scss/components/_home.scss */
+  /* line 322, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 313, ../scss/components/_home.scss */
+  /* line 325, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
@@ -1058,18 +1071,18 @@ body .navigation .top-bar-section ul li:active a {
   .content {
     padding: 0 8px;
   }*/
-  /* line 323, ../scss/components/_home.scss */
+  /* line 335, ../scss/components/_home.scss */
   .logo {
     /*width: 100%; */
     padding-bottom: 0;
   }
 
-  /* line 327, ../scss/components/_home.scss */
+  /* line 339, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 330, ../scss/components/_home.scss */
+  /* line 342, ../scss/components/_home.scss */
   .slide-overlay {
     position: absolute;
     bottom: 10px;
@@ -1081,19 +1094,19 @@ body .navigation .top-bar-section ul li:active a {
   /*.slide-body-text{
     color: #ffffff;
   }*/
-  /* line 340, ../scss/components/_home.scss */
+  /* line 352, ../scss/components/_home.scss */
   .slide-body-text h3 {
     color: #c7e249;
     font-size: 20px;
   }
 
-  /* line 344, ../scss/components/_home.scss */
+  /* line 356, ../scss/components/_home.scss */
   .slide-body-text p {
     margin: 0;
   }
 }
 @media only screen and (min-width: 360px) and (max-width: 640px) {
-  /* line 352, ../scss/components/_home.scss */
+  /* line 364, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -1101,51 +1114,51 @@ body .navigation .top-bar-section ul li:active a {
     border-radius: 3px;
   }
 
-  /* line 358, ../scss/components/_home.scss */
+  /* line 370, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 361, ../scss/components/_home.scss */
+  /* line 373, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
   }
 
-  /* line 365, ../scss/components/_home.scss */
+  /* line 377, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 368, ../scss/components/_home.scss */
+  /* line 380, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 372, ../scss/components/_home.scss */
+  /* line 384, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 376, ../scss/components/_home.scss */
+  /* line 388, ../scss/components/_home.scss */
   img {
     margin: 0 auto;
   }
 
-  /* line 379, ../scss/components/_home.scss */
+  /* line 391, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 387, ../scss/components/_home.scss */
+  /* line 399, ../scss/components/_home.scss */
   .register-signin ul li:first-child {
     display: none;
   }
 
-  /* line 390, ../scss/components/_home.scss */
+  /* line 402, ../scss/components/_home.scss */
   .register, .signin, .site-view, .contactus {
     font-size: 11px;
     padding-left: 21px;
@@ -1154,27 +1167,27 @@ body .navigation .top-bar-section ul li:active a {
   /*.logo img {
     max-width: 80%;
   }*/
-  /* line 397, ../scss/components/_home.scss */
+  /* line 409, ../scss/components/_home.scss */
   #home-carousel {
     height: 130px;
   }
 
-  /* line 400, ../scss/components/_home.scss */
+  /* line 412, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 403, ../scss/components/_home.scss */
+  /* line 415, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
 
-  /* line 406, ../scss/components/_home.scss */
+  /* line 418, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 409, ../scss/components/_home.scss */
+  /* line 421, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -1182,45 +1195,45 @@ body .navigation .top-bar-section ul li:active a {
     border-radius: 3px;
   }
 
-  /* line 415, ../scss/components/_home.scss */
+  /* line 427, ../scss/components/_home.scss */
   .headerMobile {
     display: none;
   }
 
-  /* line 418, ../scss/components/_home.scss */
+  /* line 430, ../scss/components/_home.scss */
   .headerLogo .register-signin {
     display: none;
   }
 
-  /* line 421, ../scss/components/_home.scss */
+  /* line 433, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 424, ../scss/components/_home.scss */
+  /* line 436, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
   }
 
-  /* line 428, ../scss/components/_home.scss */
+  /* line 440, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 431, ../scss/components/_home.scss */
+  /* line 443, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 435, ../scss/components/_home.scss */
+  /* line 447, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 439, ../scss/components/_home.scss */
+  /* line 451, ../scss/components/_home.scss */
   body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     background: none;
   }
@@ -1228,17 +1241,17 @@ body .navigation .top-bar-section ul li:active a {
   /*.content {
     padding: 0 8px;
   }*/
-  /* line 445, ../scss/components/_home.scss */
+  /* line 457, ../scss/components/_home.scss */
   .slide-overlay {
     display: none;
   }
 
-  /* line 448, ../scss/components/_home.scss */
+  /* line 460, ../scss/components/_home.scss */
   .phone {
     display: none;
   }
 
-  /* line 451, ../scss/components/_home.scss */
+  /* line 463, ../scss/components/_home.scss */
   div.slideshow-container {
     height: auto;
   }
@@ -1858,7 +1871,7 @@ body .navigation .top-bar-section ul li:active a {
 
 /* line 58, ../scss/components/_left-nav.scss */
 .required {
-  border-left: 4px solid #B20E11 !important;
+  border-left: 4px solid #FF3A3A !important;
 }
 
 /* file input styles*/
@@ -1940,7 +1953,7 @@ body .navigation .top-bar-section ul li:active a {
 
 /* line 12, ../scss/components/_validation.scss */
 .row.error-field input, .row.error-field select {
-  border: 1px solid #B20E11;
+  border: 1px solid #ff3a3a;
 }
 
 /* line 2, ../scss/components/_view-member.scss */
@@ -2085,7 +2098,6 @@ body .navigation .top-bar-section ul li:active a {
   width: 350px !important;
   background-image: none !important;
   background-color: #eaeaea;
-  z-index: 200;
 }
 
 /* line 90, ../scss/components/_voter.scss */
@@ -2096,8 +2108,6 @@ body .navigation .top-bar-section ul li:active a {
   margin-bottom: 5px;
   padding: 5px;
   word-wrap: break-word;
-  border:1px solid #ddd;
-  list-style: none;
 }
 
 /* line 99, ../scss/components/_voter.scss */
