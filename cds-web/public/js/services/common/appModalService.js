@@ -23,7 +23,12 @@ define(['services/serviceModule'], function(serviceModule) {
                             templateUrl: templatePath + tempName,
                             controller: modalController,
                             windowClass:config.class,
-                            keyboard:false
+                            keyboard:false,
+                           resolve: {
+                              callerScope: function() {
+                               return localScope;
+                              }
+                            }
 
                         });
                         console.log(modalInstance);

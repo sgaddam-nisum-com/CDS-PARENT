@@ -5,9 +5,13 @@ define([
     'services/common/serviceLoader',
     "services/dashboardWidgetService",
     'services/dashboardService',
+    'services/registerService',
+    'services/common/appUrlService',
+
     'controllers/dashboardController',
     "controllers/headerController",
     "controllers/footerController",
+    "modalControllers/cadreVerificationController",
     "directives/dashboard/cadreVerificationAllDirective",
     "directives/dashboard/cadreVerificationOfficeDirective",
     "directives/dashboard/cadreVerificationSelfDirective",  
@@ -21,6 +25,8 @@ define([
     "directives/navDropdownDirective",
     "directives/dashboard/cadreVerificationNewDirective",
     "directives/dashboard/cadreVerificationExistingDirective",
+    "directives/dashboard/cadreVerificationsDirective",
+    "directives/dashboard/cadreFollowupsDirective",
     "angularDashboard",
     "angularResource",
     "angularSanitize",
@@ -28,7 +34,8 @@ define([
     "angularCharts",
     "angularGrid",
     "directives/dashboard/testD",
-    "d3"
+    "d3",
+    "services/common/appModalService"
     ], function () {
     var app = angular.module('CDSDASHBOARD', ['ui.router',
     										"chart.js",

@@ -282,6 +282,40 @@ define(['services/serviceModule'], function(serviceModule) {
                     },
 
                     {
+                        name: 'Cadre Membership (Followups)',
+                        title: "Cadre Membership (Followups)",
+                        style: {
+                            width: '100%',
+                            height: "432px"
+                        },
+                        enableVerticalResize: true,
+                        directive: "cadre-followups-directive",
+                        templateUrl: "views/dashboard/cadre-followups.html",
+
+                        "class": "d-widget cadre-verifications-all"
+
+
+                    },
+
+                    {
+                        name: 'Cadre Membership (Verifications)',
+                        title: "Cadre Membership (Verifications)",
+                        style: {
+                            width: '100%',
+                            height: "432px"
+                        },
+                        enableVerticalResize: true,
+                        directive: "cadre-verifications-directive",
+                        templateUrl: "views/dashboard/cadre-verifications.html",
+
+                        "class": "d-widget cadre-verifications-all"
+
+
+                    },
+
+
+
+                /*    {
                         name: 'Cadre Verifications (New)',
                         title: "Cadre Verifications (New)",
                         style: {
@@ -295,7 +329,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         "class": "d-widget cadre-verifications-all"
 
 
-                    },
+                    },*/
 
             /*        {
                         name: 'Cadre Verifications (Service Center)',
@@ -311,7 +345,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
                     },*/
 
-                    {
+                  /*  {
                         name: 'Cadre Verifications (Existing)',
                         title: "Cadre Verifications (Existing)",
                         style: {
@@ -325,7 +359,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
 
                     }
-
+*/
                     /* {
                             name: 'My Tasks View',
                             title : "Tasks assigned to me",

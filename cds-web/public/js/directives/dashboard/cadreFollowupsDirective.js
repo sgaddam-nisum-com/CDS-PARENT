@@ -1,7 +1,7 @@
  
 
 define(['directives/directiveModule'], function(directiveModule) {
-    directiveModule.directive('cadreVerificationNewDirective', ["dashboardService", function(dashboardService) {
+    directiveModule.directive('cadreFollowupsDirective', ["dashboardService", function(dashboardService) {
 
                 var dataJSON = {};
                 dataJSON.verificationList = [];                  
@@ -24,11 +24,6 @@ define(['directives/directiveModule'], function(directiveModule) {
                     restrict: "A",                    
                     link: function(scope, elem, attrs) {
 
-                        scope.renderVerifyModal = function(grid,row){
-                         //   window.location.href = '/tasks#/viewTasks/'+row.entity["taskId"];
-                            return;
-                        }
-
                         scope.list = dataJSON.verificationList;
                          scope.gridOptions = {
                             paginationPageSizes: [8, 20, 30],
@@ -42,7 +37,7 @@ define(['directives/directiveModule'], function(directiveModule) {
                             },
                             {
                                 name: 'Status',
-                                cellTemplate : "<a class='row-link' ng-click='grid.appScope.renderVerifyModal(grid,row)'>Verify</a>"
+                                cellTemplate : "<span class='row-status'> Registration pending</span>"
                             }                            
                             ],
                             data: dataJSON.verificationList

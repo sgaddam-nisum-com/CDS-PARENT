@@ -82,8 +82,7 @@ exports.init = function(app, passport, auth) {
     app.get('/auth/dashboard/tasksbyage', dashboardController.tasksByAge, auth.filterResponse);
     app.get('/auth/dashboard/taskstrendrpermonth', dashboardController.tasksTrendRPerMonth, auth.filterResponse);
     app.get('/auth/dashboard/cadrestrendrpermonth', dashboardController.cadresTrendRPerMonth, auth.filterResponse);
-    app.post('/auth/dashboard/cadrepickedstatus', dashboardController.cadrePickedStatus, auth.filterResponse);
-
+    app.put('/auth/dashboard/cadrepickedstatus', dashboardController.cadrePickedStatus, auth.filterResponse);
 
     //citizen routes   
     app.get('/citizen/qualifications', citizenController.getQualifications);

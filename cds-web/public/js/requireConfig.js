@@ -30,7 +30,7 @@ require.config({
 		"configeditprofile":"modules/editprofile/config",
 
 		/*Services, Controllers & directives*/		 		 		 
-		 "angular": 'lib/angular.min',
+		 "angular": 'lib/angular',
 		'angularRoute' : 'lib/angular-route',
 		'angularAnimate' : 'lib/angular-animate',
 		'angularResource' : 'lib/angular-resource',

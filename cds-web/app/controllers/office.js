@@ -31,12 +31,11 @@ exports.assignCadreForApproval = function(req, res, next) {
 
 exports.approveVnC = function(req, res, next) {
     log.debug("approveVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId);
-    var userId = req.query.userId;
+    var userId = req.body.userId;
+    console.log(req.body);
     var token = req.user ? req.user.data.token : null;
 
-    officeService.approveVnC({
-        userId: userId
-    }, token, function(resp) {
+    officeService.approveVnC(req.body, token, function(resp) {
         req.resp = resp;
         next();
     });
@@ -44,8 +43,8 @@ exports.approveVnC = function(req, res, next) {
 
 exports.rejectVnC = function(req, res, next) {
     log.debug("rejectVnC : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId);
-    var userId = req.query.userId;
-    var comment = req.query.comment;
+    var userId = req.body.userId;
+    var comment = req.body.comment;
     var token = req.user ? req.user.data.token : null;
 
     officeService.rejectVnC({

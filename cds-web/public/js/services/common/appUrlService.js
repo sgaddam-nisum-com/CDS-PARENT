@@ -47,6 +47,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				getUserFamilyInfo : "/auth/citizen/getfamily",
 				getUserCadreInfo : "/auth/cadre/get",
 
+				getLeadCadres : "/auth/cadre/cadreleads",
+
 				getProfileInfo : "/auth/user/viewuserinfo",
 
 
@@ -102,7 +104,11 @@ define(['services/serviceModule'], function (serviceModule) {
 				/*dashboard*/
 
 				getNotifications : "/auth/dashboard/notifications",
-				addCommentToTask : "/auth/user/addcommenttotask"
+				addCommentToTask : "/auth/user/addcommenttotask",
+				updateCadreStatus : "/auth/dashboard/cadrepickedstatus",
+				approveAsCadre : "/auth/office/vnc/approve",
+				rejectCadre : "/auth/office/vnc/reject",
+				cancelCadre : "/auth/dashboard/cadrepickedstatus"
 
 			};
 		

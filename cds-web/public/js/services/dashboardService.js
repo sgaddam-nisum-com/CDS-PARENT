@@ -107,6 +107,47 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
 
+                },
+
+                getCadreDetails:function(cb, userId){
+                     $http.get(appUrlService.getUserCadreInfo, {
+                          params: {
+                            userId:userId
+                        }
+                     }).success(function(resp) {
+                      cb(resp);                   
+                     }) 
+
+                },
+
+                getLeadCadres:function(cb){
+
+                     $http.get(appUrlService.getLeadCadres, {
+                        
+                     }).success(function(resp) {
+                      cb(resp);                   
+                     }) 
+
+
+
+                },
+
+                updateCadreStatus : function(data,cb){
+                  
+
+              $http({
+                    url : appUrlService.updateCadreStatus,                        
+                    method : "PUT",
+                    data:data
+                }).success(function(resp, textStatus, jqXHR) {
+                        cb(resp);
+                }).error(function(jqXHR, textStatus, errorThrown) {
+
+                })  
+
+
+
+                  
                 }
 
             }

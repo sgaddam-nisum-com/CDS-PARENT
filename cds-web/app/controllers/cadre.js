@@ -34,7 +34,15 @@ exports.edit = function(req, res, next) {
 
 exports.get = function(req, res, next) {
     log.debug("get : logged user - " + req.user.data.user.appUserId);
+    
+     console.log(req.query.userId);
+
+
     var userId = req.query.userId || req.user.data.user.appUserId;
+    
+
+
+
     var token = req.user ? req.user.data.token : null;
 
     cdsRegistration.getCadre({
