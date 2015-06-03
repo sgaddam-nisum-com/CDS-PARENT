@@ -1,6 +1,6 @@
 
 
-define(["evPointer",    
+define([   
     'uiRouter',
     'services/common/serviceLoader',
     "services/dashboardWidgetService",

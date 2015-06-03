@@ -3,7 +3,7 @@
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
-(function(window, angular, undefined) { 
+(function() { 
 
 /* jshint maxlen: false */
 
@@ -2134,4 +2134,4 @@ angular.module('ngAnimate', ['ng'])
   }]);
 
 
-})(window, window.angular);
+})();

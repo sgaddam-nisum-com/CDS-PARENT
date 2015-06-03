@@ -30,7 +30,7 @@ require.config({
 		"configeditprofile":"modules/editprofile/config",
 
 		/*Services, Controllers & directives*/		 		 		 
-		 "angular": 'lib/angular',
+		 "angular": 'lib/angular.min',
 		'angularRoute' : 'lib/angular-route',
 		'angularAnimate' : 'lib/angular-animate',
 		'angularResource' : 'lib/angular-resource',
@@ -38,7 +38,7 @@ require.config({
 		"directives":"directives",
 		"controllers":"controllers",
 		"uiRouter": "lib/angular-ui-router",
-		"jquery" : "lib/min/jquery-1.11.2.min",
+		"jquery" : "lib/jquery",
 		"underscore" : "lib/min/underscore-min",
 		"ngDialog" : "lib/ngDialog",
 		"validation":"lib/validation",
@@ -107,32 +107,6 @@ require.config({
 		
 		'underscore' : {
             exports : '_'
-		},
-		
-		"slick" : {
-			deps:["jquery"]
-		},
-		"simplyscroll" : {
-			deps:["jquery"]
-		},
-		
-		"gallery/jquery.galleriffic" : {
-			deps:["jquery"]
-		},
-		"gallery/jquery.history" : {
-			deps:["jquery"]
-		},
-		"gallery/jquery.opacityrollover" : {
-			deps:["jquery"]
-		},
-		"foundation" : {
-			deps : ["jquery"]
-		},
-		"angularDashboard" : {
-			deps : ["angularBootstrap"]
-		},
-		"evPointer":{
-			deps:["jquery"]
 		}
 	}
 });

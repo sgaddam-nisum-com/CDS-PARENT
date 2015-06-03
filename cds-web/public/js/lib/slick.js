@@ -18,14 +18,14 @@
 (function(factory) {
      
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define([], factory);
     } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
+        module.exports = factory(require());
     } else {
-        factory(jQuery);
+        factory();
     }
 
-}(function($) {
+}(function() {
      
     var Slick = window.Slick || {};
 

@@ -16,15 +16,15 @@
   <footer ui-view="footer" id="appFooter" fixed-footer-directive></footer>
 
 <% if( process.env.useMinifiedAssets == "true" ) { %>
-  <script type="text/javascript">var require = {baseUrl :"js/min"};</script>
-  <script  src="js/min/lib/min/require.min.js"></script>
-  <script src="js/min/requireConfig.js"></script>
-  <script  src="js/min/main.js"></script>
+  <script type="text/javascript">var require = {baseUrl :"dist"};</script>
+  <script  src="dist/lib/min/require.min.js"></script>
+  <script src="dist/requireConfig.js"></script>
+  <script  src="dist/main.js"></script>
 <% } else{ %>
-   <script type="text/javascript">var require = {baseUrl :"js/src"}</script>
-  <script  src="js/src/lib/min/require.min.js"></script>
-  <script src="js/src/requireConfig.js"></script>
-  <script  src="js/src/main.js"></script>
+   <script type="text/javascript">var require = {baseUrl :"js"}</script>
+  <script  src="js/lib/min/require.min.js"></script>
+  <script src="js/requireConfig.js"></script>
+  <script  src="js/main.js"></script>
 <% } %>
 
 

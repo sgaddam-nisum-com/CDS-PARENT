@@ -3,7 +3,7 @@
  * Copyright (c) 2015 ; License: MIT 
  */
 
-define(["angular","angularAnimate","angularTouch"],function(angular){
+define(["angularAnimate","angularTouch"],function(){
 
 (function () {
    

@@ -38,7 +38,7 @@ var routes = {
 
     var r = getRoute();
     function start() {
-        require( ["jquery",'angular',"require"], function ( $,angular,require ) {        	
+        require( ["jquery",'angular'], function ( $,angular ) {        	
                            
             require([r.module.config],function(){
                 angular.bootstrap(document, [r.module.moduleName]);     

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-define(["jquery","angular","angularBootstrap","angularSortable"],function($,angular){
+define(["angularBootstrap","angularSortable"],function(){
 
 
 
