@@ -118,7 +118,7 @@ exports.userTypes = function(req, res, next) {
     var orgId = req.query.orgId;
 
     userService.userTypes(orgId, function(resp) {
-        req.json(resp);
+        res.json(resp);
     });
 };
 

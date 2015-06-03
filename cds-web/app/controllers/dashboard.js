@@ -82,10 +82,10 @@ exports.cadresTrendRPerMonth = function(req, res, next) {
 };
 
 exports.cadrePickedStatus = function(req, res, next) {
-    //log.debug("cadrePickedStatus : logged user - " + req.user.data.user.appUserId);
+    log.debug("cadrePickedStatus : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
-    var type = req.query.type;
-    var userId = req.query.userId;
+    var type = req.body.type;
+    var userId = req.body.userId;
 
     dashboardService.cadrePickedStatus({
         userId: userId,
