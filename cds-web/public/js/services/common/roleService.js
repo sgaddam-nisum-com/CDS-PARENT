@@ -20,7 +20,7 @@ define(['services/serviceModule'], function(serviceModule) {
                                 Tasks : {name : "Tasks" , url : "/tasks"},
                                 Calendar :  {name : "Calendar" , url : "#"},
                                 Requests : {name : "Requests" , url : "#"},
-                                Registrants:{name : "Registrants" ,url : "#"}
+                                Registrants:{name : "Registrants" ,url : "/profile#/list"}
                             }
                             
 

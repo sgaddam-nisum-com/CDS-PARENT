@@ -36,7 +36,7 @@ define(['services/serviceModule'], function (serviceModule) {
 
 				//View & Edit & Retrieve member info
 
-				getUserList : "/user/usersList",
+				getUserList : "/auth/user/usersList",
 				getUserTypes : "/user/userTypes",
 				getUserView : "/user/view",
 				getUserPersonalInfo : "/auth/citizen/getpersonalinf",

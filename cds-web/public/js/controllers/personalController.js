@@ -1,9 +1,11 @@
 define(['controllers/controllerModule', 'formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function(controllerModule, formValidation, validationMap, errorJson, $) {
 
-    controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', 
-            function($state, $http, appUrls, cdsService, $scope, registerService) {
+    controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService',"$stateParams", 
+            function($state, $http, appUrls, cdsService, $scope, registerService,$stateParams) {
 
 
+                
+            var currentUserId =$stateParams.userId;    
             this.showLoader = false;
             this.showImage = true;
 
@@ -11,7 +13,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
             dataJson={};
         
 
-            handleUserEdit();
+            handleUserEdit(currentUserId);
 
 
 
@@ -84,10 +86,10 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
 
 
-            function handleUserEdit() {
+            function handleUserEdit(currentUserId) {
                 self.showImage = false;                
                 self.user = {};
-                registerService.getPersonalInfo(function(resp) {
+                registerService.getPersonalInfo(currentUserId,function(resp) {
                   
                     $scope.dataJson = dataJson = resp.data;
                     self.user.firstName = dataJson.firstName;

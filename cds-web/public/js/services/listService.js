@@ -1,66 +1,26 @@
+define(['services/serviceModule'], function(serviceModule) {
 
- 
-
-define(['services/serviceModule'], function (serviceModule) {
-
-
-
-	serviceModule.factory('userDetailsService', ['$resource', function(resource){
-
-			return resource('/user/usersList',{}, {'query': {isArray: false }});
-		
-	}]);
-
-	serviceModule.factory('userTypeService', ['$resource', function(resource){
-
-			return resource('/user/userTypes',{},{'query': {isArray: false }});
-		
-	}]);	
-
-	/*
-	angular.module('myApp.services').factory('Entry', function($resource) {
-  		return $resource('/api/entries/:id'); // Note the full endpoint address
-	}); 
-*/
-
-	serviceModule.factory('listUtilService', [ function(){
-
-				
-				return {
-
-					initiateDelete : function(userMobile, cb,msg) {
-
-					$http.get(appUrlService.deleteUser, {
+	serviceModule.factory('listService', ['$http', 'appUrlService',
+		function($http, appUrlService) {
+			return {
+				getUserList : function( obj, ageobj, cb  ){
+					var qq = obj.q;
+					// var page = obj.page;
+					$http.get(appUrlService.getUserList, {	
 						params: {
-						mobileNumber: userMobile
+							q: qq,
+							userType : "2",
+							minAge : 25,
+							maxAge : 50,
+							limit : 5
 						}
-					}).success(function(data) {
-						cb(data,msg);
+					}).success(function(data) {	
+						cb(data);
 					});
-					}
-
-
-
-
-
-
-				};
-
-
-
-
-		
-	}]);
-
-
-
-
-
-
-
-
-
-
+				}
+			}
+		}]);
 
 });
+
 

@@ -20,7 +20,9 @@ define(['angular',
 	"controllers/familyController",
 	"controllers/cadreController",
 	"directives/voterDirective",
-	"directives/addressDirective"
+	"directives/addressDirective",
+	"controllers/listController",
+	"services/listService"
 
 	], function (angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router','serviceModule',"controllerModule","directiveModule"]);    
