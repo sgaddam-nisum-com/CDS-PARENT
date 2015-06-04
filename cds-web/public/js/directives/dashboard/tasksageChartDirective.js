@@ -34,28 +34,23 @@
                              console.log(revChartData.series);
                              scope.labels = revChartData.labels;
                              scope.series = revChartData.series;
-                             scope.data = revChartData.data;
-                             scope.options = {
-                                 scaleBeginAtZero: true,
-                                 scaleShowGridLines: true,
-                                 scaleGridLineColor: "rgba(0,0,0,.05)",
-                                 scaleGridLineWidth: 1,
-                                 scaleShowHorizontalLines: true,
-                                 scaleShowVerticalLines: true,
-                                 barShowStroke: true,
-                                 barStrokeWidth: 1,
-                                 barValueSpacing: 5,
-                                 barDatasetSpacing: 1,
-                                 stacked: true
-                             };
+                             scope.data = revChartData.data;                             
                              scope.legend = true;
+                             scope.colours = [{
+
+                                 fillColor: "#c6781c",
+                                 highlightFill: "rgba(224, 108, 112, 1)",
 
 
+                             }, {
+                                 fillColor: "rgba(49,105,181,0.9)",
+                                 highlightFill: "rgba(49,105,181,1)",
 
+                             }, {
+                                 fillColor: "rgba(140,182,66,0.9)",
+                                 highlightFill: "rgba(140,182,66,1)",
 
-
-
-
+                             }];
 
 
                          });
