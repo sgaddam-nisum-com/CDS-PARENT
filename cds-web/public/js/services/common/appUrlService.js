@@ -17,7 +17,7 @@ define(['services/serviceModule'], function (serviceModule) {
 				saveWorkInfo : "/citizen/saveworkinf",
 				saveVoterInfo : "/auth/citizen/savevoterinf",
 				saveresidentialaddress : "/auth/citizen/saveresidentialaddress",
-				saveVolunteer : "/volunteer/save",
+				saveVolunteer : "/auth/volunteer/save",
 				saveFamily : "/cadre/saveFamily",
 				saveCadre : "/auth/cadre/save",
 

@@ -1,7 +1,7 @@
  
 define(['controllers/controllerModule','formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors'], function (controllerModule,formValidation, validationMap, errorJson) {
 
-	 controllerModule.controller('registerController', ['$scope',"registerService","cdsService","appUrlService","roleService","$window", function($scope, registerService, cdsService,appUrlService,roleService,$window){
+	 controllerModule.controller('registerController', ['$scope',"$http","registerService","cdsService","appUrlService","roleService","$window", function($scope, $http,registerService, cdsService,appUrlService,roleService,$window){
 
 		 	this.showLoader = false;
             this.showImage = true;
@@ -85,15 +85,16 @@ define(['controllers/controllerModule','formValidation', 'validators/registratio
 
                     var requestObj = {};
 
-                   $.ajax({
-                        url: appUrlService.quickReg,
-                        type: 'POST',
-                        data: self.user,
-                        dataType: 'json',
-                        success: function(resp, textStatus, jqXHR) {    
-                            if(resp.status == "success"){  
 
-                               if(self.user.cadreType == "NEW"){
+                $http({
+                    method: "POST",
+                    url: appUrlService.quickReg,
+                    data: self.user 
+                }).success(function(resp, status, headers, config){
+                   
+                   if(resp.status == "success"){  
+
+                        if(self.user.cadreType == "NEW"){
                                     $window.location.href = "/profile"; 
                                 }else{
                                     $window.location.href = "/profile"; 
@@ -101,13 +102,13 @@ define(['controllers/controllerModule','formValidation', 'validators/registratio
 
                              }else{
 
-                             }
+                    }
+                }).error(function(data, status, headers, config){
+                   
 
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
+                });
 
-                        }
-                    });
+
 
                 }else{
                 	self.isNotValid = true;
