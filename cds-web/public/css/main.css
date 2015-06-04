@@ -308,6 +308,62 @@
   width: 100%;
 }
 
+/* line 233, ../scss/components/_dashboard.scss */
+.panel-default > .panel-heading {
+  cursor: move;
+}
+
+/* line 236, ../scss/components/_dashboard.scss */
+.events-banner .events-banner-img {
+  height: 76px;
+}
+
+/* line 239, ../scss/components/_dashboard.scss */
+.widget {
+  margin: 0 3px;
+  border: solid 1px #999;
+}
+
+/* line 243, ../scss/components/_dashboard.scss */
+ul.doughnut-legend {
+  padding: 0;
+}
+
+/* line 246, ../scss/components/_dashboard.scss */
+.widget-container.cadre-verifications-all .widget-header {
+  background: #475d74;
+}
+
+/* line 249, ../scss/components/_dashboard.scss */
+.widget-container.events-banner .widget-header {
+  background: #86ad39;
+}
+
+/* line 252, ../scss/components/_dashboard.scss */
+.widget-container.self-tasks .widget-header {
+  background: #756158;
+}
+
+/* line 255, ../scss/components/_dashboard.scss */
+.widget-container.team-tasks .widget-header {
+  background: #475d74;
+}
+
+/* line 258, ../scss/components/_dashboard.scss */
+.widget-container.tasks-trend .widget-header {
+  background: #c6781c;
+}
+
+/* line 261, ../scss/components/_dashboard.scss */
+.widget-container.notifications .widget-header {
+  background: #f0ad4e;
+}
+
+/* line 265, ../scss/components/_dashboard.scss */
+.close-overlay {
+  z-index: 100;
+}
+
 /******Do not change. Styles to make footer at bottom on variable section height. ***********/
 /******Difference height : Header height + Footer height************************************/
 /* line 4, ../scss/components/_footer.scss */

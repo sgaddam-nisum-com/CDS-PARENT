@@ -227,3 +227,41 @@
 .events-banner .events-banner-img{
   width:100%;
 }
+
+
+
+.panel-default > .panel-heading {
+  cursor: move; 
+}
+.events-banner .events-banner-img { 
+  height: 76px;
+}
+.widget {
+  margin: 0 3px;
+  border: solid 1px #999;
+}
+ul.doughnut-legend {
+  padding: 0;
+}
+.widget-container.cadre-verifications-all .widget-header{
+  background: #475d74;
+}
+.widget-container.events-banner .widget-header{
+  background: #86ad39;
+}
+.widget-container.self-tasks .widget-header{
+  background: #756158;
+}
+.widget-container.team-tasks .widget-header{
+  background: #475d74;
+}
+.widget-container.tasks-trend .widget-header{
+  background: #c6781c;
+}
+.widget-container.notifications .widget-header{
+  background: #f0ad4e;
+}
+
+.close-overlay {
+  z-index: 100;
+}
