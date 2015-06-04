@@ -23,8 +23,8 @@ exports.viewMessage = function(req, res, next) {
 exports.notifications = function(req, res, next) {
     log.debug("notifications : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
-
-    dashboardService.notifications(token, function(resp) {
+    var params = req.query;
+    dashboardService.notifications(params,token, function(resp) {
         req.resp = resp;
         next();
     });

@@ -14,16 +14,20 @@ define(['controllers/controllerModule','jquery',"underscore"], function (control
    $scope.$on("userAuthenticated", function(e, userRole){
      
 
+
       if(userRole == "Cadre"){
         self.widgetDefinitions =dashboardWidgetService.cadre; 
       }else if(userRole == "Office Executive"){
         self.widgetDefinitions =dashboardWidgetService.officeExecutive; 
       }else if(userRole == "Office Manager"){
         self.widgetDefinitions =dashboardWidgetService.officeManager;
+      }else if(userRole == "MP"){
+        self.widgetDefinitions =dashboardWidgetService.MP;
       }
 
-      console.log(userRole);
-      console.log(self.widgetDefinitions);
+      /*Available through dashboard module*/
+      $scope.userRole = userRole;
+
 
      self.defaultWidgets = _.map(self.widgetDefinitions, function (widgetDef) {
         return {

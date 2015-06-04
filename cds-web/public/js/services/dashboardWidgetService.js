@@ -398,6 +398,91 @@ define(['services/serviceModule'], function(serviceModule) {
                            "class" : "d-widget team-tasks"
                             
                           } */
+                ],
+
+                "MP" : [
+
+                       {
+                        name: 'Age wise Tasks',
+                        title: "Age wise Tasks",
+                        style: {
+                            width: '50%',
+                            height: "320px"
+                        },
+                        directive: "tasksage-chart-directive",
+                        templateUrl: "views/dashboard/tasksage-chart.html",
+                        "class": "d-widget tasks-age"
+
+                    },
+                       {
+                        name: 'Tasks trend',
+                        title: "Tasks trend",
+                        style: {
+                            width: '50%',
+                            height: "320px"
+                        },
+
+                        directive: "taskstrend-chart-directive",
+                        templateUrl: "views/dashboard/taskstrend-chart.html",
+
+                        "class": "d-widget tasks-trend"
+
+                    },
+                    {
+                        name: 'Events',
+                        title: "Events tracker",
+                        style: {
+                            width: '100%',
+                            height: "128px"
+                        },
+                        directive: "events-banner-directive",
+                        templateUrl: "views/dashboard/events-banner.html",
+                        "class": "d-widget events-banner"
+
+                    },
+
+                      {
+                        name: 'Membership Trend Analysis',
+                        title: "Membership Trend Analysis",
+                        style: {
+                            width: '66%',
+                            height: "432px"
+
+                        },
+                        directive: "membership-trend-chart-directive",
+                        templateUrl: "views/dashboard/membershiptrend-chart.html",
+                        "class": "d-widget membership-trend"
+
+                    },
+
+
+                      {
+                        name: 'Alerts / Notifications',
+                        title: "Alerts / Notifications",
+                        style: {
+                            width: '34%',
+                            height: "432px"
+
+                        },
+                        directive: "notifications-directive",
+                        templateUrl: "views/dashboard/notifications.html",
+                        "class": "d-widget notifications"
+
+                    },
+                      {
+                        name: 'My Tasks',
+                        title: "My Tasks",
+                        style: {
+                            width: '100%',
+                            height: "432px"
+                        },
+                        directive: "self-tasks-directive",
+                        templateUrl: "views/dashboard/self-tasks.html",
+                        "class": "d-widget team-tasks"
+
+                    }
+
+
                 ]
 
             }

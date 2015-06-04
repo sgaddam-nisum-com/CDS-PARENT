@@ -108,7 +108,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				updateCadreStatus : "/auth/dashboard/cadrepickedstatus",
 				approveAsCadre : "/auth/office/vnc/approve",
 				rejectCadre : "/auth/office/vnc/reject",
-				cancelCadre : "/auth/dashboard/cadrepickedstatus"
+				cancelCadre : "/auth/dashboard/cadrepickedstatus",
+				getMembershipTrend : "/auth/dashboard/cadrestrendrpermonth"
 
 			};
 		

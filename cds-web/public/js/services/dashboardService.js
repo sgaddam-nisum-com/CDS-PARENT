@@ -26,10 +26,19 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                getTasksByAge: function(cb) {
+                getTasksByAge: function(userRole,cb) {
+                    
+                    var criteria;
+                    if(userRole == "Cadre"){
+                        criteria = "self";
+                    }else{
+                        criteria = "All";
+                    }
+
+
                     $http.get(appUrlService.getTasksByAge, {
                         params: {
-                            criteria: 'all'
+                            criteria: criteria
                         }
 
                     }).success(function(resp) {
@@ -101,8 +110,11 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                getNotifications:function(cb){
+                getNotifications:function(key,cb){
                      $http.get(appUrlService.getNotifications, {
+                         params: {
+                            subject: key
+                        }
                     }).success(function(resp) {
                         cb(resp);
                     });
@@ -148,7 +160,19 @@ define(['services/serviceModule'], function(serviceModule) {
 
 
                   
+                },
+
+                getMembershipTrend : function(cb){
+
+                           $http.get(appUrlService.getMembershipTrend, {
+                            }).success(function(resp) {
+                                cb(resp);
+                            });
+
+
                 }
+
+
 
             }
 

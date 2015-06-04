@@ -9,7 +9,8 @@ define(['services/serviceModule'], function(serviceModule) {
                 "Citizen": ["Requests"],
                 "Cadre" : ["Dashboard", "Tasks","Calendar"],                
                 "Office Executive" : ["Dashboard","Tasks","Calendar" ,"Requests","Registrants"],
-                "Office Manager" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"]
+                "Office Manager" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"],
+                "MP" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"]
             }
 
 
@@ -122,7 +123,12 @@ define(['services/serviceModule'], function(serviceModule) {
                         rolesArray.push(appRoles[i].roleName);
                     }
 
-                    if(rolesArray.indexOf("Office Manager") > -1){
+
+
+                    if(rolesArray.indexOf("MP") > -1){
+                        topRole = "MP";
+                    }
+                    else if(rolesArray.indexOf("Office Manager") > -1){
                         topRole = "Office Manager";
                     }else if(rolesArray.indexOf("Office Executive") > -1){
                         topRole = "Office Executive";

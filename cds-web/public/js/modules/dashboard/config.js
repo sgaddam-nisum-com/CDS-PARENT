@@ -1,6 +1,7 @@
 
 define(['appDashboard'], function (app) {
 
+
 app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $urlRouterProvider){
  
     $urlRouterProvider

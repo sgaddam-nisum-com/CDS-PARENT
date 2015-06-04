@@ -173,7 +173,7 @@ module.exports = {
             method: "GET"
         },
         notifications: {
-            path: "user/dashboard/getnotificationslist/",
+            path: "user/dashboard/notificationslist/",
             method: "GET"
         },
         messageCount: {

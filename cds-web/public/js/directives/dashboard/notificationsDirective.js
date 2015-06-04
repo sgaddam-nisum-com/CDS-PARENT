@@ -12,7 +12,7 @@ define(['directives/directiveModule'], function(directiveModule) {
                        
                         scope.notifications=[];
 
-                        dashboardService.getNotifications(function(resp) {                          
+                        dashboardService.getNotifications("task",function(resp) {                          
                       
                             scope.notifications = resp.data.inboxs;
 

@@ -26,6 +26,7 @@ define([
     "directives/dashboard/cadreVerificationExistingDirective",
     "directives/dashboard/cadreVerificationsDirective",
     "directives/dashboard/cadreFollowupsDirective",
+    "directives/dashboard/membershipTrendChartDirective",
     "angularDashboard",
     "angularResource",
     "angularSanitize",

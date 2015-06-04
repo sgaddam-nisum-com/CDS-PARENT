@@ -26,12 +26,12 @@ exports.viewMessage = function(params, token, callback) {
     });
 };
 
-exports.notifications = function(token, callback) {
+exports.notifications = function(params, token, callback) {
     //log.debug("notifications : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
 
-    restService.builbArgs(restUrls.dashboard.notifications, null, headers, function(args) {
+    restService.builbArgs(restUrls.dashboard.notifications, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
