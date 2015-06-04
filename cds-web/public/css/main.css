@@ -2863,6 +2863,14 @@ div.navigation a.next {
   margin-bottom: 30px;
 }
 
+/* line 121, ../scss/components/_view-tasks.scss */
+.cadre-search-icon-view {
+  right: 25px;
+  position: absolute;
+  top: 35px;
+  cursor: pointer;
+}
+
 /* line 1, ../scss/components/_add-task.scss */
 .fields-form {
   background: #cddae6;
