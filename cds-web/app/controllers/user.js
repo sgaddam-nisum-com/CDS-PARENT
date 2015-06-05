@@ -431,8 +431,7 @@ exports.getUserFromSession = function(req, res, next) {
 exports.viewUserInfo = function(req, res, next) {
     log.debug("viewUserInfo : logged user - " + req.user.data.user.appUserId + " selected user - " + req.query.userId);
 
-
-    var userId = req.user.data.user.appUserId;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
 
     userService.viewUserInfo({

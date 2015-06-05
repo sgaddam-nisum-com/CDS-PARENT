@@ -46,6 +46,17 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
         },
         secured : false
     })
+
+     .state('root.profileLookup',{
+       url: '/lookup/:citizenId',
+        views: {           
+            'content@': {
+                templateUrl: 'views/auth/profile.html',
+                controller : "profileController as profileCtrl"                               
+            }
+        },
+        secured : false
+    })
     .state('root.profile.list',{
         url: 'list',
         views: {           

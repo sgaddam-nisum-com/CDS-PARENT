@@ -2770,6 +2770,20 @@ div.navigation a.next {
   background-color: #fff;
 }
 
+/* line 193, ../scss/components/_task.scss */
+.user-actions-div {
+  margin-top: 5px;
+}
+/* line 195, ../scss/components/_task.scss */
+.user-actions-div .edit, .user-actions-div .delete {
+  color: #2368A0;
+}
+/* line 197, ../scss/components/_task.scss */
+.user-actions-div .edit:hover, .user-actions-div .delete:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* line 4, ../scss/components/_view-tasks.scss */
 .task-details ul li {
   font-size: 13px;

@@ -124,7 +124,7 @@ module.exports = function(grunt) {
 		  }
 		},
         watch: {
-            files: ['<%=jsDir%>*.js', '<%=scssDir%>*.scss'],
+            files: ['<%=jsDir%>*.js', '<%=scssDir%>/**/*.scss'],
             tasks: ['concat', 'uglify', 'sass']
         }
     });

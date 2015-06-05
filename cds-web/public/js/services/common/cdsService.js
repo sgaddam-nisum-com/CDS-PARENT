@@ -25,8 +25,11 @@ define(['services/serviceModule'], function (serviceModule) {
 				  cb(resp);				  
 				 })
 			},
-			getProfileInfo : function(cb){
+			getProfileInfo : function(citizenId, cb){
 				 $http.get(appUrlService.getProfileInfo, {
+				 	params : {
+				 		userId : citizenId
+				 	}
 				 }).success(function(resp) {
 				  cb(resp);				  
 				 })

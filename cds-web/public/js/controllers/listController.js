@@ -33,6 +33,16 @@ define(['controllers/controllerModule'], function (controllerModule) {
 			this.editUserInfo = function(citizenId){				
 				$state.go('root.profile.editprofile.personal', {"userId" : citizenId});
 			}
+
+
+			this.viewProfile = function(citizenId){
+				 $state.go('root.profileLookup', {"citizenId" : citizenId});
+			}
+
+
+
+
+
 	}]);
 });
 

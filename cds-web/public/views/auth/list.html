@@ -1,9 +1,8 @@
 <div class="search-filter">
   <div class="row filter-wrapper">
-    <div class="large-8 small-16 columns">
+    <div class="large-8 small-16 columns user-actions-div">
       
-      <span class="add" ng-click="listCtrl.createNewUser()">Add Member</span> |
-      
+<!--       <span class="add" ng-click="listCtrl.createNewUser()">Add Member</span> |-->      
       <span class="edit {{listCtrl.disableEdit}}" ng-click="listCtrl.editCurrentUser()">Edit</span> |
       
       <span  ng-click="listCtrl.confirmDelete()" class="delete">Delete</span>
@@ -68,7 +67,7 @@
     <li class="padding-none" ng-repeat="user in listCtrl.userList track by $index">
       <div class="tiles">
         <div>
-          <a href="" ng-model="user.citizenId" ng-click="listCtrl.editUserInfo(user.citizenId)" class="photo2"><img src="images/profile/37.jpg" title="members"  class="photo1"/></a>
+          <a href="" ng-model="user.citizenId" ng-click="listCtrl.viewProfile(user.citizenId)" class="photo2"><img src="images/profile/37.jpg" title="members"  class="photo1"/></a>
         </div>
         <div class="details">
           <h6>{{user.firstName}} {{user.lastName}}</h6>
