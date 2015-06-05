@@ -37,9 +37,10 @@
                              volunteerCount, cadreCount
                          ];
                          scope.legend = true;
+                        scope.colours = ['#FDE561', '#859E6C'];
                          scope.options = {
                              legend: true,
-                             bezierCurve: false,                             
+                             bezierCurve: true                             
                          };
                          scope.onClick = function(points, evt) {
                              console.log(points, evt);

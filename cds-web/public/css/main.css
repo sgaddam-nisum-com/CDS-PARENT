@@ -2536,6 +2536,33 @@ div.navigation a.next {
 }
 
 /*gallery styles ending*/
+/* line 1, ../scss/components/_registration.scss */
+.registerOverlayContainer {
+  padding: 15px;
+}
+
+/* line 5, ../scss/components/_registration.scss */
+.close-overlay {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  width: 20px;
+  cursor: pointer;
+}
+
+/* line 13, ../scss/components/_registration.scss */
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+/* line 17, ../scss/components/_registration.scss */
+.pageheader {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+}
+
 /* line 1, ../scss/components/_task.scss */
 #accordion a span.title {
   float: left;

@@ -1,7 +1,10 @@
  
 define(['controllers/controllerModule','formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors'], function (controllerModule,formValidation, validationMap, errorJson) {
 
-	 controllerModule.controller('registerController', ['$scope',"$http","registerService","cdsService","appUrlService","roleService","$window", function($scope, $http,registerService, cdsService,appUrlService,roleService,$window){
+	 controllerModule.controller('registerController', ['$scope',"$http","registerService","cdsService","appUrlService","roleService","$window","appModalService", 
+
+
+        function($scope, $http,registerService, cdsService,appUrlService,roleService,$window,appModalService){
 
 		 	this.showLoader = false;
             this.showImage = true;
@@ -94,13 +97,14 @@ define(['controllers/controllerModule','formValidation', 'validators/registratio
                    
                    if(resp.status == "success"){  
 
-                        if(self.user.cadreType == "NEW"){
-                                    $window.location.href = "/profile"; 
-                                }else{
-                                    $window.location.href = "/profile"; 
-                                }
+                     $scope.userType = self.user.cadreType; 
 
-                             }else{
+                    var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, {})();
+                   
+
+
+
+                    }else{
 
                     }
                 }).error(function(data, status, headers, config){

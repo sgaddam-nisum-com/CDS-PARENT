@@ -91,13 +91,13 @@
                     <div class="col-lg-12  comments">
                         <h6>Comments</h6>
                         <div class="head">
-                            <a href="#" class="add-comments">Add Comments</a>
-                            <a href="#" class="attachments">Attachments</a>
+                           <a href="" ng-click="toggleComments = !toggleComments" class="add-comments">Add Comments</a>
+                            <!-- <a href="#" class="attachments">Attachments</a> -->
                         </div>
-                        <div class="form-group">
-                            <textarea ng-model="viewTaskCtrl.comments.commentDescription" cols="40" rows="3" class="form-control"></textarea>
+                        <div class="form-group" ng-show="toggleComments">
+                            <textarea required ng-model="viewTaskCtrl.comments.commentDescription" maxlength="400" cols="40" rows="3" class="form-control" ng-trim="false" placeholder="Add your comments here..."></textarea>
                         </div>
-                        <div class="row">
+                        <div class="row" ng-show="toggleComments">
                             <div class="col-lg-6">
                             <p>Number of characters left: <span> {{400 - viewTaskCtrl.comments.commentDescription.length}} </span></p>
                             </div>

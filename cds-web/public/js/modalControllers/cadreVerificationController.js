@@ -56,7 +56,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
 	 					data : reqObj						
 	                }).success(function(resp, textStatus, jqXHR) {
                         	
-                        	console.log(resp);
+                        	$modalInstance.dismiss("cancel");
 
 
     	            }).error(function(jqXHR, textStatus, errorThrown) {

@@ -14,7 +14,7 @@
                                 scope.labels = ["Assigned", "In-progress", "Completed"];
                                 scope.data = donutData;
                                 scope.legend = true;                                
-
+                                scope.colours = ["#F0AD4E","#4C8AC7","#86AD39"];
 
                             });
 

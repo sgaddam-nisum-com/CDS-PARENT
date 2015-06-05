@@ -55,16 +55,17 @@ define(['directives/directiveModule'], function(directiveModule) {
                     link: function(scope, elem, attrs) {
 
                         scope.labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                        scope.series = ['Count'];
+                        scope.series = ['Monthwise Task Report'];
                         scope.data = [
                             lineData,
                         ];
                         scope.legend =true;
                         scope.options = {
                             legend : true,
-                            bezierCurve: false,
+                            bezierCurve: true,
                             //bezierCurveTension: 0.9,
                         };
+                        scope.colours = ['#C6781C'];
                         scope.onClick = function(points, evt) {
                             console.log(points, evt);
                         };

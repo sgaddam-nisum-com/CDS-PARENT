@@ -16,7 +16,7 @@ exports.postrequest = function(req, res, next) {
     res.render('external/post-request.html', {});
 };
 exports.register = function(req, res, next) {
-    res.render('layouts/index.html', {});
+    res.render('layouts/register.html', {});
 };
 exports.dashboard = function(req, res, next) {
     res.render('layouts/dashboard.html', {});
