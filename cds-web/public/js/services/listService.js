@@ -3,21 +3,36 @@ define(['services/serviceModule'], function(serviceModule) {
 	serviceModule.factory('listService', ['$http', 'appUrlService',
 		function($http, appUrlService) {
 			return {
-				getUserList : function( obj, ageobj, cb  ){
-					var qq = obj.q;
-					// var page = obj.page;
+				getUserList : function( obj, cb  ){
+
 					$http.get(appUrlService.getUserList, {	
-						params: {
-							q: qq,
-							userType : "2",
-							minAge : 25,
-							maxAge : 50,
-							limit : 5
-						}
+						params: obj
 					}).success(function(data) {	
 						cb(data);
 					});
+				},
+
+				getUserTypes : function(cb){
+
+					$http.get(appUrlService.getUserTypes, {	
+					
+					}).success(function(data) {	
+						cb(data);
+					});
+
+
+
 				}
+
+
+
+
+
+
+
+
+
+
 			}
 		}]);
 

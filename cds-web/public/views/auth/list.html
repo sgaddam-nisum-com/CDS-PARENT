@@ -16,50 +16,62 @@
     </div>
   </div>
 </div>
-<div class="row filter-options cssSlideUp" ng-show="listCtrl.filter" >
-  <span class="arrow"></span>
-  <div class="large-16 columns selected" ng-show="listCtrl.selectedFilter.length > 0">Selected
-    <a href="javascript:void(0);" ng-click='type.filterObj()' ng-repeat="(key, type) in listCtrl.selectedFilter">{{type.filterName}} X</a>
-  </div>
-  <div class="large-16 columns padding-none filterContainer">
-    <div class="large-3 small-7 columns options">
-      <span>Type</span>
-      <ul>
-        
-        <li class="padding-none" ng-repeat="userType in listCtrl.userTypes">
-          <input type="checkbox" ng-model="listCtrl.selectedUserTypes[userType.appRoleId]" value="{{userType.appRoleId}}" />
-          {{userType.appRoleName}}
-        </li>
-        
-      </ul>
+  
+
+    <div class="row filter-options cssSlideUp" ng-show="listCtrl.filter" >
+      <span class="arrow"></span>
+     
+
+
+      <div class="large-16 columns selected" ng-show="listCtrl.selectedFilter.length > 0">Selected
+        <a href="javascript:void(0);" ng-click='type.filterObj()' ng-repeat="(key, type) in listCtrl.selectedFilter">{{type.filterName}} X</a>
+      </div>
+
+
+
+      <div class="large-16 columns padding-none filterContainer">
+        <div class="large-3 small-7 columns options">
+          <span>Type</span>
+          <ul>
+            
+            <li class="padding-none" ng-repeat="userType in listCtrl.userTypes">
+              <input type="checkbox" ng-model="listCtrl.selectedUserTypes[userType.appRoleId]" value="{{userType.appRoleId}}" />
+              {{userType.appRoleName}}
+            </li>
+            
+          </ul>
+        </div>
+        <div> </div>
+        <div class="large-3 small-7 columns options">
+          <span>Gender</span>
+          <ul>
+            <li><input type="checkbox" ng-model="listCtrl.selectedGender['M']" /> Male</li>
+            <li><input type="checkbox" ng-model="listCtrl.selectedGender['F']" /> Female</li>
+          </ul>
+        </div>
+        <div class="large-5 small-16 columns options age">
+          <ul>
+            <li><span>Age :</span>
+            <input class="age" ng-model="listCtrl.minAge" type="text" /> To
+            <input type="text" class="age" ng-model="listCtrl.maxAge" />
+          </li>
+          
+        </ul>
+      </div>
+      <div class="large-5 small-16 columns options age">
+        <ul>
+          <li>
+            <button class="radius tiny button submit" ng-click="listCtrl.filterSearch()">Search</button>
+            <button class="radius tiny button cancel" ng-click="listCtrl.resetSerach()">Reset</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div> </div>
-    <div class="large-3 small-7 columns options">
-      <span>Gender</span>
-      <ul>
-        <li><input type="checkbox" ng-model="listCtrl.selectedGender['M']" /> Male</li>
-        <li><input type="checkbox" ng-model="listCtrl.selectedGender['F']" /> Female</li>
-      </ul>
     </div>
-    <div class="large-5 small-16 columns options age">
-      <ul>
-        <li><span>Age :</span>
-        <input class="age" ng-model="listCtrl.minAge" type="text" /> To
-        <input type="text" class="age" ng-model="listCtrl.maxAge" />
-      </li>
-      
-    </ul>
-  </div>
-  <div class="large-5 small-16 columns options age">
-    <ul>
-      <li>
-        <button class="radius tiny button submit" ng-click="listCtrl.filterSearch()">Search</button>
-        <button class="radius tiny button cancel" ng-click="listCtrl.resetSerach()">Reset</button>
-      </li>
-    </ul>
-  </div>
-</div>
-</div>
+
+
+
+
 <div class="row tiles-list">
 <div class="large-16 columns padding-none">
   <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-6">
@@ -79,9 +91,9 @@
         </div>
         <div class="status">
           <input type="checkbox" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
-         <!--  <span class="right" >
+          <span class="right" >
             <label class="{{role | lowercase}}" ng-repeat="role in user.roles track by $index"></label>
-          </span> -->
+          </span>
           
         </div>
       </div>
