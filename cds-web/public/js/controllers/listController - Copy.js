@@ -51,7 +51,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
 		}
 
 
-		/*this.getSelectedFromObject = function(obj){
+		this.getSelectedFromObject = function(obj){
 			
 			if(obj){
 			var keys = Object.keys(obj);
@@ -130,13 +130,13 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
 		this.confirmDelete = function(obj){
 			ngDialog.open({ template: 'views/common/confirmOverlay.html', className: 'ngdialog-theme-plain', scope : $scope });
-		};*/
+		};
 		
 
 
 
 
-/*
+
 
 		this.filteredWith = function(){			
 
@@ -191,11 +191,9 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
 			
 		};
-*/
 
 
 
-/*
 
 		this.getGender = function(gender){
 			return gender === 'M' ? "Male" : "Female";
@@ -221,7 +219,6 @@ define(['controllers/controllerModule'], function (controllerModule) {
 		this.editCurrentUser = function(){
 
 			var selectedUsers = this.getSelectedFromObject(this.selectedUsers);
-			
 			
 
 			if(selectedUsers.length == 1){
@@ -258,7 +255,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
 				$sessionStorage.cds ={};
 			}
 
-*/
+
 
 
 

@@ -1,14 +1,19 @@
 define(['controllers/controllerModule','formValidation','validators/familyValidators','errorMessages/familyErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
-	controllerModule.controller('familyController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',function($state,$http,appUrls,cdsService,$scope,registerService){
+	controllerModule.controller('familyController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage",
+
+		function($state,$http,appUrls,cdsService,$scope,registerService, $sessionStorage){
 		
 		var self = this,
 		   dataJson={};
 
+		    var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
 		var reqMethod = "PUT";
         var reqURL = appUrls.updateFamily;
-        handleGetFamily();
+       
+
+        handleGetFamily(cdsSession.currentUserId);
 
 		var config = {
             initiate :false,
@@ -63,11 +68,20 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 
 		}
 
+
+			var familyReqObj = {};
+
+			familyReqObj.data = requestData;
+			familyReqObj.userId = cdsSession.currentUserId;
+
+
+
 			$http({
 				method: reqMethod,
 				 url: reqURL,
-				data: requestData
+				data: familyReqObj
 			}).success(function(data, status, headers, config){
+
 
 
 				
@@ -95,8 +109,8 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 */
 
 
-		  function handleGetFamily() {             
-              	registerService.getFamilyInfo( function(resp) {                  
+		  function handleGetFamily(userId) {             
+              	registerService.getFamilyInfo( userId,function(resp) {                  
 				
 				console.log(resp);                 
 
@@ -104,7 +118,7 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
                  self.user = {};
                  self.user.childData= [];
                  /*To show primary field*/
-                 if(dataJson.length<2){
+                 if(dataJson.length<2 || !dataJson.length){
                 	 self.user.childData = [{}];
              		}
                  

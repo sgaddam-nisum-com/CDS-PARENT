@@ -189,7 +189,7 @@ exports.editResidentialAddress = function(params, token, callback) {
 
     delete params.userId;
 
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(url, params.data, headers, function(args) {
         restService.makecall(args, callback);
     });
 };
@@ -233,6 +233,8 @@ exports.editFamily = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
+
+
     //build url path    
     var url = {
         path: requireUtil.format(restUrls.citizen.editFamily.path, params.userId),
@@ -242,7 +244,7 @@ exports.editFamily = function(params, token, callback) {
     //remove userid from params
     delete params.userId;
 
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(url, params.data, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

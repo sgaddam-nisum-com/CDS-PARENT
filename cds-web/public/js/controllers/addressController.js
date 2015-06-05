@@ -1,17 +1,22 @@
 define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors'], function(controllerModule, formValidation, validationMap, errorJson) {
 
-        controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope",
-            function($state, $http, registerService, appUrls, cdsService, $scope) {
+        controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope","$sessionStorage",
+            function($state, $http, registerService, appUrls, cdsService, $scope, $sessionStorage) {
                 var self = this,
                     dataJson = {};
                    self.user = {};               
                    self.user.postalAddressId ="";
+                   
+                   $scope.voterNodeObj={"name" : "ramesh"};
 
-                    handleUserEdit(); 
+                   var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};  
+
+
+                    handleUserEdit(cdsSession.currentUserId); 
                 
 
-                     function handleUserEdit() {
-                            registerService.getAddressInfo(function(resp) {
+                     function handleUserEdit(userId) {
+                            registerService.getAddressInfo(userId,function(resp) {
                                 
                                 self.user.iaddressarray = [];                    
                                 self.user.postalAddress = {};                        
@@ -20,7 +25,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
 
                                 if (resp.status == "success") {
                                     if(resp.data.length){                             
-                                                $scope.voterNodeObj = resp.data[0].postalAddress;                                  
+                                                self.voterNodeObj = resp.data[0].postalAddress;                                  
                                     }
 
                                     console.log(resp);
@@ -61,19 +66,31 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                 requestObj[0].postalAddress = {};
 
                                 if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1) {
-                                    console.log("hello");
+                                    
                                     requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
                                     requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
 
                                     requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
                                     requestObj[0]['nriAddress'] = false;
 
+
+                                    var addressReq = {};
+
+                                    addressReq.data = requestObj;
+
+                                    
+                                    addressReq.userId = cdsSession.currentUserId;
+
+                                        
+
+
+
                                     if (formStack.isValid) {
 
                                         $http({
                                             method: "PUT",
                                             url: appUrls.updateResidentialAddress,
-                                            data: requestObj
+                                            data: addressReq
                                         }).success(function(data, status, headers, config) {
                                             console.log("success");
                                             $state.go('root.profile.editprofile.volunteer');
@@ -83,39 +100,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                     }
                                 }
                             }     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

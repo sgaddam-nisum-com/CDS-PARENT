@@ -1,14 +1,19 @@
 define(['controllers/controllerModule','formValidation','validators/cadreValidators','errorMessages/cadreErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
-	controllerModule.controller('cadreController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService", function($state,$http,appUrls,$scope,registerService,cdsService){
+	controllerModule.controller('cadreController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage", 
+
+
+		function($state,$http,appUrls,$scope,registerService,cdsService, $sessionStorage){
 		
 
+
+		 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 		var self = this,
 		   dataJson={};
         
 		self.user = {};
 		self.user.cadre={};        
-        handleGetCadre();
+        handleGetCadre(cdsSession.currentUserId);
         
 		var config = {
             initiate :false,
@@ -31,7 +36,10 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 		
 		this.save = function(){
 			self.user.userId = cdsService.getUserId();
-			if(formStack.isValid){								
+			if(formStack.isValid){	
+
+
+				self.user.userId = cdsSession.currentUserId;							
 
 				$http({
 					method: dataJson.reqMethod,
@@ -47,9 +55,9 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 		}
 
 
-		  function handleGetCadre() {
+		  function handleGetCadre(userId) {
             
-                registerService.getCadreInfo( function(resp) {                  
+                registerService.getCadreInfo( userId,function(resp) {                  
                     dataJson= resp.data;
 
                     if(dataJson.cadreId){

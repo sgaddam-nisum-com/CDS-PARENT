@@ -16,7 +16,23 @@ define(['controllers/controllerModule','jquery'], function (controllerModule,$) 
 
 			function initiateProfile(resp){
 				console.log(resp);
-				self.user = resp.data;
+				
+				if(resp.data){
+
+					if(resp.data.gender = "M"){
+						resp.data.gender = "MALE";
+					}else if(resp.data.gender = "F"){
+
+						resp.data.gender = "FEMALE"
+					}else{
+						resp.data.gender = "NOT DISCLOSED";
+					}
+
+						self.user = resp.data;
+
+				}
+
+
 			}	 		
 
 

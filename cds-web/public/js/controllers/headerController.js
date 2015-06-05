@@ -37,8 +37,12 @@ define(['controllers/controllerModule'], function (controllerModule) {
 
 		self.navEditProfile = function(){
 			cdsSession.currentUserId = "";						
-			window.location.href = "/profile#edit/personal";		
-			$state.reload();
+			window.location.href = "/profile#edit/personal";					
+
+			if(!cdsSession.currentUserId && $state.current.name == 	"root.profile.editprofile.personal"){
+				$state.reload();	
+			}
+			
 		}
 
 	}]);

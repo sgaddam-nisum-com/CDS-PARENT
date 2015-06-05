@@ -41,9 +41,14 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 					method:dataJson.reqMethod,
 					url:dataJson.reqURL,
 					data: reqObj	
-				}).success(function(data, status, headers, config){
-					console.log("success");
-					$state.go('root.profile.editprofile.address');
+				}).success(function(resp, status, headers, config){
+				
+					if(resp.status == "success"){
+						$state.go('root.profile.editprofile.address');	
+					}else{
+						console.log("required fileds are not filled.");
+					}
+
 				}).error(function(data, status, headers, config){
 					
 				

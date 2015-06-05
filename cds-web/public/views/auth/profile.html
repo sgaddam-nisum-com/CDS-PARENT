@@ -14,7 +14,7 @@
 					<div class="large-16 columns">
 						<div class="large-4 columns"> User/Login Name :</div>
 						<div class="columns large-1">:</div><div class="large-4 columns left">
-						<span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.loginId"></span></div>
+						<span ng-bind="profileCtrl.user.loginId"></span></div>
 					</div>
 					<div class="large-16 columns">
 						<div class="large-4 columns"> Age/Gender :</div>
@@ -169,13 +169,13 @@
 				</div>
 				<div class="row accordion-content">
 					<div class="large-16 columns">
-						<div class="large-4 columns"> Party Membership :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.partyMembershipId"></div>
+						<div class="large-4 columns"> Party Membership :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyMembershipId"></div>
 					</div>
 					<div class="large-16 columns">
-						<div class="large-4 columns"> Position in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.bloodGroup"></div>
+						<div class="large-4 columns"> Position in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyDesigination.positionDescription"></div>
 					</div>
 					<div class="large-16 columns">
-						<div class="large-4 columns"> Responsibility in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.bloodGroup"></div>
+						<div class="large-4 columns"> Responsibility in the Party :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyResponsibility"></div>
 					</div>
 					<div class="large-16 columns">
 						<div class="large-4 columns">  Health Insured :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.healthInsurance"></div>
@@ -187,7 +187,7 @@
 						<div class="large-4 columns">  Blood Group :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.bloodGroupId"></div>
 					</div>
 					<div class="large-16 columns">
-						<div class="large-4 columns">  Performance Grade :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.bloodGroup"></div>
+						<div class="large-4 columns">  Performance Grade :</div><div class="columns large-1">:</div><div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.performanceGradeId"></div>
 					</div>
 				</div>
 				<!-- /CADRE section -->
@@ -197,98 +197,11 @@
 			<div class="large-4 columns members">
 				<img src="images/profile/11.jpg" title="members"  class="photo1"/>
 			</div>
-			<!-- <div class="large-16 columns">
-				<div class="row edit-profile">
-					<div class="large-4 columns">
-						<ul>
-							<li>Personal</li>
-							<li>Work Information</li>
-							<li>Voter Information</li>
-							<li>Volunteer</li>
-							<li>Family</li>
-							<li>Cadre</li>
-						</ul>
-					</div>
-					<div class="large-12 columns">
-						12 columns
-					</div>
-				</div>
-			</div> -->
+			
 		</div>
 
 
 
-
-
-
-
-
-
-
-
-
-		<div id="additionalDetails" style="display:none; font-size:13px; margin-bottom:20px">
-			<div class="row">
-				<div class="large-3 columns"> Village</div><div class="columns large-1">:</div><div class="large-4 columns left">Jakkampet</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns"> Ward</div><div class="columns large-1">:</div><div class="large-4 columns left">Ward 10</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns">Division</div><div class="columns large-1">:</div><div class="large-4 columns left">Division 2</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns">Municipality</div><div class="columns large-1">:</div><div class="large-4 columns left">Vijayawada</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns">Corporation</div><div class="columns large-1">:</div><div class="large-4 columns left">Vijayawada</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns">Volunteer Category</div><div class="columns large-1">:</div><div class="large-4 columns left">Member</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns">Current Performance</div><div class="columns large-1">:</div><div class="large-4 columns left">B</div>
-			</div>
-		</div>
-	<!-- 	<div class="row">
-			<div class="large-16 columns">
-				
-				<div class="row" style="margin-top :20px;margin-bottom :20px;">
-					<div class="large-4 columns">  <h6>Task List</h6></div><div class="columns large-1"></div><div class="large-4 columns left"></div>
-				</div>
-				<table cellspacing="0" class="view-memeber-work-sheet ng-scope" style="border:1px solid #000">
-					<thead>
-						<tr>
-							<th width="80">Id</th>
-							<th width="150">Name of the Task</th>
-							
-							<th>Location</th>
-							<th width="140">Assigned Date</th>
-							<th width="130">Target Date</th>
-							<th width="130">Created By</th>
-							<th width="150">Status</th>
-							<th width="140">Age of Task</th>
-							<th width="100">Reasons for Delay</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								T158023
-							</td>
-							<td>Collect bills</td>
-							<td>Vijayawada</td>
-							<td>21/04/2015</td>
-							<td>27/04/2015</td>
-							<td>Office</td>
-							<td><img src="images/tick-mark.png">Completed</td>
-							<td>3</td>
-							<td></td>
-							
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div> -->
+	
 	</div>
 </div>

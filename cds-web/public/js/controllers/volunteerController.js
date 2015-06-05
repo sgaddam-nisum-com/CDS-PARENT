@@ -1,12 +1,16 @@
 define(['controllers/controllerModule','formValidation','validators/volunteerValidators','errorMessages/volunteerErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
-	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService",function($state,$http,appUrls,$scope,registerService,cdsService){
+	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage",
+
+	 	function($state,$http,appUrls,$scope,registerService,cdsService, $sessionStorage){
+		
+
 		var self = this,
 		dataJson;
 
+ 		var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
-
-        handleUserEdit();
+        handleUserEdit(cdsSession.currentUserId);
 
 		var config = {
             initiate :false,
@@ -45,6 +49,7 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 				"volunteerCodeNumber": self.user.volunteerCodeNumber ,
 				"performanceGradeId":self.user.performanceGradeId
 			};	
+			requestObj.userId =cdsSession.currentUserId; 
 			
 			
 			console.log(requestObj);
@@ -64,9 +69,9 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 			} 
 		};
 
-		   function handleUserEdit() {
+		   function handleUserEdit(userId) {
 
-                registerService.getVolunteerInfo(function(resp) {
+                registerService.getVolunteerInfo(userId,function(resp) {
                 	
                 	dataJson = resp.data;
                 	if(resp.data.volunteerId){
