@@ -138,16 +138,16 @@ define(['services/serviceModule'], function(serviceModule) {
 
                     },
 
-                    {
-                        name: 'Cadre Verifications (All)',
-                        title: "Cadre Verifications (All)",
+                   {
+                        name: 'Cadre Membership (Followups)',
+                        title: "Cadre Membership (Followups)",
                         style: {
                             width: '100%',
                             height: "432px"
                         },
                         enableVerticalResize: true,
-                        directive: "cadre-verification-all-directive",
-                        templateUrl: "views/dashboard/cadre-verifications-all.html",
+                        directive: "cadre-followups-directive",
+                        templateUrl: "views/dashboard/cadre-followups.html",
 
                         "class": "d-widget cadre-verifications-all"
 
@@ -155,28 +155,15 @@ define(['services/serviceModule'], function(serviceModule) {
                     },
 
                     {
-                        name: 'Cadre Verifications (Service Center)',
-                        title: "Cadre Verifications (Service Center)",
+                        name: 'Cadre Membership (Verifications)',
+                        title: "Cadre Membership (Verifications)",
                         style: {
                             width: '100%',
                             height: "432px"
                         },
                         enableVerticalResize: true,
-                        directive: "cadre-verification-office-directive",
-                        templateUrl: "views/dashboard/cadre-verifications-office.html",
-                        "class": "d-widget cadre-verifications-all"
-
-                    },
-
-                    {
-                        name: 'Cadre Verifications (Assigned to me)',
-                        title: "Cadre Verifications (Assigned to me)",
-                        style: {
-                            width: '100%'
-                        },
-                        enableVerticalResize: true,
-                        directive: "cadre-verification-self-directive",
-                        templateUrl: "views/dashboard/cadre-verifications-self.html",
+                        directive: "cadre-verifications-directive",
+                        templateUrl: "views/dashboard/cadre-verifications.html",
 
                         "class": "d-widget cadre-verifications-all"
 
