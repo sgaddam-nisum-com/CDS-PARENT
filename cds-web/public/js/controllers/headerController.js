@@ -1,10 +1,13 @@
 define(['controllers/controllerModule'], function (controllerModule) {
 
-	 controllerModule.controller('headerController', ['$rootScope','$http','$location','cdsService',"roleService", function($rootScope,$http,$location, cdsService,roleService){
+	 controllerModule.controller('headerController', ["$state",'$rootScope','$http','$location','cdsService',"roleService","$sessionStorage", 
+	 	function($state,$rootScope,$http,$location, cdsService,roleService, $sessionStorage){
 
 		var self = this;
 		self.showHeader = false;
 		
+		var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
+
 		cdsService.getUserSession(initiateUserSession);
 
  		function initiateUserSession(resp){
@@ -32,9 +35,11 @@ define(['controllers/controllerModule'], function (controllerModule) {
 		}
 
 
-
-
-
+		self.navEditProfile = function(){
+			cdsSession.currentUserId = "";						
+			window.location.href = "/profile#edit/personal";		
+			$state.reload();
+		}
 
 	}]);
 

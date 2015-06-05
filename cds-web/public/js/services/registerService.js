@@ -167,18 +167,22 @@ define(['services/serviceModule'], function(serviceModule) {
 					  cb(resp);					  
 					 })		
 				},
-				getWorkInfo: function(cb){				
+				getWorkInfo: function(userId,cb){				
 
 					 $http.get(appUrlService.getUserWorkInfo, {
-					 	
+					 	params:{
+					 		userId: userId
+					 	}
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })
 				},
-				getVoterInfo: function(cb){				
+				getVoterInfo: function(userId,cb){				
 
 					 $http.get(appUrlService.getUserVoterInfo, {
-
+					 	params:{
+					 		userId: userId
+					 	}
 					 }).success(function(resp) {
 					  cb(resp);					  
 					 })

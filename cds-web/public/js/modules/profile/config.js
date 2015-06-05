@@ -80,7 +80,7 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
         secured : true
     }) 
   .state('root.profile.editprofile.personal', {
-        url: '/personal/:userId',
+        url: '/personal',
         views: {
             'formSubsection': {
                 templateUrl: 'views/auth/register/subsection/personal.html',
@@ -89,7 +89,8 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
         },
         secured : true
     })
-   .state('root.profile.editprofile.work', {
+
+    .state('root.profile.editprofile.work', {
         url: '/work',
         views: {
             'formSubsection': {

@@ -53,10 +53,10 @@
 
 			<div class="row" ng-repeat="(key, value) in voterNodeObj">				
 				<div class="large-4 columns">
-					<label for="right-label" class="right inline">{{key}}:</label>
+					<label for="right-label" class="right inline" ng-bind="key"></label>
 				</div>
 				<div class="large-12 columns left">
-					<span class="address-line">{{value}}</span>
+					<span class="address-line" ng-bind="value"></span>
 				</div>
 			</div>
 

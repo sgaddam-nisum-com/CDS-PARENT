@@ -3,17 +3,16 @@
 
 define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
 
-	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService', function($state,$http,appUrls,cdsService,$scope,registerService){
+	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage",
+						function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
+
 	 		var self = this,
 		   dataJson={};
 
+		 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};   	     
+	     self.user = {};
 
-
-		self.user = {};
-		 
-      
-
-        handleGetVoter();
+        handleGetVoter(cdsSession.currentUserId);
 
 		var config = {
             initiate :false,
@@ -34,14 +33,14 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 			reqObj.addressLine1 = self.user.addressLine1;
 			reqObj.addressLine2 = self.user.addressLine2;
 			reqObj.voterId = self.user.voterId;
-
+			reqObj.userId = cdsSession.currentUserId;
 
 			if(formStack.isValid){								
 
 				$http({
 					method:dataJson.reqMethod,
 					url:dataJson.reqURL,
-					data: self.user	
+					data: reqObj	
 				}).success(function(data, status, headers, config){
 					console.log("success");
 					$state.go('root.profile.editprofile.address');
@@ -66,8 +65,8 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
             return keysObj;
         }
 
-	 	function handleGetVoter() {
-            registerService.getVoterInfo(function(resp) {
+	 	function handleGetVoter(userId) {
+            registerService.getVoterInfo(userId,function(resp) {
                 dataJson= resp.data;
 
                  if(dataJson.voterId){

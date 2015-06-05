@@ -55,7 +55,7 @@ float:left;
 
 }
 #autoCompleteContainer ul li{
-  background-color: #fff !important;
+  background-color: #eaeaea !important;
   font-weight: normal;
   font-size: 13px;
   margin-bottom: 5px;
@@ -64,7 +64,6 @@ float:left;
 
 #autoCompleteContainer ul li.ui-state-focus{
   border: 1px solid #ddd !important;
-  background-image: none !important;
   background-color: #eaeaea !important;
   font-size: 13px;
   font-weight: normal;
@@ -85,21 +84,25 @@ float:left;
   width: 350px !important;
   background-image: none !important;
   background-color: #eaeaea;
+  z-index: 200;
 
 }
 #autoCompleteContainer ul li{
-  background-color: #fff !important;
+  background-color: #eaeaea !important;
   font-weight: normal;
   font-size: 13px;
   margin-bottom: 5px;
   padding:5px;
   word-wrap:break-word;
+  list-style: none;
+
 }
 
 #autoCompleteContainer ul li.ui-state-focus{
   border: 1px solid #ddd !important;
   background-image: none !important;
-  background-color: #eaeaea !important;
+  background-color: #ddd !important;
   font-size: 13px;
   font-weight: normal;
+  word-wrap:break-word;
 }

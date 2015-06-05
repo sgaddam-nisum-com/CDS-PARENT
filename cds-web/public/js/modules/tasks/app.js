@@ -3,6 +3,7 @@
 
 define([
 	'uiRouter',
+	"ngStorage",
 	'services/common/serviceLoader',
 	"services/taskService",	
 	"controllers/taskController",
@@ -15,6 +16,6 @@ define([
 	"services/common/appModalService",
 	"modalControllers/cadreListController"	
 	], function () {
-    var app = angular.module('CDSTASKS', ['ui.router','serviceModule',"controllerModule","directiveModule","ui.bootstrap"]);
+    var app = angular.module('CDSTASKS', ['ui.router','serviceModule',"controllerModule","directiveModule","ui.bootstrap","ngStorage"]);
     return app;
 });

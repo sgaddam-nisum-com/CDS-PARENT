@@ -78,10 +78,10 @@
           <label>{{user.regionName}}</label>
         </div>
         <div class="status">
-          <input type="checkbox" ng-click="listCtrl.enableDisableOption()" ng-model="listCtrl.selectedUsers[user.citizenId]" />
-          <span class="right" >
+          <input type="checkbox" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
+         <!--  <span class="right" >
             <label class="{{role | lowercase}}" ng-repeat="role in user.roles track by $index"></label>
-          </span>
+          </span> -->
           
         </div>
       </div>

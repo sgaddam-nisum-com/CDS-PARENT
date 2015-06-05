@@ -3,13 +3,17 @@
 
 define(['controllers/controllerModule','formValidation','validators/workValidators','errorMessages/workErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
 
-	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService', function($state,$http,appUrls,cdsService,$scope,registerService){		
+	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage", 
+	 	function($state,$http,appUrls,cdsService,$scope,registerService, $sessionStorage){		
 
 		var self = this,
 		dataJson = {};
         
+         var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
-        handleUserEdit();
+         console.log(cdsSession.currentUserId);
+
+        handleUserEdit(cdsSession.currentUserId);
         
 
 		this.age = cdsService.age;
@@ -37,7 +41,7 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 		this.save = function(){
 			
 			if(formStack.isValid){								
-				self.user.userId = cdsService.getUserId();				
+				self.user.userId = cdsSession.currentUserId;				
 				$http({
 					method: "PUT",
 					url: appUrls.updateWorkInfo,
@@ -53,11 +57,10 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 			} 
 		}
 
-		 function handleUserEdit() {		 	
+		 function handleUserEdit(currentUserId) {		 	
 		 	self.user = {};
-           		registerService.getWorkInfo(function(resp) {                                      
+           		registerService.getWorkInfo(currentUserId,function(resp) {                                      
            			dataJson = resp.data;
-
                   	self.user.occupationId = dataJson.occupation.occupationId;                    
                     self.user.workingOrganization = dataJson.workingOrganization;
                     self.user.workingLocation = dataJson.workingLocation;

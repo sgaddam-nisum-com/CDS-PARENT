@@ -199,4 +199,12 @@ margin: 0 auto;
 			cursor:pointer;
 		}
 	}
+	.edit.grey{
+		color:#999999;
+		cursor: default;
+		&:hover{
+		text-decoration: none;	
+		}		
+	}
+
 }

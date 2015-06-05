@@ -2,6 +2,7 @@
 
 define([   
     'uiRouter',
+    "ngStorage",
     'services/common/serviceLoader',
     "services/dashboardWidgetService",
     'services/dashboardService',
@@ -48,7 +49,8 @@ define([
     										'ngTouch', 
     										'ui.grid', 
     										'ui.grid.pagination',
-    										"ui.bootstrap"
+    										"ui.bootstrap",
+                                            "ngStorage"
     										]);
     return app;
 });
