@@ -19,8 +19,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
             var defSearchObj = {
                             q: "",
                             userType : "2,3,4",
-                            minAge : 25,
-                            maxAge : 50,
                             limit : 8
                         };
 
@@ -47,8 +45,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     q: this.searchQ,
                     page: 1,
                     userType : "2,3,4",
-                    minAge : 25,
-                    maxAge : 50,
                     limit : 50
                 },  function(resObj) {
                     that.userList = resObj.data.searchResults;
@@ -188,7 +184,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
             var selectedUserTypes = this.selectedUserTypes;
             var keys = Object.keys(this.selectedUserTypes);
 
-            console.log(self.userTypes);
 
             var selectedUserFilter = self.userTypes.filter(
                 function(user) {

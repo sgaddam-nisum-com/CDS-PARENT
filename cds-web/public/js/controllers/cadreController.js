@@ -46,8 +46,16 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 					url: dataJson.reqURL,
 					data: self.user	
 				}).success(function(data, status, headers, config){
-					console.log("success");
-					$state.go('root.profile');
+				
+					if(self.user.userId){
+						$state.go("root.profileLookup", {citizenId : self.user.userId});
+					}else{
+						$state.go('root.profile');
+					}
+
+						
+				
+
 				}).error(function(data, status, headers, config){
 					
 				});

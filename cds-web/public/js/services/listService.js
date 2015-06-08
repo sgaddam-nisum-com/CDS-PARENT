@@ -14,23 +14,15 @@ define(['services/serviceModule'], function(serviceModule) {
 
 				getUserTypes : function(cb){
 
-					$http.get(appUrlService.getUserTypes, {	
+					$http.get(appUrlService.getUserTypes, {
+						params : {
+							orgId : 2
+						}	
 					
 					}).success(function(data) {	
 						cb(data);
 					});
-
-
-
 				}
-
-
-
-
-
-
-
-
 
 
 			}
