@@ -181,8 +181,9 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
             this.selectedFilter = [];
             var minMaxAge = [];
-            var selectedUserTypes = this.selectedUserTypes;
-            var keys = Object.keys(this.selectedUserTypes);
+            var selectedUserTypes = this.selectedUserTypes || {};
+
+            var keys = Object.keys(selectedUserTypes);
 
 
             var selectedUserFilter = self.userTypes.filter(
@@ -196,7 +197,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
          
 
-           var selectedGender = this.getSelectedFromObject(this.selectedGender);
+           var selectedGender = this.getSelectedFromObject(this.selectedGender) || [];
 
               console.log(selectedGender);
 
@@ -219,6 +220,8 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
             console.log(selectedUserFilter);
 
+           if(selectedGender.length){
+
            selectedGender = selectedGender.map(function(gender){
 
                 return {"filterName":self.getGender(gender),"filterObj":function(){ 
@@ -229,6 +232,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 }};
 
             });
+       }
 
             
             if(this.minAge !== "" && this.maxAge !== "") {
@@ -240,6 +244,9 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 }});
             }
             
+            console.log(selectedUserFilter);
+
+
             this.selectedFilter = this.selectedFilter.concat(selectedUserFilter, selectedGender, minMaxAge);
 
             
