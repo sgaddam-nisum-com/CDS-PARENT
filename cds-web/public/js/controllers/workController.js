@@ -34,10 +34,14 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 		registerService.getCareerAspirationOptions(function(resp){				
 			$scope.careerAspirationOptions = resp.data;			
 		});
-		registerService.getSkillGapsOptions(function(resp){				
+/*		registerService.getSkillGapsOptions(function(resp){				
 			$scope.skillGapsOptions = resp.data;			
 		});
-		
+*/
+/*		registerService.getAreaOfImprovements(function(resp){				
+			$scope.areaOfImprovements = resp.data;			
+		});
+		*/
 		this.save = function(){
 			
 			if(formStack.isValid){								

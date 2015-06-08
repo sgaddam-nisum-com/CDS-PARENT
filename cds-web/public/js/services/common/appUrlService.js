@@ -111,6 +111,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				cancelCadre : "/auth/dashboard/cadrepickedstatus",
 				getMembershipTrend : "/auth/dashboard/cadrestrendrpermonth"
 
+
+
 			};
 		
 	}]);

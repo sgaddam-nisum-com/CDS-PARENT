@@ -14,8 +14,13 @@
                          revChartData.labels = [];
                          revChartData.series = [];
                          revChartData.data = [];
+                         
+
                          dashboardService.getTasksByAge(scope.userRole, function(resp) {
+                             
                              chartData = resp.data;
+
+                             
                              var sortedChartArray = _.sortBy(chartData, "priorityId");
 
                              for (var i = 0; i < sortedChartArray.length; i++) {
@@ -51,6 +56,8 @@
                                  highlightFill: "rgba(140,182,66,1)",
 
                              }];
+
+
 
 
                          });

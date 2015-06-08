@@ -143,7 +143,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         title: "Cadre Membership (Followups)",
                         style: {
                             width: '100%',
-                            height: "432px"
+                            height: "460px"
                         },
                         enableVerticalResize: true,
                         directive: "cadre-followups-directive",
@@ -273,7 +273,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         title: "Cadre Membership (Followups)",
                         style: {
                             width: '100%',
-                            height: "432px"
+                            height: "460px"
                         },
                         enableVerticalResize: true,
                         directive: "cadre-followups-directive",

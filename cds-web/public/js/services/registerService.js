@@ -224,6 +224,14 @@ define(['services/serviceModule'], function(serviceModule) {
 					 }).success(function(resp) {
 					  	cb(resp);					  
 					 })						
+				},
+
+				getAreaOfImprovements : function(cb ){
+					 $http.get(appUrlService.getAreaOfImprovements, {
+					 }).success(function(resp) {
+					  	cb(resp);					  
+					 })		
+
 				}
 
 

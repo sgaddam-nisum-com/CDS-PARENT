@@ -236,7 +236,7 @@
 /* Bootstap overrides */
 /* line 172, ../scss/components/_dashboard.scss */
 .widget-container {
-  max-height: 455px;
+  max-height: 500px;
   overflow: hidden;
   font-size: 11px;
 }
