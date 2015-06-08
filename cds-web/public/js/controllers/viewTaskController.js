@@ -65,7 +65,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                     method : "PUT",
                     data: reqObj
                 }).success(function(data, textStatus, jqXHR) {
-                        $state.go("root.allTasks");
+                        $state.go("root.tasks");
                 }).error(function(jqXHR, textStatus, errorThrown) {
 
                 })  

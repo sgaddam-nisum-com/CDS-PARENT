@@ -20,7 +20,7 @@
                              
                              chartData = resp.data;
 
-                             
+                             if(chartData.length){
                              var sortedChartArray = _.sortBy(chartData, "priorityId");
 
                              for (var i = 0; i < sortedChartArray.length; i++) {
@@ -57,7 +57,7 @@
 
                              }];
 
-
+                         }
 
 
                          });

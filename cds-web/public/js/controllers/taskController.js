@@ -89,7 +89,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                     method : "POST",
                     data: self.user
                 }).success(function(data, textStatus, jqXHR) {
-                        $state.go("root.allTasks");
+                        $state.go("root.tasks");
                 }).error(function(jqXHR, textStatus, errorThrown) {
 
                 })
