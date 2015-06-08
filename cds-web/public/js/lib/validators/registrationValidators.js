@@ -9,21 +9,21 @@ define(['validation'], function(validation) {
     return {
         signupFirstName: {
             required : true,
-            minCharacters: 5,
+            minCharacters: 3,
             maxCharacters: 16,
             key_error_msgs: true
            
         },
         signupMiddleName: {
             required : false,
-            minCharacters: 5,
+            minCharacters: 3,
             maxCharacters: 16,
             key_error_msgs: true
           
         },
 		signupLastName: {
             required : true,
-            minCharacters: 5,
+            minCharacters: 1,
             maxCharacters: 16,
             key_error_msgs: true
           
@@ -46,8 +46,8 @@ define(['validation'], function(validation) {
 		},
         userMobile:{
             required : true,
-            minCharacters: 5,
-            maxCharacters: 16,
+            minCharacters: 10,
+            maxCharacters: 10,
             key_error_msgs: true     
         },
         userPhone:{

@@ -18,6 +18,15 @@ define(['controllers/controllerModule','formValidation', 'validators/registratio
             self.isValidMobileNo = true;                         
             self.isNotValid = false;
 
+            var regConfModalConfig = {
+                keyboard : false,
+                class : "registration-confirm-overlay",
+                backdrop : "static"
+            }
+
+
+
+
             
             registerService.getInterestedAreasOptions(function(resp){
                 self.InterestedAreas = resp.data;
@@ -75,19 +84,25 @@ define(['controllers/controllerModule','formValidation', 'validators/registratio
                     self.hideCadreRole = true;
                 }else{
                     self.hideCadreRole = false;
-                   self.user.cadreType = "NEW";
+                    self.user.cadreType = "NEW";
                 }
 
             }
+            self.trackCadreType = function(){
+                self.user.membershipType = 2;
+            }
+
+
+
+   
 
             self.save = function() {
+
 
             	$scope.$broadcast("clearServiceErrors");
 
                 if (formStack.isValid && self.isValidForm()) {
-
                     var requestObj = {};
-
 
                 $http({
                     method: "POST",
@@ -99,7 +114,7 @@ define(['controllers/controllerModule','formValidation', 'validators/registratio
 
                      $scope.userType = self.user.cadreType; 
 
-                    var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, {})();
+                    var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, regConfModalConfig)();
                    
 
 

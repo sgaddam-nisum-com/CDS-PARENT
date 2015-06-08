@@ -2563,6 +2563,11 @@ div.navigation a.next {
   margin: 40px 0 20px;
 }
 
+/* line 24, ../scss/components/_registration.scss */
+.registration-wrapper label {
+  font-weight: normal;
+}
+
 /* line 1, ../scss/components/_task.scss */
 #accordion a span.title {
   float: left;
@@ -3040,16 +3045,18 @@ div.navigation a.next {
 /* UI components */
 /* line 1, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker {
-  width: 269px;
+  width: 350px;
   height: auto;
   margin: 5px auto 0;
   font: 9pt Arial, sans-serif;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  padding-bottom: 10px;
+  background-color: #fff;
 }
 
-/* line 12, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 14, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker-header {
   background-color: #16578F;
   color: #e0e0e0;
@@ -3066,7 +3073,7 @@ div.navigation a.next {
   padding-top: 5px;
 }
 
-/* line 29, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 31, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker-prev, .ui-datepicker-next {
   display: inline-block;
   width: 30px;
@@ -3079,19 +3086,19 @@ div.navigation a.next {
   overflow: hidden;
 }
 
-/* line 42, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 44, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker-prev {
   float: left;
   background-position: center -30px;
 }
 
-/* line 46, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 48, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker-next {
   float: right;
   background-position: center 0px;
 }
 
-/* line 51, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 53, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker thead {
   background-color: #f7f7f7;
   background-image: -moz-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
@@ -3104,16 +3111,22 @@ div.navigation a.next {
   border-bottom: 1px solid #bbb;
 }
 
-/* line 65, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 67, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker-title select {
   width: 30%;
   margin-bottom: 5px;
-  margin-left: 16px;
+  margin-left: 25px;
 }
 
-/* line 72, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 74, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker-calendar {
   margin-bottom: 0;
+  height: 170px;
+}
+
+/* line 79, ../scss/components/jqueryUI/_datePicker.scss */
+.ui-datepicker-calendar th, .ui-datepicker-calendar td {
+  padding-left: 20px;
 }
 
 /* 
@@ -3145,12 +3158,12 @@ div.navigation a.next {
     background: #f4f4f4;
     color: #b4b3b3;
 } */
-/* line 107, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 114, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker td a {
   color: #16578F;
 }
 
-/* line 111, ../scss/components/jqueryUI/_datePicker.scss */
+/* line 118, ../scss/components/jqueryUI/_datePicker.scss */
 .ui-datepicker td a:hover {
   color: #16578F;
   text-decoration: underline;

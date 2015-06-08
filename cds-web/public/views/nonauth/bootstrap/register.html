@@ -164,9 +164,9 @@
                     <div class="col-lg-3 col-sm-12"> &nbsp; </div>
                     <div class="col-lg-6 col-sm-12 gender left" style="padding-left:38px">
                         <label for="newcadre">
-                            <input type="radio"  tabindex="26" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW">New</label>
+                            <input type="radio"  tabindex="26" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW" ng-change="registerCtrl.trackCadreType()">New</label>
                         <label for="existingcadre">
-                            <input type="radio" tabindex="27" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING">Existing</label>
+                            <input type="radio" tabindex="27" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING" ng-change="registerCtrl.trackCadreType()">Existing</label>
                     </div>
                     <div class="col-lg-9 right">
                         <div class="error-class">
