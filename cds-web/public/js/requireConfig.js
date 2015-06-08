@@ -90,7 +90,8 @@ require.config({
 
 		"sortable" : "lib/jqueryui/sortable",
 		"mouse" : "lib/jqueryui/mouse",
-		"evPointer" : "utils/evPointer"
+		"evPointer" : "utils/evPointer",
+		"messageHandler" : "lib/messageHandler"
 
 	},
 	shim: {
