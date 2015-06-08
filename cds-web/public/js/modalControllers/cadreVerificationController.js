@@ -1,12 +1,12 @@
 define(['controllers/controllerModule'], function (controllerModule) {
 
-	 controllerModule.controller('cadreVerificationController', ["$scope","$http","$modalInstance","callerScope","$rootScope","dashboardService","registerService","appUrlService",
+	 controllerModule.controller('cadreVerificationController', ["$scope","$http","$modalInstance","callerScope","$rootScope","dashboardService","registerService","appUrlService","$timeout",
 
-	 	function($scope,$http, $modalInstance,callerScope,$rootScope,dashboardService,registerService,appUrlService){
+	 	function($scope,$http, $modalInstance,callerScope,$rootScope,dashboardService,registerService,appUrlService, $timeout){
 
  			var currentUserId = callerScope.currentUserId;
 
- 			$scope.showApprovedStatus = true;
+ 			$scope.showApprovedStatus = false;
 
 
  			console.log(currentUserId);
@@ -54,12 +54,26 @@ define(['controllers/controllerModule'], function (controllerModule) {
 	 					url : appUrlService.approveAsCadre,
 	 					method :"PUT",
 	 					data : reqObj						
-	                }).success(function(resp, textStatus, jqXHR) {
-                        	
-                        	$modalInstance.dismiss("cancel");
-
+	                }).success(function(resp, textStatus, jqXHR) {                        	
+	                	if(resp.status == "success" ){
+                        	$scope.modalMessage = "User cadre status is approved successfully.";
+                        	$scope.showApprovedStatus = true;
+                        	$timeout(function() {
+	                        	$modalInstance.dismiss("cancel");	
+                        }, 900);
+	                	}else{
+	                		$scope.modalMessage = "Something went wrong. Please try again."
+                        	$scope.showApprovedStatus = true;
+                        	$timeout(function() {
+	                        	$modalInstance.dismiss("cancel");	
+	                        }, 900);
+	                	}
 
     	            }).error(function(jqXHR, textStatus, errorThrown) {
+
+
+
+
 
                 	}) 
 

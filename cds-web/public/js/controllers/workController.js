@@ -16,8 +16,8 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
         handleUserEdit(cdsSession.currentUserId);
         
 
-		this.age = cdsService.age;
-		this.gender = cdsService.gender;		
+		this.age = cdsSession.age;
+		this.gender = cdsSession.gender;		
 		var config = {
             initiate :false,
             blurValidation: false,
@@ -64,6 +64,16 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
                   	self.user.occupationId = dataJson.occupation.occupationId;                    
                     self.user.workingOrganization = dataJson.workingOrganization;
                     self.user.workingLocation = dataJson.workingLocation;
+
+                    if(dataJson.additionalInfo && dataJson.additionalInfo.length){
+	                    self.user.userAdditionalInfo = {};
+	                    self.user.userAdditionalInfo.careerAspirationId = dataJson.additionalInfo[0].careerAspirations.careerAspirationId;
+	                    self.user.userAdditionalInfo.careerAspiration = dataJson.additionalInfo[0].careerAspiration;
+	                    self.user.userAdditionalInfo.skillGapsId = dataJson.additionalInfo[0].skillGaps.skillGapId;
+	                    self.user.userAdditionalInfo.skillLevel = dataJson.additionalInfo[0].skillLevel;
+	                    self.user.userAdditionalInfo.leadershipPotential = dataJson.additionalInfo[0].leadershipPotential;
+                	}
+
                     
                 });
             }

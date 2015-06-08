@@ -55,10 +55,21 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
             this.getGender = function(val) {
                 if (val == "F") {
-                    cdsService.gender = "female";
+                    cdsSession.gender = "female";
                 } else {
-                    cdsService.gender = "";
+                    cdsSession.gender = "";
                 }
+            }
+
+            this.getAge = function(userDate){
+               
+                var selectedDate =userDate.split('/'), 
+                    birthDate = new Date(selectedDate[2],selectedDate[1],selectedDate[0]),
+                    today = new Date(),
+                    diff =  today - birthDate,
+                    age = Math.floor(diff/31536000000);                             
+                    cdsSession.age = age;
+                    return age;
             }
 
             this.save = function() {
@@ -106,8 +117,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     self.user.skypeId = dataJson.skypeId;
                     self.user.maritalStatus = dataJson.maritalStatus;
                     self.user.educationId = dataJson.education.educationId;  
-                    cdsService.isMarried = self.user.maritalStatus ;                  
-
+                    cdsSession.isMarried = cdsService.isMarried = self.user.maritalStatus ;                  
+                    cdsSession.gender = dataJson.gender;
+                    cdsSession.age = self.getAge(self.user.dateOfBirth);
                 });
             }
 

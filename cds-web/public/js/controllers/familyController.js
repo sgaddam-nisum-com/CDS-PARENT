@@ -82,7 +82,7 @@ define(['controllers/controllerModule','formValidation','validators/familyValida
 				data: familyReqObj
 			}).success(function(data, status, headers, config){
 
-
+				 $state.go('root.profile.editprofile.cadre');
 
 				
 			}).error(function(data, status, headers, config){

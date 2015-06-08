@@ -47,7 +47,7 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 					data: self.user	
 				}).success(function(data, status, headers, config){
 					console.log("success");
-					//$state.go('root.register.personal');
+					$state.go('root.profile');
 				}).error(function(data, status, headers, config){
 					
 				});

@@ -14,8 +14,11 @@ define(['directives/directiveModule','datepicker'], function (directiveModule) {
 					yearRange: "-100:+0",
 					changeMonth: true,
 					changeYear: true,
-                    onSelect:function (date) {					
-                    	scope.dob = date;                    	
+                    onSelect:function (date) {					                   	
+                    	scope.$apply(function(){
+                    		scope.dob = date;
+                    		$(elem).trigger("change");                    		
+                    	});
 						var selectedDate =$(elem).val().split('/'), 
 							birthDate = new Date(selectedDate[2],selectedDate[1],selectedDate[0]),
 							today = new Date(),

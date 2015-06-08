@@ -27,7 +27,7 @@
 					<label for="right-label" class="right inline">Marriage Date:</label>
 				</div>
 				<div class="large-12 columns left">
-					<input type="text" id="marriageDate" class="input" name="marriageDate" data-val="marriageDate" ng-model="familyCtrl.user.spouseData.marriageDate" dob="familyCtrl.user.spouseData.marriageDate">
+					<input type="text" id="marriageDate" class="input" name="marriageDate" data-val="marriageDate" ng-model="familyCtrl.user.spouseData.marriageDate" date-picker-directive="familyCtrl.user.spouseData.marriageDate">
 					<div class="error-class"><div class="error-content"></div></div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 					<label for="right-label" class="right inline">Date of Birth:</label>
 				</div>
 				<div class="large-12 columns left">
-					<input type="text" id="dob" name="dob" ng-model="familyCtrl.user.spouseData.dateOfBirth" class="input" dob="familyCtrl.user.spouse.dateOfBirth">
+					<input type="text" id="dob" name="dob" ng-model="familyCtrl.user.spouseData.dateOfBirth" class="input" date-picker-directive="familyCtrl.user.spouse.dateOfBirth">
 				</div>
 			</div>
 			<div class="row">
@@ -95,7 +95,7 @@
 					<label for="right-label" class="right inline">Date of Birth:</label>
 				</div>
 				<div class="large-12 columns left">
-					<input type="text" id="childDob" name="childDob" ng-model="child.dateOfBirth" class="input" dob="familyCtrl.user.child.dateOfBirth">
+					<input type="text" id="childDob" name="childDob" ng-model="child.dateOfBirth" class="input" date-picker-directive="familyCtrl.user.child.dateOfBirth">
 				</div>
 			</div>
 
