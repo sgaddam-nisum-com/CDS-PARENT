@@ -265,3 +265,9 @@ ul.doughnut-legend {
 .close-overlay {
   z-index: 100;
 }
+
+.d-widget.notifications .widget-content {
+  height: 380px;
+  overflow: auto;
+}
+

@@ -58,7 +58,7 @@ define(['services/serviceModule'], function(serviceModule) {
                 getTaskState: function(cb) {
                     $http.get(appUrlService.getTaskState, {
                         params: {
-                            type: 'all'
+                            type: 'assignedtome'
                         }
 
                     }).success(function(resp) {

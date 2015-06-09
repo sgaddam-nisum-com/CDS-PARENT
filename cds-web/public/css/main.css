@@ -364,6 +364,12 @@ ul.doughnut-legend {
   z-index: 100;
 }
 
+/* line 269, ../scss/components/_dashboard.scss */
+.d-widget.notifications .widget-content {
+  height: 380px;
+  overflow: auto;
+}
+
 /******Do not change. Styles to make footer at bottom on variable section height. ***********/
 /******Difference height : Header height + Footer height************************************/
 /* line 4, ../scss/components/_footer.scss */

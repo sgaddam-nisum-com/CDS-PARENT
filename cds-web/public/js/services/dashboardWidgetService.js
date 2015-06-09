@@ -10,7 +10,6 @@ define(['services/serviceModule'], function(serviceModule) {
                         style: {
                             width: '33%',
                             height: "300px"
-
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
@@ -68,6 +67,17 @@ define(['services/serviceModule'], function(serviceModule) {
 
                     },
 
+                    {
+                        name: 'My Team Tasks',
+                        title: "My Team Tasks",
+                        style: {
+                            width: '66%',
+                            height: "432px"
+                        },
+                        directive: "team-tasks-directive",
+                        templateUrl: "views/dashboard/self-tasks.html",
+                        "class": "d-widget team-tasks"
+                    },
 
                     {
                         name: 'Alerts / Notifications',
@@ -81,19 +91,6 @@ define(['services/serviceModule'], function(serviceModule) {
                         templateUrl: "views/dashboard/notifications.html",
                         "class": "d-widget notifications"
 
-                    },
-
-
-                    {
-                        name: 'My Team Tasks',
-                        title: "My Team Tasks",
-                        style: {
-                            width: '66%',
-                            height: "432px"
-                        },
-                        directive: "team-tasks-directive",
-                        templateUrl: "views/dashboard/self-tasks.html",
-                        "class": "d-widget team-tasks"
                     }
 
                 ],
