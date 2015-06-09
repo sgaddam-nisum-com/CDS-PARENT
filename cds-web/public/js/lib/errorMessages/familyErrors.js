@@ -23,8 +23,8 @@ define(['jquery'], function($) {
   "childEducation-minCharacters": "Education Min Should be 5.",
   "childEducation-maxCharacters": "Education Max allowed 16.",
   "dob-required" : "Date of birth is a required field",
-   "submissionError" : "Oops, Something went wrong. Please try again.",
-  "successfulSave" : "Details updated successfully. Redirecting to Work Info."
+  "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Cadre Info."
  }
 
 });

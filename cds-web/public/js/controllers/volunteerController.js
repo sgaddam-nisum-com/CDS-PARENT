@@ -16,7 +16,7 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
         handleUserEdit(cdsSession.currentUserId);
 
 		var config = {
-            initiate :false,
+            initiate :true,
             blurValidation: false,
             htmlValidation : false,
             submitValidForm : false,

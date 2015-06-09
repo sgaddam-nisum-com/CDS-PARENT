@@ -2675,24 +2675,25 @@ div.navigation a.next {
   color: #16578f;
   border-right: solid 1px #16578f;
   text-decoration: underline;
+  cursor: pointer;
 }
 
-/* line 76, ../scss/components/_task.scss */
+/* line 77, ../scss/components/_task.scss */
 .task-links a:last-child {
   border: none;
 }
 
-/* line 79, ../scss/components/_task.scss */
+/* line 80, ../scss/components/_task.scss */
 .tasks-list {
   margin-bottom: 15px !important;
 }
 
-/* line 82, ../scss/components/_task.scss */
+/* line 83, ../scss/components/_task.scss */
 .tasks-list input {
   margin: 0 10px 0 0;
 }
 
-/* line 85, ../scss/components/_task.scss */
+/* line 86, ../scss/components/_task.scss */
 .tasks-list .task-title {
   font-size: 15px;
   font-weight: bold;
@@ -2701,14 +2702,14 @@ div.navigation a.next {
   border-radius: 3px 3px 0 0;
 }
 
-/* line 92, ../scss/components/_task.scss */
+/* line 93, ../scss/components/_task.scss */
 .task-details {
   background: #eef2f6;
   border: solid 1px #cfddeb;
   padding: 10px !important;
 }
 
-/* line 97, ../scss/components/_task.scss */
+/* line 98, ../scss/components/_task.scss */
 .task-status-info {
   background: #ffffff;
   border: solid 1px #cddae6;
@@ -2717,7 +2718,7 @@ div.navigation a.next {
   margin: 0 0 10px 0;
 }
 
-/* line 104, ../scss/components/_task.scss */
+/* line 105, ../scss/components/_task.scss */
 .task-status-info ul li {
   font-size: 12px;
   margin-bottom: 10px;
@@ -2725,40 +2726,40 @@ div.navigation a.next {
   border-right: solid 1px #cccccc;
 }
 
-/* line 110, ../scss/components/_task.scss */
+/* line 111, ../scss/components/_task.scss */
 .task-status-info ul li:last-child {
   border: none;
 }
 
-/* line 113, ../scss/components/_task.scss */
+/* line 114, ../scss/components/_task.scss */
 .task-status-info ul li span {
   font-weight: bold;
   padding: 0 0 0 5px;
 }
 
-/* line 118, ../scss/components/_task.scss */
+/* line 119, ../scss/components/_task.scss */
 .noTasks {
   text-align: center;
   font-size: 40px;
 }
 
-/* line 123, ../scss/components/_task.scss */
+/* line 124, ../scss/components/_task.scss */
 .task-comments {
   min-height: 60px;
 }
 
-/* line 128, ../scss/components/_task.scss */
+/* line 129, ../scss/components/_task.scss */
 .comments-list {
   max-height: 500px;
   overflow: scroll;
 }
 
 /* Bootstrap overrides */
-/* line 140, ../scss/components/_task.scss */
+/* line 141, ../scss/components/_task.scss */
 .cadre-list {
   padding: 15px;
 }
-/* line 142, ../scss/components/_task.scss */
+/* line 143, ../scss/components/_task.scss */
 .cadre-list .cadre-list-item {
   background-color: #eaeaea;
   height: 30px;
@@ -2767,12 +2768,12 @@ div.navigation a.next {
   padding-top: 11px;
   width: 90%;
 }
-/* line 149, ../scss/components/_task.scss */
+/* line 150, ../scss/components/_task.scss */
 .cadre-list .cadre-list-item:hover {
   background-color: #dddddd;
 }
 
-/* line 155, ../scss/components/_task.scss */
+/* line 156, ../scss/components/_task.scss */
 .cadre-list .cadre-list-row {
   margin-bottom: 25px;
   margin-left: 30px;
@@ -2782,12 +2783,12 @@ div.navigation a.next {
   width: 90%;
 }
 
-/* line 164, ../scss/components/_task.scss */
+/* line 165, ../scss/components/_task.scss */
 .cadre-list .page-header {
   margin-top: 0;
 }
 
-/* line 168, ../scss/components/_task.scss */
+/* line 169, ../scss/components/_task.scss */
 .close-overlay {
   font-size: 20px;
   font-weight: bold;
@@ -2797,37 +2798,37 @@ div.navigation a.next {
   cursor: pointer;
 }
 
-/* line 182, ../scss/components/_task.scss */
+/* line 183, ../scss/components/_task.scss */
 .col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 188, ../scss/components/_task.scss */
+/* line 189, ../scss/components/_task.scss */
 .ui-datepicker-calendar {
   width: 100%;
   background-color: #fff;
 }
 
-/* line 193, ../scss/components/_task.scss */
+/* line 194, ../scss/components/_task.scss */
 .user-actions-div {
   margin-top: 5px;
 }
-/* line 195, ../scss/components/_task.scss */
+/* line 196, ../scss/components/_task.scss */
 .user-actions-div .edit, .user-actions-div .delete {
   color: #2368A0;
 }
-/* line 197, ../scss/components/_task.scss */
+/* line 198, ../scss/components/_task.scss */
 .user-actions-div .edit:hover, .user-actions-div .delete:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 202, ../scss/components/_task.scss */
+/* line 203, ../scss/components/_task.scss */
 .user-actions-div .edit.grey {
   color: #999999;
   cursor: default;
 }
-/* line 205, ../scss/components/_task.scss */
+/* line 206, ../scss/components/_task.scss */
 .user-actions-div .edit.grey:hover {
   text-decoration: none;
 }

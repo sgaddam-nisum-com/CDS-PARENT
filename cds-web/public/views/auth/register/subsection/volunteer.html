@@ -67,7 +67,7 @@
 					<label class="right inline">Lead Id:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="leadId" class="input" name="leadId" ng-model="volunteerCtrl.user.volunteerLeadId"  ng-options="lead.citizenId as lead.firstName for lead in leadOptions" data-val="leadId">
+					<select id="leadId" class="input required" name="leadId" ng-model="volunteerCtrl.user.volunteerLeadId"  ng-options="lead.citizenId as lead.firstName for lead in leadOptions" data-val="leadId">
 						<option value="">Select Lead</option>						
 					</select>
 					<div class="error-class"><div class="error-content"></div></div>					

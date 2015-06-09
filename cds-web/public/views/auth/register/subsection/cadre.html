@@ -90,7 +90,7 @@
 					<label class="right inline">Performance Grade:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="grade" class="input" name="grade" ng-model="cadreCtrl.user.cadre.performanceGradeId"  ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions" data-val="performanceGradeId">
+					<select id="grade" class="input required" name="grade" ng-model="cadreCtrl.user.cadre.performanceGradeId"  ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions" data-val="performanceGradeId">
 						<option value="">Select Performance Grade</option>						
 					</select>
 					<div class="error-class"><div class="error-content"></div></div>					

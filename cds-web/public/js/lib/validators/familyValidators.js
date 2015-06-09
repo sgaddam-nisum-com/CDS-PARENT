@@ -5,12 +5,11 @@
 //generates additional function with name of Validate-key  on methods object in validation module.
 
 define(['validation'], function(validation) {
-
     return {
 		spouseFirstName:{
 			required:true,
-			minCharacters:5,
-			maxCharacters:16,
+			minCharacters:3,
+			maxCharacters:25,
 			key_error_msgs:true
 		},
 		spouseMiddleName:{
@@ -24,19 +23,15 @@ define(['validation'], function(validation) {
 			key_error_msgs:true
 		},
 		marriageDate:{
-			required:true,
+			required:false,
 			key_error_msgs:true
 		},
 		spouseEducation:{
-			required:true,			
+			required:false,			
 			key_error_msgs:true
-		},
-		childEducation:{
-			required:true,			
-			key_error_msgs:true
-		},
+		},	
 		dob: {
-			required:true,			
+			required:false,			
 			key_error_msgs:true
 		}        		
     }

@@ -65,7 +65,7 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
                           $state.go('root.profile');  
                         },2000); 						
 					}}else{						
-						  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+						  messageHandler.showErrorStatus(resp.data.message,".status-message-wrapper");
 	                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
                         },2000); 						
@@ -79,6 +79,8 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
                         },2000); 						
 
 				});
+
+				self.isNotValidForm = false;
 			}else{
 				self.isNotValidForm = true;
 

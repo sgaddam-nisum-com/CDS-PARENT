@@ -1,44 +1,60 @@
+define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
 
- 
+    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window",
+        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window) {
 
-define(['controllers/controllerModule','jquery'], function (controllerModule,$) {
+            console.log($stateParams);
 
-	 controllerModule.controller('profileController', ["$stateParams",'$state','$http',"appUrlService","cdsService",'$scope',"roleService", "$window", 
-	 						function($stateParams,$state,$http,appUrlService,cdsService,$scope, roleService, $window){		
-	 
-	 		console.log($stateParams);
-
-	 		var self = this,
-	 		currentCitizenId = $stateParams.citizenId;
+            var self = this,
+                currentCitizenId = $stateParams.citizenId,
+                children = [];
 
 
-			cdsService.getProfileInfo(currentCitizenId,initiateProfile);
+            cdsService.getProfileInfo(currentCitizenId, initiateProfile);
 
-			function initiateProfile(resp){
-				console.log(resp);
-				
-				if(resp.data){
+            function generateParamObject(objString) {
+                objString = objString || "";
+                var keysArray = objString.split(",");
+                var keysObj = {};
+                for (var i = 0; i < keysArray.length; i++) {
+                    var splitArray = keysArray[i].split(":");
+                    keysObj[splitArray[0]] = splitArray[1];
+                }
+                return keysObj;
+            }
 
-					if(resp.data.gender = "M"){
-						resp.data.gender = "MALE";
-					}else if(resp.data.gender = "F"){
+            function initiateProfile(resp) {
+                console.log(resp);
 
-						resp.data.gender = "FEMALE"
-					}else{
-						resp.data.gender = "NOT DISCLOSED";
-					}
+                if (resp.data) {
 
-						self.user = resp.data;
+                    if (resp.data.gender = "M") {
+                        resp.data.gender = "MALE";
+                    } else if (resp.data.gender = "F") {
 
-				}
+                        resp.data.gender = "FEMALE"
+                    } else {
+                        resp.data.gender = "NOT DISCLOSED";
+                    }
+
+                    self.user = resp.data;
+                    $scope.voterNodeObj = generateParamObject(resp.data.voter.consituency);
+
+                    children = angular.copy(resp.data.tblCitizenRelation);
+                    children.shift();
+                    $scope.children = children;
+                    console.log($scope.children);
+
+                }
 
 
-			}	 		
+            }
 
 
 
 
-	}]);
+
+        }
+    ]);
 
 });
-

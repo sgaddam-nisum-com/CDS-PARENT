@@ -8,17 +8,17 @@ define(['validation'], function(validation) {
 
     return {
         volunteerId:{
-			required:true,
-			minCharacters:5,
+			required:false,
+			minCharacters:3,
 			maxCharacters:16,
 			key_error_msgs:true
 		},
 		 areaOfInterest:{
-			required:true,
+			required:false,
 			key_error_msgs:true
 		},
 		 volunteerCategory:{
-			required:true,
+			required:false,
 			key_error_msgs:true
 		},
 		 leadId:{
@@ -26,7 +26,7 @@ define(['validation'], function(validation) {
 			key_error_msgs:true
 		},
 		 performanceGrade:{
-			required:true,
+			required:false,
 			key_error_msgs:true
 		},
 		
