@@ -1,4 +1,5 @@
-define(['controllers/controllerModule','formValidation','validators/cadreValidators','errorMessages/cadreErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
+define(['controllers/controllerModule','formValidation','validators/cadreValidators','errorMessages/cadreErrors','jquery',"messageHandler"], 
+	function (controllerModule,formValidation,validationMap,errorJson,$,messageHandler) {
 
 	controllerModule.controller('cadreController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage", 
 
@@ -12,11 +13,14 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 		   dataJson={};
         
 		self.user = {};
-		self.user.cadre={};        
+		self.user.cadre={};
+		self.isNotValidForm = false;
+
+
         handleGetCadre(cdsSession.currentUserId);
         
 		var config = {
-            initiate :false,
+            initiate :true,
             blurValidation: false,
             htmlValidation : false,
             submitValidForm : false,
@@ -32,33 +36,52 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 		});
 
 		self.user = {};
-		
-		
+
+		this.backview = function(e){
+			e.preventDefault();
+			$state.go("root.profile.editprofile.family");
+		}
+				
 		this.save = function(){
 			self.user.userId = cdsService.getUserId();
 			if(formStack.isValid){	
-
-
 				self.user.userId = cdsSession.currentUserId;							
-
 				$http({
 					method: dataJson.reqMethod,
 					url: dataJson.reqURL,
 					data: self.user	
-				}).success(function(data, status, headers, config){
-				
+				}).success(function(resp, status, headers, config){	
+				    if(resp.status ==="success"){			
 					if(self.user.userId){
-						$state.go("root.profileLookup", {citizenId : self.user.userId});
+						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                           $state.go("root.profileLookup", {citizenId : self.user.userId});  
+                        },2000); 
 					}else{
-						$state.go('root.profile');
-					}
+						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                          $state.go('root.profile');  
+                        },2000); 						
+					}}else{						
+						  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+	                         setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 						
 
-						
-				
+					}							
 
 				}).error(function(data, status, headers, config){
-					
+					  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 						
+
 				});
+			}else{
+				self.isNotValidForm = true;
+
 			} 
 		}
 
@@ -85,7 +108,7 @@ define(['controllers/controllerModule','formValidation','validators/cadreValidat
 	            self.user.bloodGroupId =dataJson.citizen.bloodGroup.bloodGroupId;	            
 	        	}
 
-	            self.user.cadre.positionId =dataJson.partyDesigination.positionId;
+	            self.user.cadre.positionId =dataJson.partyDesigination.positionId || "";
 	            self.user.cadre.partyMembershipId =dataJson.partyMembershipId;
 	            self.user.cadre.partyResponsibility =dataJson.partyResponsibility;
 				self.user.cadre.performanceGradeId =dataJson.performanceGradeId;

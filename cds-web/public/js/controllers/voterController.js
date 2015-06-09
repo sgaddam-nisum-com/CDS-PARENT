@@ -1,7 +1,9 @@
 
  
 
-define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors'], function (controllerModule,formValidation,validationMap,errorJson) {
+define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors',"messageHandler"], 
+
+	function (controllerModule,formValidation,validationMap,errorJson, messageHandler) {
 
 	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage",
 						function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
@@ -35,7 +37,7 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 			reqObj.voterId = self.user.voterId;
 			reqObj.userId = cdsSession.currentUserId;
 
-			if(formStack.isValid){								
+									
 
 				$http({
 					method:dataJson.reqMethod,
@@ -44,16 +46,31 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 				}).success(function(resp, status, headers, config){
 				
 					if(resp.status == "success"){
-						$state.go('root.profile.editprofile.address');	
+
+						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                           $state.go('root.profile.editprofile.address');	
+                        },2000); 
+
 					}else{
-						console.log("required fileds are not filled.");
+
+						  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+	                         setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
+						
+
 					}
 
 				}).error(function(data, status, headers, config){
-					
+					  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+	                         setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
 				
 				});
-			} 
+			
 		
 
 		}

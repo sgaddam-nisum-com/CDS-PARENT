@@ -1,4 +1,5 @@
-define(['controllers/controllerModule','formValidation','validators/volunteerValidators','errorMessages/volunteerErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
+define(['controllers/controllerModule','formValidation','validators/volunteerValidators','errorMessages/volunteerErrors','jquery',"messageHandler"], 
+	function (controllerModule,formValidation,validationMap,errorJson,$,messageHandler) {
 
 	 controllerModule.controller('volunteerController', ['$state','$http',"appUrlService",'$scope','registerService',"cdsService","$sessionStorage",
 
@@ -7,6 +8,8 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 
 		var self = this,
 		dataJson;
+
+		self.isNotValidForm = false;
 
  		var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
@@ -34,10 +37,20 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 			$scope.performanceGradeOptions = resp.data;			
 		});
 		
+
+		this.backview = function(e){
+			e.preventDefault();
+			$state.go("root.profile.editprofile.address");
+		}
+
+
+
 		this.save = function(){
 			
-			var requestObj = {};
-			
+
+			if(formStack.isValid){	
+
+			var requestObj = {};			
 
 			requestObj.interestedAsVolunteer = self.user.citizen.interestedAsVolunteer;
 			requestObj.volunteerInterestedAreas =[];
@@ -50,24 +63,45 @@ define(['controllers/controllerModule','formValidation','validators/volunteerVal
 				"performanceGradeId":self.user.performanceGradeId
 			};	
 			requestObj.userId =cdsSession.currentUserId; 
-			
-			
-			console.log(requestObj);
-			if(formStack.isValid){								
+								
 
 				$http({
 					method: dataJson.reqMethod,
 					url: dataJson.reqUrl,
 					data: requestObj	
-				}).success(function(data, status, headers, config){
-					console.log("success");
-					$state.go('root.profile.editprofile.family');
-				}).error(function(data, status, headers, config){
+				}).success(function(resp, status, headers, config){
 					
+					if(resp.status == "success"){
 
+						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                          $state.go('root.profile.editprofile.family');
+                        },2000); 
+
+
+
+					}else{
+						  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+						 setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
+
+					}
+				}).error(function(data, status, headers, config){
+					  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+					 setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
 				});
-			} 
-		};
+		
+		}else{
+			self.isNotValidForm = true;
+		}
+
+
+
+	};
 
 		   function handleUserEdit(userId) {
 

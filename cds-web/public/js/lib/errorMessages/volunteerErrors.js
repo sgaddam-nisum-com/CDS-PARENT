@@ -9,6 +9,8 @@ define(['jquery'], function($) {
   "volunteerCategory-required" : "Volunteer Category is a required field.", 
   "leadId-required" : "Lead ID is a required field.",
   "performanceGrade-required" : "Performance Grade is a required field.",
+  "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Work Info."
  }
 
 });

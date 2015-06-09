@@ -14,6 +14,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
             dataJson={};
         
 
+            self.isNotValidForm = false;
+
             handleUserEdit(cdsSession.currentUserId);
 
 
@@ -28,13 +30,17 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
 
             var self = this;
+
+
             var config = {
-                initiate: false,
+                initiate: true,
                 blurValidation: false,
                 htmlValidation: false,
                 submitValidForm: false,
                 runCallBack: false,
             };
+
+
             var formStack = formValidation.init("#personalRegistrationForm", validationMap, errorJson, config);
 
             var fileObj = {};
@@ -75,6 +81,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
                 self.user.userId = cdsSession.currentUserId;
 
+                if(formStack.isValid){  
+
                 $http({
                     method: "PUT",
                     url: appUrls.updatePersonalInfo,
@@ -90,17 +98,30 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                         },2000);                                                   
 
                     }else{
-                        messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                        messageHandler.showErrorStatus(resp.data.message,".status-message-wrapper");
+                         setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
                     }
 
-                }).error(function(data, status, headers, config){
-                   
-
+                }).error(function(resp, status, headers, config){                   
+                      messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                       setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
                 });
 
 
-             
-            };
+
+
+
+                self.isNotValidForm = false;
+            }else{
+
+                self.isNotValidForm = true;
+            }
+
+        };
 
 
 
@@ -114,6 +135,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     self.user.middleName = dataJson.middleName;
                     self.user.lastName = dataJson.lastName;
                     self.user.loginId = dataJson.loginId;
+                    self.user.aadharId = dataJson.aadharId;
                     self.user.gender = dataJson.gender;
                     self.user.dateOfBirth = dataJson.dateOfBirth;
                     self.user.mobileNumber = dataJson.mobileNumber;

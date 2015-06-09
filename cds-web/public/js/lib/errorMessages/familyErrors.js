@@ -6,6 +6,7 @@ define(['jquery'], function($) {
   "spouseFirstName-minCharacters":"First Name Min Should be 5.",
   "spouseFirstName-maxCharacters":"First Name Max allowed 16.",
 
+  "spouseMiddleName-required" : "Middle Name is a required field",
 
   "spouseLastName-required": "Last Name is a required field.",
   "spouseLastName-minCharacters":"Last Name Min Should be 5.",
@@ -21,7 +22,9 @@ define(['jquery'], function($) {
   "childEducation-required": "Education is a required field.",
   "childEducation-minCharacters": "Education Min Should be 5.",
   "childEducation-maxCharacters": "Education Max allowed 16.",
-  "dobFamily-required" : "Date of birth is a required field"
+  "dob-required" : "Date of birth is a required field",
+   "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Work Info."
  }
 
 });

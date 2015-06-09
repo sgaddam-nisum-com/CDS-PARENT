@@ -13,7 +13,9 @@ define(['jquery'], function($) {
   "addressLine1-maxCharacters" : "Address Max allowed 16.",
   "pincode-required" : "Pincode is a required field.",
   "pincode-minCharacters" : "Pincode Min should be 5.",
-  "pincode-maxCharacters": "Pincode Max allowed 16."  
+  "pincode-maxCharacters": "Pincode Max allowed 16.",
+  "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Residential Address Info."  
  }
 
 });

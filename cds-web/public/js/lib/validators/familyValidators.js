@@ -13,6 +13,10 @@ define(['validation'], function(validation) {
 			maxCharacters:16,
 			key_error_msgs:true
 		},
+		spouseMiddleName:{
+			required:false,
+			key_error_msgs:true	
+		},
 		spouseLastName:{
 			required:true,
 			minCharacters:5,
@@ -31,7 +35,7 @@ define(['validation'], function(validation) {
 			required:true,			
 			key_error_msgs:true
 		},
-		dobFamily: {
+		dob: {
 			required:true,			
 			key_error_msgs:true
 		}        		

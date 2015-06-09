@@ -1,27 +1,44 @@
 <form name="cadre" id="cadreRegistrationForm" ng-submit="cadreCtrl.save()">
 	<div class="row rightContent"> 
 		<div class="large-16 columns formContent">			
+			
+
+
+			<div class="row" ng-if="cadreCtrl.isNotValidForm">
+        		<div class="large-12 right columns error-class">Please ensure that all the required fields are valid.</div>
+      		</div>
+
+
+
+
+
 			<div class="row">
 				<div class="large-4 columns">
 					<label for="right-label" class="right inline">Party Membership#:</label>
 				</div>
 				<div class="large-12 columns left">
-					<input type="text" id="membershipId" class="input" name="membershipId"  ng-model="cadreCtrl.user.cadre.partyMembershipId">
+					<input type="text" id="membershipId" class="input" name="membershipId"  ng-model="cadreCtrl.user.cadre.partyMembershipId" data-val="partyMembershipId">
 					<div class="error-class"><div class="error-content"></div></div>
 				</div>
 			</div>
+
+
+		
+
+
 			<div class="row">
 				<div class="large-4 columns">
 					<label for="right-label" class="right inline">Position in the Party:</label>
 				</div>
 				<div class="large-12 columns left">
-					<select id="position" name="position" class="input" ng-model="cadreCtrl.user.cadre.positionId">
+					<select id="position" name="position" class="input" ng-model="cadreCtrl.user.cadre.positionId" data-val="positionId">
 						<option value="">Select Position</option>
 						<option value="1">Volunteer</option>
 						<option value="2">Leader</option>
 						<option value="3">President</option>
 						<option value="4">Local Leader</option>
 					</select>
+					<div class="error-class"><div class="error-content"></div></div>
 				</div>
 			</div> 
 			<div class="row">
@@ -30,7 +47,7 @@
 				</div>
 				<div class="large-12 columns left">
 					<div class="large-12 columns left">
-						<input type="text" id="partyResponsibility" class="input" name="partyResponsibility" ng-model="cadreCtrl.user.cadre.partyResponsibility">
+						<input type="text" id="partyResponsibility" class="input" name="partyResponsibility" ng-model="cadreCtrl.user.cadre.partyResponsibility" data-val="partyResponsibility">
 						<div class="error-class"><div class="error-content"></div></div>
 					</div>					
 				</div>				
@@ -58,13 +75,14 @@
 					<label for="right-label" class="right inline">Blood Group:</label>
 				</div>
 				<div class="large-12 columns left">
-					<select id="bloodGroup" name="bloodGroup" class="input" ng-model="cadreCtrl.user.bloodGroupId">
+					<select id="bloodGroup" name="bloodGroup" class="input" ng-model="cadreCtrl.user.bloodGroupId" data-val="bloodGroupId">
 						<option value="">Select Blood Group</option>
 						<option value="1">A +ve</option>
 						<option value="2">O +ve</option>
 						<option value="3">B +ve</option>
 						<option value="4">AB +ve</option>
 					</select>
+					<div class="error-class"><div class="error-content"></div></div>
 				</div>
 			</div>
 			<div class="row">
@@ -72,9 +90,10 @@
 					<label class="right inline">Performance Grade:</label>
 				</div>                    
 				<div class="large-12 columns right">
-					<select id="grade" class="input" name="grade" ng-model="cadreCtrl.user.cadre.performanceGradeId"  ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions">
+					<select id="grade" class="input" name="grade" ng-model="cadreCtrl.user.cadre.performanceGradeId"  ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions" data-val="performanceGradeId">
 						<option value="">Select Performance Grade</option>						
-					</select>					
+					</select>
+					<div class="error-class"><div class="error-content"></div></div>					
 				</div>				
 			</div>
 			<div class="row">
@@ -82,7 +101,7 @@
 				</div>
 				<div class="large-12 columns">
 					<button class="radius small button submit">Save as Cadre</button>
-					<button class="radius small button cancel" href="#">Back</button>
+					<button class="radius small button cancel" href="" ng-click="cadreCtrl.backview($event)">Back</button>
 				</div>
 			</div>				
 		</div>

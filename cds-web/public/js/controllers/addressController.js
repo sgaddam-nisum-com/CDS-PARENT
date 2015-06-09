@@ -1,4 +1,5 @@
-define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors'], function(controllerModule, formValidation, validationMap, errorJson) {
+define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors', "messageHandler"], 
+    function(controllerModule, formValidation, validationMap, errorJson, messageHandler) {
 
         controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope","$sessionStorage",
             function($state, $http, registerService, appUrls, cdsService, $scope, $sessionStorage) {
@@ -65,43 +66,46 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                 requestObj[0] = {};
                                 requestObj[0].postalAddress = {};
 
-                                if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1) {
-                                    
+                                if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1) {                                    
                                     requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
                                     requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
-
                                     requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
                                     requestObj[0]['nriAddress'] = false;
-
-
                                     var addressReq = {};
-
-                                    addressReq.data = requestObj;
-
-                                    
+                                    addressReq.data = requestObj;                                   
                                     addressReq.userId = cdsSession.currentUserId;
-
-                                        
-
-
-
-                                    if (formStack.isValid) {
+                                    
+                                }
 
                                         $http({
                                             method: "PUT",
                                             url: appUrls.updateResidentialAddress,
                                             data: addressReq
-                                        }).success(function(data, status, headers, config) {
-                                            console.log("success");
-                                            $state.go('root.profile.editprofile.volunteer');
+                                        }).success(function(resp, status, headers, config) {
+
+                                            if(resp.status === "success"){
+
+                                                messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                                                    setTimeout(function(){
+                                                        messageHandler.clearMessageStatus();                           
+                                                    $state.go('root.profile.editprofile.volunteer');
+                                                    },2000);                                                 
+                                            }else{
+                                                 messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                                                    setTimeout(function(){
+                                                        messageHandler.clearMessageStatus();                           
+                                                    },2000);    
+                                            }                                      
+
                                         }).error(function(data, status, headers, config) {
 
+                                             messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                                                setTimeout(function(){
+                                                    messageHandler.clearMessageStatus();                           
+                                                },2000);    
                                         });
-                                    }
-                                }
+
                             }     
-
-
 
                     }
                 ]);

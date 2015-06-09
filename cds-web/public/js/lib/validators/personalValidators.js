@@ -9,24 +9,20 @@ define(['validation'], function(validation) {
     return {
         signupFirstName: {
             required : true,
-            minCharacters: 5,
-            maxCharacters: 16,
+            minCharacters: 3,
+            maxCharacters: 25,
             key_error_msgs: true
            
         },
         signupMiddleName: {
             required : false,
-            minCharacters: 5,
-            maxCharacters: 16,
-            key_error_msgs: true
-          
+            key_error_msgs: true          
         },
 		signupLastName: {
             required : true,
-            minCharacters: 5,
-            maxCharacters: 16,
-            key_error_msgs: true
-          
+            minCharacters: 1,
+            maxCharacters: 25,
+            key_error_msgs: true          
         },
         userName : {
             required : false,
@@ -40,20 +36,24 @@ define(['validation'], function(validation) {
 			key_error_msgs:true
 		},     
 		aadharId:{
-            required : true,
-			minCharacters: 5,
+            required : false,
+            numeric : true,
+			minCharacters: 12,
+            maxCharacters: 12,
 			key_error_msgs:true
 		},
         userMobile:{
             required : true,
-            minCharacters: 5,
-            maxCharacters: 16,
+            numeric : true,
+            minCharacters: 10,
+            maxCharacters: 10,
             key_error_msgs: true     
         },
         userPhone:{
-            required : true,
-            minCharacters: 5,
-            maxCharacters: 16,
+            required : false,
+            numeric : true,
+            minCharacters: 10,
+            maxCharacters: 11,
             key_error_msgs: true                 
         },
         userEmail: {

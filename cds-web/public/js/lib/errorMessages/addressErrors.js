@@ -13,7 +13,9 @@ define(['jquery'], function($) {
   "postalAddress-maxCharacters" : "Pincode `Max allowed 16.",  
   "nriAddressLine1-required": "Address is a required field",
   "nriAddressLine1-minCharacters" : "Address min should be 5",
-  "nriAddressLine1-maxCharacters" : "Address max should be 16"  
+  "nriAddressLine1-maxCharacters" : "Address max should be 16",
+  "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Volunteer Info."  
  }
 
 });

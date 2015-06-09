@@ -1,7 +1,9 @@
 
  
 
-define(['controllers/controllerModule','formValidation','validators/workValidators','errorMessages/workErrors','jquery'], function (controllerModule,formValidation,validationMap,errorJson,$) {
+define(['controllers/controllerModule','formValidation','validators/workValidators','errorMessages/workErrors','jquery', "messageHandler"], 
+
+	function (controllerModule,formValidation,validationMap,errorJson,$, messageHandler) {
 
 	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage", 
 	 	function($state,$http,appUrls,cdsService,$scope,registerService, $sessionStorage){		
@@ -51,11 +53,36 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 					method: "PUT",
 					url: appUrls.updateWorkInfo,
 					data: self.user	
-				}).success(function(data, status, headers, config){
+				}).success(function(resp, status, headers, config){
+
+					if(resp.status === "success"){
+
+						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        setTimeout(function(){
+                          messageHandler.clearMessageStatus();                           
+                          $state.go('root.profile.editprofile.voter');
+                        },2000); 
+
+
+					}else{
+						 messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+	                         setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
+
+					}
+
+
 					console.log("success");
-					$state.go('root.profile.editprofile.voter');
+					
+				
+
 				}).error(function(data, status, headers, config){
-					console.log("failed");
+				
+ messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+	                         setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000); 
 				
 
 				});

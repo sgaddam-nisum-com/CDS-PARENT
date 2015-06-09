@@ -12,7 +12,9 @@ define(['jquery'], function($) {
   "userWorkLocation": "Work location required field. Minimum characters should be 5",
   "userWorkLocation-required": "Work location required field.",
   "userWorkLocation-minCharacters": "Work location Min should be 5.",
-  "userWorkLocation-maxCharacters": "Work location Max allowed 16."
+  "userWorkLocation-maxCharacters": "Work location Max allowed 16.",
+   "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Voter info."
  }
 
 });
