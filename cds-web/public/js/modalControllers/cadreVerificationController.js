@@ -1,4 +1,4 @@
-define(['controllers/controllerModule'], function (controllerModule) {
+define(['controllers/controllerModule',"messageHandler"], function (controllerModule, messageHandler) {
 
 	 controllerModule.controller('cadreVerificationController', ["$scope","$http","$modalInstance","callerScope","$rootScope","dashboardService","registerService","appUrlService","$timeout",
 
@@ -56,25 +56,17 @@ define(['controllers/controllerModule'], function (controllerModule) {
 	 					data : reqObj						
 	                }).success(function(resp, textStatus, jqXHR) {                        	
 	                	if(resp.status == "success" ){
-                        	$scope.modalMessage = "User cadre status is approved successfully.";
-                        	$scope.showApprovedStatus = true;
+                        	messageHandler.showInfoStatus("User cadre status is approved successfully",".cadre-status-message");
                         	$timeout(function() {
 	                        	$modalInstance.dismiss("cancel");	
                         }, 900);
 	                	}else{
-	                		$scope.modalMessage = "Something went wrong. Please try again."
-                        	$scope.showApprovedStatus = true;
-                        	$timeout(function() {
-	                        	$modalInstance.dismiss("cancel");	
-	                        }, 900);
+	                		messageHandler.showErrorStatus("Something went wrong. Please try again.",".cadre-status-message");
 	                	}
 
     	            }).error(function(jqXHR, textStatus, errorThrown) {
 
-
-
-
-
+    	            		messageHandler.showErrorStatus("Something went wrong. Please try again.",".cadre-status-message");
                 	}) 
 
 	 		}
@@ -91,21 +83,25 @@ define(['controllers/controllerModule'], function (controllerModule) {
 				reqObj.userId = currentUserId;
 				reqObj.comment = $scope.user.rejectComment;
 
-
 				$http({
 	 					url : appUrlService.rejectCadre,
 	 					method :"PUT",
 	 					data : reqObj						
-	                }).success(function(resp, textStatus, jqXHR) {
-                        	
-                        	console.log(resp);
+	                }).success(function(resp, textStatus, jqXHR) {                        	
+	                	if(resp.status === "success"){
 
+	                	 messageHandler.showInfoStatus("Current Cadre approval is rejected.",".cadre-status-message");
+                        	$timeout(function() {
+	                        	$modalInstance.dismiss("cancel");	
+                        }, 900);
 
+	                	}else{
+
+	                	 messageHandler.showErrorStatus("Something went wrong. Please try again.",".cadre-status-message");                   	
+	                	}
     	            }).error(function(jqXHR, textStatus, errorThrown) {
-
+    	            	messageHandler.showErrorStatus("Something went wrong. Please try again.",".cadre-status-message");
                 	}) 
-
-
 
 			}
 
