@@ -23,7 +23,7 @@ exports.user = {
     },
     hasAuthorizationToPage: function(req, res, next) {
         if (!req.isAuthenticated()) {
-            res.redirect('/signin');
+            res.redirect('/signin#/statusnull-nosession');
         } else {
             next();
         }

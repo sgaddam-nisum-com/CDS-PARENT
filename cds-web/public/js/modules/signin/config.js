@@ -24,11 +24,11 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/common/header.html',
+                templateUrl: 'views/common/bootstrap/header.html',
                 controller : "headerController as headerCtrl"
             },
             'footer': {
-                templateUrl: 'views/common/footer.html'                
+                templateUrl: 'views/common/bootstrap/footer.html'                
             }
         }
     })
@@ -37,7 +37,7 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/signin.html',
+                templateUrl: 'views/nonauth/bootstrap/signin.html',
                 controller : "signinController as signinCtrl"
             }
         },
@@ -48,6 +48,16 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
         views: {           
             'content@': {
                 templateUrl: 'views/nonauth/forgot-password.html',
+            }
+        },
+        secured : false
+    })
+    .state('root.nullsession',{
+        url: '/statusnull-nosession',
+        views: {           
+            'content@': {
+                templateUrl: 'views/nonauth/session-out.html',
+                controller : "sessionOutController as sessionOutCtrl"   
             }
         },
         secured : false
