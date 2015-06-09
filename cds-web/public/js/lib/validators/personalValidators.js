@@ -40,7 +40,7 @@ define(['validation'], function(validation) {
 			key_error_msgs:true
 		},     
 		aadharId:{
-            required : false,
+            required : true,
 			minCharacters: 5,
 			key_error_msgs:true
 		},
@@ -51,7 +51,7 @@ define(['validation'], function(validation) {
             key_error_msgs: true     
         },
         userPhone:{
-            required : false,
+            required : true,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true                 
@@ -62,13 +62,13 @@ define(['validation'], function(validation) {
             key_error_msgs: true
         },
         skypeId:{
-            required : false,
+            required : true,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true                
         },
 		userQualification:{
-			required:false,			
+			required:true,			
 			key_error_msgs:true
 		},
         userPassword : {

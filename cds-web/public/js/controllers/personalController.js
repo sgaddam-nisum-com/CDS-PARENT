@@ -1,12 +1,11 @@
-define(['controllers/controllerModule', 'formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery'], function(controllerModule, formValidation, validationMap, errorJson, $) {
+define(['controllers/controllerModule', 'formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery',"messageHandler"], 
+
+    function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler) {
 
     controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService',"$stateParams","$sessionStorage", 
             function($state, $http, appUrls, cdsService, $scope, registerService,$stateParams, $sessionStorage) {
 
-
-
-            var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
-                
+            var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};               
            
             this.showLoader = false;
             this.showImage = true;
@@ -80,14 +79,20 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     method: "PUT",
                     url: appUrls.updatePersonalInfo,
                     data: self.user 
-                }).success(function(data, status, headers, config){
-                    console.log("success");
+                }).success(function(resp, status, headers, config){
+                    
+                    if(resp.status ==="success"){
+                        messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();
+                            cdsService.isMarried = self.user.maritalStatus;  
+                            $state.go('root.profile.editprofile.work');    
+                        },2000);                                                   
 
-                    /*Set marriage status to persist in family section*/
+                    }else{
+                        messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                    }
 
-                  cdsService.isMarried = self.user.maritalStatus;  
-
-                    $state.go('root.profile.editprofile.work');
                 }).error(function(data, status, headers, config){
                    
 

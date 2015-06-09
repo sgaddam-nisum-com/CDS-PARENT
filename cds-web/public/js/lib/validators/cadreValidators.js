@@ -7,12 +7,28 @@
 define(['validation'], function(validation) {
 
     return {
-        partyMembershipId:{
+        partyMembershipId: {
 			required:true,
 			minCharacters:5,
 			maxCharacters:16,
 			key_error_msgs:true
-		}		
+		},
+		positionId : {
+			required:true,
+			key_error_msgs:true
+		},
+		partyResponsibility: {
+			required:true,
+			key_error_msgs:true
+		},
+		bloodGroupId: {
+			required:true,
+			key_error_msgs:true
+		},
+		performanceGradeId: {
+			required:true,
+			key_error_msgs:true
+		}
     }
 
 });

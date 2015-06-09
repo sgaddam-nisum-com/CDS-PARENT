@@ -12,13 +12,13 @@ define(['validation'], function(validation) {
             key_error_msgs: true           
         },
         userOrganization: {
-            required : false,
+            required : true,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true 
         },
 		userWorkLocation: {
-            required : false,
+            required : true,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true 

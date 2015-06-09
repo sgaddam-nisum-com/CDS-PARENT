@@ -13,10 +13,22 @@ define(['validation'], function(validation) {
 			maxCharacters:16,
 			key_error_msgs:true
 		},
-		areaOfInterest:{
+		 areaOfInterest:{
 			required:true,
 			key_error_msgs:true
-		}
+		},
+		 volunteerCategory:{
+			required:true,
+			key_error_msgs:true
+		},
+		 leadId:{
+			required:true,
+			key_error_msgs:true
+		},
+		 performanceGrade:{
+			required:true,
+			key_error_msgs:true
+		},
 		
     }
 

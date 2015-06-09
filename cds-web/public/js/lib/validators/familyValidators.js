@@ -20,7 +20,7 @@ define(['validation'], function(validation) {
 			key_error_msgs:true
 		},
 		marriageDate:{
-			required:false,
+			required:true,
 			key_error_msgs:true
 		},
 		spouseEducation:{
@@ -28,6 +28,10 @@ define(['validation'], function(validation) {
 			key_error_msgs:true
 		},
 		childEducation:{
+			required:true,			
+			key_error_msgs:true
+		},
+		dobFamily: {
 			required:true,			
 			key_error_msgs:true
 		}        		

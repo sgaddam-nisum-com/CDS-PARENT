@@ -37,7 +37,9 @@ define(['jquery'], function($) {
   "userPassword-required" : "Password is a required field",
   "userPassword-minCharacters" : "Password should contain min 6 characters",
   "gender-radio" : "Please select Gender type",
-  "membershipType-radio" : "Please select membership type"
+  "membershipType-radio" : "Please select membership type",
+  "submissionError" : "Oops, Something went wrong. Please try again.",
+  "successfulSave" : "Details updated successfully. Redirecting to Work Info."
  }
 
 });
