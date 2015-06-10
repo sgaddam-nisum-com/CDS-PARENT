@@ -130,8 +130,8 @@
         </div>
         <div class="large-12 columns left">
           
-
-          <select id="education" class="input" name="education" data-val="userQualification" ng-model="personalCtrl.user.educationId" ng-options="education.educationId as education.qualification for education in educationOptions">
+          <!-- data-val="userQualification" * Add this for validations -->
+          <select id="education" class="input" name="education" ng-model="personalCtrl.user.educationId" ng-options="education.educationId as education.qualification for education in educationOptions">
             <option value="">Select Education</option>
           </select>
 
