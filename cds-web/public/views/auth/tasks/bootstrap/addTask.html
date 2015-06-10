@@ -5,8 +5,17 @@
                 <h4>Add Tasks</h4>
             </div>
         </div>
+        <div class="row"><div class="col-lg-12 col-lg-offset-2 status-message-wrapper">
+        </div></div>
         <div class="row">
             <div class="col-lg-8 fields-form col-md-9 col-lg-offset-2 ">
+                <div class="row">
+                    <div class="col-lg-8 right">
+                        <div class="row" ng-if="taskCtrl.isNotValidForm">
+                            <div class="col-lg-12 right columns error-class">Please ensure that all the required fields are valid.</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row form-group">
                     <div class="col-lg-4 ">Task Id :</div>
                     <div class="col-lg-8 ">
@@ -16,17 +25,23 @@
                 <div class="row form-group">
                     <div class="col-lg-4 ">Assign To :</div>
                     <div class="col-lg-8 ">
-                       <input autocomplete="off" type="text" id="cadreId" class="form-control input required" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" >
+                       <input autocomplete="off" type="text" id="cadreId" class="form-control input required" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" data-val="assignedToCitizenName" >
             <img src="images/searchicon.png" class="cadre-search-icon" id="searchIcon" ng-click="taskCtrl.showCadresList(taskCtrl.assignedToCitizenName)">
 
+                    </div>
+                    <div class="col-lg-8 right">
+                      <div class="error-class"><div class="error-content"></div></div>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-lg-4 ">Category :</div>
                     <div class="col-lg-8 ">
-                        <select ng-model="taskCtrl.user.taskCategoryId" ng-options="taskCategory.taskCategoryId as  taskCategory.taskCategoryCode for taskCategory in taskCategoryOptions" class="form-control">
-                            <option>Select Category</option>
+                        <select ng-model="taskCtrl.user.taskCategoryId" ng-options="taskCategory.taskCategoryId as  taskCategory.taskCategoryCode for taskCategory in taskCategoryOptions" class="form-control required" data-val="taskCategoryId">
+                            <option value="">Select Category</option>
                         </select>
+                    </div>
+                    <div class="col-lg-8 right">
+                      <div class="error-class"><div class="error-content"></div></div>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -38,28 +53,40 @@
                 <div class="row form-group">
                     <div class="col-lg-4 ">Description :</div>
                     <div class="col-lg-8 ">
-                        <textarea id="description" class="form-control input" name="description" ng-model="taskCtrl.user.taskDescription"></textarea>
+                        <textarea id="description" class="form-control input" name="description" ng-model="taskCtrl.user.taskDescription" data-val="taskDescription"></textarea>
+                    </div>
+                    <div class="col-lg-8 right">
+                      <div class="error-class"><div class="error-content"></div></div>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-lg-4">Priority :</div>
                     <div class="col-lg-8">
-                        <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities" class="form-control">
-                            <option>Select Priority</option>
+                        <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities" class="form-control required" data-val="priorityId">
+                            <option value="">Select Priority</option>
                         </select>
+                    </div>
+                    <div class="col-lg-8 right">
+                      <div class="error-class"><div class="error-content"></div></div>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-lg-4 ">Specify Location :</div>
                     <div class="col-lg-8 ">
-                        <input type="text" id="location" class="form-control input" name="location" ng-model="taskCtrl.user.location">
+                        <input type="text" id="location" class="form-control input required" name="location" ng-model="taskCtrl.user.location" data-val="location">
+                    </div>
+                    <div class="col-lg-8 right">
+                      <div class="error-class"><div class="error-content"></div></div>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-lg-4 ">Target Date :</div>
                     <div class="col-lg-8 ">
                         
-                        <input type="text" id="dob" class="form-control input required" name="dob" data-val="dob" ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive="taskCtrl.user.taskWorkAllocation.toDate">
+                        <input type="text" id="dob" class="form-control input required" name="dob"  ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive="taskCtrl.user.taskWorkAllocation.toDate" data-val="toDate">
+                    </div>
+                    <div class="col-lg-8 right">
+                      <div class="error-class"><div class="error-content"></div></div>
                     </div>
                 </div>
                 <div class="row form-group">

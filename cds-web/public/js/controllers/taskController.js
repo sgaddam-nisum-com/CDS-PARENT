@@ -1,12 +1,13 @@
-define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
+define(['controllers/controllerModule', 'formValidation', 'validators/addtaskValidators', 'errorMessages/addtaskErrors', 'jquery', "messageHandler"], function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler) {
 
     controllerModule.controller('taskController', ["$rootScope",'$state', '$http', "appUrlService", "cdsService", '$scope', "taskService", "appModalService",
         function($rootScope,$state, $http, appUrls, cdsService, $scope, taskService,appModalService) {
            
    
             var self = this;
+            self.isNotValidForm = false;
             var config = {
-                initiate: false,
+                initiate: true,
                 blurValidation: false,
                 htmlValidation: false,
                 submitValidForm: false,
@@ -70,30 +71,45 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                     console.log(resp);               
                 });                
             }
-
+            var formStack = formValidation.init("#myTaskForm", validationMap, errorJson, config);
             this.save = function() { 
 
+                if (formStack.isValid) {
+                    if(self.user.comments != undefined){
+                        var commentsObj= angular.copy(self.user.comments);
+                        commentsObj.commentTo = 104;
+                        var commentsArray = [];
 
+                        commentsArray.push(commentsObj);
+                        self.user.comments1 = commentsArray;
+                    }
 
-                var commentsObj= angular.copy(self.user.comments);
-                commentsObj.commentTo = 104;
-                var commentsArray = [];
-                
-                console.log(self.user);
-
-                commentsArray.push(commentsObj);
-                self.user.comments = commentsArray;
-
-                $http({
-                    url : appUrls.saveTaskInfo,                        
-                    method : "POST",
-                    data: self.user
-                }).success(function(data, textStatus, jqXHR) {
-                        $state.go("root.tasks");
-                }).error(function(jqXHR, textStatus, errorThrown) {
-
-                })
-               
+                    $http({
+                        url : appUrls.saveTaskInfo,                        
+                        method : "POST",
+                        data: self.user
+                    }).success(function(resp, textStatus, jqXHR) {
+                        if(resp.status === "success"){
+                            messageHandler.showErrorStatus(errorJson.successfulSave,".status-message-wrapper");
+                                setTimeout(function(){
+                                messageHandler.clearMessageStatus();                           
+                            },2000);
+                            $state.go("root.tasks");
+                        }else{
+                            messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                                setTimeout(function(){
+                                messageHandler.clearMessageStatus();                           
+                            },2000);
+                        }
+                    }).error(function(jqXHR, textStatus, errorThrown) {
+                        messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                        setTimeout(function(){
+                            messageHandler.clearMessageStatus();                           
+                        },2000);
+                    })
+                }else{
+                    self.isNotValidForm = true;
+                }
             };
         }
     ]);
