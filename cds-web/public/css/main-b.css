@@ -9621,13 +9621,12 @@ Interactive Layer
 .widget-container {
   float: left;
   display: inline-block;
-  width: 33%;
   padding-bottom: 1em;
 }
 
-/* line 11, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 10, ../scss/bootstrap/_angular-dashboard.scss */
 .widget {
-  margin: 0 1em 0 0;
+  /*   margin: 0 1em 0 0; */
   background-color: white;
   border: 2px solid #444;
   border-radius: 5px;
@@ -9635,18 +9634,18 @@ Interactive Layer
   height: 100%;
 }
 
-/* line 19, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 18, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header {
   overflow: hidden;
 }
 
-/* line 22, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 21, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .label {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 26, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 25, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .glyphicon {
   cursor: pointer;
   float: right;
@@ -9654,33 +9653,33 @@ Interactive Layer
   margin-left: 5px;
 }
 
-/* line 32, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 31, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .glyphicon:hover {
   opacity: 1;
 }
 
-/* line 35, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 34, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .widget-title {
   vertical-align: middle;
 }
 
-/* line 38, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 37, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header form.widget-title {
   display: inline;
 }
 
-/* line 41, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 40, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header form.widget-title input.form-control {
   width: auto;
   display: inline-block;
 }
 
-/* line 45, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 44, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-content {
   overflow: hidden;
 }
 
-/* line 48, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 47, ../scss/bootstrap/_angular-dashboard.scss */
 .widget .widget-ew-resizer {
   position: absolute;
   width: 5px;
@@ -9690,7 +9689,7 @@ Interactive Layer
   cursor: ew-resize;
 }
 
-/* line 56, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 55, ../scss/bootstrap/_angular-dashboard.scss */
 .widget .widget-s-resizer {
   cursor: ns-resize;
   height: 5px;
@@ -9699,7 +9698,7 @@ Interactive Layer
   left: 0;
 }
 
-/* line 63, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 62, ../scss/bootstrap/_angular-dashboard.scss */
 .widget .widget-resizer-marquee {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -9708,19 +9707,19 @@ Interactive Layer
   z-index: 2;
 }
 
-/* line 70, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 69, ../scss/bootstrap/_angular-dashboard.scss */
 .remove-layout-icon {
   vertical-align: text-top;
   cursor: pointer;
   opacity: 0.3;
 }
 
-/* line 75, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 74, ../scss/bootstrap/_angular-dashboard.scss */
 .remove-layout-icon:hover {
   opacity: 1;
 }
 
-/* line 78, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 77, ../scss/bootstrap/_angular-dashboard.scss */
 .layout-title {
   display: inline-block;
 }
@@ -11596,45 +11595,46 @@ body {
 
 /* line 5, ../scss/bootstrap/_overrides.scss */
 .container {
-  width: 1000px;
+  width: 100%;
+  max-width: 1170px;
 }
 
-/* line 9, ../scss/bootstrap/_overrides.scss */
+/* line 10, ../scss/bootstrap/_overrides.scss */
 .right {
   float: right;
 }
 
-/* line 13, ../scss/bootstrap/_overrides.scss */
+/* line 14, ../scss/bootstrap/_overrides.scss */
 .left {
   float: left;
 }
 
-/* line 17, ../scss/bootstrap/_overrides.scss */
+/* line 18, ../scss/bootstrap/_overrides.scss */
 .top-bar-section li {
   line-height: 45px;
 }
 
-/* line 20, ../scss/bootstrap/_overrides.scss */
+/* line 21, ../scss/bootstrap/_overrides.scss */
 .top-bar-section ul {
   margin-bottom: 0px;
 }
 
-/* line 24, ../scss/bootstrap/_overrides.scss */
+/* line 25, ../scss/bootstrap/_overrides.scss */
 nav ul ul a {
   color: #fff;
 }
 
-/* line 28, ../scss/bootstrap/_overrides.scss */
+/* line 29, ../scss/bootstrap/_overrides.scss */
 .top-sub-links li a {
   color: #ffffff !important;
 }
 
-/* line 32, ../scss/bootstrap/_overrides.scss */
+/* line 33, ../scss/bootstrap/_overrides.scss */
 .subscribe-btn, .subscribe {
   width: 300px;
 }
 
-/* line 37, ../scss/bootstrap/_overrides.scss */
+/* line 38, ../scss/bootstrap/_overrides.scss */
 .page-header {
   margin-top: 10px;
 }

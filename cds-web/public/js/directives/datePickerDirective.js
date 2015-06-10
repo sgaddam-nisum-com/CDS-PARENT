@@ -5,13 +5,16 @@ define(['directives/directiveModule','datepicker'], function (directiveModule) {
 		return {	
 			restrict: "A",
 			scope:{
-				dob :'=datePickerDirective' 
+				dob :'=datePickerDirective',
+				futureDateDisabled : "="
 			},		
-			link: function(scope, elem, attrs) {
-						
+			link: function(scope, elem, attrs) {						
+				var maxDate = scope.futureDateDisabled? 0 : null;	
+
 				$(elem).datepicker({
                     dateFormat:'dd/mm/yy',
-					yearRange: "-100:+0",
+					yearRange: "-100:+5",
+					maxDate : maxDate, 
 					changeMonth: true,
 					changeYear: true,
                     onSelect:function (date) {					                   	

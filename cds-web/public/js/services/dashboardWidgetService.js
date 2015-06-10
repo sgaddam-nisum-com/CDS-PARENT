@@ -8,49 +8,44 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
                         style: {
-                            width: '33%',
                             height: "300px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
-                        "class": "d-widget tasks-age"
+                        "class": "d-widget tasks-age col-md-4"
 
                     },
                       {
                         name: 'My Tasks View',
                         title: "Tasks assigned to me",
                         style: {
-                            width: '33%',
                             height: "300px"
                         },
                         directive: "mytasks-chart-directive",
                         templateUrl: "views/dashboard/mytasks-chart.html",
-                        "class": "d-widget self-tasks"
+                        "class": "d-widget self-tasks col-md-4"
                     },
 
                      {
                         name: 'Tasks trend',
                         title: "Tasks trend",
                         style: {
-                            width: '34%',
                             height: "300px"
                         },
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
-
-                        "class": "d-widget tasks-trend"
+                        "class": "d-widget tasks-trend col-md-4"
 
                     },
                        {
                         name: 'Events',
                         title: "Events tracker",
                         style: {
-                            width: '100%',
                             height: "128px"
                         },
                         directive: "events-banner-directive",
                         templateUrl: "views/dashboard/events-banner.html",
-                        "class": "d-widget events-banner"
+                        "class": "d-widget events-banner col-md-12"
 
                     },
 
@@ -209,29 +204,11 @@ define(['services/serviceModule'], function(serviceModule) {
 
                 "officeManager" :  [
 
-
-                /*D3 implementation in test*/
-                /* {
-                        name: 'sample',
-                        title: "sample",
-                        style: {
-                            width: '50%',
-                            height: "320px"
-                        },
-                        directive: "test-d",
-                        templateUrl: "views/dashboard/test-d.html",
-                        "class": "testd"
-
-                    },
-*/
-
-
                 {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
                         style: {
-/*                            width: '50%',
-*/                            height: "320px"
+                            height: "375px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
@@ -243,7 +220,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         title: "Tasks trend",
                         style: {
                             /*width: '50%',*/
-                            height: "320px"
+                            height: "375px"
                         },
 
                         directive: "taskstrend-chart-directive",
@@ -261,7 +238,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         },
                         directive: "events-banner-directive",
                         templateUrl: "views/dashboard/events-banner.html",
-                        "class": "d-widget events-banner"
+                        "class": "d-widget events-banner col-xs-12"
 
                     },
 
@@ -276,7 +253,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         directive: "cadre-followups-directive",
                         templateUrl: "views/dashboard/cadre-followups.html",
 
-                        "class": "d-widget cadre-verifications-all"
+                        "class": "d-widget cadre-verifications-all col-xs-12"
 
 
                     },
@@ -286,15 +263,12 @@ define(['services/serviceModule'], function(serviceModule) {
                         title: "Cadre Membership (Verifications)",
                         style: {
                             width: '100%',
-                            height: "432px"
+                            "max-height": "432px"
                         },
                         enableVerticalResize: true,
                         directive: "cadre-verifications-directive",
                         templateUrl: "views/dashboard/cadre-verifications.html",
-
-                        "class": "d-widget cadre-verifications-all"
-
-
+                        "class": "d-widget cadre-verifications-all col-xs-12"
                     },
 
 

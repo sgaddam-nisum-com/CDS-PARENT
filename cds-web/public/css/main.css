@@ -320,51 +320,50 @@
 
 /* line 239, ../scss/components/_dashboard.scss */
 .widget {
-  margin: 0 3px;
   border: solid 1px #999;
 }
 
-/* line 243, ../scss/components/_dashboard.scss */
+/* line 242, ../scss/components/_dashboard.scss */
 ul.doughnut-legend {
   padding: 0;
 }
 
-/* line 246, ../scss/components/_dashboard.scss */
+/* line 245, ../scss/components/_dashboard.scss */
 .widget-container.cadre-verifications-all .widget-header {
   background: #475d74;
 }
 
-/* line 249, ../scss/components/_dashboard.scss */
+/* line 248, ../scss/components/_dashboard.scss */
 .widget-container.events-banner .widget-header {
   background: #86ad39;
 }
 
-/* line 252, ../scss/components/_dashboard.scss */
+/* line 251, ../scss/components/_dashboard.scss */
 .widget-container.self-tasks .widget-header {
   background: #756158;
 }
 
-/* line 255, ../scss/components/_dashboard.scss */
+/* line 254, ../scss/components/_dashboard.scss */
 .widget-container.team-tasks .widget-header {
   background: #475d74;
 }
 
-/* line 258, ../scss/components/_dashboard.scss */
+/* line 257, ../scss/components/_dashboard.scss */
 .widget-container.tasks-trend .widget-header {
   background: #c6781c;
 }
 
-/* line 261, ../scss/components/_dashboard.scss */
+/* line 260, ../scss/components/_dashboard.scss */
 .widget-container.notifications .widget-header {
   background: #f0ad4e;
 }
 
-/* line 265, ../scss/components/_dashboard.scss */
+/* line 264, ../scss/components/_dashboard.scss */
 .close-overlay {
   z-index: 100;
 }
 
-/* line 269, ../scss/components/_dashboard.scss */
+/* line 268, ../scss/components/_dashboard.scss */
 .d-widget.notifications .widget-content {
   height: 380px;
   overflow: auto;
@@ -549,7 +548,7 @@ header .auth-header .phone {
 /* line 60, ../scss/components/_header.scss */
 header .top-nav {
   padding-right: 0;
-  text-align: right;
+  /* text-align: right; */
 }
 
 /* line 65, ../scss/components/_header.scss */
@@ -692,6 +691,11 @@ h1 {
   width: 25px;
   height: 25px;
   display: inline-block;
+  float: right;
+}
+
+/* line 179, ../scss/components/_header.scss */
+.top-sub-links {
   float: right;
 }
 

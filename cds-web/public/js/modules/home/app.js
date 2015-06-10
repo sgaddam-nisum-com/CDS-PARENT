@@ -11,7 +11,8 @@ define(['directives/verticalScrollDirective',
 	'uiRouterStyles',
 	"ngStorage",
 	'services/common/serviceLoader',
-	"services/common/messageService"], function () {
+	"services/common/messageService",
+	"bootstrap"], function () {
     var app = angular.module('CDSHOME', ['ui.router','uiRouterStyles','ngStorage','serviceModule','controllerModule',"directiveModule"]);		
     return app;
 });

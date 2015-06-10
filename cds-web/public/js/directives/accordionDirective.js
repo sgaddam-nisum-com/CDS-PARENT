@@ -6,7 +6,9 @@ define(['directives/directiveModule','accordion'], function (directiveModule) {
 		return {	
 			restrict: "A",				
 			link: function(scope, elem, attrs) {					
-				$(elem).accordion({});				
+				$(elem).accordion({
+					heightStyle: "content"
+				});				
 			}
 		}		
 	}]);

@@ -23,7 +23,8 @@ define(['angular',
 	"directives/voterDirective",
 	"directives/addressDirective",
 	"controllers/listController",
-	"services/listService"
+	"services/listService",
+	"bootstrap"
 	], function (angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router',"ngStorage",'serviceModule',"controllerModule","directiveModule"]);    
     return app;

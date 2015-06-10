@@ -54,7 +54,7 @@
           <label for="right-label" class="right inline">Date of Birth:</label>
         </div>
         <div class="large-12 columns left">
-          <input type="text" id="dob" class="input required" name="dob" data-val="dob" ng-model="personalCtrl.user.dateOfBirth" date-picker-directive="personalCtrl.user.dateOfBirth" ng-change="personalCtrl.getAge(personalCtrl.user.dateOfBirth)">
+          <input type="text" id="dob" class="input required" name="dob" data-val="dob" ng-model="personalCtrl.user.dateOfBirth" date-picker-directive="personalCtrl.user.dateOfBirth" ng-change="personalCtrl.getAge(personalCtrl.user.dateOfBirth)" future-date-disabled = "true">
           <div class="error-class"><div class="error-content"></div></div>
         </div>
       </div>

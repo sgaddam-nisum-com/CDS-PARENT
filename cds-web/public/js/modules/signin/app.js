@@ -10,7 +10,8 @@ define(['uiRouter',
 	"services/common/appModalService",
 	"modalControllers/sessionOutOverlayController",
 	"angularBootstrap",
-	"controllers/sessionOutController"	], function () {
+	"controllers/sessionOutController",
+	"bootstrap"	], function () {
     var app = angular.module('CDSSIGNIN', ['ui.router','uiRouterStyles','serviceModule','controllerModule',"ngStorage","ui.bootstrap"]);
     return app;
 });

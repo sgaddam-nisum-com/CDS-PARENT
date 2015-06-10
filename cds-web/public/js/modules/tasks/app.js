@@ -14,7 +14,8 @@ define([
 	"directives/datePickerDirective",
 	"angularBootstrap",
 	"services/common/appModalService",
-	"modalControllers/cadreListController"	
+	"modalControllers/cadreListController",
+	"bootstrap"	
 	], function () {
     var app = angular.module('CDSTASKS', ['ui.router','serviceModule',"controllerModule","directiveModule","ui.bootstrap","ngStorage"]);
     return app;

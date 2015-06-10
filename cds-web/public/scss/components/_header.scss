@@ -59,7 +59,7 @@ header .auth-header .phone {
 
 header .top-nav{
   padding-right: 0;
-  text-align: right;
+  /* text-align: right; */
 }
 
 header .auth-header .top-nav li{
@@ -173,4 +173,9 @@ h1 {
   height: 25px; 
   display: inline-block; 
   float: right;
+}
+
+
+.top-sub-links{
+  float : right;
 }

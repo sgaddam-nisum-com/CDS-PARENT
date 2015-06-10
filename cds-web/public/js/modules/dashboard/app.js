@@ -36,7 +36,8 @@ define([
     "angularGrid",
     "directives/dashboard/testD",
     "d3",
-    "services/common/appModalService"
+    "services/common/appModalService",
+    "bootstrap"
     ], function () {
     var app = angular.module('CDSDASHBOARD', ['ui.router',
     										"chart.js",
