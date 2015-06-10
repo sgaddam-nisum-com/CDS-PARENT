@@ -48,15 +48,15 @@ header.home {
   font-size: 13px;  
 }
 .register {
-  background: url(../images/registerIcon.png) no-repeat 0px 9px;
+  background: url(../images/registerIcon.png) no-repeat 0px 8px;
   padding-left: 20px;
 }
 .signin {
-  background: url(../images/signinIcon.png) no-repeat 2px 9px;
+  background: url(../images/signinIcon.png) no-repeat 2px 8px;
   padding-left: 20px;
 }
 .contactus {
-  background: url(../images/contactus.png) no-repeat 2px 9px;
+  background: url(../images/contactus.png) no-repeat 2px 8px;
   padding-left: 26px;
 }
 .post-issue {
@@ -391,6 +391,9 @@ body .navigation .top-bar-section ul li:active a{
   header .navigation  {
     padding: 0;
   }
+  .img-responsive {
+    display: none
+  }
 
 }
 
@@ -436,6 +439,8 @@ body .navigation .top-bar-section ul li:active a{
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
+    display: block !important;
+    text-align: left;
   }
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
@@ -464,5 +469,30 @@ body .navigation .top-bar-section ul li:active a{
     height: auto;
   }
 
+  header .top-nav ul li {
+    padding-left: 10px;
+  }
+  .top-sub-links {
+    padding: 0 0 8px 0;
+  }
+  .img-responsive {
+    display: none
+  }
+  .form-group {
+    padding: 10px 0;
+  }
+  .navbar-toggle {
+    background: #16578f;
+  }
+  .navbar-toggle .icon-bar {
+    background: #fff;
+  }
+  .top-bar-section ul {
+    padding: 0;
+  }
+  .user-log {
+    display: block;
+    padding: 0 0 10px 0;
+  }
 }
 

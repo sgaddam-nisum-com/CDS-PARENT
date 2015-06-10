@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 .registration-wrapper .button-wrapper{ 
-  margin: 0px 0 45px 45px;
+  margin: 0px;
 }
 .registration-wrapper .forgot-password{ 
   font-size: 13px; 
@@ -45,6 +45,9 @@
 .registration-wrapper .gender label {
   display: inline-block;
   padding: 0 22px 0 0;
+}
+.form-group {
+  padding: 0;
 }
 
 

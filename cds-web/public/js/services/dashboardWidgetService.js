@@ -230,26 +230,26 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
                         style: {
-                            width: '50%',
-                            height: "320px"
+/*                            width: '50%',
+*/                            height: "320px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
-                        "class": "d-widget tasks-age"
+                        "class": "d-widget tasks-age col-md-6 col-xs-12"
 
                     },
                      {
                         name: 'Tasks trend',
                         title: "Tasks trend",
                         style: {
-                            width: '50%',
+                            /*width: '50%',*/
                             height: "320px"
                         },
 
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
 
-                        "class": "d-widget tasks-trend"
+                        "class": "d-widget tasks-trend col-xs-12 col-md-6"
 
                     },
                     {
@@ -390,26 +390,26 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
                         style: {
-                            width: '50%',
+                            //width: '50%',
                             height: "320px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
-                        "class": "d-widget tasks-age"
+                        "class": "d-widget tasks-age col-xs-12 col-md-6"
 
                     },
                        {
                         name: 'Tasks trend',
                         title: "Tasks trend",
                         style: {
-                            width: '50%',
+                            
                             height: "320px"
                         },
 
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
 
-                        "class": "d-widget tasks-trend"
+                        "class": "d-widget tasks-trend col-md-6 col-xs-12"
 
                     },
                     {

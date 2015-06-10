@@ -7,11 +7,10 @@
     Office:  +91 9949 666 666
   </div>
   
-  <div class="col-lg-8 top-nav right">
+  <div class="col-lg-8 col-xs-12 top-nav">
     
       <nav  ng-if="!headerCtrl.isUserAuthenticated" ng-show="headerCtrl.showHeader">
-        <ul class="right top-sub-links">
-          <li><a href="#" class="none">A A- A+ </a></li>
+        <ul class="top-sub-links">
           <li><a href="/register" class="register">Register</a></li>
           <li><a href="/signin" class="signin">Sign In</a></li>
           <li><a href="/#contactus" class="contactus">Contact Us</a>
@@ -20,7 +19,7 @@
     
       <nav ng-if="headerCtrl.isUserAuthenticated">      
             <ul class="right top-sub-links">
-              <li>Welcome <span ng-bind="userName"></span> (<span ng-bind="defRole"></span> )</li>
+              <li class="user-log">Welcome <span ng-bind="userName"></span> (<span ng-bind="defRole"></span> )</li>
               <!-- <li><a href="home.html" class="home">Home</a></li> -->
               <li><a href="#" class="help">Help</a></li>
               <li nav-dropdown-directive>
@@ -46,22 +45,29 @@
     <div class="container">
 
     <div class="row">
-      <div class="col-lg-3 medium-5 small-8 columns">
-        <a href="/" class="logo"><img src="images/logo.png" alt="logo" /></a>
+      <div class="col-lg-3 medium-5 small-8 columns navbar-header">
+        <a href="/" class="logo left"><img src="images/logo.png" alt="logo" /></a>
+        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
       </div>
       <div class="col-lg-9 medium-16 small-16 columns navigation">
-        <nav class="top-bar" data-topbar="">
+        <nav class="navbar-collapse bs-navbar-collapse collapse" data-topbar="">
          
 
-         <!--  <ul class="title-area">
-         
+           <!-- <ul class="title-area">
+          
             <li class="name">
-              &nbsp;
+               
             </li>
          
-            <li class="toggle-topbar menu-icon"><a href="">&nbsp;</a></li>
-          </ul>
-          --> 
+            <li class="toggle-topbar menu-icon"><a href=""></a></li>
+          </ul> -->
+          
           <section class="top-bar-section clear" style="left: 0%;" ng-if="!headerCtrl.isUserAuthenticated" ng-show="headerCtrl.showHeader">
             <ul>
               <li><a href="/#knowyourmp">Know your MP</a></li>

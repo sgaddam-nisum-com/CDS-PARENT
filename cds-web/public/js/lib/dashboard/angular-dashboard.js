@@ -871,7 +871,7 @@ angular.module('ui.dashboard')
         style: {},
         size: {},
         enableVerticalResize: false,
-        containerStyle: { width: '25%' }, // default width
+        containerStyle: { }, // default width*/
         contentStyle: {}
       };
     };

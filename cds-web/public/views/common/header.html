@@ -4,11 +4,10 @@
     Office:  +91 9949 666 666
   </div>
   
-  <div class="large-9 small-9 columns top-nav">
+  <div class="large-9 small-16 columns top-nav">
     
     <nav  ng-if="!headerCtrl.isUserAuthenticated" ng-show="headerCtrl.showHeader">
       <ul class="right top-sub-links">
-        <li><a href="#" class="none">A A- A+ </a></li>
         <li><a href="/register" class="register">Register</a></li>
         <li><a href="/signin" class="signin">Sign In</a></li>
         <li><a href="/#contactus" class="contactus">Contact Us</a>
@@ -17,7 +16,7 @@
 
     <nav ng-if="headerCtrl.isUserAuthenticated">      
       <ul class="right top-sub-links">
-        <li>Welcome <span ng-bind="userName"></span> (<span ng-bind="defRole"></span> )</li>
+        <li class="user-log">Welcome <span ng-bind="userName"></span> (<span ng-bind="defRole"></span> )</li>
         <!-- <li><a href="home.html" class="home">Home</a></li> -->
         <li><a href="#" class="help">Help</a></li>
         <li nav-dropdown-directive>

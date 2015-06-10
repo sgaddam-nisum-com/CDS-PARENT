@@ -468,6 +468,16 @@ footer.fixed-footer {
     margin: 0 8px 0 0;
     padding: 0 8px 0 0;
   }
+
+  /* line 77, ../scss/components/_footer.scss */
+  .container {
+    width: 100%;
+  }
+
+  /* line 80, ../scss/components/_footer.scss */
+  .subscribe-btn, .subscribe {
+    width: 100%;
+  }
 }
 @font-face {
   font-family: 'OpenSans-Regular';
@@ -539,36 +549,37 @@ header .auth-header .phone {
 /* line 60, ../scss/components/_header.scss */
 header .top-nav {
   padding-right: 0;
+  text-align: right;
 }
 
-/* line 64, ../scss/components/_header.scss */
+/* line 65, ../scss/components/_header.scss */
 header .auth-header .top-nav li {
   font-size: 13px;
   color: #fff;
 }
 
-/* line 69, ../scss/components/_header.scss */
+/* line 70, ../scss/components/_header.scss */
 header .top-nav ul {
   margin: 0;
 }
 
-/* line 72, ../scss/components/_header.scss */
+/* line 73, ../scss/components/_header.scss */
 header .top-nav ul li {
-  float: left;
+  display: inline-block;
   list-style: none;
   font-size: 13px;
   background: url(../images/menu-separator.png) no-repeat left center;
   padding: 0 0px 0 20px;
 }
 
-/* line 79, ../scss/components/_header.scss */
+/* line 80, ../scss/components/_header.scss */
 header .top-nav ul li:first-child {
   background: none;
   padding-left: 0px;
-  padding-right: 20px;
+  /*padding-right: 20px;*/
 }
 
-/* line 84, ../scss/components/_header.scss */
+/* line 85, ../scss/components/_header.scss */
 header .top-nav ul li a.home {
   background: url(../images/cds-sprite.png) no-repeat 0 -23px;
   height: 20px;
@@ -576,7 +587,7 @@ header .top-nav ul li a.home {
   color: #999;
 }
 
-/* line 90, ../scss/components/_header.scss */
+/* line 91, ../scss/components/_header.scss */
 header .top-nav ul li a.help {
   background: url(../images/cds-sprite.png) no-repeat 0 -47px;
   height: 20px;
@@ -585,7 +596,7 @@ header .top-nav ul li a.help {
   color: #fff;
 }
 
-/* line 97, ../scss/components/_header.scss */
+/* line 98, ../scss/components/_header.scss */
 header .top-nav ul li a.my-account {
   background: url(../images/cds-sprite.png) no-repeat 0 -72px;
   height: 20px;
@@ -593,77 +604,77 @@ header .top-nav ul li a.my-account {
   color: #fff;
 }
 
-/* line 104, ../scss/components/_header.scss */
+/* line 105, ../scss/components/_header.scss */
 header .top-nav ul li a.post {
   padding: 0 15px 0 0;
   color: #999;
 }
 
-/* line 108, ../scss/components/_header.scss */
+/* line 109, ../scss/components/_header.scss */
 header .top-nav ul li a.logout {
   padding: 0 15px 0 20px;
   color: #999;
   background: url(../images/logout.png) no-repeat 0 2px;
 }
 
-/* line 115, ../scss/components/_header.scss */
+/* line 116, ../scss/components/_header.scss */
 header .navigation {
   padding: 28px 0 0 0;
 }
 
-/* line 118, ../scss/components/_header.scss */
+/* line 119, ../scss/components/_header.scss */
 header .navigation h1.logo {
   background: url(../images/logo.png) no-repeat;
   width: 155px;
   height: 40px;
 }
 
-/* line 123, ../scss/components/_header.scss */
+/* line 124, ../scss/components/_header.scss */
 header .main-navigation nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 127, ../scss/components/_header.scss */
+/* line 128, ../scss/components/_header.scss */
 header .main-navigation nav ul li {
   list-style: none;
   float: left;
 }
 
-/* line 132, ../scss/components/_header.scss */
+/* line 133, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:hover {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 137, ../scss/components/_header.scss */
+/* line 138, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:active {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 143, ../scss/components/_header.scss */
+/* line 144, ../scss/components/_header.scss */
 h1 {
   color: #16578f;
   font-size: 26px;
 }
 
-/* line 148, ../scss/components/_header.scss */
+/* line 149, ../scss/components/_header.scss */
 .headerMobile {
   background: #f0f2f4;
 }
 
-/* line 151, ../scss/components/_header.scss */
+/* line 152, ../scss/components/_header.scss */
 .headerLogo {
   background: #fff url(../images/headerBg.png) repeat-x;
 }
 
-/* line 155, ../scss/components/_header.scss */
+/* line 156, ../scss/components/_header.scss */
 .auth-header {
   padding-top: 8px;
 }
 
-/* line 159, ../scss/components/_header.scss */
+/* line 160, ../scss/components/_header.scss */
 .login-user-info {
   display: none;
   position: absolute;
@@ -675,7 +686,7 @@ h1 {
   top: 29px;
 }
 
-/* line 169, ../scss/components/_header.scss */
+/* line 170, ../scss/components/_header.scss */
 .nav-down-arrow {
   background: none;
   width: 25px;
@@ -759,19 +770,19 @@ header.home {
 
 /* line 50, ../scss/components/_home.scss */
 .register {
-  background: url(../images/registerIcon.png) no-repeat 0px 9px;
+  background: url(../images/registerIcon.png) no-repeat 0px 8px;
   padding-left: 20px;
 }
 
 /* line 54, ../scss/components/_home.scss */
 .signin {
-  background: url(../images/signinIcon.png) no-repeat 2px 9px;
+  background: url(../images/signinIcon.png) no-repeat 2px 8px;
   padding-left: 20px;
 }
 
 /* line 58, ../scss/components/_home.scss */
 .contactus {
-  background: url(../images/contactus.png) no-repeat 2px 9px;
+  background: url(../images/contactus.png) no-repeat 2px 8px;
   padding-left: 26px;
 }
 
@@ -1213,14 +1224,19 @@ body .navigation .top-bar-section ul li:active a {
   header .navigation {
     padding: 0;
   }
+
+  /* line 394, ../scss/components/_home.scss */
+  .img-responsive {
+    display: none;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 399, ../scss/components/_home.scss */
+  /* line 402, ../scss/components/_home.scss */
   .register-signin ul li:first-child {
     display: none;
   }
 
-  /* line 402, ../scss/components/_home.scss */
+  /* line 405, ../scss/components/_home.scss */
   .register, .signin, .site-view, .contactus {
     font-size: 11px;
     padding-left: 21px;
@@ -1229,27 +1245,27 @@ body .navigation .top-bar-section ul li:active a {
   /*.logo img {
     max-width: 80%;
   }*/
-  /* line 409, ../scss/components/_home.scss */
+  /* line 412, ../scss/components/_home.scss */
   #home-carousel {
     height: 130px;
   }
 
-  /* line 412, ../scss/components/_home.scss */
+  /* line 415, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 415, ../scss/components/_home.scss */
+  /* line 418, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
 
-  /* line 418, ../scss/components/_home.scss */
+  /* line 421, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 421, ../scss/components/_home.scss */
+  /* line 424, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -1257,45 +1273,47 @@ body .navigation .top-bar-section ul li:active a {
     border-radius: 3px;
   }
 
-  /* line 427, ../scss/components/_home.scss */
+  /* line 430, ../scss/components/_home.scss */
   .headerMobile {
     display: none;
   }
 
-  /* line 430, ../scss/components/_home.scss */
+  /* line 433, ../scss/components/_home.scss */
   .headerLogo .register-signin {
     display: none;
   }
 
-  /* line 433, ../scss/components/_home.scss */
+  /* line 436, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 436, ../scss/components/_home.scss */
+  /* line 439, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
+    display: block !important;
+    text-align: left;
   }
 
-  /* line 440, ../scss/components/_home.scss */
+  /* line 445, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 443, ../scss/components/_home.scss */
+  /* line 448, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 447, ../scss/components/_home.scss */
+  /* line 452, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 451, ../scss/components/_home.scss */
+  /* line 456, ../scss/components/_home.scss */
   body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     background: none;
   }
@@ -1303,19 +1321,60 @@ body .navigation .top-bar-section ul li:active a {
   /*.content {
     padding: 0 8px;
   }*/
-  /* line 457, ../scss/components/_home.scss */
+  /* line 462, ../scss/components/_home.scss */
   .slide-overlay {
     display: none;
   }
 
-  /* line 460, ../scss/components/_home.scss */
+  /* line 465, ../scss/components/_home.scss */
   .phone {
     display: none;
   }
 
-  /* line 463, ../scss/components/_home.scss */
+  /* line 468, ../scss/components/_home.scss */
   div.slideshow-container {
     height: auto;
+  }
+
+  /* line 472, ../scss/components/_home.scss */
+  header .top-nav ul li {
+    padding-left: 10px;
+  }
+
+  /* line 475, ../scss/components/_home.scss */
+  .top-sub-links {
+    padding: 0 0 8px 0;
+  }
+
+  /* line 478, ../scss/components/_home.scss */
+  .img-responsive {
+    display: none;
+  }
+
+  /* line 481, ../scss/components/_home.scss */
+  .form-group {
+    padding: 10px 0;
+  }
+
+  /* line 484, ../scss/components/_home.scss */
+  .navbar-toggle {
+    background: #16578f;
+  }
+
+  /* line 487, ../scss/components/_home.scss */
+  .navbar-toggle .icon-bar {
+    background: #fff;
+  }
+
+  /* line 490, ../scss/components/_home.scss */
+  .top-bar-section ul {
+    padding: 0;
+  }
+
+  /* line 493, ../scss/components/_home.scss */
+  .user-log {
+    display: block;
+    padding: 0 0 10px 0;
   }
 }
 /* line 1, ../scss/components/_list.scss */
@@ -1686,7 +1745,7 @@ body .navigation .top-bar-section ul li:active a {
 
 /* line 34, ../scss/components/_signin.scss */
 .registration-wrapper .button-wrapper {
-  margin: 0px 0 45px 45px;
+  margin: 0px;
 }
 
 /* line 37, ../scss/components/_signin.scss */
@@ -1707,7 +1766,12 @@ body .navigation .top-bar-section ul li:active a {
   padding: 0 22px 0 0;
 }
 
-/* line 57, ../scss/components/_signin.scss */
+/* line 49, ../scss/components/_signin.scss */
+.form-group {
+  padding: 0;
+}
+
+/* line 60, ../scss/components/_signin.scss */
 .content-wrapper {
   overflow: hidden;
   min-height: 500px;
@@ -1716,7 +1780,7 @@ body .navigation .top-bar-section ul li:active a {
   margin: 0 0 15px 0;
 }
 
-/* line 65, ../scss/components/_signin.scss */
+/* line 68, ../scss/components/_signin.scss */
 .members img {
   border: solid 5px #ffffff;
   box-shadow: 0px 0px 6px #666;
@@ -1728,19 +1792,19 @@ body .navigation .top-bar-section ul li:active a {
   background: url(../images/image2.png) no-repeat top center;
 }
 
-/* line 75, ../scss/components/_signin.scss */
+/* line 78, ../scss/components/_signin.scss */
 .member-info span {
   padding: 0 8px 0 0;
   font-weight: bold;
 }
 
-/* line 79, ../scss/components/_signin.scss */
+/* line 82, ../scss/components/_signin.scss */
 .member-info label {
   padding: 0 0 8px 0;
   display: table;
 }
 
-/* line 83, ../scss/components/_signin.scss */
+/* line 86, ../scss/components/_signin.scss */
 .member-info a.view-more, .member-info a.reset-pswd {
   padding: 0 0 0 15px;
   text-decoration: underline;
@@ -1748,7 +1812,7 @@ body .navigation .top-bar-section ul li:active a {
   font-size: 13px;
 }
 
-/* line 89, ../scss/components/_signin.scss */
+/* line 92, ../scss/components/_signin.scss */
 .content-wrapper h4 {
   background: #efeeee;
   font-size: 14px;
@@ -1757,7 +1821,7 @@ body .navigation .top-bar-section ul li:active a {
   font-weight: bold;
 }
 
-/* line 98, ../scss/components/_signin.scss */
+/* line 101, ../scss/components/_signin.scss */
 .login-wrapper {
   width: 440px;
   margin-top: 120px;
@@ -1768,21 +1832,21 @@ body .navigation .top-bar-section ul li:active a {
   box-shadow: 5px 5px 0px #c5c5c5;
 }
 
-/* line 109, ../scss/components/_signin.scss */
+/* line 112, ../scss/components/_signin.scss */
 .login-wrapper .login {
   text-align: left;
   padding: 10px 25px 25px;
   font-size: 14px;
 }
 
-/* line 115, ../scss/components/_signin.scss */
+/* line 118, ../scss/components/_signin.scss */
 .login-wrapper .login h4 {
   margin: 0 0 16px 0;
   padding: 0 0 8px 0;
   border-bottom: dotted 1px #ccc;
 }
 
-/* line 120, ../scss/components/_signin.scss */
+/* line 123, ../scss/components/_signin.scss */
 .login-wrapper .login-btn {
   background: #0074b7;
   padding: 5px 8px;
@@ -1791,7 +1855,7 @@ body .navigation .top-bar-section ul li:active a {
   cursor: pointer;
 }
 
-/* line 127, ../scss/components/_signin.scss */
+/* line 130, ../scss/components/_signin.scss */
 .login-wrapper .login .error {
   color: red;
   text-align: center;

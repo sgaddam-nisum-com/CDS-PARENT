@@ -51,7 +51,7 @@ footer.fixed-footer {
 .line {
   background: #5e5e5e;
   margin: 15px;
-  height: 1px;
+  height: 1px; 
 }
 
 
@@ -62,7 +62,7 @@ footer.fixed-footer {
   }
   .social {
     text-align: center;
-    padding-top: 12px;
+    padding-top: 12px; 
   }
   .footer-links {
     text-align: center;
@@ -73,5 +73,11 @@ footer.fixed-footer {
     display: inline-block;
     margin: 0 8px 0 0;
     padding: 0 8px 0 0;
+  }
+  .container {
+      width: 100%; 
+  }
+  .subscribe-btn, .subscribe {
+      width: 100%;
   }
 }
