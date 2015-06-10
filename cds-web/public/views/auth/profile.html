@@ -188,22 +188,27 @@
                             <div class="large-16 columns">
                                 <div class="large-4 columns"> Volunteer ID</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteerId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerId"></div>
+                            </div>
+                            <div class="large-16 columns">
+                                <div class="large-4 columns"> Volunteer CodeNumber</div>
+                                <div class="columns large-1">:</div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerCodeNumber"></div>
                             </div>
                             <div class="large-16 columns">
                                 <div class="large-4 columns">Are you interested in Volunteer work</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.citizen.interestedAsVolunteer"></div>
                             </div>
                             <div class="large-16 columns">
                                 <div class="large-4 columns"> Which areas are you interested to Volunteer</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerInterestedAreas[0].interestId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerInterestedAreas[0].volInterestAreaName"></div>
                             </div>
                             <div class="large-16 columns">
                                 <div class="large-4 columns"> Volunteer Category</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerCategory.voluteerCatergoryId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerCategory.volunteerCategoryName"></div>
                             </div>
                             <div class="large-16 columns">
                                 <div class="large-4 columns"> Lead Id</div>
@@ -213,7 +218,7 @@
                             <div class="large-16 columns">
                                 <div class="large-4 columns"> Performance Grade</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.performanceGradeId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.performanceGradeDesc"></div>
                             </div>
                         </div>
                         <!-- /Volunteer INFO section -->
@@ -304,39 +309,39 @@
                         </div>
                         <div class="row accordion-content">
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Party Membership :</div>
+                                <div class="large-4 columns"> Party Membership</div>
                                 <div class="columns large-1">:</div>
                                 <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyMembershipId"></div>
                             </div>
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Position in the Party :</div>
+                                <div class="large-4 columns"> Position in the Party</div>
                                 <div class="columns large-1">:</div>
                                 <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyDesigination.positionDescription"></div>
                             </div>
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Responsibility in the Party :</div>
+                                <div class="large-4 columns"> Responsibility in the Party</div>
                                 <div class="columns large-1">:</div>
                                 <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyResponsibility"></div>
                             </div>
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Health Insured :</div>
+                                <div class="large-4 columns"> Health Insured</div>
                                 <div class="columns large-1">:</div>
                                 <div class="large-4 columns left" ng-bind="profileCtrl.user.healthInsurance"></div>
                             </div>
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Life Insured :</div>
+                                <div class="large-4 columns"> Life Insured</div>
                                 <div class="columns large-1">:</div>
                                 <div class="large-4 columns left" ng-bind="profileCtrl.user.lifeInsurance"></div>
                             </div>
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Blood Group :</div>
+                                <div class="large-4 columns"> Blood Group</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.bloodGroupId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.citizen.bloodGroup.bloodGroupName"></div>
                             </div>
                             <div class="large-16 columns">
-                                <div class="large-4 columns"> Performance Grade :</div>
+                                <div class="large-4 columns"> Performance Grade</div>
                                 <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.performanceGradeId"></div>
+                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.performanceGradeDesc"></div>
                             </div>
                         </div>
                         <!-- /CADRE section -->

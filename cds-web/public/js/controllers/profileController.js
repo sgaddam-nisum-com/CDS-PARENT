@@ -39,7 +39,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
                     self.user = resp.data;
                     $scope.voterNodeObj = generateParamObject(resp.data.voter.consituency);
-
+                    
                     children = angular.copy(resp.data.tblCitizenRelation);
                     children.shift();
                     $scope.children = children;
