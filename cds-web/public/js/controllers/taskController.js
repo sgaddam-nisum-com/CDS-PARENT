@@ -81,7 +81,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                         var commentsArray = [];
 
                         commentsArray.push(commentsObj);
-                        self.user.comments1 = commentsArray;
+                        self.user.comments = commentsArray;
                     }
 
                     $http({
