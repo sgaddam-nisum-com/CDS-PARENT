@@ -246,3 +246,18 @@ header .auth-header .phone{
 }
 
  } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+.collapse{
+  display: block !important;
+}
+
+
+body .navigation .top-bar-section ul li:hover {
+    background: rgba(0, 0, 0, 0) url("../images/home-menu-active.png") no-repeat scroll center bottom !important;
+    color: red !important;
+}
+
+}

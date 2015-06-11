@@ -378,10 +378,7 @@ body .navigation .top-bar-section ul li:active a{
     background: #16578f !important;
     color: #fff !important;
   }
-  body .navigation .top-bar-section ul li:hover{
-    background: #a1bbd2 !important;
-    color: #fff !important;
-  }
+ 
  img{
     margin: 0 auto;
   } 
@@ -394,6 +391,13 @@ body .navigation .top-bar-section ul li:active a{
 
 
 @media only screen and (min-width: 320px) and (max-width: 480px) { 
+
+ body .navigation .top-bar-section ul li:hover{
+    background: #a1bbd2 !important;
+    color: #fff !important;
+  }
+
+  
 .register-signin ul li:first-child {
   display: none;
   } 
