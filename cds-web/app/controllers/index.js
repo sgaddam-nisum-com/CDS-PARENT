@@ -37,7 +37,7 @@ exports.tasks = function(req, res, next) {
 };
 
 exports.profile = function(req, res, next) {
-    res.render('layouts/index.html', {});
+    res.render('layouts/profile.html', {});
 };
 
 exports.editprofile = function(req, res, next) {
