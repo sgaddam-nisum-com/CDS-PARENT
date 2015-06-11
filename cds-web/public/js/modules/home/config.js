@@ -17,11 +17,11 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/common/header.html',
+                templateUrl: 'views/common/bootstrap/header.html',
                 controller : "headerController as headerCtrl"
             },
             'footer': {
-                templateUrl: 'views/common/footer.html'                
+                templateUrl: 'views/common/bootstrap/footer.html'                
             }
         }
     })
@@ -32,7 +32,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/home.html',
+                templateUrl: 'views/nonauth/bootstrap/home.html',
                 controller : "homeController as homeCtrl"                
             }
              
@@ -44,7 +44,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/home.html',
+                templateUrl: 'views/nonauth/bootstrap/home.html',
                 controller : "homeController as homeCtrl"                
             }
              
@@ -55,7 +55,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/knowyourmp',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/knowyourmp.html'
+                templateUrl: 'views/nonauth/bootstrap/knowyourmp.html'
             }
         },
         secured : false
@@ -64,7 +64,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/parliament',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/parliament.html'
+                templateUrl: 'views/nonauth/bootstrap/parliament.html'
             }
         },
         secured : false
@@ -73,7 +73,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/aboutconstituency',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/aboutconstituency.html'
+                templateUrl: 'views/nonauth/bootstrap/aboutconstituency.html'
             }
         },
         secured : false
@@ -82,7 +82,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/mission-vision',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/mission-vision.html'
+                templateUrl: 'views/nonauth/bootstrap/mission-vision.html'
             }
         },
         secured : false
@@ -91,7 +91,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/initiatives',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/initiatives.html'
+                templateUrl: 'views/nonauth/bootstrap/initiatives.html'
             }
         },
         secured : false
@@ -100,7 +100,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url:'/gallery',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/gallery.html'
+                templateUrl: 'views/nonauth/bootstrap/gallery.html'
             }
         },
         secured : false
@@ -109,7 +109,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",function
         url: '/contactus',
         views: {           
             'content@': {
-                templateUrl: 'views/nonauth/contactus.html'
+                templateUrl: 'views/nonauth/bootstrap/contactus.html'
             }
         },
         secured : false

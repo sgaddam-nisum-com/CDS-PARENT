@@ -9613,18 +9613,23 @@ Interactive Layer
 
 /* line 1, ../scss/bootstrap/_angular-dashboard.scss */
 .dashboard-widget-area {
-  margin: 10px 0 30px;
+  /*   margin: 10px 0 30px; */
   min-height: 200px;
+  margin-bottom: 20px;
 }
 
-/* line 5, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 6, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-container {
-  float: left;
-  display: inline-block;
+  /* Maintained same styles using bootstap classes */
+  /*   float: left;
+    display: inline-block;
+    
   padding-bottom: 1em;
+  */
+  margin-top: 10px;
 }
 
-/* line 10, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 17, ../scss/bootstrap/_angular-dashboard.scss */
 .widget {
   /*   margin: 0 1em 0 0; */
   background-color: white;
@@ -9634,18 +9639,18 @@ Interactive Layer
   height: 100%;
 }
 
-/* line 18, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 25, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header {
   overflow: hidden;
 }
 
-/* line 21, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 28, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .label {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 25, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 32, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .glyphicon {
   cursor: pointer;
   float: right;
@@ -9653,33 +9658,33 @@ Interactive Layer
   margin-left: 5px;
 }
 
-/* line 31, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 38, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .glyphicon:hover {
   opacity: 1;
 }
 
-/* line 34, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 41, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header .widget-title {
   vertical-align: middle;
 }
 
-/* line 37, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 44, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header form.widget-title {
   display: inline;
 }
 
-/* line 40, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 47, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-header form.widget-title input.form-control {
   width: auto;
   display: inline-block;
 }
 
-/* line 44, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 51, ../scss/bootstrap/_angular-dashboard.scss */
 .widget-content {
   overflow: hidden;
 }
 
-/* line 47, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 54, ../scss/bootstrap/_angular-dashboard.scss */
 .widget .widget-ew-resizer {
   position: absolute;
   width: 5px;
@@ -9689,7 +9694,7 @@ Interactive Layer
   cursor: ew-resize;
 }
 
-/* line 55, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 62, ../scss/bootstrap/_angular-dashboard.scss */
 .widget .widget-s-resizer {
   cursor: ns-resize;
   height: 5px;
@@ -9698,7 +9703,7 @@ Interactive Layer
   left: 0;
 }
 
-/* line 62, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 69, ../scss/bootstrap/_angular-dashboard.scss */
 .widget .widget-resizer-marquee {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -9707,19 +9712,19 @@ Interactive Layer
   z-index: 2;
 }
 
-/* line 69, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 76, ../scss/bootstrap/_angular-dashboard.scss */
 .remove-layout-icon {
   vertical-align: text-top;
   cursor: pointer;
   opacity: 0.3;
 }
 
-/* line 74, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 81, ../scss/bootstrap/_angular-dashboard.scss */
 .remove-layout-icon:hover {
   opacity: 1;
 }
 
-/* line 77, ../scss/bootstrap/_angular-dashboard.scss */
+/* line 84, ../scss/bootstrap/_angular-dashboard.scss */
 .layout-title {
   display: inline-block;
 }

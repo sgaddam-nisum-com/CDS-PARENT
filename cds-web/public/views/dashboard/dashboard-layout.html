@@ -1,10 +1,10 @@
 
     <div class="row">
-        <div class="col-md-7"><h1>Dashboard</h1></div>
-        <div class="col-md-5 text-right"><br />
-            <div class="btn-toolbar" ng-if="!options.hideToolbar">
-                
-                <div class="btn-group configure-btn" ng-if="!options.widgetButtons">
+        <div class="col-xs-5 col-sm-8 col-md-9"><h1>Dashboard</h1></div>
+        <div class="col-xs-7 col-sm-4 col-md-3 text-right"><br />
+            <div class="btn-toolbar row" ng-if="!options.hideToolbar">
+                 <div class="col-xs-5 col-sm-6"><button class="btn btn-warning" ng-click="resetWidgetsToDefault()">Reload</button></div>
+                <div class="btn-group configure-btn col-xs-7 col-sm-6" ng-if="!options.widgetButtons">
                     <span class="dropdown" on-toggle="toggled(open)">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         Configure <span class="caret"></span>
@@ -23,16 +23,18 @@
                     {{widget.name}}
                     </button>
                 </div>
-                <button class="btn btn-warning" ng-click="resetWidgetsToDefault()">Reload</button>
+               
                 <button ng-if="options.storage && options.explicitSave" ng-click="options.saveDashboard()" class="btn btn-success" ng-disabled="!options.unsavedChangeCount">{{ !options.unsavedChangeCount ? "all saved" : "save changes (" + options.unsavedChangeCount + ")" }}
                 </button>
                 <!--  <button ng-click="clear();" type="button" class="btn btn-info">Clear</button> -->
             </div>
+
+
         </div>
-   
-    <div ui-sortable="sortableOptions" ng-model="widgets" class="dashboard-widget-area">
-        <div ng-repeat="widget in widgets" ng-style="widget.containerStyle" class="widget-container {{widget.class}}" widget>
-            
+    </div>    
+
+   <div class="row dashboard-widget-area" ui-sortable="sortableOptions" ng-model="widgets" >
+        <div ng-repeat="widget in widgets" ng-style="widget.containerStyle" class="widget-container {{widget.class}}" widget>            
             <div class="widget panel panel-default">
                 <div class="widget-header panel-heading" >
                     <h3 class="panel-title">
@@ -53,5 +55,4 @@
                 <div ng-if="widget.enableVerticalResize" class="widget-s-resizer" ng-mousedown="grabSouthResizer($event)"></div>
             </div>
         </div>
-    </div>
  </div>       

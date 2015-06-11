@@ -1,11 +1,18 @@
 .dashboard-widget-area {
-  margin: 10px 0 30px;
+/*   margin: 10px 0 30px; */
   min-height: 200px;
+  margin-bottom: 20px;
 }
 .widget-container {
-  float: left;
+
+/* Maintained same styles using bootstap classes */
+
+/*   float: left;
   display: inline-block;
-  padding-bottom: 1em;
+  
+padding-bottom: 1em;
+*/ 
+margin-top: 10px;
 }
 .widget {
 /*   margin: 0 1em 0 0; */
@@ -77,3 +84,5 @@
 .layout-title {
   display: inline-block;
 }
+
+

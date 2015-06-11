@@ -274,23 +274,17 @@
   font-size: 12px;
 }
 
-/* line 203, ../scss/components/_dashboard.scss */
-.configure-btn {
-  float: right !important;
-  margin-left: 10px;
-}
-
-/* line 208, ../scss/components/_dashboard.scss */
+/* line 205, ../scss/components/_dashboard.scss */
 .ui-grid-canvas div {
   font-size: 11px;
 }
 
-/* line 213, ../scss/components/_dashboard.scss */
+/* line 210, ../scss/components/_dashboard.scss */
 .ui-grid-cell-contents {
   padding-left: 5px;
 }
 
-/* line 216, ../scss/components/_dashboard.scss */
+/* line 213, ../scss/components/_dashboard.scss */
 .row-link {
   padding-left: 5px;
   cursor: pointer;
@@ -298,77 +292,83 @@
   margin-top: 5px;
 }
 
-/* line 223, ../scss/components/_dashboard.scss */
+/* line 220, ../scss/components/_dashboard.scss */
 .events-banner .panel-body {
   padding: 0;
 }
 
-/* line 227, ../scss/components/_dashboard.scss */
+/* line 224, ../scss/components/_dashboard.scss */
 .events-banner .events-banner-img {
   width: 100%;
 }
 
-/* line 233, ../scss/components/_dashboard.scss */
+/* line 230, ../scss/components/_dashboard.scss */
 .panel-default > .panel-heading {
   cursor: move;
 }
 
-/* line 236, ../scss/components/_dashboard.scss */
+/* line 233, ../scss/components/_dashboard.scss */
 .events-banner .events-banner-img {
   height: 76px;
 }
 
-/* line 239, ../scss/components/_dashboard.scss */
+/* line 236, ../scss/components/_dashboard.scss */
 .widget {
   border: solid 1px #999;
 }
 
-/* line 242, ../scss/components/_dashboard.scss */
+/* line 239, ../scss/components/_dashboard.scss */
 ul.doughnut-legend {
   padding: 0;
 }
 
-/* line 245, ../scss/components/_dashboard.scss */
+/* line 242, ../scss/components/_dashboard.scss */
 .widget-container.cadre-verifications-all .widget-header {
   background: #475d74;
 }
 
-/* line 248, ../scss/components/_dashboard.scss */
+/* line 245, ../scss/components/_dashboard.scss */
 .widget-container.events-banner .widget-header {
   background: #86ad39;
 }
 
-/* line 251, ../scss/components/_dashboard.scss */
+/* line 248, ../scss/components/_dashboard.scss */
 .widget-container.self-tasks .widget-header {
   background: #756158;
 }
 
-/* line 254, ../scss/components/_dashboard.scss */
+/* line 251, ../scss/components/_dashboard.scss */
 .widget-container.team-tasks .widget-header {
   background: #475d74;
 }
 
-/* line 257, ../scss/components/_dashboard.scss */
+/* line 254, ../scss/components/_dashboard.scss */
 .widget-container.tasks-trend .widget-header {
   background: #c6781c;
 }
 
-/* line 260, ../scss/components/_dashboard.scss */
+/* line 257, ../scss/components/_dashboard.scss */
 .widget-container.notifications .widget-header {
   background: #f0ad4e;
 }
 
-/* line 264, ../scss/components/_dashboard.scss */
+/* line 261, ../scss/components/_dashboard.scss */
 .close-overlay {
   z-index: 100;
 }
 
-/* line 268, ../scss/components/_dashboard.scss */
+/* line 265, ../scss/components/_dashboard.scss */
 .d-widget.notifications .widget-content {
   height: 380px;
   overflow: auto;
 }
 
+/* Only for 1921px and above */
+/* From 1441px to 1920 */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 /******Do not change. Styles to make footer at bottom on variable section height. ***********/
 /******Difference height : Header height + Footer height************************************/
 /* line 4, ../scss/components/_footer.scss */
@@ -442,25 +442,30 @@ footer.fixed-footer {
   height: 1px;
 }
 
+/* line 57, ../scss/components/_footer.scss */
+.subscribe-btn, .subscribe {
+  width: 50%;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 60, ../scss/components/_footer.scss */
+  /* line 63, ../scss/components/_footer.scss */
   footer .copy-rights {
     text-align: center;
   }
 
-  /* line 63, ../scss/components/_footer.scss */
+  /* line 66, ../scss/components/_footer.scss */
   .social {
     text-align: center;
     padding-top: 12px;
   }
 
-  /* line 67, ../scss/components/_footer.scss */
+  /* line 70, ../scss/components/_footer.scss */
   .footer-links {
     text-align: center;
     margin: 0 0 15px 0;
   }
 
-  /* line 71, ../scss/components/_footer.scss */
+  /* line 74, ../scss/components/_footer.scss */
   footer a {
     float: none;
     display: inline-block;
@@ -468,16 +473,30 @@ footer.fixed-footer {
     padding: 0 8px 0 0;
   }
 
-  /* line 77, ../scss/components/_footer.scss */
+  /* line 80, ../scss/components/_footer.scss */
   .container {
     width: 100%;
   }
+}
+/* For all view ports */
+/* Only for 1921px and above */
+/* From 1441px to 1920 */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (max-width: 768px) {
+  /* line 102, ../scss/components/_footer.scss */
+  .email-subs {
+    text-align: center;
+  }
 
-  /* line 80, ../scss/components/_footer.scss */
-  .subscribe-btn, .subscribe {
-    width: 100%;
+  /* line 105, ../scss/components/_footer.scss */
+  .social {
+    text-align: center;
+    padding: 10px 0;
   }
 }
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @font-face {
   font-family: 'OpenSans-Regular';
   src: url("fonts/OpenSans-Regular.ttf") format("truetype");
@@ -545,24 +564,30 @@ header .auth-header .phone {
   color: #fff;
 }
 
-/* line 60, ../scss/components/_header.scss */
+/* line 59, ../scss/components/_header.scss */
+.logo {
+  padding: 10px 0 8px 0;
+  display: inline-block;
+}
+
+/* line 63, ../scss/components/_header.scss */
 header .top-nav {
   padding-right: 0;
   /* text-align: right; */
 }
 
-/* line 65, ../scss/components/_header.scss */
+/* line 68, ../scss/components/_header.scss */
 header .auth-header .top-nav li {
   font-size: 13px;
   color: #fff;
 }
 
-/* line 70, ../scss/components/_header.scss */
+/* line 73, ../scss/components/_header.scss */
 header .top-nav ul {
   margin: 0;
 }
 
-/* line 73, ../scss/components/_header.scss */
+/* line 76, ../scss/components/_header.scss */
 header .top-nav ul li {
   display: inline-block;
   list-style: none;
@@ -571,14 +596,14 @@ header .top-nav ul li {
   padding: 0 0px 0 20px;
 }
 
-/* line 80, ../scss/components/_header.scss */
+/* line 83, ../scss/components/_header.scss */
 header .top-nav ul li:first-child {
   background: none;
   padding-left: 0px;
   /*padding-right: 20px;*/
 }
 
-/* line 85, ../scss/components/_header.scss */
+/* line 88, ../scss/components/_header.scss */
 header .top-nav ul li a.home {
   background: url(../images/cds-sprite.png) no-repeat 0 -23px;
   height: 20px;
@@ -586,7 +611,7 @@ header .top-nav ul li a.home {
   color: #999;
 }
 
-/* line 91, ../scss/components/_header.scss */
+/* line 94, ../scss/components/_header.scss */
 header .top-nav ul li a.help {
   background: url(../images/cds-sprite.png) no-repeat 0 -47px;
   height: 20px;
@@ -595,7 +620,7 @@ header .top-nav ul li a.help {
   color: #fff;
 }
 
-/* line 98, ../scss/components/_header.scss */
+/* line 101, ../scss/components/_header.scss */
 header .top-nav ul li a.my-account {
   background: url(../images/cds-sprite.png) no-repeat 0 -72px;
   height: 20px;
@@ -603,77 +628,77 @@ header .top-nav ul li a.my-account {
   color: #fff;
 }
 
-/* line 105, ../scss/components/_header.scss */
+/* line 108, ../scss/components/_header.scss */
 header .top-nav ul li a.post {
   padding: 0 15px 0 0;
   color: #999;
 }
 
-/* line 109, ../scss/components/_header.scss */
+/* line 112, ../scss/components/_header.scss */
 header .top-nav ul li a.logout {
   padding: 0 15px 0 20px;
   color: #999;
   background: url(../images/logout.png) no-repeat 0 2px;
 }
 
-/* line 116, ../scss/components/_header.scss */
+/* line 119, ../scss/components/_header.scss */
 header .navigation {
   padding: 28px 0 0 0;
 }
 
-/* line 119, ../scss/components/_header.scss */
+/* line 122, ../scss/components/_header.scss */
 header .navigation h1.logo {
   background: url(../images/logo.png) no-repeat;
   width: 155px;
   height: 40px;
 }
 
-/* line 124, ../scss/components/_header.scss */
+/* line 127, ../scss/components/_header.scss */
 header .main-navigation nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 128, ../scss/components/_header.scss */
+/* line 131, ../scss/components/_header.scss */
 header .main-navigation nav ul li {
   list-style: none;
   float: left;
 }
 
-/* line 133, ../scss/components/_header.scss */
+/* line 136, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:hover {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 138, ../scss/components/_header.scss */
+/* line 141, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:active {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 144, ../scss/components/_header.scss */
+/* line 147, ../scss/components/_header.scss */
 h1 {
   color: #16578f;
   font-size: 26px;
 }
 
-/* line 149, ../scss/components/_header.scss */
+/* line 152, ../scss/components/_header.scss */
 .headerMobile {
   background: #f0f2f4;
 }
 
-/* line 152, ../scss/components/_header.scss */
+/* line 155, ../scss/components/_header.scss */
 .headerLogo {
   background: #fff url(../images/headerBg.png) repeat-x;
 }
 
-/* line 156, ../scss/components/_header.scss */
+/* line 159, ../scss/components/_header.scss */
 .auth-header {
   padding-top: 8px;
 }
 
-/* line 160, ../scss/components/_header.scss */
+/* line 163, ../scss/components/_header.scss */
 .login-user-info {
   display: none;
   position: absolute;
@@ -685,7 +710,7 @@ h1 {
   top: 29px;
 }
 
-/* line 170, ../scss/components/_header.scss */
+/* line 173, ../scss/components/_header.scss */
 .nav-down-arrow {
   background: none;
   width: 25px;
@@ -694,11 +719,57 @@ h1 {
   float: right;
 }
 
-/* line 179, ../scss/components/_header.scss */
+/* line 182, ../scss/components/_header.scss */
 .top-sub-links {
   float: right;
 }
 
+/* Only for 1921px and above */
+/* From 1441px to 1920 */
+@media only screen and (max-width: 991px) {
+  /* line 194, ../scss/components/_header.scss */
+  .logo {
+    width: 250px;
+  }
+}
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (max-width: 767px) {
+  /* line 207, ../scss/components/_header.scss */
+  header .auth-header .phone {
+    background: none;
+    height: 30px;
+    padding: 2px 0 0 32px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+  }
+
+  /* line 217, ../scss/components/_header.scss */
+  header .top-nav {
+    margin-bottom: 10px;
+  }
+
+  /* line 221, ../scss/components/_header.scss */
+  header nav {
+    text-align: center;
+  }
+
+  /* line 224, ../scss/components/_header.scss */
+  .top-sub-links {
+    margin: 0 auto;
+    width: 100%;
+    float: none;
+  }
+}
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* line 244, ../scss/components/_header.scss */
+  header .auth-header .phone {
+    display: none;
+  }
+}
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 /* line 1, ../scss/components/_home.scss */
 header.home {
   border-bottom: solid 1px #e2e2e2;
@@ -706,52 +777,46 @@ header.home {
   background: #16578f;
 }
 
-/* line 6, ../scss/components/_home.scss */
-.logo {
-  padding: 10px 0 8px 0;
-  display: inline-block;
-}
-
-/* line 10, ../scss/components/_home.scss */
+/* line 7, ../scss/components/_home.scss */
 .register-signin {
   text-align: right;
 }
 
-/* line 13, ../scss/components/_home.scss */
+/* line 10, ../scss/components/_home.scss */
 .register-signin nav {
   overflow: hidden;
 }
 
-/* line 16, ../scss/components/_home.scss */
+/* line 13, ../scss/components/_home.scss */
 .register-signin ul {
   margin: 0;
   float: right;
 }
 
-/* line 20, ../scss/components/_home.scss */
+/* line 17, ../scss/components/_home.scss */
 .register-signin ul li {
   float: left;
   list-style: none;
   background: url(../images/topnav-divider.png) no-repeat right center;
 }
 
-/* line 25, ../scss/components/_home.scss */
+/* line 22, ../scss/components/_home.scss */
 .register-signin ul li a {
   display: inline-block;
 }
 
-/* line 28, ../scss/components/_home.scss */
+/* line 25, ../scss/components/_home.scss */
 .register-signin ul li a:hover {
   color: #ccc;
 }
 
-/* line 31, ../scss/components/_home.scss */
+/* line 28, ../scss/components/_home.scss */
 .register-signin ul li:first-child {
   padding: 4px 15px 6px 0;
   background: none;
 }
 
-/* line 35, ../scss/components/_home.scss */
+/* line 32, ../scss/components/_home.scss */
 .register-signin ul li:nth-child(1) {
   background: none;
 }
@@ -759,12 +824,12 @@ header.home {
 /*.register-signin ul li a{
   border-left: solid 1px blue;
 }*/
-/* line 41, ../scss/components/_home.scss */
+/* line 38, ../scss/components/_home.scss */
 .register-signin ul li:last-child {
   background: none;
 }
 
-/* line 44, ../scss/components/_home.scss */
+/* line 41, ../scss/components/_home.scss */
 .register, .signin, .site-view, .contactus {
   padding: 6px 15px 6px;
   line-height: 20px;
@@ -772,25 +837,25 @@ header.home {
   font-size: 13px;
 }
 
-/* line 50, ../scss/components/_home.scss */
+/* line 47, ../scss/components/_home.scss */
 .register {
   background: url(../images/registerIcon.png) no-repeat 0px 8px;
   padding-left: 20px;
 }
 
-/* line 54, ../scss/components/_home.scss */
+/* line 51, ../scss/components/_home.scss */
 .signin {
   background: url(../images/signinIcon.png) no-repeat 2px 8px;
   padding-left: 20px;
 }
 
-/* line 58, ../scss/components/_home.scss */
+/* line 55, ../scss/components/_home.scss */
 .contactus {
   background: url(../images/contactus.png) no-repeat 2px 8px;
   padding-left: 26px;
 }
 
-/* line 62, ../scss/components/_home.scss */
+/* line 59, ../scss/components/_home.scss */
 .post-issue {
   background: #efd303;
   padding: 8px 25px;
@@ -800,17 +865,17 @@ header.home {
   display: inline-block;
 }
 
-/* line 70, ../scss/components/_home.scss */
+/* line 67, ../scss/components/_home.scss */
 .home-navigation {
   background: #006eae;
 }
 
-/* line 73, ../scss/components/_home.scss */
+/* line 70, ../scss/components/_home.scss */
 body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: #006eae;
 }
 
-/* line 76, ../scss/components/_home.scss */
+/* line 73, ../scss/components/_home.scss */
 .img-border {
   border: solid 8px #ffffff;
   box-shadow: 0px 0px 6px #666;
@@ -818,24 +883,24 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   -webkit-box-shadow: 0px 0px 6px #666;
 }
 
-/* line 82, ../scss/components/_home.scss */
+/* line 79, ../scss/components/_home.scss */
 .activities {
   background: url(../images/activityBg.png) repeat-x;
   padding: 20px 0;
   margin: 0px 0 25px;
 }
 
-/* line 87, ../scss/components/_home.scss */
+/* line 84, ../scss/components/_home.scss */
 .banner {
   margin: 0 0 25px 0;
 }
 
-/* line 90, ../scss/components/_home.scss */
+/* line 87, ../scss/components/_home.scss */
 .news {
   /*padding: 0;*/
 }
 
-/* line 93, ../scss/components/_home.scss */
+/* line 90, ../scss/components/_home.scss */
 .news p {
   padding: 0 0 15px 0;
   margin: 0 0 15px 0;
@@ -843,19 +908,19 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   font-size: 12px;
 }
 
-/* line 99, ../scss/components/_home.scss */
+/* line 96, ../scss/components/_home.scss */
 .news p label {
   color: #666;
   font-size: 12px;
 }
 
-/* line 103, ../scss/components/_home.scss */
+/* line 100, ../scss/components/_home.scss */
 .news p a {
   text-decoration: underline;
   display: block;
 }
 
-/* line 107, ../scss/components/_home.scss */
+/* line 104, ../scss/components/_home.scss */
 .opinion-poll {
   font-size: 12px;
   padding: 20px 0px;
@@ -863,18 +928,18 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: #eeeeee;*/
 }
 
-/* line 113, ../scss/components/_home.scss */
+/* line 110, ../scss/components/_home.scss */
 .opinion-poll label.error {
   color: #a40000;
   margin: 0 0 15px 0;
 }
 
-/* line 117, ../scss/components/_home.scss */
+/* line 114, ../scss/components/_home.scss */
 .opinion-poll label input {
   margin-right: 12px;
 }
 
-/* line 120, ../scss/components/_home.scss */
+/* line 117, ../scss/components/_home.scss */
 .opinion-poll .choose {
   margin: 10px 0 0 25px;
   background: #efd303;
@@ -884,20 +949,20 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   border: none;
 }
 
-/* line 128, ../scss/components/_home.scss */
+/* line 125, ../scss/components/_home.scss */
 .subscribe {
   font-size: 14px;
   padding: 25px 0 0 0;
   margin: 0 !important;
 }
 
-/* line 133, ../scss/components/_home.scss */
+/* line 130, ../scss/components/_home.scss */
 .subscribe input {
   margin: 0 !important;
   color: #16578f;
 }
 
-/* line 137, ../scss/components/_home.scss */
+/* line 134, ../scss/components/_home.scss */
 .subscribe-btn {
   background: url(../images/subscribe-btn.jpg) no-repeat;
   width: 45px;
@@ -905,7 +970,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   border: none;
 }
 
-/* line 143, ../scss/components/_home.scss */
+/* line 140, ../scss/components/_home.scss */
 .innerpage-banner {
   /*height: 150px;*/
   overflow: hidden;
@@ -915,23 +980,23 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: #e5ecf2;
 }
 
-/* line 151, ../scss/components/_home.scss */
+/* line 148, ../scss/components/_home.scss */
 .innerpage-banner img {
-  width: 100%;
+  width: auto;
 }
 
-/* line 154, ../scss/components/_home.scss */
+/* line 151, ../scss/components/_home.scss */
 .headerMobile {
   display: none;
 }
 
-/* line 157, ../scss/components/_home.scss */
+/* line 154, ../scss/components/_home.scss */
 .phone-no {
   margin: 8px 0 0 20px;
   display: inline-block;
 }
 
-/* line 161, ../scss/components/_home.scss */
+/* line 158, ../scss/components/_home.scss */
 .none {
   display: none !important;
 }
@@ -939,68 +1004,68 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
 /*.content {
   padding: 0;
 }*/
-/* line 169, ../scss/components/_home.scss */
+/* line 166, ../scss/components/_home.scss */
 .content h1 {
   border-bottom: dotted 1px #ccc;
   padding: 0 0 5px 0;
   margin: 0 0 15px 0;
 }
 
-/* line 174, ../scss/components/_home.scss */
+/* line 171, ../scss/components/_home.scss */
 .content img {
   border: solid 5px #ccc;
   margin: 0 0 20px 0;
 }
 
-/* line 178, ../scss/components/_home.scss */
+/* line 175, ../scss/components/_home.scss */
 .constituency {
   margin-top: 0px;
 }
 
-/* line 183, ../scss/components/_home.scss */
+/* line 180, ../scss/components/_home.scss */
 #home-carousel .slick-prev {
   background: url(../images/arrow-left.png);
   width: 51px;
   height: 50px;
 }
 
-/* line 188, ../scss/components/_home.scss */
+/* line 185, ../scss/components/_home.scss */
 #home-carousel .slick-next {
   background: url(../images/arrow-right.png);
   width: 51px;
   height: 50px;
 }
 
-/* line 193, ../scss/components/_home.scss */
+/* line 190, ../scss/components/_home.scss */
 #home-carousel img {
   width: 100%  !important;
   max-height: 500px !important;
 }
 
-/* line 198, ../scss/components/_home.scss */
+/* line 195, ../scss/components/_home.scss */
 .activities-header {
   font-size: 16px;
   color: #333;
 }
 
-/* line 202, ../scss/components/_home.scss */
+/* line 199, ../scss/components/_home.scss */
 .news-poll {
   background: #e5ecf2;
   margin: 20px 0 0 0;
   padding: 15px 0;
 }
 
-/* line 208, ../scss/components/_home.scss */
+/* line 205, ../scss/components/_home.scss */
 .slick-slide h1 {
   padding-left: 18px;
 }
 
-/* line 211, ../scss/components/_home.scss */
+/* line 208, ../scss/components/_home.scss */
 .slide-wrapper {
   position: relative;
 }
 
-/* line 214, ../scss/components/_home.scss */
+/* line 211, ../scss/components/_home.scss */
 .slide-overlay {
   position: absolute;
   bottom: 20px;
@@ -1009,33 +1074,33 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   padding: 15px;
 }
 
-/* line 221, ../scss/components/_home.scss */
+/* line 218, ../scss/components/_home.scss */
 .slide-body-text {
   color: #ffffff;
 }
 
-/* line 224, ../scss/components/_home.scss */
+/* line 221, ../scss/components/_home.scss */
 .slide-body-text h3 {
   color: #c7e249;
 }
 
-/* line 227, ../scss/components/_home.scss */
+/* line 224, ../scss/components/_home.scss */
 .vision-left li {
   font-size: 13px;
 }
 
 /* ============ Foundation Overrides ================= */
-/* line 233, ../scss/components/_home.scss */
+/* line 230, ../scss/components/_home.scss */
 .padding-none {
   padding: 0;
 }
 
-/* line 236, ../scss/components/_home.scss */
+/* line 233, ../scss/components/_home.scss */
 .top-bar {
   background: none;
 }
 
-/* line 239, ../scss/components/_home.scss */
+/* line 236, ../scss/components/_home.scss */
 .top-bar-section ul li {
   /*border-right: solid 1px #16578f;
   background: url(../images/menu-divider.png) no-repeat right center;*/
@@ -1045,7 +1110,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
 /*.top-bar-section ul li a.active {
   border-bottom: solid 5px #ffffff;
 }*/
-/* line 247, ../scss/components/_home.scss */
+/* line 244, ../scss/components/_home.scss */
 .top-bar-section ul li > a {
   font-family: 'OpenSans-Semibold';
   padding: 0 16px;
@@ -1054,7 +1119,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: #e5ecf2 url(../images/menu-active.png) no-repeat;
 }
 
-/* line 254, ../scss/components/_home.scss */
+/* line 251, ../scss/components/_home.scss */
 .top-bar-section ul li > a.active {
   font-family: 'OpenSans-Semibold';
   /*padding: 0 16px !important;*/
@@ -1066,7 +1131,7 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
 /*.top-bar-section ul li > a:last-child {
   padding-right: 0 !important;
 }*/
-/* line 264, ../scss/components/_home.scss */
+/* line 261, ../scss/components/_home.scss */
 .no-js .top-bar-section ul li:hover > a {
   color: #1c5776;
   background: #e5ecf2 url(../images/menu-divider.png) no-repeat right center;
@@ -1076,18 +1141,18 @@ body .home-navigation .top-bar-section li:not(.has-form) a:not(.button) {
   Development Started : 18th March 2015.
   Developer: Vanava Raju Adabala. 
   Stack: Mobile optimization using Foundation Frame work. */
-/* line 272, ../scss/components/_home.scss */
+/* line 269, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li:hover {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 276, ../scss/components/_home.scss */
+/* line 273, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li.active {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
 }
 
-/* line 280, ../scss/components/_home.scss */
+/* line 277, ../scss/components/_home.scss */
 .top-bar-section li:not(.has-form) a:hover:not(.button),
 .top-bar-section li.active:not(.has-form) a:hover:not(.button) {
   background: none repeat scroll 0 0 #16578f;
@@ -1097,12 +1162,12 @@ body .navigation .top-bar-section ul li.active {
 /*body .navigation .top-bar-section ul li.active:hover {
   background: url(../images/menu-active.png) no-repeat center bottom !important;
 }*/
-/* line 291, ../scss/components/_home.scss */
+/* line 288, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li:last-child a {
   padding-right: 0;
 }
 
-/* line 294, ../scss/components/_home.scss */
+/* line 291, ../scss/components/_home.scss */
 body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   background: none;
   padding-left: 13px;
@@ -1110,18 +1175,18 @@ body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
   color: #16578f;
 }
 
-/* line 302, ../scss/components/_home.scss */
+/* line 299, ../scss/components/_home.scss */
 body .navigation .top-bar-section ul li:active a {
   color: #25577A !important;
 }
 
-/* line 307, ../scss/components/_home.scss */
+/* line 304, ../scss/components/_home.scss */
 .gallery-content {
   min-height: 175px;
   text-align: justify;
 }
 
-/* line 312, ../scss/components/_home.scss */
+/* line 309, ../scss/components/_home.scss */
 .view-more-link {
   font-size: 12px;
   margin-right: 25px;
@@ -1132,12 +1197,12 @@ body .navigation .top-bar-section ul li:active a {
   /*body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     padding: 0 8px;
   }*/
-  /* line 322, ../scss/components/_home.scss */
+  /* line 319, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 325, ../scss/components/_home.scss */
+  /* line 322, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
@@ -1148,18 +1213,18 @@ body .navigation .top-bar-section ul li:active a {
   .content {
     padding: 0 8px;
   }*/
-  /* line 335, ../scss/components/_home.scss */
+  /* line 332, ../scss/components/_home.scss */
   .logo {
     /*width: 100%; */
     padding-bottom: 0;
   }
 
-  /* line 339, ../scss/components/_home.scss */
+  /* line 336, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 342, ../scss/components/_home.scss */
+  /* line 339, ../scss/components/_home.scss */
   .slide-overlay {
     position: absolute;
     bottom: 10px;
@@ -1171,19 +1236,19 @@ body .navigation .top-bar-section ul li:active a {
   /*.slide-body-text{
     color: #ffffff;
   }*/
-  /* line 352, ../scss/components/_home.scss */
+  /* line 349, ../scss/components/_home.scss */
   .slide-body-text h3 {
     color: #c7e249;
     font-size: 20px;
   }
 
-  /* line 356, ../scss/components/_home.scss */
+  /* line 353, ../scss/components/_home.scss */
   .slide-body-text p {
     margin: 0;
   }
 }
 @media only screen and (min-width: 360px) and (max-width: 640px) {
-  /* line 364, ../scss/components/_home.scss */
+  /* line 361, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -1191,56 +1256,51 @@ body .navigation .top-bar-section ul li:active a {
     border-radius: 3px;
   }
 
-  /* line 370, ../scss/components/_home.scss */
+  /* line 367, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 373, ../scss/components/_home.scss */
+  /* line 370, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
   }
 
-  /* line 377, ../scss/components/_home.scss */
+  /* line 374, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 380, ../scss/components/_home.scss */
+  /* line 377, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 384, ../scss/components/_home.scss */
+  /* line 381, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 388, ../scss/components/_home.scss */
+  /* line 385, ../scss/components/_home.scss */
   img {
     margin: 0 auto;
   }
 
-  /* line 391, ../scss/components/_home.scss */
+  /* line 388, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
-
-  /* line 394, ../scss/components/_home.scss */
-  .img-responsive {
-    display: none;
-  }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 402, ../scss/components/_home.scss */
+  /* line 397, ../scss/components/_home.scss */
   .register-signin ul li:first-child {
     display: none;
   }
 
-  /* line 405, ../scss/components/_home.scss */
+  /* line 400, ../scss/components/_home.scss */
   .register, .signin, .site-view, .contactus {
     font-size: 11px;
     padding-left: 21px;
@@ -1249,27 +1309,27 @@ body .navigation .top-bar-section ul li:active a {
   /*.logo img {
     max-width: 80%;
   }*/
-  /* line 412, ../scss/components/_home.scss */
+  /* line 407, ../scss/components/_home.scss */
   #home-carousel {
     height: 130px;
   }
 
-  /* line 415, ../scss/components/_home.scss */
+  /* line 410, ../scss/components/_home.scss */
   .activities {
     padding: 15px 0px;
   }
 
-  /* line 418, ../scss/components/_home.scss */
+  /* line 413, ../scss/components/_home.scss */
   .news-poll, .constituency {
     padding: 0 8px;
   }
 
-  /* line 421, ../scss/components/_home.scss */
+  /* line 416, ../scss/components/_home.scss */
   .top-bar.expanded .title-area {
     background: none;
   }
 
-  /* line 424, ../scss/components/_home.scss */
+  /* line 419, ../scss/components/_home.scss */
   .top-bar .toggle-topbar.menu-icon {
     background: #0e4a54 url(../images/menuIcon.png) no-repeat;
     right: 3%;
@@ -1277,22 +1337,22 @@ body .navigation .top-bar-section ul li:active a {
     border-radius: 3px;
   }
 
-  /* line 430, ../scss/components/_home.scss */
+  /* line 425, ../scss/components/_home.scss */
   .headerMobile {
     display: none;
   }
 
-  /* line 433, ../scss/components/_home.scss */
+  /* line 428, ../scss/components/_home.scss */
   .headerLogo .register-signin {
     display: none;
   }
 
-  /* line 436, ../scss/components/_home.scss */
+  /* line 431, ../scss/components/_home.scss */
   header .navigation {
     padding: 0;
   }
 
-  /* line 439, ../scss/components/_home.scss */
+  /* line 434, ../scss/components/_home.scss */
   .top-bar-section ul li {
     background: #e5ecf2;
     border-bottom: dotted 1px #ccc;
@@ -1300,24 +1360,24 @@ body .navigation .top-bar-section ul li:active a {
     text-align: left;
   }
 
-  /* line 445, ../scss/components/_home.scss */
+  /* line 440, ../scss/components/_home.scss */
   .top-bar-section ul li > a {
     padding: 12px 0 12px 10px;
   }
 
-  /* line 448, ../scss/components/_home.scss */
+  /* line 443, ../scss/components/_home.scss */
   .top-bar-section ul li > a.active {
     background: #16578f !important;
     color: #fff !important;
   }
 
-  /* line 452, ../scss/components/_home.scss */
+  /* line 447, ../scss/components/_home.scss */
   body .navigation .top-bar-section ul li:hover {
     background: #a1bbd2 !important;
     color: #fff !important;
   }
 
-  /* line 456, ../scss/components/_home.scss */
+  /* line 451, ../scss/components/_home.scss */
   body .navigation .top-bar-section li:not(.has-form) a:not(.button) {
     background: none;
   }
@@ -1325,57 +1385,47 @@ body .navigation .top-bar-section ul li:active a {
   /*.content {
     padding: 0 8px;
   }*/
-  /* line 462, ../scss/components/_home.scss */
+  /* line 457, ../scss/components/_home.scss */
   .slide-overlay {
     display: none;
   }
 
-  /* line 465, ../scss/components/_home.scss */
-  .phone {
-    display: none;
-  }
-
-  /* line 468, ../scss/components/_home.scss */
+  /* line 461, ../scss/components/_home.scss */
   div.slideshow-container {
     height: auto;
   }
 
-  /* line 472, ../scss/components/_home.scss */
+  /* line 465, ../scss/components/_home.scss */
   header .top-nav ul li {
     padding-left: 10px;
   }
 
-  /* line 475, ../scss/components/_home.scss */
+  /* line 468, ../scss/components/_home.scss */
   .top-sub-links {
     padding: 0 0 8px 0;
   }
 
-  /* line 478, ../scss/components/_home.scss */
-  .img-responsive {
-    display: none;
-  }
-
-  /* line 481, ../scss/components/_home.scss */
+  /* line 471, ../scss/components/_home.scss */
   .form-group {
     padding: 10px 0;
   }
 
-  /* line 484, ../scss/components/_home.scss */
+  /* line 474, ../scss/components/_home.scss */
   .navbar-toggle {
     background: #16578f;
   }
 
-  /* line 487, ../scss/components/_home.scss */
+  /* line 477, ../scss/components/_home.scss */
   .navbar-toggle .icon-bar {
     background: #fff;
   }
 
-  /* line 490, ../scss/components/_home.scss */
+  /* line 480, ../scss/components/_home.scss */
   .top-bar-section ul {
     padding: 0;
   }
 
-  /* line 493, ../scss/components/_home.scss */
+  /* line 483, ../scss/components/_home.scss */
   .user-log {
     display: block;
     padding: 0 0 10px 0;
@@ -2606,7 +2656,7 @@ div.navigation a.next {
 
 /* line 192, ../scss/components/_gallery.scss */
 .navigation-container {
-  padding: 20px 0 0 0;
+  padding: 20px 0 0px 80px;
 }
 
 /*gallery styles ending*/

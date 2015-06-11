@@ -41,7 +41,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Events',
                         title: "Events tracker",
                         style: {
-                            height: "128px"
+                            height: "117px"
                         },
                         directive: "events-banner-directive",
                         templateUrl: "views/dashboard/events-banner.html",
@@ -53,12 +53,11 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'My Tasks',
                         title: "My Tasks",
                         style: {
-                            width: '100%',
                             height: "432px"
                         },
                         directive: "self-tasks-directive",
                         templateUrl: "views/dashboard/self-tasks.html",
-                        "class": "d-widget team-tasks"
+                        "class": "d-widget team-tasks col-md-12"
 
                     },
 
@@ -66,25 +65,23 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'My Team Tasks',
                         title: "My Team Tasks",
                         style: {
-                            width: '66%',
                             height: "432px"
                         },
                         directive: "team-tasks-directive",
                         templateUrl: "views/dashboard/self-tasks.html",
-                        "class": "d-widget team-tasks"
+                        "class": "d-widget team-tasks col-md-8"
                     },
 
                     {
                         name: 'Alerts / Notifications',
                         title: "Alerts / Notifications",
                         style: {
-                            width: '34%',
                             height: "432px"
 
                         },
                         directive: "notifications-directive",
                         templateUrl: "views/dashboard/notifications.html",
-                        "class": "d-widget notifications"
+                        "class": "d-widget notifications col-md-4"
 
                     }
 
@@ -96,37 +93,32 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
                         style: {
-                            width: '50%',
                             height: "320px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
-                        "class": "d-widget tasks-age"
+                        "class": "d-widget tasks-age col-sm-6"
 
                     },
                      {
                         name: 'Tasks trend',
                         title: "Tasks trend",
                         style: {
-                            width: '50%',
                             height: "320px"
                         },
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
-
-                        "class": "d-widget tasks-trend"
-
+                        "class": "d-widget tasks-trend col-sm-6"
                     },
                     {
                         name: 'Events',
                         title: "Events tracker",
                         style: {
-                            width: '100%',
                             height: "128px"
                         },
                         directive: "events-banner-directive",
                         templateUrl: "views/dashboard/events-banner.html",
-                        "class": "d-widget events-banner"
+                        "class": "d-widget events-banner col-xs-12"
 
                     },
 
@@ -134,32 +126,24 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Cadre Membership (Followups)',
                         title: "Cadre Membership (Followups)",
                         style: {
-                            width: '100%',
                             height: "460px"
                         },
                         enableVerticalResize: true,
                         directive: "cadre-followups-directive",
                         templateUrl: "views/dashboard/cadre-followups.html",
-
-                        "class": "d-widget cadre-verifications-all"
-
-
+                        "class": "d-widget cadre-verifications-all col-xs-12"
                     },
 
                     {
                         name: 'Cadre Membership (Verifications)',
                         title: "Cadre Membership (Verifications)",
                         style: {
-                            width: '100%',
                             height: "432px"
                         },
                         enableVerticalResize: true,
                         directive: "cadre-verifications-directive",
                         templateUrl: "views/dashboard/cadre-verifications.html",
-
-                        "class": "d-widget cadre-verifications-all"
-
-
+                        "class": "d-widget cadre-verifications-all col-xs-12"
                     }
 
                     /* {
@@ -212,7 +196,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
-                        "class": "d-widget tasks-age col-md-6 col-xs-12"
+                        "class": "d-widget tasks-age col-sm-6"
 
                     },
                      {
@@ -226,7 +210,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
 
-                        "class": "d-widget tasks-trend col-xs-12 col-md-6"
+                        "class": "d-widget tasks-trend col-sm-6"
 
                     },
                     {
@@ -246,13 +230,11 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Cadre Membership (Followups)',
                         title: "Cadre Membership (Followups)",
                         style: {
-                            width: '100%',
                             height: "460px"
                         },
                         enableVerticalResize: true,
                         directive: "cadre-followups-directive",
                         templateUrl: "views/dashboard/cadre-followups.html",
-
                         "class": "d-widget cadre-verifications-all col-xs-12"
 
 
@@ -262,7 +244,6 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Cadre Membership (Verifications)',
                         title: "Cadre Membership (Verifications)",
                         style: {
-                            width: '100%',
                             "max-height": "432px"
                         },
                         enableVerticalResize: true,
@@ -364,27 +345,23 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Age wise Tasks',
                         title: "Age wise Tasks",
                         style: {
-                            //width: '50%',
-                            height: "320px"
+                             height: "375px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
-                        "class": "d-widget tasks-age col-xs-12 col-md-6"
+                        "class": "d-widget tasks-age col-sm-6"
 
                     },
                        {
                         name: 'Tasks trend',
                         title: "Tasks trend",
                         style: {
-                            
-                            height: "320px"
+                           height: "375px"
                         },
 
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
-
-                        "class": "d-widget tasks-trend col-md-6 col-xs-12"
-
+                        "class": "d-widget tasks-trend col-sm-6"
                     },
                     {
                         name: 'Events',
@@ -395,7 +372,7 @@ define(['services/serviceModule'], function(serviceModule) {
                         },
                         directive: "events-banner-directive",
                         templateUrl: "views/dashboard/events-banner.html",
-                        "class": "d-widget events-banner"
+                        "class": "d-widget events-banner col-xs-12"
 
                     },
 
@@ -403,13 +380,11 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Membership Trend Analysis',
                         title: "Membership Trend Analysis",
                         style: {
-                            width: '66%',
                             height: "432px"
-
                         },
                         directive: "membership-trend-chart-directive",
                         templateUrl: "views/dashboard/membershiptrend-chart.html",
-                        "class": "d-widget membership-trend"
+                        "class": "d-widget membership-trend col-sm-8"
 
                     },
 
@@ -418,25 +393,22 @@ define(['services/serviceModule'], function(serviceModule) {
                         name: 'Alerts / Notifications',
                         title: "Alerts / Notifications",
                         style: {
-                            width: '34%',
                             height: "432px"
-
                         },
                         directive: "notifications-directive",
                         templateUrl: "views/dashboard/notifications.html",
-                        "class": "d-widget notifications"
+                        "class": "d-widget notifications col-sm-4"
 
                     },
                       {
                         name: 'My Tasks',
                         title: "My Tasks",
                         style: {
-                            width: '100%',
                             height: "432px"
                         },
                         directive: "self-tasks-directive",
                         templateUrl: "views/dashboard/self-tasks.html",
-                        "class": "d-widget team-tasks"
+                        "class": "d-widget team-tasks col-xs-12"
 
                     }
 

@@ -56,7 +56,10 @@ header .auth-header .phone {
   color: #fff;
 }
 
-
+.logo {
+  padding: 10px 0 8px 0;
+  display: inline-block;
+}
 header .top-nav{
   padding-right: 0;
   /* text-align: right; */
@@ -179,3 +182,67 @@ h1 {
 .top-sub-links{
   float : right;
 }
+
+
+@media only screen and (min-width: 1200px) { } /* Only for 1921px and above */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) { } /* From 1441px to 1920 */
+
+@media only screen and (min-width: 992px) {}
+@media only screen and (max-width: 991px) {
+
+.logo{
+  width: 250px;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 768px) {}
+
+
+@media only screen and (max-width: 767px) {
+
+header .auth-header .phone {
+  background: none;
+  height: 30px;
+  padding: 2px 0 0 32px;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+
+}
+
+header .top-nav{
+  margin-bottom: 10px;
+}
+
+header nav{
+  text-align: center;
+}
+.top-sub-links{
+  margin: 0 auto;
+  width: 100%;
+  float: none;
+}
+
+
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 641px) {}
+@media only screen and (max-width: 640px) {}
+
+@media only screen and (min-width: 480px) and (max-width: 640px) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 360px) and (max-width: 640px) { }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+header .auth-header .phone{
+  display: none;
+}
+
+ } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
