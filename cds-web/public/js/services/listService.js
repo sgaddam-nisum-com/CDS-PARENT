@@ -22,6 +22,19 @@ define(['services/serviceModule'], function(serviceModule) {
 					}).success(function(data) {	
 						cb(data);
 					});
+				},
+
+
+				deleteCitizen : function(userId, cb){
+
+					$http.delete(appUrlService.deleteCitizen, {
+						params : {
+							userId : userId
+						}	
+					
+					}).success(function(data) {	
+						cb(data);
+					});
 				}
 
 

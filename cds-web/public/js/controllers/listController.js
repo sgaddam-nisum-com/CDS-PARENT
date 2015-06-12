@@ -1,7 +1,7 @@
 define(['controllers/controllerModule'], function(controllerModule) {
 
-    controllerModule.controller('listController', ['$scope', '$state', '$http', 'listService', "$sessionStorage",
-        function($scope, $state, $http, listService, $sessionStorage) {
+    controllerModule.controller('listController', ['$scope', '$state', '$http', 'listService', "$sessionStorage","appModalService",
+        function($scope, $state, $http, listService, $sessionStorage, appModalService) {
 
             var self = this;
 
@@ -9,12 +9,16 @@ define(['controllers/controllerModule'], function(controllerModule) {
             this.maxAge = 50;
             this.filter = false;
             this.showImage = true;
+            var cadreDeleteOverlayModal;
             this.selected = {};
             var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
             var selectedUsers = [];
 
             var that = this;
+
+
+            console.log($scope);
 
             var defSearchObj = {
                             q: "",
@@ -51,6 +55,16 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
                 });
             };
+
+          /*  this.confirmDelete = function(){
+                self.selectedUsers = selectedUsers;
+                 cadreDeleteOverlayModal = appModalService.init("cadreDeleteOverlay.html","cadreDeleteController", self,{class:"cadre-delete-overlay"} )();
+            }
+*/
+          
+
+
+
 
             this.editUserInfo = function(citizenId) {
                 $state.go('root.profile.editprofile.personal', {
@@ -244,17 +258,9 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 }});
             }
             
-            console.log(selectedUserFilter);
-
-
             this.selectedFilter = this.selectedFilter.concat(selectedUserFilter, selectedGender, minMaxAge);
-
-            
+           
         };
-
-
-
-
 
         this.getGender = function(gender){
             return gender === 'M' ? "Male" : "Female";
@@ -265,33 +271,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
             this.selectedUserTypes = [];
             this.selectedGender = [];
         }   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }

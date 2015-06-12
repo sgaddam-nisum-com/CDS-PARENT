@@ -109,10 +109,8 @@ define(['services/serviceModule'], function (serviceModule) {
 				approveAsCadre : "/auth/office/vnc/approve",
 				rejectCadre : "/auth/office/vnc/reject",
 				cancelCadre : "/auth/dashboard/cadrepickedstatus",
-				getMembershipTrend : "/auth/dashboard/cadrestrendrpermonth"
-
-
-
+				getMembershipTrend : "/auth/dashboard/cadrestrendrpermonth",
+				deleteCitizen : "/auth/citizen/delete"
 			};
 		
 	}]);

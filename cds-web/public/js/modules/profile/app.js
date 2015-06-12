@@ -6,6 +6,7 @@ define(['angular',
 	"ngStorage",
 	'services/common/serviceLoader',
 	'services/registerService',
+	"services/common/appModalService",
 	"controllers/profileController",
 	"directives/resourceDirective",
 	"directives/datePickerDirective",
@@ -20,12 +21,14 @@ define(['angular',
 	"controllers/volunteerController",
 	"controllers/familyController",
 	"controllers/cadreController",
+	"modalControllers/cadreDeleteController",
 	"directives/voterDirective",
 	"directives/addressDirective",
 	"controllers/listController",
 	"services/listService",
-	"bootstrap"
+	"bootstrap",
+	"angularBootstrap"
 	], function (angular) {
-    var app = angular.module('CDSUSERPROFILE', ['ui.router',"ngStorage",'serviceModule',"controllerModule","directiveModule"]);    
+    var app = angular.module('CDSUSERPROFILE', ['ui.router',"ngStorage",'serviceModule',"controllerModule","directiveModule","ui.bootstrap"]);    
     return app;
 });
