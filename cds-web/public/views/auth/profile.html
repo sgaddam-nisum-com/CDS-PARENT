@@ -1,354 +1,356 @@
-<div class="row" id="app-wrapper">
-    <h1>Profile Information</h1>
-    <div class="content-wrapper">
-        <div class="row" style="font-size:13px;">
-            <div class="large-16 columns">
-                <div class="large-12 columns">
-                    <!-- User profile section -->
-                    <div class="member-info row" style="margin-left:0px; margin-bottom:10px;">
-                        <strong><span class="left" ng-bind="profileCtrl.user.firstName+'  '+profileCtrl.user.lastName"></span></strong></div>
-                    <div class="row">
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> User/Login Name</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left">
-                                <span ng-bind="profileCtrl.user.loginId"></span></div>
+<div class="container">
+    <div class="row" id="app-wrapper">
+        <h1>Profile Information</h1>
+        <div class="content-wrapper">
+            <div class="row" style="font-size:13px;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <!-- User profile section -->
+                        <div class="member-info row" style="margin-left:0px; margin-bottom:10px;">
+                            <strong><span class="left" ng-bind="profileCtrl.user.firstName+'  '+profileCtrl.user.lastName"></span></strong></div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> User/Login Name</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left">
+                                    <span ng-bind="profileCtrl.user.loginId"></span></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Age/Gender</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left">
+                                    <span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.gender"></span></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Date of Birth</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.dateOfBirth">Date of Birth</div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Aadhar ID</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.aadharId">aadharId</div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Mobile</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.mobileNumber">+91 8886867695</div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Email</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Skype Id</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.skypeId">saudam</div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Marital status</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.maritalStatus">martialStatus</div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Education</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.education.qualification">martialStatus</div>
+                            </div>
                         </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Age/Gender</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left">
-                                <span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.gender"></span></div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Date of Birth</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left" ng-bind="profileCtrl.user.dateOfBirth">Date of Birth</div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Aadhar ID</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left" ng-bind="profileCtrl.user.aadharId">aadharId</div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Mobile</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left" ng-bind="profileCtrl.user.mobileNumber">+91 8886867695</div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Email</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Skype Id</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left" ng-bind="profileCtrl.user.skypeId">saudam</div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Marital status</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left" ng-bind="profileCtrl.user.maritalStatus">martialStatus</div>
-                        </div>
-                        <div class="large-16 columns">
-                            <div class="large-4 columns"> Education</div>
-                            <div class="columns large-1">:</div>
-                            <div class="large-4 columns left" ng-bind="profileCtrl.user.education.qualification">martialStatus</div>
+                        <!-- /User profile section -->
+                        <div class="col-lg-12 accordion" accordion>
+                            <!-- WORKING INFO section -->
+                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                <strong><span class="left">WORKING INFORMATION</span></strong>
+                            </div>
+                            <div class="row accordion-content">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Occupation</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.occupation.occupationName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Working Organization</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.workingOrganization"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Working Location</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.workingLocation"></div>
+                                </div>
+                            </div>
+                            <!-- /WORKING INFO section -->
+                            <!-- Voter INFO section -->
+                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                <strong><span class="left">VOTER INFORMATION</span></strong>
+                            </div>
+                            <div class="row accordion-content">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Voter Card Id</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.voterCardId"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> AddressLine1</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.addressLine1"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> AddressLine2</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.addressLine2"></div>
+                                </div>
+                                <div class="col-lg-12" ng-repeat="(key, value) in voterNodeObj">
+                                    <div class="col-lg-3 " ng-bind="key">
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-3  left" ng-bind="value"></div>
+                                </div>
+                            </div>
+                            <!-- /Voter INFO section -->
+                            <!-- Residential INFORMATION -->
+                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                <strong><span class="left">RESIDENTIAL INFORMATION</span></strong>
+                            </div>
+                            <div class="row accordion-content">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> AddressLine1</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].addressLine1"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> AddressLine2</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].addressLine2"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Taluk</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.taluk"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Division</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.divisionName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> District</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.district"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Pincode</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.pincodeNumber"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Circle Name</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.circleName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Country</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.country"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Office Name</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Office Type</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeType"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Postal AddressId</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.postalAddressId"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Region Name</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.regionName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> State</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.state"></div>
+                                </div>
+                            </div>
+                            <!-- /Residential INFORMATION -->
+                            <!-- Volunteer INFO section -->
+                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                <strong><span class="left">VOLUNTEER INFORMATION</span></strong>
+                            </div>
+                            <div class="row accordion-content">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Volunteer ID</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.volunteerId"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Volunteer CodeNumber</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.volunteerCodeNumber"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 ">Are you interested in Volunteer work</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.citizen.interestedAsVolunteer"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Which areas are you interested to Volunteer</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.volunteerInterestedAreas[0].volInterestAreaName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Volunteer Category</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.volunteerCategory.volunteerCategoryName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Lead Id</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.volunteerLeadId"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Performance Grade</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.volunteer.performanceGradeDesc"></div>
+                                </div>
+                            </div>
+                            <!-- /Volunteer INFO section -->
+                            <!-- FAMILY INFORMATION -->
+                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                <strong><span class="left">FAMILY INFORMATION</span></strong>
+                            </div>
+                            <div class="row accordion-content">
+                                <div class="col-lg-12"><strong>SPOUSE INFORMATION</strong></div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Spouse Name</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].firstName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Marriage Date</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].marriageDate"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Gender</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].gender"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Date of Birth</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].dateOfBirth"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Education</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].education.qualification"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Relation Id</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].relationId"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Relation Type</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.tblCitizenRelation[0].relationType"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <hr>
+                                </div>
+                                <div class="col-lg-12">
+                                    <strong>CHILDREN INFORMATION</strong>
+                                </div>
+                                <div class="col-lg-12" ng-repeat="child in children">
+                                    <div class="col-lg-3 ">
+                                        Child Name
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.firstName+' '+child.lastName}}</div>
+                                    <div class="col-lg-3 ">
+                                        Date of Birth
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.dateOfBirth}}</div>
+                                    <div class="col-lg-3 ">
+                                        Gender
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.gender}}</div>
+                                    <div class="col-lg-3 ">
+                                        Education
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.education.qualification}}</div>
+                                    <div class="col-lg-3 ">
+                                        Relation Id
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.relationId}}</div>
+                                    <div class="col-lg-3 ">
+                                        Relation Type
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.relationType}}</div>
+                                </div>
+                            </div>
+                            <!-- /FAMILY INFORMATION -->
+                            <!-- CADRE section -->
+                            <div class="row accordion-head" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                <strong><span class="left">CADRE INFORMATION</span></strong>
+                            </div>
+                            <div class="row accordion-content">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Party Membership</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyMembershipId"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Position in the Party</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyDesigination.positionDescription"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Responsibility in the Party</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyResponsibility"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Health Insured</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.healthInsurance"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Life Insured</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.lifeInsurance"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Blood Group</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.bloodGroup.bloodGroupName"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Performance Grade</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.performanceGradeDesc"></div>
+                                </div>
+                            </div>
+                            <!-- /CADRE section -->
                         </div>
                     </div>
-                    <!-- /User profile section -->
-                    <div class="large-16 columns accordion" accordion>
-                        <!-- WORKING INFO section -->
-                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                            <strong><span class="left">WORKING INFORMATION</span></strong>
-                        </div>
-                        <div class="row accordion-content">
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Occupation</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.workInformation.occupation.occupationName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Working Organization</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.workInformation.workingOrganization"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Working Location</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.workInformation.workingLocation"></div>
-                            </div>
-                        </div>
-                        <!-- /WORKING INFO section -->
-                        <!-- Voter INFO section -->
-                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                            <strong><span class="left">VOTER INFORMATION</span></strong>
-                        </div>
-                        <div class="row accordion-content">
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Voter Card Id</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.voter.voterCardId"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> AddressLine1</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.voter.addressLine1"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> AddressLine2</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.voter.addressLine2"></div>
-                            </div>
-                            <div class="large-16 columns" ng-repeat="(key, value) in voterNodeObj">
-                                <div class="large-4 columns" ng-bind="key">
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-4 columns left" ng-bind="value"></div>
-                            </div>
-                        </div>
-                        <!-- /Voter INFO section -->
-                        <!-- Residential INFORMATION -->
-                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                            <strong><span class="left">RESIDENTIAL INFORMATION</span></strong>
-                        </div>
-                        <div class="row accordion-content">
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> AddressLine1</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].addressLine1"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> AddressLine2</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].addressLine2"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Taluk</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.taluk"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Division</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.divisionName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> District</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.district"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Pincode</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.pincodeNumber"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Circle Name</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.circleName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Country</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.country"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Office Name</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Office Type</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeType"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Postal AddressId</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.postalAddressId"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Region Name</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.regionName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> State</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.state"></div>
-                            </div>
-                        </div>
-                        <!-- /Residential INFORMATION -->
-                        <!-- Volunteer INFO section -->
-                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                            <strong><span class="left">VOLUNTEER INFORMATION</span></strong>
-                        </div>
-                        <div class="row accordion-content">
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Volunteer ID</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerId"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Volunteer CodeNumber</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerCodeNumber"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns">Are you interested in Volunteer work</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.citizen.interestedAsVolunteer"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Which areas are you interested to Volunteer</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerInterestedAreas[0].volInterestAreaName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Volunteer Category</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerCategory.volunteerCategoryName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Lead Id</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.volunteerLeadId"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Performance Grade</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.volunteer.performanceGradeDesc"></div>
-                            </div>
-                        </div>
-                        <!-- /Volunteer INFO section -->
-                        <!-- FAMILY INFORMATION -->
-                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                            <strong><span class="left">FAMILY INFORMATION</span></strong>
-                        </div>
-                        <div class="row accordion-content">
-                            <div class="large-16 columns"><strong>SPOUSE INFORMATION</strong></div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Spouse Name</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].firstName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Marriage Date</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].marriageDate"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Gender</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].gender"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Date of Birth</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].dateOfBirth"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Education</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].education.qualification"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Relation Id</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].relationId"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Relation Type</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.tblCitizenRelation[0].relationType"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <hr>
-                            </div>
-                            <div class="large-16 columns">
-                                <strong>CHILDREN INFORMATION</strong>
-                            </div>
-                            <div class="large-16 columns" ng-repeat="child in children">
-                                <div class="large-4 columns">
-                                    Child Name
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-11 columns left">{{child.firstName+' '+child.lastName}}</div>
-                                <div class="large-4 columns">
-                                    Date of Birth
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-11 columns left">{{child.dateOfBirth}}</div>
-                                <div class="large-4 columns">
-                                    Gender
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-11 columns left">{{child.gender}}</div>
-                                <div class="large-4 columns">
-                                    Education
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-11 columns left">{{child.education.qualification}}</div>
-                                <div class="large-4 columns">
-                                    Relation Id
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-11 columns left">{{child.relationId}}</div>
-                                <div class="large-4 columns">
-                                    Relation Type
-                                </div>
-                                <div class="large-1 columns">:</div>
-                                <div class="large-11 columns left">{{child.relationType}}</div>
-                            </div>
-                        </div>
-                        <!-- /FAMILY INFORMATION -->
-                        <!-- CADRE section -->
-                        <div class="row accordion-head" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                            <strong><span class="left">CADRE INFORMATION</span></strong>
-                        </div>
-                        <div class="row accordion-content">
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Party Membership</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyMembershipId"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Position in the Party</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyDesigination.positionDescription"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Responsibility in the Party</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.partyResponsibility"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Health Insured</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.healthInsurance"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Life Insured</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.lifeInsurance"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Blood Group</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.citizen.bloodGroup.bloodGroupName"></div>
-                            </div>
-                            <div class="large-16 columns">
-                                <div class="large-4 columns"> Performance Grade</div>
-                                <div class="columns large-1">:</div>
-                                <div class="large-4 columns left" ng-bind="profileCtrl.user.cadre.performanceGradeDesc"></div>
-                            </div>
-                        </div>
-                        <!-- /CADRE section -->
+                    <div class="col-lg-3  col-md-3 col-sm-12 col-xs-12 members">
+                        <img class="photo1" />
                     </div>
-                </div>
-                <div class="large-4 columns members">
-                    <img class="photo1" />
                 </div>
             </div>
         </div>

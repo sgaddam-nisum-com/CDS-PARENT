@@ -27,11 +27,11 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
          url : "",
          views: {
             'header': {
-                templateUrl: 'views/common/header.html',
+                templateUrl: 'views/common/bootstrap/header.html',
                 controller : "headerController as headerCtrl"
             },
             'footer': {
-                templateUrl: 'views/common/footer.html'                
+                templateUrl: 'views/common/bootstrap/footer.html'                
             }
         }
     })

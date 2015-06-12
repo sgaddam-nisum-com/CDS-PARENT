@@ -1,70 +1,37 @@
-define(['controllers/controllerModule', "underscore"], function (controllerModule,_) {
+define(['controllers/controllerModule', "underscore"], function(controllerModule, _) {
 
-	 controllerModule.controller('cadreDeleteController', ["$scope","$modalInstance","callerScope","listService",function($scope, $modalInstance,callerScope,listService){
- 		
-	 			$scope.showNoRecordsMsg = false;
+    controllerModule.controller('cadreDeleteController', ["$scope", "$modalInstance", "callerScope", "listService",
+        function($scope, $modalInstance, callerScope, listService) {
 
-	 			console.log(listService);
-
-	 			var selectedUsers = callerScope.selectedUsers.join();
-
-	 			var revisedUserArray = angular.copy(callerScope.userList);
-
-	 			console.log(selectedUsers);
-
-	 			console.log(callerScope.userList);
+            $scope.showNoRecordsMsg = false;
 
 
+            $scope.selectedUsersLength = callerScope.selectedUsers.length;
 
-		  		
+            var selectedUsers = callerScope.selectedUsers.join();
 
-		  			for(var i = 0; i< callerScope.selectedUsers; i++){
-		  			
-
-		  					_.each(callerScope.userList, function(user, index){
-		  								
-
-
-		  								if(callerScope.selectedUsers[i] === user.citizenId ){
-		  									
-		  									revisedUserArray.splice(index,1);
-		  								}
-		  					});
-
-		  			}
-
-		  			console.log(revisedUserArray);
-		  			//console.log(index);
-
-		  			callerScope.userList = revisedUserArray;
+            var defSearchObj = {
+                q: "",
+                userType: "2,3,4",
+                limit: 8
+            };
 
 
+            $scope.ok = function() {
 
+                listService.deleteCitizen(selectedUsers, function(resp) {
+                    listService.getUserList(defSearchObj, function(resObj) {
+                        callerScope.userList = resObj.data.searchResults;
+                    });
+                    $modalInstance.close();
+                });
+            };
 
-		  $scope.ok = function () {  
+            $scope.cancel = function() {
+                $modalInstance.dismiss("cancel");
+            };
 
-
-
-		  	listService.deleteCitizen(selectedUsers, function(resp){
-		  		console.log(resp);
-
-
-
-
-
-
-
-
-
-		  	});
-    			$modalInstance.close();
-  			};
-
-		  $scope.cancel = function () {			  				  	
-		    $modalInstance.dismiss("cancel");
-		  };
-
-	}]);
+        }
+    ]);
 
 });
-

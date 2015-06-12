@@ -2,8 +2,7 @@
 
 define(['directives/directiveModule', 'autocomplete'], function(directiveModule) {
     
-
-   
+  
 
     directiveModule.directive('autocompleteAddressDirective', ["registerService",
       

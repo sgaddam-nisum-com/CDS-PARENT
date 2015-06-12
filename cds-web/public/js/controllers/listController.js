@@ -56,11 +56,18 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 });
             };
 
-          /*  this.confirmDelete = function(){
+
+
+            this.confirmDelete = function(){
+            if(selectedUsers.length){
                 self.selectedUsers = selectedUsers;
                  cadreDeleteOverlayModal = appModalService.init("cadreDeleteOverlay.html","cadreDeleteController", self,{class:"cadre-delete-overlay"} )();
+            }else{
+
+                
             }
-*/
+            }
+
           
 
 

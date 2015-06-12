@@ -1,21 +1,20 @@
-<div class="row">
-
-<div class="large-4 columns"> <h1 class="registrationHeading">Edit Profile</h1></div>
-<div class="large-12 columns status-message-wrapper"></div>
-
-</div>
-
-
-
-<div class="row">
-	<div class="large-4 columns leftContent">
-		<!-- Mobile men display -->
-		<select name="left-nav-mobile" id="left-nav-mobile">
-			<option ng-repeat="item in leftNavCtrl.items" data-href="{{item.path}}">{{item.title}}</option>
-		</select>
-		<ul class="side-nav">
-			<li ng-repeat="item in leftNavCtrl.items"><a href="#{{item.path}}" ng-class="{active: leftNavCtrl.isActive(item), disable:!leftNavCtrl.isActive(item), success: leftNavCtrl.isRegistered}" check-reg-status>{{item.title}}</a></li>			
-		</ul>         
-	</div>
-   <div class="large-12 columns" ui-view="formSubsection"> &nbsp </div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 ">
+            <h1 class="registrationHeading">Edit Profile</h1>
+        </div>
+        <div class="col-lg-8  status-message-wrapper"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3  leftContent">
+            <!-- Mobile men display -->
+            <select name="left-nav-mobile" id="left-nav-mobile">
+                <option ng-repeat="item in leftNavCtrl.items" data-href="{{item.path}}">{{item.title}}</option>
+            </select>
+            <ul class="nav nav-pills nav-stacked side-nav">
+                <li ng-repeat="item in leftNavCtrl.items"><a href="#{{item.path}}" ng-class="{active: leftNavCtrl.isActive(item), disable:!leftNavCtrl.isActive(item), success: leftNavCtrl.isRegistered}" check-reg-status>{{item.title}}</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-9" ui-view="formSubsection"> &nbsp </div>
+    </div>
 </div>

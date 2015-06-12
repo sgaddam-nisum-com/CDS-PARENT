@@ -1495,7 +1495,7 @@ body .navigation .top-bar-section ul li:active a {
 .search-filter .search-btn {
   float: left;
   width: 35px;
-  height: 37px;
+  height: 34px;
   border: none;
   background: url(../images/cds-sprite.png) no-repeat 0 -217px;
   cursor: pointer;
@@ -1505,7 +1505,6 @@ body .navigation .top-bar-section ul li:active a {
 .search-filter .adv-search {
   float: left;
   padding: 7px 8px;
-  margin: 3px 0 0 0;
   border: none;
   background: #4b4b4b;
   cursor: pointer;
@@ -1610,7 +1609,7 @@ body .navigation .top-bar-section ul li:active a {
 .filter-options .options ul {
   list-style: none;
   float: left;
-  margin: 0 0 0 10px;
+  padding: 5px;
 }
 
 /* line 107, ../scss/components/_list.scss */
@@ -1623,7 +1622,7 @@ body .navigation .top-bar-section ul li:active a {
 .filter-options input.age {
   display: inline-block;
   width: 60px;
-  margin-left: 25px;
+  margin-left: 4px;
   margin-right: 12px;
   background: #e3ebef;
   border: solid 1px #a5cbde;
@@ -1674,8 +1673,8 @@ body .navigation .top-bar-section ul li:active a {
 /* line 154, ../scss/components/_list.scss */
 .tiles .photo2 img {
   border: solid 5px #fff;
-  height: 113px;
-  width: 140px;
+  height: 200px;
+  width: 100%;
   vertical-align: inherit;
 }
 
@@ -1709,60 +1708,56 @@ body .navigation .top-bar-section ul li:active a {
   overflow-x: hidden;*/
 }
 
-/* line 185, ../scss/components/_list.scss */
+/*
 .tiles-list ul {
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
-
-/* line 189, ../scss/components/_list.scss */
 .tiles-list ul li {
   padding: 0;
-}
-
-/* line 192, ../scss/components/_list.scss */
-.tiles-list ul li .tiles {
+} */
+/* line 193, ../scss/components/_list.scss */
+.tiles-list .tiles {
   background: #fff;
   padding: 0px;
   margin: 10px;
   min-height: 14em;
 }
 
-/* line 198, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .photo1 {
+/* line 199, ../scss/components/_list.scss */
+.tiles-list .tiles .photo1 {
   background: url(../images/image.png) no-repeat top center;
-  height: 113px;
+  height: 200px;
   margin: 0;
   border: solid 1px #fff;
 }
 
-/* line 204, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .photo2 {
+/* line 205, ../scss/components/_list.scss */
+.tiles-list .tiles .photo2 {
   background: url(../images/image2.png) no-repeat top center;
-  width: 140px;
+  width: 100%;
   height: 113px;
   display: inline-block;
   margin: 0;
   border: solid 1px #fff;
 }
 
-/* line 212, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .details {
+/* line 213, ../scss/components/_list.scss */
+.tiles-list .tiles .details {
   margin: 15px 10px;
 }
 
-/* line 215, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .details h6 {
+/* line 216, ../scss/components/_list.scss */
+.tiles-list .tiles .details h6 {
   font-size: 13px;
   font-weight: bold;
   word-break: break-all;
   word-wrap: break-word;
-  height: 40px;
   overflow: hidden;
 }
 
-/* line 223, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .details label {
+/* line 224, ../scss/components/_list.scss */
+.tiles-list .tiles .details label {
   font-size: 13px;
   word-wrap: break-word;
   word-break: break-all;
@@ -1770,31 +1765,40 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 230, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .status {
+/* line 231, ../scss/components/_list.scss */
+.tiles-list .tiles .status {
   background: #999999;
   padding: 6px;
 }
 
-/* line 234, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .status input[type="checkbox"] {
+/* line 235, ../scss/components/_list.scss */
+.tiles-list .tiles .status input[type="checkbox"] {
   margin: 0;
 }
 
-/* line 237, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .status .volunteer, .volunteer {
+/* line 238, ../scss/components/_list.scss */
+.tiles-list .tiles .status .volunteer, .volunteer {
   background: url(../images/cds-sprite.png) no-repeat 0 -152px;
-  width: 25px;
+  width: 30px;
   height: 26px;
   display: inline-block;
-  margin: 0 5px 0 0;
 }
 
 /* line 244, ../scss/components/_list.scss */
-.tiles-list ul li .tiles .status .cadre, .cadre {
+.tiles-list .tiles .status .cadre, .cadre {
   background: url(../images/cds-sprite.png) no-repeat 0 -186px;
   width: 25px;
   height: 26px;
+  display: inline-block;
+}
+
+/* line 254, ../scss/components/_list.scss */
+.status-tab {
+  height: 35px;
+}
+/* line 256, ../scss/components/_list.scss */
+.status-tab input {
+  margin-top: 5px !important;
   display: inline-block;
 }
 
@@ -1969,39 +1973,45 @@ body .navigation .top-bar-section ul li:active a {
 /* line 1, ../scss/components/_form.scss */
 .cssSlideUp {
   transition: .5s linear all;
-  height: 175px;
   overflow: hidden;
 }
 
-/* line 6, ../scss/components/_form.scss */
+/* line 5, ../scss/components/_form.scss */
 .cssSlideUp.ng-hide {
   height: 0;
 }
 
-/* line 9, ../scss/components/_form.scss */
+/* line 8, ../scss/components/_form.scss */
 .active {
   background-image: url("../images/left-nav-active-tab.png");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-/* line 14, ../scss/components/_form.scss */
+/* line 13, ../scss/components/_form.scss */
 .formContent {
   margin-top: 30px;
   min-height: 700px;
 }
 
-/* line 18, ../scss/components/_form.scss */
+/* line 19, ../scss/components/_form.scss */
+.formContent label {
+  font-weight: normal;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+/* line 26, ../scss/components/_form.scss */
 .formContent .input {
   width: 350px;
 }
 
-/* line 21, ../scss/components/_form.scss */
+/* line 29, ../scss/components/_form.scss */
 .radioGroup {
-  margin-top: 10px;
+  /* margin-top:10px; */
 }
 
-/* line 24, ../scss/components/_form.scss */
+/* line 32, ../scss/components/_form.scss */
 .formContent .submit, .submit {
   background-color: #EFD303;
   color: black;
@@ -2014,7 +2024,7 @@ body .navigation .top-bar-section ul li:active a {
   box-shadow: 0 3px 0 rgba(122, 107, 11, 0.7);
 }
 
-/* line 35, ../scss/components/_form.scss */
+/* line 43, ../scss/components/_form.scss */
 .formContent .cancel, .cancel {
   background-color: #B0B0B0;
   color: black;
@@ -2025,7 +2035,7 @@ body .navigation .top-bar-section ul li:active a {
   box-shadow: 0 3px 0 rgba(176, 176, 176, 0.7);
 }
 
-/* line 44, ../scss/components/_form.scss */
+/* line 52, ../scss/components/_form.scss */
 .link {
   text-decoration: underline;
 }
@@ -2043,9 +2053,10 @@ body .navigation .top-bar-section ul li:active a {
   line-height: 40px;
   background: #A2C2D5;
   border: 1px solid #000;
+  outline: none;
 }
 
-/* line 12, ../scss/components/_left-nav.scss */
+/* line 13, ../scss/components/_left-nav.scss */
 .side-nav li a.disable,
 .side-nav li a.disable:hover {
   background: #E6EAEB !important;
@@ -2054,7 +2065,7 @@ body .navigation .top-bar-section ul li:active a {
   /*pointer-events:none;*/
 }
 
-/* line 20, ../scss/components/_left-nav.scss */
+/* line 21, ../scss/components/_left-nav.scss */
 .side-nav li a.active,
 .side-nav li a.active:hover,
 .side-nav li a.active:visited {
@@ -2066,7 +2077,7 @@ body .navigation .top-bar-section ul li:active a {
   color: white;
 }
 
-/* line 31, ../scss/components/_left-nav.scss */
+/* line 32, ../scss/components/_left-nav.scss */
 .side-nav li a.success,
 .side-nav li a.success:hover,
 .side-nav li a.success {
@@ -2077,45 +2088,45 @@ body .navigation .top-bar-section ul li:active a {
   background: url("../images/tick-mark.png") no-repeat right center #8ebdce !important;
 }
 
-/* line 42, ../scss/components/_left-nav.scss */
+/* line 43, ../scss/components/_left-nav.scss */
 #left-nav-mobile {
   display: none;
 }
 
-/* line 45, ../scss/components/_left-nav.scss */
+/* line 46, ../scss/components/_left-nav.scss */
 .rightContent {
   border: 1px solid #ccc;
-  margin-left: -51px !important;
+  margin-left: -77px !important;
 }
 
-/* line 49, ../scss/components/_left-nav.scss */
+/* line 50, ../scss/components/_left-nav.scss */
 .leftContent {
   z-index: 1;
 }
 
-/* line 53, ../scss/components/_left-nav.scss */
+/* line 54, ../scss/components/_left-nav.scss */
 .registrationHeading {
   padding-left: 15px;
   margin: 20px 0 20px 0;
 }
 
-/* line 58, ../scss/components/_left-nav.scss */
+/* line 59, ../scss/components/_left-nav.scss */
 .required {
   border-left: 4px solid #FF3A3A !important;
 }
 
 /* file input styles*/
-/* line 62, ../scss/components/_left-nav.scss */
+/* line 63, ../scss/components/_left-nav.scss */
 .input-group-addon, .input-group-btn, .input-group .form-control {
   display: table-cell;
 }
 
-/* line 66, ../scss/components/_left-nav.scss */
+/* line 67, ../scss/components/_left-nav.scss */
 .mock-input {
   float: left;
 }
 
-/* line 69, ../scss/components/_left-nav.scss */
+/* line 70, ../scss/components/_left-nav.scss */
 .mock-browse {
   height: 35px;
   background-color: #0174B7;
@@ -2130,12 +2141,12 @@ body .navigation .top-bar-section ul li:active a {
   padding-left: 25px;
 }
 
-/* line 82, ../scss/components/_left-nav.scss */
+/* line 83, ../scss/components/_left-nav.scss */
 .mock-browse label {
   color: #fff !important;
 }
 
-/* line 85, ../scss/components/_left-nav.scss */
+/* line 86, ../scss/components/_left-nav.scss */
 #profilePhoto {
   position: absolute;
   visibility: hidden;
@@ -3020,7 +3031,7 @@ div.navigation a.next {
 
 /* line 11, ../scss/components/_view-tasks.scss */
 .task-details .calender {
-  background: #fff url(../images/calender-icon.png) no-repeat right center;
+  background-image: url(../images/calender-icon.png) no-repeat right center;
 }
 
 /* line 14, ../scss/components/_view-tasks.scss */

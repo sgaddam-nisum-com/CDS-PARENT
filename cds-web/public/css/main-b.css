@@ -11593,53 +11593,53 @@ div.ui-grid-cell input.ng-valid {
 }
 
 /*# sourceMappingURL=angular-chart.css.map */
-/* line 1, ../scss/bootstrap/_overrides.scss */
+/* line 4, ../scss/bootstrap/_overrides.scss */
 body {
   padding-top: 0px;
 }
 
-/* line 5, ../scss/bootstrap/_overrides.scss */
+/* line 9, ../scss/bootstrap/_overrides.scss */
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1100px;
 }
 
-/* line 10, ../scss/bootstrap/_overrides.scss */
+/* line 14, ../scss/bootstrap/_overrides.scss */
 .right {
   float: right;
 }
 
-/* line 14, ../scss/bootstrap/_overrides.scss */
+/* line 18, ../scss/bootstrap/_overrides.scss */
 .left {
   float: left;
 }
 
-/* line 18, ../scss/bootstrap/_overrides.scss */
+/* line 22, ../scss/bootstrap/_overrides.scss */
 .top-bar-section li {
   line-height: 45px;
 }
 
-/* line 21, ../scss/bootstrap/_overrides.scss */
+/* line 25, ../scss/bootstrap/_overrides.scss */
 .top-bar-section ul {
   margin-bottom: 0px;
 }
 
-/* line 25, ../scss/bootstrap/_overrides.scss */
+/* line 29, ../scss/bootstrap/_overrides.scss */
 nav ul ul a {
   color: #fff;
 }
 
-/* line 29, ../scss/bootstrap/_overrides.scss */
+/* line 33, ../scss/bootstrap/_overrides.scss */
 .top-sub-links li a {
   color: #ffffff !important;
 }
 
-/* line 33, ../scss/bootstrap/_overrides.scss */
+/* line 37, ../scss/bootstrap/_overrides.scss */
 .subscribe-btn, .subscribe {
   width: 300px;
 }
 
-/* line 38, ../scss/bootstrap/_overrides.scss */
+/* line 42, ../scss/bootstrap/_overrides.scss */
 .page-header {
   margin-top: 10px;
 }

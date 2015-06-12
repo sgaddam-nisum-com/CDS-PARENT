@@ -33,7 +33,7 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Priority:</label>
-                                                    <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities" class="form-control">
+                                                    <select ng-disabled="viewTaskCtrl.assignedTask" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities" class="form-control">
                                                         <option>Select Priority</option>
                                                     </select>
                                                 </div>
@@ -41,7 +41,7 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Assigned Date:</label>
-                                                    <input type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate" />
+                <input ng-disabled="viewTaskCtrl.assignedTask" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate">
                                                 </div>
                                             </div>
                                         </div>
@@ -49,20 +49,20 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Target Date:</label>
-                                                    <input type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" />
+                                                    <input ng-disabled="viewTaskCtrl.assignedTask" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Work Location:</label>
-                                                    <input type="text" ng-model="viewTaskCtrl.taskDetails.location" class="form-control" />
+                                                    <input ng-disabled="viewTaskCtrl.assignedTask" type="text" ng-model="viewTaskCtrl.taskDetails.location" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Assigned to:</label>
                                                     
-            <input autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
+            <input ng-disabled="viewTaskCtrl.assignedTask" autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
             <img src="images/searchicon.png" class="cadre-search-icon-view" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)">
 
 
@@ -126,13 +126,20 @@
                     <img src="images/image.png" class="img-responsive" />
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <div> Age/Gender: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.age}}  {{viewTaskCtrl.taskDetails.taskWorkAllocation.gender}}</strong>
+                            <div> Age/Gender: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.age}} / {{viewTaskCtrl.taskDetails.taskWorkAllocation.gender}}</strong>
                             </div>
                             <div>Phone: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.phoneNumber}}</strong> </div>
                             <div>Email: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.emailId}}
                             </strong></div>
                             <div> Location: <strong>{{viewTaskCtrl.taskDetails.location}}</strong></div>
-                            <div>Constituency: <strong>{{viewTaskCtrl.taskDetails.taskWorkAllocation.constituency}}</strong></div>
+                            <div> Assembly Constituency: <strong>{{viewTaskCtrl.assigneeObj["Assembly Constitueny"]}}</strong></div>
+                            <div> MP Constituency: <strong>{{viewTaskCtrl.assigneeObj["MP Constituency"]}}</strong></div>
+                            <div>Village: <strong>{{viewTaskCtrl.assigneeObj.Village}}</strong></div>
+                            <div>Mandal: <strong>{{viewTaskCtrl.assigneeObj.Mandal}}</strong></div>
+                            <div>District: <strong>{{viewTaskCtrl.assigneeObj.District}}</strong></div>
+                            <div>State: <strong>{{viewTaskCtrl.assigneeObj.State}}</strong></div>
+                            <div>Country: <strong>{{viewTaskCtrl.assigneeObj.Country}}</strong></div>
+
                         </div>
                     </div>
                 </div>

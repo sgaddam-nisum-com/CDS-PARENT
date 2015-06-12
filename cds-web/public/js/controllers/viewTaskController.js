@@ -5,6 +5,8 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
            console.log(stateParams);
             var self = this;
 
+            self.assignedTask = false;
+
             self.taskDetails = {};
             self.taskDetails.taskWorkAllocation = {};
 
@@ -16,8 +18,15 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 submitValidForm: false,
                 runCallBack: false,
             };            
-            taskService.getTaskDetails(taskId, function(resp){
-            self.taskDetails = resp.data;
+            taskService.getTaskDetails(taskId, function(resp){                
+                self.taskDetails = resp.data;
+                self.assigneeObj = generateParamObject(resp.data.taskWorkAllocation.constituency);
+                console.log(self.assigneeObj);
+
+
+
+
+
                 self.assignedToCitizenName = angular.copy(self.taskDetails.taskWorkAllocation.firstName) +" "+ angular.copy(self.taskDetails.taskWorkAllocation.lastName);
             });  
             taskService.getTaskStatuses(function(resp){
@@ -45,6 +54,13 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 });
              
             }
+
+
+
+
+
+
+
 
 
             this.save = function() {            
@@ -102,6 +118,19 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             this.clear = function(){
                 self.comments.commentDescription = "";
             }
+
+           function generateParamObject(objString){                    
+                objString = objString || "";
+                var keysArray = objString.split(",");
+                var keysObj = {};                    
+                for(var i=0; i<keysArray.length; i++){
+                    var splitArray = keysArray[i].split(":");
+                    keysObj[splitArray[0]]=splitArray[1];
+                }
+                return keysObj;
+            }
+
+
 
 
 
