@@ -132,3 +132,10 @@
   text-align: center;
   padding: 5px 0 0 0; 
 }
+
+
+@media only screen and (width: 768px) {
+  .registration-wrapper .img-responsive {
+    display: none; 
+  } 
+}

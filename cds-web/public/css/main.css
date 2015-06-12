@@ -482,16 +482,37 @@ footer.fixed-footer {
 /* Only for 1921px and above */
 /* From 1441px to 1920 */
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (width: 768px) {
+  /* line 100, ../scss/components/_footer.scss */
+  header .navigation {
+    text-align: center;
+  }
+
+  /* line 103, ../scss/components/_footer.scss */
+  header .navigation ul {
+    padding: 0;
+  }
+}
 @media only screen and (max-width: 768px) {
-  /* line 102, ../scss/components/_footer.scss */
+  /* line 110, ../scss/components/_footer.scss */
   .email-subs {
     text-align: center;
   }
 
-  /* line 105, ../scss/components/_footer.scss */
+  /* line 113, ../scss/components/_footer.scss */
   .social {
     text-align: center;
     padding: 10px 0;
+  }
+
+  /* line 117, ../scss/components/_footer.scss */
+  .subscribe-btn, .subscribe {
+    width: 80%;
+  }
+
+  /* line 120, ../scss/components/_footer.scss */
+  .social {
+    text-align: right;
   }
 }
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
@@ -1414,7 +1435,7 @@ body .navigation .top-bar-section ul li:active a {
 
   /* line 472, ../scss/components/_home.scss */
   .top-sub-links {
-    padding: 0 0 8px 0;
+    padding: 0;
   }
 
   /* line 475, ../scss/components/_home.scss */
@@ -1441,6 +1462,17 @@ body .navigation .top-bar-section ul li:active a {
   .user-log {
     display: block;
     padding: 0 0 10px 0;
+  }
+
+  /* line 491, ../scss/components/_home.scss */
+  .registration-wrapper .img-responsive {
+    display: none;
+  }
+
+  /* line 494, ../scss/components/_home.scss */
+  .social {
+    text-align: center;
+    padding-bottom: 0;
   }
 }
 /* line 1, ../scss/components/_list.scss */
@@ -1928,6 +1960,12 @@ body .navigation .top-bar-section ul li:active a {
   padding: 5px 0 0 0;
 }
 
+@media only screen and (width: 768px) {
+  /* line 138, ../scss/components/_signin.scss */
+  .registration-wrapper .img-responsive {
+    display: none;
+  }
+}
 /* line 1, ../scss/components/_form.scss */
 .cssSlideUp {
   transition: .5s linear all;

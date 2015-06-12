@@ -442,7 +442,7 @@ body .navigation .top-bar-section ul li:active a{
     text-align: left;
   }
   .top-bar-section ul li > a {
-    padding: 12px 0 12px 10px;
+    padding: 12px 0 12px 10px; 
   }
   .top-bar-section ul li > a.active {
     background: #16578f !important;
@@ -470,7 +470,7 @@ body .navigation .top-bar-section ul li:active a{
     padding-left: 10px;
   }
   .top-sub-links {
-    padding: 0 0 8px 0;
+    padding: 0;
   }
   .form-group {
     padding: 10px 0;
@@ -487,6 +487,13 @@ body .navigation .top-bar-section ul li:active a{
   .user-log {
     display: block;
     padding: 0 0 10px 0;
+  }
+  .registration-wrapper .img-responsive {
+    display: none;
+  }
+  .social {
+    text-align: center;
+    padding-bottom: 0;
   }
 }
 
