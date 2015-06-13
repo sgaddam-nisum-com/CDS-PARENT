@@ -11643,3 +11643,9 @@ nav ul ul a {
 .page-header {
   margin-top: 10px;
 }
+
+/* line 46, ../scss/bootstrap/_overrides.scss */
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
