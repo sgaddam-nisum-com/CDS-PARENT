@@ -29,3 +29,22 @@
 .status-message-wrapper{
   padding-top: 20px;
 }
+
+
+
+.right-responsive{
+  float: right;
+}
+
+@media only screen and (max-width: 767px) {
+.right-responsive{
+  float: none;
+}
+.name-field{
+  margin-bottom: 10px;
+}
+.gender-field{
+  display: block;
+}
+
+}

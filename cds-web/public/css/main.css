@@ -2763,6 +2763,27 @@ div.navigation a.next {
   padding-top: 20px;
 }
 
+/* line 35, ../scss/components/_registration.scss */
+.right-responsive {
+  float: right;
+}
+
+@media only screen and (max-width: 767px) {
+  /* line 40, ../scss/components/_registration.scss */
+  .right-responsive {
+    float: none;
+  }
+
+  /* line 43, ../scss/components/_registration.scss */
+  .name-field {
+    margin-bottom: 10px;
+  }
+
+  /* line 46, ../scss/components/_registration.scss */
+  .gender-field {
+    display: block;
+  }
+}
 /* line 1, ../scss/components/_task.scss */
 #accordion a span.title {
   float: left;
