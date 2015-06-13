@@ -2,7 +2,7 @@
  
 
 define(['directives/directiveModule','accordion'], function (directiveModule) {
-	directiveModule.directive('accordion', ["cdsService",function(cdsService){			
+	directiveModule.directive('accordionJq', ["cdsService",function(cdsService){			
 		return {	
 			restrict: "A",				
 			link: function(scope, elem, attrs) {					
