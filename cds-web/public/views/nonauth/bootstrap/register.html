@@ -13,20 +13,15 @@
                     <div class="col-sm-3">
                         <label class="right-responsive inline">Name:</label>
                     </div>
-
                     <div class="col-sm-3 name-field">
-                        <input type="text" tabindex="11" placeholder="First Name" class="form-control name required" ng-model="registerCtrl.user.firstName" data-val="signupFirstName"/>
+                        <input type="text" tabindex="11" placeholder="First Name" class="form-control name required" ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
                     </div>
-
                     <div class="col-sm-3 name-field">
                         <input type="text" tabindex="12" placeholder="Middle Name" class="form-control" ng-model="registerCtrl.user.middleName" />
                     </div>
-
                     <div class="col-sm-3 name-field">
                         <input type="text" tabindex="13" placeholder="Last Name" class="form-control name required" ng-model="registerCtrl.user.lastName" data-val="signupLastName" />
                     </div>
-                    
-                    
                     <div class="col-sm-9  right">
                         <div class="error-class">
                             <div class="error-content"></div>
@@ -53,7 +48,7 @@
                         <label class="inline right-responsive">Password:</label>
                     </div>
                     <div class="col-sm-6 col-sm-12">
-                        <input type="password"  tabindex="15" class="form-control required" ng-model="registerCtrl.user.password" data-val="userPassword" data-eq="password" />
+                        <input type="password" tabindex="15" class="form-control required" ng-model="registerCtrl.user.password" data-val="userPassword" data-eq="password" />
                     </div>
                     <div class="col-sm-9 right">
                         <div class="error-class">
@@ -94,7 +89,7 @@
                         <label class="inline right-responsive">Mobile Number:</label>
                     </div>
                     <div class="col-sm-6" resource-directive>
-                        <input type="text"  tabindex="18" id="mobile" class="form-control input required loader-input" name="mobile" data-val="userMobile" ng-model="registerCtrl.user.mobileNumber" data-inputname="mobileNumber">
+                        <input type="text" tabindex="18" id="mobile" class="form-control input required loader-input" name="mobile" data-val="userMobile" ng-model="registerCtrl.user.mobileNumber" data-inputname="mobileNumber">
                     </div>
                     <div class="col-sm-9 right">
                         <div class="error-class">
@@ -136,23 +131,19 @@
                         <label class="right-responsive">Gender:</label>
                     </div>
                     <div class="col-sm-6  gender">
-                       
-                        <span class = "gender-field">
+                        <span class="gender-field">
                         <input type="radio" tabindex="21"  name="gender" value="M" id="male" data-radio="gender" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)">
                         <label for="male">Male</label>
                         
                         </span>
-
                         <span class="gender-field">
                         <input type="radio" name="gender" tabindex="22" value="F" id="female" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)" data-radio="gender">
                         <label for="female">Female</label>
                         </span>
-
                         <span class="gender-field">
                         <input type="radio" name="gender" value="O" tabindex="23"  id="notToDisclose" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)" data-radio="gender">
                         <label for="notToDisclose">Not to be disclosed</label>
                         </span>
-
                     </div>
                     <div class="col-sm-9 right">
                         <div class="error-class">
@@ -162,13 +153,22 @@
                 </div>
                 <!-- To be a Volunteer -->
                 <div class="row">
-                    <div class="col-sm-3 "> &nbsp; </div>
-                    <div class="col-sm-6 ">
-                        <input type="radio" tabindex="24" id="volunteer" class="typeOfMembership" name="specilization" value="1" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
-                        <label for="volunteer">Do you want to be a volunteer</label>
-                        <br>
-                        <input type="radio" tabindex="25" id="cadre" class="typeOfMembership" name="specilization" value="2" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
-                        <label for="cadre">Do you want to register as a Cadre</label>
+                    <div class="col-sm-3 ">
+                        <label class="right-responsive">Register as:</label>
+                    </div>
+                    <div class="col-sm-6 gender">
+                        <span class="gender-field">
+                            <input type="radio" tabindex="24" id="citizen" class="typeOfMembership" name="specilization" value="0" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
+                            <label for="citizen">Citizen</label>
+                        </span>
+                        <span class="gender-field">
+                            <input type="radio" tabindex="25" id="volunteer" class="typeOfMembership" name="specilization" value="1" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
+                            <label for="volunteer">Volunteer</label>
+                        </span>
+                        <span class="gender-field">
+                            <input type="radio" tabindex="26" id="cadre" class="typeOfMembership" name="specilization" value="2" ng-model="registerCtrl.user.membershipType" ng-change="registerCtrl.trackMembershipType(registerCtrl.user.membershipType)">
+                            <label for="cadre">Cadre</label>
+                        </span>
                     </div>
                     <div class="col-sm-9 right">
                         <div class="error-class">
@@ -180,9 +180,9 @@
                     <div class="col-sm-3 "> &nbsp; </div>
                     <div class="col-sm-6 gender">
                         <label for="newcadre">
-                            <input type="radio"  tabindex="26" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW" ng-change="registerCtrl.trackCadreType()">New</label>
+                            <input type="radio" tabindex="27" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW" ng-change="registerCtrl.trackCadreType()">New</label>
                         <label for="existingcadre">
-                            <input type="radio" tabindex="27" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING" ng-change="registerCtrl.trackCadreType()">Existing</label>
+                            <input type="radio" tabindex="28" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING" ng-change="registerCtrl.trackCadreType()">Existing</label>
                     </div>
                     <div class="col-sm-9 right">
                         <div class="error-class">
@@ -196,7 +196,7 @@
                         <label for="right-label" class="right-responsive inline">Select area of interest:</label>
                     </div>
                     <div class="col-sm-6 ">
-                        <select multiple tabindex="28" ng-options="item.volInterestAreaName for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.selectedInterests" ng-change="registerCtrl.setInterestArea()" class="form-control">
+                        <select multiple tabindex="29" ng-options="item.volInterestAreaName for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.selectedInterests" ng-change="registerCtrl.setInterestArea()" class="form-control">
                             <option value="">Select</option>
                         </select>
                         <div class="error-class">
@@ -232,7 +232,7 @@
                 <div class="row">
                     <div class="col-sm-3 "></div>
                     <div class="col-sm-6  button-wrapper">
-                        <input tabindex="29" type="submit" class="btn button" value="Register" id="formSubmission" />
+                        <input tabindex="30" type="submit" class="btn button" value="Register" id="formSubmission" />
                     </div>
                 </div>
             </div>
