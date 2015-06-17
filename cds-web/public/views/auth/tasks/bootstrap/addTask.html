@@ -83,7 +83,7 @@
                     <div class="col-lg-4 ">Target Date :</div>
                     <div class="col-lg-8 ">
                         
-                        <input type="text" id="dob" class="form-control input required" name="dob"  ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive="taskCtrl.user.taskWorkAllocation.toDate" data-val="toDate">
+                        <input type="text" id="dob" class="form-control input required" name="dob"  ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive="taskCtrl.user.taskWorkAllocation.toDate" data-val="toDate" past-date-disabled="true">
                     </div>
                     <div class="col-lg-8 right">
                       <div class="error-class"><div class="error-content"></div></div>

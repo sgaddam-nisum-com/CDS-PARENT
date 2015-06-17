@@ -6,15 +6,18 @@ define(['directives/directiveModule','datepicker'], function (directiveModule) {
 			restrict: "A",
 			scope:{
 				dob :'=datePickerDirective',
-				futureDateDisabled : "="
+				futureDateDisabled : "=",
+				pastDateDisabled : "="
 			},		
 			link: function(scope, elem, attrs) {						
-				var maxDate = scope.futureDateDisabled? 0 : null;	
+				var maxDate = scope.futureDateDisabled? 0 : null;
+				var minDate = scope.pastDateDisabled? 0 : null;
 
 				$(elem).datepicker({
                     dateFormat:'dd/mm/yy',
 					yearRange: "-100:+5",
-					maxDate : maxDate, 
+					maxDate : maxDate,
+					minDate : minDate, 
 					changeMonth: true,
 					changeYear: true,
                     onSelect:function (date) {					                   	

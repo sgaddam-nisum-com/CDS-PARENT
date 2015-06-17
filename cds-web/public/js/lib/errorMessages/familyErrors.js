@@ -3,7 +3,7 @@ define(['jquery'], function($) {
  return {
   "formGeneric": "Please check all the highlighted fields",
   "spouseFirstName-required": "First Name is a required field.",
-  "spouseFirstName-minCharacters":"First Name Min Should be 5.",
+  "spouseFirstName-minCharacters":"First Name Min Should be 1.",
   "spouseFirstName-maxCharacters":"First Name Max allowed 16.",
 
   "spouseMiddleName-required" : "Middle Name is a required field",

@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-md-8 left">
                     <select id="bloodGroup" name="bloodGroup" class="form-control input" ng-model="cadreCtrl.user.bloodGroupId" data-val="bloodGroupId">
-                        <option value="">Select Blood Group</option>
+                        <option value="0">Select Blood Group</option>
                         <option value="1">A +ve</option>
                         <option value="2">B +ve</option>
                         <option value="3">AB +ve</option>
@@ -87,7 +87,7 @@
                     <label class="right inline">Performance Grade:</label>
                 </div>
                 <div class="col-md-8 right">
-                    <select id="grade" class="form-control input required" name="grade" ng-model="cadreCtrl.user.cadre.performanceGradeId" ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions" data-val="performanceGradeId">
+                    <select id="grade" class="form-control input" name="grade" ng-model="cadreCtrl.user.cadre.performanceGradeId" ng-options="grade.gradeId as grade.gradeDescription for grade in performanceGradeOptions">
                         <option value="">Select Performance Grade</option>
                     </select>
                     <div class="error-class">
