@@ -18,6 +18,7 @@
              self.isNotValid = false;
              self.hideCadreRole = true;
              self.user.membershipType = 0;
+             self.hideAreasOfInterest = true;
              var regConfModalConfig = {
                  keyboard: false,
                  class: "registration-confirm-overlay",
@@ -85,8 +86,11 @@
                      self.user.cadreType = "NEW";
 
                  } else {
+                     self.user.cadreType = "";
                      self.hideCadreRole = true;
+
                  }
+                 self.hideAreasOfInterest = (selectedId != "0") ? false : true;
 
              }
              self.trackCadreType = function() {
@@ -105,6 +109,9 @@
                  if (formStack.isValid && self.isValidForm()) {
                      var requestObj = {};
                      console.log(self.user);
+                     if ((self.user.membershipType == "0") || (self.user.membershipType == "1")) {
+                         delete self.user.cadreType;
+                     }
                      $http({
                          method: "POST",
                          url: appUrlService.quickReg,
