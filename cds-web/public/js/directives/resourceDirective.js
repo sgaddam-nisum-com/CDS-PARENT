@@ -92,6 +92,20 @@ define(['directives/directiveModule'], function(directiveModule) {
         									userNotAvailableMsg = "Username not available";
         									registerService.checkUserNameExists(userInput, availableSuccessCb, userAvailableMsg,userNotAvailableMsg);
         								} else if (inputName == "mobileNumber") {
+                                            var reg = /^[0-9]{1,10}$/;
+                                            if(!reg.test(curElemValue)){
+                                                $(elem).closest(".row").addClass("error-field");
+                                                $(elem).closest(".row").find(".loader-container").remove();
+                                                $(elem).closest(".row").find(".error-content").html("Please enter numbers only.");
+                                                return;
+                                            }
+                                            var mobileval = curElemValue.length === 10 ? true : false;
+                                            if(mobileval === false) {
+                                                $(elem).closest(".row").addClass("error-field");
+                                                $(elem).closest(".row").find(".loader-container").remove();
+                                                $(elem).closest(".row").find(".error-content").html("Mobile number should be 10 digits.");
+                                                return;
+                                            }
         									userAvailableMsg="Mobile Number is available for registration.";
         									userNotAvailableMsg = "Mobile Number is not available for registration.";
         									registerService.checkMobileNoExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);

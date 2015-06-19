@@ -8,7 +8,7 @@ define(['validation'], function(validation) {
     return {
 		spouseFirstName:{
 			required:true,
-			minCharacters:1,
+			minCharacters:3,
 			maxCharacters:16,
 			key_error_msgs:true
 		},
@@ -18,7 +18,7 @@ define(['validation'], function(validation) {
 		},
 		spouseLastName:{
 			required:true,
-			minCharacters:5,
+			minCharacters:1,
 			maxCharacters:16,
 			key_error_msgs:true
 		},

@@ -46,6 +46,7 @@ define(['validation'], function(validation) {
 		},
         userMobile:{
             required : true,
+            regexMatch: '/^[0-9]{1,10}$/',
             minCharacters: 10,
             maxCharacters: 10,
             key_error_msgs: true     
