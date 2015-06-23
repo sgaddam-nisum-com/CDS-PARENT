@@ -3,7 +3,6 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
     controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window",
         function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window) {
 
-            console.log($stateParams);
 
             var self = this,
                 currentCitizenId = $stateParams.citizenId,
@@ -24,7 +23,6 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             }
 
             function initiateProfile(resp) {
-                console.log(resp);
 
                 if (resp.data) {
 
@@ -42,7 +40,6 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                     self.user.cadre.citizen.healthInsurance = ((self.user.cadre.citizen.healthInsurance == 0) ? "No" : "Yes");
                     self.user.cadre.citizen.lifeInsurance = ((self.user.cadre.citizen.lifeInsurance == 0) ? "No" : "Yes");
                     self.user.volunteer.citizen.interestedAsVolunteer = ((self.user.volunteer.citizen.interestedAsVolunteer == 0) ? "No" : "Yes");
-                    console.log(resp.data.volunteer.citizen.interestedAsVolunteer);
                     $scope.voterNodeObj = generateParamObject(resp.data.voter.consituency);
 
                     children = angular.copy(resp.data.tblCitizenRelation);
