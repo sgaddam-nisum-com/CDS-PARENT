@@ -20,7 +20,7 @@
                     <label for="right-label" class="right inline">Position in the Party:</label>
                 </div>
                 <div class="col-md-8 left">
-                    <select id="position" name="position" class="form-control input" ng-model="cadreCtrl.user.cadre.positionId" data-val="positionId">
+                    <select id="position" name="position" class="form-control input" ng-model="cadreCtrl.user.cadre.positionId" data-val="positionId" ng-disabled="cadreCtrl.disableFields">
                         <option value="">Select Position</option>
                         <option value="1">Volunteer</option>
                         <option value="2">Leader</option>
@@ -37,7 +37,7 @@
                     <label for="right-label" class="right inline">Responsibility in the Party:</label>
                 </div>
                 <div class="col-md-8 left">
-                    <input type="text" id="partyResponsibility" class="form-control input" name="partyResponsibility" ng-model="cadreCtrl.user.cadre.partyResponsibility" data-val="partyResponsibility">
+                    <input type="text" id="partyResponsibility" class="form-control input" name="partyResponsibility" ng-model="cadreCtrl.user.cadre.partyResponsibility" data-val="partyResponsibility" ng-disabled="cadreCtrl.disableFields">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-show="cadreCtrl.showGrade">
                 <div class="col-md-4">
                     <label class="right inline">Performance Grade:</label>
                 </div>
