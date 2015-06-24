@@ -106,19 +106,29 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                             dataJson.reqURL = appUrls.saveCadre;
                         }
                         cdsService.getUserSession(function(resp) {
-                            console.log(resp.data);
+
                             role = resp.data.user.appRoles;
-                            console.log(role);
+
                             if (role[role.length - 1].roleName == "Citizen" || role[role.length - 1].roleName == "Volunteer" || role[role.length - 1].roleName == "Cadre") {
 
                                 self.disableFields = true;
                                 self.showGrade = false;
                             }
-
                             if (role[role.length - 1].roleName == "Office Manager" || role[role.length - 1].roleName == "Office Executive" || role[role.length - 1].roleName == "MP") {
 
                                 self.disableFields = false;
                                 self.showGrade = true;
+                            }
+                            if (role[role.length - 1].roleName == "Citizen" || role[role.length - 1].roleName == "Volunteer") {
+                                self.cadreFields = false;
+                                self.hideFields = true;
+                                self.trackInterest = function(interest) {
+                                    self.hideFields = (interest == 1) ? false : true;
+                                }
+
+                            } else {
+                                self.hideFields = false;
+                                self.cadreFields = true;
                             }
 
                         });
@@ -127,11 +137,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                         self.user.interestedAsCadre = "1";
 
                         if (dataJson.citizen) {
+                            alert(123);
+                            console.log(dataJson.citizen.interestedAsCadre);
                             self.user.healthInsurance = dataJson.citizen.healthInsurance;
                             self.user.lifeInsurance = dataJson.citizen.lifeInsurance;
                             self.user.bloodGroupId = dataJson.citizen.bloodGroup.bloodGroupId;
+                            self.user.interestedAsCadre = dataJson.citizen.interestedAsCadre;
                         }
-
+                        self.user.cadre.cadreType = dataJson.cadreType;
                         self.user.cadre.positionId = dataJson.partyDesigination.positionId || "";
                         self.user.cadre.partyMembershipId = dataJson.partyMembershipId;
                         self.user.cadre.partyResponsibility = dataJson.partyResponsibility;

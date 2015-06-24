@@ -4,7 +4,34 @@
             <div class="row" ng-if="cadreCtrl.isNotValidForm">
                 <div class="col-md-8 right  error-class">Please ensure that all the required fields are valid.</div>
             </div>
-            <div class="row">
+            <div class="row form-group" ng-hide="cadreCtrl.cadreFields">
+                <div class="col-md-4">
+                    <label for="left-label" class="right text-right">Enroll as Cadre:</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="radio" name="interested" value="1" ng-model="cadreCtrl.user.interestedAsCadre" id="interestedYes" ng-change="cadreCtrl.trackInterest(cadreCtrl.user.interestedAsCadre)">
+                    <label for="interestedYes">Yes</label>
+                    <input type="radio" name="interested" value="0" ng-model="cadreCtrl.user.interestedAsCadre" id="interestedNo" ng-change="cadreCtrl.trackInterest(cadreCtrl.user.interestedAsCadre)">
+                    <label for="interestedNo">No</label>
+                </div>
+            </div>
+            <div class="row" ng-hide="cadreCtrl.cadreFields">
+                <div class="col-md-4 ">
+                    <label for="left-label" class="right text-right">CadreType:</label>
+                </div>
+                <div class="col-md-8 gender">
+                    <label for="newcadre">
+                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="NEW" ng-change="cadreCtrl.trackCadreType()">New</label>
+                    <label for="existingcadre">
+                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="EXISTING" ng-change="cadreCtrl.trackCadreType()">Existing</label>
+                </div>
+                <div class="col-sm-9 right">
+                    <div class="error-class">
+                        <div class="error-content"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-hide="cadreCtrl.hideFields">
                 <div class="col-md-4">
                     <label for="right-label" class="right inline">Party Membership#:</label>
                 </div>
@@ -15,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-hide="cadreCtrl.hideFields">
                 <div class="col-md-4">
                     <label for="right-label" class="right inline">Position in the Party:</label>
                 </div>
@@ -32,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-hide="cadreCtrl.hideFields">
                 <div class="col-md-4">
                     <label for="right-label" class="right inline">Responsibility in the Party:</label>
                 </div>
