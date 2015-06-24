@@ -82,6 +82,13 @@ define(['services/serviceModule'], function(serviceModule) {
 						cb(resp);
 					});
 				},
+				getsupervisorAllTasks:function(cb){
+					$http.get(appUrlService.getsupervisorAllTasks,{
+						
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
 				
    			}
 

@@ -18,14 +18,18 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 submitValidForm: false,
                 runCallBack: false,
             };            
-            taskService.getTaskDetails(taskId, function(resp){                
+            taskService.getTaskDetails(taskId, function(resp){
                 self.taskDetails = resp.data;
                 self.assigneeObj = generateParamObject(resp.data.taskWorkAllocation.constituency);
-                console.log(self.assigneeObj);
+                var CitizenIds = resp.data.citizenId;
 
-
-
-
+                cdsService.getUserSession(function( userData ){
+                    if(userData.data.user.appUserId === CitizenIds){
+                        self.assignedTask = false;
+                    }else{
+                        self.assignedTask = true;
+                    }
+                });
 
                 self.assignedToCitizenName = angular.copy(self.taskDetails.taskWorkAllocation.firstName) +" "+ angular.copy(self.taskDetails.taskWorkAllocation.lastName);
             });  

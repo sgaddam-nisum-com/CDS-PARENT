@@ -14,7 +14,23 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                 runCallBack: false,
             };
 
+            cdsService.getUserSession(function( userData ){
+                var appRoles = userData.data.user.appRoles;
+                    
+                var topRole, rolesArray=[];
+                appRoles = appRoles || [];
+                
+                for(var i=0; i<appRoles.length; i++){
+                    rolesArray.push(appRoles[i].roleName);
+                }
+
+                if(rolesArray.indexOf("MP") > -1){
+                    $scope.topRole = "MP";
+                }
+            });
                  self.user = {}
+
+            
 
             self.user.taskWorkAllocation = {}
             self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
@@ -33,6 +49,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             });
             taskService.getAllTasks(function(resp){
                 $scope.allTasks = resp.data.tasks;                
+            });
+            taskService.getsupervisorAllTasks(function(resp){
+                $scope.supervisorTaskLists = resp.data.tasks;
             });
 
             this.showCadresList = function(queryString){
@@ -66,11 +85,17 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             this.viewAllTasks = function(){                
                 $state.go('root.allTasks');                
             }
+            this.supervisorviewAllTasks = function(){
+                $state.go('root.supervisorviewAllTasks');
+            }
             this.deleteTask = function(params){
                 taskService.deleteTask(params, function(resp){                     
                     console.log(resp);               
                 });                
             }
+
+            
+
             var formStack = formValidation.init("#myTaskForm", validationMap, errorJson, config);
             this.save = function() { 
 

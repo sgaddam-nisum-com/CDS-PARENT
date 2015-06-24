@@ -14,18 +14,18 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12  task-links">
-                        <a href="#" class="selectedTaskTab">My Tasks</a>
+                        <a href="#">My Tasks</a>
                         <a ng-click="taskCtrl.viewTeamTasks()">My Team Tasks</a>
                         <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
                         <span ng-if="topRole === 'MP'">
-                            <a ng-click="taskCtrl.supervisorviewAllTasks()">Supervisor tasks</a>
+                            <a class="selectedTaskTab" ng-click="taskCtrl.supervisorviewAllTasks()">Supervisor tasks</a>
                         </span>
                     </div>
                 </div>
-                <div class="row tasks-list noTasks" ng-if="myTaskLists.length == 0">
+                <div class="row tasks-list noTasks" ng-if="supervisorTaskLists.length == 0">
                     No tasks to show
                 </div>
-                <div class="row tasks-list" ng-if="myTaskLists.length > 0" ng-repeat="task in myTaskLists">
+                <div class="row tasks-list" ng-if="supervisorTaskLists.length > 0" ng-repeat="task in supervisorTaskLists">
                     <div class="col-lg-12  task-title">
                         <input type="checkbox" />{{task.taskName}}<span class="right"><img src="images/edit-icon.png" alt="edit" ng-click="taskCtrl.viewTask(task.taskId)"/></span>
                     </div>

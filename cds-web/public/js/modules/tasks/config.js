@@ -87,6 +87,16 @@ app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $url
         },
         secured : false
     })
+    .state('root.supervisorviewAllTasks',{
+        url: '/supervisorviewAllTasks',
+        views: {           
+            'content@': {
+                templateUrl: 'views/auth/tasks/bootstrap/supervisorviewAllTasks.html',
+                controller : "taskController as taskCtrl"
+            }
+        },
+        secured : false
+    })
 
 
 }]);

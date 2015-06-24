@@ -63,7 +63,7 @@
                                                     <label>Assigned to:</label>
                                                     
             <input ng-disabled="viewTaskCtrl.assignedTask" autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
-            <img src="images/searchicon.png" class="cadre-search-icon-view" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)">
+            <img src="images/searchicon.png" class="cadre-search-icon-view" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)" ng-hide="viewTaskCtrl.assignedTask">
 
 
                                                 </div>
