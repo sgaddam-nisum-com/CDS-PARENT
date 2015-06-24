@@ -15,9 +15,10 @@
                     <div class="col-lg-12  task-links">
                         <a href="#">My Tasks</a>
                         <a ng-click="taskCtrl.viewTeamTasks()" class="selectedTaskTab">My Team Tasks</a>
-                        <a ng-click="taskCtrl.viewAllTasks()">All tasks</a>
+                        <!-- for "created tasks" files, you can check with "all task" name. -->
+                        <a ng-click="taskCtrl.viewAllTasks()">Created tasks</a>
                         <span ng-if="topRole === 'MP'">
-                            <a ng-click="taskCtrl.supervisorviewAllTasks()">Supervisor tasks</a>
+                            <a ng-click="taskCtrl.supervisorviewAllTasks()">All tasks</a>
                         </span>
                     </div>
                 </div>
