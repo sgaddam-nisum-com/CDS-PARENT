@@ -6,10 +6,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
 
             function($state, $http, appUrls, $scope, registerService, cdsService, $sessionStorage) {
 
-
-
-                var
-                    cdsSession = $sessionStorage.cds = $sessionStorage.cds || {},
+                var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {},
                     config,
                     dataJson = {},
                     formStack,
@@ -137,8 +134,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                         self.user.interestedAsCadre = "1";
 
                         if (dataJson.citizen) {
-                            alert(123);
-                            console.log(dataJson.citizen.interestedAsCadre);
                             self.user.healthInsurance = dataJson.citizen.healthInsurance;
                             self.user.lifeInsurance = dataJson.citizen.lifeInsurance;
                             self.user.bloodGroupId = dataJson.citizen.bloodGroup.bloodGroupId;
