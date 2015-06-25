@@ -43,4 +43,6 @@ exports.profile = function(req, res, next) {
 exports.editprofile = function(req, res, next) {
     res.render('layouts/index.html', {});
 };
-
+exports.requests = function(req, res, next) {
+    res.render('layouts/index.html', {});
+}

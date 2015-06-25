@@ -19,7 +19,7 @@ define(['services/serviceModule'], function(serviceModule) {
                                 Dashboard : {name : "Dashboard" , url : "/dashboard"}, 
                                 Tasks : {name : "Tasks" , url : "/tasks"},
                                 Calendar :  {name : "Calendar" , url : "#"},
-                                Requests : {name : "Requests" , url : "#"},
+                                Requests : {name : "Requests" , url : "/requests"},
                                 Registrants:{name : "Registrants" ,url : "/profile#/list"}
                             }
                             

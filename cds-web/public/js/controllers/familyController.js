@@ -45,12 +45,18 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                         var requestData = [];
                         var spouseObj = {};
                         var childObj = {};
-                        spouseObj.relationType = "Wife";
+
                         spouseObj.educationId = self.user.spouseData.education.educationId;
                         spouseObj.firstName = self.user.spouseData.firstName;
                         spouseObj.lastName = self.user.spouseData.lastName;
                         spouseObj.middleName = self.user.spouseData.middleName;
                         spouseObj.gender = self.user.spouseData.gender;
+                        console.log(spouseObj.gender);
+                        if (spouseObj.gender == 'M') {
+                            spouseObj.relationType = "Husband";
+                        } else {
+                            spouseObj.relationType = "Wife";
+                        }
                         spouseObj.marriageDate = self.user.spouseData.marriageDate;
                         spouseObj.dateOfBirth = self.user.spouseData.dateOfBirth;
                         requestData.push(spouseObj);

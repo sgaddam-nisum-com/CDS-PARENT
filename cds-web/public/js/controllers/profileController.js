@@ -26,9 +26,9 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
                 if (resp.data) {
 
-                    if (resp.data.gender = "M") {
+                    if (resp.data.gender == "M") {
                         resp.data.gender = "MALE";
-                    } else if (resp.data.gender = "F") {
+                    } else if (resp.data.gender == "F") {
 
                         resp.data.gender = "FEMALE"
                     } else {

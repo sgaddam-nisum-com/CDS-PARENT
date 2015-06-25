@@ -2784,6 +2784,205 @@ div.navigation a.next {
     display: block;
   }
 }
+/* All Requests Styles */
+/* line 3, ../scss/components/_requests.scss */
+.new-request {
+  background: url(../images/add_request.jpg) no-repeat;
+  width: 135px;
+  height: 26px;
+  border: none;
+}
+
+/* line 10, ../scss/components/_requests.scss */
+.actions {
+  background: url(../images/actionsBtn.jpg) no-repeat;
+  width: 72px;
+  height: 26px;
+  border: none;
+}
+
+/* line 17, ../scss/components/_requests.scss */
+.advance-search {
+  background: #DBE8EE;
+  border: medium none;
+  color: #000;
+  font-size: 10px;
+  cursor: pointer;
+  float: left;
+  margin: 0px 8px 4px 10px;
+  padding: 5px;
+  border: 1px solid #8FABB9;
+  border-radius: 3px;
+}
+
+/* line 30, ../scss/components/_requests.scss */
+.top_actions {
+  margin-top: 4px;
+}
+
+/* line 34, ../scss/components/_requests.scss */
+.middle_level {
+  padding-top: 7px;
+}
+
+/* line 38, ../scss/components/_requests.scss */
+.list-inline > li:first-child {
+  padding-left: 6px;
+}
+
+/* line 42, ../scss/components/_requests.scss */
+.task-status-info ul li {
+  width: 231px;
+  margin-top: 10px;
+}
+
+/* line 47, ../scss/components/_requests.scss */
+.task-status-info ul li:nth-child(4) {
+  border: none;
+}
+
+/* line 51, ../scss/components/_requests.scss */
+.adv_search_arrow {
+  background-image: url("images/filter-arrow-blue.png");
+  background-repeat: no-repeat;
+  display: block;
+  float: left;
+  height: 20px;
+  left: 547px;
+  position: relative;
+  top: -61px;
+  width: 20px;
+}
+
+/* line 63, ../scss/components/_requests.scss */
+.req_action {
+  margin-right: 88px;
+  top: -10px;
+  display: none;
+}
+
+/* line 69, ../scss/components/_requests.scss */
+.req_action ul {
+  list-style: none;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  z-index: 99999999999;
+}
+
+/* line 78, ../scss/components/_requests.scss */
+.req_action ul li {
+  background-color: #e6eaeb;
+  width: 115px;
+  border-bottom: 1px solid #fff;
+}
+
+/* line 84, ../scss/components/_requests.scss */
+.req_action ul li:hover {
+  background-color: #cddae6;
+}
+
+/* line 88, ../scss/components/_requests.scss */
+.req_action ul li a {
+  padding: 8px;
+  font-size: 11px;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 95, ../scss/components/_requests.scss */
+.req_action ul li a:hover {
+  color: #16578D;
+}
+
+/* line 99, ../scss/components/_requests.scss */
+.adv_search_div {
+  border: 1px solid #cddae6;
+}
+
+/* line 104, ../scss/components/_requests.scss */
+.adv_search_title {
+  padding: 10px 10px 0 29px;
+  background: #cddae6;
+}
+
+/* line 109, ../scss/components/_requests.scss */
+.adv_search_box {
+  padding: 15px;
+}
+
+/* line 113, ../scss/components/_requests.scss */
+.ticket_details_div {
+  margin-bottom: 0px;
+  background: #cddae6;
+}
+
+/* line 118, ../scss/components/_requests.scss */
+.ticket_title {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 123, ../scss/components/_requests.scss */
+.ticket_details {
+  background: #eef2f6;
+  border: 1px solid #cddae6;
+  margin-bottom: 10px;
+}
+
+/* line 129, ../scss/components/_requests.scss */
+.ticket_details p:first-child {
+  margin-top: 13px;
+}
+
+/*Add new Request Styles*/
+/* line 134, ../scss/components/_requests.scss */
+.middle_level {
+  padding-top: 7px;
+}
+
+/*View Request Styles*/
+/* line 139, ../scss/components/_requests.scss */
+.req_title {
+  background: #cddae6;
+}
+
+/* line 143, ../scss/components/_requests.scss */
+.req_update {
+  background: #f1f1f1;
+  border: 1px solid #cddae6;
+  padding: 6px;
+  margin-bottom: 15px;
+}
+
+/* line 150, ../scss/components/_requests.scss */
+.requestor_details {
+  margin-left: -10px;
+}
+
+/* line 154, ../scss/components/_requests.scss */
+.requestor_details li {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+/* line 159, ../scss/components/_requests.scss */
+.user-information img {
+  margin-bottom: 15px;
+  margin-left: -2px;
+}
+
+/* line 164, ../scss/components/_requests.scss */
+.user_information h4 {
+  margin-top: -10px;
+}
+
+/* line 168, ../scss/components/_requests.scss */
+.comments-list ul {
+  margin-bottom: 15px;
+}
+
 /* line 1, ../scss/components/_task.scss */
 #accordion a span.title {
   float: left;
