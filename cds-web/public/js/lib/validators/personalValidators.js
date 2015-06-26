@@ -62,7 +62,7 @@ define(['validation'], function(validation) {
             key_error_msgs: true
         },
         skypeId:{
-            required : true,
+            required : false,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true                

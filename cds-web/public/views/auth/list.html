@@ -97,7 +97,7 @@
             <div class="col-md-3 col-sm-4" ng-repeat="user in listCtrl.userList track by $index">
                 <div class="tiles">
                     <div>
-                        <a href="" ng-model="user.citizenId" ng-click="listCtrl.viewProfile(user.citizenId)" class="photo2"><img src="images/profile/37.jpg" title="members" class="photo1" /></a>
+                        <a href="" ng-model="user.citizenId" ng-click="listCtrl.viewProfile(user.citizenId)" class="photo2"><img src="images/shivashankar.jpg" title="members" class="photo1" /></a>
                     </div>
                     <div class="details">
                         <div>
@@ -132,7 +132,7 @@
 
                             {{user.mobileNumber}}
                         </label>
-                        <label>{{user.regionName}}</label>
+                        <div><label>{{user.regionName}}</label></div>
                     </div>
                     <div class="status status-tab">
                         <input type="checkbox" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
