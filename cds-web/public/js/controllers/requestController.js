@@ -74,6 +74,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             }
 
             this.hideSearch = true;
+            this.hideActions = true;
 
             this.newRequest = function() {
                 $state.go('root.addRequest');
@@ -98,6 +99,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             this.toggleSearch = function() {
 
                 this.hideSearch = (this.hideSearch == true) ? false : true;
+            }
+            this.toggleActions = function() {
+                this.hideActions = (this.hideActions == true) ? false : true;
             }
 
 

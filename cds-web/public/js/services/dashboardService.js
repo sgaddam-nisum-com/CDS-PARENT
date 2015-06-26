@@ -110,10 +110,10 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                getNotifications:function(key,cb){
+                getNotifications:function(cb){
                      $http.get(appUrlService.getNotifications, {
                          params: {
-                            subject: key
+                            // subject: key
                         }
                     }).success(function(resp) {
                         cb(resp);

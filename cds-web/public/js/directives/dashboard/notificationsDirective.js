@@ -1,30 +1,28 @@
- 
-
-define(['directives/directiveModule'], function(directiveModule) {
+ define(['directives/directiveModule'], function(directiveModule) {
      directiveModule.directive('notificationsDirective', ['dashboardService',
-            function(dashboardService) {
-                
-                return {
-                    restrict: "A",
-                    link: function(scope, elem, attrs) {                      
+             function(dashboardService) {
 
-                        var griddata = [];
-                       
-                        scope.notifications=[];
+                 return {
+                     restrict: "A",
+                     link: function(scope, elem, attrs) {
 
-                        dashboardService.getNotifications("cadre",function(resp) {                          
-                      
-                            scope.notifications = resp.data.inboxs;
+                         var griddata = [];
 
-                        });
+                         scope.notifications = [];
 
-                    
-                    }
-                }
-            }
-        ]
+                         dashboardService.getNotifications(function(resp) {
 
-    );
+                             scope.notifications = resp.data.inboxs;
+
+                         });
 
 
-});
+                     }
+                 }
+             }
+         ]
+
+     );
+
+
+ });

@@ -7,13 +7,6 @@
     border: none;
 }
 
-.actions {
-    background: url(../images/actionsBtn.jpg) no-repeat;
-    width: 72px;
-    height: 26px;
-    border: none;
-}
-
 .advance-search {
     background: #DBE8EE;
     border: medium none;
@@ -25,6 +18,13 @@
     padding: 5px;
     border: 1px solid #8FABB9;
     border-radius: 3px;
+}
+
+.request-actions {
+    background: url(../images/actionsBtn.jpg) no-repeat;
+    width: 72px;
+    height: 26px;
+    border: none;
 }
 
 .top_actions {
@@ -49,21 +49,21 @@
 }
 
 .adv_search_arrow {
-    background-image: url("images/filter-arrow-blue.png");
+    background-image: url("../images/filter-arrow-blue.png");
     background-repeat: no-repeat;
     display: block;
     float: left;
     height: 20px;
-    left: 547px;
+    left: 595px;
     position: relative;
     top: -61px;
     width: 20px;
 }
 
 .req_action {
-    margin-right: 88px;
-    top: -10px;
-    display: none;
+    margin-right: 125px;
+    top: -9px;
+    //display: none;
 }
 
 .req_action ul {

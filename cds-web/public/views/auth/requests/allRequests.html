@@ -9,12 +9,12 @@
                 <h4>View Request List</h4>
             </div>
             <div class="col-md-6 top_actions">
-                <input type="button" class="new-request" value=" " ng-click="requestCtrl.newRequest()" />
-                <input type="button" class="actions" value="Actions" />
+                <input type="button" class="new-request" value="" ng-click="requestCtrl.newRequest()" />
+                <input type="button" class="request-actions" value="" ng-click="requestCtrl.toggleActions()" />
                 <input type="button" class="advance-search" value="Advance Search" ng-click="requestCtrl.toggleSearch()">
             </div>
         </div>
-        <div class="col-md-2 req_action pull-right">
+        <div class="col-md-2 req_action pull-right" ng-hide="requestCtrl.hideActions">
             <ul>
                 <li><a href="#">Acknowledge</a></li>
                 <li><a href="#">Assigned</a></li>
