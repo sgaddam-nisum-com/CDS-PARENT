@@ -277,6 +277,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
         this.resetSerach = function(){
             this.selectedUserTypes = [];
             this.selectedGender = [];
+            this.selectedFilter = [];
         }   
 
 
