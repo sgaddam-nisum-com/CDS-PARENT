@@ -17,13 +17,14 @@
             </div>
             <div class="row" ng-hide="cadreCtrl.cadreFields">
                 <div class="col-md-4 ">
-                    <label for="left-label" class="right text-right">CadreType:</label>
+                  <label for="left-label" class="right text-right">Do you have Party Membership Id:</label>
+                    
                 </div>
                 <div class="col-md-8 gender">
-                    <label for="newcadre">
-                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="NEW" ng-change="cadreCtrl.trackCadreType()">New</label>
                     <label for="existingcadre">
-                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="EXISTING" ng-change="cadreCtrl.trackCadreType()">Existing</label>
+                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="EXISTING" ng-change="cadreCtrl.trackCadreType()">Yes</label>
+                    <label for="newcadre">
+                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="NEW" ng-change="cadreCtrl.trackCadreType()">No</label>
                 </div>
                 <div class="col-sm-9 right">
                     <div class="error-class">
