@@ -148,6 +148,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                                 self.hideVolunteerID = (self.user.volunteerCodeNumber != null) ? false : true;
                                 self.hideVolunteerCategory = (self.user.volunteerCategoryId == 0) ? true : false;
                                 self.hideVolunteerLead = (self.user.volunteerLeadId == 0) ? true : false;
+                                self.trackInterest = function(interest) {
+                                    self.hideInterestedAreas = (interest == 1) ? false : true;
+                                }
                             }
 
                             if (role[role.length - 1].roleName == "Office Manager" || role[role.length - 1].roleName == "Office Executive" || role[role.length - 1].roleName == "MP") {
@@ -167,9 +170,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                         self.user.interestedAreas = resp.data.volunteerInterestedAreas[0].interestId;
                         self.user.volunteerCategoryId = resp.data.volunteerCategory.voluteerCatergoryId;
                         self.user.volunteerLeadId = resp.data.volunteerLeadId;
-                        self.trackInterest = function(interest) {
-                            self.hideInterestedAreas = (interest == 1) ? false : true;
-                        }
+
                     });
 
 

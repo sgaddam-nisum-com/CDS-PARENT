@@ -106,6 +106,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
 
                             role = resp.data.user.appRoles;
 
+
                             if (role[role.length - 1].roleName == "Citizen" || role[role.length - 1].roleName == "Volunteer" || role[role.length - 1].roleName == "Cadre") {
 
                                 self.disableFields = true;
@@ -132,7 +133,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                 self.hideResponsibilityField = (self.user.cadre.partyResponsibility != null) ? false : true;
 
                             } else {
-                                self.hideFields = false;
+                                self.hideFields = true;
                                 self.cadreFields = true;
                             }
 
