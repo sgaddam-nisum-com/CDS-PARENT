@@ -592,23 +592,38 @@ header .auth-header .phone {
 }
 
 /* line 63, ../scss/components/_header.scss */
+.area-logo {
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+/* line 67, ../scss/components/_header.scss */
+.area-logo span {
+  color: #666;
+  display: block;
+  font-family: opensans-regular;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* line 74, ../scss/components/_header.scss */
 header .top-nav {
   padding-right: 0;
   /* text-align: right; */
 }
 
-/* line 68, ../scss/components/_header.scss */
+/* line 79, ../scss/components/_header.scss */
 header .auth-header .top-nav li {
   font-size: 13px;
   color: #fff;
 }
 
-/* line 73, ../scss/components/_header.scss */
+/* line 84, ../scss/components/_header.scss */
 header .top-nav ul {
   margin: 0;
 }
 
-/* line 76, ../scss/components/_header.scss */
+/* line 87, ../scss/components/_header.scss */
 header .top-nav ul li {
   display: inline-block;
   list-style: none;
@@ -617,14 +632,14 @@ header .top-nav ul li {
   padding: 0 0px 0 20px;
 }
 
-/* line 83, ../scss/components/_header.scss */
+/* line 94, ../scss/components/_header.scss */
 header .top-nav ul li:first-child {
   background: none;
   padding-left: 0px;
   /*padding-right: 20px;*/
 }
 
-/* line 88, ../scss/components/_header.scss */
+/* line 99, ../scss/components/_header.scss */
 header .top-nav ul li a.home {
   background: url(../images/cds-sprite.png) no-repeat 0 -23px;
   height: 20px;
@@ -632,7 +647,7 @@ header .top-nav ul li a.home {
   color: #999;
 }
 
-/* line 94, ../scss/components/_header.scss */
+/* line 105, ../scss/components/_header.scss */
 header .top-nav ul li a.help {
   background: url(../images/cds-sprite.png) no-repeat 0 -47px;
   height: 20px;
@@ -641,7 +656,7 @@ header .top-nav ul li a.help {
   color: #fff;
 }
 
-/* line 101, ../scss/components/_header.scss */
+/* line 112, ../scss/components/_header.scss */
 header .top-nav ul li a.my-account {
   background: url(../images/cds-sprite.png) no-repeat 0 -72px;
   height: 20px;
@@ -649,77 +664,77 @@ header .top-nav ul li a.my-account {
   color: #fff;
 }
 
-/* line 108, ../scss/components/_header.scss */
+/* line 119, ../scss/components/_header.scss */
 header .top-nav ul li a.post {
   padding: 0 15px 0 0;
   color: #999;
 }
 
-/* line 112, ../scss/components/_header.scss */
+/* line 123, ../scss/components/_header.scss */
 header .top-nav ul li a.logout {
   padding: 0 15px 0 20px;
   color: #999;
   background: url(../images/logout.png) no-repeat 0 2px;
 }
 
-/* line 119, ../scss/components/_header.scss */
+/* line 130, ../scss/components/_header.scss */
 header .navigation {
   padding: 28px 0 0 0;
 }
 
-/* line 122, ../scss/components/_header.scss */
+/* line 133, ../scss/components/_header.scss */
 header .navigation h1.logo {
   background: url(../images/logo.png) no-repeat;
   width: 155px;
   height: 40px;
 }
 
-/* line 127, ../scss/components/_header.scss */
+/* line 138, ../scss/components/_header.scss */
 header .main-navigation nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 131, ../scss/components/_header.scss */
+/* line 142, ../scss/components/_header.scss */
 header .main-navigation nav ul li {
   list-style: none;
   float: left;
 }
 
-/* line 136, ../scss/components/_header.scss */
+/* line 147, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:hover {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 141, ../scss/components/_header.scss */
+/* line 152, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:active {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 147, ../scss/components/_header.scss */
+/* line 158, ../scss/components/_header.scss */
 h1 {
   color: #16578f;
   font-size: 26px;
 }
 
-/* line 152, ../scss/components/_header.scss */
+/* line 163, ../scss/components/_header.scss */
 .headerMobile {
   background: #f0f2f4;
 }
 
-/* line 155, ../scss/components/_header.scss */
+/* line 166, ../scss/components/_header.scss */
 .headerLogo {
   background: #fff url(../images/headerBg.png) repeat-x;
 }
 
-/* line 159, ../scss/components/_header.scss */
+/* line 170, ../scss/components/_header.scss */
 .auth-header {
   padding-top: 8px;
 }
 
-/* line 163, ../scss/components/_header.scss */
+/* line 174, ../scss/components/_header.scss */
 .login-user-info {
   display: none;
   position: absolute;
@@ -731,7 +746,7 @@ h1 {
   top: 29px;
 }
 
-/* line 173, ../scss/components/_header.scss */
+/* line 184, ../scss/components/_header.scss */
 .nav-down-arrow {
   background: none;
   width: 25px;
@@ -740,7 +755,7 @@ h1 {
   float: right;
 }
 
-/* line 182, ../scss/components/_header.scss */
+/* line 193, ../scss/components/_header.scss */
 .top-sub-links {
   float: right;
 }
@@ -748,14 +763,14 @@ h1 {
 /* Only for 1921px and above */
 /* From 1441px to 1920 */
 @media only screen and (max-width: 991px) {
-  /* line 194, ../scss/components/_header.scss */
+  /* line 205, ../scss/components/_header.scss */
   .logo {
     width: 250px;
   }
 }
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (max-width: 767px) {
-  /* line 207, ../scss/components/_header.scss */
+  /* line 218, ../scss/components/_header.scss */
   header .auth-header .phone {
     background: none;
     height: 30px;
@@ -765,17 +780,17 @@ h1 {
     text-align: center;
   }
 
-  /* line 217, ../scss/components/_header.scss */
+  /* line 228, ../scss/components/_header.scss */
   header .top-nav {
     margin-bottom: 10px;
   }
 
-  /* line 221, ../scss/components/_header.scss */
+  /* line 232, ../scss/components/_header.scss */
   header nav {
     text-align: center;
   }
 
-  /* line 224, ../scss/components/_header.scss */
+  /* line 235, ../scss/components/_header.scss */
   .top-sub-links {
     margin: 0 auto;
     width: 100%;
@@ -785,19 +800,19 @@ h1 {
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 244, ../scss/components/_header.scss */
+  /* line 255, ../scss/components/_header.scss */
   header .auth-header .phone {
     display: none;
   }
 }
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 253, ../scss/components/_header.scss */
+  /* line 264, ../scss/components/_header.scss */
   .collapse {
     display: block !important;
   }
 
-  /* line 258, ../scss/components/_header.scss */
+  /* line 269, ../scss/components/_header.scss */
   body .navigation .top-bar-section ul li:hover {
     background: transparent url("../images/home-menu-active.png") no-repeat scroll center bottom !important;
     color: red !important;
