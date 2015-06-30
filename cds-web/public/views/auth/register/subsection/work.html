@@ -42,14 +42,15 @@
                         <label for="right-label" class="right inline">Career Aspiration:</label>
                     </div>
                     <div class="col-md-5  left">
-                        <select id="aspiration" class="form-control" name="aspiration" ng-options="aspiration.careerAspirationId as aspiration.careerAspirationName for aspiration in careerAspirationOptions" ng-model="workCtrl.user.userAdditionalInfo.careerAspirationId">
+                        <select id="aspiration" class="form-control" name="aspiration" ng-options="aspiration.careerAspirationId as aspiration.careerAspirationName for aspiration in careerAspirationOptions" ng-model="workCtrl.user.userAdditionalInfo.careerAspirationId"
+                        ng-change="workCtrl.others(workCtrl.user.userAdditionalInfo.careerAspirationId)" >
                             <option value="">Select Career Aspiration</option>
                         </select>
                         <div class="error-class">
                             <div class="error-content"></div>
                         </div>
                     </div>
-                    <div class="col-md-4  left">
+                    <div class="col-md-4  left" ng-hide="othershow">
                         <input type="text" id="aspirationText" class="form-control" name="aspirationText" ng-model="workCtrl.user.userAdditionalInfo.careerAspiration">
                     </div>
                 </div>

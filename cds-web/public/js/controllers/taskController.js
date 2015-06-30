@@ -15,8 +15,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             };
 
             cdsService.getUserSession(function( userData ){
+                $scope.userData = userData;
                 var appRoles = userData.data.user.appRoles;
-                    
+                // To display username ONLOAD in Add New Task PAGE, Assign To field
+                self.assignedToCitizenName = userData.data.user.citizen.firstName + "" +userData.data.user.citizen.lastName;
+
                 var topRole, rolesArray=[];
                 appRoles = appRoles || [];
                 
@@ -32,7 +35,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
             
 
-            self.user.taskWorkAllocation = {}
+            self.user.taskWorkAllocation = {};
             self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
             
             taskService.getTaskCategories(function(resp) {
@@ -107,6 +110,12 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
                         commentsArray.push(commentsObj);
                         self.user.comments = commentsArray;
+                    }
+
+                    if(self.user.taskWorkAllocation.citizenId === undefined){
+                        
+                        console.log($scope.userData);
+                        self.user.taskWorkAllocation.citizenId = $scope.userData.data.user.appUserId;
                     }
 
                     $http({

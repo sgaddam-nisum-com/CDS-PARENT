@@ -40,6 +40,17 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 			$scope.skillGapsOptions = resp.data;			
 		});
 
+		$scope.othershow = true;
+		this.others = function( othersvalue ){
+			$scope.othershow = true;
+			var others = othersvalue-1;
+			var careerAspirationId= $scope.careerAspirationOptions[$scope.careerAspirationOptions.length - 1].careerAspirationId;
+			
+			if(othersvalue === careerAspirationId){
+				$scope.othershow = false;
+			}
+		}
+
 /*		registerService.getAreaOfImprovements(function(resp){				
 			$scope.areaOfImprovements = resp.data;			
 		});
@@ -48,7 +59,8 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 		this.save = function(){
 			
 			if(formStack.isValid){								
-				self.user.userId = cdsSession.currentUserId;				
+				self.user.userId = cdsSession.currentUserId;
+				self.user.careerAspiration = self.user.userAdditionalInfo.careerAspiration;				
 				$http({
 					method: "PUT",
 					url: appUrls.updateWorkInfo,
@@ -100,6 +112,9 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
                     if(dataJson.additionalInfo && dataJson.additionalInfo.length){
 	                    self.user.userAdditionalInfo = {};
 	                    self.user.userAdditionalInfo.careerAspirationId = dataJson.additionalInfo[0].careerAspirations.careerAspirationId;
+	                    if(dataJson.additionalInfo[0].careerAspirations.careerAspirationName === 'Others'){
+	                    	$scope.othershow = false;
+	                    }
 	                    self.user.userAdditionalInfo.careerAspiration = dataJson.additionalInfo[0].careerAspiration;
 	                    self.user.userAdditionalInfo.skillGapsId = dataJson.additionalInfo[0].skillGaps.skillGapId;
 	                    self.user.userAdditionalInfo.skillLevel = dataJson.additionalInfo[0].skillLevel;
