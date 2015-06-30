@@ -67,7 +67,7 @@ define(['directives/directiveModule'], function(directiveModule) {
                                 name: 'Status',
                                 field: 'Status',
                                 enableFiltering: false,
-                                cellTemplate : "<span class='row-status'> Registration pending</span>"
+                                cellTemplate : "<span class='row-status'> Party Membership ID pending</span>"
                             }                            
                             ],
                             data: dataJSON.verificationList
