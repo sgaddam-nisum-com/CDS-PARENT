@@ -127,25 +127,35 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                             dataJson.reqMethod = "POST";
                             dataJson.reqUrl = appUrls.saveVolunteer;
                         }
+
                         cdsService.getUserSession(function(resp) {
                             console.log(resp.data);
                             role = resp.data.user.appRoles;
                             console.log(role);
                             if (role[role.length - 1].roleName == "Citizen") {
-                            	self.hideInterestedAreas = true;
-                            };
+                                if (self.user.citizen.interestedAsVolunteer == "0") {
+                                    self.hideInterestedAreas = true;
+                                } else {
+                                    self.hideInterestedAreas = false;
+                                }
 
+                            };
+                            console.log(self.user.volunteerLeadId);
                             if (role[role.length - 1].roleName == "Citizen" || role[role.length - 1].roleName == "Volunteer" || role[role.length - 1].roleName == "Cadre") {
 
                                 self.disableFields = true;
                                 self.showGrade = false;
+                                self.hideVolunteerID = (self.user.volunteerCodeNumber != null) ? false : true;
+                                self.hideVolunteerCategory = (self.user.volunteerCategoryId == 0) ? true : false;
+                                self.hideVolunteerLead = (self.user.volunteerLeadId == 0) ? true : false;
                             }
 
                             if (role[role.length - 1].roleName == "Office Manager" || role[role.length - 1].roleName == "Office Executive" || role[role.length - 1].roleName == "MP") {
-
                                 self.disableFields = false;
                                 self.showGrade = true;
                             }
+
+
 
                         });
 

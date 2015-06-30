@@ -15,16 +15,15 @@
                     <label for="interestedNo">No</label>
                 </div>
             </div>
-            <div class="row" ng-hide="cadreCtrl.cadreFields">
+            <div class="row" ng-hide="cadreCtrl.hideFields">
                 <div class="col-md-4 ">
-                  <label for="left-label" class="right text-right">Do you have Party Membership Id:</label>
-                    
+                    <label for="left-label" class="right text-right">Do you have Membership ID ?:</label>
                 </div>
                 <div class="col-md-8 gender">
-                    <label for="existingcadre">
-                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="EXISTING" ng-change="cadreCtrl.trackCadreType()">Yes</label>
-                    <label for="newcadre">
-                        <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.cadreType" value="NEW" ng-change="cadreCtrl.trackCadreType()">No</label>
+                    <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.haveMembership" value="1" ng-change="cadreCtrl.trackMembership(cadreCtrl.user.cadre.haveMembership)">
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="cadreType" ng-model="cadreCtrl.user.cadre.haveMembership" value="0" ng-change="cadreCtrl.trackMembership(cadreCtrl.user.cadre.haveMembership)">
+                    <label for="No">No</label>
                 </div>
                 <div class="col-sm-9 right">
                     <div class="error-class">
@@ -32,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" ng-hide="cadreCtrl.hideFields">
+            <div class="row" ng-hide="cadreCtrl.hideMembershipID">
                 <div class="col-md-4">
                     <label for="right-label" class="right inline">Party Membership#:</label>
                 </div>
@@ -43,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" ng-hide="cadreCtrl.hideFields">
+            <div class="row" ng-hide="cadreCtrl.hidePositionField">
                 <div class="col-md-4">
                     <label for="right-label" class="right inline">Position in the Party:</label>
                 </div>
@@ -60,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" ng-hide="cadreCtrl.hideFields">
+            <div class="row" ng-hide="cadreCtrl.hideResponsibilityField">
                 <div class="col-md-4">
                     <label for="right-label" class="right inline">Responsibility in the Party:</label>
                 </div>
@@ -101,9 +100,13 @@
                     <select id="bloodGroup" name="bloodGroup" class="form-control input" ng-model="cadreCtrl.user.bloodGroupId" data-val="bloodGroupId">
                         <option value="0">Select Blood Group</option>
                         <option value="1">A +ve</option>
-                        <option value="2">B +ve</option>
-                        <option value="3">AB +ve</option>
-                        <option value="4">O +ve</option>
+                        <option value="2">A -ve</option>
+                        <option value="3">B +ve</option>
+                        <option value="4">B -ve</option>
+                        <option value="5">AB +ve</option>
+                        <option value="6">AB -ve</option>
+                        <option value="7">O +ve</option>
+                        <option value="8">O -ve</option>
                     </select>
                     <div class="error-class">
                         <div class="error-content"></div>

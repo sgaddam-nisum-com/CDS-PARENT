@@ -119,9 +119,17 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                             if (role[role.length - 1].roleName == "Citizen" || role[role.length - 1].roleName == "Volunteer") {
                                 self.cadreFields = false;
                                 self.hideFields = true;
+                                self.hideMembershipID = true;
                                 self.trackInterest = function(interest) {
                                     self.hideFields = (interest == 1) ? false : true;
                                 }
+                                self.trackMembership = function(membership) {
+                                    self.hideMembershipID = (membership == 1) ? false : true;
+                                }
+                                console.log(self.user.cadre.positionId);
+                                console.log(self.user.cadre.partyResponsibility);
+                                self.hidePositionField = (self.user.cadre.positionId != "") ? false : true;
+                                self.hideResponsibilityField = (self.user.cadre.partyResponsibility != null) ? false : true;
 
                             } else {
                                 self.hideFields = false;
@@ -139,7 +147,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                             self.user.bloodGroupId = dataJson.citizen.bloodGroup.bloodGroupId;
                             self.user.interestedAsCadre = dataJson.citizen.interestedAsCadre;
                         }
-                        self.user.cadre.cadreType = dataJson.cadreType;
+                        self.user.cadre.haveMembership = dataJson.haveMembership;
                         self.user.cadre.positionId = dataJson.partyDesigination.positionId || "";
                         self.user.cadre.partyMembershipId = dataJson.partyMembershipId;
                         self.user.cadre.partyResponsibility = dataJson.partyResponsibility;
