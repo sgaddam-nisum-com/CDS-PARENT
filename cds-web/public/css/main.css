@@ -1480,6 +1480,12 @@ body .navigation .top-bar-section ul li:active a {
     padding-bottom: 0;
   }
 }
+/* Search filter styles */
+/* line 506, ../scss/components/_home.scss */
+.filter-options .search {
+  margin: 0 0 12px 65px;
+}
+
 /* line 1, ../scss/components/_list.scss */
 .search-filter {
   background: #e7eaeb;
