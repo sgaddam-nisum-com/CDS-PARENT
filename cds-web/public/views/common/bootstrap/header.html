@@ -41,10 +41,15 @@
   
   <div class="container">
     <div class="row">
-      <div class="col-xs-3 col-sm-3 columns navbar-header">
+
+      <div class="col-xs-3 col-sm-3 columns navbar-header" ng-if="headerCtrl.isUserAuthenticated">
+        <h1 class="area-logo">Vijayawada
+          <span class="area-logo span">Constituency</span>
+        </h1>
+      </div>
+
+      <div class="col-xs-4 col-sm-3 columns navbar-header" ng-if="!headerCtrl.isUserAuthenticated">
         <a href="/" class="logo left"><img class="img-responsive" src="images/logo.png" alt="logo" /></a>
-       
-        
       </div>
 
        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
