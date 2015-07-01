@@ -4,7 +4,7 @@
 
 	<div class="row  list-header">
 		<div class="col-md-10">
-			<h3 class="page-header">Choose Cadre from the list</h3>
+			<h3 class="page-header"><span ng-bind="addtask_cadre_title"></span></h3>
 		</div>
 	</div>
 	
@@ -16,7 +16,7 @@
 
 	<div class="no-records row cadre-list-row" ng-show="showNoRecordsMsg" >
 		<div class="col-md-12 cadre-list-item">
-			<span> No Records found. Please refine your search.</span>
+			<span ng-bind="addtask_cadre_search"></span>
 		</div>
 	</div>
 

@@ -1,10 +1,12 @@
-define(['controllers/controllerModule', 'formValidation', 'validators/cadreValidators', 'errorMessages/cadreErrors', 'jquery', "messageHandler"],
-    function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler) {
+define(['controllers/controllerModule', 'formValidation', 'validators/cadreValidators', 'errorMessages/cadreErrors', 'jquery', "messageHandler", 'notifications'],
+    function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler, notifications) {
 
         controllerModule.controller('cadreController', ['$state', '$http', "appUrlService", '$scope', 'registerService', "cdsService", "$sessionStorage",
 
 
             function($state, $http, appUrls, $scope, registerService, cdsService, $sessionStorage) {
+
+                
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {},
                     config,
@@ -52,7 +54,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                         }).success(function(resp, status, headers, config) {
                             if (resp.status === "success") {
                                 if (self.user.userId) {
-                                    messageHandler.showInfoStatus(errorJson.successfulSave, ".status-message-wrapper");
+                                    messageHandler.showInfoStatus(notifications.cadre_successfulSave, ".status-message-wrapper");
                                     setTimeout(function() {
                                         messageHandler.clearMessageStatus();
                                         $state.go("root.profileLookup", {
@@ -60,7 +62,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                         });
                                     }, 3000);
                                 } else {
-                                    messageHandler.showInfoStatus(errorJson.successfulSave, ".status-message-wrapper");
+                                    messageHandler.showInfoStatus(notifications.cadre_successfulSave, ".status-message-wrapper");
                                     setTimeout(function() {
                                         messageHandler.clearMessageStatus();
                                         $state.go('root.profile');
@@ -75,7 +77,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                             }
 
                         }).error(function(data, status, headers, config) {
-                            messageHandler.showErrorStatus(errorJson.submissionError, ".status-message-wrapper");
+                            messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
                             setTimeout(function() {
                                 messageHandler.clearMessageStatus();
                             }, 3000);

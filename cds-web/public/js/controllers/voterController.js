@@ -1,9 +1,9 @@
 
  
 
-define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors',"messageHandler"], 
+define(['controllers/controllerModule','formValidation','validators/voterValidators','errorMessages/voterErrors',"messageHandler", 'notifications'], 
 
-	function (controllerModule,formValidation,validationMap,errorJson, messageHandler) {
+	function (controllerModule,formValidation,validationMap,errorJson, messageHandler, notifications) {
 
 	controllerModule.controller('voterController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage",
 						function($state,$http,appUrls,cdsService,$scope,registerService,$sessionStorage){
@@ -47,7 +47,7 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 				
 					if(resp.status == "success"){
 
-						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+						messageHandler.showInfoStatus(notifications.voter_successfulSave,".status-message-wrapper");
                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
                            $state.go('root.profile.editprofile.address');	
@@ -55,7 +55,7 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 
 					}else{
 
-						  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+						  messageHandler.showErrorStatus(notifications.submissionError,".status-message-wrapper");
 	                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
                         },3000); 
@@ -64,7 +64,7 @@ define(['controllers/controllerModule','formValidation','validators/voterValidat
 					}
 
 				}).error(function(data, status, headers, config){
-					  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+					  messageHandler.showErrorStatus(notifications.submissionError,".status-message-wrapper");
 	                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
                         },3000); 

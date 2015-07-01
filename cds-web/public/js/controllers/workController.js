@@ -1,9 +1,9 @@
 
  
 
-define(['controllers/controllerModule','formValidation','validators/workValidators','errorMessages/workErrors','jquery', "messageHandler"], 
+define(['controllers/controllerModule','formValidation','validators/workValidators','errorMessages/workErrors','jquery', "messageHandler", 'notifications'], 
 
-	function (controllerModule,formValidation,validationMap,errorJson,$, messageHandler) {
+	function (controllerModule,formValidation,validationMap,errorJson,$, messageHandler, notifications) {
 
 	 controllerModule.controller('workController', ['$state','$http',"appUrlService","cdsService",'$scope','registerService',"$sessionStorage", 
 	 	function($state,$http,appUrls,cdsService,$scope,registerService, $sessionStorage){		
@@ -69,7 +69,7 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 
 					if(resp.status === "success"){
 
-						messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+						messageHandler.showInfoStatus(notifications.work_successfulSave,".status-message-wrapper");
                         setTimeout(function(){
                           messageHandler.clearMessageStatus();                           
                           $state.go('root.profile.editprofile.voter');
@@ -77,7 +77,7 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
 
 
 					}else{
-						 messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+						 messageHandler.showErrorStatus(notifications.submissionError,".status-message-wrapper");
 	                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
                         },3000); 

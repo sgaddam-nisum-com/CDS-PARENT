@@ -1,5 +1,5 @@
-define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors', "messageHandler"], 
-    function(controllerModule, formValidation, validationMap, errorJson, messageHandler) {
+define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors', "messageHandler", 'notifications'], 
+    function(controllerModule, formValidation, validationMap, errorJson, messageHandler, notifications) {
 
         controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope","$sessionStorage",
             function($state, $http, registerService, appUrls, cdsService, $scope, $sessionStorage) {
@@ -85,13 +85,13 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
 
                                             if(resp.status === "success"){
 
-                                                messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                                                messageHandler.showInfoStatus(notifications.address_successfulSave,".status-message-wrapper");
                                                     setTimeout(function(){
                                                         messageHandler.clearMessageStatus();                           
                                                     $state.go('root.profile.editprofile.volunteer');
                                                     },3000);                                                 
                                             }else{
-                                                 messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                                                 messageHandler.showErrorStatus(notifications.submissionError,".status-message-wrapper");
                                                     setTimeout(function(){
                                                         messageHandler.clearMessageStatus();                           
                                                     },3000);    
@@ -99,7 +99,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
 
                                         }).error(function(data, status, headers, config) {
 
-                                             messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                                             messageHandler.showErrorStatus(notifications.submissionError,".status-message-wrapper");
                                                 setTimeout(function(){
                                                     messageHandler.clearMessageStatus();                           
                                                 },3000);    

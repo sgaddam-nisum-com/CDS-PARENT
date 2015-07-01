@@ -97,7 +97,7 @@ require.config({
         "mouse": "lib/jqueryui/mouse",
         "evPointer": "utils/evPointer",
         "messageHandler": "lib/messageHandler",
-
+        "notifications" : "i18n/notifications"
     },
     shim: {
         angular: {

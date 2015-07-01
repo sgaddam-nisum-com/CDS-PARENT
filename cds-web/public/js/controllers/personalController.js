@@ -1,6 +1,6 @@
-define(['controllers/controllerModule', 'formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery',"messageHandler"], 
+define(['controllers/controllerModule', 'formValidation', 'validators/personalValidators', 'errorMessages/personalErrors', 'jquery',"messageHandler", 'notifications'], 
 
-    function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler) {
+    function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler, notifications) {
 
     controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService',"$stateParams","$sessionStorage", 
             function($state, $http, appUrls, cdsService, $scope, registerService,$stateParams, $sessionStorage) {
@@ -90,7 +90,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                 }).success(function(resp, status, headers, config){
                     
                     if(resp.status ==="success"){
-                        messageHandler.showInfoStatus(errorJson.successfulSave,".status-message-wrapper");
+                        messageHandler.showInfoStatus(notifications.personal_successfulSave,".status-message-wrapper");
                         setTimeout(function(){
                             messageHandler.clearMessageStatus();
                             cdsService.isMarried = self.user.maritalStatus;  
@@ -105,7 +105,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     }
 
                 }).error(function(resp, status, headers, config){                   
-                      messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
+                      messageHandler.showErrorStatus(notifications.submissionError,".status-message-wrapper");
                        setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
                         },3000); 

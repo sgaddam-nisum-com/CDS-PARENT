@@ -1,9 +1,11 @@
-define(['controllers/controllerModule'], function (controllerModule) {
+define(['controllers/controllerModule', 'notifications'], function (controllerModule, notifications) {
 
 	 controllerModule.controller('cadreListController', ["$scope","$modalInstance","$rootScope","taskService",function($scope, $modalInstance,$rootScope,taskService){
 
  		
 	 			$scope.showNoRecordsMsg = false;
+	 			$scope.addtask_cadre_search = notifications.addtask_cadre_search;
+	 			$scope.addtask_cadre_title = notifications.addtask_cadre_title;
 
 	 		   function cadreStringifier(cadreArray) {
                     var cadreObjArray = [];
