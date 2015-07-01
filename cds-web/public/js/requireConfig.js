@@ -58,6 +58,7 @@ require.config({
         "validators": "lib/validators",
         "errorMessages": "lib/errorMessages",
         "ngStorage": "lib/ngStorage",
+        "ngFlow" : "lib/ng-flow-standalone",
         /*Foundation*/
         "slick": "lib/slick",
         "simplyscroll": "lib/jquery.simplyscroll",
@@ -95,7 +96,7 @@ require.config({
         "sortable": "lib/jqueryui/sortable",
         "mouse": "lib/jqueryui/mouse",
         "evPointer": "utils/evPointer",
-        "messageHandler": "lib/messageHandler"
+        "messageHandler": "lib/messageHandler",
 
     },
     shim: {
