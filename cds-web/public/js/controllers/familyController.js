@@ -90,20 +90,20 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
                                     $state.go('root.profile.editprofile.cadre');
-                                }, 2000);
+                                }, 3000);
 
                             } else {
                                 messageHandler.showErrorStatus(errorJson.submissionError, ".status-message-wrapper");
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
-                                }, 2000);
+                                }, 3000);
                             }
 
                         }).error(function(data, status, headers, config) {
                             messageHandler.showErrorStatus(errorJson.submissionError, ".status-message-wrapper");
                             setTimeout(function() {
                                 messageHandler.clearMessageStatus();
-                            }, 2000);
+                            }, 3000);
                         });
 
                     } else {

@@ -89,7 +89,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
                                     $state.go('root.profile.editprofile.family');
-                                }, 2000);
+                                }, 3000);
 
 
 
@@ -97,14 +97,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                                 messageHandler.showErrorStatus(errorJson.submissionError, ".status-message-wrapper");
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
-                                }, 2000);
+                                }, 3000);
 
                             }
                         }).error(function(data, status, headers, config) {
                             messageHandler.showErrorStatus(errorJson.submissionError, ".status-message-wrapper");
                             setTimeout(function() {
                                 messageHandler.clearMessageStatus();
-                            }, 2000);
+                            }, 3000);
                         });
 
                     } else {

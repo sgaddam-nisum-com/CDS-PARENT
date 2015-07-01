@@ -95,20 +95,20 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                             messageHandler.clearMessageStatus();
                             cdsService.isMarried = self.user.maritalStatus;  
                             $state.go('root.profile.editprofile.work');    
-                        },2000);                                                   
+                        },3000);                                                   
 
                     }else{
                         messageHandler.showErrorStatus(resp.data.message,".status-message-wrapper");
                          setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
-                        },2000); 
+                        },3000); 
                     }
 
                 }).error(function(resp, status, headers, config){                   
                       messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
                        setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
-                        },2000); 
+                        },3000); 
                 });
 
 

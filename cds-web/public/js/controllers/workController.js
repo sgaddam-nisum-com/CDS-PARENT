@@ -73,14 +73,14 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
                         setTimeout(function(){
                           messageHandler.clearMessageStatus();                           
                           $state.go('root.profile.editprofile.voter');
-                        },2000); 
+                        },3000); 
 
 
 					}else{
 						 messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
 	                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
-                        },2000); 
+                        },3000); 
 
 					}
 
@@ -94,7 +94,7 @@ define(['controllers/controllerModule','formValidation','validators/workValidato
  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
 	                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
-                        },2000); 
+                        },3000); 
 				
 
 				});

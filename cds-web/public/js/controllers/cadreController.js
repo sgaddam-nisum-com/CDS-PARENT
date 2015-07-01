@@ -58,19 +58,19 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                         $state.go("root.profileLookup", {
                                             citizenId: self.user.userId
                                         });
-                                    }, 2000);
+                                    }, 3000);
                                 } else {
                                     messageHandler.showInfoStatus(errorJson.successfulSave, ".status-message-wrapper");
                                     setTimeout(function() {
                                         messageHandler.clearMessageStatus();
                                         $state.go('root.profile');
-                                    }, 2000);
+                                    }, 3000);
                                 }
                             } else {
                                 messageHandler.showErrorStatus(resp.data.message, ".status-message-wrapper");
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
-                                }, 2000);
+                                }, 3000);
 
                             }
 
@@ -78,7 +78,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                             messageHandler.showErrorStatus(errorJson.submissionError, ".status-message-wrapper");
                             setTimeout(function() {
                                 messageHandler.clearMessageStatus();
-                            }, 2000);
+                            }, 3000);
 
                         });
 

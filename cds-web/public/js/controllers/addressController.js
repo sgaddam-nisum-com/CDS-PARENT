@@ -89,12 +89,12 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                                     setTimeout(function(){
                                                         messageHandler.clearMessageStatus();                           
                                                     $state.go('root.profile.editprofile.volunteer');
-                                                    },2000);                                                 
+                                                    },3000);                                                 
                                             }else{
                                                  messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
                                                     setTimeout(function(){
                                                         messageHandler.clearMessageStatus();                           
-                                                    },2000);    
+                                                    },3000);    
                                             }                                      
 
                                         }).error(function(data, status, headers, config) {
@@ -102,7 +102,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                              messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
                                                 setTimeout(function(){
                                                     messageHandler.clearMessageStatus();                           
-                                                },2000);    
+                                                },3000);    
                                         });
 
                             }     

@@ -127,19 +127,19 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                             messageHandler.showErrorStatus(errorJson.successfulSave,".status-message-wrapper");
                                 setTimeout(function(){
                                 messageHandler.clearMessageStatus();                           
-                            },2000);
+                            },3000);
                             $state.go("root.tasks");
                         }else{
                             messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
                                 setTimeout(function(){
                                 messageHandler.clearMessageStatus();                           
-                            },2000);
+                            },3000);
                         }
                     }).error(function(jqXHR, textStatus, errorThrown) {
                         messageHandler.showErrorStatus(errorJson.submissionError,".status-message-wrapper");
                         setTimeout(function(){
                             messageHandler.clearMessageStatus();                           
-                        },2000);
+                        },3000);
                     })
                 }else{
                     self.isNotValidForm = true;
