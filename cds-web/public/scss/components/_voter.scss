@@ -106,3 +106,15 @@ float:left;
   font-weight: normal;
   word-wrap:break-word;
 }
+
+.tool-tip{
+  background: url(/images/cds-sprite.png) no-repeat 0 -49px;
+  height: 14px;
+  padding: 0 0 0px 14px;
+  width: 1px;
+  background-color: rgb(44, 110, 184);
+  border-radius: 16px;
+  position: absolute;
+  left: 378px;
+  top: 9px;
+}

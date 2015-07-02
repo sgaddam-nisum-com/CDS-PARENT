@@ -37,9 +37,10 @@
                 </div>
                 <div class="col-md-8 left">
                     <input type="text" id="membershipId" class="form-control input" name="membershipId" ng-model="cadreCtrl.user.cadre.partyMembershipId" data-val="partyMembershipId">
-                    <div class="error-class">
-                        <div class="error-content"></div>
-                    </div>
+                    <div class="tool-tip" popover="If you 've Party Membership ID please enter, Otherwise apply and get it from the party office." popover-trigger="mouseenter"></div>
+                        <div class="error-class">
+                            <div class="error-content"></div>
+                        </div>
                 </div>
             </div>
             <div class="row" ng-hide="cadreCtrl.hidePositionField">

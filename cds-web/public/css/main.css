@@ -2388,6 +2388,19 @@ body .navigation .top-bar-section ul li:active a {
   word-wrap: break-word;
 }
 
+/* line 110, ../scss/components/_voter.scss */
+.tool-tip {
+  background: url(/images/cds-sprite.png) no-repeat 0 -49px;
+  height: 14px;
+  padding: 0 0 0px 14px;
+  width: 1px;
+  background-color: #2c6eb8;
+  border-radius: 16px;
+  position: absolute;
+  left: 378px;
+  top: 9px;
+}
+
 /* line 1, ../scss/components/_mission-vision.scss */
 .mission-vissionSubHeadings {
   color: #333;
