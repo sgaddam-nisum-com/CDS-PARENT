@@ -5,7 +5,7 @@ define(['controllers/controllerModule', 'notifications'], function(controllerMod
             
             // i18n messages
             $scope.register_title = notifications.register_title;
-            $scope.register_thanksmsg = notifications.registerthanksmsg;
+            $scope.register_thanksmsg = notifications.register_thanksmsg;
             $scope.register_successmsg = notifications.register_successmsg;
 
              var userType=callerScope.userType;
