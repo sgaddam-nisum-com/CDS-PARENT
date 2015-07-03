@@ -6,7 +6,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
 
             function($state, $http, appUrls, $scope, registerService, cdsService, $sessionStorage) {
 
-                
+
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {},
                     config,
@@ -113,6 +113,10 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
 
                                 self.disableFields = true;
                                 self.showGrade = false;
+                                console.log(self.user.cadre.positionId);
+                                console.log(self.user.cadre.partyResponsibility);
+                                self.hidePositionField = (self.user.cadre.positionId != "") ? false : true;
+                                self.hideResponsibilityField = (self.user.cadre.partyResponsibility != null) ? false : true;
                             }
                             if (role[role.length - 1].roleName == "Office Manager" || role[role.length - 1].roleName == "Office Executive" || role[role.length - 1].roleName == "MP") {
 
@@ -126,13 +130,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                 self.trackInterest = function(interest) {
                                     self.hideFields = (interest == 1) ? false : true;
                                 }
-                                self.trackMembership = function(membership) {
-                                    self.hideMembershipID = (membership == 1) ? false : true;
+                                if (self.user.interestedAsCadre == 1) {
+                                    self.hideFields = false;
                                 }
-                                console.log(self.user.cadre.positionId);
-                                console.log(self.user.cadre.partyResponsibility);
-                                self.hidePositionField = (self.user.cadre.positionId != "") ? false : true;
-                                self.hideResponsibilityField = (self.user.cadre.partyResponsibility != null) ? false : true;
+                                self.trackMembership = function(membership) {
+                                        self.hideMembershipID = (membership == 1) ? false : true;
+                                    }
+                                    // self.hidePositionField = (self.user.cadre.positionId != "") ? false : true;
+                                    // self.hideResponsibilityField = (self.user.cadre.partyResponsibility != null) ? false : true;
 
                             } else {
                                 self.hideFields = true;

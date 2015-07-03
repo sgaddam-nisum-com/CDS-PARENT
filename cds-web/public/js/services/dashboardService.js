@@ -7,13 +7,13 @@ define(['services/serviceModule'], function(serviceModule) {
                     $http.get(appUrlService.getMyTasksList, {
 
                     }).success(function(resp) {
-                      cb(resp)
+                        cb(resp)
                     });
                 },
-                getTeamTasks : function(cb){
-                    $http.get(appUrlService.getTeamTasks,{
-                        
-                    }).success(function(resp){
+                getTeamTasks: function(cb) {
+                    $http.get(appUrlService.getTeamTasks, {
+
+                    }).success(function(resp) {
                         cb(resp);
                     });
                 },
@@ -26,12 +26,12 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                getTasksByAge: function(userRole,cb) {
-                    
+                getTasksByAge: function(userRole, cb) {
+
                     var criteria;
-                    if(userRole == "Cadre"){
+                    if (userRole == "Cadre") {
                         criteria = "self";
-                    }else{
+                    } else {
                         criteria = "All";
                     }
 
@@ -45,10 +45,16 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                getTasksByTrend: function(cb) {
+                getTasksByTrend: function(userRole, cb) {
+                    var type;
+                    if (userRole == "Cadre") {
+                        type = "assignedtome";
+                    } else {
+                        type = "All";
+                    }
                     $http.get(appUrlService.getTasksByTrend, {
                         params: {
-                            type: 'all'
+                            type: type
                         }
 
                     }).success(function(resp) {
@@ -65,54 +71,54 @@ define(['services/serviceModule'], function(serviceModule) {
                         cb(resp);
                     });
                 },
-                getAllCadreVerifications:function(cb){
+                getAllCadreVerifications: function(cb) {
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
-                            type:'All'
+                            type: 'All'
                         }
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
-                 getNewCadreVerifications:function(cb){
+                getNewCadreVerifications: function(cb) {
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
-                            type:'newcadres'
+                            type: 'newcadres'
                         }
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
-                getExistingCadreVerifications:function(cb){
+                getExistingCadreVerifications: function(cb) {
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
-                            type:'pendingverificationcadres'
+                            type: 'pendingverificationcadres'
                         }
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
-                 getSelfCadreVerifications:function(cb){
+                getSelfCadreVerifications: function(cb) {
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
-                            type:'AssignedToMe'
+                            type: 'AssignedToMe'
                         }
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
-                 getOfficeCadreVerifications:function(cb){
+                getOfficeCadreVerifications: function(cb) {
                     $http.get(appUrlService.getCadreVerifications, {
                         params: {
-                            type:'ServiceCenter'
+                            type: 'ServiceCenter'
                         }
                     }).success(function(resp) {
                         cb(resp);
                     });
                 },
-                getNotifications:function(cb){
-                     $http.get(appUrlService.getNotifications, {
-                         params: {
+                getNotifications: function(cb) {
+                    $http.get(appUrlService.getNotifications, {
+                        params: {
                             // subject: key
                         }
                     }).success(function(resp) {
@@ -121,53 +127,52 @@ define(['services/serviceModule'], function(serviceModule) {
 
                 },
 
-                getCadreDetails:function(cb, userId){
-                     $http.get(appUrlService.getUserCadreInfo, {
-                          params: {
-                            userId:userId
+                getCadreDetails: function(cb, userId) {
+                    $http.get(appUrlService.getUserCadreInfo, {
+                        params: {
+                            userId: userId
                         }
-                     }).success(function(resp) {
-                      cb(resp);                   
-                     }) 
-
-                },
-
-                getLeadCadres:function(cb){
-
-                     $http.get(appUrlService.getLeadCadres, {
-                        
-                     }).success(function(resp) {
-                      cb(resp);                   
-                     }) 
-
-
-
-                },
-
-                updateCadreStatus : function(data,cb){
-                  
-
-              $http({
-                    url : appUrlService.updateCadreStatus,                        
-                    method : "PUT",
-                    data:data
-                }).success(function(resp, textStatus, jqXHR) {
+                    }).success(function(resp) {
                         cb(resp);
-                }).error(function(jqXHR, textStatus, errorThrown) {
+                    })
 
-                })  
-
-
-
-                  
                 },
 
-                getMembershipTrend : function(cb){
+                getLeadCadres: function(cb) {
 
-                           $http.get(appUrlService.getMembershipTrend, {
-                            }).success(function(resp) {
-                                cb(resp);
-                            });
+                    $http.get(appUrlService.getLeadCadres, {
+
+                    }).success(function(resp) {
+                        cb(resp);
+                    })
+
+
+
+                },
+
+                updateCadreStatus: function(data, cb) {
+
+
+                    $http({
+                        url: appUrlService.updateCadreStatus,
+                        method: "PUT",
+                        data: data
+                    }).success(function(resp, textStatus, jqXHR) {
+                        cb(resp);
+                    }).error(function(jqXHR, textStatus, errorThrown) {
+
+                    })
+
+
+
+
+                },
+
+                getMembershipTrend: function(cb) {
+
+                    $http.get(appUrlService.getMembershipTrend, {}).success(function(resp) {
+                        cb(resp);
+                    });
 
 
                 }

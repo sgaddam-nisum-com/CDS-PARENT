@@ -11,7 +11,8 @@
                              tasksLabels = [];
 
 
-                         dashboardService.getTasksByTrend(function(resp) {
+                         dashboardService.getTasksByTrend(scope.userRole, function(resp) {
+                             console.log(resp);
 
                              trendList = resp.data;
 
