@@ -1,7 +1,7 @@
 define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
 
-    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window",
-        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window) {
+    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage",
+        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage) {
 
 
             var self = this,
@@ -50,6 +50,37 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 }
 
 
+            }
+            self.navEditProfile = function($event) {
+
+                console.log($event.currentTarget);
+                var choice = $event.target.attributes.id.value;
+                console.log(choice);
+
+                switch (choice) {
+                    case 'personal':
+                        $state.go('root.profile.editprofile.personal');
+                        break;
+                    case 'work':
+                        $state.go('root.profile.editprofile.work');
+                        break;
+                    case 'voter':
+                        $state.go('root.profile.editprofile.voter');
+                        break;
+                    case 'address':
+                        $state.go('root.profile.editprofile.address');
+                        break;
+                    case 'volunteer':
+                        $state.go('root.profile.editprofile.volunteer');
+                        break;
+                    case 'family':
+                        $state.go('root.profile.editprofile.family');
+                        break;
+                    case 'cadre':
+                        $state.go('root.profile.editprofile.cadre');
+                        break;
+
+                }
             }
 
 
