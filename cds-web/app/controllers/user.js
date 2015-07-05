@@ -40,6 +40,30 @@ exports.updateProfile = function(req, res, next) {
     });
 };
 
+exports.updateProfileImage = function(req, res, next) {
+    //log.debug("addAttachmentToTask : logged user - " + req.user.data.user.appUserId);
+    //var tid = req.query.id;
+    var token = req.user ? req.user.data.token : null;
+
+ /*   taskMgmt.addAttachmentToTask({
+        id: tid
+    }, req.files, token, function(resp) {
+        req.resp = resp;
+        next();
+    });*/
+
+      var params = req.body;
+
+      
+
+      userService.updateProfileImage(params,token,function(resp) {
+        
+     res.json(resp);
+    });
+
+
+};
+
 exports.authenticate = function(params, callback) {
     log.debug("authenticate : logging user : " + params.loginId);
     userService.authenticate(params, callback);

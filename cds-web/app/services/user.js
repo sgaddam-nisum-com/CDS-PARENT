@@ -201,3 +201,27 @@ exports.viewUserInfo = function(params, token, callback) {
         restService.makecall(args, callback);
     });
 };
+
+
+exports.updateProfileImage = function(params,token, callback){
+
+  log.debug("updateProfile : " + (JSON.stringify(params)));
+    var headers = header;
+    if (token)
+        headers[cdsConfig.token] = token;
+
+    //build url path
+    var path = requireUtil.format(restUrls.user.updateProfileImage.path, params.userId);
+    var url = {
+        path: path,
+        method: restUrls.user.updateProfileImage.method
+    };
+
+
+     console.log(url);
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+
+}
