@@ -47,6 +47,10 @@ module.exports = {
         viewUserInfo: {
             path: "userinfo/%s/userinformation",
             method: "GET"
+        },
+		updateProfileImage : {
+            path: "user/%s/uploadphoto",
+            method: "PUT"
         }
     },
     task: {

@@ -48,8 +48,22 @@ exports.init = function(app, passport, auth) {
     var multerAttachments = multer({
         dest: cdsConfig.attachments.rootPath + cdsConfig.attachments.path
     });
+	
+	var multerProfileImage = multer({ 
+         dest: cdsConfig.image.tempPath + cdsConfig.image.path,
+         rename: function (fieldname, filename,req, res) {
+            return filename;
+          },
+        onFileUploadStart: function (file) {
+          console.log(file.originalname + ' is starting ...');
+        },
+        onFileUploadComplete: function (file) {
+          console.log(file.fieldname + ' uploaded to  ' + file.path);
+        }
+    });
 
     app.post('/auth/user/addattachmenttotask', multerAttachments, userController.addAttachmentToTask, auth.filterResponse);
+	app.post('/user/updateProfileImage',multerProfileImage, userController.updateProfileImage, auth.filterResponse);
 
     app.delete('/auth/user/deleteattachmentfromtask', userController.deleteAttachmentFromTask, auth.filterResponse);
     app.post('/auth/user/addcommenttotask', userController.addCommentToTask, auth.filterResponse);

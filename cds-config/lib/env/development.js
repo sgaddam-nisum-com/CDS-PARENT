@@ -11,6 +11,7 @@ module.exports = {
     },
     image: {
         rootPath: "./public/images/",
+        tempPath:"./public/images/temp/",
         path: "profile/"
     },
     attachments: {

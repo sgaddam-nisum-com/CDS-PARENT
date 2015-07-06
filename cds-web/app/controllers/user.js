@@ -5,7 +5,10 @@
 var userService = require('../services/user'),
     taskMgmt = require('cds-task-management'),
     roleMgmt = require('cds-role-management'),
-    log = require('cds-logger').logger("user-controller");
+    log = require('cds-logger').logger("user-controller"),
+	fs = require("fs"),
+    cdsConfig = require('cds-config');
+	
 
 exports.signin = function(req, res, next) {
     log.debug("signin");
@@ -41,27 +44,21 @@ exports.updateProfile = function(req, res, next) {
 };
 
 exports.updateProfileImage = function(req, res, next) {
-    //log.debug("addAttachmentToTask : logged user - " + req.user.data.user.appUserId);
     //var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
-
- /*   taskMgmt.addAttachmentToTask({
-        id: tid
-    }, req.files, token, function(resp) {
-        req.resp = resp;
-        next();
-    });*/
-
-      var params = req.body;
-
-      
-
-      userService.updateProfileImage(params,token,function(resp) {
-        
+    var params = req.body;
+    userService.updateProfileImage(params,token,function(resp) {
+			var tmp_path = req.files.photograph.path;
+            var target_path = cdsConfig.image.rootPath+cdsConfig.image.path+req.files.photograph.originalname;
+        if(resp.status == "success"){            
+            fs.rename(tmp_path, target_path, function(err) {
+            });
+        }else{
+			fs.unlink(tmp_path, function(e) {                
+             });
+		}
      res.json(resp);
     });
-
-
 };
 
 exports.authenticate = function(params, callback) {
