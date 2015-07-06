@@ -21,9 +21,12 @@ define(['controllers/controllerModule',"messageHandler"], function (controllerMo
 
 
 			dashboardService.getLeadCadres(function(resp){
-				console.log(resp);
-				$scope.leadCadres = resp.data;
-
+				$scope.loopobj = resp.data;
+				var myresp = angular.copy(resp.data);
+				angular.forEach(resp.data, function(value, key){
+					myresp[key].nameid = value.firstName + " " +"(" +value.cadre.partyMembershipId + ")";
+				});
+				$scope.leadCadres = myresp;
 			});
 
 	 		dashboardService.getCadreDetails(function(resp) {                                									 			
@@ -35,7 +38,23 @@ define(['controllers/controllerModule',"messageHandler"], function (controllerMo
 				$scope.user.performanceGradeId = resp.data.performanceGradeId;
             },currentUserId);
 
-
+	 		$scope.hideLeadInfo = true;
+	 		$scope.showLeadInfo = function(cid){
+ 				angular.forEach($scope.loopobj, function( value, key ){
+	 				if( cid.cadre.cadreId === value.cadre.cadreId){
+	 					$scope.hideLeadInfo = false;
+	 					// $scope.leadInfoName = value.firstName;
+	 					$scope.leadMobileNum = value.mobileNumber;
+	 					if(value.aadharId !== undefined){
+	 						$scope.leadAadhar = value.aadharId;
+	 					} else {
+	 						$scope.leadAadhar = "Not Available";
+	 					}
+	 				} else if(cid.cadre.cadreId === undefined){
+	 					$scope.hideLeadInfo = true;
+	 				}
+	 			});
+	 		}
 
 	 		$scope.approve = function(){
 	 			var reqObj = {};
