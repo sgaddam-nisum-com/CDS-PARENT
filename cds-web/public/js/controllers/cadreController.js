@@ -31,9 +31,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
 
                 registerService.getPartyPositionsOptions(function(resp) {
                     $scope.partyPositionsOptions = resp.data;
+
                 });
                 registerService.getPerformanceGradeOptions(function(resp) {
                     $scope.performanceGradeOptions = resp.data;
+                });
+                registerService.getBloodGroupOptions(function(resp) {
+                    $scope.BloodGroupOptions = resp.data;
+                    console.log($scope.BloodGroupOptions);
                 });
 
                 self.user = {};
@@ -110,7 +115,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
 
 
                             if (role[role.length - 1].roleName == "Citizen" || role[role.length - 1].roleName == "Volunteer" || role[role.length - 1].roleName == "Cadre") {
-
+                                console.log(resp.data);
                                 self.disableFields = true;
                                 self.showGrade = false;
                                 console.log(self.user.cadre.positionId);

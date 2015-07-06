@@ -7,29 +7,29 @@
 define(['validation'], function(validation) {
 
     return {
-        addressLine1:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true
-		},
-		addressLine2:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true
-		},
-		postalAddress:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true
-		},		
-		nriAddressLine1:{
-			required:false,
-			key_error_msgs:true
-		}
-		
+        addressLine1: {
+            required: true,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        },
+        addressLine2: {
+            required: false,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        },
+        postalAddress: {
+            required: false,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        },
+        nriAddressLine1: {
+            required: false,
+            key_error_msgs: true
+        }
+
     }
 
 });

@@ -7,31 +7,31 @@
 define(['validation'], function(validation) {
 
     return {
-        voterId:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true
-		},
-		houseNumber:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true
-		},
-		addressLine1:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true
-		},
-		pincode:{
-			required:true,
-			minCharacters:5,
-			maxCharacters:16,
-			key_error_msgs:true			
-		}
-		
+        voterId: {
+            required: false,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        },
+        houseNumber: {
+            required: false,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        },
+        addressLine1: {
+            required: true,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        },
+        pincode: {
+            required: false,
+            minCharacters: 5,
+            maxCharacters: 16,
+            key_error_msgs: true
+        }
+
     }
 
 });
