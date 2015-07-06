@@ -26,6 +26,7 @@ define(['angular',
 	"directives/addressDirective",
 	"controllers/listController",
 	"services/listService",
+	"modalControllers/voterSearchController",
 	"bootstrap",
 	"angularBootstrap"
 	], function (angular) {

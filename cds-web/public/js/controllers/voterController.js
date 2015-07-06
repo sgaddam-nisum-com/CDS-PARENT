@@ -2,8 +2,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
 
     function(controllerModule, formValidation, validationMap, errorJson, messageHandler, notifications) {
 
-        controllerModule.controller('voterController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage",
-            function($state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage) {
+        controllerModule.controller('voterController', ['$rootScope', '$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage", "appModalService",
+            function($rootScope, $state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage, appModalService) {
 
                 var self = this,
                     dataJson = {};
@@ -12,7 +12,29 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                 self.user = {};
 
                 handleGetVoter(cdsSession.currentUserId);
+                this.searchVoter = function( votersearchtext ){
+		        	console.log(votersearchtext);
+		        	$rootScope.votersearchtext = votersearchtext;
+		            voterModal = appModalService.init("voterSearchTemplate.html","voterSearchController", $rootScope,{class:"cadre-overlay"} )();
 
+		            console.log(voterModal);
+
+		            voterModal.result.then(function(objString){
+		                objString = objString.substring(0, objString.length - 1);
+		                var valuesArray = objString.split(",");
+		                var keys = ["Country:", "State:", "District:", "Mandal:", "Village:", "MP Constituency:", "Assembly Constitueny:", "Pincode:"];
+			            var finalObjArray = [];                    
+			            for(var i=0; i<valuesArray.length; i++){
+			            	var myarry = {};
+			             	myarry.key = keys[i];
+			             	myarry.value = valuesArray[i];
+			             	finalObjArray.push(myarry);
+			            }
+			            $scope.voterNodeObj = finalObjArray;
+		            },function(){                               
+		                console.log('selObj');
+		            });
+		        }
                 var config = {
                     initiate: true,
                     blurValidation: false,

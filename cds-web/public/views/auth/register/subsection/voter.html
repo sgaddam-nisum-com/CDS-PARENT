@@ -40,21 +40,22 @@
                 </div>
                 <div class="col-md-9 left">
                     <input type="hidden" ng-model="voterCtrl.user.treeDataId" />
-                    <div id="autoCompleteContainer" autocomplete-voter-directive>
-                        <input type="text" id="pincode" class="form-control input" name="pincode" data-val="pincode" ui-items="names" placeholder="Search by Location">
-                        <img src="images/searchicon.png" class="search-icon" id="searchIcon">
+                    <!-- autocomplete-voter-directive -->
+                    <div id="autoCompleteContainer" >
+                        <input type="text" id="pincode" class="form-control input" name="pincode" data-val="pincode" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst">
+                        <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="voterCtrl.searchVoter(voterCtrl.user.searchconst)">
                     </div>
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
                 </div>
             </div>
-            <div class="row form-group" ng-repeat="(key, value) in voterNodeObj">
+            <div class="row form-group" ng-repeat="obj in voterNodeObj">
                 <div class="col-md-3">
-                    <label for="right-label" class="right inline" ng-bind="key"></label>
+                    <label for="right-label" class="right inline" ng-bind="obj.key"></label>
                 </div>
                 <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="value"></span>
+                    <span class="address-line" ng-bind="obj.value"></span>
                 </div>
             </div>
             <div class="row">
