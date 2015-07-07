@@ -2401,6 +2401,17 @@ body .navigation .top-bar-section ul li:active a {
   top: 9px;
 }
 
+/* line 121, ../scss/components/_voter.scss */
+.voter-search-tile {
+  background-color: #eaeaea;
+  margin-bottom: 5px;
+  height: auto;
+  padding: 12px;
+  width: 90%;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
 /* line 1, ../scss/components/_mission-vision.scss */
 .mission-vissionSubHeadings {
   color: #333;
