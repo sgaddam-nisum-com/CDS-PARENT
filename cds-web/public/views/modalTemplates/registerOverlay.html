@@ -24,8 +24,7 @@
 
 <div class="row">
     <div class="col-md-5 col-md-offset-4" image-preview-directive>
-      <img id="previewHolder" src="images/profile/{{currentProfileImage}}" style="width:200px; height:200px; border:1px solid #ddd">
-      
+      <img id="previewHolder" ng-src="images/profile/{{currentProfileImage}}" style="width:200px; height:200px; border:1px solid #ddd">      
       <div style="width:200px; height:200px; background-color : rgba(0,0,0,0.4); position:absolute; top:0; left:15px;" ng-show="showLoader" id="uploaderOverlay">
         
         <div class="progress" style="position:absolute; bottom:64px;border-radius:0; width:100%" >
@@ -45,7 +44,6 @@
         <div id="uploadWrapper" class="text-center" style="margin-top:20px;">
           <input type="submit" class="btn btn-success" id="initiateUpload" value="Upload" style="">
           <input type="button" class="btn btn-success" id="imageReset" value="Continue" style="margin-left:20px;" ng-click="display()" >
-          <!-- <input type="button" class="btn btn-success" id="imageReset" value="Reset" style="margin-left:20px;" > -->
         </div>
       </form>
     </div>
