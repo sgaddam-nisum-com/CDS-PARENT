@@ -44,19 +44,21 @@ exports.updateProfile = function(req, res, next) {
 };
 
 exports.updateProfileImage = function(req, res, next) {
-    //var tid = req.query.id;
+    var userId = req.user.data.user.appUserId;
+    var existingImgPath = req.body.currentImgPath || "";
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
+    params.userId = userId;    
+    params.photograph = req.files.photograph.name;
     userService.updateProfileImage(params,token,function(resp) {
-			var tmp_path = req.files.photograph.path;
-            var target_path = cdsConfig.image.rootPath+cdsConfig.image.path+req.files.photograph.originalname;
-        if(resp.status == "success"){            
-            fs.rename(tmp_path, target_path, function(err) {
-            });
-        }else{
-			fs.unlink(tmp_path, function(e) {                
+	   var img_path = req.files.photograph.path;                           
+        if(resp.status == "failure"){               
+            fs.unlink(img_path, function(e) {                
              });
-		}
+        }else{
+            fs.unlink(existingImgPath, function(e) {                
+             });
+        }
      res.json(resp);
     });
 };

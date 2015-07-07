@@ -17,9 +17,14 @@
     </div>
   </div>
 	
+ <div class="row"> 
+    <div class="col-md-10 col-md-offset-1 status-message-wrapper"></div>
+ </div>
+
+
 <div class="row">
     <div class="col-md-5 col-md-offset-4" image-preview-directive>
-      <img id="previewHolder" src="images/img-placeholder.jpg" style="width:200px; height:200px; border:1px solid #ddd">
+      <img id="previewHolder" src="images/profile/{{currentProfileImage}}" style="width:200px; height:200px; border:1px solid #ddd">
       
       <div style="width:200px; height:200px; background-color : rgba(0,0,0,0.4); position:absolute; top:0; left:15px;" ng-show="showLoader" id="uploaderOverlay">
         

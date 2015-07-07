@@ -1,12 +1,11 @@
- define(['directives/directiveModule'], function(directiveModule) {
+ define(['directives/directiveModule','messageHandler'], function(directiveModule,messageHandler) {
      directiveModule.directive('imagePreviewDirective', ["registerService", "appUrlService", "$timeout",
              function(registerService, appUrls, $timeout) {
-
-
-
                  return {
                      restrict: "A",
                      link: function(scope, elem, attrs) {
+
+                        var acceptedFormats = ['jpg','jpeg','png'];
 
                          scope.initiateUpload = false;
                          scope.showUploaderOverlay = false;
@@ -31,14 +30,20 @@
 
                          scope.setProfileImage = function(fileInput) {
                              fileObj = fileInput.files[0];
+                            var fExt = fileObj.name.substr(fileObj.name.lastIndexOf('.')+1);
+                             if(acceptedFormats.indexOf(fExt) == -1){
+                               messageHandler.showErrorStatus("Please choose a valid format of images ('jpg', 'png')",".status-message-wrapper");
+                                return;
+                             }else{
+                                messageHandler.clearMessageStatus(500);
+                             }
+
                              var reader = new FileReader();
                              reader.onloadend = function(e) {
                                  showUploadedItem(e.target.result);
                                  scope.initiateUpload = true;
                              };
                              reader.readAsDataURL(fileObj);
-
-
                          }
 
 
@@ -46,15 +51,11 @@
                              $("#previewHolder").attr("src", imgSrc);
                          }
 
-
-
+                     
 
                          scope.submitProfileImageForm = function(e) {
                              e.preventDefault();
                              //$("#previewHolder").attr("src","images/cds-loader.gif").css({width : "20px", height:"20px"});
-
-
-
 
                              var formFileObj = new FormData();
 
@@ -62,22 +63,15 @@
                              console.log(formFileObj);
 
                              if (scope.initiateUpload) {
-
-
                                  scope.showUploaderOverlay = false;
                                  scope.showLoader = true;
-
                                  var imageUploadPromise = $.ajax({
-
                                      xhr: function() {
                                          var xhr = new window.XMLHttpRequest();
 
                                          xhr.upload.addEventListener("progress", function(evt) {
                                              console.log(evt.loaded);
                                              if (evt.lengthComputable) {
-
-
-
 
                                                  scope.$apply(function() {
                                                      var percentComplete = (evt.loaded / evt.total) * 100;
@@ -87,31 +81,15 @@
                                          }, false);
 
                                          xhr.upload.addEventListener("load", function(evt) {
-
-
-
                                              $timeout(function() {
                                                  scope.uploadStatusMsg = "Updation completed."
                                                  $timeout(function() {
                                                      scope.showLoader = false;
                                                  }, 3000);
-
-
                                              }, 2000);
-
-
-
-
                                          });
-
-
-
-                                         return xhr;
-
-
+                                        return xhr;
                                      },
-
-
                                      type: "POST",
                                      url: appUrls.updateProfileImage,
                                      data: formFileObj,
@@ -119,16 +97,11 @@
                                      contentType: false
 
                                  }).success(function(resp, status, headers, config) {
-                                    console.log("trace here");
-                                     console.log(resp);
                                      scope.initiateUpload = false;
 
                                  }).error(function() {
 
-
                                  });
-
-                                 console.log(imageUploadPromise.upload);
 
                              }else{
                                 scope.showLoader = true;
@@ -141,14 +114,6 @@
                              }
 
                          }
-
-
-
-
-
-
-
-
 
                      }
                  }

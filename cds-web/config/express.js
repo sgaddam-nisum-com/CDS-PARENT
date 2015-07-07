@@ -45,14 +45,6 @@ module.exports = function(app, passport) {
     app.set('views', pbc + '/views');
     app.engine('html', require('ejs').renderFile);
 
-    //file upload
-    app.use(multer({
-        dest: cdsConfig.image.rootPath + cdsConfig.image.path,
-        rename: function(fieldname, filename) {
-            return filename;
-        }
-    }));
-
     //Enable jsonp
     app.enable("jsonp callback");
 

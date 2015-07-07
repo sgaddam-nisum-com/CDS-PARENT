@@ -201,7 +201,6 @@ exports.viewUserInfo = function(params, token, callback) {
         restService.makecall(args, callback);
     });
 };
-
 exports.updateProfileImage = function(params,token, callback){
   log.debug("updateProfile : " + (JSON.stringify(params)));
     var headers = header;

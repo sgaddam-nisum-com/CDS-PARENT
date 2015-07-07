@@ -50,17 +50,17 @@ exports.init = function(app, passport, auth) {
     });
 	
 	var multerProfileImage = multer({ 
-         dest: cdsConfig.image.tempPath + cdsConfig.image.path,
+         dest: cdsConfig.image.rootPath + cdsConfig.image.path,
          rename: function (fieldname, filename,req, res) {
-            return filename;
+             var userId = req.user.data.user.appUserId;
+            return "profile"+"_"+userId+"_"+Date.now();
           },
-        onFileUploadStart: function (file) {
-          console.log(file.originalname + ' is starting ...');
+        onFileUploadStart: function (file) {          
         },
-        onFileUploadComplete: function (file) {
-          console.log(file.fieldname + ' uploaded to  ' + file.path);
+        onFileUploadComplete: function (file) {          
         }
     });
+
 
     app.post('/auth/user/addattachmenttotask', multerAttachments, userController.addAttachmentToTask, auth.filterResponse);
 	app.post('/user/updateProfileImage',multerProfileImage, userController.updateProfileImage, auth.filterResponse);

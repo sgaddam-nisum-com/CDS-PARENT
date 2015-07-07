@@ -1,25 +1,25 @@
 define(['controllers/controllerModule', 'notifications'], function(controllerModule, notifications) {
 
-    controllerModule.controller('registerOverlayController', ["$scope", "$modalInstance", "$rootScope", "callerScope", "$window", "appUrlService", "cdsService", 
+    controllerModule.controller('registerOverlayController', ["$scope", "$modalInstance", "$rootScope", "callerScope", "$window", "appUrlService", "cdsService",
         function($scope, $modalInstance, $rootScope, callerScope, $window, appUrlService, cdsService) {
-            
+
             // i18n messages
             $scope.register_title = notifications.register_title;
             $scope.register_thanksmsg = notifications.register_thanksmsg;
             $scope.register_successmsg = notifications.register_successmsg;
+            var userType = callerScope.userType;
+            $scope.currentProfileImage = callerScope.currentProfileImage || "img-placeholder.jpg";
+            $scope.display = function() {
 
-             var userType=callerScope.userType;
-        console.log(callerScope.userType);
-        $scope.display = function() {
-        	
+                $window.location.href = "/profile";
+                /*if(userType == "NEW"){
             $window.location.href = "/profile";
-            /*if(userType == "NEW"){
+            }else{
             $window.location.href = "/profile";
-        	}else{
-        	$window.location.href = "/profile";
-        	}*/
-        };
+            }*/
+            };
 
-    }]);
+        }
+    ]);
 
 });
