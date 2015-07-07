@@ -13,7 +13,8 @@ define(['uiRouter',
 	"modalControllers/registerOverlayController",
 	"angularBootstrap",
 	"bootstrap",
-	"ngFlow"], function () {
+	"ngFlow",
+	"directives/imagePreviewDirective"], function () {
     var app = angular.module('CDSREGISTER', ['ui.router','serviceModule',"controllerModule","directiveModule","ngStorage","ui.bootstrap","flow"]);
     return app;
 });
