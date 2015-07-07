@@ -20,7 +20,13 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
 		            console.log(voterModal);
 
 		            voterModal.result.then(function(objString){
-		                objString = objString.substring(0, objString.length - 1);
+                        console.log(objString);
+                        console.log(objString.treeDataId);
+                        $scope.treeDataId = objString.treeDataId;
+                        console.log($scope.treeDataId);
+		                objString = objString.string.substring(0, objString.string.length - 1);
+                        
+                        console.log($scope.treeDataId);
 		                var valuesArray = objString.split(",");
 		                var keys = ["Country:", "State:", "District:", "Mandal:", "Village:", "MP Constituency:", "Assembly Constitueny:", "Pincode:"];
 			            var finalObjArray = [];                    
@@ -45,18 +51,18 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                 var formStack = formValidation.init("#voterRegistrationForm", validationMap, errorJson, config);
 
                 this.save = function() {
-
+                    console.log($scope.treeDataId);
 
                     var reqObj = {};
 
                     reqObj.voterCardId = self.user.voterCardId;
-                    reqObj.treeDataId = self.user.treeDataId;
+                    reqObj.treeDataId = $scope.treeDataId;
                     reqObj.addressLine1 = self.user.addressLine1;
                     reqObj.addressLine2 = self.user.addressLine2;
                     reqObj.voterId = self.user.voterId;
                     reqObj.userId = cdsSession.currentUserId;
 
-
+                    console.log(reqObj.treeDataId);
 
                     $http({
                         method: dataJson.reqMethod,
@@ -98,18 +104,21 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                 function generateParamObject(objString) {
                     objString = objString || "";
                     var keysArray = objString.split(",");
-                    var keysObj = {};
+                    var finalArray= [];
                     for (var i = 0; i < keysArray.length; i++) {
+                        keysObj = {}
                         var splitArray = keysArray[i].split(":");
-                        keysObj[splitArray[0]] = splitArray[1];
+                        keysObj.key = splitArray[0] + ":";
+                        keysObj.value = splitArray[1];
+                        finalArray.push(keysObj);    
                     }
-                    return keysObj;
+                    return finalArray;
                 }
 
                 function handleGetVoter(userId) {
                     registerService.getVoterInfo(userId, function(resp) {
                         dataJson = resp.data;
-
+                        console.log(dataJson);
                         if (dataJson.voterId) {
                             dataJson.reqMethod = "PUT";
                             dataJson.reqURL = appUrls.updateVoterInfo;

@@ -11,8 +11,9 @@
 		
 	<div class="row cadre-list-row" ng-hide="showNoRecordsMsg">
 
+
 		<div ng-repeat="result in results" class="col-md-12 voter-search-tile">
-			<span ng-bind="result" ng-click="ok(result)"></span>
+			<span ng-bind="result.string" ng-click="ok(result)"></span>
 		</div>
 
 	</div>

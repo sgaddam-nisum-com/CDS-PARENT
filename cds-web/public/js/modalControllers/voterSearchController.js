@@ -52,26 +52,23 @@ define(['controllers/controllerModule', 'notifications'], function (controllerMo
                         resultInfoArray = [];
                     for (var i=0; i < respObj.data.length; i++) {
                         resultInfo = "";
+                        finalStringObj = {};
+                        finalStringObj.treeDataId = respObj.data[i].treeDataId;
                         for (var j=0; j < respObj.data[i].constituency.length; j++){
-                            
-                            console.log(respObj.data[i].constituency[j]);
                             resultInfo += respObj.data[i].constituency[j].value + ",";
                         };
-                        resultInfoArray.push( resultInfo );
+                        finalStringObj.string = resultInfo;
+                        resultInfoArray.push( finalStringObj );
                     };
                     return resultInfoArray;
                 }
 
 			  registerService.getConstituencyInfo(queryString, function(resp) {
-					// console.log(resp);
                     var myres = addressStringifier(resp);
-                    console.log(myres);
                     $scope.results = myres;
-                    // var addressMap = addressStringifier(resp.data, queryString);
                 });
 
-			  $scope.ok = function (okresp) {  
-			  	console.log(okresp);
+			  $scope.ok = function (okresp) { 
     			$modalInstance.close(okresp);
 
   			};
