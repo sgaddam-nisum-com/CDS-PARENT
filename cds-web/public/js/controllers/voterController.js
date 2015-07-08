@@ -13,20 +13,13 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
 
                 handleGetVoter(cdsSession.currentUserId);
                 this.searchVoter = function( votersearchtext ){
-		        	console.log(votersearchtext);
 		        	$rootScope.votersearchtext = votersearchtext;
 		            voterModal = appModalService.init("voterSearchTemplate.html","voterSearchController", $rootScope,{class:"cadre-overlay"} )();
 
-		            console.log(voterModal);
-
 		            voterModal.result.then(function(objString){
-                        console.log(objString);
-                        console.log(objString.treeDataId);
                         $scope.treeDataId = objString.treeDataId;
-                        console.log($scope.treeDataId);
 		                objString = objString.string.substring(0, objString.string.length - 1);
                         
-                        console.log($scope.treeDataId);
 		                var valuesArray = objString.split(",");
 		                var keys = ["Country:", "State:", "District:", "Mandal:", "Village:", "MP Constituency:", "Assembly Constitueny:", "Pincode:"];
 			            var finalObjArray = [];                    
@@ -36,8 +29,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
 			             	myarry.value = valuesArray[i];
 			             	finalObjArray.push(myarry);
 			            }
-			            $scope.voterNodeObj = finalObjArray;
-		            },function(){                               
+                        self.user.searchconst = "";
+                        $scope.voterNodeObj = finalObjArray;
+		            },function(){              
 		                console.log('selObj');
 		            });
 		        }
