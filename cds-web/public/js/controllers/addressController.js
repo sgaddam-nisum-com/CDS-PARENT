@@ -14,7 +14,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
-
                 handleUserEdit(cdsSession.currentUserId);
                 this.searchAddress = function(addrsearchtext) {
 
@@ -23,11 +22,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                         class: "cadre-overlay"
                     })();
                     addressModal.result.then(function(seladdr) {
-                        console.log(seladdr);
-                        self.user.postalAddressId = seladdr.model;
+                        self.user.postalAddressId = seladdr.fieldValueObj.postalAddressId;
                         self.voterNodeObj = seladdr.fieldValueObj;
-                        console.log(self.voterNodeObj);
-
                     });
                 }
 
@@ -43,8 +39,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                             if (resp.data.length) {
                                 self.voterNodeObj = resp.data[0].postalAddress;
                             }
-
-                            console.log(resp);
 
                             self.showSubAddressInfo = true;
                             dataJson = resp.data;
@@ -63,7 +57,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     });
                 }
 
-
                 var config = {
                     initiate: true,
                     blurValidation: false,
@@ -72,10 +65,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     runCallBack: false,
                 };
 
-                var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
-
-                console.log(formStack);
                 this.save = function() {
+                    var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
                     if (formStack.isValid) {
                         var requestObj = [];
                         requestObj[0] = {};

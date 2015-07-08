@@ -24,7 +24,8 @@
                             <label for="right-label" class="right inline">Address Line1:</label>
                         </div>
                         <div class="col-md-9  left">
-                            <input type="text" id="addressLine1" class="form-control input required" name="addressLine1" data-val="addressLine1" ng-model="address.addressLine1">
+                            <input type="text" id="addressLine1" class="form-control input" 
+                            name="addressLine1" data-val="addressLine1" ng-model="address.addressLine1">
                             <div class="error-class">
                                 <div class="error-content"></div>
                             </div>
@@ -125,7 +126,7 @@
                     <label for="right-label" class="right inline">Division:</label>
                 </div>
                 <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.divisionName"></span>
+                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.taluk"></span>
                 </div>
             </div>
             <div class="row form-group">
