@@ -103,7 +103,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
 
             /*dashboard*/
-
+            getNotificationDetails: "/auth/dashboard/viewMessage",
             getNotifications: "/auth/dashboard/notifications",
             addCommentToTask: "/auth/user/addcommenttotask",
             updateCadreStatus: "/auth/dashboard/cadrepickedstatus",

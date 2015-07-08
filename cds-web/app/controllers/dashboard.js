@@ -8,9 +8,12 @@ var dashboardService = require('../services/dashboard'),
     log = require('cds-logger').logger("dashboard-controller");
 
 exports.viewMessage = function(req, res, next) {
+
     log.debug("save : logged user - " + req.user.data.user.appUserId);
-    var params = req.query.msgId;
+
+    var params = req.query;
     var token = req.user ? req.user.data.token : null;
+    var msgId = params.msgId;
 
     dashboardService.viewMessage({
         msgId: msgId

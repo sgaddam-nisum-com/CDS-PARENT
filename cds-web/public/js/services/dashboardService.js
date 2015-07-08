@@ -126,6 +126,15 @@ define(['services/serviceModule'], function(serviceModule) {
                     });
 
                 },
+                getNotificationDetails: function(msgId, cb) {
+                    $http.get(appUrlService.getNotificationDetails, {
+                        params: {
+                            msgId: msgId
+                        }
+                    }).success(function(resp) {
+                        cb(resp);
+                    });
+                },
 
                 getCadreDetails: function(cb, userId) {
                     $http.get(appUrlService.getUserCadreInfo, {
