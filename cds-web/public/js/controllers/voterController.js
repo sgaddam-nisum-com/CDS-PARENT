@@ -119,6 +119,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                     registerService.getVoterInfo(userId, function(resp) {
                         dataJson = resp.data;
                         console.log(dataJson);
+                        $scope.treeDataId = dataJson.treeDataId;
                         if (dataJson.voterId) {
                             dataJson.reqMethod = "PUT";
                             dataJson.reqURL = appUrls.updateVoterInfo;
