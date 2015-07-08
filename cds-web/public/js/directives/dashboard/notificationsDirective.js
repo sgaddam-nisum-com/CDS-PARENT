@@ -55,10 +55,10 @@
                              paginationPageSizes: [5, 20, 30],
                              paginationPageSize: 5,
                              columnDefs: [{
-                                 name: 'subjectAAA',
+                                 name: 'subject',
                                  cellTemplate: "<a class='row-link' ng-click='grid.appScope.renderVerifyModel(grid,row)'>{{grid.appScope.getNotificationSubjectText(grid,row)}}</a>"
                              }, {
-                                 name: 'DateAASSS'
+                                 name: 'Date'
                              }],
                              data: dataJSON.notificationList
                          };   
