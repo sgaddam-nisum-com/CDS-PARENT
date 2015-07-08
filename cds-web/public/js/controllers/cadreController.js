@@ -21,7 +21,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                 handleGetCadre(cdsSession.currentUserId);
 
                 config = {
-                    initiate: true,
+                    initiate: false,
                     blurValidation: false,
                     htmlValidation: false,
                     submitValidForm: false,
@@ -38,7 +38,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                 });
                 registerService.getBloodGroupOptions(function(resp) {
                     $scope.BloodGroupOptions = resp.data;
-                    console.log($scope.BloodGroupOptions);
                 });
 
                 self.user = {};
@@ -118,8 +117,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                 console.log(resp.data);
                                 self.disableFields = true;
                                 self.showGrade = false;
-                                console.log(self.user.cadre.positionId);
-                                console.log(self.user.cadre.partyResponsibility);
                                 self.hidePositionField = (self.user.cadre.positionId != "") ? false : true;
                                 self.hideResponsibilityField = (self.user.cadre.partyResponsibility != null) ? false : true;
                             }

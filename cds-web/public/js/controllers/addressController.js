@@ -1,8 +1,8 @@
 define(['controllers/controllerModule', 'formValidation', 'validators/addressValidators', 'errorMessages/addressErrors', "messageHandler", 'notifications'],
     function(controllerModule, formValidation, validationMap, errorJson, messageHandler, notifications) {
 
-        controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope", "$sessionStorage",
-            function($state, $http, registerService, appUrls, cdsService, $scope, $sessionStorage) {
+        controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope", "$sessionStorage", "$rootScope", "appModalService",
+            function($state, $http, registerService, appUrls, cdsService, $scope, $sessionStorage, $rootScope, appModalService) {
                 var self = this,
                     dataJson = {};
                 self.user = {};
@@ -16,7 +16,20 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
 
 
                 handleUserEdit(cdsSession.currentUserId);
+                this.searchAddress = function(addrsearchtext) {
 
+                    $rootScope.addrsearchtext = addrsearchtext;
+                    addressModal = appModalService.init("addressSearchTemplate.html", "addressSearchController", $rootScope, {
+                        class: "cadre-overlay"
+                    })();
+                    addressModal.result.then(function(seladdr) {
+                        console.log(seladdr);
+                        self.user.postalAddressId = seladdr.model;
+                        self.voterNodeObj = seladdr.fieldValueObj;
+                        console.log(self.voterNodeObj);
+
+                    });
+                }
 
                 function handleUserEdit(userId) {
                     registerService.getAddressInfo(userId, function(resp) {
@@ -61,52 +74,55 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
 
                 var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
 
-
-
+                console.log(formStack);
                 this.save = function() {
-                    var requestObj = [];
-                    requestObj[0] = {};
-                    requestObj[0].postalAddress = {};
+                    if (formStack.isValid) {
+                        var requestObj = [];
+                        requestObj[0] = {};
+                        requestObj[0].postalAddress = {};
 
-                    if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1) {
-                        requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
-                        requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
-                        requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
-                        requestObj[0]['nriAddress'] = false;
-                        var addressReq = {};
-                        addressReq.data = requestObj;
-                        addressReq.userId = cdsSession.currentUserId;
+                        if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1) {
+                            requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
+                            requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
+                            requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
+                            requestObj[0]['nriAddress'] = false;
+                            var addressReq = {};
+                            addressReq.data = requestObj;
+                            addressReq.userId = cdsSession.currentUserId;
 
-                    }
+                        }
 
-                    $http({
-                        method: "PUT",
-                        url: appUrls.updateResidentialAddress,
-                        data: addressReq
-                    }).success(function(resp, status, headers, config) {
+                        $http({
+                            method: "PUT",
+                            url: appUrls.updateResidentialAddress,
+                            data: addressReq
+                        }).success(function(resp, status, headers, config) {
 
-                        if (resp.status === "success") {
+                            if (resp.status === "success") {
 
-                            messageHandler.showInfoStatus(notifications.address_successfulSave, ".status-message-wrapper");
-                            setTimeout(function() {
-                                messageHandler.clearMessageStatus();
-                                $state.go('root.profile.editprofile.volunteer');
-                            }, 3000);
-                        } else {
+                                messageHandler.showInfoStatus(notifications.address_successfulSave, ".status-message-wrapper");
+                                setTimeout(function() {
+                                    messageHandler.clearMessageStatus();
+                                    $state.go('root.profile.editprofile.volunteer');
+                                }, 3000);
+                            } else {
+                                messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
+                                setTimeout(function() {
+                                    messageHandler.clearMessageStatus();
+                                }, 3000);
+                            }
+
+                        }).error(function(data, status, headers, config) {
+
                             messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
                             setTimeout(function() {
                                 messageHandler.clearMessageStatus();
                             }, 3000);
-                        }
-
-                    }).error(function(data, status, headers, config) {
-
-                        messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
-                        setTimeout(function() {
-                            messageHandler.clearMessageStatus();
-                        }, 3000);
-                    });
-
+                        });
+                        self.isNotValidForm = false;
+                    } else {
+                        self.isNotValidForm = true;
+                    }
                 }
 
             }

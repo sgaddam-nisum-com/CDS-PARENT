@@ -9,9 +9,10 @@
                             <label for="right-label" class="right inline">Search Address:</label>
                         </div>
                         <div class="col-md-9  left">
-                            <div id="autoCompleteContainer" autocomplete-address-directive>
-                                <input type="text" id="postalAddress" class="form-control input" name="postalAddress" data-val="postalAddress" placeholder="Search by pincode">
-                                <img src="images/searchicon.png" class="search-icon" id="searchIcon">
+                            <!-- autocomplete-address-directive is removed from below div id="autoCompleteContainer -->
+                            <div id="autoCompleteContainer">
+                                <input type="text" id="postalAddress" class="form-control input" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst">
+                                <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="addressCtrl.searchAddress(addressCtrl.user.searchConst)">
                             </div>
                             <div class="error-class">
                                 <div class="error-content"></div>
@@ -34,7 +35,7 @@
                             <label for="right-label" class="right inline">Address Line2:</label>
                         </div>
                         <div class="col-md-9  left">
-                            <input type="text" id="addressLine2" class="form-control input" name="addressLine2" data-val="addressLine2" ng-model="address.addressLine2">
+                            <input type="text" id="addressLine2" class="form-control input" name="addressLine2" ng-model="address.addressLine2">
                             <div class="error-class">
                                 <div class="error-content"></div>
                             </div>
@@ -95,12 +96,44 @@
 				</div>  -->
                 </div>
             </div>
-            <div class="row form-group" ng-repeat="(key, value) in addressCtrl.voterNodeObj">
+            <div class="row form-group">
                 <div class="col-md-3 ">
-                    <label for="right-label" class="right inline">{{key}}:</label>
+                    <label for="right-label" class="right inline">Country:</label>
                 </div>
                 <div class="col-md-9  left">
-                    <span class="address-line">{{value}}</span>
+                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.country"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3 ">
+                    <label for="right-label" class="right inline">State:</label>
+                </div>
+                <div class="col-md-9  left">
+                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.state"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3 ">
+                    <label for="right-label" class="right inline">District:</label>
+                </div>
+                <div class="col-md-9  left">
+                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.district"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3 ">
+                    <label for="right-label" class="right inline">Division:</label>
+                </div>
+                <div class="col-md-9  left">
+                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.divisionName"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3 ">
+                    <label for="right-label" class="right inline">Pincode:</label>
+                </div>
+                <div class="col-md-9  left">
+                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.pincodeNumber"></span>
                 </div>
             </div>
             <!-- <div class="row">
