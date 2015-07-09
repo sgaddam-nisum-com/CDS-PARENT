@@ -7,14 +7,13 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     dataJson = {};
                 self.user = {};
                 self.user.postalAddressId = "";
+                self.hideAddrFields = true;
 
-                $scope.voterNodeObj = {
-                    "name": "ramesh"
-                };
-
+                $scope.voterNodeObj = {};
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
                 handleUserEdit(cdsSession.currentUserId);
+
                 this.searchAddress = function(addrsearchtext) {
 
                     $rootScope.addrsearchtext = addrsearchtext;
@@ -24,10 +23,17 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     addressModal.result.then(function(seladdr) {
                         self.user.postalAddressId = seladdr.fieldValueObj.postalAddressId;
                         self.voterNodeObj = seladdr.fieldValueObj;
+                        self.hideAddrFields = false;
                     });
                 }
 
                 function handleUserEdit(userId) {
+
+                    if (self.user.postalAddressId == null || self.user.postalAddressId == "") {
+                        self.hideAddrFields = true;
+                    } else {
+                        self.hideAddrFields = false;
+                    }
                     registerService.getAddressInfo(userId, function(resp) {
 
                         self.user.iaddressarray = [];
@@ -46,6 +52,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                             self.user.postalAddress = {};
                             self.user.postalAddressId = resp.data[0].postalAddress.postalAddressId;
 
+                            self.hideAddrFields = false;
                             for (var i = 0; i < 1; i++) {
                                 if (!dataJson[i].nriAddress) {
                                     self.user.iaddressarray.push(dataJson[i]);
