@@ -24,20 +24,18 @@
                          var griddata = [];
 
                          function getNotificationDetails(inboxId) {
-                            console.log(inboxId);
-                            // scope.inboxId = inboxId;
-
+                            scope.inboxId = inboxId;
                              dashboardService.getNotificationDetails(inboxId, function(resp) {
                                 //TODO the overlay view part
-                                // var verificationModal = appModalService.init("notificationdetails.html", "notificationDetailsController", scope, {
-                                 //     class: "cadre-overlay"
-                                 // })();
+                                var verificationModal = appModalService.init("notificationdetails.html", "notificationDetailsController", scope, {
+                                     class: "cadre-overlay"
+                                 })();
 
-                                 // verificationModal.result.then(function(selObj) {
+                                 verificationModal.result.then(function(selObj) {
 
-                                 // }, function() {
+                                 }, function() {
 
-                                 // });
+                                 });
 
                              });
 

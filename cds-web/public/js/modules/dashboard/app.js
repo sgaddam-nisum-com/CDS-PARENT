@@ -12,6 +12,7 @@ define([
     "controllers/headerController",
     "controllers/footerController",
     "modalControllers/cadreVerificationController",
+    "modalControllers/notificationDetailsController",
     "directives/dashboard/cadreVerificationAllDirective",
     "directives/dashboard/cadreVerificationOfficeDirective",
     "directives/dashboard/cadreVerificationSelfDirective",  
