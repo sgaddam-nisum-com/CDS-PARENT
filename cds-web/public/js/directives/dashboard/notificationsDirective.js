@@ -17,13 +17,25 @@
 
                  });
 
+
+
                  return {
                      restrict: "A",
                      link: function(scope, elem, attrs) {
 
+                         scope.notifications = [];
+
+                         dashboardService.getNotifications(function(resp) {
+
+                             scope.notifications = resp.data.inboxs;
+                             
+
+                         });
+
                          var griddata = [];
 
-                         function getNotificationDetails(inboxId) {
+
+                         scope.getNotificationDetails=function (inboxId) {
                             scope.inboxId = inboxId;
                              dashboardService.getNotificationDetails(inboxId, function(resp) {
                                 //TODO the overlay view part
@@ -41,25 +53,25 @@
 
                          }
 
-                         scope.renderVerifyModel = function(grid, row) {
-                            getNotificationDetails(row.entity.inboxId);
-                         }
+                         // scope.renderVerifyModel = function(grid, row) {
+                         //    getNotificationDetails(row.entity.inboxId);
+                         // }
 
-                         scope.getNotificationSubjectText = function(grid, row) {   
-                            return row.entity.subject;    
-                         }
+                         // scope.getNotificationSubjectText = function(grid, row) {   
+                         //    return row.entity.subject;    
+                         // }
 
-                         scope.gridOptions = {
-                             paginationPageSizes: [5, 20, 30],
-                             paginationPageSize: 5,
-                             columnDefs: [{
-                                 name: 'subject',
-                                 cellTemplate: "<a class='row-link' ng-click='grid.appScope.renderVerifyModel(grid,row)'>{{grid.appScope.getNotificationSubjectText(grid,row)}}</a>"
-                             }, {
-                                 name: 'Date'
-                             }],
-                             data: dataJSON.notificationList
-                         };   
+                         // scope.gridOptions = {
+                         //     paginationPageSizes: [5, 20, 30],
+                         //     paginationPageSize: 5,
+                         //     columnDefs: [{
+                         //         name: 'subject',
+                         //         cellTemplate: "<a class='row-link' ng-click='grid.appScope.renderVerifyModel(grid,row)'>{{grid.appScope.getNotificationSubjectText(grid,row)}}</a>"
+                         //     }, {
+                         //         name: 'Date'
+                         //     }],
+                         //     data: dataJSON.notificationList
+                         // };   
 
                      }                  
                  }

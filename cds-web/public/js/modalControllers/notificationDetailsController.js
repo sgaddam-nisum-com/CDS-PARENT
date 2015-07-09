@@ -5,11 +5,10 @@ define(['controllers/controllerModule',"messageHandler"], function (controllerMo
 	 	function($scope,$http, $modalInstance,callerScope,$rootScope,dashboardService,appUrlService, $timeout){
 			var inboxId = callerScope.inboxId;
 
-	 		dashboardService.getNotificationDetails(inboxId, function(resp) {                                									 			
-				$scope.notificationDetails = resp.data.body;
-				$scope.subject = resp.data.subject;
-				console.log(' ==================== ' + $scope.notificationDetails);
-				console.log(' ==================== ' + $scope.subject);
+	 		dashboardService.getNotificationDetails(inboxId, function(resp) { 
+	 			$scope.subject = resp.data.subject;                               									 			
+				$scope.notificationBody = resp.data.body;
+				$scope.footer = resp.data.footerString;   
             });
 
   			$scope.cancel = function () {	
