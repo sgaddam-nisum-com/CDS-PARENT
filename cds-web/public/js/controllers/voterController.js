@@ -97,16 +97,19 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
 
                 function generateParamObject(objString) {
                     objString = objString || "";
-                    var keysArray = objString.split(",");
-                    var finalArray= [];
-                    for (var i = 0; i < keysArray.length; i++) {
-                        keysObj = {}
-                        var splitArray = keysArray[i].split(":");
-                        keysObj.key = splitArray[0] + ":";
-                        keysObj.value = splitArray[1];
-                        finalArray.push(keysObj);    
+                    
+                    if(objString !== ""){
+                        var keysArray = objString.split(",");
+                        var finalArray= [];
+                        for (var i = 0; i < keysArray.length; i++) {
+                            keysObj = {}
+                            var splitArray = keysArray[i].split(":");
+                            keysObj.key = splitArray[0] + ":";
+                            keysObj.value = splitArray[1];
+                            finalArray.push(keysObj);    
+                        }
+                        return finalArray;
                     }
-                    return finalArray;
                 }
 
                 function handleGetVoter(userId) {
