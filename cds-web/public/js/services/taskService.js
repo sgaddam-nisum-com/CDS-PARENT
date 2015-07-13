@@ -38,6 +38,15 @@ define(['services/serviceModule'], function(serviceModule) {
 						cb(resp);
 					});
 				},
+				getPrimeIds : function(userInput, cb){
+					$http.get(appUrlService.getPrimeIdList,{
+						params: {
+						   q: userInput
+						}
+					}).success(function(resp){
+						cb(resp);
+					});
+				},
 				getTaskDetails : function(taskId, cb){
 					$http.get(appUrlService.getTaskDetails,{
 						params: {

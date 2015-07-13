@@ -106,6 +106,11 @@ module.exports = {
             path: "tasks/tasksforsupervisor/",
             method: "GET"
         },
+        // check the servicename and change it accordingly
+        getTaskPrimeIds: {
+            path: "tasks/tasksforsupervisor/%s/",
+            method: "GET"
+        },
         getTeamTasks: {
             path: "tasks/reporteestasks/",
             method: "GET"

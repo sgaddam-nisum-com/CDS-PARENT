@@ -322,6 +322,17 @@ exports.getSupervisorTasks = function(req, res, next) {
     });
 };
 
+exports.getTaskPrimeIds = function(req, res, next) {
+    log.debug("getTaskPrimeIds : logged user - " + req.user.data.user.appUserId);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.getTaskPrimeIds(params, token, function(resp) {
+        req.resp = resp;
+        next();
+    });
+};
+
 exports.requestTypes = function(req, res, next) {
     log.debug("requestTypes");
     var params = req.body;

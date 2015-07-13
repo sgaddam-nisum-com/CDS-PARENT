@@ -81,6 +81,9 @@ define(['services/serviceModule'], function(serviceModule) {
             getTaskPriorities: "/user/taskpriority",
             getCadreList: "/auth/cadre/cadres",
 
+            //get PrimeId
+            getPrimeIdList: "auth/user/primeids",
+
             getTasksByAge: "/auth/dashboard/tasksByAge",
             getTasksByTrend: "/auth/dashboard/tasksTrendRPerMonth",
 
