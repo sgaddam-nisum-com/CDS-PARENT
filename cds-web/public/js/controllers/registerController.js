@@ -1,4 +1,4 @@
- define(['controllers/controllerModule', 'formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors'], function(controllerModule, formValidation, validationMap, errorJson) {
+ define(['controllers/controllerModule', 'formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors','notifications'], function(controllerModule, formValidation, validationMap, errorJson,notifications) {
 
      controllerModule.controller('registerController', ['$scope', "$http", "registerService", "cdsService", "appUrlService", "roleService", "$window", "appModalService",
 
@@ -23,8 +23,11 @@
                  keyboard: false,
                  class: "registration-confirm-overlay",
                  backdrop: "static"
-             }
+             };
 
+            $scope.register_title = notifications.register_title;
+            $scope.register_thanksmsg = notifications.register_thanksmsg;
+            $scope.register_successmsg = notifications.register_successmsg;
 
 
 
@@ -96,9 +99,6 @@
              self.trackCadreType = function() {
                  self.user.membershipType = 2;
              }
-
-
-
 
 
              self.save = function() {

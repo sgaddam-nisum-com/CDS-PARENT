@@ -392,8 +392,11 @@
                             <!-- /CADRE section -->
                         </div>
                     </div>
-					<div class="col-lg-3  col-md-3 col-sm-12 col-xs-12 members">
-                        <img class="photo1" src="images/profile/{{profileCtrl.user.photograph}}" />
+					<div class="col-lg-3  col-md-3 col-sm-12 col-xs-12 members text-center" slide-btn-directive>
+                        <img class="photo1" src="images/profile/{{profileCtrl.user.photograph}}" style="width:200px; height:200px;"  id="profileImg"/>
+                        <br>
+                        <button type="button" ng-show="showUpdateBtn" class="btn btn-primary" style="margin-top:10px; position:absolute; bottom:80px; left:105px" ng-click="profileCtrl.showImageUpdateOverlay()" id="updateBtn">Update</button>
+
                     </div>
                 </div>
             </div>

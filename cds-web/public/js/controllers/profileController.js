@@ -1,14 +1,22 @@
-define(['controllers/controllerModule', 'jquery'], function(controllerModule, $) {
+define(['controllers/controllerModule', 'jquery','notifications'], function(controllerModule, $,notifications) {
 
-    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage",
-        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage) {
+    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage","appModalService",
+        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage,appModalService) {
 
 
             var self = this,
                 currentCitizenId = $stateParams.citizenId,
-                children = [];
+                children = [],
+                 regConfModalConfig = {
+                 keyboard: true,
+                 class: "registration-confirm-overlay",
+                 backdrop: true
+             };
 
-
+            $scope.register_title = notifications.register_title;
+            $scope.register_thanksmsg = notifications.register_thanksmsg;
+            $scope.register_successmsg = notifications.register_successmsg;
+            $scope.currentProfileImage = "img-placeholder.jpg";
             cdsService.getProfileInfo(currentCitizenId, initiateProfile);
 
             function generateParamObject(objString) {
@@ -23,6 +31,8 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             }
 
             function initiateProfile(resp) {
+
+
 
                 if (resp.data) {
 
@@ -45,7 +55,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                     children = angular.copy(resp.data.tblCitizenRelation);
                     children.shift();
                     $scope.children = children;
-
+                    $scope.currentProfileImage = resp.data.photograph;
 
                 }
 
@@ -83,6 +93,13 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
                 }
             }
 
+            self.showImageUpdateOverlay = function(){
+
+                 var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, regConfModalConfig)();
+
+
+
+            }
 
 
 

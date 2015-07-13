@@ -29,7 +29,10 @@ define(['angular',
     "modalControllers/voterSearchController",
     "modalControllers/addressSearchController",
     "bootstrap",
-    "angularBootstrap"
+    "angularBootstrap",
+    "directives/imagePreviewDirective",
+    "directives/slideBtnDirective",
+    "modalControllers/registerOverlayController"
 ], function(angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router', "ngStorage", 'serviceModule', "controllerModule", "directiveModule", "ui.bootstrap"]);
     return app;
