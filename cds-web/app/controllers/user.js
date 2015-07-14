@@ -201,12 +201,24 @@ exports.addAttachmentToTask = function(req, res, next) {
     taskMgmt.addAttachmentToTask({
         id: tid
     }, req.files, token, function(resp) {
-        req.resp = resp;
-        next();
+        if(resp.status == "failure"){               
+            //unlink all the attachments
+            for(var i = 0; i < Object.keys(req.files).length; i++){
+                var imageName = files.attachment.originalname;
+                var attachement_path = cdsConfig.attachments.path + imageName
+                fs.unlink(attachement_path, function(e) {                
+                         });
+            }
+            req.resp = resp;
+            next();
+        }else{
+            req.resp = resp;
+            next();
+        }        
     });
-};
+};  
 
-exports.deleteAttachmentFromTask = function(req, res, next) {
+/*exports.deleteAttachmentFromTask = function(req, res, next) {
     log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.user.appUserId);
     var tid = req.query.id;
     var token = req.user ? req.user.data.token : null;
@@ -216,6 +228,26 @@ exports.deleteAttachmentFromTask = function(req, res, next) {
     }, token, function(resp) {
         req.resp = resp;
         next();
+    });
+};*/
+
+exports.deleteAttachmentFromTask = function(req, res, next) {
+    log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.user.appUserId);
+    var params = req.body;
+    var token = req.user ? req.user.data.token : null;
+
+    taskMgmt.deleteAttachmentFromTask(params, token, function(resp) {
+        if(resp.status == "success"){
+
+            //TODO get all the file names loop it and do fs.unlink
+            
+            req.resp = resp;
+            next();
+        }else{
+            req.resp = resp;
+            next();
+        }
+
     });
 };
 

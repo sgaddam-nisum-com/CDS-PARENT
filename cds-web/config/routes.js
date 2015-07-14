@@ -46,7 +46,15 @@ exports.init = function(app, passport, auth) {
     app.delete('/auth/user/deletetask', userController.deleteTask, auth.filterResponse);
 
     var multerAttachments = multer({
-        dest: cdsConfig.attachments.rootPath + cdsConfig.attachments.path
+        dest: cdsConfig.attachments.rootPath + cdsConfig.attachments.path,
+        rename: function (fieldname, filename,req, res) {
+             var tid = req.query.id;
+            return "attachment"+"_"+tid+"_"+Date.now();
+          },
+        onFileUploadStart: function (file) {          
+        },
+        onFileUploadComplete: function (file) {          
+        }
     });
 	
 	var multerProfileImage = multer({ 

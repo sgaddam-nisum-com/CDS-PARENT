@@ -75,7 +75,8 @@ var saveAttachments = function(files, callback) {
         for (var i = 0; i < Object.keys(files).length; i++) {
             var imageName = files.photograph.originalname;
             images.push = {
-                attachmentName: cdsConfig.image.path + imageName
+                //attachmentName: cdsConfig.image.path + imageName
+                attachmentName: cdsConfig.attachments.path + imageName
             };
             if (i === (Object.keys(files).length - 1)) {
                 callback(images);
@@ -92,7 +93,7 @@ exports.deleteAttachmentFromTask = function(params, token, callback) {
     headers[cdsConfig.token] = token;
 
     var url = {
-        path: requireUtil.format(restUrls.task.deleteAttachmentFromTask.path, params.taskId),
+        path: requireUtil.format(restUrls.task.deleteAttachmentFromTask.path, params),
         method: restUrls.task.deleteAttachmentFromTask.method
     };
 
