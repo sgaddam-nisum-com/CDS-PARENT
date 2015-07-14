@@ -1,23 +1,24 @@
-define(['controllers/controllerModule', 'jquery','notifications'], function(controllerModule, $,notifications) {
+define(['controllers/controllerModule', 'jquery', 'notifications'], function(controllerModule, $, notifications) {
 
-    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage","appModalService",
-        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage,appModalService) {
+    controllerModule.controller('profileController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage", "appModalService",
+        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage, appModalService) {
 
 
             var self = this,
                 currentCitizenId = $stateParams.citizenId,
                 children = [],
-                 regConfModalConfig = {
-                 keyboard: true,
-                 class: "registration-confirm-overlay",
-                 backdrop: true
-             };
-
+                regConfModalConfig = {
+                    keyboard: true,
+                    class: "registration-confirm-overlay",
+                    backdrop: true
+                },
+                cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
             $scope.register_title = notifications.register_title;
             $scope.register_thanksmsg = notifications.register_thanksmsg;
             $scope.register_successmsg = notifications.register_successmsg;
             $scope.currentProfileImage = "img-placeholder.jpg";
             cdsService.getProfileInfo(currentCitizenId, initiateProfile);
+
 
             function generateParamObject(objString) {
                 objString = objString || "";
@@ -63,9 +64,9 @@ define(['controllers/controllerModule', 'jquery','notifications'], function(cont
             }
             self.navEditProfile = function($event) {
 
-                console.log($event.currentTarget);
+                cdsSession.currentUserId = $stateParams.citizenId;
+
                 var choice = $event.target.attributes.id.value;
-                console.log(choice);
 
                 switch (choice) {
                     case 'personal':
@@ -93,9 +94,9 @@ define(['controllers/controllerModule', 'jquery','notifications'], function(cont
                 }
             }
 
-            self.showImageUpdateOverlay = function(){
+            self.showImageUpdateOverlay = function() {
 
-                 var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, regConfModalConfig)();
+                var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, regConfModalConfig)();
 
 
 
