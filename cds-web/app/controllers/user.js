@@ -356,7 +356,7 @@ exports.getSupervisorTasks = function(req, res, next) {
 
 exports.getTaskPrimeIds = function(req, res, next) {
     log.debug("getTaskPrimeIds : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var params = req.query;
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.getTaskPrimeIds(params, token, function(resp) {
