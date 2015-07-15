@@ -31,9 +31,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                     $scope.topRole = "MP";
                 }
             });
-            self.user = {}
-
-
+            self.user = {};
 
             self.user.taskWorkAllocation = {};
             self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
@@ -63,9 +61,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                     class: "cadre-overlay"
                 })();
 
-
-                console.log(cadreModal);
-
                 cadreModal.result.then(function(selObj) {
                     self.assignedToCitizenName = selObj.value;
                     self.user.taskWorkAllocation.citizenId = selObj.id;
@@ -80,12 +75,12 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                 primeModal = appModalService.init("primeIdList.html", "primeListController", $rootScope, {
                     class: "cadre-overlay"
                 })();
-                primeModal.result.then(function(selObj) {
-                    self.assignedToCitizenName = selObj.value;
-                    self.user.taskWorkAllocation.citizenId = selObj.id;
+                primeModal.result.then(function(selectedprime) {
+                    self.user.taskWorkAllocation.taskPrimeCode = selectedprime.taskCode;
+                    self.user.parentTaskId = selectedprime.taskId;
                 }, function() {
-                    self.assignedToCitizenName = "";
-                    self.user.taskWorkAllocation.citizenId = null;
+                    self.user.taskWorkAllocation.taskPrimeCode = "";
+                    self.user.parentTaskId = null;
                 });
             }
 
@@ -131,7 +126,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
                     if (self.user.taskWorkAllocation.citizenId === undefined) {
 
-                        console.log($scope.userData);
                         self.user.taskWorkAllocation.citizenId = $scope.userData.data.user.appUserId;
                     }
 
