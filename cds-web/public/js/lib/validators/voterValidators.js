@@ -13,14 +13,14 @@ define(['validation'], function(validation) {
             maxCharacters: 16,
             key_error_msgs: true
         },
-        houseNumber: {
-            required: false,
+        addressLine1: {
+            required: true,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true
         },
-        addressLine1: {
-            required: true,
+        addressLine2: {
+            required: false,
             minCharacters: 5,
             maxCharacters: 16,
             key_error_msgs: true
