@@ -32,7 +32,8 @@ define(['angular',
     "angularBootstrap",
     "directives/imagePreviewDirective",
     "directives/slideBtnDirective",
-    "modalControllers/registerOverlayController"
+    "modalControllers/registerOverlayController",
+	"modalControllers/childOverlayController",
 ], function(angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router', "ngStorage", 'serviceModule', "controllerModule", "directiveModule", "ui.bootstrap"]);
     return app;

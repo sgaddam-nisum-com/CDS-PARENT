@@ -1,6 +1,8 @@
 define(['jquery'], function($) {
 
  return {
+  "childFname-required" : "First Name and Last Name are required fields.",
+  
   "formGeneric": "Please check all the highlighted fields",
   "spouseFirstName-required": "First Name and Last Name are required fields.",
   "spouseFirstName-minCharacters":"First Name Min Should be 3.",

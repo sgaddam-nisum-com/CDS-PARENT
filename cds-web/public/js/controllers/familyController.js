@@ -2,19 +2,17 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
 
     function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler, notifications) {
 
-        controllerModule.controller('familyController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage",
+        controllerModule.controller('familyController', ['$rootScope', '$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage", "appModalService",
 
-            function($state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage) {
+            function($rootScope, $state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage, appModalService) {
 
                 var self = this,
                     dataJson = {};
                 self.isNotValidForm = false;
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
-
-                var reqMethod = "PUT";
-                var reqURL = appUrls.updateFamily;
-
+                var reqMethod = "POST";
+                var reqURL = appUrls.saveFamily;
 
                 handleGetFamily(cdsSession.currentUserId);
 
@@ -38,20 +36,65 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                     $state.go("root.profile.editprofile.volunteer");
                 }
 
+                this.editChild = function(e, child){
+                    e.preventDefault();
+                    var index = self.user.childData.indexOf(child);
+                    if(index !== -1){
+                        // Updating
+                        var childId = child.relationId;
+                        var childrenArray = $scope.children;
+
+                        if( childrenArray.length > 0 ) {
+
+                            for( var i=0; i<childrenArray.length; i++ ){
+
+                                if(childrenArray[i].relationId === childId){
+                                    $scope.contextChild = angular.copy(childrenArray[i]);
+                                    voterModal = appModalService.init("familyChild.html","childOverlayController", $scope,{class:"cadre-overlay"} )();
+                                }
+                            }
+                        }
+                    } else {
+                        //  Adding
+                        $scope.contextChild = "";
+                        voterModal = appModalService.init("familyChild.html","childOverlayController", $scope,{class:"cadre-overlay"} )();
+                    }
+                    
+                    voterModal.result.then(function(objChild){
+                        var relationId = objChild.relationId;
+                        console.log(objChild);
+                        if( index > -1 ){
+                            // Updating
+                            self.user.childData[index] = objChild;
+                        } else {
+                            //  Adding
+                            self.user.childData.push(objChild);
+                        }
+                    },function(){              
+                        console.log('Something wrong!');
+                    });
+
+                }
+
+               
+
                 this.save = function() {
 
                     if (formStack.isValid) {
-
-                        var requestData = [];
+                        if( $scope.relationId !== undefined){
+                            reqMethod = "PUT";
+                            reqURL = appUrls.updateFamily
+                        }
                         var spouseObj = {};
-                        var childObj = {};
-
-                        spouseObj.educationId = self.user.spouseData.education.educationId;
+                        if( self.user.spouseData.education.educationId !== 0 ){
+                            spouseObj.educationId = self.user.spouseData.education.educationId;    
+                        }
+                        
                         spouseObj.firstName = self.user.spouseData.firstName;
                         spouseObj.lastName = self.user.spouseData.lastName;
                         spouseObj.middleName = self.user.spouseData.middleName;
                         spouseObj.gender = self.user.spouseData.gender;
-                        console.log(spouseObj.gender);
+                        
                         if (spouseObj.gender == 'M') {
                             spouseObj.relationType = "Husband";
                         } else {
@@ -59,31 +102,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                         }
                         spouseObj.marriageDate = self.user.spouseData.marriageDate;
                         spouseObj.dateOfBirth = self.user.spouseData.dateOfBirth;
-                        requestData.push(spouseObj);
-
-                        if (self.user.childData.length && self.user.childData[0].firstName) {
-
-                            for (var j = 0; j < self.user.childData.length; j++) {
-                                childObj.relationType = "Kid";
-                                childObj.educationId = self.user.childData[j].education.educationId;
-                                childObj.firstName = self.user.childData[j].firstName;
-                                childObj.middleName = self.user.childData[j].middleName;
-                                childObj.lastName = self.user.childData[j].lastName;
-                                childObj.gender = self.user.childData[j].gender;
-                                childObj.marriageDate = self.user.childData[j].marriageDate;
-                                childObj.dateOfBirth = self.user.childData[j].dateOfBirth;
-                                requestData.push(childObj);
-                            }
-
-                        }
-                        var familyReqObj = {};
-                        familyReqObj.data = requestData;
-                        familyReqObj.userId = cdsSession.currentUserId;
+                        
+                        spouseObj.userId = 3;
+                        spouseObj.relationId = $scope.relationId;
 
                         $http({
                             method: reqMethod,
                             url: reqURL,
-                            data: familyReqObj
+                            data: spouseObj
                         }).success(function(resp, status, headers, config) {
                             if (resp.status == "success") {
                                 messageHandler.showInfoStatus(notifications.family_successfulSave, ".status-message-wrapper");
@@ -110,12 +136,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                         self.isNotValidForm = true;
                     }
                 }
-
-
                 function handleGetFamily(userId) {
                     registerService.getFamilyInfo(userId, function(resp) {
-
-
 
                         dataJson = resp.data;
                         self.user = {};
@@ -126,17 +148,25 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                         }
 
                         if (resp.status == "success") {
-
                             self.users = resp.data;
 
                             for (var i = 0; i < self.users.length; i++) {
-                                if (self.users[i].relationType == "Wife") {
+
+                                if (self.users[i].relationType == "Wife" || self.users[i].relationType == "Husband") {
+                                    $scope.relationId = self.users[i].relationId;
                                     self.user.spouseData = self.users[i];
-                                } else {
+                                } else{
+                                    if( self.users[i].gender === "M" ){
+                                        self.users[i].gender = "Male";
+                                    } else if ( self.users[i].gender === "F" ){
+                                        self.users[i].gender = "Female";
+                                    } else {
+                                        self.users[i].gender = "Not disclosed";
+                                    }
                                     self.user.childData.push(self.users[i]);
                                 }
                             };
-
+                            $scope.children = self.user.childData;
 
                         }
 

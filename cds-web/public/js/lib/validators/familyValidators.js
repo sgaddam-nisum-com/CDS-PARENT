@@ -6,6 +6,10 @@
 
 define(['validation'], function(validation) {
     return {
+    	childFname: {
+    		required: true,
+    		key_error_msgs:true
+    	},
 		spouseFirstName:{
 			required:true,
 			minCharacters:3,

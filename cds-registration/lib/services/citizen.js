@@ -244,7 +244,7 @@ exports.editFamily = function(params, token, callback) {
     //remove userid from params
     delete params.userId;
 
-    restService.builbArgs(url, params.data, headers, function(args) {
+    restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

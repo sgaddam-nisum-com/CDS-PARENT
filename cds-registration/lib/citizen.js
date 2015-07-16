@@ -187,12 +187,21 @@ exports.getResidentialAddress = function(params, token, callback) {
 
 exports.saveFamily = function(params, token, callback) {
     log.debug("saveFamily");
-    for (var i = 0; i < params.length; i++) {
-        if (params[i].dateOfBirth) {
-            params[i].dateOfBirth = util.formatDate(null, params[i].dateOfBirth);
+    if(params.length !== undefined){
+        for (var i = 0; i < params.length; i++) {
+            if (params[i].dateOfBirth) {
+                params[i].dateOfBirth = util.formatDate(null, params[i].dateOfBirth);
+            }
+            if (params[i].marriageDate) {
+                params[i].marriageDate = util.formatDate(null, params[i].marriageDate);
+            }
         }
-        if (params[i].marriageDate) {
-            params[i].marriageDate = util.formatDate(null, params[i].marriageDate);
+    } else {
+        if (params.dateOfBirth) {
+            params.dateOfBirth = util.formatDate(null, params.dateOfBirth);
+        }
+        if (params.marriageDate) {
+            params.marriageDate = util.formatDate(null, params.marriageDate);
         }
     }
 
@@ -204,12 +213,21 @@ exports.saveFamily = function(params, token, callback) {
 exports.editFamily = function(params, token, callback) {
     log.debug("editFamily");
 
-    for (var i = 0; i < params.data.length; i++) {
-        if (params.data[i].dateOfBirth) {
-            params.data[i].dateOfBirth = util.formatDate(null, params.data[i].dateOfBirth);
+    if(params.length !== undefined){
+        for (var i = 0; i < params.data.length; i++) {
+            if (params.data[i].dateOfBirth) {
+                params.data[i].dateOfBirth = util.formatDate(null, params.data[i].dateOfBirth);
+            }
+            if (params.data[i].marriageDate) {
+                params.data[i].marriageDate = util.formatDate(null, params.data[i].marriageDate);
+            }
         }
-        if (params.data[i].marriageDate) {
-            params.data[i].marriageDate = util.formatDate(null, params.data[i].marriageDate);
+    } else {
+        if (params.dateOfBirth) {
+            params.dateOfBirth = util.formatDate(null, params.dateOfBirth);
+        }
+        if (params.marriageDate) {
+            params.marriageDate = util.formatDate(null, params.marriageDate);
         }
     }
 
