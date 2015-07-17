@@ -7,6 +7,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
             var self = this,
                 currentCitizenId = $stateParams.citizenId,
                 children = [],
+                spouse = [],
                 regConfModalConfig = {
                     keyboard: true,
                     class: "registration-confirm-overlay",
@@ -32,11 +33,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
             }
 
             function initiateProfile(resp) {
-
-
-
                 if (resp.data) {
-
                     if (resp.data.gender == "M") {
                         resp.data.gender = "MALE";
                     } else if (resp.data.gender == "F") {
@@ -51,11 +48,28 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                     self.user.cadre.citizen.healthInsurance = ((self.user.cadre.citizen.healthInsurance == 0) ? "No" : "Yes");
                     self.user.cadre.citizen.lifeInsurance = ((self.user.cadre.citizen.lifeInsurance == 0) ? "No" : "Yes");
                     self.user.volunteer.citizen.interestedAsVolunteer = ((self.user.volunteer.citizen.interestedAsVolunteer == 0) ? "No" : "Yes");
-                    $scope.voterNodeObj = generateParamObject(resp.data.voter.consituency);
+                    if( resp.data.voter !== undefined ){
 
-                    children = angular.copy(resp.data.tblCitizenRelation);
-                    children.shift();
+                        $scope.voterNodeObj = generateParamObject(resp.data.voter.consituency);
+                    }
+
+
+                    angular.forEach( resp.data.tblCitizenRelation, function( value, key ) {
+                        if( value.relationType === "Wife" || value.relationType === "Husband"){
+                            spouse =  resp.data.tblCitizenRelation[key];
+
+                        } else {
+                            children.push( resp.data.tblCitizenRelation[key]);
+                        }
+                    });
+
+
+                    
+                    //children = angular.copy(resp.data.tblCitizenRelation);
+                   
+
                     $scope.children = children;
+                    $scope.spouse = spouse;
                     $scope.currentProfileImage = resp.data.photograph;
 
                 }

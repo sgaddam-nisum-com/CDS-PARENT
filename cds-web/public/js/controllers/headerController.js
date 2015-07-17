@@ -13,15 +13,17 @@ define(['controllers/controllerModule'], function (controllerModule) {
  		function initiateUserSession(resp){
 
  			self.showHeader = true;
+
  			cdsService.userInfo=resp.data.user;
- 			
+ 			console.log(cdsService.userInfo);
  			if(resp.status == "failure"){
  				self.isUserAuthenticated = false; 				
  				return;
  			}
  				self.isUserAuthenticated = true;
  				
- 			$rootScope.userName = resp.data.user.citizen.firstName;	 			
+ 			$rootScope.userName = resp.data.user.citizen.firstName;	 		
+ 			$rootScope.appUserIds = resp.data.user.appUserId;	
  			var defRole = $rootScope.defRole = roleService.getTopRole(resp.data.user.appRoles);
  			self.navItems = roleService.getNavArray(defRole);
  			for(var i=0; i<self.navItems.length; i++){

@@ -9,9 +9,21 @@ function (controllerModule, formValidation, validationMap, errorJson, $, message
 	 	function($scope, $modalInstance, $rootScope, callerScope,registerService, 
             appUrls, $sessionStorage, $http, cdsService){
 
-            var child =callerScope.contextChild,
-                appUserId = cdsService.userInfo.appUserId,
-                registerantUserId = $sessionStorage.cds.currentUserId;
+            var child =callerScope.contextChild;
+
+            var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
+            console.log(cdsSession.currentUserId);
+
+            var currentUserId;
+
+            if( cdsSession.currentUserId === undefined ){
+                // original userId
+                currentUserId = $rootScope.appUserIds;
+            } else {
+                // From Registrants
+                currentUserId = cdsSession.currentUserId;
+            }
+            
 
             registerService.getEducationOptions(function(resp) {
                 $scope.educationOptions = resp.data;
@@ -56,11 +68,15 @@ function (controllerModule, formValidation, validationMap, errorJson, $, message
                         reqURL = appUrls.saveFamily;
                     }
                     
-                    if( registerantUserId !== ""){
-                        childObj.userId = registerantUserId;
-                    } else {
-                        childObj.userId = appUserId;
-                    }
+
+                    childObj.userId = currentUserId;
+                    
+
+                    // if( registerantUserId !== ""){
+                    //     childObj.userId = registerantUserId;
+                    // } else {
+                    //     childObj.userId = appUserId;
+                    // }
 
                     childObj.relationType = "Kid";
                     childObj.firstName = $scope.child.firstName;

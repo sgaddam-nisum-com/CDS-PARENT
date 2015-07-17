@@ -13,8 +13,15 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
                 var reqMethod = "POST";
                 var reqURL = appUrls.saveFamily;
+                
+                var currentUserId = cdsSession.currentUserId || "";
 
-                handleGetFamily(cdsSession.currentUserId);
+                handleGetFamily(currentUserId);
+
+                cdsService.getUserSession(initiateUserSession);
+                function initiateUserSession(resp){
+                    $rootScope.appUserIds = resp.data.user.appUserId;
+                }
 
                 var config = {
                     initiate: true,
@@ -103,7 +110,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                         spouseObj.marriageDate = self.user.spouseData.marriageDate;
                         spouseObj.dateOfBirth = self.user.spouseData.dateOfBirth;
                         
-                        spouseObj.userId = 3;
+                        spouseObj.userId = currentUserId;
                         spouseObj.relationId = $scope.relationId;
 
                         $http({
