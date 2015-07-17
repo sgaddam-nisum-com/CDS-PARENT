@@ -47,11 +47,11 @@ exports.init = function(app, passport, auth) {
 
     var multerAttachments = multer({
         dest: cdsConfig.attachments.rootPath + cdsConfig.attachments.path,
-        rename: function (fieldname, filename,req, res) {
-             var tid = req.query.id;
-            return "attachment"+"_"+tid+"_"+Date.now();
+        rename: function (fieldname, filename,req, res) {            
+            taskId = req.body.taskId;
+            return "task"+"_"+taskId+"_"+Date.now();
           },
-        onFileUploadStart: function (file) {          
+        onFileUploadStart: function (file) {           
         },
         onFileUploadComplete: function (file) {          
         }

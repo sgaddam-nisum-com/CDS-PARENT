@@ -16,7 +16,9 @@ define([
     "services/common/appModalService",
     "modalControllers/cadreListController",
     "modalControllers/primeListController",
-    "bootstrap"
+    "bootstrap",
+    "directives/attachmentsPreviewDirective",
+    "services/registerService"
 ], function() {
     var app = angular.module('CDSTASKS', ['ui.router', 'serviceModule', "controllerModule", "directiveModule", "ui.bootstrap", "ngStorage"]);
     return app;

@@ -55,8 +55,7 @@
 
                          scope.submitProfileImageForm = function(e) {
                              e.preventDefault();
-                             //$("#previewHolder").attr("src","images/cds-loader.gif").css({width : "20px", height:"20px"});
-
+                             
                              var formFileObj = new FormData();
 
                              formFileObj.append("photograph", fileObj);

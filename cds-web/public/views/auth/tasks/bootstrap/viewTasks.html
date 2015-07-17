@@ -41,7 +41,7 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Assigned Date:</label>
-                <input ng-disabled="viewTaskCtrl.assignedTask" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate">
+                                                    <input ng-disabled="viewTaskCtrl.assignedTask" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate">
                                                 </div>
                                             </div>
                                         </div>
@@ -62,10 +62,8 @@
                                                 <div class="form-group">
                                                     <label>Assigned to:</label>
                                                     
-            <input ng-disabled="viewTaskCtrl.assignedTask" autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
-            <img src="images/searchicon.png" class="cadre-search-icon-view" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)" ng-hide="viewTaskCtrl.assignedTask">
-
-
+                                                    <input ng-disabled="viewTaskCtrl.assignedTask" autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
+                                                    <img src="images/searchicon.png" class="cadre-search-icon-view" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)" ng-hide="viewTaskCtrl.assignedTask">
                                                 </div>
                                             </div>
                                         </div>
@@ -87,19 +85,73 @@
                         </form>
                     </div>
                 </div>
+                <div class="row" attachments-preview-directive>
+                    <div class="col-lg-12  comments">
+                        <h6>Attachments</h6>
+                        <div class="head attachment-menu-header">
+                        <form method="post" enctype="multipart/form-data" action="/user/updateProfileImage" id="submitProfileImageForm" ng-submit="submitTaskAttachments($event)">
+        
+                            <input type="file" name="profileInput" id="fileAttachField" onchange="angular.element(this).scope().setAttachments(this)" ng-hide="true" multiple>
+               
+                                <!-- <input type="submit" value="Submit"> -->
+                                
+                                <div id="uploadWrapper" class="" style="">                                    
+                                    
+                                    <a href="" ng-click="browseAttachments()" class="attachments">Add New</a>
+                                    <a href="" ng-click="viewTaskCtrl.browseAttachments()" class="attachments">Delete</a>
+                                    <a href="" ng-click="viewTaskCtrl.browseAttachments()" class="attachments">Delete All</a>
+                                    <input type="submit" class="btn btn-success" id="initiateUpload" value="Upload" style="">
+                                    <span class="attachment-status">Please choose right image</span>                                                                      
+                                </div>                                
+                            </form>                                                     
+                        </div>
+
+                          <div class="progress attachment-progress" style="border-radius:0; width:100%;">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{uploadPercentage}}">
+                                            <span ng-bind="uploadStatusMsg"></span>
+                                     </div>
+                          </div>
+                        
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width:12%"><div class="checkbox select-all-btn">
+                                        <label>
+                                            <input type="checkbox"> Select All
+                                        </label>
+                                    </div></th>
+                                    <th style="width:75%">Description</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="attachment in existingAttachments">
+                                    <td>
+                                        <div class="checkbox select-all-btn">
+                                            <label>
+                                                <input type="checkbox"><span ng-bind="$index+1"> </span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td><a href="{{attachment.filePath}}" class="image-link" ng-class="{'non-linked': attachment.nonLinked}" download="{{attachment.originalName}}" ng-bind="attachment.originalName"></a></td>                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12  comments">
                         <h6>Comments</h6>
                         <div class="head">
-                           <a href="" ng-click="toggleComments = !toggleComments" class="add-comments">Add Comments</a>
-                            <!-- <a href="#" class="attachments">Attachments</a> -->
+                            <a href="" ng-click="toggleComments = !toggleComments" class="add-comments">Add Comments</a>
                         </div>
                         <div class="form-group" ng-show="toggleComments">
                             <textarea required ng-model="viewTaskCtrl.comments.commentDescription" maxlength="400" cols="40" rows="3" class="form-control" ng-trim="false" placeholder="Add your comments here..."></textarea>
                         </div>
                         <div class="row" ng-show="toggleComments">
                             <div class="col-lg-6">
-                            <p>Number of characters left: <span> {{400 - viewTaskCtrl.comments.commentDescription.length}} </span></p>
+                                <p>Number of characters left: <span> {{400 - viewTaskCtrl.comments.commentDescription.length}} </span></p>
                             </div>
                             <div class="col-lg-6">
                                 <div class="right">
@@ -139,7 +191,6 @@
                             <div>District: <strong>{{viewTaskCtrl.assigneeObj.District}}</strong></div>
                             <div>State: <strong>{{viewTaskCtrl.assigneeObj.State}}</strong></div>
                             <div>Country: <strong>{{viewTaskCtrl.assigneeObj.Country}}</strong></div>
-
                         </div>
                     </div>
                 </div>

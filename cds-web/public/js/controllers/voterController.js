@@ -14,7 +14,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                 handleGetVoter(cdsSession.currentUserId);
                 this.searchVoter = function( votersearchtext ){
 		        	$rootScope.votersearchtext = votersearchtext;
-		            voterModal = appModalService.init("voterSearchTemplate.html","voterSearchController", $rootScope,{class:"cadre-overlay"} )();
+		            
+
+                    voterModal = appModalService.init("voterSearchTemplate.html","voterSearchController", $rootScope,{class:"cadre-overlay"} )();
 
 		            voterModal.result.then(function(objString){
                         $scope.treeDataId = objString.treeDataId;

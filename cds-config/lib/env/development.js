@@ -16,7 +16,8 @@ module.exports = {
     },
     attachments: {
         rootPath: "./public/images/",
-        path: "attachments/"
+        path: "attachments/",
+        viewPath : "./images/"
     },
     db: {
         host: 'localhost', // Host name for database connection. 

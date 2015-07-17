@@ -195,26 +195,21 @@ exports.deleteTask = function(req, res, next) {
 
 exports.addAttachmentToTask = function(req, res, next) {
     log.debug("addAttachmentToTask : logged user - " + req.user.data.user.appUserId);
-    var tid = req.query.id;
+    var tid = req.body.taskId;
     var token = req.user ? req.user.data.token : null;
+    
+    console.log(req.files);
 
     taskMgmt.addAttachmentToTask({
-        id: tid
+        taskId: tid
     }, req.files, token, function(resp) {
-        if(resp.status == "failure"){               
-            //unlink all the attachments
-            for(var i = 0; i < Object.keys(req.files).length; i++){
-                var imageName = files.attachment.originalname;
-                var attachement_path = cdsConfig.attachments.path + imageName
-                fs.unlink(attachement_path, function(e) {                
-                         });
-            }
-            req.resp = resp;
-            next();
-        }else{
-            req.resp = resp;
-            next();
-        }        
+
+        req.resp = resp;
+         if(resp.status == "success"){
+            req.resp.data.attachments = req.files;  
+        }
+        next();
+
     });
 };  
 
@@ -306,6 +301,9 @@ exports.getTaskDetails = function(req, res, next) {
         taskId: taskId
     }, token, function(resp) {
         req.resp = resp;
+        if(resp.status == "success"){
+            req.resp.data.rootPath = cdsConfig.attachments.viewPath + cdsConfig.attachments.path;  
+        }
         next();
     });
 };

@@ -119,8 +119,32 @@
 
 
 .cadre-search-icon-view{
-	 right: 25px;
+  right: 25px;
   position: absolute;
   top: 35px;
   cursor: pointer;
+}
+
+
+.select-all-btn{
+	margin:0;
+}
+
+.comments .attachment-menu-header{
+	margin-bottom:0;
+}
+.attachment-status{
+	display:none;
+	color : red;	
+	margin-left: 10px;
+	font-size: 11px;
+}
+
+.attachment-progress{
+	display:none;
+	margin-bottom:0;
+}
+.comments .non-linked{
+	color: #aaa;
+	cursor : default;	
 }

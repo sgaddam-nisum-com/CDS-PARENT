@@ -70,20 +70,30 @@ exports.addAttachmentToTask = function(params, files, token, callback) {
 
 //internal image saver
 var saveAttachments = function(files, callback) {
-    if (files != null && Object.keys(files).length > 0) {
-        var images = [];
-        for (var i = 0; i < Object.keys(files).length; i++) {
-            var imageName = files.photograph.originalname;
-            images.push = {
-                //attachmentName: cdsConfig.image.path + imageName
-                attachmentName: cdsConfig.attachments.path + imageName
-            };
-            if (i === (Object.keys(files).length - 1)) {
-                callback(images);
+
+    var images = [];
+    if(files != null){
+        if(files.attachmentName.length){
+            for(var i=0; i< files.attachmentName.length; i++){
+                var imageName = files.attachmentName[i].name;
+                var originalName = files.attachmentName[i].originalname;
+                images.push({
+                    attachmentName: imageName,
+                    originalName : originalName
+                });
             }
+        }else{
+             var imageName = files.attachmentName.name;
+             var originalName = files.attachmentName.originalname;
+                images.push({
+                    attachmentName: imageName,
+                     originalName : originalName
+                });
         }
-    } else {
-        callback([]);
+        console.log(images);
+         callback(images);
+    }else{
+         callback([]);
     }
 }
 
