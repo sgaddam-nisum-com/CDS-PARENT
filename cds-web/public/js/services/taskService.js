@@ -13,9 +13,9 @@ define(['services/serviceModule'], function(serviceModule) {
 					  cb(resp)
 					});
 				},
-				getMyTasks: function(cb) {
+				getMyTasks: function( obj, cb) {
 					$http.get(appUrlService.getMyTasksList, {
-
+						params: obj
 					}).success(function(resp) {
 					  cb(resp)
 					});
@@ -56,16 +56,16 @@ define(['services/serviceModule'], function(serviceModule) {
 						cb(resp);
 					});
 				},
-				getTeamTasks : function(cb){
+				getTeamTasks : function( obj, cb){
 					$http.get(appUrlService.getTeamTasks,{
-						
+						params: obj
 					}).success(function(resp){
 						cb(resp);
 					});
 				},
-				getAllTasks : function(cb){
+				getAllTasks : function(obj, cb){
 					$http.get(appUrlService.getAllTasks,{
-						
+						params : obj
 					}).success(function(resp){
 						cb(resp);
 					});
@@ -91,9 +91,9 @@ define(['services/serviceModule'], function(serviceModule) {
 						cb(resp);
 					});
 				},
-				getsupervisorAllTasks:function(cb){
+				getsupervisorAllTasks:function( obj, cb){
 					$http.get(appUrlService.getsupervisorAllTasks,{
-						
+						params : obj
 					}).success(function(resp){
 						cb(resp);
 					});

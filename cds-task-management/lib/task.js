@@ -192,6 +192,9 @@ exports.getAssignedTasks = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
+    ( params.fromDate !== undefined ) ? params.fromDate = util.formatDate(null, params.fromDate) : delete params.fromDate;
+    ( params.toDate !== undefined ) ? params.toDate = util.formatDate(null, params.toDate) : delete params.toDate;
+
     restService.builbArgs(restUrls.task.getAssignedTasks, params, headers, function(args) {
         restService.makecall(args, callback);
     });
@@ -201,6 +204,9 @@ exports.getSupervisorTasks = function(params, token, callback) {
     log.debug("getSupervisorTasks : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
+
+    ( params.fromDate !== undefined ) ? params.fromDate = util.formatDate(null, params.fromDate) : delete params.fromDate;
+    ( params.toDate !== undefined ) ? params.toDate = util.formatDate(null, params.toDate) : delete params.toDate;
 
     restService.builbArgs(restUrls.task.getSupervisorTasks, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -223,6 +229,9 @@ exports.getTasks = function(params, token, callback) {
     var headers = header;
     headers[cdsConfig.token] = token;
 
+    ( params.fromDate !== undefined ) ? params.fromDate = util.formatDate(null, params.fromDate) : delete params.fromDate;
+    ( params.toDate !== undefined ) ? params.toDate = util.formatDate(null, params.toDate) : delete params.toDate;
+
     restService.builbArgs(restUrls.task.getTasks, params, headers, function(args) {
         restService.makecall(args, callback);
     });
@@ -232,6 +241,9 @@ exports.getTeamTasks = function(params, token, callback) {
     log.debug("getTeamTasks : " + (JSON.stringify(params)));
     var headers = header;
     headers[cdsConfig.token] = token;
+
+    ( params.fromDate !== undefined ) ? params.fromDate = util.formatDate(null, params.fromDate) : delete params.fromDate;
+    ( params.toDate !== undefined ) ? params.toDate = util.formatDate(null, params.toDate) : delete params.toDate;    
 
     restService.builbArgs(restUrls.task.getTeamTasks, params, headers, function(args) {
         restService.makecall(args, callback);

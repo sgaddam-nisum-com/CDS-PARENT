@@ -2,6 +2,83 @@
 <section id="appSection">
     <div class="container">
         <div class="row content view-tasks">
+
+
+
+            <div class="row filter-options cssSlideUp">
+        <!-- <span class="arrow"></span>
+        <div class="col-lg-12 col-md-12 selected" ng-show="listCtrl.selectedFilter.length > 0">Selected
+            <a href="javascript:void(0);" ng-click='type.filterObj()' ng-repeat="(key, type) in listCtrl.selectedFilter">{{type.filterName}} X</a>
+        </div> -->
+        <div class="col-lg-12 col-md-12 padding-none filterContainer">
+          <div class="col-lg-7 input-group input-group">
+                <div class="row ">
+                    <div class="col-md-12 task-links form-group" style="height:53px;">
+                            <form action="" name="" id="">
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="taskCtrl.searchQ" placeholder="Request Title" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="calender form-control" placeholder="From Date" ng-model="taskCtrl.user.fromDate" date-picker-directive="taskCtrl.user.fromDate">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="calender form-control" placeholder="To Date" ng-model="taskCtrl.user.toDate" date-picker-directive="taskCtrl.user.toDate">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-lg-3 col-md-3  otpions">
+                <span>Priority</span>
+                <ul>
+                    <li class="padding-none" style="list-style:none;" ng-repeat="userType in taskPriorities">
+                        <input type="checkbox" ng-model="taskCtrl.selectedPriorityTypes[userType.priorityId]
+                        " value="{{userType.priorityName}}" /> {{userType.priorityName}}
+                    </li>
+                </ul>
+            </div>
+            <div> </div>
+            <div class="col-lg-3 col-md-3  options">
+                <span>Status</span>
+                <ul>
+                    <li class="padding-none" style="list-style:none;" ng-repeat="userType in taskStatus">
+                        <input type="checkbox" ng-model="taskCtrl.selectedStatusTypes[userType.statusId]
+                        " value="{{userType.statusDesc}}" /> {{userType.statusDesc}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3  options age">
+                <ul>
+                    <li><span>Age :</span>
+                        <input class="age" ng-model="taskCtrl.minAge" type="text" /> To
+                        <input type="text" class="age" ng-model="taskCtrl.maxAge" />
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3  options age">
+                <ul>
+                    <li>
+                        <button class="btn submit" ng-click="taskCtrl.filterSearch('supervisortasks')">Search</button>
+                        <button class="btn cancel" ng-click="taskCtrl.resetSerach()">Reset</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-10 ">

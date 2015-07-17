@@ -310,7 +310,7 @@ exports.getTaskDetails = function(req, res, next) {
 
 exports.getTeamTasks = function(req, res, next) {
     log.debug("getTasks : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var params = req.query;
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.getTeamTasks(params, token, function(resp) {
@@ -321,7 +321,7 @@ exports.getTeamTasks = function(req, res, next) {
 
 exports.getTasks = function(req, res, next) {
     log.debug("getTasks : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var params = req.query;
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.getTasks(params, token, function(resp) {
@@ -332,9 +332,9 @@ exports.getTasks = function(req, res, next) {
 
 exports.getAssignedTasks = function(req, res, next) {
     log.debug("getAssignedTasks : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var params = req.query;
     var token = req.user ? req.user.data.token : null;
-
+    
     taskMgmt.getAssignedTasks(params, token, function(resp) {
         req.resp = resp;
         next();
@@ -343,7 +343,7 @@ exports.getAssignedTasks = function(req, res, next) {
 
 exports.getSupervisorTasks = function(req, res, next) {
     log.debug("getSupervisorTasks : logged user - " + req.user.data.user.appUserId);
-    var params = req.body;
+    var params = req.query;
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.getSupervisorTasks(params, token, function(resp) {

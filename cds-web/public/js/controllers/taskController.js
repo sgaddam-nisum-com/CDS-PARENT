@@ -35,23 +35,30 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
             self.user.taskWorkAllocation = {};
             self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
+            
+
+
+            taskService.getTaskStatuses(function(resp) {
+                $scope.taskStatus = resp.data;
+            });
+
 
             taskService.getTaskCategories(function(resp) {
                 $scope.taskCategoryOptions = resp.data;
             });
-            taskService.getMyTasks(function(resp) {
+            taskService.getMyTasks( {}, function(resp) {
                 $scope.myTaskLists = resp.data.tasks;
             });
             taskService.getTaskPriorities(function(resp) {
                 $scope.taskPriorities = resp.data;
             });
-            taskService.getTeamTasks(function(resp) {
+            taskService.getTeamTasks( {}, function(resp) {
                 $scope.teamTasks = resp.data.tasks;
             });
-            taskService.getAllTasks(function(resp) {
+            taskService.getAllTasks( {} , function(resp) {
                 $scope.allTasks = resp.data.tasks;
             });
-            taskService.getsupervisorAllTasks(function(resp) {
+            taskService.getsupervisorAllTasks( {} ,function(resp) {
                 $scope.supervisorTaskLists = resp.data.tasks;
             });
 
@@ -84,8 +91,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                 });
             }
 
-
-
             this.newTask = function() {
                 $state.go('root.addTask');
             };
@@ -108,8 +113,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                     console.log(resp);
                 });
             }
-
-
 
             var formStack = formValidation.init("#myTaskForm", validationMap, errorJson, config);
             this.save = function() {
@@ -156,6 +159,63 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                     self.isNotValidForm = true;
                 }
             };
+
+            this.filterSearch = function( taskObj ) {
+                
+                var filterObj = {
+                    q: this.searchQ
+                };
+                (this.minAge !== undefined) ? filterObj.agerange = this.minAge + "-" + this.maxAge : false;
+
+                ( this.user.fromDate !== undefined ) ? filterObj.fromDate = this.user.fromDate : false;
+                ( this.user.toDate !== undefined ) ? filterObj.toDate = this.user.toDate : false;
+
+                if (typeof this.selectedPriorityTypes !== undefined) {
+                    var str = this.getSelectedFromObject(this.selectedPriorityTypes).toString();
+                    (str) ? filterObj.priority = str : false;
+                }
+
+                if (typeof this.selectedStatusTypes !== undefined) {
+                    var str = this.getSelectedFromObject(this.selectedStatusTypes).toString();
+                    (str) ? filterObj.status = str : false;
+                }
+
+                if( taskObj === "mytasks" ){
+                    taskService.getMyTasks(filterObj, function(resp) {
+                        $scope.myTaskLists = resp.data.tasks;
+                    });
+                }
+                if( taskObj === "teamtasks" ){
+                    taskService.getTeamTasks(filterObj, function(resp) {
+                        $scope.teamTasks = resp.data.tasks;
+                    });
+                }
+                if( taskObj === "allTasks" ){
+                    taskService.getAllTasks(filterObj, function(resp) {
+                        $scope.allTasks = resp.data.tasks;
+                    });
+                }
+                if( taskObj === "supervisortasks" ){
+                    taskService.getsupervisorAllTasks(filterObj, function(resp) {
+                        $scope.supervisorTaskLists = resp.data.tasks;
+                    });
+                }
+
+            };
+
+            this.getSelectedFromObject = function(obj){
+                if(obj){
+                    var keys = Object.keys(obj);
+                    var filtered = keys.filter(function(key) {
+                        return obj[key]
+                    });
+                    return filtered;
+                }else{
+                    return "";
+                }
+
+            }
+
         }
     ]);
 
