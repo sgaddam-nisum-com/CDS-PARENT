@@ -203,13 +203,8 @@ exports.addAttachmentToTask = function(req, res, next) {
     taskMgmt.addAttachmentToTask({
         taskId: tid
     }, req.files, token, function(resp) {
-
         req.resp = resp;
-         if(resp.status == "success"){
-            req.resp.data.attachments = req.files;  
-        }
         next();
-
     });
 };  
 
@@ -233,6 +228,27 @@ exports.deleteAttachmentFromTask = function(req, res, next) {
 
     taskMgmt.deleteAttachmentFromTask(params, token, function(resp) {
         if(resp.status == "success"){
+            
+
+            var basePath  = cdsConfig.attachments.rootPath + cdsConfig.attachments.path
+
+            
+            
+            for(var i=0; i<params.attachments.length; i++){
+
+                    console.log(basePath+params.attachments[i].taskAttachmentName);
+
+                 fs.unlink(basePath+params.attachments[i].taskAttachmentName, function(e) {   
+
+                    console.log("deleted");
+
+             });
+
+
+
+            }
+
+
 
             //TODO get all the file names loop it and do fs.unlink
             

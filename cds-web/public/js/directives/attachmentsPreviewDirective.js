@@ -1,12 +1,13 @@
- define(['directives/directiveModule', 'messageHandler'], function(directiveModule, messageHandler) {
-     directiveModule.directive('attachmentsPreviewDirective', ["registerService", "appUrlService", "$timeout","$stateParams",
+ define(['directives/directiveModule', 'messageHandler','underscore'], function(directiveModule, messageHandler,_) {
+     directiveModule.directive('attachmentsPreviewDirective', ["registerService", "appUrlService", "$timeout", "$stateParams",
              function(registerService, appUrls, $timeout, $stateParams) {
                  return {
                      restrict: "A",
                      link: function(scope, elem, attrs) {
 
                          var acceptedFormats = ['jpg', 'jpeg', 'png'],
-                         attsArray = [];
+                             attsArray = [],
+                             attachmentsIdArray = [];
 
                          scope.initiateUpload = false;
 
@@ -14,34 +15,27 @@
                              $("#fileAttachField").trigger("click");
                          };
 
-
-                         /*Attachments test data*/
-                      
-
-                         
-
                          scope.setAttachments = function(e) {
-                             
-                            console.log(e.files);
+
+                        
 
                              for (var key in e.files) {
                                  if (e.files[key] instanceof File) {
                                      e.files[key].originalName = e.files[key].name;
-                                     e.files[key].nonLinked = true;                                     
+                                     e.files[key].nonLinked = true;
                                      attsArray.push(e.files[key]);
                                      scope.existingAttachments.push(e.files[key]);
                                  }
                              }
-                             scope.$apply(function() {                                
-                             });
-                             
+                             scope.$apply(function() {});
+
                              scope.initiateUpload = true;
-                             
+
                          };
 
 
-                         $(document).on("click",".non-linked",function(e){
-                           e.preventDefault();
+                         $(document).on("click", ".non-linked", function(e) {
+                             e.preventDefault();
                          });
 
 
@@ -75,29 +69,25 @@
 
                          scope.submitTaskAttachments = function(e) {
                              e.preventDefault();
-                          
-
                             var formFileObj = new FormData();
-                            formFileObj.append("taskId", $stateParams.taskId);
-
-                            for (var i = 0; i < attsArray.length; i++) {
+                             formFileObj.append("taskId", $stateParams.taskId);
+                             for (var i = 0; i < attsArray.length; i++) {
                                  fileObj = attsArray[i];
-                                 console.log(fileObj);
-                                formFileObj.append("attachmentName", fileObj);
+                               
+                                 formFileObj.append("attachmentName", fileObj);
                              }
-                             if (scope.initiateUpload) {                                                                  
-                                    $(".attachment-progress").show(); 
-                                    $.ajax({
+                             if (scope.initiateUpload) {
+                                 $(".attachment-progress").show();
+                                 $.ajax({
                                      xhr: function() {
                                          var xhr = new window.XMLHttpRequest();
-
                                          xhr.upload.addEventListener("progress", function(evt) {
-                                             console.log(evt.loaded);
+                                            
                                              if (evt.lengthComputable) {
                                                  scope.$apply(function() {
                                                      var percentComplete = (evt.loaded / evt.total) * 100;
                                                      scope.uploadPercentage = scope.uploadStatusMsg = percentComplete + "%";
-                                                     console.log(scope.uploadPercentage);
+                                                     
                                                  });
                                              }
                                          }, false);
@@ -105,12 +95,9 @@
                                          xhr.upload.addEventListener("load", function(evt) {
                                              $timeout(function() {
                                                  scope.uploadStatusMsg = "Updation completed."
-
-                                                 attsArray
-
                                                  $timeout(function() {
-                                                    $(".attachment-progress").hide();
-                                                    scope.uploadPercentage = 0;
+                                                     $(".attachment-progress").hide();
+                                                     scope.uploadPercentage = 0;
                                                  }, 3000);
                                              }, 2000);
                                          });
@@ -123,96 +110,144 @@
                                      contentType: false
 
                                  }).success(function(resp, status, headers, config) {
-                                     
-                                        var fileData = resp.data.attachments;
-                                     
-                                     for(var i=0; i<scope.existingAttachments.length; i++){
+                                     var fileData = resp.data;
+                                     if(fileData.length){
 
-                                        if($.type(fileData.attachmentName) ==="array"){
-
-                                           for(var j = 0; j< fileData.attachmentName.length; j++){
-        
-                                              if(scope.existingAttachments[i].name == fileData.attachmentName[j].originalname){
-                                                    console.log("mached");
-                                                    scope.$apply(function(){
-                                                    scope.existingAttachments[i]['nonLinked'] = false;
-                                                    scope.existingAttachments[i]['filePath']  = scope.attachmentViewPath+ fileData.attachmentName[j].name; 
-                                              });
-                                            }
+                                        for(var i=0; i<fileData.length; i++){
+                                            fileData[i].nonLinked = false;                                            
+                                            fileData[i].filePath = scope.attachmentViewPath + fileData[i].attachmentName;
                                         }
-                                    }
-
-                                        else{
-
-                                            if(scope.existingAttachments[i].name == fileData.attachmentName.originalname){
-                                                console.log("mached");
-                                            scope.$apply(function(){
-                                                scope.existingAttachments[i]['nonLinked'] = false;
-                                                scope.existingAttachments[i]['filePath']  = scope.attachmentViewPath+ fileData.attachmentName.name; 
-                                            });
-                                            
-                                        
-                                        }
-
-
-
-                                            }
-
-
-
-
-
-
-
                                      }
+                                      scope.$apply(function() {
 
+                                         
 
-
+                                            scope.existingAttachments = fileData;                                                         
+                                        });
 
                                      scope.initiateUpload = false;
                                      attsArray = [];
-                                       $timeout(function() {
-                                            $(".attachment-progress").hide();
-                                            scope.uploadPercentage = 0;
-                                            scope.initiateUpload = false; 
-                                        }, 3000);
+                                     attachmentsIdArray = [];
+                                     $timeout(function() {
+                                         $(".attachment-progress").hide();
+                                         scope.uploadPercentage = 0;
+                                         scope.initiateUpload = false;
+                                     }, 3000);
 
                                  }).error(function() {
-                                        $timeout(function() {
-                                            $(".attachment-progress").hide();
-                                            scope.uploadPercentage = 0;
-                                            scope.initiateUpload = false; 
-                                        }, 3000);
+                                     $timeout(function() {
+                                         $(".attachment-progress").hide();
+                                         scope.uploadPercentage = 0;
+                                         scope.initiateUpload = false;
+                                     }, 3000);
                                  });
 
                              } else {
-                                 $(".attachment-status").show().html("Please choose new attachments."); 
+                                 $(".attachment-status").show().html("Please choose new attachments.");
                                  $timeout(function() {
-                                     $(".attachment-status").fadeOut(); 
+                                     $(".attachment-status").fadeOut();
                                  }, 3000);
-
                              }
-
-
-
-
-                           
                          }
 
+                         scope.taskAttachmentInput = false;
+
+                         scope.selectAttachment = function(attachmentId, isChecked){                                                                
+                               if(isChecked){
+                                    if(attachmentsIdArray.indexOf(attachmentId)== -1){
+                                        attachmentsIdArray.push(attachmentId);
+                                    }
+                               }else{
+                                    if(attachmentsIdArray.indexOf(attachmentId)>-1){                                        
+                                        var iNdex = attachmentsIdArray.indexOf(attachmentId);
+                                        attachmentsIdArray.splice(iNdex,1);    
+                                    }
+                               }
+                         }
+
+                         scope.deleteAttachment = function(){
+
+                            if(attachmentsIdArray.length){
+
+                                var attObj = [];
+
+                              //  alert(attachmentsIdArray.length)
+
+
+                                for(var i=0; i<attachmentsIdArray.length; i++){
+
+                                   
+                                    var currentFileObj = _.find(scope.existingAttachments, function(attachment){
+                                        return attachment.taskAttachmentId == attachmentsIdArray[i];
+                                    });
+
+                                    attObj.push({
+                                        "taskAttachmentId" :attachmentsIdArray[i],
+                                        "taskAttachmentName" : currentFileObj.attachmentName 
+                                    });
+                                }
+                                
+                                $.ajax({
+                                       url : "/auth/user/deleteattachmentfromtask",
+                                     type: "DELETE",                                    
+                                     data: {taskId : $stateParams.taskId,
+                                             attachments : attObj   
+                                            }
+
+                                }).success(function(resp, status){
+                                    
+                                    
+                                    for(var i=attachmentsIdArray.length-1; i > -1; i--){
+
+                                        console.log("counter");
+
+                                        for(var j =scope.existingAttachments.length-1; j>-1; j-- ){
+
+                                                console.log("initialCounter");
+                                                console.log(attachmentsIdArray[i],scope.existingAttachments[j].taskAttachmentId);
+                                            if(attachmentsIdArray[i] == scope.existingAttachments[j].taskAttachmentId ){
+                                                scope.$apply(function(){
+                                                scope.existingAttachments.splice(j,1);
+                                                attachmentsIdArray.splice(i,1);                                                    
+
+                                                });
+                                                break;
+                                            }
+
+
+                                        }
+
+
+
+                                            
+                                    }
+
+
+
+
+
+                                
 
 
 
 
 
 
+                                }).error(function(){
 
 
+                                });
 
 
+                                
 
+                            }else{
 
+                                alert("please select one or more attachments");
 
+                            }
 
+                         }
 
 
                      }

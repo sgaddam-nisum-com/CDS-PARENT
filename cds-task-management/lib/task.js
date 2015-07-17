@@ -103,11 +103,11 @@ exports.deleteAttachmentFromTask = function(params, token, callback) {
     headers[cdsConfig.token] = token;
 
     var url = {
-        path: requireUtil.format(restUrls.task.deleteAttachmentFromTask.path, params),
+        path: requireUtil.format(restUrls.task.deleteAttachmentFromTask.path, params.taskId),
         method: restUrls.task.deleteAttachmentFromTask.method
     };
 
-    restService.builbArgs(url, params, headers, function(args) {
+    restService.builbArgs(url, params.attachments, headers, function(args) {
         restService.makecall(args, callback);
     });
 };

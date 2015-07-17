@@ -26,12 +26,7 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
                 for(var i=0; i<$scope.existingAttachments.length; i++){
                      $scope.existingAttachments[i].filePath = $scope.attachmentViewPath+$scope.existingAttachments[i].attachmentName;
-                }
-
-
-                
-
-                console.log( $scope.existingAttachments);
+                }              
 
                 self.assigneeObj = generateParamObject(resp.data.taskWorkAllocation.constituency);
                 var CitizenIds = resp.data.citizenId;
@@ -57,12 +52,6 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
             });
 
            
-
-            
-
-
-            
-
             this.showCadresList = function(queryString){
                 $rootScope.queryString = queryString;
                 $rootScope.name="helllo";
@@ -79,88 +68,6 @@ define(['controllers/controllerModule', 'jquery'], function(controllerModule, $)
 
 
         
-
-
-
-
-             this.submitAttachments = function(e){
-
-                 this.taskAttachments = [];
-
-                console.log($("#profileHandler").get(0).files);
-
-                     e.preventDefault();
-                             //$("#previewHolder").attr("src","images/cds-loader.gif").css({width : "20px", height:"20px"});
-
-                             var formFileObj = new FormData();
-
-                             formFileObj.append("photograph", fileObj);
-                             console.log(formFileObj);
-
-                             if (scope.initiateUpload) {
-                                 scope.showUploaderOverlay = false;
-                                 scope.showLoader = true;
-                                 var imageUploadPromise = $.ajax({
-                                     xhr: function() {
-                                         var xhr = new window.XMLHttpRequest();
-
-                                         xhr.upload.addEventListener("progress", function(evt) {
-                                             console.log(evt.loaded);
-                                             if (evt.lengthComputable) {
-
-                                                 scope.$apply(function() {
-                                                     var percentComplete = (evt.loaded / evt.total) * 100;
-                                                     scope.uploadPercentage = scope.uploadStatusMsg = percentComplete + "%";
-                                                 });
-                                             }
-                                         }, false);
-
-                                         xhr.upload.addEventListener("load", function(evt) {
-                                             $timeout(function() {
-                                                 scope.uploadStatusMsg = "Updation completed."
-                                                 $timeout(function() {
-                                                     scope.showLoader = false;
-                                                 }, 3000);
-                                             }, 2000);
-                                         });
-                                        return xhr;
-                                     },
-                                     type: "POST",
-                                     url: appUrls.updateProfileImage,
-                                     data: formFileObj,
-                                     processData: false,
-                                     contentType: false
-
-                                 }).success(function(resp, status, headers, config) {
-                                     scope.initiateUpload = false;
-
-                                 }).error(function() {
-
-                                 });
-
-                             }else{
-                                scope.showLoader = true;
-                                scope.uploadPercentage = "100%";
-                                scope.uploadStatusMsg = "Please choose new image";
-                                $timeout(function(){
-                                    scope.showLoader = false;
-                                },2000);
-
-                             }
-
-
-                
-
-            }
-        
-
-
-
-
-
-
-
-
             this.save = function() {            
 
                 console.log(cdsService.userInfo);

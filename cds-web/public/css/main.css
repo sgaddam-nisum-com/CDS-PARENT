@@ -3444,6 +3444,36 @@ div.navigation a.next {
   cursor: pointer;
 }
 
+/* line 129, ../scss/components/_view-tasks.scss */
+.select-all-btn {
+  margin: 0;
+}
+
+/* line 133, ../scss/components/_view-tasks.scss */
+.comments .attachment-menu-header {
+  margin-bottom: 0;
+}
+
+/* line 136, ../scss/components/_view-tasks.scss */
+.attachment-status {
+  display: none;
+  color: red;
+  margin-left: 10px;
+  font-size: 11px;
+}
+
+/* line 143, ../scss/components/_view-tasks.scss */
+.attachment-progress {
+  display: none;
+  margin-bottom: 0;
+}
+
+/* line 147, ../scss/components/_view-tasks.scss */
+.comments .non-linked {
+  color: #aaa;
+  cursor: default;
+}
+
 /* line 1, ../scss/components/_add-task.scss */
 .fields-form {
   background: #cddae6;
@@ -3638,7 +3668,6 @@ div.navigation a.next {
 }  */
 /* line 1, ../scss/components/_status-message.scss */
 .status-wrapper {
-  width: 70%;
   display: none;
   border-radius: 5px;
   color: #fff;
@@ -3647,11 +3676,11 @@ div.navigation a.next {
   padding: 10px 10px;
   text-shadow: 0 0 35px #000;
 }
-/* line 12, ../scss/components/_status-message.scss */
+/* line 11, ../scss/components/_status-message.scss */
 .status-wrapper.error-status-node {
   background-color: #DE3B12;
 }
-/* line 15, ../scss/components/_status-message.scss */
+/* line 14, ../scss/components/_status-message.scss */
 .status-wrapper.info-status-node {
   background-color: #8EB14D;
 }
