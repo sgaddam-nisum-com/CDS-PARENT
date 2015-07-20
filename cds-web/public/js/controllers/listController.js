@@ -1,6 +1,6 @@
 define(['controllers/controllerModule'], function(controllerModule) {
 
-    controllerModule.controller('listController', ['$scope', '$state', '$http', 'listService', "$sessionStorage","appModalService",
+    controllerModule.controller('listController', ['$scope', '$state', '$http', 'listService', "$sessionStorage", "appModalService",
         function($scope, $state, $http, listService, $sessionStorage, appModalService) {
 
             var self = this;
@@ -17,14 +17,11 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
             var that = this;
 
-
-            console.log($scope);
-
             var defSearchObj = {
-                            q: "",
-                            userType : "2,3,4",
-                            limit : 8
-                        };
+                q: "",
+                userType: "2,3,4",
+                limit: 8
+            };
 
 
             this.render = function() {
@@ -48,9 +45,9 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 listService.getUserList({
                     q: this.searchQ,
                     page: 1,
-                    userType : "2,3,4",
-                    limit : 50
-                },  function(resObj) {
+                    userType: "2,3,4",
+                    limit: 50
+                }, function(resObj) {
                     that.userList = resObj.data.searchResults;
 
                 });
@@ -58,17 +55,19 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
 
-            this.confirmDelete = function(){
-            if(selectedUsers.length){
-                self.selectedUsers = selectedUsers;
-                 cadreDeleteOverlayModal = appModalService.init("cadreDeleteOverlay.html","cadreDeleteController", self,{class:"cadre-delete-overlay"} )();
-            }else{
+            this.confirmDelete = function() {
+                if (selectedUsers.length) {
+                    self.selectedUsers = selectedUsers;
+                    cadreDeleteOverlayModal = appModalService.init("cadreDeleteOverlay.html", "cadreDeleteController", self, {
+                        class: "cadre-delete-overlay"
+                    })();
+                } else {
 
-                
-            }
+
+                }
             }
 
-          
+
 
 
 
@@ -86,12 +85,12 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 });
             }
 
-
+            this.viewDetails = function(citizenId) {
+                $state.go('root.profile.memberdashboard', {
+                    "citizenId": citizenId
+                });
+            }
             console.log(this.selectedUsers);
-
-
-
-
 
             this.enableDisableOption = function(citizenId) {
 
@@ -135,21 +134,21 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 var filterObj = {
                     q: this.searchQ,
                     page: 1,
-                    limit:100
+                    limit: 100
                 };
 
-                (this.minAge !== "") ? filterObj.minAge = this.minAge : false;
-                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge : false;
+                (this.minAge !== "") ? filterObj.minAge = this.minAge: false;
+                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge: false;
 
 
-                    console.log(this.selectedUserTypes);
+                console.log(this.selectedUserTypes);
 
                 if (typeof this.selectedUserTypes !== undefined) {
                     var str = this.getSelectedFromObject(this.selectedUserTypes).toString();
 
                     console.log(str);
 
-                    (str) ? filterObj.userType = str : false;
+                    (str) ? filterObj.userType = str: false;
                 }
 
 
@@ -158,7 +157,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     console.log(this.selectedGender);
 
                     var str = this.getSelectedFromObject(this.selectedGender).toString();
-                    (str) ? filterObj.gender = str : "";
+                    (str) ? filterObj.gender = str: "";
                 }
 
                 console.log(filterObj);
@@ -179,59 +178,62 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
 
-                this.getSelectedFromObject = function(obj){
-            
-                        if(obj){
-                        var keys = Object.keys(obj);
-                    
+            this.getSelectedFromObject = function(obj) {
+
+                if (obj) {
+                    var keys = Object.keys(obj);
+
                     var filtered = keys.filter(function(key) {
-                            return obj[key]
-                        });
+                        return obj[key]
+                    });
 
-                        return filtered;
-                    }else{
-                        return "";
-                    }
-
-                 }
-
-
-
-
-        this.filteredWith = function(){         
-
-            this.selectedFilter = [];
-            var minMaxAge = [];
-            var selectedUserTypes = this.selectedUserTypes || {};
-
-            var keys = Object.keys(selectedUserTypes);
-
-
-            var selectedUserFilter = self.userTypes.filter(
-                function(user) {
-                if(selectedUserTypes[user.appRoleId]){
-                    return true;
+                    return filtered;
+                } else {
+                    return "";
                 }
+
             }
 
-            );
 
-         
 
-           var selectedGender = this.getSelectedFromObject(this.selectedGender) || [];
 
-              console.log(selectedGender);
+            this.filteredWith = function() {
 
-            selectedUserFilter = selectedUserFilter.map(function(user){
+                this.selectedFilter = [];
+                var minMaxAge = [];
+                var selectedUserTypes = this.selectedUserTypes || {};
 
-                return {"filterName":user.appRoleName,"filterObj":function(){  
+                var keys = Object.keys(selectedUserTypes);
 
-                    self.selectedUserTypes[user.appRoleId] = false;    
-                    self.filterSearch();
 
-                }};
+                var selectedUserFilter = self.userTypes.filter(
+                    function(user) {
+                        if (selectedUserTypes[user.appRoleId]) {
+                            return true;
+                        }
+                    }
 
-            });
+                );
+
+
+
+                var selectedGender = this.getSelectedFromObject(this.selectedGender) || [];
+
+                console.log(selectedGender);
+
+                selectedUserFilter = selectedUserFilter.map(function(user) {
+
+                    return {
+                        "filterName": user.appRoleName,
+                        "filterObj": function() {
+
+                            self.selectedUserTypes[user.appRoleId] = false;
+                            self.filterSearch();
+
+                        }
+                    };
+
+                });
 
 
                 console.log(selectedUserFilter);
@@ -239,46 +241,52 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
 
-            console.log(selectedUserFilter);
+                console.log(selectedUserFilter);
 
-           if(selectedGender.length){
+                if (selectedGender.length) {
 
-           selectedGender = selectedGender.map(function(gender){
+                    selectedGender = selectedGender.map(function(gender) {
 
-                return {"filterName":self.getGender(gender),"filterObj":function(){ 
+                        return {
+                            "filterName": self.getGender(gender),
+                            "filterObj": function() {
 
-                    self.selectedGender[gender] = false;    
-                    self.filterSearch();
+                                self.selectedGender[gender] = false;
+                                self.filterSearch();
 
-                }};
+                            }
+                        };
 
-            });
-       }
+                    });
+                }
 
-            
-            if(this.minAge !== "" && this.maxAge !== "") {
-                minMaxAge.push({"filterName":"Age "+this.minAge + " to " + this.maxAge, "filterObj":function(){ 
-                    console.log("minAge");
-                    self.minAge = self.maxAge = "";
-                    self.filterSearch();
 
-                }});
+                if (this.minAge !== "" && this.maxAge !== "") {
+                    minMaxAge.push({
+                        "filterName": "Age " + this.minAge + " to " + this.maxAge,
+                        "filterObj": function() {
+                            console.log("minAge");
+                            self.minAge = self.maxAge = "";
+                            self.filterSearch();
+
+                        }
+                    });
+                }
+
+                this.selectedFilter = this.selectedFilter.concat(selectedUserFilter, selectedGender, minMaxAge);
+
+            };
+
+            this.getGender = function(gender) {
+                return gender === 'M' ? "Male" : "Female";
+            };
+
+
+            this.resetSerach = function() {
+                this.selectedUserTypes = [];
+                this.selectedGender = [];
+                this.selectedFilter = [];
             }
-            
-            this.selectedFilter = this.selectedFilter.concat(selectedUserFilter, selectedGender, minMaxAge);
-           
-        };
-
-        this.getGender = function(gender){
-            return gender === 'M' ? "Male" : "Female";
-        };
-
-
-        this.resetSerach = function(){
-            this.selectedUserTypes = [];
-            this.selectedGender = [];
-            this.selectedFilter = [];
-        }   
 
 
         }
