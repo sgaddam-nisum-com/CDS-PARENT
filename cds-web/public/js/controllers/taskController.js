@@ -217,6 +217,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
             }
 
+            this.resetSerach = function(){
+                this.searchQ = this.user.fromDate = this.user.toDate = this.minAge = this.maxAge = "";
+                this.selectedPriorityTypes = this.selectedStatusTypes = [];
+            }
+
         }
     ]);
 
