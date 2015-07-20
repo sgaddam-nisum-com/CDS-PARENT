@@ -165,8 +165,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                 var filterObj = {
                     q: this.searchQ
                 };
-                (this.minAge !== undefined) ? filterObj.agerange = this.minAge + "-" + this.maxAge : false;
 
+                (this.minAge !== undefined) ? filterObj.agerange = this.minAge + "-" + this.maxAge : false;
+                (filterObj.agerange !== '-') ? filterObj.agerange = filterObj.agerange : delete filterObj.agerange;
                 ( this.user.fromDate !== undefined ) ? filterObj.fromDate = this.user.fromDate : false;
                 ( this.user.toDate !== undefined ) ? filterObj.toDate = this.user.toDate : false;
 

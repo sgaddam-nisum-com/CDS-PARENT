@@ -14,14 +14,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                 var reqMethod = "POST";
                 var reqURL = appUrls.saveFamily;
                 
-                var currentUserId = cdsSession.currentUserId || "";
+                var currentUserId = cdsSession.currentUserId || $rootScope.appUserIds;
 
                 handleGetFamily(currentUserId);
-
-                cdsService.getUserSession(initiateUserSession);
-                function initiateUserSession(resp){
-                    $rootScope.appUserIds = resp.data.user.appUserId;
-                }
 
                 var config = {
                     initiate: true,
@@ -151,7 +146,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                         self.user.childData = [];
                         /*To show primary field*/
                         if (dataJson.length < 2 || !dataJson.length) {
-                            self.user.childData = [{}];
+                            // self.user.childData = [{}];
                         }
 
                         if (resp.status == "success") {
