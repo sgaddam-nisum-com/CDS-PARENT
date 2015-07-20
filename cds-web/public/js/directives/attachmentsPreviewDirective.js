@@ -122,12 +122,18 @@
                                  if (attachmentsIdArray.indexOf(attachmentId) == -1) {
                                      attachmentsIdArray.push(attachmentId);
                                  }
+
                              } else {
                                  if (attachmentsIdArray.indexOf(attachmentId) > -1) {
                                      var iNdex = attachmentsIdArray.indexOf(attachmentId);
                                      attachmentsIdArray.splice(iNdex, 1);
                                  }
                              }
+                            if(attachmentsIdArray.length == scope.existingAttachments.length){
+                                scope.selectAllStatus = true;
+                            }else{
+                                scope.selectAllStatus = false;
+                            }
                          }
 
                          scope.selectAllAttachments = function(selectAllStatus) {
@@ -137,6 +143,11 @@
                          }
 
                          scope.deleteAttachment = function() {
+
+                            if(scope.selectAllStatus){
+                                 scope.deleteAllAttachments();
+                                 return;
+                            }
                              if (attachmentsIdArray.length) {
                                  var attObj = [];
 
