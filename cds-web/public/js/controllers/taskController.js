@@ -181,6 +181,23 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                     (str) ? filterObj.status = str : false;
                 }
 
+                this.taskSearch(taskObj, filterObj);
+            };
+
+            this.getSelectedFromObject = function(obj){
+                if(obj){
+                    var keys = Object.keys(obj);
+                    var filtered = keys.filter(function(key) {
+                        return obj[key]
+                    });
+                    return filtered;
+                }else{
+                    return "";
+                }
+
+            }
+
+            this.taskSearch = function( taskObj, filterObj ){
                 if( taskObj === "mytasks" ){
                     taskService.getMyTasks(filterObj, function(resp) {
                         $scope.myTaskLists = resp.data.tasks;
@@ -201,25 +218,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                         $scope.supervisorTaskLists = resp.data.tasks;
                     });
                 }
-
-            };
-
-            this.getSelectedFromObject = function(obj){
-                if(obj){
-                    var keys = Object.keys(obj);
-                    var filtered = keys.filter(function(key) {
-                        return obj[key]
-                    });
-                    return filtered;
-                }else{
-                    return "";
-                }
-
             }
 
-            this.resetSerach = function(){
-                this.searchQ = this.user.fromDate = this.user.toDate = this.minAge = this.maxAge = "";
-                this.selectedPriorityTypes = this.selectedStatusTypes = [];
+            this.resetSerach = function(taskObj){
+                this.searchQ = this.user.fromDate = this.user.toDate = this.minAge = this.maxAge = undefined;
+                this.selectedPriorityTypes = this.selectedStatusTypes = undefined;
+
+                var filterObj = {};
+                this.taskSearch(taskObj, filterObj);
             }
 
         }
