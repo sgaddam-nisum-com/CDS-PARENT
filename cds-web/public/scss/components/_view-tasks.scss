@@ -148,3 +148,14 @@
 	color: #aaa;
 	cursor : default;	
 }
+
+
+.att-status.cds-error{
+	color : red;
+	font-size: 12px;
+}
+
+.att-status.cds-info{
+	color: #47A447;
+	font-size: 12px;
+}

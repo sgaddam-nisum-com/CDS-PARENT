@@ -5,6 +5,8 @@
                      restrict: "A",
                      link: function(scope, elem, attrs) {
 
+                        var attMsgHandler = new messageHandler.msgTracker({containerId : "attachmentStatus", className : "att-status"});
+
                          var acceptedFormats = [],
                              /*Need to specify attachments formats if required*/
                              attsArray = [],
@@ -16,6 +18,7 @@
                              $("#fileAttachField").trigger("click");
                          };
                          scope.setAttachments = function(e) {
+                           scope.selectAllStatus = false; 
                              for (var key in e.files) {
                                  if (e.files[key] instanceof File) {
                                      e.files[key].originalName = e.files[key].name;
@@ -107,10 +110,9 @@
                                  });
 
                              } else {
-
-                                 $(".attachment-status").show().html("Please choose new attachments.");
+                                attMsgHandler.showError("Please choose new attachments.",200);
                                  $timeout(function() {
-                                     $(".attachment-status").fadeOut();
+                                     attMsgHandler.hideStatus(200);
                                  }, 3000);
                              }
                          }
@@ -129,11 +131,11 @@
                                      attachmentsIdArray.splice(iNdex, 1);
                                  }
                              }
-                            if(attachmentsIdArray.length == scope.existingAttachments.length){
-                                scope.selectAllStatus = true;
-                            }else{
-                                scope.selectAllStatus = false;
-                            }
+                             if (attachmentsIdArray.length == scope.existingAttachments.length) {
+                                 scope.selectAllStatus = true;
+                             } else {
+                                 scope.selectAllStatus = false;
+                             }
                          }
 
                          scope.selectAllAttachments = function(selectAllStatus) {
@@ -144,10 +146,14 @@
 
                          scope.deleteAttachment = function() {
 
-                            if(scope.selectAllStatus){
+                            attMsgHandler.clearStatus();
+
+                             if (scope.selectAllStatus) {
                                  scope.deleteAllAttachments();
                                  return;
-                            }
+                             }
+
+
                              if (attachmentsIdArray.length) {
                                  var attObj = [];
 
@@ -185,42 +191,56 @@
                                              }
                                          }
                                      }
+                                     console.log("hello");
+                                     attMsgHandler.showInfo("Attachments are successfully deleted");
+                                     $timeout(function() {
+                                         attMsgHandler.clearStatus(200);
+                                     }, 3000);
+
+
                                  }).error(function() {
 
                                  });
 
                              } else {
-                                 alert("please select one or more attachments");
+                                 attMsgHandler.showError("Please select one or more attachments",200);
+                                 $timeout(function() {
+                                     attMsgHandler.clearStatus(200);
+                                 }, 3000);
                              }
 
                          }
 
                          scope.deleteAllAttachments = function() {
-                             if (!scope.selectAllStatus) {
-                                 alert("Select all attachments");
-                                 return;
-                             }
+
+
+                            if(!scope.existingAttachments.length){
+                                attMsgHandler.showError("No attachments are found or selected to delete",200);
+                                return;
+                            }
+
 
                              $.ajax({
                                  url: "/auth/user/deleteattachmentfromtask",
                                  type: "DELETE",
                                  data: {
                                      taskId: $stateParams.taskId,
-                                     attachments:"",
+                                     attachments: "",
                                      attachmentsArray: angular.copy(scope.existingAttachments),
-                                     name : "ramesh"
+                                     name: "ramesh"
                                  }
 
                              }).success(function(resp, status) {
-              
-                                scope.$apply(function(){
-                                    scope.existingAttachments = [];
-                                    scope.selectAllStatus = false;
-                                });
 
-
-                             }).error(function() {
-                            });
+                                 scope.$apply(function() {
+                                     scope.existingAttachments = [];
+                                     scope.selectAllStatus = false;
+                                 });
+                                 attMsgHandler.showInfo("Attachments are successfully deleted");
+                                     $timeout(function() {
+                                         attMsgHandler.clearStatus(200);
+                                     }, 3000);
+                             }).error(function() {});
 
                          }
                      }
