@@ -99,7 +99,7 @@
                                     
                                     <a href="" ng-click="browseAttachments()" class="attachments">Add New</a>
                                     <a href="" ng-click="deleteAttachment()" class="attachments">Delete</a>
-                                    <a href="" ng-click="viewTaskCtrl.browseAttachments()" class="attachments">Delete All</a>
+                                    <a href="" ng-click="deleteAllAttachments()" class="attachments">Delete All</a>
                                     <input type="submit" class="btn btn-success" id="initiateUpload" value="Upload" style="">
                                     <span class="attachment-status">Please choose right image</span>
                                 </div>
@@ -117,7 +117,7 @@
                                 <tr>
                                     <th style="width:12%"><div class="checkbox select-all-btn">
                                         <label>
-                                            <input type="checkbox"> Select All
+                                            <input type="checkbox" ng-model="selectAllStatus" ng-change="selectAllAttachments(selectAllStatus)"> Select All
                                         </label>
                                     </div></th>
                                     <th style="width:75%">Description</th>

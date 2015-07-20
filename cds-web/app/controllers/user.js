@@ -224,34 +224,31 @@ exports.addAttachmentToTask = function(req, res, next) {
 exports.deleteAttachmentFromTask = function(req, res, next) {
     log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
+
+    if(!params.attachments.length){
+        params.attachments = [];
+    }
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.deleteAttachmentFromTask(params, token, function(resp) {
+        var basePath  = cdsConfig.attachments.rootPath + cdsConfig.attachments.path          
         if(resp.status == "success"){
-            
-
-            var basePath  = cdsConfig.attachments.rootPath + cdsConfig.attachments.path
-
-            
-            
-            for(var i=0; i<params.attachments.length; i++){
-
-                    console.log(basePath+params.attachments[i].taskAttachmentName);
-
-                 fs.unlink(basePath+params.attachments[i].taskAttachmentName, function(e) {   
-
-                    console.log("deleted");
-
-             });
-
-
-
+            if(params.attachments.length){
+                for(var i=0; i<params.attachments.length; i++){
+                     fs.unlink(basePath+params.attachments[i].attachmentName, function(e) {   
+                        console.log("deleted");
+                 });
+                }              
+            }else{
+                /*Delete all attachments*/
+                for(var i=0; i<params.attachmentsArray.length; i++){                      
+                     fs.unlink(basePath+params.attachmentsArray[i].attachmentName, function(e) {   
+                        console.log("deleted");
+                 });
+                }                 
             }
 
-
-
-            //TODO get all the file names loop it and do fs.unlink
-            
+           //TODO get all the file names loop it and do fs.unlink           
             req.resp = resp;
             next();
         }else{
