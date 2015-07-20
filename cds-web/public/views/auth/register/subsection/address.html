@@ -1,256 +1,103 @@
-<form name="address" id="addressRegistrationForm" ng-submit="addressCtrl.save()">
-    <div class="row rightContent">
-        <div class="col-md-12  formContent">
-            <input type="hidden" ng-model="addressCtrl.user.postalAddressId" />
-            <div class="row arrress-wrapper" ng-repeat="address in addressCtrl.user.iaddressarray" style="margin-bottom:30px;">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-3 ">
-                            <label for="right-label" class="right inline">Search Address:</label>
-                        </div>
-                        <div class="col-md-9  left">
-                            <!-- autocomplete-address-directive is removed from below div id="autoCompleteContainer -->
-                            <div id="autoCompleteContainer">
-                                <input type="text" id="postalAddress" class="form-control input" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst">
-                                <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="addressCtrl.searchAddress(addressCtrl.user.searchConst)">
-                            </div>
-                            <div class="error-class">
-                                <div class="error-content"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 ">
-                            <label for="right-label" class="right inline">Address Line1:</label>
-                        </div>
-                        <div class="col-md-9  left">
-                            <input type="text" id="addressLine1" class="form-control input required" name="addressLine1" data-val="addressLine1" ng-model="address.addressLine1">
-                            <div class="error-class">
-                                <div class="error-content"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 ">
-                            <label for="right-label" class="right inline">Address Line2:</label>
-                        </div>
-                        <div class="col-md-9  left">
-                            <input type="text" id="addressLine2" class="form-control input" name="addressLine2" ng-model="address.addressLine2">
-                            <div class="error-class">
-                                <div class="error-content"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div ng-show="addressCtrl.showSubAddressInfo">
-
-					<div class="row">
-						<div class="col-md-4 ">
-							<label for="right-label" class="right inline">Taluk:</label>
+<form name="address" id="addressRegistrationForm" class="row" ng-submit="addressCtrl.save()">
+	<div class="col-md-12">
+		<div class="row rightContent">
+			<div class="col-md-12  formContent">
+				<input type="hidden" ng-model="addressCtrl.user.postalAddressId" />
+				<div class="row arrress-wrapper" style="margin-bottom:30px;">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-3 ">
+								<label for="right-label" class="right inline">Search Address:</label>
+							</div>
+							<div class="col-md-9  left">
+								<!-- autocomplete-address-directive is removed from below div id="autoCompleteContainer -->
+								<div id="autoCompleteContainer">
+									<input type="text" id="postalAddress" class="form-control input" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst">
+									<img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="addressCtrl.searchAddress(addressCtrl.user.searchConst)">
+								</div>
+								<div class="error-class">
+									<div class="error-content"></div>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-8  left">
-						<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.taluk">
-							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.taluk"></span>
-							<div class="error-class"><div class="error-content"></div></div>
+						<div class="row">
+							<div class="col-md-3 ">
+								<label for="right-label" class="right inline">Address Line1:</label>
+							</div>
+							<div class="col-md-9  left">
+								<input type="text" id="addressLine1" class="form-control input required" name="addressLine1"
+								data-val="addressLine1" ng-model="addressCtrl.addressObj.addressLine1">
+								<div class="error-class">
+									<div class="error-content"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 ">
+								<label for="right-label" class="right inline">Address Line2:</label>
+							</div>
+							<div class="col-md-9  left">
+								<input type="text" id="addressLine2" class="form-control input" name="addressLine2" ng-model="addressCtrl.addressObj.addressLine2">
+								<div class="error-class">
+									<div class="error-content"></div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 ">
-							<label for="right-label" class="right inline">Division:</label>
+				</div>
+				
+				<div ng-hide="addressCtrl.hideAddrFields" >
+					<div class="row form-group">
+						<div class="col-md-3 ">
+							<label for="right-label" class="right inline">Country:</label>
 						</div>
-						<div class="col-md-8  left">
-							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.divisionName">
-							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.divisionName"></span>
-							<div class="error-class"><div class="error-content"></div></div>
+						<div class="col-md-9  left">
+							<span class="address-line" ng-bind="addressCtrl.voterNodeObj.country"></span>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 ">
+					<div class="row form-group">
+						<div class="col-md-3 ">
+							<label for="right-label" class="right inline">State:</label>
+						</div>
+						<div class="col-md-9  left">
+							<span class="address-line" ng-bind="addressCtrl.voterNodeObj.state"></span>
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-3 ">
 							<label for="right-label" class="right inline">District:</label>
 						</div>
-						<div class="col-md-8  left">
-							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.district">
-							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.district"></span>
-							<div class="error-class"><div class="error-content"></div></div>
+						<div class="col-md-9  left">
+							<span class="address-line" ng-bind="addressCtrl.voterNodeObj.district"></span>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 ">
-							<label for="right-label" class="right inline">Village:</label>
+					<div class="row form-group">
+						<div class="col-md-3 ">
+							<label for="right-label" class="right inline">Division:</label>
 						</div>
-						<div class="col-md-8  left">
-							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.officeName">
-							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.officeName"></span>
-							<div class="error-class"><div class="error-content"></div></div>
+						<div class="col-md-9  left">
+							<span class="address-line" ng-bind="addressCtrl.voterNodeObj.taluk"></span>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 ">
+					<div class="row form-group">
+						<div class="col-md-3 ">
 							<label for="right-label" class="right inline">Pincode:</label>
 						</div>
-						<div class="col-md-8  left">
-							<input type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-model="address.postalAddress.pincodeNumber">
-							<span type="text" id="addressLine2" class="input" name="addressLine2" data-val="addressLine2" ng-bind="address.postalAddress.pincodeNumber"></span>
-							<div class="error-class"><div class="error-content"></div></div>
+						<div class="col-md-9  left">
+							<span class="address-line" ng-bind="addressCtrl.voterNodeObj.pincodeNumber"></span>
 						</div>
 					</div>
-				</div>  -->
-                </div>
-            </div>
-            <div class="row form-group" ng-hide="addressCtrl.hideAddrFields">
-                <div class="col-md-3 ">
-                    <label for="right-label" class="right inline">Country:</label>
-                </div>
-                <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.country"></span>
-                </div>
-            </div>
-            <div class="row form-group" ng-hide="addressCtrl.hideAddrFields">
-                <div class="col-md-3 ">
-                    <label for="right-label" class="right inline">State:</label>
-                </div>
-                <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.state"></span>
-                </div>
-            </div>
-            <div class="row form-group" ng-hide="addressCtrl.hideAddrFields">
-                <div class="col-md-3 ">
-                    <label for="right-label" class="right inline">District:</label>
-                </div>
-                <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.district"></span>
-                </div>
-            </div>
-            <div class="row form-group" ng-hide="addressCtrl.hideAddrFields">
-                <div class="col-md-3 ">
-                    <label for="right-label" class="right inline">Division:</label>
-                </div>
-                <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.taluk"></span>
-                </div>
-            </div>
-            <div class="row form-group" ng-hide="addressCtrl.hideAddrFields">
-                <div class="col-md-3 ">
-                    <label for="right-label" class="right inline">Pincode:</label>
-                </div>
-                <div class="col-md-9  left">
-                    <span class="address-line" ng-bind="addressCtrl.voterNodeObj.pincodeNumber"></span>
-                </div>
-            </div>
-            <!-- <div class="row">
-				<div class="col-md-4 ">
-					<label for="right-label" class="right inline">Non-resident Indian[NRI]:</label>
-				</div>
-				<div class="col-md-8  left radioGroup">
-					<input type="radio" name="nri" ng-model="addressCtrl.nri.nriAddress" value="true" id="nriTrue"><label for="nriTrue">Yes</label>
-					<input type="radio" name="nri" ng-model="addressCtrl.nri.nriAddress" value="false" id="nriFalse"><label for="nriFalse">No</label>
-				</div>
-			</div> -->
-            <!-- 
-			<div class="row" ng-repeat="address in addressCtrl.user.naddressarray">
-				<div class=" col-md-12 ">
-
-
-			<div ng-show="addressCtrl.nri.nriAddress">
-				<div class="row">
-					<div class="col-md-4 ">
-						<label for="right-label" class="right inline">Address Line 1:</label>
-					</div>
-					<div class="col-md-8  left">
-						<input type="text" id="nriAddressLine1" class="input" name="nriAddressLine1" data-val="nriAddressLine1" ng-model="address.addressLine1">
-						<div class="error-class"><div class="error-content"></div></div>
-					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 ">
-						<label for="right-label" class="right inline">Address Line 2:</label>
+					<div class="col-md-3 ">
+						&nbsp;
 					</div>
-					<div class="col-md-8  left">
-						<input type="text" id="nriAddressLine2" class="input" name="nriAddressLine2" ng-model="address.addressLine2">
-						<div class="error-class"><div class="error-content"></div></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 ">
-						<label for="right-label" class="right inline">Country:</label>
-					</div>
-					<div class="col-md-8  left">
-						<input type="text" id="nriCountry" class="input" name="nriCountry" ng-model="address.nriCountry">
-						<div class="error-class"><div class="error-content"></div></div>
+					<div class="col-md-9  left">
+						<button class="btn submit left">Save & Continue</button>
+						<a class="btn cancel" ui-sref="root.profile.editprofile.voter">Back</a>
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-
-
-
-				</div>
-			</div>
-
-
-
-
-
- -->
-            <!-- 	<div class="row">
-				<div class="col-md-4 ">
-					&nbsp;
-				</div>
-				<div class="col-md-8  left">
-					<a href="#" class="link">Add another Address</a>
-				</div>
-			</div> -->
-            <!-- 		<div class="row">
-				<div class="col-md-4 ">
-					<label for="right-label" class="right inline">Non-resident Indian[NRI]:</label>
-				</div>
-				<div class="col-md-8  left radioGroup">
-					<input type="radio" name="nri" ng-model="addressCtrl.nri.nriAddress" value="true" id="nriTrue"><label for="nriTrue">Yes</label>
-					<input type="radio" name="nri" ng-model="addressCtrl.nri.nriAddress" value="false" id="nriFalse"><label for="nriFalse">No</label>
-				</div>
-			</div>
-			<div ng-show="addressCtrl.nri.nriAddress=='true'">
-				<div class="row">
-					<div class="col-md-4 ">
-						<label for="right-label" class="right inline">Address Line 1:</label>
-					</div>
-					<div class="col-md-8  left">
-						<input type="text" id="nriAddressLine1" class="input" name="nriAddressLine1" data-val="nriAddressLine1" ng-model="addressCtrl.nri.addressLine1">
-						<div class="error-class"><div class="error-content"></div></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 ">
-						<label for="right-label" class="right inline">Address Line 2:</label>
-					</div>
-					<div class="col-md-8  left">
-						<input type="text" id="nriAddressLine2" class="input" name="nriAddressLine2" ng-model="addressCtrl.nri.addressLine2">
-						<div class="error-class"><div class="error-content"></div></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 ">
-						<label for="right-label" class="right inline">Country:</label>
-					</div>
-					<div class="col-md-8  left">
-						<input type="text" id="nriCountry" class="input" name="nriCountry" ng-model="addressCtrl.nri.nriCountry">
-						<div class="error-class"><div class="error-content"></div></div>
-					</div>
-				</div>
-			</div> -->
-            <div class="row">
-                <div class="col-md-3 ">
-                    &nbsp;
-                </div>
-                <div class="col-md-9  left">
-                    <button class="btn submit left">Save & Continue</button>
-                    <a class="btn cancel" ui-sref="root.profile.editprofile.voter">Back</a>
-                </div>
-            </div>
-        </div>
-    </div>
+		</div>
+	</div>
 </form>

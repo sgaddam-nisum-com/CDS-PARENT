@@ -28,14 +28,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                 }
 
                 function handleUserEdit(userId) {
-
-                    if (self.user.postalAddressId == null || self.user.postalAddressId == "") {
-                        self.hideAddrFields = true;
-                    } else {
-                        self.hideAddrFields = false;
-                    }
+                    self.hideAddrFields = !self.user.postalAddressId;
                     registerService.getAddressInfo(userId, function(resp) {
-
                         self.user.iaddressarray = [];
                         self.user.postalAddress = {};
                         self.user.iaddressarray.push({});
@@ -53,13 +47,15 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                             self.user.postalAddressId = resp.data[0].postalAddress.postalAddressId;
 
                             self.hideAddrFields = false;
-                            for (var i = 0; i < 1; i++) {
+                            for(var i=0; i<dataJson.length; i++){
                                 if (!dataJson[i].nriAddress) {
                                     self.user.iaddressarray.push(dataJson[i]);
                                 } else {
                                     self.user.naddressarray.push(dataJson[i]);
                                 }
-                            }
+                            }                              
+                            
+                            self.addressObj = self.user.iaddressarray[0];
                         }
                     });
                 }
@@ -72,23 +68,27 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     runCallBack: false,
                 };
 
+                var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
+
                 this.save = function() {
-                    var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
+                     
+                     messageHandler.clearMessageStatus();
+
                     if (formStack.isValid) {
+                            if(!self.user.postalAddressId){
+                                messageHandler.showErrorStatus("Please assign postal address by searching with pincode", ".status-message-wrapper"); 
+                                return;
+                            } 
+
                         var requestObj = [];
-                        requestObj[0] = {};
+                        requestObj[0] = self.addressObj ||{};
                         requestObj[0].postalAddress = {};
-
-                        if (self.user.iaddressarray.length && self.user.iaddressarray[0].addressLine1) {
-                            requestObj[0].addressLine1 = self.user.iaddressarray[0].addressLine1;
-                            requestObj[0].addressLine2 = self.user.iaddressarray[0].addressLine2;
-                            requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
-                            requestObj[0]['nriAddress'] = false;
-                            var addressReq = {};
-                            addressReq.data = requestObj;
-                            addressReq.userId = cdsSession.currentUserId;
-
-                        }
+                        requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
+                        requestObj[0].nriAddress = false;
+                        var addressReq = {};
+                        addressReq.data = requestObj;
+                        addressReq.userId = cdsSession.currentUserId;
+                    
 
                         $http({
                             method: "PUT",
@@ -117,9 +117,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                 messageHandler.clearMessageStatus();
                             }, 3000);
                         });
-                        self.isNotValidForm = false;
+                       
                     } else {
-                        self.isNotValidForm = true;
+                       
                     }
                 }
 
