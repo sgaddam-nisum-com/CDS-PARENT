@@ -186,7 +186,7 @@ module.exports = {
             method: "GET"
         },
         messageCount: {
-            path: "user/dashboard/taskscount/%s/",
+            path: "user/dashboard/%s/taskscount/%s/",
             method: "GET"
         },
         tasksByAge: {
@@ -194,7 +194,7 @@ module.exports = {
             method: "GET"
         },
         tasksTrendRPerMonth: {
-            path: "user/dashboard/taskstrendreportspermonth/%s/",
+            path: "user/dashboard/%s/taskstrendreportspermonth/%s/",
             method: "GET"
         },
         cadresTrendRPerMonth: {

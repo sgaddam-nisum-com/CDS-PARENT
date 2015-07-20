@@ -12,10 +12,10 @@
                              donutData[0] = resp.data.assignedCount;
                              donutData[1] = resp.data.inprogressCount;
                              donutData[2] = resp.data.holdCount;
-                             scope.labels = ["Assigned", "In-progress", "Hold Count"];
-                             scope.data = donutData;
-                             scope.legend = true;
-                             scope.colours = ["#F0AD4E", "#4C8AC7", "#86AD39"];
+                             scope.donutLabels = ["Assigned", "In-progress", "Hold Count"];
+                             scope.donutData = donutData;
+                             scope.donutLegend = true;
+                             scope.donutColours = ["#F0AD4E", "#4C8AC7", "#86AD39"];
                          });
 
                      }

@@ -10,7 +10,7 @@
                              lineData = [],
                              tasksLabels = [];
 
-
+                         console.log(scope.userRole);
                          dashboardService.getTasksByTrend(scope.userRole, function(resp) {
                              console.log(resp);
 
@@ -23,27 +23,24 @@
 
 
 
-                             scope.labels = tasksLabels;
-                             scope.series = ['Monthwise Task Report'];
-                             scope.data = [
+                             scope.lineLabels = tasksLabels;
+                             scope.lineSeries = ['Monthwise Task Report'];
+                             scope.lineData = [
                                  lineData,
                              ];
-                             scope.legend = true;
-                             scope.options = {
+                             scope.lineLegend = true;
+                             scope.lineOptions = {
                                  legend: true,
                                  bezierCurve: true,
                                  //bezierCurveTension: 0.9,
                              };
-                             scope.colours = ['#C6781C'];
+                             scope.lineColours = ['#C6781C'];
                              scope.onClick = function(points, evt) {
                                  console.log(points, evt);
                              };
 
 
                          });
-
-
-
 
                      }
                  }

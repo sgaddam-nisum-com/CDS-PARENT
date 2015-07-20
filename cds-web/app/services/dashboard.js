@@ -42,7 +42,7 @@ exports.messageCount = function(params, token, callback) {
     headers[cdsConfig.token] = token;
 
     var url = {
-        path: requireUtil.format(restUrls.dashboard.messageCount.path, params.type),
+        path: requireUtil.format(restUrls.dashboard.messageCount.path,params.userId,params.type),
         method: restUrls.dashboard.messageCount.method
     };
 
@@ -72,7 +72,7 @@ exports.tasksTrendRPerMonth = function(params, token, callback) {
     headers[cdsConfig.token] = token;
 
     var url = {
-        path: requireUtil.format(restUrls.dashboard.tasksTrendRPerMonth.path, params.type),
+        path: requireUtil.format(restUrls.dashboard.tasksTrendRPerMonth.path,params.userId,params.type),
         method: restUrls.dashboard.tasksTrendRPerMonth.method
     };
 

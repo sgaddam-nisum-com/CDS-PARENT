@@ -36,9 +36,11 @@ exports.notifications = function(req, res, next) {
 exports.messageCount = function(req, res, next) {
     log.debug("messageCount : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var type = req.query.type;
 
     dashboardService.messageCount({
+        userId: userId,
         type: type
     }, token, function(resp) {
         req.resp = resp;
@@ -64,9 +66,11 @@ exports.tasksByAge = function(req, res, next) {
 exports.tasksTrendRPerMonth = function(req, res, next) {
     log.debug("tasksTrendRPerMonth : logged user - " + req.user.data.user.appUserId);
     var token = req.user ? req.user.data.token : null;
+    var userId = req.query.userId || req.user.data.user.appUserId;
     var type = req.query.type;
-
+    console.log(userId);
     dashboardService.tasksTrendRPerMonth({
+        userId: userId,
         type: type
     }, token, function(resp) {
         req.resp = resp;

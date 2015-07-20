@@ -28,8 +28,10 @@ define(['services/serviceModule'], function(serviceModule) {
                 },
                 getTasksByAge: function(userRole, cb) {
 
+                    console.log(userRole);
+
                     var criteria;
-                    if (userRole == "Cadre") {
+                    if (userRole === "Cadre") {
                         criteria = "self";
                     } else {
                         criteria = "All";
@@ -38,8 +40,8 @@ define(['services/serviceModule'], function(serviceModule) {
 
                     $http.get(appUrlService.getTasksByAge, {
                         params: {
-                            criteria: criteria
-                        }
+                           
+                            criteria: criteria                        }
 
                     }).success(function(resp) {
                         cb(resp);
@@ -54,6 +56,7 @@ define(['services/serviceModule'], function(serviceModule) {
                     }
                     $http.get(appUrlService.getTasksByTrend, {
                         params: {
+                            
                             type: type
                         }
 
@@ -64,6 +67,7 @@ define(['services/serviceModule'], function(serviceModule) {
                 getTaskState: function(cb) {
                     $http.get(appUrlService.getTaskState, {
                         params: {
+                            
                             type: 'assignedtome'
                         }
 

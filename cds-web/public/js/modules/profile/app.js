@@ -22,6 +22,7 @@ define(['angular',
     "controllers/familyController",
     "controllers/cadreController",
     "modalControllers/cadreDeleteController",
+    "controllers/memberDashboardController",
     "directives/voterDirective",
     "directives/addressDirective",
     "controllers/listController",
@@ -33,8 +34,12 @@ define(['angular',
     "directives/imagePreviewDirective",
     "directives/slideBtnDirective",
     "modalControllers/registerOverlayController",
-	"modalControllers/childOverlayController",
+    'services/dashboardService',
+    "angularCharts",
+    "directives/memberdashboard/tasksageGraphDirective",
+    "directives/memberdashboard/taskstrendGraphDirective",
+    "directives/memberdashboard/mytasksGraphDirective"
 ], function(angular) {
-    var app = angular.module('CDSUSERPROFILE', ['ui.router', "ngStorage", 'serviceModule', "controllerModule", "directiveModule", "ui.bootstrap"]);
+    var app = angular.module('CDSUSERPROFILE', ['ui.router', "ngStorage", 'serviceModule', "controllerModule", "directiveModule", "ui.bootstrap", "chart.js"]);
     return app;
 });
