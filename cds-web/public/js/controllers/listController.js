@@ -23,7 +23,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 limit: 8
             };
 
-
             this.render = function() {
                 listService.getUserList(defSearchObj, function(resObj) {
                     that.userList = resObj.data.searchResults;
@@ -68,10 +67,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
             }
 
 
-
-
-
-
             this.editUserInfo = function(citizenId) {
                 $state.go('root.profile.editprofile.personal', {
                     "userId": citizenId
@@ -80,6 +75,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
             this.viewProfile = function(citizenId) {
+               cdsSession.currentUserId = citizenId;
                 $state.go('root.profileLookup', {
                     "citizenId": citizenId
                 });
@@ -90,7 +86,6 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     "citizenId": citizenId
                 });
             }
-            console.log(this.selectedUsers);
 
             this.enableDisableOption = function(citizenId) {
 
@@ -137,8 +132,8 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     limit: 100
                 };
 
-                (this.minAge !== "") ? filterObj.minAge = this.minAge: false;
-                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge: false;
+                (this.minAge !== "") ? filterObj.minAge = this.minAge : false;
+                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge : false;
 
 
                 console.log(this.selectedUserTypes);
@@ -148,7 +143,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
                     console.log(str);
 
-                    (str) ? filterObj.userType = str: false;
+                    (str) ? filterObj.userType = str : false;
                 }
 
 
@@ -157,7 +152,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     console.log(this.selectedGender);
 
                     var str = this.getSelectedFromObject(this.selectedGender).toString();
-                    (str) ? filterObj.gender = str: "";
+                    (str) ? filterObj.gender = str : "";
                 }
 
                 console.log(filterObj);

@@ -71,7 +71,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                     $scope.children = children;
                     $scope.spouse = spouse;
                     $scope.currentProfileImage = resp.data.photograph;
-
+                    self.user.photograph = self.user.photograph || "img-placeholder.jpg";
                 }
 
 

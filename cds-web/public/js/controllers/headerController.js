@@ -47,6 +47,13 @@ define(['controllers/controllerModule'], function (controllerModule) {
 			
 		}
 
+
+		self.viewSelfProfile = function(){
+			cdsSession.currentUserId = "";
+			window.location.href = "/profile#/";		
+
+		}
+
 	}]);
 
 });
