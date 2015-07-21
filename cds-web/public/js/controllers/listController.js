@@ -1,9 +1,10 @@
 define(['controllers/controllerModule'], function(controllerModule) {
 
-    controllerModule.controller('listController', ['$scope', '$state', '$http', 'listService', "$sessionStorage", "appModalService",
-        function($scope, $state, $http, listService, $sessionStorage, appModalService) {
+    controllerModule.controller('listController', ['$scope', '$state', '$http', 'listService', "$sessionStorage", "appModalService", 'cdsService',
+        function($scope, $state, $http, listService, $sessionStorage, appModalService, cdsService) {
 
-            var self = this;
+            var self = this,
+                rolesList = [];
 
             this.minAge = 18;
             this.maxAge = 50;
@@ -22,6 +23,18 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 userType: "2,3,4",
                 limit: 8
             };
+            self.hideCadreStats = true;
+            cdsService.getUserSession(function(resp) {
+                rolesList = resp.data.user.appRoles;
+                for (var i = 0; i < rolesList.length; i++) {
+
+                    if (rolesList[i].roleName == "MP") {
+                        self.hideCadreStats = false;
+                    } else {
+                        self.hideCadreStats = true;
+                    }
+                }
+            });
 
             this.render = function() {
                 listService.getUserList(defSearchObj, function(resObj) {
@@ -75,7 +88,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
             this.viewProfile = function(citizenId) {
-               cdsSession.currentUserId = citizenId;
+                cdsSession.currentUserId = citizenId;
                 $state.go('root.profileLookup', {
                     "citizenId": citizenId
                 });
@@ -132,8 +145,8 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     limit: 100
                 };
 
-                (this.minAge !== "") ? filterObj.minAge = this.minAge : false;
-                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge : false;
+                (this.minAge !== "") ? filterObj.minAge = this.minAge: false;
+                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge: false;
 
 
                 console.log(this.selectedUserTypes);
@@ -143,7 +156,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
                     console.log(str);
 
-                    (str) ? filterObj.userType = str : false;
+                    (str) ? filterObj.userType = str: false;
                 }
 
 
@@ -152,7 +165,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     console.log(this.selectedGender);
 
                     var str = this.getSelectedFromObject(this.selectedGender).toString();
-                    (str) ? filterObj.gender = str : "";
+                    (str) ? filterObj.gender = str: "";
                 }
 
                 console.log(filterObj);
