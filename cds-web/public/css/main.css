@@ -1771,9 +1771,10 @@ body .navigation .top-bar-section ul li:active a {
 /* line 213, ../scss/components/_list.scss */
 .tiles-list .tiles .details {
   margin: 15px 10px;
+  height: 240px;
 }
 
-/* line 216, ../scss/components/_list.scss */
+/* line 217, ../scss/components/_list.scss */
 .tiles-list .tiles .details h6 {
   font-size: 13px;
   font-weight: bold;
@@ -1782,7 +1783,7 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 224, ../scss/components/_list.scss */
+/* line 225, ../scss/components/_list.scss */
 .tiles-list .tiles .details label {
   font-size: 13px;
   word-wrap: break-word;
@@ -1791,18 +1792,18 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 231, ../scss/components/_list.scss */
+/* line 232, ../scss/components/_list.scss */
 .tiles-list .tiles .status {
   background: #999999;
   padding: 6px;
 }
 
-/* line 235, ../scss/components/_list.scss */
+/* line 236, ../scss/components/_list.scss */
 .tiles-list .tiles .status input[type="checkbox"] {
   margin: 0;
 }
 
-/* line 238, ../scss/components/_list.scss */
+/* line 239, ../scss/components/_list.scss */
 .tiles-list .tiles .status .volunteer, .volunteer {
   background: url(../images/cds-sprite.png) no-repeat 0 -152px;
   width: 30px;
@@ -1810,7 +1811,7 @@ body .navigation .top-bar-section ul li:active a {
   display: inline-block;
 }
 
-/* line 244, ../scss/components/_list.scss */
+/* line 245, ../scss/components/_list.scss */
 .tiles-list .tiles .status .cadre, .cadre {
   background: url(../images/cds-sprite.png) no-repeat 0 -186px;
   width: 25px;
@@ -1818,11 +1819,11 @@ body .navigation .top-bar-section ul li:active a {
   display: inline-block;
 }
 
-/* line 254, ../scss/components/_list.scss */
+/* line 255, ../scss/components/_list.scss */
 .status-tab {
   height: 35px;
 }
-/* line 256, ../scss/components/_list.scss */
+/* line 257, ../scss/components/_list.scss */
 .status-tab input {
   margin-top: 5px !important;
   display: inline-block;
