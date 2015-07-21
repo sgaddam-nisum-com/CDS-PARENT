@@ -38,7 +38,8 @@ define(['angular',
     "angularCharts",
     "directives/memberdashboard/tasksageGraphDirective",
     "directives/memberdashboard/taskstrendGraphDirective",
-    "directives/memberdashboard/mytasksGraphDirective"
+    "directives/memberdashboard/mytasksGraphDirective",
+    "modalControllers/childOverlayController"
 ], function(angular) {
     var app = angular.module('CDSUSERPROFILE', ['ui.router', "ngStorage", 'serviceModule', "controllerModule", "directiveModule", "ui.bootstrap", "chart.js"]);
     return app;
