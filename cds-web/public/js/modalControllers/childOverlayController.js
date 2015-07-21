@@ -12,18 +12,7 @@ function (controllerModule, formValidation, validationMap, errorJson, $, message
             var child =callerScope.contextChild;
 
             var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
-            console.log(cdsSession.currentUserId);
-
-            var currentUserId;
-
-            if( cdsSession.currentUserId === undefined ){
-                // original userId
-                currentUserId = $rootScope.appUserIds;
-            } else {
-                // From Registrants
-                currentUserId = cdsSession.currentUserId;
-            }
-            
+            var currentUserId = cdsSession.currentUserId || "";
 
             registerService.getEducationOptions(function(resp) {
                 $scope.educationOptions = resp.data;
@@ -84,7 +73,7 @@ function (controllerModule, formValidation, validationMap, errorJson, $, message
                     childObj.lastName = $scope.child.lastName;
                     childObj.gender = $scope.child.gender;
                     childObj.dateOfBirth = $scope.child.dateOfBirth;
-                    childObj.educationId = $scope.child.education.educationId;
+                    childObj.educationId = $scope.child.education.educationId || "";
 
                     $http({
                         method: reqMethod,

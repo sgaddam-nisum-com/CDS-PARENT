@@ -14,7 +14,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                 var reqMethod = "POST";
                 var reqURL = appUrls.saveFamily;
                 
-                var currentUserId = cdsSession.currentUserId || $rootScope.appUserIds;
+                var currentUserId = cdsSession.currentUserId || "";
 
                 handleGetFamily(currentUserId);
 
@@ -88,14 +88,12 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                             reqURL = appUrls.updateFamily
                         }
                         var spouseObj = {};
-                        if( self.user.spouseData.education.educationId !== 0 ){
-                            spouseObj.educationId = self.user.spouseData.education.educationId;    
-                        }
-                        
+                            
                         spouseObj.firstName = self.user.spouseData.firstName;
                         spouseObj.lastName = self.user.spouseData.lastName;
                         spouseObj.middleName = self.user.spouseData.middleName;
                         spouseObj.gender = self.user.spouseData.gender;
+                        spouseObj.educationId = self.user.spouseData.education.educationId || "";  
                         
                         if (spouseObj.gender == 'M') {
                             spouseObj.relationType = "Husband";
