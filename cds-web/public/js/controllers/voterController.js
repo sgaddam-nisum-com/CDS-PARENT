@@ -12,31 +12,33 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                 self.user = {};
 
                 handleGetVoter(cdsSession.currentUserId);
-                this.searchVoter = function( votersearchtext ){
-		        	$rootScope.votersearchtext = votersearchtext;
-		            
+                this.searchVoter = function(votersearchtext) {
+                    $rootScope.votersearchtext = votersearchtext;
 
-                    voterModal = appModalService.init("voterSearchTemplate.html","voterSearchController", $rootScope,{class:"cadre-overlay"} )();
 
-		            voterModal.result.then(function(objString){
+                    voterModal = appModalService.init("voterSearchTemplate.html", "voterSearchController", $rootScope, {
+                        class: "cadre-overlay"
+                    })();
+
+                    voterModal.result.then(function(objString) {
                         $scope.treeDataId = objString.treeDataId;
-		                objString = objString.string.substring(0, objString.string.length - 1);
-                        
-		                var valuesArray = objString.split(",");
-		                var keys = ["Country:", "State:", "District:", "Mandal:", "Village:", "MP Constituency:", "Assembly Constitueny:", "Pincode:"];
-			            var finalObjArray = [];                    
-			            for(var i=0; i<valuesArray.length; i++){
-			            	var myarry = {};
-			             	myarry.key = keys[i];
-			             	myarry.value = valuesArray[i];
-			             	finalObjArray.push(myarry);
-			            }
+                        objString = objString.string.substring(0, objString.string.length - 1);
+
+                        var valuesArray = objString.split(",");
+                        var keys = ["Country:", "State:", "District:", "Mandal:", "Village:", "MP Constituency:", "Assembly Constitueny:", "Pincode:"];
+                        var finalObjArray = [];
+                        for (var i = 0; i < valuesArray.length; i++) {
+                            var myarry = {};
+                            myarry.key = keys[i];
+                            myarry.value = valuesArray[i];
+                            finalObjArray.push(myarry);
+                        }
                         self.user.searchconst = "";
                         $scope.voterNodeObj = finalObjArray;
-		            },function(){              
-		                console.log('selObj');
-		            });
-		        }
+                    }, function() {
+                        console.log('selObj');
+                    });
+                }
                 var config = {
                     initiate: true,
                     blurValidation: false,
@@ -48,67 +50,71 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
 
                 this.save = function() {
                     console.log($scope.treeDataId);
+                    if (formStack.isValid) {
+                        if (!$scope.treeDataId) {
+                            messageHandler.showErrorStatus("Please assign Constituency by searching with city or town", ".status-message-wrapper");
+                            return;
+                        }
+                        var reqObj = {};
 
-                    var reqObj = {};
+                        reqObj.voterCardId = self.user.voterCardId;
+                        reqObj.treeDataId = $scope.treeDataId;
+                        reqObj.addressLine1 = self.user.addressLine1;
+                        reqObj.addressLine2 = self.user.addressLine2;
+                        reqObj.voterId = self.user.voterId;
+                        reqObj.userId = cdsSession.currentUserId;
+                        console.log(reqObj.treeDataId);
+                        $http({
+                            method: dataJson.reqMethod,
+                            url: dataJson.reqURL,
+                            data: reqObj
+                        }).success(function(resp, status, headers, config) {
 
-                    reqObj.voterCardId = self.user.voterCardId;
-                    reqObj.treeDataId = $scope.treeDataId;
-                    reqObj.addressLine1 = self.user.addressLine1;
-                    reqObj.addressLine2 = self.user.addressLine2;
-                    reqObj.voterId = self.user.voterId;
-                    reqObj.userId = cdsSession.currentUserId;
+                            if (resp.status == "success") {
 
-                    console.log(reqObj.treeDataId);
+                                messageHandler.showInfoStatus(notifications.voter_successfulSave, ".status-message-wrapper");
+                                setTimeout(function() {
+                                    messageHandler.clearMessageStatus();
+                                    $state.go('root.profile.editprofile.address');
+                                }, 3000);
 
-                    $http({
-                        method: dataJson.reqMethod,
-                        url: dataJson.reqURL,
-                        data: reqObj
-                    }).success(function(resp, status, headers, config) {
+                            } else {
 
-                        if (resp.status == "success") {
+                                messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
+                                setTimeout(function() {
+                                    messageHandler.clearMessageStatus();
+                                }, 3000);
 
-                            messageHandler.showInfoStatus(notifications.voter_successfulSave, ".status-message-wrapper");
-                            setTimeout(function() {
-                                messageHandler.clearMessageStatus();
-                                $state.go('root.profile.editprofile.address');
-                            }, 3000);
 
-                        } else {
+                            }
 
+                        }).error(function(data, status, headers, config) {
                             messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
                             setTimeout(function() {
                                 messageHandler.clearMessageStatus();
                             }, 3000);
 
+                        });
 
-                        }
+                    } else {
 
-                    }).error(function(data, status, headers, config) {
-                        messageHandler.showErrorStatus(notifications.submissionError, ".status-message-wrapper");
-                        setTimeout(function() {
-                            messageHandler.clearMessageStatus();
-                        }, 3000);
-
-                    });
-
-
+                    }
 
                 }
 
 
                 function generateParamObject(objString) {
                     objString = objString || "";
-                    
-                    if(objString !== ""){
+
+                    if (objString !== "") {
                         var keysArray = objString.split(",");
-                        var finalArray= [];
+                        var finalArray = [];
                         for (var i = 0; i < keysArray.length; i++) {
                             keysObj = {}
                             var splitArray = keysArray[i].split(":");
                             keysObj.key = splitArray[0] + ":";
                             keysObj.value = splitArray[1];
-                            finalArray.push(keysObj);    
+                            finalArray.push(keysObj);
                         }
                         return finalArray;
                     }

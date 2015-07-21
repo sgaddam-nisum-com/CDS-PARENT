@@ -42,7 +42,7 @@
                     <input type="hidden" ng-model="voterCtrl.user.treeDataId" />
                     <!-- autocomplete-voter-directive -->
                     <div id="autoCompleteContainer" >
-                        <input type="text" id="pincode" class="form-control input" name="pincode" data-val="pincode" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst">
+                        <input type="text" id="pincode" class="form-control input required" name="pincode" data-val="pincode" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst">
                         <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="voterCtrl.searchVoter(voterCtrl.user.searchconst)">
                     </div>
                     <div class="error-class">
