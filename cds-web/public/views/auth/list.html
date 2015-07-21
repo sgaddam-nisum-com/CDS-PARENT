@@ -6,30 +6,30 @@
                 <span class="edit {{listCtrl.disableEdit}}" ng-click="listCtrl.editCurrentUser()">Edit</span> |
                 <span ng-click="listCtrl.confirmDelete()" class="delete">Delete</span>
             </div>
-<!--             <div class="col-lg-5  padding-none">
+            <!--             <div class="col-lg-5  padding-none">
                 <div class="col-lg-12 input-group">
                     <input type="text" class="form-control search" ng-model="listCtrl.searchQ" placeholder="Search by Pincode, Location, Name, Phone, email" />
                     <input type="button" value=" " ng-click="listCtrl.search()" class="input-group-addon search-btn" /> 
                 </div>
             </div> -->
-<!--        <div class="col-lg-2  padding-none">
+            <!--        <div class="col-lg-2  padding-none">
                 <input type="button" value="Advance Search" class="btn adv-search" ng-click="listCtrl.showFilter()" />
             </div> -->
         </div>
     </div>
 </div>
 <div class="container">
-   <!--  <div class="row filter-options cssSlideUp" ng-show="listCtrl.filter"> -->
+    <!--  <div class="row filter-options cssSlideUp" ng-show="listCtrl.filter"> -->
     <div class="row filter-options cssSlideUp">
         <span class="arrow"></span>
         <div class="col-lg-12 col-md-12 selected" ng-show="listCtrl.selectedFilter.length > 0">Selected
             <a href="javascript:void(0);" ng-click='type.filterObj()' ng-repeat="(key, type) in listCtrl.selectedFilter">{{type.filterName}} X</a>
         </div>
         <div class="col-lg-12 col-md-12 padding-none filterContainer">
-          <div class="col-lg-7 input-group input-group">
-                    <input type="text" class="form-control search" ng-model="listCtrl.searchQ" placeholder="Search by Pincode, Location, Name, Phone, email" />
-                    <!-- <input type="button" value=" " ng-click="listCtrl.search()" class="input-group-addon search-btn" /> -->
-                </div>
+            <div class="col-lg-7 input-group input-group">
+                <input type="text" class="form-control search" ng-model="listCtrl.searchQ" placeholder="Search by Pincode, Location, Name, Phone, email" />
+                <!-- <input type="button" value=" " ng-click="listCtrl.search()" class="input-group-addon search-btn" /> -->
+            </div>
             <div class="col-lg-3 col-md-3  options">
                 <span>Type</span>
                 <ul>
@@ -98,56 +98,56 @@
         </div>
     </div> -->
     <div class="row tiles-list">
-       
-            <div class="col-md-3 col-sm-4" ng-repeat="user in listCtrl.userList track by $index">
-                <div class="tiles">
+        <div class="col-md-3 col-sm-4" ng-repeat="user in listCtrl.userList track by $index">
+            <div class="tiles">
+                <div>
+                    <a href="" ng-model="user.citizenId" ng-click="listCtrl.viewProfile(user.citizenId)" class="photo2" title="Click here to view Profile Info">
+                        <img class="photo1" src="images/profile/{{user.photo}}" style="width:200px; height:200px;" id="profileImg" /></a>
+                </div>
+                <div class="details">
                     <div>
-                        <a href="" ng-model="user.citizenId" ng-click="listCtrl.viewProfile(user.citizenId)" class="photo2" title="Click here to view Profile Info">
-                        <img class="photo1" src="images/profile/{{user.photo}}" style="width:200px; height:200px;"  id="profileImg"/></a>
+                        <h6>{{user.firstName}} {{user.lastName}}</h6>
                     </div>
-                    <div class="details">
-                        <div>
-                            <h6>{{user.firstName}} {{user.lastName}}</h6>
-                        </div>
-                        <div>
-                            <label>{{user.age}} / {{ user.gender }} </label>
-                        </div>
-                        <div>
-                            <label>
-                                <a href="mailto:{{user.email}}">
-
-                                    <img ng-if="user.email" ng-src="images/email-icon-act.png" alt="email" class="social-icons" /> 
-                                    <img ng-hide="user.email" ng-src="images/email-icon.png" alt="email" class="social-icons" /> 
-
-                                    {{user.email}} </a>
-                            </label>
-                        </div>
-                        <div>
-                            <label>                            
-                            <a href="#">
-                                    <img ng-if="user.skype" ng-src="images/skype-icon-act.png" alt="skype" />
-                                    <img ng-hide="user.skype" ng-src="images/skype-icon.png" alt="skype" />
-                                {{user.skype}} 
-                            </a>                                        
-                            </label>
-                        </div>
-                        <label class="mobile-node">
-
-                            <img ng-if="user.mobileNumber" src="images/phone-icon-act.png" alt="phone" class="social-icons" /> 
-                            <img ng-hide="user.mobileNumber" src="images/phone-icon-act.png" alt="phone" class="social-icons" /> 
-
-                            {{user.mobileNumber}}
+                    <div>
+                        <label>{{user.age}} / {{ user.gender }} </label>
+                    </div>
+                    <div>
+                        <label>
+                            <a href="mailto:{{user.email}}">
+                                <img ng-if="user.email" ng-src="images/email-icon-act.png" alt="email" class="social-icons" />
+                                <img ng-hide="user.email" ng-src="images/email-icon.png" alt="email" class="social-icons" /> {{user.email}} </a>
                         </label>
-                        <div><label>{{user.regionName}}</label></div>
                     </div>
-                    <div class="status status-tab">
-                        <input type="checkbox" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
-                        <span class="right status-labels">
-            <label class="{{role | lowercase}}" ng-repeat="role in user.roles track by $index" ng-click="listCtrl.viewDetails(user.citizenId)" title="click here to view Cadre statistics" style="cursor:pointer"></label>
-          </span>
+                    <div>
+                        <label>
+                            <a href="#">
+                                <img ng-if="user.skype" ng-src="images/skype-icon-act.png" alt="skype" />
+                                <img ng-hide="user.skype" ng-src="images/skype-icon.png" alt="skype" /> {{user.skype}}
+                            </a>
+                        </label>
+                    </div>
+                    <label class="mobile-node">
+                        <img ng-if="user.mobileNumber" src="images/phone-icon-act.png" alt="phone" class="social-icons" />
+                        <img ng-hide="user.mobileNumber" src="images/phone-icon-act.png" alt="phone" class="social-icons" /> {{user.mobileNumber}}
+                    </label>
+                    <div>
+                        <label>{{user.regionName}}</label>
+                    </div>
+                    <div>
+                        <div ng-repeat="role in user.roles">
+                            <div ng-if="role == 'Cadre'">
+                                <span style="cursor:pointer;color:#639CD3;text-decoration:underline" ng-click="listCtrl.viewDetails(user.citizenId)" title="click here to view Cadre statistics">View Cadre Stats..</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="status status-tab">
+                    <input type="checkbox" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
+                    <span class="right status-labels">
+            <label class="{{role | lowercase}}" ng-repeat="role in user.roles track by $index" ng-click="listCtrl.viewDetails(user.citizenId)"  style="cursor:pointer"></label>
+          </span>
+                </div>
             </div>
-  
+        </div>
     </div>
 </div>

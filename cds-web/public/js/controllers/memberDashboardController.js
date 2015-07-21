@@ -1,10 +1,8 @@
 define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"], function(controllerModule, $, notifications, _) {
 
-    controllerModule.controller('memberdashboardController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage", "appModalService", 'dashboardService',
-        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage, appModalService, dashboardService) {
+    controllerModule.controller('memberdashboardController', ["$stateParams", '$state', '$http', "appUrlService", "cdsService", '$scope', "roleService", "$window", "$sessionStorage", "appModalService", 'memberdashboardService',
+        function($stateParams, $state, $http, appUrlService, cdsService, $scope, roleService, $window, $sessionStorage, appModalService, memberdashboardService) {
 
-            console.log($stateParams);
-            console.log($scope.userRole);
             var self = this,
                 currentCitizenId = $stateParams.citizenId,
                 children = [],
@@ -19,7 +17,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
             $scope.register_successmsg = notifications.register_successmsg;
             $scope.currentProfileImage = "img-placeholder.jpg";
             cdsService.getProfileInfo(currentCitizenId, initiateProfile);
-            $scope.userRole = "Cadre";
+
 
             function initiateProfile(resp) {
 
@@ -41,19 +39,23 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
                     $scope.currentProfileImage = resp.data.photograph;
 
                 }
-                var revChartData = {};
+                //cdsSession.currentUserId = $stateParams.citizenId;
+                var revChartData = {},
+                    taskageParams = {};
                 revChartData.labels = [];
                 revChartData.series = [];
                 revChartData.data = [];
+                taskageParams.criteria = "self";
+                taskageParams.userId = currentCitizenId;
 
                 console.log($stateParams);
                 console.log($scope.userRole);
 
-                var respObj =  {} ;
+                var respObj = {};
                 respObj.currentCitizenId = currentCitizenId;
                 respObj.userRole = $scope.userRole;
 
-                dashboardService.getTasksByAge($scope.userRole, function(resp) {
+                memberdashboardService.getTasksByAge(taskageParams, function(resp) {
 
                     chartData = resp.data;
 
@@ -99,10 +101,12 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
                 });
                 var trendList,
                     lineData = [],
-                    tasksLabels = [];
+                    tasksLabels = [],
+                    trendParams = {};
+                    trendParams.userId = currentCitizenId;
+                    trendParams.type = "assignedtome";
 
-
-                dashboardService.getTasksByTrend($scope.userRole, function(resp) {
+                memberdashboardService.getTasksByTrend(trendParams, function(resp) {
                     console.log(resp);
 
                     trendList = resp.data;
@@ -129,7 +133,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
 
                 });
                 var donutData = [];
-                dashboardService.getTaskState(function(resp) {
+                memberdashboardService.getTaskState(trendParams,function(resp) {
                     console.log(resp);
                     donutData[0] = resp.data.assignedCount;
                     donutData[1] = resp.data.inprogressCount;
@@ -142,7 +146,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
 
 
             }
-            //cdsSession.currentUserId = $stateParams.citizenId;
+
 
 
             self.showImageUpdateOverlay = function() {
