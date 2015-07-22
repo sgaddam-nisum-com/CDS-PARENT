@@ -128,6 +128,14 @@
                                 <div class="col-lg-3">
                                     Created By: <span><label>{{task.createdByFName  + " " + task.createdByLName}}</label></span>
                                 </div>
+                                <div class="col-lg-3">
+                                    Created Date: <span><label>{{task.createdDate}}</label></span>
+                                </div>
+                            </div>
+                            <div class="row" ng-if="task.taskWorkAllocation.endDate != null">
+                                <div class="col-lg-3">
+                                    Completed Date: <span><label>{{task.taskWorkAllocation.endDate}}</label></span>
+                                </div>
                             </div>
                         </div>
                     </div>

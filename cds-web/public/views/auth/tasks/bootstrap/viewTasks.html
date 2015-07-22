@@ -67,6 +67,20 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Created Date:</label>
+                                                    <input ng-disabled="true" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.createdDate" date-picker-directive past-date-disabled="true"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4" ng-if="viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null">
+                                                <div class="form-group">
+                                                    <label>Completed Date:</label>
+                                                    <input ng-disabled="true" type="text" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.endDate" class="form-control calender" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12  task-description">
