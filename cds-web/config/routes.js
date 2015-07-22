@@ -19,7 +19,7 @@ exports.init = function(app, passport, auth) {
     app.all('/auth/*', auth.requiresLogin, auth.user.hasAuthorization);
 
     // User Routes    
-    app.get('/signin', userController.signin);
+    app.get('/signin', auth.user.hasOpenSession,userController.signin);
     app.get('/signout', userController.signout);
     app.get('/auth/success', function(req, res) {
         index.home(req, res);
@@ -214,7 +214,7 @@ exports.init = function(app, passport, auth) {
 
     // Home route
     app.get('/', index.render);
-    app.get('/register', index.register);
+    app.get('/register', auth.user.hasOpenSession,index.register);
     app.get('/calendar', auth.user.hasAuthorizationToPage, index.calendar);
     app.get('/inbox', auth.user.hasAuthorizationToPage, index.inbox);
     app.get('/tasks', auth.user.hasAuthorizationToPage, index.tasks);

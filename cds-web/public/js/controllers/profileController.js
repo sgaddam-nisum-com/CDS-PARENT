@@ -15,6 +15,9 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                 },
                 cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
             
+
+            $scope.component = "viewProfile";
+
             $scope.overlay_title = notifications.profile_img_update_title;            
             $scope.overlay_sucess_msg = "";
             $scope.upload_sucess_msg = notifications.img_update_succ_msg;

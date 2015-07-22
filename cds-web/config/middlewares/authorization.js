@@ -3,6 +3,9 @@
  */
 var cdsConfig = require('cds-config'),
     util = require('cds-util');
+    //cdsRoles = require('./roles');
+
+    
 
 exports.requiresLogin = function(req, res, next) {
     if (!req.isAuthenticated()) {
@@ -27,7 +30,23 @@ exports.user = {
         } else {
             next();
         }
+    },
+    hasOpenSession : function(req, res, next){
+         if (req.isAuthenticated()) {
+            res.redirect('/');
+        } else {
+            next();
+        }            
+    },
+    hasAuthorisedRole : function(req,res,next){
+
+
+
+
+
+
     }
+
 };
 
 /**

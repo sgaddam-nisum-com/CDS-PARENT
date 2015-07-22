@@ -25,6 +25,12 @@
                  backdrop: "static"
              };
 
+
+             
+
+
+
+             $scope.component = "register";
              $scope.overlay_title = notifications.reg_img_update_title;
              $scope.overlay_sucess_msg = notifications.reg_success_msg;
              $scope.upload_sucess_msg = notifications.img_upload_succ_msg;
