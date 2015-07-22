@@ -119,11 +119,11 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
 
 
                     $scope.lineLabels = tasksLabels;
-                    $scope.lineSeries = ['Monthwise Task Report'];
+                    //$scope.lineSeries = ['Monthwise Task Report'];
                     $scope.lineData = [
                         lineData,
                     ];
-                    $scope.lineLegend = true;
+                    //$scope.lineLegend = true;
                     $scope.lineOptions = {
                         legend: true,
                         bezierCurve: true,
