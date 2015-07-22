@@ -11,7 +11,7 @@
                 <!-- Name -->
                 <div class="row">
                     <div class="col-sm-3">
-                        <label class="right-responsive inline">Name:</label>
+                        <label class="right-responsive inline reg-label">Name:</label>
                     </div>
                     <div class="col-sm-3 name-field">
                         <input type="text" tabindex="11" placeholder="First Name" class="form-control name required" ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
@@ -31,7 +31,7 @@
                 <!-- User Name -->
                 <div class="row">
                     <div class="col-sm-3 col-sm-12">
-                        <label class="inline right-responsive">User Name:</label>
+                        <label class="inline right-responsive reg-label">User Name:</label>
                     </div>
                     <div class="col-sm-6 col-sm-12" resource-directive>
                         <input type="text" tabindex="14" id="userName" class="form-control input loader-input" data-val="userName" name="userName" ng-model="registerCtrl.user.loginId" data-inputname="userName">
@@ -45,7 +45,7 @@
                 <!-- Password -->
                 <div class="row">
                     <div class="col-sm-3 col-sm-12">
-                        <label class="inline right-responsive">Password:</label>
+                        <label class="inline right-responsive reg-label">Password:</label>
                     </div>
                     <div class="col-sm-6 col-sm-12">
                         <input type="password" tabindex="15" class="form-control required" ng-model="registerCtrl.user.password" data-val="userPassword" data-eq="password" />
@@ -58,7 +58,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-3 col-sm-12">
-                        <label class="inline right-responsive">Confirm Password:</label>
+                        <label class="inline right-responsive reg-label">Confirm Password:</label>
                     </div>
                     <div class="col-sm-6 col-sm-12">
                         <input type="password" tabindex="16" data-eq="password" class="form-control" />
@@ -72,7 +72,7 @@
                 <!-- Date of birth -->
                 <div class="row">
                     <div class="col-sm-3 ">
-                        <label class="inline right-responsive">Date of Birth:</label>
+                        <label class="inline right-responsive reg-label">Date of Birth:</label>
                     </div>
                     <div class="col-sm-6">
                         <input type="text" tabindex="17" id="dob" class="form-control input required" name="dob" data-val="dob" ng-model="registerCtrl.user.dateOfBirth" date-picker-directive="registerCtrl.user.dateOfBirth" future-date-disabled="true">
@@ -86,7 +86,7 @@
                 <!-- Mobile number -->
                 <div class="row">
                     <div class="col-sm-3">
-                        <label class="inline right-responsive">Mobile Number:</label>
+                        <label class="inline right-responsive reg-label">Mobile Number:</label>
                     </div>
                     <div class="col-sm-6" resource-directive>
                         <input type="text" minlength="10" maxlength="10" tabindex="18" id="mobile" class="form-control input required loader-input" name="mobile" data-val="userMobile" ng-model="registerCtrl.user.mobileNumber" data-inputname="mobileNumber">
@@ -100,7 +100,7 @@
                 <!-- Email address -->
                 <div class="row">
                     <div class="col-sm-3">
-                        <label class="inline right-responsive">Email Address:</label>
+                        <label class="inline right-responsive reg-label">Email Address:</label>
                     </div>
                     <div class="col-sm-6" resource-directive>
                         <input type="text" tabindex="19" id="email" class="form-control input loader-input" name="email" ng-model="registerCtrl.user.emailId" data-val="userEmail" data-inputname="email">
@@ -114,7 +114,7 @@
                 <!-- Skype Id -->
                 <div class="row">
                     <div class="col-sm-3 ">
-                        <label class="inline right-responsive">Skype Id:</label>
+                        <label class="inline right-responsive reg-label">Skype Id:</label>
                     </div>
                     <div class="col-sm-6 ">
                         <input type="text" tabindex="20" id="skypeId" class="form-control input" name="skypeId" ng-model="registerCtrl.user.skypeId" data-val="skypeId">

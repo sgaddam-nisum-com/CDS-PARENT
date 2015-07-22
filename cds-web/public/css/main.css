@@ -2814,18 +2814,23 @@ div.navigation a.next {
   float: right;
 }
 
+/* line 38, ../scss/components/_registration.scss */
+.reg-label {
+  margin-top: 5px;
+}
+
 @media only screen and (max-width: 767px) {
-  /* line 40, ../scss/components/_registration.scss */
+  /* line 42, ../scss/components/_registration.scss */
   .right-responsive {
     float: none;
   }
 
-  /* line 43, ../scss/components/_registration.scss */
+  /* line 45, ../scss/components/_registration.scss */
   .name-field {
     margin-bottom: 10px;
   }
 
-  /* line 46, ../scss/components/_registration.scss */
+  /* line 48, ../scss/components/_registration.scss */
   .gender-field {
     display: block;
   }

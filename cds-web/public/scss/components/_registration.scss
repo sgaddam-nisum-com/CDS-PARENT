@@ -35,7 +35,9 @@
 .right-responsive{
   float: right;
 }
-
+.reg-label{
+  margin-top:5px;
+}
 @media only screen and (max-width: 767px) {
 .right-responsive{
   float: none;
