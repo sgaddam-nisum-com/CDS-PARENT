@@ -19,6 +19,7 @@
              self.hideCadreRole = true;
              self.user.membershipType = 0;
              self.hideAreasOfInterest = true;
+             self.user.gender = "O";
              var regConfModalConfig = {
                  keyboard: false,
                  class: "registration-confirm-overlay",
