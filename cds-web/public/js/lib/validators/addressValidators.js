@@ -10,13 +10,13 @@ define(['validation'], function(validation) {
         addressLine1: {
             required: true,
             minCharacters: 5,
-            maxCharacters: 16,
+            maxCharacters: 200,
             key_error_msgs: true
         },
         addressLine2: {
             required: false,
             minCharacters: 5,
-            maxCharacters: 16,
+            maxCharacters: 200,
             key_error_msgs: true
         },
         postalAddress: {
