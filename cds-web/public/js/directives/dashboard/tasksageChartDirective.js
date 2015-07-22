@@ -2,20 +2,15 @@
      directiveModule.directive('tasksageChartDirective', ['dashboardService',
              function(dashboardService) {
 
-
-
-
                  return {
                      restrict: "A",
                      link: function(scope, elem, attrs) {
-
 
                          var revChartData = {};
                          revChartData.labels = [];
                          revChartData.series = [];
                          revChartData.data = [];
                          
-                         console.log(scope.userRole);
                          dashboardService.getTasksByAge(scope.userRole, function(resp) {
                              
                              chartData = resp.data;
@@ -36,15 +31,14 @@
                                  revChartData.labels.push(sortedChartArray[0].taskAgeRangeCounts[j].range);
                              }
 
-                             console.log(revChartData.series);
                              scope.barLabels = revChartData.labels;
                              scope.barSeries = revChartData.series;
                              scope.barData = revChartData.data;                             
                              scope.barLegend = true;
                              scope.barColours = [{
 
-                                 fillColor: "#c6781c",
-                                 highlightFill: "rgba(224, 108, 112, 1)",
+                                 fillColor: "rgba(198, 120, 28, 0.9)",
+                                 highlightFill: "rgba(198, 120, 28, 1)",
 
 
                              }, {
@@ -61,14 +55,6 @@
 
 
                          });
-
-
-
-
-
-
-
-
 
                      }
                  }

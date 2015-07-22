@@ -6,7 +6,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
                 "cadre": [ {
                         name: 'Age wise Tasks',
-                        title: "Age wise Tasks",
+                        title: "Age wise Tasks (In Progress tasks)",
                         style: {
                             height: "300px"
                         },
@@ -28,7 +28,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
                      {
                         name: 'Tasks trend',
-                        title: "Tasks trend",
+                        title: "Completed Tasks trend",
                         style: {
                             height: "300px"
                         },
@@ -91,9 +91,9 @@ define(['services/serviceModule'], function(serviceModule) {
                 "officeExecutive": [
                 {
                         name: 'Age wise Tasks',
-                        title: "Age wise Tasks",
+                        title: "Age wise Tasks (In Progress tasks)",
                         style: {
-                            height: "320px"
+                            height: "350px"
                         },
                         directive: "tasksage-chart-directive",
                         templateUrl: "views/dashboard/tasksage-chart.html",
@@ -102,9 +102,9 @@ define(['services/serviceModule'], function(serviceModule) {
                     },
                      {
                         name: 'Tasks trend',
-                        title: "Tasks trend",
+                        title: "Completed Tasks trend",
                         style: {
-                            height: "320px"
+                            height: "350px"
                         },
                         directive: "taskstrend-chart-directive",
                         templateUrl: "views/dashboard/taskstrend-chart.html",
@@ -190,7 +190,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
                 {
                         name: 'Age wise Tasks',
-                        title: "Age wise Tasks",
+                        title: "Age wise Tasks (In Progress tasks)",
                         style: {
                             height: "375px"
                         },
@@ -201,7 +201,7 @@ define(['services/serviceModule'], function(serviceModule) {
                     },
                      {
                         name: 'Tasks trend',
-                        title: "Tasks trend",
+                        title: "Completed Tasks trend",
                         style: {
                             /*width: '50%',*/
                             height: "375px"
@@ -343,7 +343,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
                        {
                         name: 'Age wise Tasks',
-                        title: "Age wise Tasks",
+                        title: "Age wise Tasks (In Progress tasks)",
                         style: {
                              height: "375px"
                         },
@@ -354,7 +354,7 @@ define(['services/serviceModule'], function(serviceModule) {
                     },
                        {
                         name: 'Tasks trend',
-                        title: "Tasks trend",
+                        title: "Completed Tasks trend",
                         style: {
                            height: "375px"
                         },

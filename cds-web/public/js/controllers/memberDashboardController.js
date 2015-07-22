@@ -81,8 +81,8 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
                         $scope.barLegend = true;
                         $scope.barColours = [{
 
-                            fillColor: "rgba(224, 108, 112, 0.9)",
-                            highlightFill: "rgba(224, 108, 112, 1)",
+                            fillColor: "rgba(198, 120, 28, 0.9)",
+                            highlightFill: "rgba(198, 120, 28, 1)",
 
 
                         }, {
@@ -103,8 +103,8 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
                     lineData = [],
                     tasksLabels = [],
                     trendParams = {};
-                    trendParams.userId = currentCitizenId;
-                    trendParams.type = "assignedtome";
+                trendParams.userId = currentCitizenId;
+                trendParams.type = "assignedtome";
 
                 memberdashboardService.getTasksByTrend(trendParams, function(resp) {
                     console.log(resp);
@@ -133,7 +133,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
 
                 });
                 var donutData = [];
-                memberdashboardService.getTaskState(trendParams,function(resp) {
+                memberdashboardService.getTaskState(trendParams, function(resp) {
                     console.log(resp);
                     donutData[0] = resp.data.assignedCount;
                     donutData[1] = resp.data.inprogressCount;
