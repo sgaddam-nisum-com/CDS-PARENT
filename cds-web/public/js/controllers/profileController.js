@@ -14,9 +14,12 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                     backdrop: true
                 },
                 cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
-            $scope.register_title = notifications.register_title;
-            $scope.register_thanksmsg = notifications.register_thanksmsg;
-            $scope.register_successmsg = notifications.register_successmsg;
+            
+            $scope.overlay_title = notifications.profile_img_update_title;            
+            $scope.overlay_sucess_msg = "";
+            $scope.upload_sucess_msg = notifications.img_update_succ_msg;
+            
+
             $scope.currentProfileImage = "img-placeholder.jpg";
             cdsService.getProfileInfo(currentCitizenId, initiateProfile);
 

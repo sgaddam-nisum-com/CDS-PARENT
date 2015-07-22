@@ -9,7 +9,7 @@ define(['validation'], function(validation) {
     return {
         voterId: {
             required: true,
-            minCharacters: 5,
+            minCharacters: 10,
             maxCharacters: 16,
             key_error_msgs: true
         },

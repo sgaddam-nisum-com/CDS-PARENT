@@ -1,43 +1,32 @@
- define(['directives/directiveModule','messageHandler'], function(directiveModule,messageHandler) {
+ define(['directives/directiveModule', 'messageHandler', 'notifications'], function(directiveModule, messageHandler, notifications) {
      directiveModule.directive('imagePreviewDirective', ["registerService", "appUrlService", "$timeout",
              function(registerService, appUrls, $timeout) {
                  return {
                      restrict: "A",
                      link: function(scope, elem, attrs) {
-
-                        var acceptedFormats = ['jpg','jpeg','png'];
-
-                         scope.initiateUpload = false;
-                         scope.showUploaderOverlay = false;
-
-                         $(elem).find("#previewHolder,#uploaderOverlay").hover(function() {
-                             scope.$apply(function() {
-                                 scope.showUploaderOverlay = true;
-                             });
-
-                         }, function() {
-                             scope.$apply(function() {
-                                 scope.showUploaderOverlay = false;
-                             });
+                         var acceptedFormats = ['jpg', 'jpeg', 'png'];
+                         var imgMsgTracker = new messageHandler.msgTracker({
+                             containerId: "imgErrWrapper",
+                             className: "img-status",
+                             timer : 200
                          });
 
+                         scope.initiateUpload = false;
+                         scope.showBrowseBtn = true;
 
-                         $("#uploadImageBtn").click(function() {
+                         elem.find("#browseImg").on("click",function() {
                              $("#profileHandler").trigger("click");
                          });
 
                          var fileObj = {};
 
                          scope.setProfileImage = function(fileInput) {
-                             fileObj = fileInput.files[0];
-                            var fExt = fileObj.name.substr(fileObj.name.lastIndexOf('.')+1);
-                             if(acceptedFormats.indexOf(fExt) == -1){
-                               messageHandler.showErrorStatus("Please choose a valid format of images ('jpg', 'png')",".status-message-wrapper");
+                             fileObj = fileInput.files[0];                                                          
+                             
+                             if(!validateFormat(fileObj)){
                                 return;
-                             }else{
-                                messageHandler.clearMessageStatus(500);
                              }
-
+                             
                              var reader = new FileReader();
                              reader.onloadend = function(e) {
                                  showUploadedItem(e.target.result);
@@ -47,22 +36,36 @@
                          }
 
 
+                         function validateFormat(fileObj) {
+
+                             var fExt = fileObj.name.substr(fileObj.name.lastIndexOf('.') + 1);
+                             if (acceptedFormats.indexOf(fExt) == -1) {
+                                 imgMsgTracker.showError(notifications.invalid_img_format_msg);
+                                 return false;
+                             } else {
+                                 imgMsgTracker.hideStatus();
+                                 return true;
+                             }
+                         }
+
+
+
+
                          function showUploadedItem(imgSrc) {
                              $("#previewHolder").attr("src", imgSrc);
                          }
 
-                     
+
 
                          scope.submitProfileImageForm = function(e) {
                              e.preventDefault();
-                             
-                             var formFileObj = new FormData();
 
+                             var formFileObj = new FormData();
                              formFileObj.append("photograph", fileObj);
-                             console.log(formFileObj);
 
                              if (scope.initiateUpload) {
-                                 scope.showUploaderOverlay = false;
+                                 imgMsgTracker.hideStatus();
+                                 scope.showBrowseBtn = false;
                                  scope.showLoader = true;
                                  var imageUploadPromise = $.ajax({
                                      xhr: function() {
@@ -80,14 +83,9 @@
                                          }, false);
 
                                          xhr.upload.addEventListener("load", function(evt) {
-                                             $timeout(function() {
-                                                 scope.uploadStatusMsg = "Updation completed."
-                                                 $timeout(function() {
-                                                     scope.showLoader = false;
-                                                 }, 3000);
-                                             }, 2000);
+
                                          });
-                                        return xhr;
+                                         return xhr;
                                      },
                                      type: "POST",
                                      url: appUrls.updateProfileImage,
@@ -96,20 +94,15 @@
                                      contentType: false
 
                                  }).success(function(resp, status, headers, config) {
-                                     scope.initiateUpload = false;
+                                    $timeout(function() {
+                                             window.location.href = "/profile";
+                                         }, 2000);
 
                                  }).error(function() {
 
                                  });
-
-                             }else{
-                                scope.showLoader = true;
-                                scope.uploadPercentage = "100%";
-                                scope.uploadStatusMsg = "Please choose new image";
-                                $timeout(function(){
-                                    scope.showLoader = false;
-                                },2000);
-
+                             } else {
+                                 imgMsgTracker.showError(notifications.choose_new_img);
                              }
 
                          }

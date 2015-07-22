@@ -3485,14 +3485,14 @@ div.navigation a.next {
   cursor: default;
 }
 
-/* line 153, ../scss/components/_view-tasks.scss */
-.att-status.cds-error {
+/* line 154, ../scss/components/_view-tasks.scss */
+.cds-error, .att-status.cds-error {
   color: red;
   font-size: 12px;
 }
 
-/* line 158, ../scss/components/_view-tasks.scss */
-.att-status.cds-info {
+/* line 159, ../scss/components/_view-tasks.scss */
+.cds-info, .att-status.cds-info {
   color: #47A447;
   font-size: 12px;
 }

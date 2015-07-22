@@ -39,7 +39,12 @@ define(["jquery"], function($){
 		};
 		
 		this.config = $.extend({},defConfig,config);
-		this.container = $("#"+this.config.containerId);
+		if(this.config.containerId.indexOf("#") == -1){
+			this.container = $("#"+this.config.containerId);
+		}else{
+			this.container = $(this.config.containerId);
+		}
+		
 
 		this.showError= function(msg, timer){
 			this.timer = timer ||this.timer;

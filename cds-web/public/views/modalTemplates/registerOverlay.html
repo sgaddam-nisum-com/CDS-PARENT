@@ -1,31 +1,23 @@
-	
-<div class="container-fluid registerOverlayContainer" style="height:500px;">
+<div class="container-fluid registerOverlayContainer" style="height:430px;">
   <div class="row  list-header">
-    <div class="col-md-12">
-      <h3 class="page-header text-center" ng-bind="register_title">Registration Completed Successfully</h3>
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="page-header text-center" ng-bind="overlay_title"></h3>
     </div>
+    <div class="col-md-2"><button type="button" class="close" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;
+    </span></button></div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <p class="text-center" ng-bind="register_thanksmsg+register_successmsg">Thanks for signing up in the CDS Portal. Welcome to contribute in constituency development..</p>
+      <p class="text-center" ng-bind="overlay_sucess_msg"></p>
     </div>
   </div>
-	
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <p class="text-center" style="margin-bottom:20px; font-size:10px; font-style:italic"> (To update your profile image, hover on image, click on browse, select the image, click on upload.)</p>
-    </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center" id="imgErrWrapper" style="height:25px;"></div>
   </div>
-	
- <div class="row"> 
-    <div class="col-md-10 col-md-offset-1 status-message-wrapper"></div>
- </div>
-
-
-<div class="row">
-    <div class="col-md-5 col-md-offset-4" image-preview-directive>
-      <img id="previewHolder" ng-src="images/profile/{{currentProfileImage}}" style="width:200px; height:200px; border:1px solid #ddd">      
-      <div style="width:200px; height:200px; background-color : rgba(0,0,0,0.4); position:absolute; top:0; left:15px;" ng-show="showLoader" id="uploaderOverlay">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" image-preview-directive>
+      <img id="previewHolder" ng-src="images/profile/{{currentProfileImage}}" style="width:200px; margin-left:29px; height:200px; border:1px solid #ddd">
+      <div style="width:200px; height:200px; background-color : rgba(0,0,0,0.4); position:absolute; top:0; left:44px;" ng-show="showLoader">
         
         <div class="progress" style="position:absolute; bottom:64px;border-radius:0; width:100%" >
           <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
@@ -34,18 +26,18 @@
           </div>
         </div>
       </div>
-      <div style="width:200px; height:200px; background-color : rgba(0,0,0,0.4); position:absolute; top:0; left:15px;" ng-show="showUploaderOverlay" id="uploaderOverlay">
-        <button type="button" class="btn btn-success" style="top:45%;left:60px;position:absolute" id="uploadImageBtn">Browse</button>
+      <div style="width:200px; height:200px; background-color : rgba(0,0,0,0.4); position:absolute; top:0; left:44px;" ng-show="showBrowseBtn" id="uploaderOverlay">
+        <button type="button" class="btn btn-success" style="top:45%;left:60px;position:absolute" id="browseImg">Browse</button>
       </div>
       <form method="post" enctype="multipart/form-data" action="/user/updateProfileImage" id="submitProfileImageForm" ng-submit="submitProfileImageForm($event)">
         <input type="file" name="profileInput" id="profileHandler" onchange="angular.element(this).scope().setProfileImage(this)" style="display:none" >
         <!-- <input type="submit" value="Submit"> -->
         
         <div id="uploadWrapper" class="text-center" style="margin-top:20px;">
-          <input type="submit" class="btn btn-success" id="initiateUpload" value="Upload" style="">
-          <input type="button" class="btn btn-success" id="imageReset" value="Continue" style="margin-left:20px;" ng-click="display()" >
+          <input type="submit" class="btn btn-success" id="initiateUpload" value="Save & Continue" style="">
+          <input type="button" class="btn btn-success" id="imageReset" value="Cancel" style="margin-left:20px;" ng-click="cancel()" >
         </div>
       </form>
     </div>
- </div>	
+  </div>
 </div>

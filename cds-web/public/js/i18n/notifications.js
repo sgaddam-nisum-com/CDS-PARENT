@@ -1,9 +1,13 @@
 define({
 	
 	// Registratin page
-	'register_title' : 'Registration done successfully!',
-	'register_thanksmsg' : 'Thanks for signing up.',
-	'register_successmsg' : 'Welcome to contribute in constituency development.',
+	'reg_img_update_title' : 'Add Profile Image',
+	"profile_img_update_title": "Update Profile Image", 
+	'reg_success_msg' : 'Your registration is completed.',
+	"img_upload_succ_msg" : "Profile image uploaded successfully",
+	"img_update_succ_msg" : "Profile image updated successfully",		
+	"invalid_img_format_msg" : "Please select a valid format image ('jpg' or 'png')",
+	"choose_new_img" : "Please choose a new image",
 
 	// Edit profile Personal Information
 	"personal_successfulSave" : "Details updated successfully. Redirecting to Work info...",

@@ -1,4 +1,4 @@
- define(['controllers/controllerModule', 'formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors','notifications'], function(controllerModule, formValidation, validationMap, errorJson,notifications) {
+ define(['controllers/controllerModule', 'formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors', 'notifications'], function(controllerModule, formValidation, validationMap, errorJson, notifications) {
 
      controllerModule.controller('registerController', ['$scope', "$http", "registerService", "cdsService", "appUrlService", "roleService", "$window", "appModalService",
 
@@ -7,7 +7,6 @@
 
              this.showLoader = false;
              this.showImage = true;
-
              var self = this;
              self.user = {};
              self.user.orgId = 2;
@@ -26,11 +25,9 @@
                  backdrop: "static"
              };
 
-            $scope.register_title = notifications.register_title;
-            $scope.register_thanksmsg = notifications.register_thanksmsg;
-            $scope.register_successmsg = notifications.register_successmsg;
-
-
+             $scope.overlay_title = notifications.reg_img_update_title;
+             $scope.overlay_sucess_msg = notifications.reg_success_msg;
+             $scope.upload_sucess_msg = notifications.img_upload_succ_msg;
 
 
              registerService.getInterestedAreasOptions(function(resp) {
@@ -155,18 +152,6 @@
              }
 
 
-             function handleUserCreation() {
-
-
-
-
-             }
-
-             function responseParser(resp) {
-
-
-
-             }
 
 
          }

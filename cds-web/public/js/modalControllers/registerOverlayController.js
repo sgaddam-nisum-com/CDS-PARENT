@@ -5,9 +5,10 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
             // i18n messages
-            $scope.register_title = "Update Image Profile";
-            $scope.register_thanksmsg = "Welcome to contribute in constituency development";
-            $scope.register_successmsg = "";
+           
+            $scope.overlay_title = callerScope.overlay_title;            
+            $scope.overlay_sucess_msg= callerScope.overlay_sucess_msg;
+            $scope.img_upload_succ_msg= callerScope.upload_sucess_msg;            
 
             var userType = callerScope.userType;
             $scope.currentProfileImage = callerScope.currentProfileImage || "img-placeholder.jpg";
@@ -20,6 +21,11 @@ define(['controllers/controllerModule'], function(controllerModule) {
             $window.location.href = "/profile";
             }*/
             };
+
+
+            $scope.cancel = function(){
+                 $modalInstance.dismiss('cancel');
+            }
 
         }
     ]);

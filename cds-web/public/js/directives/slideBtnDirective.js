@@ -19,7 +19,6 @@
                                return;
                             }   
 
-
                              $(elem).find("#profileImg,#updateBtn").hover(function() {
                                  scope.$apply(function() {
                                      scope.showUpdateBtn = true;

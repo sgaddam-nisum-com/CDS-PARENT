@@ -1,208 +1,214 @@
 <div class="container">
-    <div class="row" id="app-wrapper">
+    <div class="row">
         <h1>Profile Information</h1>
         <div class="content-wrapper">
-            <div class="row" style="font-size:13px;">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="container">
+                <div class="row" style="font-size:13px;">
+                    
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                         <!-- User profile section -->
                         <div class="member-info row" style="margin-left:0px; margin-bottom:10px;">
                             <div class="col-lg-12">
                                 <strong><h1><span class="" ng-bind="profileCtrl.user.firstName+'  '+profileCtrl.user.lastName"></span></h1></strong></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> User/Login Name</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left">
-                                        <span ng-bind="profileCtrl.user.loginId"></span></div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Age/Gender</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left">
-                                        <span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.gender"></span></div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Date of Birth</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.dateOfBirth">Date of Birth</div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Aadhar ID</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.aadharId">aadharId</div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Mobile</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.mobileNumber">+91 8886867695</div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Email</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Skype Id</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.skypeId">saudam</div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Marital status</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.maritalStatus">martialStatus</div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Education</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.education.qualification">martialStatus</div>
-                                </div>
+
                             </div>
-                            <div class="col-lg-2">
-                                <span><a href="#" id="personal" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
-                                </span>
-                            </div>
-                        </div>
-                        <!-- /User profile section -->
-                        <div class="col-lg-12 accordion" accordion-jq>
-                            <!-- WORKING INFO section -->
-                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                                <strong><span class="left">Working Information</span></strong>
-                            </div>
-                            <div class="row accordion-content">
+                            <div class="row">
+
                                 <div class="col-lg-10">
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Occupation</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.occupation.occupationName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Working Organization</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.workingOrganization"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Working Location</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.workingLocation"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <span class="right"><a href="#" id="work" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- /WORKING INFO section -->
-                            <!-- Voter INFO section -->
-                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                                <strong><span class="left">Voter Information</span></strong>
-                            </div>
-                            <div class="row accordion-content">
-                                <div class="col-lg-10">
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Voter Card Id</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.voterCardId"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> AddressLine1</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.addressLine1"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> AddressLine2</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.addressLine2"></div>
-                                    </div>
-                                    <div class="col-lg-12" ng-repeat="(key, value) in voterNodeObj">
-                                        <div class="col-lg-3 " ng-bind="key">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> User/Login Name</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left">
+                                                <span ng-bind="profileCtrl.user.loginId"></span></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-3 "> Age/Gender</div>
+                                                <div class=" col-lg-1">:</div>
+                                                <div class="col-lg-3  left">
+                                                    <span ng-bind="profileCtrl.user.age"></span> / <span ng-bind="profileCtrl.user.gender"></span></div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Date of Birth</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.dateOfBirth">Date of Birth</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Aadhar ID</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.aadharId">aadharId</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Mobile</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.mobileNumber">+91 8886867695</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Email</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left"><a href="mailto:{{viewCtrl.user.emailId}}" ng-bind="profileCtrl.user.emailId">snarala@outlook.com</a></div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Skype Id</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.skypeId">saudam</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Marital status</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.maritalStatus">martialStatus</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Education</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.education.qualification">martialStatus</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-1 ">:</div>
-                                        <div class="col-lg-3  left" ng-bind="value"></div>
+                                        <div class="col-lg-2">
+                                            <span><a href="#" id="personal" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
+                                        </span>
+                                    </div>
+                                    <!-- /User profile section -->
+                                    <div class="col-lg-12 accordion" accordion-jq>
+                                        <!-- WORKING INFO section -->
+                                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                            <strong><span class="left">Working Information</span></strong>
+                                        </div>
+                                        <div class="row accordion-content">
+                                            <div class="col-lg-10">
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Occupation</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.occupation.occupationName"></div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Working Organization</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.workingOrganization"></div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-3 "> Working Location</div>
+                                                    <div class=" col-lg-1">:</div>
+                                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.workInformation.workingLocation"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <span class="right"><a href="#" id="work" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- /WORKING INFO section -->
+                                    <!-- Voter INFO section -->
+                                    <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                        <strong><span class="left">Voter Information</span></strong>
+                                    </div>
+                                    <div class="row accordion-content">
+                                        <div class="col-lg-10">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-3 "> Voter Card Id</div>
+                                                <div class=" col-lg-1">:</div>
+                                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.voterCardId"></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-3 "> AddressLine1</div>
+                                                <div class=" col-lg-1">:</div>
+                                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.addressLine1"></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-3 "> AddressLine2</div>
+                                                <div class=" col-lg-1">:</div>
+                                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.voter.addressLine2"></div>
+                                            </div>
+                                            <div class="col-lg-12" ng-repeat="(key, value) in voterNodeObj">
+                                                <div class="col-lg-3 " ng-bind="key">
+                                                </div>
+                                                <div class="col-lg-1 ">:</div>
+                                                <div class="col-lg-3  left" ng-bind="value"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <span class="right"><a href="#" id="voter" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
+                                        </span>
                                     </div>
                                 </div>
-                                <div class="col-lg-2">
-                                    <span class="right"><a href="#" id="voter" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
-                                    </span>
+                                <!-- /Voter INFO section -->
+                                <!-- Residential INFORMATION -->
+                                <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                                    <strong><span class="left">Residential Information</span></strong>
                                 </div>
-                            </div>
-                            <!-- /Voter INFO section -->
-                            <!-- Residential Information -->
-                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                                <strong><span class="left">Residential Information</span></strong>
-                            </div>
-                            <div class="row accordion-content">
-                                <div class="col-lg-10">
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> AddressLine1</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].addressLine1"></div>
+
+                                <div class="row accordion-content">
+                                    <div class="col-lg-10">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> AddressLine1</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].addressLine1"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> AddressLine2</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].addressLine2"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Taluk</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.taluk"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Division</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.divisionName"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> District</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.district"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Pincode</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.pincodeNumber"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Circle Name</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.circleName"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Country</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.country"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Office Name</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeName"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Office Type</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeType"></div>
+                                        </div>
+                                        <!-- <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Postal AddressId</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.postalAddressId"></div>
+                                        </div> -->
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> Region Name</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.regionName"></div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 "> State</div>
+                                            <div class=" col-lg-1">:</div>
+                                            <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.state"></div>
+                                        </div>
+
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> AddressLine2</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].addressLine2"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Taluk</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.taluk"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Division</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.divisionName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> District</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.district"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Pincode</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.pincodeNumber"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Circle Name</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.circleName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Country</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.country"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Office Name</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Office Type</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.officeType"></div>
-                                    </div>
-                                    <!-- <div class="col-lg-12">
-                                    <div class="col-lg-3 "> Postal AddressId</div>
-                                    <div class=" col-lg-1">:</div>
-                                    <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.postalAddressId"></div>
-                                </div> -->
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Region Name</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.regionName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> State</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.userAddresses[0].postalAddress.state"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <span class="right"><a href="#" id="address" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
+                                    <div class="col-lg-2">
+                                        <span class="right"><a href="#" id="address" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
                                     </span>
                                 </div>
                             </div>
@@ -251,154 +257,162 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <span class="right"><a href="#" id="volunteer" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
-                                    </span>
+
+                                </span>
+                            </div>
+                        </div>
+                        <!-- /Volunteer INFO section -->
+                        <!-- FAMILY INFORMATION -->
+                        <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                            <strong><span class="left">Family Information</span></strong>
+                        </div>
+                        <div class="row accordion-content">
+                            <div class="col-lg-10">
+                                <div class="col-lg-12"><strong>SPOUSE INFORMATION</strong></div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Spouse Name</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="spouse.firstName"></div>
                                 </div>
-                            </div>
-                            <!-- /Volunteer INFO section -->
-                            <!-- FAMILY Information -->
-                            <div class="row accordion-head member-info" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                                <strong><span class="left">Family Information</span></strong>
-                            </div>
-                            <div class="row accordion-content">
-                                <div class="col-lg-10">
-                                    <div class="col-lg-12"><strong>Spouse Information</strong></div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Spouse Name</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="spouse.firstName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Marriage Date</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="spouse.marriageDate"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Gender</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="spouse.gender"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Date of Birth</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="spouse.dateOfBirth"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Education</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="spouse.education.qualification"></div>
-                                    </div>
-                                    <!-- <div class="col-lg-12">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Marriage Date</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="spouse.marriageDate"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Gender</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="spouse.gender"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Date of Birth</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="spouse.dateOfBirth"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Education</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="spouse.education.qualification"></div>
+                                </div>
+                                <!-- <div class="col-lg-12">
+
                                     <div class="col-lg-3 "> Relation Id</div>
                                     <div class=" col-lg-1">:</div>
                                     <div class="col-lg-3  left" ng-bind="spouse.relationId"></div>
                                 </div> -->
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Relation Type</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="spouse.relationType"></div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-3 "> Relation Type</div>
+                                    <div class=" col-lg-1">:</div>
+                                    <div class="col-lg-3  left" ng-bind="spouse.relationType"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <hr>
+                                </div>
+                                <div class="col-lg-12">
+                                    <strong>CHILDREN INFORMATION</strong>
+                                </div>
+                                <div class="col-lg-12" ng-repeat="child in children">
+                                    <div class="col-lg-3 ">
+                                        Child Name
                                     </div>
-                                    <div class="col-lg-12">
-                                        <hr>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.firstName+' '+child.lastName}}</div>
+                                    <div class="col-lg-3 ">
+                                        Date of Birth
                                     </div>
-                                    <div class="col-lg-12">
-                                        <strong>Children Information</strong>
+
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.dateOfBirth}}</div>
+                                    <div class="col-lg-3 ">
+                                        Gender
+
                                     </div>
-                                    <div class="col-lg-12" ng-repeat="child in children">
-                                        <div class="col-lg-3 ">
-                                            Child Name
-                                        </div>
-                                        <div class="col-lg-1 ">:</div>
-                                        <div class="col-lg-8  left">{{child.firstName+' '+child.lastName}}</div>
-                                        <div class="col-lg-3 ">
-                                            Date of Birth
-                                        </div>
-                                        <div class="col-lg-1 ">:</div>
-                                        <div class="col-lg-8  left">{{child.dateOfBirth}}</div>
-                                        <div class="col-lg-3 ">
-                                            Gender
-                                        </div>
-                                        <div class="col-lg-1 ">:</div>
-                                        <div class="col-lg-8  left">{{child.gender}}</div>
-                                        <div class="col-lg-3 ">
-                                            Education
-                                        </div>
-                                        <div class="col-lg-1 ">:</div>
-                                        <div class="col-lg-8  left">{{child.education.qualification}}</div>
-                                        <!-- <div class="col-lg-3 ">
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.gender}}</div>
+                                    <div class="col-lg-3 ">
+                                        Education
+                                    </div>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.education.qualification}}</div>
+                                    <!-- <div class="col-lg-3 ">
                                         Relation Id
                                     </div>
                                     <div class="col-lg-1 ">:</div>
                                     <div class="col-lg-8  left">{{child.relationId}}</div> -->
-                                        <div class="col-lg-3 ">
-                                            Relation Type
-                                        </div>
-                                        <div class="col-lg-1 ">:</div>
-                                        <div class="col-lg-8  left">{{child.relationType}}</div>
+                                    <div class="col-lg-3 ">
+                                        Relation Type
                                     </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <span class="right"><a href="#" id="family" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
-                                    </span>
+                                    <div class="col-lg-1 ">:</div>
+                                    <div class="col-lg-8  left">{{child.relationType}}</div>
                                 </div>
                             </div>
-                            <!-- /FAMILY Information -->
-                            <!-- CADRE section -->
-                            <div class="row accordion-head" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
-                                <strong><span class="left">Cadre Information</span></strong>
-                            </div>
-                            <div class="row accordion-content">
-                                <div class="col-lg-10">
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Party Membership</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyMembershipId"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Position in the Party</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyDesigination.positionDescription"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Responsibility in the Party</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyResponsibility"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Health Insured</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.healthInsurance"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Life Insured</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.lifeInsurance"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Blood Group</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.bloodGroup.bloodGroupName"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-3 "> Performance Grade</div>
-                                        <div class=" col-lg-1">:</div>
-                                        <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.performanceGradeDesc"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <span class="right"><a href="#" id="cadre" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- /CADRE section -->
+
+                            <div class="col-lg-2">
+                                <span class="right"><a href="#" id="family" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
+                            </span>
                         </div>
                     </div>
-					<div class="col-lg-3  col-md-3 col-sm-12 col-xs-12 members text-center" slide-btn-directive>
-                        <img class="photo1" src="images/profile/{{profileCtrl.user.photograph}}" style="width:200px; height:200px;"  id="profileImg"/>
-                        <br>
-                        <button type="button" ng-show="showUpdateBtn" class="btn btn-success" style="margin-top:10px; position:absolute; bottom:80px; left:105px" ng-click="profileCtrl.showImageUpdateOverlay()" id="updateBtn">Update</button>
+                    <!-- /FAMILY INFORMATION -->
+                    <!-- CADRE section -->
+                    <div class="row accordion-head" style="margin-top:10px; margin-left:0px; margin-bottom:10px;">
+                        <strong><span class="left">Cadre Information</span></strong>
+                    </div>
+                    <div class="row accordion-content">
+                        <div class="col-lg-10">
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Party Membership</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyMembershipId"></div>
 
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Position in the Party</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyDesigination.positionDescription"></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Responsibility in the Party</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.partyResponsibility"></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Health Insured</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.healthInsurance"></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Life Insured</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.lifeInsurance"></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Blood Group</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.citizen.bloodGroup.bloodGroupName"></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3 "> Performance Grade</div>
+                                <div class=" col-lg-1">:</div>
+                                <div class="col-lg-3  left" ng-bind="profileCtrl.user.cadre.performanceGradeDesc"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <span class="right"><a href="#" id="cadre" class="btn btn-default" ng-click="profileCtrl.navEditProfile($event)"><span class="glyphicon glyphicon-pencil" ></span>&nbsp;&nbsp;Edit</a>
+                        </span>
                     </div>
                 </div>
+                <!-- /CADRE section -->
             </div>
         </div>
     </div>
+    <div class="col-lg-3  col-md-3 col-sm-12 col-xs-12 members text-center">
+        <img class="photo1" src="images/profile/{{profileCtrl.user.photograph}}" style="width:200px; height:200px;"  id="profileImg"/>
+        <br>
+        <div style="margin-top: 10px; position: absolute; background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; top: 10px; right: 45px; height: 25px; width: 25px; padding-top: 2px;"><span ng-click="profileCtrl.showImageUpdateOverlay()" style="color:#fff" class="glyphicon glyphicon-pencil"></span></div>
+        <!-- <button type="button" ng-show="showUpdateBtn" class="btn btn-success" style="margin-top:10px; position:absolute; bottom:80px; left:105px" ng-click="profileCtrl.showImageUpdateOverlay()" id="updateBtn">Update</button> -->
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
