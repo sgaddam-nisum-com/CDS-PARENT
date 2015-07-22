@@ -72,103 +72,55 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="right">
-                    <button class="btn cancel" ng-click="familyCtrl.editChild($event, undefined)">Add Child</button>
-                </div> 
-            </div>
             <h4>Children Details </h4>
-            <div class="row" ng-repeat="child in familyCtrl.user.childData">
-                
-                    <div class="right">
-                        <button class="btn cancel" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)">Edit</button>
-                    </div>
-               
+            <div class="row">
                 <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="right-label" class="right inline">Child Name:</label>
-                        </div>
-                        <div class="col-md-3  left">
-                            
-                            <div id="childFirstName" class="name" ng-bind="child.firstName + ' ' + child.middleName + ' ' + child.lastName">
-                            </div>
-                            <!-- <span id="childFirstName" class="name" ng-bind="child.middleName"></span>
-                        
-                            <span id="childFirstName" class="name" ng-bind="child.lastName">
-                            </span> -->
-                        </div>
-                        <!-- <div class="col-md-3  left">
-                            <input type="text" id="childMiddleName" class="form-control name" ng-model="child.middleName" placeholder="Middle Name">
-                        </div>
-                        <div class="col-md-3  left">
-                            <input type="text" id="childLastName" class="form-control name" ng-model="child.lastName" placeholder="Last Name">
-                        </div>
-                        <div class="error-class">
-                            <div class="error-content"></div>
-                        </div> -->
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-3">
-                            <label for="right-label" class="right inline">Gender:</label>
-                        </div>
-                        <div class="col-md-9  left radioGroup">
-                            <span id="childFirstName" class="name" ng-bind="child.gender" >
-                            </span>
-                            <!-- <input type="radio" value="M" id="male" ng-model="child.gender">
-                            <label for="male">Male</label>
-                            <input type="radio" value="F" id="female" ng-model="child.gender">
-                            <label for="female">Female</label>
-                            <input type="radio" value="O" id="notToDisclose" ng-model="child.gender">
-                            <label for="notToDisclose">Not to be disclosed</label> -->
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-3">
-                            <label for="right-label" class="right inline">Date of Birth:</label>
-                        </div>
-                        <div class="col-md-9  left">
-                            <span id="childFirstName" class="name" ng-bind="child.dateOfBirth">
-                            </span>
-                            <!-- <input type="text" id="childDob" name="childDob" ng-model="child.dateOfBirth" class="form-control input" date-picker-directive="familyCtrl.user.child.dateOfBirth"> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="right-label" class="right inline">Education:</label>
-                        </div>
-                        <div class="col-md-9 left">
-                            <input type="hidden" ng-model="child.education.educationId">
-                            <span id="childFirstName" class="name" ng-bind="child.education.qualification">
-                            <!-- <select id="education" class="form-control input" name="education" data-val="childEducation" ng-model="child.education.educationId" ng-options="education.educationId as education.qualification for education in educationOptions">
-                                <option value="">Select Education</option>
-                            </select>
-                            <div class="error-class">
-                                <div class="error-content"></div>
-                            </div> -->
-                        </div>
-                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>Child</td>
+                                <td>Name</td>
+                                <td>Gender</td>
+                                <td>Date of Birth</td>
+                                <td>Education</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="child in familyCtrl.user.childData track by $index">
+                                <td>{{$index+1}}</td>
+                                <td>{{child.firstName + ' ' + child.middleName + ' ' + child.lastName}}</td>
+                                <td>{{child.gender}}</td>
+                                <td>{{child.dateOfBirth}}</td>
+                                <td>{{child.education.qualification}}</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="row">
+            <div class="row form-group">
                 <div class="col-md-3">
                     &nbsp;
                 </div>
-                <div class="col-md-9 left">
-                    <!-- <a href="#" class="link" ng-click="familyCtrl.addChildSection(event)">Add another Child</a> -->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                </div>
                 <div class="col-md-9">
-                    <!--  ng-submit="familyCtrl.save()" -->
-                    <input class="btn submit" type="button" value="Save & Continue" ng-click="familyCtrl.save()">
-                    <!-- <button class="btn submit">Save & Continue</button> -->
-                    <button class="btn cancel" href="" ng-click="familyCtrl.backview($event)">Back</button>
+                    <div class="">
+                        <span class="add-child" ng-click="familyCtrl.editChild($event, undefined)">Add Child</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-9">
+                        <!--  ng-submit="familyCtrl.save()" -->
+                        <input class="btn submit" type="button" value="Save & Continue" ng-click="familyCtrl.save()">
+                        <!-- <button class="btn submit">Save & Continue</button> -->
+                        <button class="btn cancel" href="" ng-click="familyCtrl.backview($event)">Back</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </form>
-

@@ -3038,6 +3038,18 @@ div.navigation a.next {
   margin-bottom: 15px;
 }
 
+/* line 1, ../scss/components/_family.scss */
+.add-child {
+  color: #5592CD;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 6, ../scss/components/_family.scss */
+.edit-child {
+  cursor: pointer;
+}
+
 /* line 1, ../scss/components/_task.scss */
 #accordion a span.title {
   float: left;
