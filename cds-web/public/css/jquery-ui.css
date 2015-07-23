@@ -108,9 +108,13 @@
 	margin-top: -8px;
 }
 .ui-accordion .ui-accordion-content {
-	padding: 1em 2.2em;
+	padding: 1em 2.2em 1em 0;
 	border-top: 0;
 	overflow: auto;
+}
+.ui-accordion .ui-accordion-content .col-lg-12 {
+	margin: 0 0 12px 0;
+	padding-left: 0
 }
 .ui-autocomplete {
 	position: absolute;
@@ -845,7 +849,7 @@ body .ui-tooltip {
 }
 .ui-widget-content {
 	border: 1px solid #dddddd;
-	background: #eeeeee url("../images//ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
+	background: #fff;
 	color: #333333;
 }
 .ui-widget-content a {

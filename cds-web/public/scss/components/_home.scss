@@ -506,3 +506,28 @@ body .navigation .top-bar-section ul li:active a{
 .filter-options .search {
   margin: 0 0 12px 65px;
 } 
+
+
+/* View Profile Styles */
+.user-profile {
+  font-size: 13px; 
+}
+.user-profile .member-info {
+  font-size: 13px; 
+}
+.user-profile .member-info .details .col-lg-12 {
+  margin: 0 0 12px 0;
+}
+.member-info span {
+  font-weight: normal !important;
+  padding: 0 !important;
+}
+.table-striped thead tr td {
+  background: #666;
+  border-right: solid 1px #fff;
+  color: #fff;
+}
+.table-striped tbody tr td {
+  background: #cccccc;
+  border-right: solid 1px #fff;
+}
