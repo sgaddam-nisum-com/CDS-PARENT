@@ -196,7 +196,7 @@ exports.getResidentialAddress = function(req, res, next) {
 exports.saveFamily = function(req, res, next) {
     log.debug("saveFamily : logged user - " + (req.user.data.user.appUserId));
     var params = req.body;
-     params.userId = req.query.userId || req.user.data.user.appUserId;
+     params.userId = req.body.userId || req.user.data.user.appUserId;
     var token = req.user ? req.user.data.token : null;
     cdsRegistration.saveFamily(params, token, function(resp) {
         req.resp = resp;

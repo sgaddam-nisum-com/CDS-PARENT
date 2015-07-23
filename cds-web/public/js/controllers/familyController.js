@@ -86,6 +86,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
 
                 this.save = function() {
 
+                    console.log(this.user);
+
                     if (formStack.isValid) {
                         if ($scope.relationId !== undefined) {
                             reqMethod = "PUT";
@@ -143,10 +145,12 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
 
                 function handleGetFamily(userId) {
                     registerService.getFamilyInfo(userId, function(resp) {
-
                         dataJson = resp.data;
                         self.user = {};
                         self.user.childData = [];
+                        self.user.spouseData = {};
+                        self.user.spouseData.gender = "O";
+                        self.user.spouseData.education = {};
                         /*To show primary field*/
                         if (dataJson.length < 2 || !dataJson.length) {
                             // self.user.childData = [{}];
