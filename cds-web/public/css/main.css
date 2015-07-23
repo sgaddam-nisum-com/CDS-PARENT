@@ -1536,6 +1536,38 @@ body .navigation .top-bar-section ul li:active a {
   border-right: solid 1px #fff;
 }
 
+/* line 535, ../scss/components/_home.scss */
+.member-info .col-lg-12 {
+  margin: 0 0 12px 0;
+}
+
+/* line 538, ../scss/components/_home.scss */
+.member-info .col-lg-12 h1 {
+  margin-left: 14px;
+}
+
+/* line 541, ../scss/components/_home.scss */
+.members-graph-info h4 {
+  margin-bottom: 0 !important;
+}
+
+/* line 544, ../scss/components/_home.scss */
+.members-graph-info .bargraph, .members-graph-info .linegraph, .members-graph-info .donut {
+  border: solid 1px #ccc;
+}
+
+/* line 547, ../scss/components/_home.scss */
+.profile-data {
+  margin: 0;
+  width: 100%;
+  font-size: 12px;
+}
+
+/* line 552, ../scss/components/_home.scss */
+.profile-data div {
+  margin-bottom: 10px;
+}
+
 /* line 1, ../scss/components/_list.scss */
 .search-filter {
   background: #e7eaeb;
@@ -3398,7 +3430,7 @@ div.navigation a.next {
 
 /* line 7, ../scss/components/_view-tasks.scss */
 .task-details select {
-  padding: 7px 3px !important;
+  padding: 4px 3px !important;
   height: auto;
 }
 
