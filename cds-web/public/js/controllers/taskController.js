@@ -13,7 +13,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                 submitValidForm: false,
                 runCallBack: false,
             };
+            this.hideSearch = true;
+            this.toggleSearch = function() {
 
+                this.hideSearch = (this.hideSearch == true) ? false : true;
+            }
             cdsService.getUserSession(function(userData) {
                 $scope.userData = userData;
                 var appRoles = userData.data.user.appRoles;
@@ -35,7 +39,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
             self.user.taskWorkAllocation = {};
             self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
-            
+
 
 
             taskService.getTaskStatuses(function(resp) {
@@ -46,19 +50,19 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             taskService.getTaskCategories(function(resp) {
                 $scope.taskCategoryOptions = resp.data;
             });
-            taskService.getMyTasks( {}, function(resp) {
+            taskService.getMyTasks({}, function(resp) {
                 $scope.myTaskLists = resp.data.tasks;
             });
             taskService.getTaskPriorities(function(resp) {
                 $scope.taskPriorities = resp.data;
             });
-            taskService.getTeamTasks( {}, function(resp) {
+            taskService.getTeamTasks({}, function(resp) {
                 $scope.teamTasks = resp.data.tasks;
             });
-            taskService.getAllTasks( {} , function(resp) {
+            taskService.getAllTasks({}, function(resp) {
                 $scope.allTasks = resp.data.tasks;
             });
-            taskService.getsupervisorAllTasks( {} ,function(resp) {
+            taskService.getsupervisorAllTasks({}, function(resp) {
                 $scope.supervisorTaskLists = resp.data.tasks;
             });
 
@@ -160,67 +164,67 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
                 }
             };
 
-            this.filterSearch = function( taskObj ) {
-                
+            this.filterSearch = function(taskObj) {
+
                 var filterObj = {
                     q: this.searchQ
                 };
 
-                (this.minAge !== undefined) ? filterObj.agerange = this.minAge + "-" + this.maxAge : false;
-                (filterObj.agerange !== '-') ? filterObj.agerange = filterObj.agerange : delete filterObj.agerange;
-                ( this.user.fromDate !== undefined ) ? filterObj.fromDate = this.user.fromDate : false;
-                ( this.user.toDate !== undefined ) ? filterObj.toDate = this.user.toDate : false;
+                (this.minAge !== undefined) ? filterObj.agerange = this.minAge + "-" + this.maxAge: false;
+                (filterObj.agerange !== '-') ? filterObj.agerange = filterObj.agerange: delete filterObj.agerange;
+                (this.user.fromDate !== undefined) ? filterObj.fromDate = this.user.fromDate: false;
+                (this.user.toDate !== undefined) ? filterObj.toDate = this.user.toDate: false;
 
                 if (typeof this.selectedPriorityTypes !== undefined) {
                     var str = this.getSelectedFromObject(this.selectedPriorityTypes).toString();
-                    (str) ? filterObj.priority = str : false;
+                    (str) ? filterObj.priority = str: false;
                 }
 
                 if (typeof this.selectedStatusTypes !== undefined) {
                     var str = this.getSelectedFromObject(this.selectedStatusTypes).toString();
-                    (str) ? filterObj.status = str : false;
+                    (str) ? filterObj.status = str: false;
                 }
 
                 this.taskSearch(taskObj, filterObj);
             };
 
-            this.getSelectedFromObject = function(obj){
-                if(obj){
+            this.getSelectedFromObject = function(obj) {
+                if (obj) {
                     var keys = Object.keys(obj);
                     var filtered = keys.filter(function(key) {
                         return obj[key]
                     });
                     return filtered;
-                }else{
+                } else {
                     return "";
                 }
 
             }
 
-            this.taskSearch = function( taskObj, filterObj ){
-                if( taskObj === "mytasks" ){
+            this.taskSearch = function(taskObj, filterObj) {
+                if (taskObj === "mytasks") {
                     taskService.getMyTasks(filterObj, function(resp) {
                         $scope.myTaskLists = resp.data.tasks;
                     });
                 }
-                if( taskObj === "teamtasks" ){
+                if (taskObj === "teamtasks") {
                     taskService.getTeamTasks(filterObj, function(resp) {
                         $scope.teamTasks = resp.data.tasks;
                     });
                 }
-                if( taskObj === "allTasks" ){
+                if (taskObj === "allTasks") {
                     taskService.getAllTasks(filterObj, function(resp) {
                         $scope.allTasks = resp.data.tasks;
                     });
                 }
-                if( taskObj === "supervisortasks" ){
+                if (taskObj === "supervisortasks") {
                     taskService.getsupervisorAllTasks(filterObj, function(resp) {
                         $scope.supervisorTaskLists = resp.data.tasks;
                     });
                 }
             }
 
-            this.resetSerach = function(taskObj){
+            this.resetSerach = function(taskObj) {
                 this.searchQ = this.user.fromDate = this.user.toDate = this.minAge = this.maxAge = undefined;
                 this.selectedPriorityTypes = this.selectedStatusTypes = undefined;
 
