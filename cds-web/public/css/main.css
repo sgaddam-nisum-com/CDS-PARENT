@@ -1725,7 +1725,7 @@ body .navigation .top-bar-section ul li:active a {
 
 /* line 148, ../scss/components/_list.scss */
 .tiles .photo2 {
-  height: 113px;
+  height: 200px;
   margin: 0 0 20px 0;
   /* padding: 10px; */
   text-align: center;
@@ -1797,7 +1797,7 @@ body .navigation .top-bar-section ul li:active a {
 .tiles-list .tiles .photo2 {
   background: url(../images/image2.png) no-repeat top center;
   width: 100%;
-  height: 113px;
+  height: 200px;
   display: inline-block;
   margin: 0;
   border: solid 1px #fff;
@@ -2078,10 +2078,10 @@ body .navigation .top-bar-section ul li:active a {
   background-color: #EFD303;
   color: black;
   font-weight: bold;
-  padding: 12px 25px;
-  /*width:150px;
-  height:40px;
-  padding:0;*/
+  /*padding: 12px 25px;
+	width:150px;
+	height:40px;
+	padding:0;*/
   margin-right: 15px;
   box-shadow: 0 3px 0 rgba(122, 107, 11, 0.7);
 }
@@ -2091,9 +2091,9 @@ body .navigation .top-bar-section ul li:active a {
   background-color: #B0B0B0;
   color: black;
   font-weight: bold;
-  padding: 12px 25px;
-  /*width:150px;
-  height:40px; */
+  	/*padding: 12px 25px;
+    width:150px;
+    height:40px; */
   box-shadow: 0 3px 0 rgba(176, 176, 176, 0.7);
 }
 
@@ -3179,9 +3179,10 @@ div.navigation a.next {
   width: 100px;
   height: 26px;
   border: none;
+  margin-top: 10px;
 }
 
-/* line 56, ../scss/components/_task.scss */
+/* line 57, ../scss/components/_task.scss */
 .actions {
   background: url(../images/actionsBtn.jpg) no-repeat;
   width: 72px;
@@ -3190,14 +3191,14 @@ div.navigation a.next {
   display: none;
 }
 
-/* line 63, ../scss/components/_task.scss */
+/* line 64, ../scss/components/_task.scss */
 .task-links {
   background: #e6eaeb;
   padding: 8px 15px !important;
   margin: 10px 0 10px 0;
 }
 
-/* line 68, ../scss/components/_task.scss */
+/* line 69, ../scss/components/_task.scss */
 .task-links a {
   font-size: 13px;
   margin: 0 10px 0 0;
@@ -3208,22 +3209,22 @@ div.navigation a.next {
   cursor: pointer;
 }
 
-/* line 77, ../scss/components/_task.scss */
+/* line 78, ../scss/components/_task.scss */
 .task-links a:last-child {
   border: none;
 }
 
-/* line 80, ../scss/components/_task.scss */
+/* line 81, ../scss/components/_task.scss */
 .tasks-list {
   margin-bottom: 15px !important;
 }
 
-/* line 83, ../scss/components/_task.scss */
+/* line 84, ../scss/components/_task.scss */
 .tasks-list input {
   margin: 0 10px 0 0;
 }
 
-/* line 86, ../scss/components/_task.scss */
+/* line 87, ../scss/components/_task.scss */
 .tasks-list .task-title {
   font-size: 15px;
   font-weight: bold;
@@ -3232,14 +3233,14 @@ div.navigation a.next {
   border-radius: 3px 3px 0 0;
 }
 
-/* line 93, ../scss/components/_task.scss */
+/* line 94, ../scss/components/_task.scss */
 .task-details {
   background: #eef2f6;
   border: solid 1px #cfddeb;
   padding: 10px !important;
 }
 
-/* line 98, ../scss/components/_task.scss */
+/* line 99, ../scss/components/_task.scss */
 .task-status-info {
   background: #ffffff;
   border: solid 1px #cddae6;
@@ -3248,7 +3249,7 @@ div.navigation a.next {
   margin: 0 0 10px 0;
 }
 
-/* line 105, ../scss/components/_task.scss */
+/* line 106, ../scss/components/_task.scss */
 .task-status-info ul li {
   font-size: 12px;
   margin-bottom: 10px;
@@ -3256,40 +3257,40 @@ div.navigation a.next {
   border-right: solid 1px #cccccc;
 }
 
-/* line 111, ../scss/components/_task.scss */
+/* line 112, ../scss/components/_task.scss */
 .task-status-info ul li:last-child {
   border: none;
 }
 
-/* line 114, ../scss/components/_task.scss */
+/* line 115, ../scss/components/_task.scss */
 .task-status-info ul li span {
   font-weight: bold;
   padding: 0 0 0 5px;
 }
 
-/* line 119, ../scss/components/_task.scss */
+/* line 120, ../scss/components/_task.scss */
 .noTasks {
   text-align: center;
   font-size: 40px;
 }
 
-/* line 124, ../scss/components/_task.scss */
+/* line 125, ../scss/components/_task.scss */
 .task-comments {
   min-height: 60px;
 }
 
-/* line 129, ../scss/components/_task.scss */
+/* line 130, ../scss/components/_task.scss */
 .comments-list {
   max-height: 500px;
   overflow: scroll;
 }
 
 /* Bootstrap overrides */
-/* line 141, ../scss/components/_task.scss */
+/* line 142, ../scss/components/_task.scss */
 .cadre-list {
   padding: 15px;
 }
-/* line 143, ../scss/components/_task.scss */
+/* line 144, ../scss/components/_task.scss */
 .cadre-list .cadre-list-item {
   background-color: #eaeaea;
   height: 30px;
@@ -3298,12 +3299,12 @@ div.navigation a.next {
   padding-top: 11px;
   width: 90%;
 }
-/* line 150, ../scss/components/_task.scss */
+/* line 151, ../scss/components/_task.scss */
 .cadre-list .cadre-list-item:hover {
   background-color: #dddddd;
 }
 
-/* line 156, ../scss/components/_task.scss */
+/* line 157, ../scss/components/_task.scss */
 .cadre-list .cadre-list-row {
   margin-bottom: 25px;
   margin-left: 30px;
@@ -3313,12 +3314,12 @@ div.navigation a.next {
   width: 90%;
 }
 
-/* line 165, ../scss/components/_task.scss */
+/* line 166, ../scss/components/_task.scss */
 .cadre-list .page-header {
   margin-top: 0;
 }
 
-/* line 169, ../scss/components/_task.scss */
+/* line 170, ../scss/components/_task.scss */
 .close-overlay {
   font-size: 20px;
   font-weight: bold;
@@ -3328,37 +3329,37 @@ div.navigation a.next {
   cursor: pointer;
 }
 
-/* line 183, ../scss/components/_task.scss */
+/* line 184, ../scss/components/_task.scss */
 .col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 189, ../scss/components/_task.scss */
+/* line 190, ../scss/components/_task.scss */
 .ui-datepicker-calendar {
   width: 100%;
   background-color: #fff;
 }
 
-/* line 194, ../scss/components/_task.scss */
+/* line 195, ../scss/components/_task.scss */
 .user-actions-div {
   margin-top: 5px;
 }
-/* line 196, ../scss/components/_task.scss */
+/* line 197, ../scss/components/_task.scss */
 .user-actions-div .edit, .user-actions-div .delete {
   color: #2368A0;
 }
-/* line 198, ../scss/components/_task.scss */
+/* line 199, ../scss/components/_task.scss */
 .user-actions-div .edit:hover, .user-actions-div .delete:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 203, ../scss/components/_task.scss */
+/* line 204, ../scss/components/_task.scss */
 .user-actions-div .edit.grey {
   color: #999999;
   cursor: default;
 }
-/* line 206, ../scss/components/_task.scss */
+/* line 207, ../scss/components/_task.scss */
 .user-actions-div .edit.grey:hover {
   text-decoration: none;
 }
