@@ -13,7 +13,7 @@
                             <div class="row task-view-header tasks-list">
                                 <div class="col-lg-12  task-title">
                                     {{viewTaskCtrl.taskDetails.taskName}}
-                                    <div class="right">
+                                    <div class="right" ng-if="viewTaskCtrl.taskDetails.taskWorkAllocation.endDate == null">
                                         <button class="submit">Update</button>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Status:</label>
-                                                    <select ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.statusId" ng-options="taskStatus.statusId as  taskStatus.statusDesc for taskStatus in viewTaskCtrl.taskStatuses" class="form-control">
+                                                    <select ng-disabled="viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.statusId" ng-options="taskStatus.statusId as  taskStatus.statusDesc for taskStatus in viewTaskCtrl.taskStatuses" class="form-control">
                                                         <option>Select Status</option>
                                                     </select>
                                                 </div>
@@ -33,7 +33,7 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Priority:</label>
-                                                    <select ng-disabled="viewTaskCtrl.assignedTask" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities" class="form-control">
+                                                    <select ng-disabled="viewTaskCtrl.assignedTask || viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in viewTaskCtrl.taskPriorities" class="form-control">
                                                         <option>Select Priority</option>
                                                     </select>
                                                 </div>
@@ -41,7 +41,8 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Assigned Date:</label>
-                                                    <input ng-disabled="viewTaskCtrl.assignedTask" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate">
+<!--                                                     <input ng-disabled="viewTaskCtrl.assignedTask || viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate"> -->
+                                                    <input ng-disabled="true" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.assignDate">
                                                 </div>
                                             </div>
                                         </div>
@@ -49,20 +50,22 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Target Date:</label>
-                                                    <input ng-disabled="viewTaskCtrl.assignedTask" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" date-picker-directive past-date-disabled="true"/>
+<!--                                                     <input ng-disabled="viewTaskCtrl.assignedTask || viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" date-picker-directive past-date-disabled="true"/> -->
+                                                    <input ng-disabled="true" type="text" class="form-control calender" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.toDate" date-picker-directive past-date-disabled="true"/>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Work Location:</label>
-                                                    <input ng-disabled="viewTaskCtrl.assignedTask" type="text" ng-model="viewTaskCtrl.taskDetails.location" class="form-control" />
+<!--                                                     <input ng-disabled="viewTaskCtrl.assignedTask || viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" type="text" ng-model="viewTaskCtrl.taskDetails.location" class="form-control" /> -->
+                                                    <input ng-disabled="true" type="text" ng-model="viewTaskCtrl.taskDetails.location" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Assigned to:</label>
                                                     
-                                                    <input ng-disabled="viewTaskCtrl.assignedTask" autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
+                                                    <input ng-disabled="viewTaskCtrl.assignedTask || viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" autocomplete="off" type="text" id="cadreId" class="form-control input" name="cadreName" ng-model="viewTaskCtrl.assignedToCitizenName" >
                                                     <img src="images/searchicon.png" class="cadre-search-icon-view" id="searchIcon" ng-click="viewTaskCtrl.showCadresList(viewTaskCtrl.assignedToCitizenName)" ng-hide="viewTaskCtrl.assignedTask">
                                                 </div>
                                             </div>
