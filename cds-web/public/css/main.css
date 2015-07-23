@@ -2820,22 +2820,27 @@ div.navigation a.next {
 }
 
 /* line 41, ../scss/components/_registration.scss */
+.label-weight {
+  font-weight: normal;
+}
+
+/* line 44, ../scss/components/_registration.scss */
 .gender {
   padding-top: 1px;
 }
 
 @media only screen and (max-width: 767px) {
-  /* line 45, ../scss/components/_registration.scss */
+  /* line 48, ../scss/components/_registration.scss */
   .right-responsive {
     float: none;
   }
 
-  /* line 48, ../scss/components/_registration.scss */
+  /* line 51, ../scss/components/_registration.scss */
   .name-field {
     margin-bottom: 10px;
   }
 
-  /* line 51, ../scss/components/_registration.scss */
+  /* line 54, ../scss/components/_registration.scss */
   .gender-field {
     display: block;
   }
