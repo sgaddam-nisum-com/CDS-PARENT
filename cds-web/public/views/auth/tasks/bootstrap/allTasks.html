@@ -81,9 +81,19 @@
                     No tasks to show
                 </div>
                 <div class="row tasks-list " ng-if="allTasks.length > 0" ng-repeat="task in allTasks">
-                    <div class="col-lg-12  task-title">
+<!--                     <div class="col-lg-12  task-title">
                         <input type="checkbox" />{{task.taskName}}<span class="right"><img src="images/edit-icon.png" alt="edit" ng-click="taskCtrl.viewTask(task.taskId)"/></span>
-                        <!--                         <span class="right"><img src="images/delete-icon.png" alt="Delete" ng-click="taskCtrl.deleteTask(task.taskId)"/></span> -->
+                        <span class="right"><img src="images/delete-icon.png" alt="Delete" ng-click="taskCtrl.deleteTask(task.taskId)"/></span> 
+                    </div> -->
+                    <div class="col-lg-12  task-title" ng-if="task.taskWorkAllocation.endDate == null">
+                        <input type="checkbox" />{{task.taskName}}<span class="right">
+                        <img src="images/edit-icon.png" alt="edit" title="Edit" ng-click="taskCtrl.viewTask(task.taskId)"/>
+                        </span>
+                    </div>
+                    <div class="col-lg-12  task-title" ng-if="task.taskWorkAllocation.endDate != null">
+                        <input type="checkbox" />{{task.taskName}}<span class="right">
+                        <img src="images/view-icon.png" alt="View" title="View" ng-click="taskCtrl.viewTask(task.taskId)"/>
+                        </span>
                     </div>
                     <div class="col-lg-12  task-details">
                         <p>{{task.taskDescription}}</p>
