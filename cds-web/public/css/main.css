@@ -3347,12 +3347,17 @@ div.navigation a.next {
   border-radius: 3px;
 }
 
+/* line 159, ../scss/components/_task.scss */
+.task-radio {
+  padding-top: 7px;
+}
+
 /* Bootstrap overrides */
-/* line 165, ../scss/components/_task.scss */
+/* line 168, ../scss/components/_task.scss */
 .cadre-list {
   padding: 15px;
 }
-/* line 167, ../scss/components/_task.scss */
+/* line 170, ../scss/components/_task.scss */
 .cadre-list .cadre-list-item {
   background-color: #eaeaea;
   height: 30px;
@@ -3361,12 +3366,12 @@ div.navigation a.next {
   padding-top: 11px;
   width: 90%;
 }
-/* line 174, ../scss/components/_task.scss */
+/* line 177, ../scss/components/_task.scss */
 .cadre-list .cadre-list-item:hover {
   background-color: #dddddd;
 }
 
-/* line 180, ../scss/components/_task.scss */
+/* line 183, ../scss/components/_task.scss */
 .cadre-list .cadre-list-row {
   margin-bottom: 25px;
   margin-left: 30px;
@@ -3376,12 +3381,12 @@ div.navigation a.next {
   width: 90%;
 }
 
-/* line 189, ../scss/components/_task.scss */
+/* line 192, ../scss/components/_task.scss */
 .cadre-list .page-header {
   margin-top: 0;
 }
 
-/* line 193, ../scss/components/_task.scss */
+/* line 196, ../scss/components/_task.scss */
 .close-overlay {
   font-size: 20px;
   font-weight: bold;
@@ -3391,37 +3396,37 @@ div.navigation a.next {
   cursor: pointer;
 }
 
-/* line 207, ../scss/components/_task.scss */
+/* line 210, ../scss/components/_task.scss */
 .col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 213, ../scss/components/_task.scss */
+/* line 216, ../scss/components/_task.scss */
 .ui-datepicker-calendar {
   width: 100%;
   background-color: #fff;
 }
 
-/* line 218, ../scss/components/_task.scss */
+/* line 221, ../scss/components/_task.scss */
 .user-actions-div {
   margin-top: 5px;
 }
-/* line 220, ../scss/components/_task.scss */
+/* line 223, ../scss/components/_task.scss */
 .user-actions-div .edit, .user-actions-div .delete {
   color: #2368A0;
 }
-/* line 222, ../scss/components/_task.scss */
+/* line 225, ../scss/components/_task.scss */
 .user-actions-div .edit:hover, .user-actions-div .delete:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 227, ../scss/components/_task.scss */
+/* line 230, ../scss/components/_task.scss */
 .user-actions-div .edit.grey {
   color: #999999;
   cursor: default;
 }
-/* line 230, ../scss/components/_task.scss */
+/* line 233, ../scss/components/_task.scss */
 .user-actions-div .edit.grey:hover {
   text-decoration: none;
 }

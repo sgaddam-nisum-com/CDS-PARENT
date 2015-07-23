@@ -18,14 +18,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row form-group">
-                    <div class="col-lg-4 ">Task Id :</div>
+                <div class="row form-group" ng-hide="true">
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Task Id :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <input type="text" id="Tilte" disabled="" class="form-control input" name="title" ng-model="taskCtrl.user.taskId">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Assign To :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Assign To :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <input autocomplete="off" type="text" id="cadreId" class="form-control input required" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" data-val="assignedToCitizenName">
                         <img src="images/searchicon.png" class="cadre-search-icon" id="searchIcon" ng-click="taskCtrl.showCadresList(taskCtrl.assignedToCitizenName)">
@@ -37,7 +41,9 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Category :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Category :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <select ng-model="taskCtrl.user.taskCategoryId" ng-options="taskCategory.taskCategoryId as  taskCategory.taskCategoryCode for taskCategory in taskCategoryOptions" class="form-control required" data-val="taskCategoryId">
                             <option value="">Select Category</option>
@@ -50,13 +56,17 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Task Name :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Task Name :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <input type="text" id="Tilte" class="form-control input" name="title" ng-model="taskCtrl.user.taskName">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Description :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Description :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <textarea id="description" class="form-control input" name="description" ng-model="taskCtrl.user.taskDescription" data-val="taskDescription"></textarea>
                     </div>
@@ -67,7 +77,9 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4">Priority :</div>
+                    <div class="col-lg-4">
+                        <label class="reg-label  label-weight">Priority :</label>
+                    </div>
                     <div class="col-lg-8">
                         <select ng-model="taskCtrl.user.priorityId" ng-options="taskPriority.priorityId as  taskPriority.priorityName for taskPriority in taskPriorities" class="form-control required" data-val="priorityId">
                             <option value="">Select Priority</option>
@@ -80,7 +92,9 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Specify Location :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight"> Specify Location :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <input type="text" id="location" class="form-control input required" name="location" ng-model="taskCtrl.user.location" data-val="location">
                     </div>
@@ -91,7 +105,9 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Target Date :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Target Date :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <input type="text" id="dob" class="form-control input required" name="dob" ng-model="taskCtrl.user.taskWorkAllocation.toDate" date-picker-directive="taskCtrl.user.taskWorkAllocation.toDate" data-val="toDate" past-date-disabled="true">
                     </div>
@@ -102,15 +118,19 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4 ">Prime ID# :</div>
+                    <div class="col-lg-4 ">
+                        <label class="reg-label  label-weight">Prime ID# :</label>
+                    </div>
                     <div class="col-lg-8 ">
                         <input type="text" id="parentId" class="form-control input" name="parentId" ng-model="taskCtrl.user.taskWorkAllocation.taskPrimeCode" placeholder="Search by taskcode / taskname / Description">
                         <img src="images/searchicon.png" class="cadre-search-icon" id="searchIcon" ng-click="taskCtrl.showPrimeIdList(taskCtrl.user.taskWorkAllocation.taskPrimeCode)">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4">Comment Type :</div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-4">
+                        <label class="reg-label  label-weight"> Comment Type :</label>
+                    </div>
+                    <div class="col-lg-8 task-radio">
                         <input type="radio" name="commentType" value="Private" id="Private" ng-model="taskCtrl.user.comments.commentType">
                         <label for="Private">Private</label>
                         <input type="radio" name="commentType" value="Public" id="Public" ng-model="taskCtrl.user.comments.commentType">
@@ -118,7 +138,9 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-lg-4">Additional Comments :</div>
+                    <div class="col-lg-4">
+                        <label class="reg-label label-weight"> Additional Comments :</label>
+                    </div>
                     <div class="col-lg-8">
                         <textarea id="description" class="form-control input" name="description" ng-model="taskCtrl.user.comments.commentDescription"></textarea>
                     </div>
