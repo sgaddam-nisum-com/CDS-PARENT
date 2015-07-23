@@ -2261,6 +2261,12 @@ body .navigation .top-bar-section ul li:active a {
   border: 1px solid #ff3a3a;
 }
 
+/* line 17, ../scss/components/_validation.scss */
+input.error-field, select.error-field {
+  border: 1px solid #ff3a3a;
+  margin: 10px 0;
+}
+
 /* line 2, ../scss/components/_view-member.scss */
 .mobile-node {
   height: 30px;

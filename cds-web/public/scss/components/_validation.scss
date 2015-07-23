@@ -12,3 +12,9 @@
 .row.error-field input, .row.error-field select{
   border: 1px solid #ff3a3a;
 }
+
+
+input.error-field, select.error-field{
+  border: 1px solid #ff3a3a;
+  margin : 10px 0; 
+}

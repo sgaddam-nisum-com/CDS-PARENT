@@ -15,9 +15,6 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
         }
     };
 
-
-
-
     function getAppConf(userConfig) {
         return userConfig ? $.extend(defConf, userConfig) : defConf;
     }
@@ -53,11 +50,11 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
             console.error("No form fields to be validated");
         }
     }
-    
+
 
     /*Eq fields are type of  password : confirm password*/
 
-    function getEqFields(formHandler){
+    function getEqFields(formHandler) {
         var requiredEqFields = formHandler.find("[data-eq]");
         if (requiredEqFields.length) {
             return requiredEqFields;
@@ -70,7 +67,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
     /*Radio buttons validation*/
 
-    function getRadioFields(formHandler){
+    function getRadioFields(formHandler) {
         var requiredRadioFields = formHandler.find("[data-radio]");
 
         if (requiredRadioFields.length) {
@@ -256,73 +253,73 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
     }
 
 
-    function runEqValidation(formStack){
-         
-         var eqFields = formStack.requiredEqFields || [],
-         eqSet = [];
+    function runEqValidation(formStack) {
 
-         for(var i=0; i<eqFields.length; i++){
+        var eqFields = formStack.requiredEqFields || [],
+            eqSet = [];
+
+        for (var i = 0; i < eqFields.length; i++) {
 
 
-             var eqAttr = $(eqFields[i]).data("eq");   
-            if(eqSet.indexOf(eqAttr)== -1){
+            var eqAttr = $(eqFields[i]).data("eq");
+            if (eqSet.indexOf(eqAttr) == -1) {
                 eqSet.push(eqAttr);
-            }            
-         }
+            }
+        }
 
-  
 
-         for(var i=0; i<eqSet.length; i++){
-         var eqSetFields = $('[data-eq ='+eqSet[i]+']');   
-            
-          
 
-               if(eqSetFields[0].value !== eqSetFields[1].value){
-                    var validator = $(eqSetFields[0]).data("eq");                   
-                    
-                    formStack.invalidMethodsArray.push(validator + "-eq");
-                    formStack.invalidFieldsArray.push($(eqSetFields[1]));
-             
+        for (var i = 0; i < eqSet.length; i++) {
+            var eqSetFields = $('[data-eq =' + eqSet[i] + ']');
 
-             }
-         };
+
+
+            if (eqSetFields[0].value !== eqSetFields[1].value) {
+                var validator = $(eqSetFields[0]).data("eq");
+
+                formStack.invalidMethodsArray.push(validator + "-eq");
+                formStack.invalidFieldsArray.push($(eqSetFields[1]));
+
+
+            }
+        };
 
     }
 
-    function runRadioValidation(formStack){
+    function runRadioValidation(formStack) {
 
         var radioFields = formStack.requiredRadioFields || [],
-         radioSet = [];
+            radioSet = [];
 
-         for(var i=0; i<radioFields.length; i++){
+        for (var i = 0; i < radioFields.length; i++) {
 
 
-             var radioAttr = $(radioFields[i]).data("radio");   
-            if(radioSet.indexOf(radioAttr)== -1){
+            var radioAttr = $(radioFields[i]).data("radio");
+            if (radioSet.indexOf(radioAttr) == -1) {
                 radioSet.push(radioAttr);
-            }            
-         }
+            }
+        }
 
-      
 
-         for(var i=0; i<radioSet.length; i++){
-         var radioSetFields = $('[data-radio='+radioSet[i]+']');   
-         var currentRadioChecked = false;   
 
-            for(var j=0; j<radioSetFields.length; j++){
-                if(radioSetFields[j].checked){
-                currentRadioChecked = radioSetFields[j].checked;
-                break;
+        for (var i = 0; i < radioSet.length; i++) {
+            var radioSetFields = $('[data-radio=' + radioSet[i] + ']');
+            var currentRadioChecked = false;
+
+            for (var j = 0; j < radioSetFields.length; j++) {
+                if (radioSetFields[j].checked) {
+                    currentRadioChecked = radioSetFields[j].checked;
+                    break;
                 }
             }
 
-            if(!currentRadioChecked){
-                var validator = $(radioSetFields[0]).data("radio");                                       
+            if (!currentRadioChecked) {
+                var validator = $(radioSetFields[0]).data("radio");
                 formStack.invalidMethodsArray.push(validator + "-radio");
-                formStack.invalidFieldsArray.push($(radioSetFields[0]));     
+                formStack.invalidFieldsArray.push($(radioSetFields[0]));
             }
 
-         };
+        };
 
 
     }
@@ -342,8 +339,8 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
 
         if (invalidFieldsArray.length) {
-                
-          
+
+
 
             for (i = 0; i < invalidMethodsArray.length; i++) {
                 errorKeyArray = invalidMethodsArray[i].split("-");
@@ -387,7 +384,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
             for (var j = 0; j < invalidFieldsArray.length; j++) {
                 var fieldHandler = $(invalidFieldsArray[j]);
-                var validator = invalidFieldsArray[j].attr("data-val") ||invalidFieldsArray[j].attr("data-eq") || invalidFieldsArray[j].attr("data-radio") ;
+                var validator = invalidFieldsArray[j].attr("data-val") || invalidFieldsArray[j].attr("data-eq") || invalidFieldsArray[j].attr("data-radio");
                 var interimArray = [];
                 for (var k = 0; k < errorFieldMessages.length; k++) {
                     if (errorFieldMessages[k].fieldDataVal == validator) {
@@ -414,8 +411,8 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
             var fieldsRef = formStack.invalidFieldsArray;
 
-            $.each(fieldsRef, function(index, field) {
-                field.closest('.row').addClass("error-field").removeClass("error-clear-border");
+            $.each(fieldsRef, function(index, field) {                
+                field.addClass("error-field").removeClass("error-clear-border");
                 field.closest('.row').find(".error-icon").show();
             });
         }
@@ -436,7 +433,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
 
         } else {
             formHandler.find(".error-content").empty();
-            formHandler.find('.row.error-field').addClass("error-clear-border").removeClass("error-field");
+            formHandler.find('.error-field').addClass("error-clear-border").removeClass("error-field");
         }
 
     };
