@@ -2159,36 +2159,38 @@ body .navigation .top-bar-section ul li:active a {
 .rightContent {
   border: 1px solid #ccc;
   margin-left: -77px !important;
+  padding-bottom: 15px;
+  margin-bottom: 55px;
 }
 
-/* line 50, ../scss/components/_left-nav.scss */
+/* line 52, ../scss/components/_left-nav.scss */
 .leftContent {
   z-index: 1;
 }
 
-/* line 54, ../scss/components/_left-nav.scss */
+/* line 56, ../scss/components/_left-nav.scss */
 .registrationHeading {
   padding-left: 15px;
   margin: 20px 0 20px 0;
 }
 
-/* line 59, ../scss/components/_left-nav.scss */
+/* line 61, ../scss/components/_left-nav.scss */
 .required {
   border-left: 4px solid #FF3A3A !important;
 }
 
 /* file input styles*/
-/* line 63, ../scss/components/_left-nav.scss */
+/* line 65, ../scss/components/_left-nav.scss */
 .input-group-addon, .input-group-btn, .input-group .form-control {
   display: table-cell;
 }
 
-/* line 67, ../scss/components/_left-nav.scss */
+/* line 69, ../scss/components/_left-nav.scss */
 .mock-input {
   float: left;
 }
 
-/* line 70, ../scss/components/_left-nav.scss */
+/* line 72, ../scss/components/_left-nav.scss */
 .mock-browse {
   height: 35px;
   background-color: #0174B7;
@@ -2203,12 +2205,12 @@ body .navigation .top-bar-section ul li:active a {
   padding-left: 25px;
 }
 
-/* line 83, ../scss/components/_left-nav.scss */
+/* line 85, ../scss/components/_left-nav.scss */
 .mock-browse label {
   color: #fff !important;
 }
 
-/* line 86, ../scss/components/_left-nav.scss */
+/* line 88, ../scss/components/_left-nav.scss */
 #profilePhoto {
   position: absolute;
   visibility: hidden;
@@ -2245,7 +2247,7 @@ body .navigation .top-bar-section ul li:active a {
   clear: both;
   color: red;
   font-size: 11px;
-  margin: 0 0 15px 0;
+  margin-bottom: 15px;
 }
 
 /* line 7, ../scss/components/_validation.scss */
@@ -3088,6 +3090,11 @@ div.navigation a.next {
 /* line 6, ../scss/components/_family.scss */
 .edit-child {
   cursor: pointer;
+}
+
+/* line 11, ../scss/components/_family.scss */
+.no-error-class {
+  border: 1px solid #ddd !important;
 }
 
 /* line 1, ../scss/components/_task.scss */
