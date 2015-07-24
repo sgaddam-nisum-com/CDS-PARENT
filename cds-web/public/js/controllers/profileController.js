@@ -14,14 +14,14 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                     backdrop: true
                 },
                 cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
-            
+
 
             $scope.component = "viewProfile";
 
-            $scope.overlay_title = notifications.profile_img_update_title;            
+            $scope.overlay_title = notifications.profile_img_update_title;
             $scope.overlay_sucess_msg = "";
             $scope.upload_sucess_msg = notifications.img_update_succ_msg;
-            
+
 
             $scope.currentProfileImage = "img-placeholder.jpg";
             cdsService.getProfileInfo(currentCitizenId, initiateProfile);
@@ -44,7 +44,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                         resp.data.gender = "MALE";
                     } else if (resp.data.gender == "F") {
 
-                        resp.data.gender = "FEMALE"
+                        resp.data.gender = "FEMALE";
                     } else {
                         resp.data.gender = "NOT DISCLOSED";
                     }
@@ -54,25 +54,28 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                     self.user.cadre.citizen.healthInsurance = ((self.user.cadre.citizen.healthInsurance == 0) ? "No" : "Yes");
                     self.user.cadre.citizen.lifeInsurance = ((self.user.cadre.citizen.lifeInsurance == 0) ? "No" : "Yes");
                     self.user.volunteer.citizen.interestedAsVolunteer = ((self.user.volunteer.citizen.interestedAsVolunteer == 0) ? "No" : "Yes");
-                    if( resp.data.voter !== undefined ){
+                    if (resp.data.voter !== undefined) {
 
                         $scope.voterNodeObj = generateParamObject(resp.data.voter.consituency);
                     }
 
+                    var relData = resp.data.tblCitizenRelation;
 
-                    angular.forEach( resp.data.tblCitizenRelation, function( value, key ) {
-                        if( value.relationType === "Wife" || value.relationType === "Husband"){
-                            spouse =  resp.data.tblCitizenRelation[key];
+                    angular.forEach(relData, function(value, key) {
+                        if (relData[key].gender == "M") {
+                            relData[key].gender = "Male";
+                        } else if (relData[key].gender == "F") {
+                            relData[key].gender = "Female";
+                        } else {
+                            relData[key].gender = "Not Disclosed";
+                        }
+                        if (value.relationType === "Wife" || value.relationType === "Husband") {
+                            spouse = relData[key];
 
                         } else {
-                            children.push( resp.data.tblCitizenRelation[key]);
+                            children.push(relData[key]);
                         }
                     });
-
-
-                    
-                    //children = angular.copy(resp.data.tblCitizenRelation);
-                   
 
                     $scope.children = children;
                     $scope.spouse = spouse;
@@ -119,11 +122,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                 var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, regConfModalConfig)();
 
 
-
             }
-
-
-
 
         }
     ]);
