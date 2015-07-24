@@ -52,7 +52,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                     console.log($scope.treeDataId);
                     if (formStack.isValid) {
                         if (!$scope.treeDataId) {
-                            messageHandler.showErrorStatus("Please assign Constituency by searching with city or town", ".status-message-wrapper");
+                            messageHandler.showErrorStatus("Please assign constituency by searching with city or town", ".status-message-wrapper");
                             return;
                         }
                         var reqObj = {};

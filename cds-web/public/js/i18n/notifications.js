@@ -12,7 +12,7 @@ define({
 	// Edit profile Personal Information
 	"personal_successfulSave" : "Details updated successfully. Redirecting to Work info...",
 	"work_successfulSave" : "Details updated successfully. Redirecting to Voter info...",
-	"voter_successfulSave" : "Details updated successfully. Redirecting to Addeess info.",
+	"voter_successfulSave" : "Details updated successfully. Redirecting to Address info.",
 	"address_successfulSave" : "Details updated successfully. Redirecting to Volunteer info...",
 	"volunteer_successfulSave" : "Details updated successfully. Redirecting to Family info...",
 	"family_successfulSave" : "Details updated successfully. Redirecting to Cadre info...",
