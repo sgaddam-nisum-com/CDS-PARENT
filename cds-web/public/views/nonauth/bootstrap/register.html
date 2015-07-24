@@ -14,13 +14,29 @@
                         <label class="right-responsive inline reg-label">Name:</label>
                     </div>
                     <div class="col-sm-3 name-field">
-                        <input type="text" tabindex="11" placeholder="First Name" class="form-control name required" ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" tabindex="11" placeholder="First Name" class="form-control name required" ng-model="registerCtrl.user.firstName" data-val="signupFirstName" />
+                                
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-3 name-field">
                         <input type="text" tabindex="12" placeholder="Middle Name" class="form-control" ng-model="registerCtrl.user.middleName" />
                     </div>
                     <div class="col-sm-3 name-field">
-                        <input type="text" tabindex="13" placeholder="Last Name" class="form-control name required" ng-model="registerCtrl.user.lastName" data-val="signupLastName" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" tabindex="13" placeholder="Last Name" class="form-control name required" ng-model="registerCtrl.user.lastName" data-val="signupLastName" />
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-9  right">
                         <div class="error-class">
@@ -132,17 +148,17 @@
                     </div>
                     <div class="col-sm-6  gender">
                         <span class="gender-field">
-                        <input type="radio" tabindex="21"  name="gender" value="M" id="male" data-radio="gender" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)">
-                        <label for="male">Male</label>
-                        
+                            <input type="radio" tabindex="21"  name="gender" value="M" id="male" data-radio="gender" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)">
+                            <label for="male">Male</label>
+                            
                         </span>
                         <span class="gender-field">
-                        <input type="radio" name="gender" tabindex="22" value="F" id="female" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)" data-radio="gender">
-                        <label for="female">Female</label>
+                            <input type="radio" name="gender" tabindex="22" value="F" id="female" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)" data-radio="gender">
+                            <label for="female">Female</label>
                         </span>
                         <span class="gender-field">
-                        <input type="radio" name="gender" value="O" tabindex="23"  id="notToDisclose" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)" data-radio="gender">
-                        <label for="notToDisclose">Not to be disclosed</label>
+                            <input type="radio" name="gender" value="O" tabindex="23"  id="notToDisclose" ng-model="registerCtrl.user.gender" ng-change="registerCtrl.getGender(registerCtrl.user.gender)" data-radio="gender">
+                            <label for="notToDisclose">Not to be disclosed</label>
                         </span>
                     </div>
                     <div class="col-sm-9 right">
@@ -181,61 +197,60 @@
                     <div class="col-sm-6 gender">
                         <label for="newcadre">
                             <input type="radio" tabindex="27" name="cadreType" ng-model="registerCtrl.user.cadreType" value="NEW" ng-change="registerCtrl.trackCadreType()">New</label>
-                        <label for="existingcadre">
-                            <input type="radio" tabindex="28" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING" ng-change="registerCtrl.trackCadreType()">Existing</label>
-                    </div>
-                    <div class="col-sm-9 right">
-                        <div class="error-class">
-                            <div class="error-content"></div>
+                            <label for="existingcadre">
+                                <input type="radio" tabindex="28" name="cadreType" ng-model="registerCtrl.user.cadreType" value="EXISTING" ng-change="registerCtrl.trackCadreType()">Existing</label>
+                            </div>
+                            <div class="col-sm-9 right">
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Areas of Interests -->
+                        <div class="row areaOfInterest" ng-hide="registerCtrl.hideAreasOfInterest">
+                            <div class="col-sm-3 ">
+                                <label for="right-label" class="right-responsive inline">Select area of interest:</label>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <select multiple tabindex="29" ng-options="item.volInterestAreaName for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.selectedInterests" ng-change="registerCtrl.setInterestArea()" class="form-control">
+                                    <option value="">Select</option>
+                                </select>
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-9 right">
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo upload -->
+                        <!--     <div class="row" >
+                            <div class="large-4 ">
+                                <label for="right-label" class="right inline">Upload Photo:</label>
+                            </div>
+                            <div class="large-12  left">
+                                <input type="file" id="profilePhoto" name="photograph">
+                                <div>
+                                    <input class="form-control mock-input" type="text" disabled="" style="background-color:#fff; width:40%">
+                                    <span class="group-span-filestyle input-group-btn mock-browse" tabindex="0">
+                                        <label class="btn btn-default " for="filestyle-1">Browse</label>
+                                    </span>
+                                </div>
+                                <div class="error-class"><div class="error-content"></div></div>
+                                <label>Maximum file size is 1MB</label>
+                            </div>
+                            
+                        </div> -->
+                        <!-- Submit section -->
+                        <div class="row">
+                            <div class="col-sm-3 "></div>
+                            <div class="col-sm-6  button-wrapper">
+                                <input tabindex="30" type="submit" class="btn button" value="Register" id="formSubmission" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Areas of Interests -->
-                <div class="row areaOfInterest" ng-hide="registerCtrl.hideAreasOfInterest">
-                    <div class="col-sm-3 ">
-                        <label for="right-label" class="right-responsive inline">Select area of interest:</label>
-                    </div>
-                    <div class="col-sm-6 ">
-                        <select multiple tabindex="29" ng-options="item.volInterestAreaName for item in registerCtrl.InterestedAreas" ng-model="registerCtrl.selectedInterests" ng-change="registerCtrl.setInterestArea()" class="form-control">
-                            <option value="">Select</option>
-                        </select>
-                        <div class="error-class">
-                            <div class="error-content"></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-9 right">
-                        <div class="error-class">
-                            <div class="error-content"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Photo upload -->
-                <!--     <div class="row" >
-
-        <div class="large-4 ">
-          <label for="right-label" class="right inline">Upload Photo:</label>
+            </form>
         </div>
-        <div class="large-12  left">
-          <input type="file" id="profilePhoto" name="photograph">
-          <div>
-            <input class="form-control mock-input" type="text" disabled="" style="background-color:#fff; width:40%">
-            <span class="group-span-filestyle input-group-btn mock-browse" tabindex="0">
-            <label class="btn btn-default " for="filestyle-1">Browse</label>
-            </span>
-          </div>
-          <div class="error-class"><div class="error-content"></div></div>
-          <label>Maximum file size is 1MB</label>
-        </div>
-        
-    </div> -->
-                <!-- Submit section -->
-                <div class="row">
-                    <div class="col-sm-3 "></div>
-                    <div class="col-sm-6  button-wrapper">
-                        <input tabindex="30" type="submit" class="btn button" value="Register" id="formSubmission" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
