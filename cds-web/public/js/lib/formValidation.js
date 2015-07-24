@@ -16,7 +16,7 @@ define(["jquery", "validation", "inputTooltip"], function($, validation, inputTo
     };
 
     function getAppConf(userConfig) {
-        return userConfig ? $.extend(defConf, userConfig) : defConf;
+        return userConfig ? $.extend({},defConf, userConfig) : defConf;
     }
 
     function returnFormObj(formHandler) {
