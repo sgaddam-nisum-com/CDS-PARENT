@@ -59,7 +59,8 @@ define(['validation'], function(validation) {
         },
         userEmail: {
             required : false,
-            email: true,
+            regexMatch:/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+            //email: true,
             key_error_msgs: true
         },
         skypeId:{

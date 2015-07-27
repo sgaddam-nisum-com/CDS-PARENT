@@ -25,24 +25,16 @@
                  backdrop: "static"
              };
 
-
-             
-
-
-
              $scope.component = "register";
              $scope.overlay_title = notifications.reg_img_update_title;
              $scope.overlay_sucess_msg = notifications.reg_success_msg;
              $scope.upload_sucess_msg = notifications.img_upload_succ_msg;
 
-
              registerService.getInterestedAreasOptions(function(resp) {
                  self.InterestedAreas = resp.data;
              });
 
-
              self.user.volunteerInterestedAreas = [];
-
 
              self.setInterestArea = function() {
                  for (var i = 0; i < self.selectedInterests.length; i++) {
@@ -51,8 +43,6 @@
                      self.user.volunteerInterestedAreas.push(interestArea);
                  }
              }
-
-
 
              self.isValidForm = function() {
                  if (self.isValidUsername && self.isValidEmail && self.isValidMobileNo) {
@@ -112,7 +102,6 @@
 
                  if (formStack.isValid && self.isValidForm()) {
                      var requestObj = {};
-                     console.log(self.user);
                      if ((self.user.membershipType == "0") || (self.user.membershipType == "1")) {
                          delete self.user.cadreType;
                      }
@@ -129,8 +118,6 @@
                              var registerModel = appModalService.init("registerOverlay.html", "registerOverlayController", $scope, regConfModalConfig)();
 
 
-
-
                          } else {
 
                          }
@@ -140,13 +127,10 @@
                      });
 
 
-
                  } else {
                      self.isNotValid = true;
                  }
              };
-
-
 
              function handleUserEdit() {
                  self.showImage = false;
@@ -156,9 +140,6 @@
 
                  });
              }
-
-
-
 
          }
      ]);

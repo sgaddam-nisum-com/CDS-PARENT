@@ -109,7 +109,14 @@ define(['directives/directiveModule'], function(directiveModule) {
         									userAvailableMsg="Mobile Number is available for registration.";
         									userNotAvailableMsg = "Mobile Number is not available for registration.";
         									registerService.checkMobileNoExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);
-        								} else {
+        								} else if(inputName == "email"){
+                                            var reg = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                                            if(!reg.test(curElemValue)){
+                                                $(elem).closest(".row").addClass("error-field");
+                                                $(elem).closest(".row").find(".loader-container").remove();
+                                                $(elem).closest(".row").find(".error-content").html("Please give a valid email format");
+                                                return;
+                                            }
         									userAvailableMsg="Email is available for registration.";
         									userNotAvailableMsg = "Email is not available for registration.";
         									registerService.checkEmailExists(userInput, availableSuccessCb,userAvailableMsg,userNotAvailableMsg);
