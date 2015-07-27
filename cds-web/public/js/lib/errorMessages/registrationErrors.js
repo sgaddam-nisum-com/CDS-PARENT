@@ -2,9 +2,9 @@ define(['jquery'], function($) {
 
  return {
   "formGeneric": "Please check all the highlighted fields.",
-  "signupFirstName": "FirstName required field. Minimum should be 5 maximum allowed.",
+  "signupFirstName": "FirstName required field. Minimum should be 3 maximum allowed.",
   "signupFirstName-required": "First Name is a Required field.",
-  "signupFirstName-minCharacters": "First Name Minimum should be 5 characters.",
+  "signupFirstName-minCharacters": "First Name Minimum should be 3 characters.",
   "signupFirstName-maxCharacters": "First Name Maximum allowed 16 characters.",
   "signupFirstName-regexMatch": "First Name Should be a valid format",
   "signupLastName": "Last Name required field. Minimum should be 5 max allowed",
