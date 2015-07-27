@@ -1,10 +1,3 @@
-//#MODULE - Validation
-//> Author: Sarfaraz Merchant
-//> URL: http://confluence/display/WDS/Base+Validation+Library
-//>
-//> Create Date: <February 19, 2014>
-//>
-//##DESCRIPTION: Validate data
 define([], function() {
 
     var keys,

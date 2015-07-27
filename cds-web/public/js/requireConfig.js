@@ -44,7 +44,7 @@ require.config({
         "jquery": "lib/jquery",
         "underscore": "lib/min/underscore-min",
         "ngDialog": "lib/ngDialog",
-        "validation": "lib/validation",
+        "validation": "lib/cdsValidator",
         "formValidation": "lib/formValidation",
         "core": "lib/jqueryui/core",
         "widget": "lib/jqueryui/widget",
