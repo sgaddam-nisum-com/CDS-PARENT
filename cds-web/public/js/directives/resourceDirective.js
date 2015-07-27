@@ -114,7 +114,7 @@ define(['directives/directiveModule'], function(directiveModule) {
                                             if(!reg.test(curElemValue)){
                                                 $(elem).closest(".row").addClass("error-field");
                                                 $(elem).closest(".row").find(".loader-container").remove();
-                                                $(elem).closest(".row").find(".error-content").html("Please give a valid email format");
+                                                $(elem).closest(".row").find(".error-content").html("Please enter valid email id.");
                                                 return;
                                             }
         									userAvailableMsg="Email is available for registration.";
