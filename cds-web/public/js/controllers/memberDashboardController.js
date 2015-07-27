@@ -30,7 +30,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications', "underscore"]
 
                         resp.data.gender = "FEMALE"
                     } else {
-                        resp.data.gender = "NOT DISCLOSED";
+                        resp.data.gender = "NOT TO BE DISCLOSED";
                     }
 
 

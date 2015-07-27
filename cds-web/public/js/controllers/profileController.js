@@ -67,7 +67,7 @@ define(['controllers/controllerModule', 'jquery', 'notifications'], function(con
                         } else if (relData[key].gender == "F") {
                             relData[key].gender = "Female";
                         } else {
-                            relData[key].gender = "Not Disclosed";
+                            relData[key].gender = "Not to be Disclosed";
                         }
                         if (value.relationType === "Wife" || value.relationType === "Husband") {
                             spouse = relData[key];

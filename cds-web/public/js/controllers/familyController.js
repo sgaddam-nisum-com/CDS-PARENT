@@ -170,7 +170,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                                     } else if (self.users[i].gender === "F") {
                                         self.users[i].gender = "Female";
                                     } else {
-                                        self.users[i].gender = "Not disclosed";
+                                        self.users[i].gender = "Not to be disclosed";
                                     }
                                     self.user.childData.push(self.users[i]);
                                 }

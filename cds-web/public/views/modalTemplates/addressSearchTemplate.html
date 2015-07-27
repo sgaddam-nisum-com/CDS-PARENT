@@ -9,6 +9,9 @@
         <div ng-repeat="result in results" class="col-md-12 voter-search-tile">
             <span ng-bind="result.label" ng-click="selectAddress(result)"></span>
         </div>
+        <div ng-if="results.length == 0" class="alert alert-info">
+                  No Data found
+        </div>
     </div>
     <div class="no-records row cadre-list-row" ng-show="showNoRecordsMsg">
         <div class="col-md-12 cadre-list-item">

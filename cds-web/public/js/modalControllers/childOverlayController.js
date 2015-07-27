@@ -84,7 +84,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                             } else if (childObj.gender === "F") {
                                 childObj.gender = "Female";
                             } else {
-                                childObj.gender = "Not disclosed";
+                                childObj.gender = "Not to be disclosed";
                             }
 
                             childObj.dateOfBirth = resp.data.dateOfBirth;
