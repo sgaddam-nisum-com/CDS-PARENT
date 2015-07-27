@@ -13,9 +13,7 @@ define(['controllers/controllerModule'], function (controllerModule) {
  		function initiateUserSession(resp){
 
  			self.showHeader = true;
-
  			cdsService.userInfo=resp.data.user;
- 			console.log(cdsService.userInfo);
  			if(resp.status == "failure"){
  				self.isUserAuthenticated = false; 				
  				return;

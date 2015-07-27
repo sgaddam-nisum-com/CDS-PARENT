@@ -7,7 +7,7 @@ define(['services/serviceModule'], function(serviceModule) {
             var roleStateMap = {
                 "Admin": [],
                 "Citizen": ["Requests"],
-                "Cadre" : ["Dashboard", "Tasks","Calendar"],                
+                "Cadre" : ["Dashboard", "Tasks","Calendar","Requests"],                
                 "Office Executive" : ["Dashboard","Tasks","Calendar" ,"Requests","Registrants"],
                 "Office Manager" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"],
                 "MP" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"]
@@ -21,11 +21,10 @@ define(['services/serviceModule'], function(serviceModule) {
                                 Calendar :  {name : "Calendar" , url : "#"},
                                 Requests : {name : "Requests" , url : "/requests"},
                                 Registrants:{name : "Registrants" ,url : "/profile#/list"}
-                            }
-                            
+                            };
 
-
-
+            
+            
             var privilegeMap = {
 
                 "Home": "auth.dashboard",
@@ -76,9 +75,7 @@ define(['services/serviceModule'], function(serviceModule) {
             };
 
             return {
-
                 getInitialState: function(role) {
-
                     switch (role) {
                         case "citizen":
                             return "citizen";
