@@ -22,10 +22,18 @@
                                 <div class="col-lg-12 ">
                                     <div class="task-details">
                                         <div class="row">
-                                            <div class="col-lg-4">
+<!--                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Status:</label>
                                                     <select ng-disabled="viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.statusId" ng-options="taskStatus.statusId as  taskStatus.statusDesc for taskStatus in viewTaskCtrl.taskStatuses" class="form-control">
+                                                        <option>Select Status</option>
+                                                    </select>
+                                                </div>
+                                            </div> -->
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label>Status:</label>
+                                                    <select ng-disabled="viewTaskCtrl.taskDetails.taskWorkAllocation.endDate != null" ng-model="viewTaskCtrl.taskDetails.taskWorkAllocation.statusId" ng-options="taskStatus.statusId as  taskStatus.statusDesc for taskStatus in viewTaskCtrl.taskDetails.availableStatuses" class="form-control">
                                                         <option>Select Status</option>
                                                     </select>
                                                 </div>
