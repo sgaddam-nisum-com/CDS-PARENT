@@ -3,7 +3,7 @@ define({
 	// Registratin page
 	'reg_img_update_title' : 'Add Profile Image',
 	"profile_img_update_title": "Update Profile Image", 
-	'reg_success_msg' : 'Your registration is completed.',
+	'reg_success_msg' : 'Thank you, your registration is completed successfully.',
 	"img_upload_succ_msg" : "Profile image uploaded successfully",
 	"img_update_succ_msg" : "Profile image updated successfully",		
 	"invalid_img_format_msg" : "Please select a valid format image ('jpg' or 'png')",
