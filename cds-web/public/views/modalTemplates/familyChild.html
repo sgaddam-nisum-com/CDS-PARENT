@@ -13,15 +13,49 @@
                         <label for="right-label" class="reg-label right inline label-weight">Child Name:</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="childFirstName" class="form-control name required" data-val="childFname"  ng-model="child.firstName" placeholder="First Name">
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                 <input type="text" id="childFirstName" class="form-control name required" data-val="childFname"  ng-model="child.firstName" placeholder="First Name">
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                       
                     </div>
                     <div class="col-md-3 ">
-                        <input type="text" id="childMiddleName" class="form-control name no-error-class" ng-model="child.middleName" placeholder="Middle Name">
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                 <input type="text" id="childMiddleName" class="form-control name no-error-class" data-val="childMname" ng-model="child.middleName" placeholder="Middle Name">
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                       
                     </div>
                     <div class="col-md-3">
                     
-                       
-                         <input type="text" id="childLastName" class="form-control name required" ng-model="child.lastName" placeholder="Last Name" data-val="childLname">
+                        
+                        <div class="row">
+                            <div class="col-sm-12">
+                                 <input type="text" id="childLastName" class="form-control name required" ng-model="child.lastName" placeholder="Last Name" data-val="childLname">
+                                <div class="error-class">
+                                    <div class="error-content"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
                         
 
                     </div>
@@ -60,7 +94,10 @@
                         <label for="right-label" class="reg-label right inline label-weight">Date of Birth:</label>
                     </div>
                     <div class="col-md-9  left">
-                        <input type="text" id="childDob" name="childDob" ng-model="child.dateOfBirth" class="form-control input" date-picker-directive="child.dateOfBirth" future-date-disabled="true">
+                        <input type="text" id="childDob" name="childDob" ng-model="child.dateOfBirth" data-val="cdob" class="calender form-control input" date-picker-directive="child.dateOfBirth" future-date-disabled="true">
+                        <div class="error-class">
+                            <div class="error-content"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">

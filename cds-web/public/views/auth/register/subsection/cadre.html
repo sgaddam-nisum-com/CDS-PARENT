@@ -1,9 +1,9 @@
 <form name="cadre" id="cadreRegistrationForm" ng-submit="cadreCtrl.save()">
     <div class="row rightContent">
         <div class="col-md-12 formContent">
-            <div class="row" ng-if="cadreCtrl.isNotValidForm">
+            <!-- <div class="row" ng-if="cadreCtrl.isNotValidForm">
                 <div class="col-md-8 right  error-class">Please ensure that all the required fields are valid.</div>
-            </div>
+            </div> -->
             <div class="row form-group" ng-hide="cadreCtrl.cadreFields">
                 <div class="col-md-4">
                     <label for="left-label" class="right text-right">Enroll as Cadre:</label>
@@ -48,7 +48,7 @@
                     <label for="right-label" class="right inline">Position in the Party:</label>
                 </div>
                 <div class="col-md-8 left">
-                    <select id="position" name="position" class="form-control input" ng-model="cadreCtrl.user.cadre.positionId" ng-options="positionInParty.positionId as positionInParty.positionDescription for positionInParty in partyPositionsOptions" data-val="positionInParty" data-val="positionId" ng-disabled="cadreCtrl.disableFields">
+                    <select id="position" name="position" class="form-control input" ng-model="cadreCtrl.user.cadre.positionId" ng-options="positionInParty.positionId as positionInParty.positionDescription for positionInParty in partyPositionsOptions" ng-disabled="cadreCtrl.disableFields">
                         <option value="">Select Position</option>
                     </select>
                     <div class="error-class">

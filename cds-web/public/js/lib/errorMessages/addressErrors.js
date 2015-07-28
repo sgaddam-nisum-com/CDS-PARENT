@@ -4,7 +4,7 @@ define(['jquery'], function($) {
   "formGeneric": "Please check all the highlighted fields", 
   "addressLine1-required" : "Address Line1 is a required field.",
   "addressLine1-minCharacters" : "Address Line1 should be minimum of 5 characters.",
-  "addressLine1-maxCharacters" : "Address Line1 allowed is maximum of 200 characters.",
+  "addressLine1-maxCharacters" : "Address Line1 should be maximum of 200 characters.",
   "addressLine2-required" : "Address Line2 should be minimum of 5 characters.",
   "addressLine2-minCharacters" : "Address Line Min should be 5.",
   "addressLine2-maxCharacters" : "Address Line Max allowed 16.",

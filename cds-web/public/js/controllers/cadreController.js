@@ -21,7 +21,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                 handleGetCadre(cdsSession.currentUserId);
 
                 config = {
-                    initiate: false,
+                    initiate: true,
                     blurValidation: false,
                     htmlValidation: false,
                     submitValidForm: false,

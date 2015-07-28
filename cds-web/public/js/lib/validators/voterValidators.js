@@ -11,6 +11,7 @@ define(['validation'], function(validation) {
             required: true,
             minCharacters: 10,
             maxCharacters: 16,
+            alphaNumeric: true,
             key_error_msgs: true
         },
         addressLine1: {

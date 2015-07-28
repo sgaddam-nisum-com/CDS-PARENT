@@ -2,22 +2,60 @@
     <div class="row rightContent">
         <div class="col-md-12  formContent">
             <!-- Global error container -->
-            <div class="row" ng-if="registerCtrl.isNotValidForm">
+            <!-- <div class="row" ng-if="registerCtrl.isNotValidForm">
                 <div class="col-md-8 right  error-class">Please ensure that all the required fields are valid.</div>
-            </div>
+            </div> -->
             <!-- Spouse Name -->
             <div class="row">
                 <div class="col-md-3">
                     <label for="right-label" class="right inline">Spouse Name:</label>
                 </div>
                 <div class="col-md-3  left">
-                    <input type="text" id="spouseFirstName" name="spouseFirstName" data-val="spouseFirstName" class="form-control name required" ng-model="familyCtrl.user.spouseData.firstName" placeholder="First Name">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                             <input type="text" id="spouseFirstName" name="spouseFirstName" data-val="spouseFirstName" class="form-control name required" ng-model="familyCtrl.user.spouseData.firstName" placeholder="First Name" />
+                            
+                            <div class="error-class">
+                                <div class="error-content"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                   
                 </div>
                 <div class="col-md-3  left">
-                    <input type="text" id="spouseMiddleName" class="form-control name no-error-class" ng-model="familyCtrl.user.spouseData.middleName" placeholder="Middle Name" data-val="spouseMiddleName">
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" id="spouseMiddleName" class="form-control name no-error-class" ng-model="familyCtrl.user.spouseData.middleName" placeholder="Middle Name" data-val="spouseMiddleName"/>
+                            <div class="error-class">
+                                <div class="error-content"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
                 </div>
                 <div class="col-md-3 left">
-                    <input type="text" id="spouseLastName" class="form-control name required" data-val="spouseLastName" ng-model="familyCtrl.user.spouseData.lastName" placeholder="Last Name">
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" id="spouseLastName" class="form-control name required" data-val="spouseLastName" ng-model="familyCtrl.user.spouseData.lastName" placeholder="Last Name"/>
+                            <div class="error-class">
+                                <div class="error-content"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
                 </div>
                 <div class="col-md-9 col-md-offset-3 error-class">
                     <div class="error-content"></div>
@@ -29,7 +67,7 @@
                     <label for="right-label" class="right inline">Marriage Date:</label>
                 </div>
                 <div class="col-md-9  left">
-                    <input type="text" id="marriageDate" class="form-control input" name="marriageDate" data-val="marriageDate" ng-model="familyCtrl.user.spouseData.marriageDate" date-picker-directive="familyCtrl.user.spouseData.marriageDate" future-date-disabled="true">
+                    <input type="text" id="marriageDate" class="calender form-control input" name="marriageDate" data-val="marriageDate" ng-model="familyCtrl.user.spouseData.marriageDate" date-picker-directive="familyCtrl.user.spouseData.marriageDate" future-date-disabled="true">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
@@ -53,7 +91,7 @@
                     <label for="right-label" class="right inline">Date of Birth:</label>
                 </div>
                 <div class="col-md-9 left">
-                    <input type="text" id="dob" name="dob" ng-model="familyCtrl.user.spouseData.dateOfBirth" class="form-control input" date-picker-directive="familyCtrl.user.spouse.dateOfBirth" data-val="dob" future-date-disabled="true">
+                    <input type="text" id="dob" name="dob" ng-model="familyCtrl.user.spouseData.dateOfBirth" class="calender form-control input" date-picker-directive="familyCtrl.user.spouse.dateOfBirth" data-val="dob" future-date-disabled="true">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
