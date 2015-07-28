@@ -22,7 +22,19 @@
                     </div>
                 </div>
                 <div class="col-sm-3  left">
-                    <input type="text" id="middleName" class="form-control name" ng-model="personalCtrl.user.middleName" placeholder="Middle Name">
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                             <input type="text" id="middleName" class="form-control name" ng-model="personalCtrl.user.middleName" data-val="signupMiddleName" placeholder="Middle Name">
+                            <div class="error-class">
+                                <div class="error-content"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
                 </div>
                 <div class="col-sm-3  left">
                     <div class="row">
@@ -67,7 +79,7 @@
                     <label for="right-label" class="right inline">Date of Birth:</label>
                 </div>
                 <div class="col-sm-9  left">
-                    <input type="text" id="dob" class="form-control input required" name="dob" data-val="dob" ng-model="personalCtrl.user.dateOfBirth" date-picker-directive="personalCtrl.user.dateOfBirth" ng-change="personalCtrl.getAge(personalCtrl.user.dateOfBirth)" future-date-disabled="true">
+                    <input type="text" id="dob" class="calender form-control input required" name="dob" data-val="dob" ng-model="personalCtrl.user.dateOfBirth" date-picker-directive="personalCtrl.user.dateOfBirth" ng-change="personalCtrl.getAge(personalCtrl.user.dateOfBirth)" future-date-disabled="true">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>

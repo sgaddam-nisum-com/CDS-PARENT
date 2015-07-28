@@ -21,7 +21,7 @@ define(['jquery'], function($) {
   "userName-maxCharacters" : "User Name should be maximum of 16 characters.",
   "userName-alphaNumeric" : "User Name should be alphaNumeric",
 
-  "dob-date": "Please enter a valid format of date.",
+  "dob-date": "Please enter valid date.",
   "dob-required": "Date Of Birth is a required field.",
   "aadharId": "Aaadhar ID required field. Minimum should be 5 max allowed",
   "aadharId-required": "Aaadhar ID is a required field.",
