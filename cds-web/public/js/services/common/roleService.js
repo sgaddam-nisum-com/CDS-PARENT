@@ -1,4 +1,3 @@
-
 define(['services/serviceModule'], function(serviceModule) {
     serviceModule.factory('roleService', ['$http',
         function($http) {
@@ -7,71 +6,103 @@ define(['services/serviceModule'], function(serviceModule) {
             var roleStateMap = {
                 "Admin": [],
                 "Citizen": ["Requests"],
-                "Cadre" : ["Dashboard", "Tasks","Calendar","Requests"],                
-                "Office Executive" : ["Dashboard","Tasks","Calendar" ,"Requests","Registrants"],
-                "Office Manager" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"],
-                "MP" : ["Dashboard","Tasks", "Calendar","Requests","Registrants"]
+                "Cadre": ["Dashboard", "Tasks", "Calendar", "Requests"],
+                "Office Executive": ["Dashboard", "Tasks", "Calendar", "Requests", "Registrants"],
+                "Office Manager": ["Dashboard", "Tasks", "Calendar", "Requests", "Registrants"],
+                "MP": ["Dashboard", "Tasks", "Calendar", "Requests", "Registrants"]
             }
 
 
             var navItemsMaps = {
 
-                                Dashboard : {name : "Dashboard" , url : "/dashboard"}, 
-                                Tasks : {name : "Tasks" , url : "/tasks"},
-                                Calendar :  {name : "Calendar" , url : "#"},
-                                Requests : {name : "Requests" , url : "/requests"},
-                                Registrants:{name : "Registrants" ,url : "/profile#/list"}
-                            };
+                Dashboard: {
+                    name: "Dashboard",
+                    url: "/dashboard"
+                },
+                Tasks: {
+                    name: "Tasks",
+                    url: "/tasks"
+                },
+                Calendar: {
+                    name: "Calendar",
+                    url: "#"
+                },
+                Requests: {
+                    name: "Requests",
+                    url: "/requests"
+                },
+                Registrants: {
+                    name: "Registrants",
+                    url: "/profile#/list"
+                }
+            };
 
-            
-            
+
+
             var privilegeMap = {
 
-                "Home": "auth.dashboard",
+                /*Non secured pages - Home*/
 
-                "Post Request": "auth.postRequest",
+                "all": ["root.home",
+                    "root.homeDot",
+                    "root.knowyourmp",
+                    "root.parliament",
+                    'root.aboutconstituency',
+                    'root.vision',
+                    'root.initiatives',
+                    'root.gallery',
+                    'root.contactus',
 
-                "View Requests": "auth.viewRequest",
+                    /*Non secured pages - Signin*/
 
-                "Citizen Detailed Sheet": "auth.citizenWorkSheet",
+                    'root.signin',
+                    'root.forgotpassword',
+                    "root.nullsession",
 
-                "View Profile": "auth.viewProfile",
+                    /*Non secured pages - Register*/
 
-                "Edit/Update Profile": "auth.updateProfile",
 
-                "Inbox": "auth.inbox",
+                    "root.register"
+                ],
 
-                "Assigned tasks/Work Sheet": "auth.workSheet",
 
-                "Manage Tasks": "auth.manageTasks",
+                /*Secured pages - Profile*/
 
-                "View Calender": "auth.viewCalendar",
+                "P1120": ["root.profile",
+                    "root.profile.editprofile.personal",
+                    /*"root.profile.editprofile.work",*/
+                    "root.profile.editprofile.voter",
+                    "root.profile.editprofile.address",
+                    "root.profile.editprofile.volunteer",
+                    "root.profile.editprofile.family",
+                    "root.profile.editprofile.cadre"
+                ],
 
-                "User List": "auth.list",
+                "P1101": ["root.profileLookup",
+                        "root.profile.list"
+                ],
+                "P1122": ["root.profile.memberdashboard"],
 
-                "Create Task": "auth.createTask",
+                /*Secured pages - Dashboard*/
 
-                "Allocate Task/Work": "auth.allocateTask",
+                "P1010": ["root.dashboard"],
 
-                "Create Calander": "auth.createCalendar",
 
-                "Create User": "auth.createUser",
+                /*Secured pages - Requests*/
 
-                "Approve Volunteer/Cadre": "auth.approveCadreVolunteer",
+                "P1047": ["root.requests",
+                    "root.viewRequest",
+                    "root.addRequest"
+                ],
 
-                "Cadre Work Sheet": "auth.cadreWorksheet",
-
-                "Tasks List": "auth.tasksList",
-
-                "Update User": "auth.updateUser",
-
-                "Delete User": "auth.deleteUser",
-
-                "View User": "auth.viewUser",
-
-                "Volunteer List": "auth.volunteerList",
-
-                "Manage volunteers": "auth.manageVolunteers"
+                /*Secured pages - Tasks*/
+                "P1038": ["root.tasks",
+                    "root.viewTasks",
+                    "root.addTask",
+                    "root.teamTasks",
+                    "root.allTasks"
+                ],
+                "P1039":["root.supervisorviewAllTasks"]
             };
 
             return {
@@ -80,8 +111,8 @@ define(['services/serviceModule'], function(serviceModule) {
                         case "citizen":
                             return "citizen";
                             break;
-                        default :
-                            return "default";    
+                        default:
+                            return "default";
                     }
                 },
 
@@ -99,53 +130,47 @@ define(['services/serviceModule'], function(serviceModule) {
                 },
 
 
-                getPrivilegeStateArray : function(privilegeArray){
-                		var privilegeStateArray = [];
-                		for(var i=0; i< privilegeArray.length; i++){
-
-                			if(privilegeMap[privilegeArray[i].privilegeName]){
-                				privilegeStateArray.push(privilegeMap[privilegeArray[i].privilegeName]);
-                			}
-
-	               		}
-	               		return privilegeStateArray;
+                getPrivilegeStateArray: function(privilegeArray) {
+                    var privilegeStateArray = [];
+                    for (var i = 0; i < privilegeArray.length; i++) {
+                        if (privilegeMap[privilegeArray[i].privilegeCode]) {
+                            privilegeStateArray = privilegeStateArray.concat(privilegeMap[privilegeArray[i].privilegeCode]);
+                        }
+                    }
+                    return privilegeStateArray.concat(privilegeMap.all);
                 },
 
-                getTopRole : function(appRoles){
-                    
-                    var topRole, rolesArray=[];                   
+                getTopRole: function(appRoles) {
+                    var topRole, rolesArray = [];
                     appRoles = appRoles || [];
-                    
-                    for(var i=0; i<appRoles.length; i++){
+
+                    for (var i = 0; i < appRoles.length; i++) {
                         rolesArray.push(appRoles[i].roleName);
                     }
 
-
-
-                    if(rolesArray.indexOf("MP") > -1){
+                    if (rolesArray.indexOf("MP") > -1) {
                         topRole = "MP";
-                    }
-                    else if(rolesArray.indexOf("Office Manager") > -1){
+                    } else if (rolesArray.indexOf("Office Manager") > -1) {
                         topRole = "Office Manager";
-                    }else if(rolesArray.indexOf("Office Executive") > -1){
+                    } else if (rolesArray.indexOf("Office Executive") > -1) {
                         topRole = "Office Executive";
-                    }else if(rolesArray.indexOf("Cadre") > -1){
-                        topRole = "Cadre";   
-                    }else if(appRoles.roleName === "Volunteer"){
-                        topRole = "Volunteer";   
-                    }else{
+                    } else if (rolesArray.indexOf("Cadre") > -1) {
+                        topRole = "Cadre";
+                    } else if (appRoles.roleName === "Volunteer") {
+                        topRole = "Volunteer";
+                    } else {
                         topRole = "Citizen";
                     }
                     return topRole;
                 },
 
-                getNavArray : function(role){
-                    
-                    
+                getNavArray: function(role) {
+
+
                     var navArray = [];
                     var roleStateArray = roleStateMap[role];
 
-                    for(var i=0; i<roleStateArray.length; i++){
+                    for (var i = 0; i < roleStateArray.length; i++) {
                         navArray.push(navItemsMaps[roleStateArray[i]]);
                     }
 
