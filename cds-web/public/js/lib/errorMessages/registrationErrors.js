@@ -36,7 +36,7 @@ define(['jquery'], function($) {
   "userPhone-number":"Land line should be number",
   "userEmail": "Generic email error",
   "userEmail-required": "Email is a required field.",
-  "userEmail-regexMatch" : "Please enter a valid email.",
+  "userEmail-email" : "Please enter a valid email.",
   "skypeId-required": "Its a required field. Minimum should be 5 max allowed",
   "userQualification-required" : "Its a required field. Minimum should be 5 max allowed",
   "userQualification-minCharacters" : "Minimum Should be 5",
