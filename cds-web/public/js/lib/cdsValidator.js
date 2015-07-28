@@ -104,14 +104,14 @@ define([], function() {
             return methods.regexMatch(value, keys.DATE);
         },
         
-        alphabets : function(){            
+        alphabets : function( value ){            
             return methods.regexMatch(value, keys.ALPHABETS);
         },
-        alphaNumericPerid : function(){
+        alphaNumericPerid : function( value ){
             return methods.regexMatch(value, keys.ALPHA_NUMERIC_PERIOD);  
         },
 
-        nonNumberFirst : function(){
+        nonNumberFirst : function( value ){
             return methods.regexMatch(value, keys.NON_NUMBER_FIRST);          
         },
 

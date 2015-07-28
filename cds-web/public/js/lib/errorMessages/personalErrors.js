@@ -7,18 +7,24 @@ define(['jquery'], function($) {
   "signupFirstName-minCharacters": "First Name Minimum should be 3 characters.",
   "signupFirstName-maxCharacters": "First Name should be maximum of 25 characters.",
   "signupFirstName-regexMatch": "First Name Should be a valid format.",
+  "signupFirstName-alphabets" : "Please enter alphabets only.",
 
   "signupMiddleName-maxCharacters": "Middle Name should be maximum of 25 characters.",
+  "signupMiddleName-alphabets" : "Please enter alphabets only.",
 
   "signupLastName": "Last Name required field. Minimum should be 5 maximum allowed.",
   "signupLastName-required": "Last Name is a Required field.",
   "signupLastName-minCharacters": "Last Name Minimum should be 5.",
   "signupLastName-maxCharacters": "Last Name should be maximum of 25 characters.",
   "signupLastName-regex": "Last Name Should be a valid format.",
+  "signupLastName-alphabets" : "Please enter alphabets only.",
+
   "userName": "User Name required field. Minimum characters should be 5.",
   "userName-required": "User Name required field.",
   "userName-minCharacters": "User Name should be minimum of 6 characters.",
   "userName-maxCharacters" : "User Name should be maximum of 16 characters.",
+  "userName-alphaNumericPerid" : "Only numbers, alphabets and period(.) are allowed.",
+
   "dob-date": "Date Of Birth is a required field. Please select Date.",
   "dob-required": "Date Of Birth is a required field.",
   "aadharId": "Aadhaar ID required field. Minimum should be 5 maximum allowed.",

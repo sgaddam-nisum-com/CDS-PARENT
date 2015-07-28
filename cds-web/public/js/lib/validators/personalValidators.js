@@ -10,23 +10,27 @@ define(['validation'], function(validation) {
         signupFirstName: {
             required : true,
             maxCharacters: 25,
+            alphabets : true,
             key_error_msgs: true
            
         },
         signupMiddleName: {
             required : false,
             maxCharacters: 25,
+            alphabets : true,
             key_error_msgs: true          
         },
 		signupLastName: {
             required : true,
             maxCharacters: 25,
+            alphabets : true,
             key_error_msgs: true          
         },
         userName : {
             required : false,
             minCharacters: 6,
             maxCharacters: 16,
+            alphaNumericPerid: true,
             key_error_msgs: true
         },
 		dob:{
