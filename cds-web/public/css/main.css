@@ -2689,18 +2689,19 @@ div.slideshow a.advance-link:focus {
 
 /* line 70, ../scss/components/_gallery.scss */
 div.slideshow img {
+  width: 1000px;
+  height: 800px;
   border-style: solid;
-  border-width: 1px;
 }
 
-/* line 74, ../scss/components/_gallery.scss */
+/* line 76, ../scss/components/_gallery.scss */
 div.caption-container {
   float: right;
   position: relative;
   margin-top: 30px;
 }
 
-/* line 79, ../scss/components/_gallery.scss */
+/* line 81, ../scss/components/_gallery.scss */
 span.image-caption {
   display: block;
   position: absolute;
@@ -2708,34 +2709,34 @@ span.image-caption {
   left: 0;
 }
 
-/* line 86, ../scss/components/_gallery.scss */
+/* line 88, ../scss/components/_gallery.scss */
 div.caption-container, span.image-caption {
   width: 334px;
 }
 
-/* line 90, ../scss/components/_gallery.scss */
+/* line 92, ../scss/components/_gallery.scss */
 div.caption {
   padding: 0 12px;
 }
 
-/* line 94, ../scss/components/_gallery.scss */
+/* line 96, ../scss/components/_gallery.scss */
 div.image-title {
   font-weight: bold;
   font-size: 1.4em;
 }
 
-/* line 98, ../scss/components/_gallery.scss */
+/* line 100, ../scss/components/_gallery.scss */
 div.image-desc {
   line-height: 1.3em;
   padding-top: 12px;
 }
 
-/* line 102, ../scss/components/_gallery.scss */
+/* line 104, ../scss/components/_gallery.scss */
 div.download {
   margin-top: 8px;
 }
 
-/* line 105, ../scss/components/_gallery.scss */
+/* line 107, ../scss/components/_gallery.scss */
 div.photo-index {
   position: absolute;
   bottom: 0;
@@ -2746,7 +2747,7 @@ div.photo-index {
 /*div.navigation {
   left: -50%;
 }*/
-/* line 115, ../scss/components/_gallery.scss */
+/* line 117, ../scss/components/_gallery.scss */
 div.navigation a.pageLink {
   display: block;
   position: relative;
@@ -2757,12 +2758,12 @@ div.navigation a.pageLink {
   background-repeat: no-repeat;
 }
 
-/* line 124, ../scss/components/_gallery.scss */
+/* line 126, ../scss/components/_gallery.scss */
 div.navigation a.pageLink:focus {
   outline: none;
 }
 
-/* line 128, ../scss/components/_gallery.scss */
+/* line 130, ../scss/components/_gallery.scss */
 ul.thumbs {
   position: relative;
   float: left;
@@ -2770,7 +2771,7 @@ ul.thumbs {
   padding: 0;
 }
 
-/* line 134, ../scss/components/_gallery.scss */
+/* line 136, ../scss/components/_gallery.scss */
 ul.thumbs li {
   float: left;
   padding: 0;
@@ -2778,31 +2779,31 @@ ul.thumbs li {
   list-style: none;
 }
 
-/* line 140, ../scss/components/_gallery.scss */
+/* line 142, ../scss/components/_gallery.scss */
 a.thumb {
   padding: 1px;
   display: block;
 }
 
-/* line 144, ../scss/components/_gallery.scss */
+/* line 146, ../scss/components/_gallery.scss */
 a.thumb:focus {
   outline: none;
 }
 
-/* line 147, ../scss/components/_gallery.scss */
+/* line 149, ../scss/components/_gallery.scss */
 ul.thumbs img {
   border: none;
   display: block;
 }
 
-/* line 151, ../scss/components/_gallery.scss */
+/* line 153, ../scss/components/_gallery.scss */
 div.pagination {
   clear: both;
   position: relative;
   left: -50%;
 }
 
-/* line 156, ../scss/components/_gallery.scss */
+/* line 158, ../scss/components/_gallery.scss */
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
   position: relative;
   display: block;
@@ -2812,35 +2813,35 @@ div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
   border: 1px solid #ccc;
 }
 
-/* line 164, ../scss/components/_gallery.scss */
+/* line 166, ../scss/components/_gallery.scss */
 div.pagination a:hover {
   text-decoration: none;
 }
 
-/* line 167, ../scss/components/_gallery.scss */
+/* line 169, ../scss/components/_gallery.scss */
 div.pagination span.current {
   font-weight: bold;
 }
 
-/* line 170, ../scss/components/_gallery.scss */
+/* line 172, ../scss/components/_gallery.scss */
 div.pagination span.ellipsis {
   border: none;
   padding: 5px 0 3px 2px;
 }
 
-/* line 175, ../scss/components/_gallery.scss */
+/* line 177, ../scss/components/_gallery.scss */
 div.gallery-gutter {
   clear: both;
   padding-bottom: 20px;
 }
 
-/* line 180, ../scss/components/_gallery.scss */
+/* line 182, ../scss/components/_gallery.scss */
 div.navigation a.prev {
   background-image: url(../images/prevPageArrow.gif);
   width: 42px;
 }
 
-/* line 184, ../scss/components/_gallery.scss */
+/* line 186, ../scss/components/_gallery.scss */
 div.navigation a.next {
   background-image: url(../images/nextPageArrow.gif);
   /*position: relative;
@@ -2849,9 +2850,9 @@ div.navigation a.next {
   width: 42px;
 }
 
-/* line 192, ../scss/components/_gallery.scss */
+/* line 194, ../scss/components/_gallery.scss */
 .navigation-container {
-  padding: 20px 0 0px 80px;
+  padding: 20px 0 0px 50px;
 }
 
 /*gallery styles ending*/

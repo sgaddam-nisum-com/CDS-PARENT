@@ -68,8 +68,10 @@ div.slideshow a.advance-link:focus {
 }
 
 div.slideshow img {
+  width:1000px;
+  height:800px; 
   border-style: solid;
-  border-width: 1px;
+  // border-width: 1px;
 }
 div.caption-container {
   float: right;
@@ -190,7 +192,7 @@ div.navigation a.next {
 }
 
 .navigation-container {
-  padding: 20px 0 0px 80px; 
+  padding: 20px 0 0px 50px; 
 }
 
 /*gallery styles ending*/

@@ -24,7 +24,7 @@ define(['directives/directiveModule','jquery','gallery/jquery.galleriffic','gall
           exemptionSelector: '.selected'
         });
 
-        $(".navigation-container").css({"margin-left" : "35px", "height" : "135px", overflow : "hidden"});
+        $(".navigation-container").css({"height" : "135px", overflow : "hidden"});
         
         // Initialize Advanced Galleriffic Gallery
         var gallery = $('#thumbs').galleriffic({
