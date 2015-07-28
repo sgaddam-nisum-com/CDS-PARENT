@@ -6,15 +6,6 @@
                 <span class="edit {{listCtrl.disableEdit}}" ng-click="listCtrl.editCurrentUser()">Edit</span> |
                 <span ng-click="listCtrl.confirmDelete()" class="delete">Delete</span>
             </div>
-            <!--             <div class="col-lg-5  padding-none">
-                <div class="col-lg-12 input-group">
-                    <input type="text" class="form-control search" ng-model="listCtrl.searchQ" placeholder="Search by Pincode, Location, Name, Phone, email" />
-                    <input type="button" value=" " ng-click="listCtrl.search()" class="input-group-addon search-btn" /> 
-                </div>
-            </div> -->
-            <!--        <div class="col-lg-2  padding-none">
-                <input type="button" value="Advance Search" class="btn adv-search" ng-click="listCtrl.showFilter()" />
-            </div> -->
         </div>
     </div>
 </div>
@@ -34,7 +25,7 @@
                 <span>Type</span>
                 <ul>
                     <li class="padding-none" ng-repeat="userType in listCtrl.userTypes">
-                        <input type="checkbox" ng-model="listCtrl.selectedUserTypes[userType.appRoleId]" value="{{userType.appRoleId}}" /> {{userType.appRoleName}}
+                        <input type="checkbox" ng-model="listCtrl.selectedUserTypes[userType.appRoleId]" value="{{userType.appRoleId}}" ng-click="listCtrl.resetUserFilterSearch($event,this)" /> {{userType.appRoleName}}
                     </li>
                 </ul>
             </div>
@@ -43,9 +34,9 @@
                 <span>Gender</span>
                 <ul>
                     <li>
-                        <input type="checkbox" ng-model="listCtrl.selectedGender['M']" /> Male</li>
+                        <input type="checkbox" ng-model="listCtrl.selectedGender['M']"  ng-click="listCtrl.resetGenderFilterSearch($event,'M')" /> Male</li>
                     <li>
-                        <input type="checkbox" ng-model="listCtrl.selectedGender['F']" /> Female</li>
+                        <input type="checkbox" ng-model="listCtrl.selectedGender['F']" ng-click="listCtrl.resetGenderFilterSearch($event,'F')" /> Female</li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3  options age">

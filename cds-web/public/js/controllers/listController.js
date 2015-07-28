@@ -33,18 +33,19 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     } else {
                         self.hideCadreStats = true;
                     }
+
                 }
             });
 
             this.render = function() {
                 listService.getUserList(defSearchObj, function(resObj) {
                     that.userList = resObj.data.searchResults;
+                   
                 });
 
                 listService.getUserTypes(function(resp) {
                     self.userTypes = resp.data;
-                });
-
+                });               
             };
 
             this.render();
@@ -185,6 +186,21 @@ define(['controllers/controllerModule'], function(controllerModule) {
             };
 
 
+            this.resetUserFilterSearch = function(e,userTypeScope){                            
+                if(!e.currentTarget.checked){
+                    self.selectedUserTypes[userTypeScope.appRoleId] = false;
+                    self.filterSearch();
+                }                  
+            }
+
+
+            this.resetGenderFilterSearch = function(e,gender){                            
+                if(!e.currentTarget.checked){
+                      self.selectedGender[gender] = false;
+                      self.filterSearch();
+                }                  
+            }
+
 
             this.getSelectedFromObject = function(obj) {
 
@@ -227,12 +243,11 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
                 var selectedGender = this.getSelectedFromObject(this.selectedGender) || [];
 
-                console.log(selectedGender);
 
                 selectedUserFilter = selectedUserFilter.map(function(user) {
 
                     return {
-                        "filterName": user.appRoleName,
+                        "filterName": user.appRoleName+"1",
                         "filterObj": function() {
 
                             self.selectedUserTypes[user.appRoleId] = false;
