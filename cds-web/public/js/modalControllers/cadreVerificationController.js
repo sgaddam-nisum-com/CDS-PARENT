@@ -7,16 +7,17 @@ define(['controllers/controllerModule',"messageHandler"], function (controllerMo
  			var currentUserId = callerScope.currentUserId;
 
  			$scope.showApprovedStatus = false;
+ 			//$scope.user = {};
 
-
- 			console.log(currentUserId);
 
  			registerService.getPartyPositionsOptions(function(resp){									 				 			
 					$scope.partyPositionsOptions = resp.data;						
 			});
 
 			registerService.getPerformanceGradeOptions(function(resp){								
-				$scope.performanceGradeOptions = resp.data;			
+				$scope.performanceGradeOptions = resp.data;
+				$scope.user = $scope.user ||{};
+				$scope.user.performanceGradeId = 7;			
 			});
 
 
@@ -57,6 +58,26 @@ define(['controllers/controllerModule',"messageHandler"], function (controllerMo
 	 		}
 
 	 		$scope.approve = function(){
+	 			var cadreVerMsgTracker = new messageHandler.msgTracker({
+	 				containerId : "#cadreErrContainer",
+	 				className : "cadre-verification-msg"
+	 			});
+
+
+
+	 			if(!$("#membershipId").val()){
+	 				cadreVerMsgTracker.showError("Party Membership id is required field.");
+	 				return;
+	 			}
+
+	 			if(!$scope.user.reportsTo){
+	 				cadreVerMsgTracker.showError("Please select Reporting Lead.");
+	 				return;
+	 			}
+
+	 			cadreVerMsgTracker.clearStatus();
+
+
 	 			var reqObj = {};
 
 	 			reqObj.cadre = {};

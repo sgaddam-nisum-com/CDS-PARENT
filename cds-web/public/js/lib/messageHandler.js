@@ -45,6 +45,7 @@ define(["jquery"], function($){
 			this.container = $(this.config.containerId);
 		}
 		
+		this.container.html("");
 
 		this.showError= function(msg, timer){
 			this.timer = timer ||this.timer;

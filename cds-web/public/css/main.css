@@ -363,6 +363,11 @@ ul.doughnut-legend {
   overflow: auto;
 }
 
+/* line 271, ../scss/components/_dashboard.scss */
+.cadre-verification-msg {
+  margin: 5px 0;
+}
+
 /* Only for 1921px and above */
 /* From 1441px to 1920 */
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
