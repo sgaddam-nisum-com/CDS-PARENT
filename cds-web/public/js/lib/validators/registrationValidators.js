@@ -9,29 +9,27 @@ define(['validation'], function(validation) {
     return {
         signupFirstName: {
             required : true,
-            minCharacters: 3,
-            maxCharacters: 16,
+            maxCharacters: 25,
             key_error_msgs: true
            
         },
         signupMiddleName: {
             required : false,
-            minCharacters: 3,
-            maxCharacters: 16,
+            maxCharacters: 25,
             key_error_msgs: true
           
         },
 		signupLastName: {
             required : true,
-            minCharacters: 1,
-            maxCharacters: 16,
+            maxCharacters: 25,
             key_error_msgs: true
           
         },
         userName : {
             required : false,
-            minCharacters: 5,
+            minCharacters: 6,
             maxCharacters: 16,
+            alphaNumeric: true,
             key_error_msgs: true
         },
 		dob:{
@@ -46,9 +44,8 @@ define(['validation'], function(validation) {
 		},
         userMobile:{
             required : true,
-            regexMatch: /^[0-9]{1,10}$/,
-            minCharacters: 10,
-            maxCharacters: 10,
+            regexMatch: /^[0-9]{10}$/,
+            numeric: true,
             key_error_msgs: true     
         },
         userPhone:{
