@@ -143,7 +143,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                         self.user.phoneNumber = dataJson.phoneNumber;
                         self.user.emailId = dataJson.emailId;
                         self.user.skypeId = dataJson.skypeId;
-                        self.user.maritalStatus = dataJson.maritalStatus;
+                        self.user.maritalStatus = dataJson.maritalStatus || "Single";
                         self.user.educationId = dataJson.education.educationId;
                         cdsSession.isMarried = cdsService.isMarried = self.user.maritalStatus;
                         cdsSession.gender = dataJson.gender;

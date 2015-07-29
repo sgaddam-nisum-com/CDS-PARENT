@@ -39,7 +39,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
 
             self.user.taskWorkAllocation = {};
             self.user.taskWorkAllocation.citizenId = $rootScope.assignedCitizenName;
-
+            self.user.comments = {};
+            self.user.comments.commentType = "Public";
 
 
             taskService.getTaskStatuses(function(resp) {
