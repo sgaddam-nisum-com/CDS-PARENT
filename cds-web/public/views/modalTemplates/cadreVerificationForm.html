@@ -67,7 +67,7 @@
 					<label class="">Reports to:</label>
 				</div>
 				<div class="col-lg-7">
-					<select id="grade" class="input form-control" name="grade" ng-model="user.reportsTo"  ng-options="lead.nameid for lead in leadCadres" ng-change="showLeadInfo(user.reportsTo)">
+					<select id="grade" class="input form-control required" name="grade" ng-model="user.reportsTo"  ng-options="lead.nameid for lead in leadCadres" ng-change="showLeadInfo(user.reportsTo)">
 						<option value="">Select Reporting Lead</option>
 					</select>
 					

@@ -81,7 +81,7 @@ define(['controllers/controllerModule',"messageHandler"], function (controllerMo
 	 			var reqObj = {};
 
 	 			reqObj.cadre = {};
-	 			reqObj.cadre.positionId = $scope.user.positionId;
+	 			reqObj.cadre.positionId = $scope.user.positionId || null;
 	 			reqObj.cadre.partyMembershipId = $scope.user.partyMembershipId;
 	 			reqObj.cadre.partyResponsibility = $scope.user.partyResponsibility;
 	 			reqObj.cadre.performanceGradeId = $scope.user.performanceGradeId;
