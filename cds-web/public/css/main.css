@@ -1823,18 +1823,19 @@ body .navigation .top-bar-section ul li:active a {
   background: #fff;
   padding: 0px;
   margin: 10px;
-  min-height: 14em;
+  min-height: 36em;
 }
 
 /* line 200, ../scss/components/_list.scss */
 .tiles-list .tiles .photo1 {
   background: url(../images/image.png) no-repeat top center;
   height: 200px;
+  width: 200px;
   margin: 0;
   border: solid 1px #fff;
 }
 
-/* line 206, ../scss/components/_list.scss */
+/* line 207, ../scss/components/_list.scss */
 .tiles-list .tiles .photo2 {
   background: url(../images/image2.png) no-repeat top center;
   width: 100%;
@@ -1844,13 +1845,13 @@ body .navigation .top-bar-section ul li:active a {
   border: solid 1px #fff;
 }
 
-/* line 214, ../scss/components/_list.scss */
+/* line 215, ../scss/components/_list.scss */
 .tiles-list .tiles .details {
   margin: 15px 10px;
   height: 240px;
 }
 
-/* line 218, ../scss/components/_list.scss */
+/* line 219, ../scss/components/_list.scss */
 .tiles-list .tiles .details h6 {
   font-size: 13px;
   font-weight: bold;
@@ -1859,7 +1860,7 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 226, ../scss/components/_list.scss */
+/* line 227, ../scss/components/_list.scss */
 .tiles-list .tiles .details label {
   font-size: 13px;
   word-wrap: break-word;
@@ -1868,18 +1869,18 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 233, ../scss/components/_list.scss */
+/* line 234, ../scss/components/_list.scss */
 .tiles-list .tiles .status {
   background: #999999;
   padding: 6px;
 }
 
-/* line 237, ../scss/components/_list.scss */
+/* line 238, ../scss/components/_list.scss */
 .tiles-list .tiles .status input[type="checkbox"] {
   margin: 0;
 }
 
-/* line 240, ../scss/components/_list.scss */
+/* line 241, ../scss/components/_list.scss */
 .tiles-list .tiles .status .volunteer, .volunteer {
   background: url(../images/cds-sprite.png) no-repeat 0 -152px;
   width: 30px;
@@ -1887,7 +1888,7 @@ body .navigation .top-bar-section ul li:active a {
   display: inline-block;
 }
 
-/* line 246, ../scss/components/_list.scss */
+/* line 247, ../scss/components/_list.scss */
 .tiles-list .tiles .status .cadre, .cadre {
   background: url(../images/cds-sprite.png) no-repeat 0 -186px;
   width: 25px;
@@ -1895,11 +1896,11 @@ body .navigation .top-bar-section ul li:active a {
   display: inline-block;
 }
 
-/* line 256, ../scss/components/_list.scss */
+/* line 257, ../scss/components/_list.scss */
 .status-tab {
   height: 35px;
 }
-/* line 258, ../scss/components/_list.scss */
+/* line 259, ../scss/components/_list.scss */
 .status-tab input {
   margin-top: 5px !important;
   display: inline-block;
