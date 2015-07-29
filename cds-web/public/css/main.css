@@ -1702,7 +1702,7 @@ body .navigation .top-bar-section ul li:active a {
 .filter-options .options span {
   float: left;
   font-size: 13px;
-  margin: 0 15px 10px 0;
+  margin: 4px 15px 10px 0;
   font-weight: bold;
 }
 
@@ -1723,13 +1723,14 @@ body .navigation .top-bar-section ul li:active a {
 .filter-options input.age {
   display: inline-block;
   width: 60px;
+  margin-top: 4px;
   margin-left: 4px;
   margin-right: 12px;
   background: #e3ebef;
   border: solid 1px #a5cbde;
 }
 
-/* line 119, ../scss/components/_list.scss */
+/* line 120, ../scss/components/_list.scss */
 .filter-options input.city {
   width: 175px;
   margin: 0 20px 15px 0;
@@ -1737,12 +1738,12 @@ body .navigation .top-bar-section ul li:active a {
   border: solid 1px #a5cbde;
 }
 
-/* line 125, ../scss/components/_list.scss */
+/* line 126, ../scss/components/_list.scss */
 .filter-options .filterContainer {
   margin: 15px 0 0;
 }
 
-/* line 130, ../scss/components/_list.scss */
+/* line 131, ../scss/components/_list.scss */
 .filter-options .selected {
   background: #dfe5e9;
   padding: 6px;
@@ -1752,7 +1753,7 @@ body .navigation .top-bar-section ul li:active a {
   font-weight: bold;
 }
 
-/* line 138, ../scss/components/_list.scss */
+/* line 139, ../scss/components/_list.scss */
 .filter-options .selected a {
   background: #fff;
   border: solid 1px #ccc;
@@ -1763,7 +1764,7 @@ body .navigation .top-bar-section ul li:active a {
   font-weight: normal;
 }
 
-/* line 148, ../scss/components/_list.scss */
+/* line 149, ../scss/components/_list.scss */
 .tiles .photo2 {
   height: 200px;
   margin: 0 0 20px 0;
@@ -1771,7 +1772,7 @@ body .navigation .top-bar-section ul li:active a {
   text-align: center;
 }
 
-/* line 154, ../scss/components/_list.scss */
+/* line 155, ../scss/components/_list.scss */
 .tiles .photo2 img {
   border: solid 5px #fff;
   height: 200px;
@@ -1779,7 +1780,7 @@ body .navigation .top-bar-section ul li:active a {
   vertical-align: inherit;
 }
 
-/* line 160, ../scss/components/_list.scss */
+/* line 161, ../scss/components/_list.scss */
 .tile-section {
   border: 1px #d0d0d0 solid;
   background: #f6f6f6;
@@ -1788,17 +1789,17 @@ body .navigation .top-bar-section ul li:active a {
   display: none;
 }
 
-/* line 167, ../scss/components/_list.scss */
+/* line 168, ../scss/components/_list.scss */
 .tiles .name {
   padding: 10px 0px 10px 0px;
 }
 
-/* line 170, ../scss/components/_list.scss */
+/* line 171, ../scss/components/_list.scss */
 .tiles .details label {
   padding: 10px 0 0 0;
 }
 
-/* line 176, ../scss/components/_list.scss */
+/* line 177, ../scss/components/_list.scss */
 .tiles-list {
   background: #e7eaeb;
   padding: 20px;
@@ -1817,7 +1818,7 @@ body .navigation .top-bar-section ul li:active a {
 .tiles-list ul li {
   padding: 0;
 } */
-/* line 193, ../scss/components/_list.scss */
+/* line 194, ../scss/components/_list.scss */
 .tiles-list .tiles {
   background: #fff;
   padding: 0px;
@@ -1825,7 +1826,7 @@ body .navigation .top-bar-section ul li:active a {
   min-height: 14em;
 }
 
-/* line 199, ../scss/components/_list.scss */
+/* line 200, ../scss/components/_list.scss */
 .tiles-list .tiles .photo1 {
   background: url(../images/image.png) no-repeat top center;
   height: 200px;
@@ -1833,7 +1834,7 @@ body .navigation .top-bar-section ul li:active a {
   border: solid 1px #fff;
 }
 
-/* line 205, ../scss/components/_list.scss */
+/* line 206, ../scss/components/_list.scss */
 .tiles-list .tiles .photo2 {
   background: url(../images/image2.png) no-repeat top center;
   width: 100%;
@@ -1843,13 +1844,13 @@ body .navigation .top-bar-section ul li:active a {
   border: solid 1px #fff;
 }
 
-/* line 213, ../scss/components/_list.scss */
+/* line 214, ../scss/components/_list.scss */
 .tiles-list .tiles .details {
   margin: 15px 10px;
   height: 240px;
 }
 
-/* line 217, ../scss/components/_list.scss */
+/* line 218, ../scss/components/_list.scss */
 .tiles-list .tiles .details h6 {
   font-size: 13px;
   font-weight: bold;
@@ -1858,7 +1859,7 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 225, ../scss/components/_list.scss */
+/* line 226, ../scss/components/_list.scss */
 .tiles-list .tiles .details label {
   font-size: 13px;
   word-wrap: break-word;
@@ -1867,18 +1868,18 @@ body .navigation .top-bar-section ul li:active a {
   overflow: hidden;
 }
 
-/* line 232, ../scss/components/_list.scss */
+/* line 233, ../scss/components/_list.scss */
 .tiles-list .tiles .status {
   background: #999999;
   padding: 6px;
 }
 
-/* line 236, ../scss/components/_list.scss */
+/* line 237, ../scss/components/_list.scss */
 .tiles-list .tiles .status input[type="checkbox"] {
   margin: 0;
 }
 
-/* line 239, ../scss/components/_list.scss */
+/* line 240, ../scss/components/_list.scss */
 .tiles-list .tiles .status .volunteer, .volunteer {
   background: url(../images/cds-sprite.png) no-repeat 0 -152px;
   width: 30px;
@@ -1886,7 +1887,7 @@ body .navigation .top-bar-section ul li:active a {
   display: inline-block;
 }
 
-/* line 245, ../scss/components/_list.scss */
+/* line 246, ../scss/components/_list.scss */
 .tiles-list .tiles .status .cadre, .cadre {
   background: url(../images/cds-sprite.png) no-repeat 0 -186px;
   width: 25px;
@@ -1894,11 +1895,11 @@ body .navigation .top-bar-section ul li:active a {
   display: inline-block;
 }
 
-/* line 255, ../scss/components/_list.scss */
+/* line 256, ../scss/components/_list.scss */
 .status-tab {
   height: 35px;
 }
-/* line 257, ../scss/components/_list.scss */
+/* line 258, ../scss/components/_list.scss */
 .status-tab input {
   margin-top: 5px !important;
   display: inline-block;
