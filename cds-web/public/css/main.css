@@ -594,15 +594,16 @@ header .auth-header .phone {
 .logo {
   padding: 10px 0 8px 0;
   display: inline-block;
+  text-decoration: none !important;
 }
 
-/* line 63, ../scss/components/_header.scss */
+/* line 64, ../scss/components/_header.scss */
 .area-logo {
   font-size: 30px;
   margin: 8px 0;
 }
 
-/* line 67, ../scss/components/_header.scss */
+/* line 68, ../scss/components/_header.scss */
 .area-logo span {
   color: #666;
   display: block;
@@ -611,24 +612,24 @@ header .auth-header .phone {
   text-align: center;
 }
 
-/* line 74, ../scss/components/_header.scss */
+/* line 75, ../scss/components/_header.scss */
 header .top-nav {
   padding-right: 0;
   /* text-align: right; */
 }
 
-/* line 79, ../scss/components/_header.scss */
+/* line 80, ../scss/components/_header.scss */
 header .auth-header .top-nav li {
   font-size: 13px;
   color: #fff;
 }
 
-/* line 84, ../scss/components/_header.scss */
+/* line 85, ../scss/components/_header.scss */
 header .top-nav ul {
   margin: 0;
 }
 
-/* line 87, ../scss/components/_header.scss */
+/* line 88, ../scss/components/_header.scss */
 header .top-nav ul li {
   display: inline-block;
   list-style: none;
@@ -637,14 +638,14 @@ header .top-nav ul li {
   padding: 0 0px 0 20px;
 }
 
-/* line 94, ../scss/components/_header.scss */
+/* line 95, ../scss/components/_header.scss */
 header .top-nav ul li:first-child {
   background: none;
   padding-left: 0px;
   /*padding-right: 20px;*/
 }
 
-/* line 99, ../scss/components/_header.scss */
+/* line 100, ../scss/components/_header.scss */
 header .top-nav ul li a.home {
   background: url(../images/cds-sprite.png) no-repeat 0 -23px;
   height: 20px;
@@ -652,7 +653,7 @@ header .top-nav ul li a.home {
   color: #999;
 }
 
-/* line 105, ../scss/components/_header.scss */
+/* line 106, ../scss/components/_header.scss */
 header .top-nav ul li a.help {
   background: url(../images/cds-sprite.png) no-repeat 0 -47px;
   height: 20px;
@@ -661,7 +662,7 @@ header .top-nav ul li a.help {
   color: #fff;
 }
 
-/* line 112, ../scss/components/_header.scss */
+/* line 113, ../scss/components/_header.scss */
 header .top-nav ul li a.my-account {
   background: url(../images/cds-sprite.png) no-repeat 0 -72px;
   height: 20px;
@@ -669,77 +670,77 @@ header .top-nav ul li a.my-account {
   color: #fff;
 }
 
-/* line 119, ../scss/components/_header.scss */
+/* line 120, ../scss/components/_header.scss */
 header .top-nav ul li a.post {
   padding: 0 15px 0 0;
   color: #999;
 }
 
-/* line 123, ../scss/components/_header.scss */
+/* line 124, ../scss/components/_header.scss */
 header .top-nav ul li a.logout {
   padding: 0 15px 0 20px;
   color: #999;
   background: url(../images/logout.png) no-repeat 0 2px;
 }
 
-/* line 130, ../scss/components/_header.scss */
+/* line 131, ../scss/components/_header.scss */
 header .navigation {
   padding: 28px 0 0 0;
 }
 
-/* line 133, ../scss/components/_header.scss */
+/* line 134, ../scss/components/_header.scss */
 header .navigation h1.logo {
   background: url(../images/logo.png) no-repeat;
   width: 155px;
   height: 40px;
 }
 
-/* line 138, ../scss/components/_header.scss */
+/* line 139, ../scss/components/_header.scss */
 header .main-navigation nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 142, ../scss/components/_header.scss */
+/* line 143, ../scss/components/_header.scss */
 header .main-navigation nav ul li {
   list-style: none;
   float: left;
 }
 
-/* line 147, ../scss/components/_header.scss */
+/* line 148, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:hover {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 152, ../scss/components/_header.scss */
+/* line 153, ../scss/components/_header.scss */
 .navigation .top-bar-section ul li:active {
   background: url(../images/home-menu-active.png) no-repeat center bottom !important;
   color: red !important;
 }
 
-/* line 158, ../scss/components/_header.scss */
+/* line 159, ../scss/components/_header.scss */
 h1 {
   color: #16578f;
   font-size: 26px;
 }
 
-/* line 163, ../scss/components/_header.scss */
+/* line 164, ../scss/components/_header.scss */
 .headerMobile {
   background: #f0f2f4;
 }
 
-/* line 166, ../scss/components/_header.scss */
+/* line 167, ../scss/components/_header.scss */
 .headerLogo {
   background: #fff url(../images/headerBg.png) repeat-x;
 }
 
-/* line 170, ../scss/components/_header.scss */
+/* line 171, ../scss/components/_header.scss */
 .auth-header {
   padding-top: 8px;
 }
 
-/* line 174, ../scss/components/_header.scss */
+/* line 175, ../scss/components/_header.scss */
 .login-user-info {
   display: none;
   position: absolute;
@@ -751,7 +752,7 @@ h1 {
   top: 29px;
 }
 
-/* line 184, ../scss/components/_header.scss */
+/* line 185, ../scss/components/_header.scss */
 .nav-down-arrow {
   background: none;
   width: 25px;
@@ -760,7 +761,7 @@ h1 {
   float: right;
 }
 
-/* line 193, ../scss/components/_header.scss */
+/* line 194, ../scss/components/_header.scss */
 .top-sub-links {
   float: right;
 }
@@ -768,14 +769,14 @@ h1 {
 /* Only for 1921px and above */
 /* From 1441px to 1920 */
 @media only screen and (max-width: 991px) {
-  /* line 205, ../scss/components/_header.scss */
+  /* line 206, ../scss/components/_header.scss */
   .logo {
     width: 250px;
   }
 }
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (max-width: 767px) {
-  /* line 218, ../scss/components/_header.scss */
+  /* line 219, ../scss/components/_header.scss */
   header .auth-header .phone {
     background: none;
     height: 30px;
@@ -785,17 +786,17 @@ h1 {
     text-align: center;
   }
 
-  /* line 228, ../scss/components/_header.scss */
+  /* line 229, ../scss/components/_header.scss */
   header .top-nav {
     margin-bottom: 10px;
   }
 
-  /* line 232, ../scss/components/_header.scss */
+  /* line 233, ../scss/components/_header.scss */
   header nav {
     text-align: center;
   }
 
-  /* line 235, ../scss/components/_header.scss */
+  /* line 236, ../scss/components/_header.scss */
   .top-sub-links {
     margin: 0 auto;
     width: 100%;
@@ -805,19 +806,19 @@ h1 {
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 255, ../scss/components/_header.scss */
+  /* line 256, ../scss/components/_header.scss */
   header .auth-header .phone {
     display: none;
   }
 }
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 264, ../scss/components/_header.scss */
+  /* line 265, ../scss/components/_header.scss */
   .collapse {
     display: block !important;
   }
 
-  /* line 269, ../scss/components/_header.scss */
+  /* line 270, ../scss/components/_header.scss */
   body .navigation .top-bar-section ul li:hover {
     background: transparent url("../images/home-menu-active.png") no-repeat scroll center bottom !important;
     color: red !important;
