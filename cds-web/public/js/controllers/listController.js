@@ -18,11 +18,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
             var that = this;
 
-            var defSearchObj = {
-                q: "",
-                userType: "2,3,4",
-                limit: 8
-            };
+            
             self.hideCadreStats = true;
             cdsService.getUserSession(function(resp) {
                 rolesList = resp.data.user.appRoles;
@@ -37,10 +33,19 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 }
             });
 
+            var defSearchObj = {
+                q: "",
+                userType: "2,3,4",
+                limit: 4,
+                page: 1
+            };
+
+            $scope.maxSize = 6;
             this.render = function() {
                 listService.getUserList(defSearchObj, function(resObj) {
+                    $scope.itemsperPage = 4;
+                    $scope.totalItems = resObj.data.pageInfo.totalNoOfRecords;
                     that.userList = resObj.data.searchResults;
-                   
                 });
 
                 listService.getUserTypes(function(resp) {
@@ -48,23 +53,28 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 });               
             };
 
+            this.pageChanged = function(currentPage){
+                defSearchObj.page = currentPage;
+                this.render();
+            }
+
             this.render();
 
-            this.search = function() {
-                if (typeof this.searchQ == "undefined" || this.searchQ == "") return;
-                this.selectedGender = this.selectedUserTypes = false;
-                this.minAge = this.maxAge = "";
+            // this.search = function() {
+            //     if (typeof this.searchQ == "undefined" || this.searchQ == "") return;
+            //     this.selectedGender = this.selectedUserTypes = false;
+            //     this.minAge = this.maxAge = "";
 
-                listService.getUserList({
-                    q: this.searchQ,
-                    page: 1,
-                    userType: "2,3,4",
-                    limit: 50
-                }, function(resObj) {
-                    that.userList = resObj.data.searchResults;
+            //     listService.getUserList({
+            //         q: this.searchQ,
+            //         page: 1,
+            //         userType: "2,3,4",
+            //         limit: 50
+            //     }, function(resObj) {
+            //         that.userList = resObj.data.searchResults;
 
-                });
-            };
+            //     });
+            // };
 
 
 
@@ -135,50 +145,31 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
             this.filterSearch = function() {
-
-                // if(typeof this.searchQ == "undefined" || this.searchQ == "") return;
-
-                console.log("add loader");
-
                 var filterObj = {
-                    q: this.searchQ,
-                    page: 1,
-                    limit: 100
+                    minAge : "",
+                    maxAge : ""
                 };
+                filterObj = defSearchObj;
 
-                (this.minAge !== "") ? filterObj.minAge = this.minAge: false;
-                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge: false;
+                filterObj.q = this.searchQ;
 
-
-                console.log(this.selectedUserTypes);
+                (this.minAge !== "") ? filterObj.minAge = this.minAge: delete filterObj.minAge;
+                (this.maxAge !== "") ? filterObj.maxAge = this.maxAge: delete filterObj.maxAge;
 
                 if (typeof this.selectedUserTypes !== undefined) {
                     var str = this.getSelectedFromObject(this.selectedUserTypes).toString();
-
-                    console.log(str);
-
                     (str) ? filterObj.userType = str: false;
                 }
 
-
                 if (typeof this.selectedGender !== undefined) {
-
-                    console.log(this.selectedGender);
-
                     var str = this.getSelectedFromObject(this.selectedGender).toString();
                     (str) ? filterObj.gender = str: "";
                 }
 
-                console.log(filterObj);
-
-
                 listService.getUserList(filterObj, function(resObj) {
-
-                    console.log(resObj);
-
+                    $scope.itemsperPage = 4;
+                    $scope.totalItems = resObj.data.pageInfo.totalNoOfRecords;
                     self.userList = resObj.data.searchResults;
-                    console.log(resObj);
-
                     self.filteredWith();
                     console.log("remove Loader");
                 });
@@ -189,7 +180,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
             this.resetUserFilterSearch = function(e,userTypeScope){                            
                 if(!e.currentTarget.checked){
                     self.selectedUserTypes[userTypeScope.appRoleId] = false;
-                    self.filterSearch();
+                    // self.filterSearch();
                 }                  
             }
 
@@ -306,9 +297,14 @@ define(['controllers/controllerModule'], function(controllerModule) {
 
 
             this.resetSerach = function() {
+                this.searchQ = "";
                 this.selectedUserTypes = [];
                 this.selectedGender = [];
                 this.selectedFilter = [];
+                defSearchObj.userType = "2,3,4";
+                defSearchObj.q = "";
+                defSearchObj.page = 1;
+                this.render();
             }
 
 
