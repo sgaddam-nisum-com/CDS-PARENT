@@ -180,7 +180,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
             this.resetUserFilterSearch = function(e,userTypeScope){                            
                 if(!e.currentTarget.checked){
                     self.selectedUserTypes[userTypeScope.appRoleId] = false;
-                    // self.filterSearch();
+                    self.filterSearch();
                 }                  
             }
 
@@ -238,7 +238,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 selectedUserFilter = selectedUserFilter.map(function(user) {
 
                     return {
-                        "filterName": user.appRoleName+"1",
+                        "filterName": user.appRoleName,
                         "filterObj": function() {
 
                             self.selectedUserTypes[user.appRoleId] = false;
