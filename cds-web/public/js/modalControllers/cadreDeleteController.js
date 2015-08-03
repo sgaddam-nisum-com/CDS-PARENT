@@ -15,13 +15,15 @@ define(['controllers/controllerModule', "underscore"], function(controllerModule
                 userType: "2,3,4",
                 limit: 8
             };
-
-
             $scope.ok = function() {
-
                 listService.deleteCitizen(selectedUsers, function(resp) {
-                    listService.getUserList(defSearchObj, function(resObj) {
+                    listService.getUserList(defSearchObj, function(resObj) {                       
+                        for(var i=0; i<resObj.data.searchResults.length; i++){
+                            resObj.data.searchResults[i].selected = false;
+                        }
+
                         callerScope.userList = resObj.data.searchResults;
+
                     });
                     $modalInstance.close();
                 });

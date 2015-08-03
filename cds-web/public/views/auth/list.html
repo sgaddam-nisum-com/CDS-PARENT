@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="status status-tab">
-                    <input type="checkbox" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
+                    <input type="checkbox" ng-model="user.selected" ng-click="listCtrl.enableDisableOption(user.citizenId)" />
                     <span class="right status-labels">
             <label class="{{role | lowercase}}" ng-repeat="role in user.roles track by $index"></label>
           </span>

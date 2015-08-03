@@ -14,7 +14,9 @@ define(['controllers/controllerModule'], function(controllerModule) {
             this.selected = {};
             var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
-            var selectedUsers = [];
+            var selectedUsers;
+
+            self.selectedUsers = selectedUsers = [];
 
             var that = this;
 
