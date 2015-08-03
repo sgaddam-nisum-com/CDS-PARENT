@@ -13,7 +13,7 @@ define(['controllers/controllerModule', "underscore"], function(controllerModule
             var defSearchObj = {
                 q: "",
                 userType: "2,3,4",
-                limit: 8
+                limit: 4
             };
             $scope.ok = function() {
                 listService.deleteCitizen(selectedUsers, function(resp) {

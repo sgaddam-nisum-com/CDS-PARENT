@@ -86,6 +86,14 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     cadreDeleteOverlayModal = appModalService.init("cadreDeleteOverlay.html", "cadreDeleteController", self, {
                         class: "cadre-delete-overlay"
                     })();
+
+                    cadreDeleteOverlayModal.result.then(function() {
+                        defSearchObj.page = 1;
+                        self.render();
+                    }, function() {
+                        console.log('Something wrong!');
+                    });
+
                 } else {
 
 
@@ -133,7 +141,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                     cdsSession.currentUserId = selectedUsers[0];
                     $state.go('root.profile.editprofile.personal');
                 } else {
-                    console.log("please select only one user");
+                    
                 }
             }
 
