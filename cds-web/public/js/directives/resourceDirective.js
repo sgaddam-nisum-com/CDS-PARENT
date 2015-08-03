@@ -15,18 +15,15 @@ define(['directives/directiveModule'], function(directiveModule) {
 
                     function availableSuccessCb(resp, userAvailableMsg, userNotAvailableMsg, inputName) {
                         $(self).next(".loader-container").remove();
-                        if (inputName == "email") {
-                            userNotAvailableMsg = resp.data.message;
-                        }
                         if (resp.status == "success") {
                             if (resp.data.status) {
-                                if (resp.data.message != "Email id is available for registration.") {
+                                if (resp.data.valid == false) {
                                     $(self).closest(".row").addClass("error-field");
-                                    $(self).after("<span class='status-message error-state'>" + userNotAvailableMsg + "</span>");
+                                    $(self).after("<span class='status-message error-state'>" + resp.data.message + "</span>");
                                     setValidity(inputName, false);
                                 } else {
                                     $(self).closest(".row").removeClass("error-field");
-                                    $(self).after("<span class='status-message'>" + userNotAvailableMsg + "</span>");
+                                    $(self).after("<span class='status-message'>" + resp.data.message + "</span>");
                                     setValidity(inputName, true);
                                 }
                             } else {
@@ -92,20 +89,20 @@ define(['directives/directiveModule'], function(directiveModule) {
                                     userNotAvailableMsg;
 
                                 if (inputName == "userName") {
-                                    // if (curElemValue.length < 6) {
-                                    //     $(elem).closest(".row").addClass("error-field");
-                                    //     $(elem).closest(".row").find(".loader-container").remove();
-                                    //     $(elem).closest(".row").find(".error-content").html("Username should be minimum of 6 characters");
-                                    //     return;
-                                    // }
-                                    // if (curElemValue.length > 16) {
-                                    //     $(elem).closest(".row").addClass("error-field");
-                                    //     $(elem).closest(".row").find(".loader-container").remove();
-                                    //     $(elem).closest(".row").find(".error-content").html("Username should be less than 16 characters");
-                                    //     return;
-                                    // }
-                                    userAvailableMsg = "Username is available.";
-                                    userNotAvailableMsg = "Username not available";
+                                    if (curElemValue.length < 6) {
+                                        $(elem).closest(".row").addClass("error-field");
+                                        $(elem).closest(".row").find(".loader-container").remove();
+                                        $(elem).closest(".row").find(".error-content").html("Username should be minimum of 6 characters");
+                                        return;
+                                    }
+                                    if (curElemValue.length > 16) {
+                                        $(elem).closest(".row").addClass("error-field");
+                                        $(elem).closest(".row").find(".loader-container").remove();
+                                        $(elem).closest(".row").find(".error-content").html("Username should be less than 16 characters");
+                                        return;
+                                    }
+                                    // userAvailableMsg = "Username is available.";
+                                    // userNotAvailableMsg = "Username not available";
                                     registerService.checkUserNameExists(userInput, availableSuccessCb, userAvailableMsg, userNotAvailableMsg);
                                 } else if (inputName == "mobileNumber") {
                                     // var reg = /^[0-9]{1,10}$/;
@@ -122,8 +119,8 @@ define(['directives/directiveModule'], function(directiveModule) {
                                     //     $(elem).closest(".row").find(".error-content").html("Mobile number should be 10 digits.");
                                     //     return;
                                     // }
-                                    userAvailableMsg = "Mobile Number is available for registration.";
-                                    userNotAvailableMsg = "Mobile Number is not available for registration.";
+                                    // userAvailableMsg = "Mobile Number is available for registration.";
+                                    // userNotAvailableMsg = "Mobile Number is not available for registration.";
                                     registerService.checkMobileNoExists(userInput, availableSuccessCb, userAvailableMsg, userNotAvailableMsg);
                                 } else if (inputName == "email") {
                                     // var reg = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
@@ -133,8 +130,8 @@ define(['directives/directiveModule'], function(directiveModule) {
                                     //     $(elem).closest(".row").find(".error-content").html("Please enter valid email id.");
                                     //     return;
                                     // }
-                                    userAvailableMsg = "Email is available for registration.";
-                                    userNotAvailableMsg = "Email is not available for registration.";
+                                    // userAvailableMsg = "Email is available for registration.";
+                                    // userNotAvailableMsg = "Email is not available for registration.";
                                     registerService.checkEmailExists(userInput, availableSuccessCb, userAvailableMsg, userNotAvailableMsg);
                                 }
 
