@@ -11,6 +11,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                 this.showImage = true;
 
                 var self = this,
+                    FormStatus,
                     dataJson = {};
 
 

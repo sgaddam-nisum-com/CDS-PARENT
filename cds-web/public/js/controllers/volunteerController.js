@@ -1,9 +1,9 @@
 define(['controllers/controllerModule', 'formValidation', 'validators/volunteerValidators', 'errorMessages/volunteerErrors', 'jquery', "messageHandler", 'notifications'],
     function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler, notifications) {
 
-        controllerModule.controller('volunteerController', ['$state', '$http', "appUrlService", '$scope', 'registerService', "cdsService", "$sessionStorage",
+        controllerModule.controller('volunteerController', ['$state', '$http', "appUrlService", '$scope', 'registerService', "cdsService", "$sessionStorage", "appModalService", "$rootScope",
 
-            function($state, $http, appUrls, $scope, registerService, cdsService, $sessionStorage) {
+            function($state, $http, appUrls, $scope, registerService, cdsService, $sessionStorage, appModalService, $rootScope) {
 
 
                 var self = this,
@@ -11,6 +11,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                     cdsSession,
                     config,
                     formStack,
+                    FormStatus,
                     role;
 
                 self.isNotValidForm = false;
@@ -50,9 +51,23 @@ define(['controllers/controllerModule', 'formValidation', 'validators/volunteerV
                     e.preventDefault();
                     $state.go("root.profile.editprofile.address");
                 }
-
-
-
+                self.watchForm = function() {
+                    $scope.$watch('self.user', function(newVal) {
+                        FormStatus = $scope.volunteer.$dirty;
+                    });
+                }
+                $scope.$on('$stateChangeStart', function(e, next, current) {
+                    if (FormStatus) {
+                        e.preventDefault();
+                        saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
+                            class: "cadre-overlay"
+                        })();
+                        saveModal.result.then(function() {
+                            FormStatus = false;
+                            $state.go(next.name);
+                        });
+                    }
+                });
                 this.save = function() {
 
 

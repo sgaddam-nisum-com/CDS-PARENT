@@ -6,7 +6,7 @@
                     <label for="right-label" class="right inline">Voter Card ID#:</label>
                 </div>
                 <div class="col-md-9  left">
-                    <input type="text" id="voterId" class="form-control input required" name="voterCardId" data-val="voterId" ng-model="voterCtrl.user.voterCardId">
+                    <input type="text" id="voterId" class="form-control input required" name="voterCardId" data-val="voterId" ng-model="voterCtrl.user.voterCardId" ng-blur="voterCtrl.watchForm()">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
@@ -17,7 +17,7 @@
                     <label for="right-label" class="right inline">Address Line1:</label>
                 </div>
                 <div class="col-md-9  left">
-                    <input type="text" id="addressLine" class="form-control input required" name="addressLine" data-val="addressLine1" ng-model="voterCtrl.user.addressLine1">
+                    <input type="text" id="addressLine" class="form-control input required" name="addressLine" data-val="addressLine1" ng-model="voterCtrl.user.addressLine1" ng-blur="voterCtrl.watchForm()">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
@@ -28,7 +28,7 @@
                     <label for="right-label" class="right inline">Address Line2:</label>
                 </div>
                 <div class="col-md-9  left">
-                    <input type="text" id="addressLine" class="form-control input" name="addressLine" data-val="addressLine2" ng-model="voterCtrl.user.addressLine2">
+                    <input type="text" id="addressLine" class="form-control input" name="addressLine" data-val="addressLine2" ng-model="voterCtrl.user.addressLine2" ng-blur="voterCtrl.watchForm()">
                     <div class="error-class">
                         <div class="error-content"></div>
                     </div>
@@ -42,7 +42,7 @@
                     <input type="hidden" ng-model="voterCtrl.user.treeDataId" />
                     <!-- autocomplete-voter-directive -->
                     <div id="autoCompleteContainer" >
-                        <input type="text" id="pincode" class="form-control input required" name="pincode" data-val="pincode" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst">
+                        <input type="text" id="pincode" class="form-control input required" name="pincode" data-val="pincode" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst" ng-blur="voterCtrl.watchForm()">
                         <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="voterCtrl.searchVoter(voterCtrl.user.searchconst)">
                     </div>
                     <div class="error-class">

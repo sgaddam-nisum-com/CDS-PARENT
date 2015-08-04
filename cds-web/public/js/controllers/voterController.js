@@ -6,6 +6,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
             function($rootScope, $state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage, appModalService) {
 
                 var self = this,
+                    FormStatus,
                     dataJson = {};
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
@@ -47,7 +48,23 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                     runCallBack: false
                 };
                 var formStack = formValidation.init("#voterRegistrationForm", validationMap, errorJson, config);
-
+                self.watchForm = function() {
+                    $scope.$watch('self.user', function(newVal) {
+                        FormStatus = $scope.voter.$dirty;
+                    });
+                }
+                $scope.$on('$stateChangeStart', function(e, next, current) {
+                    if (FormStatus) {
+                        e.preventDefault();
+                        saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
+                            class: "cadre-overlay"
+                        })();
+                        saveModal.result.then(function() {
+                            FormStatus = false;
+                            $state.go(next.name);
+                        });
+                    }
+                });
                 this.save = function() {
                     console.log($scope.treeDataId);
                     if (formStack.isValid) {

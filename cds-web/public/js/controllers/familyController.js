@@ -7,6 +7,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
             function($rootScope, $state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage, appModalService) {
 
                 var self = this,
+                    FormStatus,
                     dataJson = {};
                 self.isNotValidForm = false;
 
@@ -31,8 +32,23 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                 });
 
                 var formStack = formValidation.init("#familyRegistrationForm", validationMap, errorJson, config);
-
-
+                self.watchForm = function() {
+                    $scope.$watch('self.user', function(newVal) {
+                        FormStatus = $scope.family.$dirty;
+                    });
+                }
+                $scope.$on('$stateChangeStart', function(e, next, current) {
+                    if (FormStatus) {
+                        e.preventDefault();
+                        saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
+                            class: "cadre-overlay"
+                        })();
+                        saveModal.result.then(function() {
+                            FormStatus = false;
+                            $state.go(next.name);
+                        });
+                    }
+                });
                 this.backview = function(e) {
                     e.preventDefault();
                     $state.go("root.profile.editprofile.volunteer");

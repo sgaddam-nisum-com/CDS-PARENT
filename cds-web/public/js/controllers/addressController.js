@@ -4,6 +4,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
         controllerModule.controller('addressController', ['$state', '$http', "registerService", "appUrlService", "cdsService", "$scope", "$sessionStorage", "$rootScope", "appModalService",
             function($state, $http, registerService, appUrls, cdsService, $scope, $sessionStorage, $rootScope, appModalService) {
                 var self = this,
+                    FormStatus,
                     dataJson = {};
                 self.user = {};
                 self.user.postalAddressId = "";
@@ -26,6 +27,23 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                         self.hideAddrFields = false;
                     });
                 }
+                self.watchForm = function() {
+                    $scope.$watch('self.user', function(newVal) {
+                        FormStatus = $scope.address.$dirty;
+                    });
+                }
+                $scope.$on('$stateChangeStart', function(e, next, current) {
+                    if (FormStatus) {
+                        e.preventDefault();
+                        saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
+                            class: "cadre-overlay"
+                        })();
+                        saveModal.result.then(function() {
+                            FormStatus = false;
+                            $state.go(next.name);
+                        });
+                    }
+                });
 
                 function handleUserEdit(userId) {
                     self.hideAddrFields = !self.user.postalAddressId;
@@ -47,14 +65,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                             self.user.postalAddressId = resp.data[0].postalAddress.postalAddressId;
 
                             self.hideAddrFields = false;
-                            for(var i=0; i<dataJson.length; i++){
+                            for (var i = 0; i < dataJson.length; i++) {
                                 if (!dataJson[i].nriAddress) {
                                     self.user.iaddressarray.push(dataJson[i]);
                                 } else {
                                     self.user.naddressarray.push(dataJson[i]);
                                 }
-                            }                              
-                            
+                            }
+
                             self.addressObj = self.user.iaddressarray[0];
                         }
                     });
@@ -71,24 +89,24 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                 var formStack = formValidation.init("#addressRegistrationForm", validationMap, errorJson, config);
 
                 this.save = function() {
-                     
-                     messageHandler.clearMessageStatus();
+
+                    messageHandler.clearMessageStatus();
 
                     if (formStack.isValid) {
-                            if(!self.user.postalAddressId){
-                                messageHandler.showErrorStatus("Please assign postal address by searching with pincode", ".status-message-wrapper"); 
-                                return;
-                            } 
+                        if (!self.user.postalAddressId) {
+                            messageHandler.showErrorStatus("Please assign postal address by searching with pincode", ".status-message-wrapper");
+                            return;
+                        }
 
                         var requestObj = [];
-                        requestObj[0] = self.addressObj ||{};
+                        requestObj[0] = self.addressObj || {};
                         requestObj[0].postalAddress = {};
                         requestObj[0].postalAddress.postalAddressId = self.user.postalAddressId;
                         requestObj[0].nriAddress = false;
                         var addressReq = {};
                         addressReq.data = requestObj;
                         addressReq.userId = cdsSession.currentUserId;
-                    
+
 
                         $http({
                             method: "PUT",
@@ -117,9 +135,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                                 messageHandler.clearMessageStatus();
                             }, 3000);
                         });
-                       
+
                     } else {
-                       
+
                     }
                 }
 

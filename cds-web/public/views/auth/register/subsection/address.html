@@ -12,7 +12,7 @@
                             <div class="col-md-9  left">
                                 <!-- autocomplete-address-directive is removed from below div id="autoCompleteContainer -->
                                 <div id="autoCompleteContainer">
-                                    <input type="text" id="postalAddress" class="form-control input required" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst">
+                                    <input type="text" id="postalAddress" class="form-control input required" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst" ng-blur="addressCtrl.watchForm()">
                                     <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="addressCtrl.searchAddress(addressCtrl.user.searchConst)">
                                 </div>
                                 <div class="error-class">
@@ -25,7 +25,7 @@
                                 <label for="right-label" class="right inline">Address Line1:</label>
                             </div>
                             <div class="col-md-9  left">
-                                <input type="text" id="addressLine1" class="form-control input required" name="addressLine1" data-val="addressLine1" ng-model="addressCtrl.addressObj.addressLine1">
+                                <input type="text" id="addressLine1" class="form-control input required" name="addressLine1" data-val="addressLine1" ng-model="addressCtrl.addressObj.addressLine1" ng-blur="addressCtrl.watchForm()">
                                 <div class="error-class">
                                     <div class="error-content"></div>
                                 </div>
@@ -36,7 +36,7 @@
                                 <label for="right-label" class="right inline">Address Line2:</label>
                             </div>
                             <div class="col-md-9  left">
-                                <input type="text" id="addressLine2" class="form-control input" name="addressLine2" ng-model="addressCtrl.addressObj.addressLine2">
+                                <input type="text" id="addressLine2" class="form-control input" name="addressLine2" ng-model="addressCtrl.addressObj.addressLine2" ng-blur="addressCtrl.watchForm()">
                                 <div class="error-class">
                                     <div class="error-content"></div>
                                 </div>

@@ -2,10 +2,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/workValida
 
     function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler, notifications) {
 
-        controllerModule.controller('workController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage",
-            function($state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage) {
+        controllerModule.controller('workController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$sessionStorage", "appModalService", "$rootScope",
+            function($state, $http, appUrls, cdsService, $scope, registerService, $sessionStorage, appModalService, $rootScope) {
 
                 var self = this,
+                    FormStatus,
                     dataJson = {};
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
@@ -33,6 +34,25 @@ define(['controllers/controllerModule', 'formValidation', 'validators/workValida
                 registerService.getSkillGapsOptions(function(resp) {
                     $scope.skillGapsOptions = resp.data;
                 });
+                self.watchForm = function() {
+                    $scope.$watch('self.user', function(newVal) {
+                        FormStatus = $scope.work.$dirty;
+                        console.log($scope.work.$dirty);
+
+                    });
+                }
+                $scope.$on('$stateChangeStart', function(e, next, current) {
+                    if (FormStatus) {
+                        e.preventDefault();
+                        saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
+                            class: "cadre-overlay"
+                        })();
+                        saveModal.result.then(function() {
+                            FormStatus = false;
+                            $state.go(next.name);
+                        });
+                    }
+                });
 
                 $scope.othershow = true;
                 this.others = function(othersvalue) {
@@ -45,10 +65,10 @@ define(['controllers/controllerModule', 'formValidation', 'validators/workValida
                     }
                 }
 
-                /*		registerService.getAreaOfImprovements(function(resp){				
-                			$scope.areaOfImprovements = resp.data;			
-                		});
-                		*/
+                /*      registerService.getAreaOfImprovements(function(resp){               
+                            $scope.areaOfImprovements = resp.data;          
+                        });
+                        */
 
                 this.save = function() {
 
