@@ -2,8 +2,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
 
     function(controllerModule, formValidation, validationMap, errorJson, $, messageHandler, notifications) {
 
-        controllerModule.controller('personalController', ['$state', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$stateParams", "$sessionStorage",
-            function($state, $http, appUrls, cdsService, $scope, registerService, $stateParams, $sessionStorage) {
+        controllerModule.controller('personalController', ['$state', '$location', '$http', "appUrlService", "cdsService", '$scope', 'registerService', "$stateParams", "$sessionStorage", "appModalService", "$rootScope",
+            function($state, $location, $http, appUrls, cdsService, $scope, registerService, $stateParams, $sessionStorage, appModalService, $rootScope) {
 
                 var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
@@ -26,10 +26,32 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     $scope.educationOptions = resp.data;
                 });
 
-
                 var self = this;
+                
+                self.watchForm = function() {
+                    $scope.$watch('self.user', function(newVal) {
+                        FormStatus = $scope.personal.$dirty;
+                        console.log($scope.personal.$dirty);
 
-
+                    });
+                }
+                $scope.$on('$stateChangeStart', function(e, next, current) {
+                    if (FormStatus) {
+                        e.preventDefault();
+                        saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
+                            class: "cadre-overlay"
+                        })();
+                        saveModal.result.then(function() {
+                            FormStatus = false;
+                            $state.go(next.name);
+                        });
+                    }
+                });
+                // $scope.$on('$locationChangeStart', function(event, next, current) {
+                //     console.log(event);
+                //     console.log(next);
+                //     console.log(current);
+                // });
                 var config = {
                     initiate: true,
                     blurValidation: false,
@@ -114,10 +136,6 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                             }, 3000);
                         });
 
-
-
-
-
                         self.isNotValidForm = false;
                     } else {
 
@@ -148,6 +166,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                         cdsSession.isMarried = cdsService.isMarried = self.user.maritalStatus;
                         cdsSession.gender = dataJson.gender;
                         cdsSession.age = self.getAge(self.user.dateOfBirth);
+
                     });
                 }
 
