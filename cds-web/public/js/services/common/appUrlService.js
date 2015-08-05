@@ -29,7 +29,7 @@ define(['services/serviceModule'], function(serviceModule) {
 			updateProfileImage : "/user/updateProfileImage",
 			
 
-
+            forgotpwd: "/user/forgotpwd",
 
             quickReg: "/citizen/quickregistration",
 

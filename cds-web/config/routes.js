@@ -38,6 +38,7 @@ exports.init = function(app, passport, auth) {
 
     app.get('/auth/user/view', userController.viewUser, auth.filterResponse);
     app.get('/auth/user/resetpassword', userController.resetPassword, auth.filterResponse);
+    app.get('/auth/user/forgotpwd', userController.forgotPassword);
 
     app.get('/auth/user/viewuserinfo', userController.viewUserInfo, auth.filterResponse);
 
@@ -215,6 +216,7 @@ exports.init = function(app, passport, auth) {
     // Home route
     app.get('/', index.render);
     app.get('/register', auth.user.hasOpenSession,index.register);
+    app.get('/forgotpwd', auth.user.hasOpenSession,index.forgotpwd);
     app.get('/calendar', auth.user.hasAuthorizationToPage, index.calendar);
     app.get('/inbox', auth.user.hasAuthorizationToPage, index.inbox);
     app.get('/tasks', auth.user.hasAuthorizationToPage, index.tasks);

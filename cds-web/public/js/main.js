@@ -15,6 +15,13 @@ var routes = {
             "moduleName": "CDSSIGNIN"
         }
     },
+    "/forgotpwd": {
+        module: {
+            "app": "appForgotpwd",
+            "config": "configForgotpwd",
+            "moduleName": "CDSFORGOTPWD"
+        }
+    },
     "/register": {
         module: {
             "app": "appRegister",

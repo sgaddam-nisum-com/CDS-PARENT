@@ -8,6 +8,9 @@ require.config({
         "appSignin": "modules/signin/app",
         "configSignin": "modules/signin/config",
 
+        "appForgotpwd": "modules/forgotpwd/app",
+        "configForgotpwd": "modules/forgotpwd/config",
+
         "appRegister": "modules/register/app",
         "configRegister": "modules/register/config",
 

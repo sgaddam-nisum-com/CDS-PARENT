@@ -79,6 +79,18 @@ exports.resetPassword = function(req, res, next) {
     });
 };
 
+exports.forgotPassword = function(req, res, next) {
+    log.debug("forgotPassword : logged user - " + req.user);
+    var username = req.query.userName;
+    var orgId = req.query.orgId;
+
+    userService.forgotPassword({
+        username: username
+    }, orgId, function(resp) {
+        res.json(resp);
+    });
+};
+
 exports.viewUser = function(req, res, next) {
     log.debug("viewUser : logged user - " + req.user.data.user.appUserId);
     var userId = req.query.userId;

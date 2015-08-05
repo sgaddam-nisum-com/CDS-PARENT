@@ -40,6 +40,10 @@ module.exports = {
             path: "user/resetpassword/%s/",
             method: "GET"
         },
+        forgotPass: {
+            path: "user/forgotPass/%s/",
+            method: "GET"
+        },
         getPrivileges: {
             path: "lookup/privileges",
             method: "GET"

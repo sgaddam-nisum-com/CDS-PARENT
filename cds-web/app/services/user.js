@@ -90,6 +90,26 @@ exports.resetPassword = function(params, token, callback) {
     });
 };
 
+exports.forgotPassword = function(params, token, callback) {
+    log.debug("forgotPassword : " + (JSON.stringify(params)));
+    var headers = header;
+    if (orgId)
+        headers[cdsConfig.orgId] = orgId;
+
+    var path = requireUtil.format(restUrls.forgotPass.path, params.userName);
+    var url = {
+        path: path,
+        method: restUrls.forgotPass.method
+    };
+
+    delete params.userName; 
+
+    restService.builbArgs(url, params, headers, function(args) {
+        restService.makecall(args, callback);
+    });
+};
+
+
 exports.isUserExist = function(params, orgId, callback) {
     log.debug("isUserExist : " + (JSON.stringify(params)));
     var headers = header;
