@@ -53,7 +53,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                     });
                 }
                 $scope.$on('$stateChangeStart', function(e, next, current) {
-                    if (FormStatus) {
+                    if (FormStatus == true) {
                         e.preventDefault();
                         saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
                             class: "cadre-overlay"
@@ -78,6 +78,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                     messageHandler.showInfoStatus(notifications.cadre_successfulSave, ".status-message-wrapper");
                                     setTimeout(function() {
                                         messageHandler.clearMessageStatus();
+                                        FormStatus = false;
                                         $state.go("root.profileLookup", {
                                             citizenId: self.user.userId
                                         });
@@ -86,6 +87,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/cadreValid
                                     messageHandler.showInfoStatus(notifications.cadre_successfulSave, ".status-message-wrapper");
                                     setTimeout(function() {
                                         messageHandler.clearMessageStatus();
+                                        FormStatus = false;
                                         $state.go('root.profile');
                                     }, 3000);
                                 }

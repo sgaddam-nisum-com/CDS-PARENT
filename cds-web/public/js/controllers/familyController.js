@@ -38,7 +38,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                     });
                 }
                 $scope.$on('$stateChangeStart', function(e, next, current) {
-                    if (FormStatus) {
+                    if (FormStatus == true) {
                         e.preventDefault();
                         saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
                             class: "cadre-overlay"
@@ -137,6 +137,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/familyVali
                                 messageHandler.showInfoStatus(notifications.family_successfulSave, ".status-message-wrapper");
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
+                                    FormStatus = false;
                                     $state.go('root.profile.editprofile.cadre');
                                 }, 3000);
 

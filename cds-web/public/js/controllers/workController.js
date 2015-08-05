@@ -42,7 +42,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/workValida
                     });
                 }
                 $scope.$on('$stateChangeStart', function(e, next, current) {
-                    if (FormStatus) {
+                    if (FormStatus == true) {
                         e.preventDefault();
                         saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
                             class: "cadre-overlay"
@@ -88,6 +88,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/workValida
                                 messageHandler.showInfoStatus(notifications.work_successfulSave, ".status-message-wrapper");
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
+                                    FormStatus = false;
                                     $state.go('root.profile.editprofile.voter');
                                 }, 3000);
 

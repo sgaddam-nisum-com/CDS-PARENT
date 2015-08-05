@@ -28,7 +28,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                 });
 
                 var self = this;
-                
+
                 self.watchForm = function() {
                     $scope.$watch('self.user', function(newVal) {
                         FormStatus = $scope.personal.$dirty;
@@ -37,7 +37,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                     });
                 }
                 $scope.$on('$stateChangeStart', function(e, next, current) {
-                    if (FormStatus) {
+
+                    if (FormStatus == true) {
                         e.preventDefault();
                         saveModal = appModalService.init("saveChangesTemplate.html", "saveChangesController", $rootScope, {
                             class: "cadre-overlay"
@@ -120,6 +121,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/personalVa
                                 setTimeout(function() {
                                     messageHandler.clearMessageStatus();
                                     cdsService.isMarried = self.user.maritalStatus;
+                                    FormStatus = false;
                                     $state.go('root.profile.editprofile.work');
                                 }, 3000);
 
