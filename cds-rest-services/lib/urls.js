@@ -41,7 +41,7 @@ module.exports = {
             method: "GET"
         },
         forgotPass: {
-            path: "user/forgotPass/%s/",
+            path: "user/forgotpass/%s/",
             method: "GET"
         },
         getPrivileges: {

@@ -38,7 +38,7 @@ exports.init = function(app, passport, auth) {
 
     app.get('/auth/user/view', userController.viewUser, auth.filterResponse);
     app.get('/auth/user/resetpassword', userController.resetPassword, auth.filterResponse);
-    app.get('/auth/user/forgotpwd', userController.forgotPassword);
+    app.get('/user/forgotpwd', userController.forgotPassword);
 
     app.get('/auth/user/viewuserinfo', userController.viewUserInfo, auth.filterResponse);
 

@@ -80,12 +80,12 @@ exports.resetPassword = function(req, res, next) {
 };
 
 exports.forgotPassword = function(req, res, next) {
-    log.debug("forgotPassword : logged user - " + req.user);
+    log.debug("forgotPassword : logged user - " + req.query.userName);
     var username = req.query.userName;
     var orgId = req.query.orgId;
 
     userService.forgotPassword({
-        username: username
+        userName: username
     }, orgId, function(resp) {
         res.json(resp);
     });
