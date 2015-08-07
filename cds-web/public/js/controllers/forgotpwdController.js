@@ -1,12 +1,18 @@
- define(['controllers/controllerModule', 'formValidation','validators/registrationValidators', 'errorMessages/registrationErrors','notifications'], function(controllerModule, formValidation, validationMap, errorJson, notifications) {
+ define(['controllers/controllerModule', 'formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors', 'notifications'], function(controllerModule, formValidation, validationMap, errorJson, notifications) {
 
      controllerModule.controller('forgotpwdController', ['$scope', "$http", "cdsService", "appUrlService", "roleService", "$window", "appModalService",
 
 
          function($scope, $http, cdsService, appUrlService, roleService, $window, appModalService) {
-            self = this;
-            self.userName = "";
-            self.successMsg = "";
+             self = this;
+             self.userName = "";
+             self.hidesuccessMsg = true;
+             self.hideerrorMsg = true;
+             self.hideForm = false;
+             self.tryAgain = function() {
+                 self.hideerrorMsg = true;
+                 self.hideForm = false;
+             }
 
              var config = {
                  initiate: true,
@@ -16,7 +22,7 @@
                  runCallBack: false,
              };
 
-            var formStack = formValidation.init("#forgotpwdForm", validationMap, errorJson, config);
+             var formStack = formValidation.init("#forgotpwdForm", validationMap, errorJson, config);
 
              self.save = function() {
                  $scope.$broadcast("clearServiceErrors");
@@ -25,17 +31,28 @@
                      var requestObj = {};
                      $http.get(appUrlService.forgotpwd, {
                          params: {
-                            userName: self.userName,
-                            orgId: "2"
-                        }
+                             userName: self.userName,
+                             orgId: "2"
+                         }
                      }).success(function(resp, status, headers, config) {
                          if (resp.status == "success") {
-                                self.successMsg = "success";
+                             console.log(resp);
+                             self.hideForm = true;
+                             if (resp.data.valid) {
+
+                                 self.successMsg = resp.data.message;
+                                 self.hidesuccessMsg = false;
+                             } else {
+                                 self.errorMsg = resp.data.message;
+                                 self.hideerrorMsg = false;
+                             }
+
+
                          } else {
-                            self.successMsg = "failure";
+                             self.successMsg = "failure";
                          }
                      }).error(function(data, status, headers, config) {
-                            self.successMsg = "failure";
+                         self.successMsg = "failure";
                      });
 
 
