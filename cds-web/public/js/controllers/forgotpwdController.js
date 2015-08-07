@@ -1,4 +1,4 @@
- define(['controllers/controllerModule', 'formValidation', 'validators/registrationValidators', 'errorMessages/registrationErrors', 'notifications'], function(controllerModule, formValidation, validationMap, errorJson, notifications) {
+ define(['controllers/controllerModule', 'formValidation', 'validators/forgotPasswordValidators', 'errorMessages/forgotPasswordErrors'], function(controllerModule, formValidation, validationMap, errorJson) {
 
      controllerModule.controller('forgotpwdController', ['$scope', "$http", "cdsService", "appUrlService", "roleService", "$window", "appModalService",
 
