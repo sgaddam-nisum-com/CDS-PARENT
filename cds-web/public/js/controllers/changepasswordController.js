@@ -1,9 +1,11 @@
 define(['controllers/controllerModule', 'formValidation', 'validators/changePasswordValidators', 'errorMessages/changePasswordErrors'], function(controllerModule, formValidation, validationMap, errorJson) {
 
-    controllerModule.controller('changepasswordController', ['$scope', '$state', '$http', "$sessionStorage", "appModalService", 'cdsService',
-        function($scope, $state, $http, $sessionStorage, appModalService, cdsService) {
+    controllerModule.controller('changepasswordController', ['$scope', '$state', '$http', "$sessionStorage", "appModalService", 'cdsService', 'appUrlService',
+        function($scope, $state, $http, $sessionStorage, appModalService, cdsService, appUrlService) {
 
             var self = this;
+
+
             var config = {
                 initiate: true,
                 blurValidation: false,
@@ -16,37 +18,35 @@ define(['controllers/controllerModule', 'formValidation', 'validators/changePass
 
             self.save = function() {
                 $scope.$broadcast("clearServiceErrors");
-                cdsService.getUserSession(function(resp) {
-                    console.log($sessionStorage);
-                });
+
                 if (formStack.isValid) {
                     console.log("Your password changed successfully");
-                    // var requestObj = {};
-                    // $http.put(appUrlService.changePwd, {
-                    //     params: {
-                    //         userName: self.userName,
-                    //         orgId: "2"
-                    //     }
-                    // }).success(function(resp, status, headers, config) {
-                    //     if (resp.status == "success") {
-                    //         console.log(resp);
-                    //         self.hideForm = true;
-                    //         if (resp.data.valid) {
 
-                    //             self.successMsg = resp.data.message;
-                    //             self.hidesuccessMsg = false;
-                    //         } else {
-                    //             self.errorMsg = resp.data.message;
-                    //             self.hideerrorMsg = false;
-                    //         }
+                    $http.put(appUrlService.changePwd, {
+                        params: {
+                            password: self.user.password,
+                            orgId: "2"
+                        }
+                    }).success(function(resp, status, headers, config) {
+                        if (resp.status == "success") {
+                            console.log(resp);
+                            //         self.hideForm = true;
+                            //         if (resp.data.valid) {
+
+                            //             self.successMsg = resp.data.message;
+                            //             self.hidesuccessMsg = false;
+                            //         } else {
+                            //             self.errorMsg = resp.data.message;
+                            //             self.hideerrorMsg = false;
+                            //         }
 
 
-                    //     } else {
-                    //         self.successMsg = "failure";
-                    //     }
-                    // }).error(function(data, status, headers, config) {
-                    //     self.successMsg = "failure";
-                    // });
+                        } else {
+                            self.successMsg = "failure";
+                        }
+                    }).error(function(data, status, headers, config) {
+                        self.successMsg = "failure";
+                    });
 
 
                 } else {

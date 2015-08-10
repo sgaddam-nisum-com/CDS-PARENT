@@ -77,10 +77,10 @@ exports.resetPassword = function(params, token, callback) {
     if (token)
         headers[cdsConfig.token] = token;
 
-    var path = requireUtil.format(restUrls.user.resetPassord.path, params.userId);
+    var path = requireUtil.format(restUrls.user.resetPassword.path, params.userId);
     var url = {
         path: path,
-        method: restUrls.user.resetPassord.method
+        method: restUrls.user.resetPassword.method
     };
 
     delete params.userId;
