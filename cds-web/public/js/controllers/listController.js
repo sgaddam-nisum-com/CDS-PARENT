@@ -47,6 +47,7 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 listService.getUserList(defSearchObj, function(resObj) {
                     $scope.itemsperPage = 4;
                     $scope.totalItems = resObj.data.pageInfo.totalNoOfRecords;
+                    self.currentPage = resObj.data.pageInfo.currentPage;
                     that.userList = resObj.data.searchResults;
                 });
 
@@ -162,23 +163,26 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 filterObj = defSearchObj;
 
                 filterObj.q = this.searchQ;
+                filterObj.page = 1;
 
                 (this.minAge !== "") ? filterObj.minAge = this.minAge: delete filterObj.minAge;
                 (this.maxAge !== "") ? filterObj.maxAge = this.maxAge: delete filterObj.maxAge;
 
                 if (typeof this.selectedUserTypes !== undefined) {
                     var str = this.getSelectedFromObject(this.selectedUserTypes).toString();
-                    (str) ? filterObj.userType = str: false;
+                    console.log(str);
+                    (str !== "") ? filterObj.userType = str: delete filterObj.userType;
                 }
 
                 if (typeof this.selectedGender !== undefined) {
                     var str = this.getSelectedFromObject(this.selectedGender).toString();
-                    (str) ? filterObj.gender = str: "";
+                    (str) ? filterObj.gender = str: delete filterObj.gender;
                 }
 
                 listService.getUserList(filterObj, function(resObj) {
                     $scope.itemsperPage = 4;
                     $scope.totalItems = resObj.data.pageInfo.totalNoOfRecords;
+                    self.currentPage = resObj.data.pageInfo.currentPage;
                     self.userList = resObj.data.searchResults;
                     self.filteredWith();
                     console.log("remove Loader");
@@ -314,6 +318,8 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 defSearchObj.userType = "2,3,4";
                 defSearchObj.q = "";
                 defSearchObj.page = 1;
+                (defSearchObj.maxAge) ? delete defSearchObj.maxAge : "";
+                (defSearchObj.minAge) ? delete defSearchObj.minAge : "";
                 this.render();
             }
 
