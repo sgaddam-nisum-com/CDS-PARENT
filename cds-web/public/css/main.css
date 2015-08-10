@@ -3440,6 +3440,12 @@ div.navigation a.next {
   text-decoration: none;
 }
 
+/* To disable textarea resize*/
+/* line 241, ../scss/components/_task.scss */
+textarea {
+  resize: vertical;
+}
+
 /* line 4, ../scss/components/_view-tasks.scss */
 .task-details ul li {
   font-size: 13px;
