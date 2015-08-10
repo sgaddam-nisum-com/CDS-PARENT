@@ -236,3 +236,8 @@ margin: 0 auto;
 	}
 
 }
+
+/* To disable textarea resize*/
+textarea {
+    resize: vertical;
+}
