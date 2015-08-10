@@ -111,8 +111,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
             this.setPagenationItems = function( resp ){
                 $scope.itemsperPage = 3;
                 $scope.totalItems = resp.data.pageInfo.totalNoOfRecords;
-                $scope.data = {};
-                $scope.data.currentPage = resp.data.pageInfo.currentPage;
+                self.currentPage = resp.data.pageInfo.currentPage;
             }
 
             this.taskSearch = function(taskObj, filterObj) {
