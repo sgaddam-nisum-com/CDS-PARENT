@@ -36,9 +36,9 @@ module.exports = {
             path: "user/%s/requestDetails",
             method: "GET"
         },
-        resetPassord: {
+        resetPassword: {
             path: "user/resetpassword/%s/",
-            method: "GET"
+            method: "PUT"
         },
         forgotPass: {
             path: "user/forgotpass/%s/",
@@ -52,7 +52,7 @@ module.exports = {
             path: "userinfo/%s/userinformation",
             method: "GET"
         },
-		updateProfileImage : {
+        updateProfileImage: {
             path: "user/%s/uploadphoto",
             method: "PUT"
         }

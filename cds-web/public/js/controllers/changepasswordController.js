@@ -16,11 +16,13 @@ define(['controllers/controllerModule', 'formValidation', 'validators/changePass
 
             self.save = function() {
                 $scope.$broadcast("clearServiceErrors");
-
+                cdsService.getUserSession(function(resp) {
+                    console.log($sessionStorage);
+                });
                 if (formStack.isValid) {
                     console.log("Your password changed successfully");
                     // var requestObj = {};
-                    // $http.get(appUrlService.forgotpwd, {
+                    // $http.put(appUrlService.changePwd, {
                     //     params: {
                     //         userName: self.userName,
                     //         orgId: "2"

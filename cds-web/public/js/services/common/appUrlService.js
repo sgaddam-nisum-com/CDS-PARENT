@@ -26,9 +26,9 @@ define(['services/serviceModule'], function(serviceModule) {
             updateVolunteer: "/auth/volunteer/edit",
             updateFamily: "/auth/citizen/editfamily",
             updateCadre: "/auth/cadre/edit",
-			updateProfileImage : "/user/updateProfileImage",
-			
+            updateProfileImage: "/user/updateProfileImage",
 
+            changePwd: "/auth/user/resetpassword",
             forgotpwd: "/user/forgotpwd",
 
             quickReg: "/citizen/quickregistration",
