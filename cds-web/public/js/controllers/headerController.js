@@ -1,58 +1,62 @@
-define(['controllers/controllerModule'], function (controllerModule) {
+define(['controllers/controllerModule'], function(controllerModule) {
 
-	 controllerModule.controller('headerController', ["$state",'$rootScope','$http','$location','cdsService',"roleService","$sessionStorage", 
-	 	function($state,$rootScope,$http,$location, cdsService,roleService, $sessionStorage){
+    controllerModule.controller('headerController', ["$state", '$rootScope', '$http', '$location', 'cdsService', "roleService", "$sessionStorage",
+        function($state, $rootScope, $http, $location, cdsService, roleService, $sessionStorage) {
 
-		var self = this;
-		self.showHeader = false;
-		
-		var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
+            var self = this;
+            self.showHeader = false;
 
-		cdsService.getUserSession(initiateUserSession);
+            var cdsSession = $sessionStorage.cds = $sessionStorage.cds || {};
 
- 		function initiateUserSession(resp){
+            cdsService.getUserSession(initiateUserSession);
 
- 			self.showHeader = true;
- 			cdsService.userInfo=resp.data.user;
- 			if(resp.status == "failure"){
- 				self.isUserAuthenticated = false; 				
- 				return;
- 			}
- 				self.isUserAuthenticated = true;
- 				
- 			$rootScope.userName = resp.data.user.citizen.firstName;	 		
- 			$rootScope.appUserIds = resp.data.user.appUserId;	
- 			var defRole = $rootScope.defRole = roleService.getTopRole(resp.data.user.appRoles);
- 			self.navItems = roleService.getNavArray(defRole);
- 			for(var i=0; i<self.navItems.length; i++){
- 				self.navItems[i].activeHeader = false; 				
- 				if(location.href.toLowerCase().indexOf(self.navItems[i].name.toLowerCase())>-1){
- 					self.navItems[i].activeHeader = true;
- 				}
- 			}
-		
- 			 $rootScope.$broadcast('userAuthenticated', defRole);
-		}
+            function initiateUserSession(resp) {
 
+                self.showHeader = true;
+                cdsService.userInfo = resp.data.user;
+                if (resp.status == "failure") {
+                    self.isUserAuthenticated = false;
+                    return;
+                }
+                self.isUserAuthenticated = true;
 
-		self.navEditProfile = function(){
-			cdsSession.currentUserId = "";						
-			window.location.href = "/profile#edit/personal";					
+                $rootScope.userName = resp.data.user.citizen.firstName;
+                $rootScope.appUserIds = resp.data.user.appUserId;
+                var defRole = $rootScope.defRole = roleService.getTopRole(resp.data.user.appRoles);
+                self.navItems = roleService.getNavArray(defRole);
+                for (var i = 0; i < self.navItems.length; i++) {
+                    self.navItems[i].activeHeader = false;
+                    if (location.href.toLowerCase().indexOf(self.navItems[i].name.toLowerCase()) > -1) {
+                        self.navItems[i].activeHeader = true;
+                    }
+                }
 
-			if(!cdsSession.currentUserId && $state.current.name == 	"root.profile.editprofile.personal"){
-				$state.reload();	
-			}
-			
-		}
+                $rootScope.$broadcast('userAuthenticated', defRole);
+            }
 
 
-		self.viewSelfProfile = function(){
-			cdsSession.currentUserId = "";
-			window.location.href = "/profile#/";		
+            self.navEditProfile = function() {
+                cdsSession.currentUserId = "";
+                window.location.href = "/profile#edit/personal";
 
-		}
+                if (!cdsSession.currentUserId && $state.current.name == "root.profile.editprofile.personal") {
+                    $state.reload();
+                }
 
-	}]);
+            }
+
+
+            self.viewSelfProfile = function() {
+                cdsSession.currentUserId = "";
+                window.location.href = "/profile#/";
+
+            }
+            self.navChangePwd = function() {
+                cdsSession.currentUserId = "";
+                window.location.href = "/profile#changepassword";
+            }
+
+        }
+    ]);
 
 });
-

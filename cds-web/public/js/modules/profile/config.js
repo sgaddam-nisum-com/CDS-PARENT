@@ -76,6 +76,16 @@ define(['appProfile', 'uiRouter', 'angularRoute'], function(app) {
                 },
                 secured: false
             })
+            .state('root.profile.changepassword',{
+                url:'changepassword',
+                views:{
+                    'content@':{
+                        templateUrl:'views/auth/changePassword.html',
+                        controller:'changepasswordController as changepasswordCtrl'
+                    }
+                    
+                }
+            })
             .state('root.profile.editprofile', {
                 url: 'edit',
 
@@ -157,6 +167,7 @@ define(['appProfile', 'uiRouter', 'angularRoute'], function(app) {
                     }
                 }
             })
+
 
 
     }]);
