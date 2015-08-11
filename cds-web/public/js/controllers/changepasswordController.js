@@ -4,7 +4,8 @@ define(['controllers/controllerModule', 'formValidation', 'validators/changePass
         function($scope, $state, $http, $sessionStorage, appModalService, cdsService, appUrlService) {
 
             var self = this;
-
+            self.hidesuccessMsg = true;
+            self.hideForm = false;
 
             var config = {
                 initiate: true,
@@ -28,17 +29,11 @@ define(['controllers/controllerModule', 'formValidation', 'validators/changePass
                     }).success(function(resp, status, headers, config) {
                         if (resp.status == "success") {
                             self.user.password = "";
+                            self.user.newpassword = "";
                             console.log(resp);
-                            //         self.hideForm = true;
-                            //         if (resp.data.valid) {
-
-                            //             self.successMsg = resp.data.message;
-                            //             self.hidesuccessMsg = false;
-                            //         } else {
-                            //             self.errorMsg = resp.data.message;
-                            //             self.hideerrorMsg = false;
-                            //         }
-
+                            self.hideForm = true;
+                            self.successMsg = "Your password has been changed and sent to your mail successfully";
+                            self.hidesuccessMsg = false;
 
                         } else {
                             self.successMsg = "failure";

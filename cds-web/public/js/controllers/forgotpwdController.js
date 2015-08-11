@@ -37,6 +37,7 @@
                      }).success(function(resp, status, headers, config) {
                          if (resp.status == "success") {
                              console.log(resp);
+                             self.userName = "";
                              self.hideForm = true;
                              if (resp.data.valid) {
 
