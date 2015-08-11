@@ -76,14 +76,13 @@ exports.resetPassword = function(params, token, callback) {
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
-
-    var path = requireUtil.format(restUrls.user.resetPassword.path, params.userId);
+    var path = requireUtil.format(restUrls.user.resetPassword.path, params.password);
     var url = {
         path: path,
         method: restUrls.user.resetPassword.method
     };
 
-    delete params.userId;
+    delete params.password;
 
     restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -102,7 +101,7 @@ exports.forgotPassword = function(params, orgId, callback) {
         method: restUrls.user.forgotPass.method
     };
 
-    delete params.userName; 
+    delete params.userName;
 
     restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
@@ -221,8 +220,8 @@ exports.viewUserInfo = function(params, token, callback) {
         restService.makecall(args, callback);
     });
 };
-exports.updateProfileImage = function(params,token, callback){
-  log.debug("updateProfile : " + (JSON.stringify(params)));
+exports.updateProfileImage = function(params, token, callback) {
+    log.debug("updateProfile : " + (JSON.stringify(params)));
     var headers = header;
     if (token)
         headers[cdsConfig.token] = token;
@@ -233,7 +232,7 @@ exports.updateProfileImage = function(params,token, callback){
         path: path,
         method: restUrls.user.updateProfileImage.method
     };
-     console.log(url);
+    console.log(url);
     restService.builbArgs(url, params, headers, function(args) {
         restService.makecall(args, callback);
     });

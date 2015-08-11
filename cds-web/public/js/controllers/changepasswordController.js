@@ -20,15 +20,14 @@ define(['controllers/controllerModule', 'formValidation', 'validators/changePass
                 $scope.$broadcast("clearServiceErrors");
 
                 if (formStack.isValid) {
-                    console.log("Your password changed successfully");
-
+                    var pass = self.user.password;
                     $http.put(appUrlService.changePwd, {
                         params: {
-                            password: self.user.password,
-                            orgId: "2"
+                            password: pass
                         }
                     }).success(function(resp, status, headers, config) {
                         if (resp.status == "success") {
+                            self.user.password = "";
                             console.log(resp);
                             //         self.hideForm = true;
                             //         if (resp.data.valid) {

@@ -6,9 +6,9 @@ var userService = require('../services/user'),
     taskMgmt = require('cds-task-management'),
     roleMgmt = require('cds-role-management'),
     log = require('cds-logger').logger("user-controller"),
-	fs = require("fs"),
+    fs = require("fs"),
     cdsConfig = require('cds-config');
-	
+
 
 exports.signin = function(req, res, next) {
     log.debug("signin");
@@ -48,18 +48,16 @@ exports.updateProfileImage = function(req, res, next) {
     var existingImgPath = req.body.currentImgPath || "";
     var token = req.user ? req.user.data.token : null;
     var params = req.body;
-    params.userId = userId;    
+    params.userId = userId;
     params.photograph = req.files.photograph.name;
-    userService.updateProfileImage(params,token,function(resp) {
-	   var img_path = req.files.photograph.path;                           
-        if(resp.status == "failure"){               
-            fs.unlink(img_path, function(e) {                
-             });
-        }else{
-            fs.unlink(existingImgPath, function(e) {                
-             });
+    userService.updateProfileImage(params, token, function(resp) {
+        var img_path = req.files.photograph.path;
+        if (resp.status == "failure") {
+            fs.unlink(img_path, function(e) {});
+        } else {
+            fs.unlink(existingImgPath, function(e) {});
         }
-     res.json(resp);
+        res.json(resp);
     });
 };
 
@@ -70,7 +68,7 @@ exports.authenticate = function(params, callback) {
 
 exports.resetPassword = function(req, res, next) {
     log.debug("resetPassword : logged user - " + req.user);
-    var params = req.body;
+    var params = req.body.params;
     var token = req.user ? req.user.data.token : null;
 
     userService.resetPassword(params, token, function(resp) {
@@ -209,7 +207,7 @@ exports.addAttachmentToTask = function(req, res, next) {
     log.debug("addAttachmentToTask : logged user - " + req.user.data.user.appUserId);
     var tid = req.body.taskId;
     var token = req.user ? req.user.data.token : null;
-    
+
     console.log(req.files);
 
     taskMgmt.addAttachmentToTask({
@@ -218,7 +216,7 @@ exports.addAttachmentToTask = function(req, res, next) {
         req.resp = resp;
         next();
     });
-};  
+};
 
 /*exports.deleteAttachmentFromTask = function(req, res, next) {
     log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.user.appUserId);
@@ -237,33 +235,33 @@ exports.deleteAttachmentFromTask = function(req, res, next) {
     log.debug("deleteAttachmentFromTask : logged user - " + req.user.data.user.appUserId);
     var params = req.body;
 
-    if(!params.attachments.length){
+    if (!params.attachments.length) {
         params.attachments = [];
     }
     var token = req.user ? req.user.data.token : null;
 
     taskMgmt.deleteAttachmentFromTask(params, token, function(resp) {
-        var basePath  = cdsConfig.attachments.rootPath + cdsConfig.attachments.path          
-        if(resp.status == "success"){
-            if(params.attachments.length){
-                for(var i=0; i<params.attachments.length; i++){
-                     fs.unlink(basePath+params.attachments[i].attachmentName, function(e) {   
+        var basePath = cdsConfig.attachments.rootPath + cdsConfig.attachments.path
+        if (resp.status == "success") {
+            if (params.attachments.length) {
+                for (var i = 0; i < params.attachments.length; i++) {
+                    fs.unlink(basePath + params.attachments[i].attachmentName, function(e) {
                         console.log("deleted");
-                 });
-                }              
-            }else{
+                    });
+                }
+            } else {
                 /*Delete all attachments*/
-                for(var i=0; i<params.attachmentsArray.length; i++){                      
-                     fs.unlink(basePath+params.attachmentsArray[i].attachmentName, function(e) {   
+                for (var i = 0; i < params.attachmentsArray.length; i++) {
+                    fs.unlink(basePath + params.attachmentsArray[i].attachmentName, function(e) {
                         console.log("deleted");
-                 });
-                }                 
+                    });
+                }
             }
 
-           //TODO get all the file names loop it and do fs.unlink           
+            //TODO get all the file names loop it and do fs.unlink           
             req.resp = resp;
             next();
-        }else{
+        } else {
             req.resp = resp;
             next();
         }
@@ -326,8 +324,8 @@ exports.getTaskDetails = function(req, res, next) {
         taskId: taskId
     }, token, function(resp) {
         req.resp = resp;
-        if(resp.status == "success"){
-            req.resp.data.rootPath = cdsConfig.attachments.viewPath + cdsConfig.attachments.path;  
+        if (resp.status == "success") {
+            req.resp.data.rootPath = cdsConfig.attachments.viewPath + cdsConfig.attachments.path;
         }
         next();
     });
@@ -359,7 +357,7 @@ exports.getAssignedTasks = function(req, res, next) {
     log.debug("getAssignedTasks : logged user - " + req.user.data.user.appUserId);
     var params = req.query;
     var token = req.user ? req.user.data.token : null;
-    
+
     taskMgmt.getAssignedTasks(params, token, function(resp) {
         req.resp = resp;
         next();
