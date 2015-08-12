@@ -9,6 +9,7 @@ define(['validation'], function(validation) {
     return {
         partyMembershipId: {
 			required:false,
+			alphaNumeric:true,
 			minCharacters:5,
 			maxCharacters:16,
 			key_error_msgs:true
