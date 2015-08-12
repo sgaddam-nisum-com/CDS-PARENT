@@ -8,16 +8,19 @@ define(['validation'], function(validation) {
     return {
     	childFname: {
     		required: true,
+    		alphabets:true,
     		maxCharacters:25,
     		key_error_msgs:true
     	},
     	childMname: {
     		required: false,
+    		alphabets:true,
     		maxCharacters:25,
     		key_error_msgs:true
     	},
     	childLname: {
     		required: true,
+    		alphabets:true,
     		maxCharacters:25,
     		key_error_msgs:true
     	},

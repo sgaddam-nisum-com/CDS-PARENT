@@ -3,12 +3,15 @@ define(['jquery'], function($) {
  return {
   "childFname-required" : "First Name is a required field.",
   "childFname-maxCharacters" : "First Name should be maximum of 25 characters.",
+  "childFname-alphabets":"Enter alphabet only",
 
   "childMname-required" : "Middle Name is a required field.",
   "childMname-maxCharacters" : "Middle Name should be maximum of 25 characters.",
+  "childMname-alphabets":"Enter alphabet only",
 
   "childLname-required" : "Last Name is a required field.",
   "childLname-maxCharacters" : "Last Name should be maximum of 25 characters.",
+  "childLname-alphabets":"Enter alphabet only",
 
   "cdob-date" : "Please enter a valid date.",
   
