@@ -73,6 +73,7 @@ define(['validation'], function(validation) {
         userPassword : {
             required : true,
             minCharacters: 6,
+            maxCharacters: 16,
             key_error_msgs:true
         }
     }

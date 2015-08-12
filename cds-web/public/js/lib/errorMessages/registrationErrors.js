@@ -44,6 +44,7 @@ define(['jquery'], function($) {
   "password-eq" : "Confirm password field should be matched with password" ,
   "userPassword-required" : "Password is a required field",
   "userPassword-minCharacters" : "Password should contain minimum 6 characters",
+  "userPassword-maxCharacters" : "Password should not exceed 16 characters",
   "gender-radio" : "Please select Gender type",
   "membershipType-radio" : "Please select membership type"
  }
