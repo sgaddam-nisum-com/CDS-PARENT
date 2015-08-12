@@ -5,6 +5,7 @@ define(['jquery'], function($) {
   "voterId-required": "Voter Card ID is a required field.",
   "voterId-minCharacters" : "Voter Card ID should be minimum of 10 characters.",
   "voterId-maxCharacters" : "Voter Card ID should be maximum of 16 characters.",
+  "voterId-alphaNumeric" : "Special characters are not allowed.",
   "houseNumber-required" : "House Number is a required field.",
   "houseNumber-minCharacters" : "House Number Min should be 5.",
   "houseNumber-maxCharacters" : "House Number Max allowed 16.",
