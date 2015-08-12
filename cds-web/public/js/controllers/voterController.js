@@ -60,6 +60,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                             class: "cadre-overlay"
                         })();
                         saveModal.result.then(function() {
+                            messageHandler.clearMessageStatus();
                             FormStatus = false;
                             $state.go(next.name);
                         });
@@ -70,6 +71,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/voterValid
                     if (formStack.isValid) {
                         if (!$scope.treeDataId) {
                             messageHandler.showErrorStatus("Please assign constituency by searching with city or town", ".status-message-wrapper");
+                            setTimeout(function() {
+                                messageHandler.clearMessageStatus();
+                            }, 3000);
                             return;
                         }
                         var reqObj = {};

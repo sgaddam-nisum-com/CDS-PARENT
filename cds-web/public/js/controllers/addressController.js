@@ -39,6 +39,7 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                             class: "cadre-overlay"
                         })();
                         saveModal.result.then(function() {
+                            messageHandler.clearMessageStatus();
                             FormStatus = false;
                             $state.go(next.name);
                         });
@@ -95,6 +96,9 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addressVal
                     if (formStack.isValid) {
                         if (!self.user.postalAddressId) {
                             messageHandler.showErrorStatus("Please assign postal address by searching with pincode", ".status-message-wrapper");
+                            setTimeout(function() {
+                                messageHandler.clearMessageStatus();
+                            }, 3000);
                             return;
                         }
 
