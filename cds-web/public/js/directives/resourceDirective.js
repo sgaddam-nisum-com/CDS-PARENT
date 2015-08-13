@@ -18,12 +18,12 @@ define(['directives/directiveModule'], function(directiveModule) {
                         if (resp.status == "success") {
                             if (resp.data.status) {
                                 if (resp.data.valid == false) {
-                                    $(self).closest(".row").addClass("error-field");
-                                    $(self).after("<span class='status-message error-state'>" + resp.data.message + "</span>");
-                                    setValidity(inputName, false);
+                                    $(self).addClass("error-field");
+                                    $(self).next().children(".error-content").html(resp.data.message);
+                                    setValidity(inputName, false)
                                 } else {
-                                    $(self).closest(".row").removeClass("error-field");
-                                    $(self).after("<span class='status-message'>" + resp.data.message + "</span>");
+                                    $(self).removeClass("error-field");
+                                    $(self).next().children().html("");                                    
                                     setValidity(inputName, true);
                                 }
                             } else {
@@ -55,7 +55,8 @@ define(['directives/directiveModule'], function(directiveModule) {
 
                         $(elem).closest(".row").find(".loader-container").remove();
                         $(elem).closest(".row").find(".status-message").remove();
-                        $(elem).closest(".row").removeClass("error-field");
+                        elem.find("input").removeClass("error-field");
+                        elem.find(".error-content").html("");
 
                     }
 
