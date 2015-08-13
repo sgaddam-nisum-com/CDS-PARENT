@@ -12,8 +12,10 @@
                             <div class="col-md-9  left">
                                 <!-- autocomplete-address-directive is removed from below div id="autoCompleteContainer -->
                                 <div id="autoCompleteContainer">
-                                    <input type="text" id="postalAddress" class="form-control input required" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst" ng-blur="addressCtrl.watchForm()">
-                                    <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="addressCtrl.searchAddress(addressCtrl.user.searchConst)">
+                                    <div class="input-group">
+                                        <input type="text" id="postalAddress" class="form-control input required" name="postalAddress" placeholder="Search by Pincode" ng-model="addressCtrl.user.searchConst" ng-blur="addressCtrl.watchForm()" style="width: 311px;">
+                                        <span class="input-group-addon" ng-click="addressCtrl.searchAddress(addressCtrl.user.searchConst)" style="cursor:pointer;">&#128269;</span>
+                                    </div>
                                 </div>
                                 <div class="error-class">
                                     <div class="error-content"></div>

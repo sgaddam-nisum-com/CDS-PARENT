@@ -41,9 +41,12 @@
                 <div class="col-md-9 left">
                     <input type="hidden" ng-model="voterCtrl.user.treeDataId" />
                     <!-- autocomplete-voter-directive -->
-                    <div id="autoCompleteContainer" >
-                        <input type="text" id="searchvoter" class="form-control input required" name="searchvoterconst" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst" ng-blur="voterCtrl.watchForm()">
-                        <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="voterCtrl.searchVoter(voterCtrl.user.searchconst)">
+                    <div id="autoCompleteContainer">
+                        <div class="input-group">
+                            <input type="text" id="searchvoter" class="form-control input required" name="searchvoterconst" ui-items="names" placeholder="Search by Location" ng-model="voterCtrl.user.searchconst" ng-blur="voterCtrl.watchForm()" style="width: 311px;">
+                            <span class="input-group-addon" ng-click="voterCtrl.searchVoter(voterCtrl.user.searchconst)" style="cursor:pointer;">&#128269;</span>
+                        </div>
+                        <!-- <img src="images/searchicon.png" class="search-icon" id="searchIcon" ng-click="voterCtrl.searchVoter(voterCtrl.user.searchconst)"> -->
                     </div>
                     <div class="error-class">
                         <div class="error-content"></div>

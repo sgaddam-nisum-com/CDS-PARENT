@@ -31,8 +31,10 @@
                         <label class="reg-label  label-weight">Assign To :</label>
                     </div>
                     <div class="col-lg-8 ">
-                        <input autocomplete="off" type="text" id="cadreId" class="form-control input required" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" data-val="assignedToCitizenName">
-                        <img src="images/searchicon.png" class="cadre-search-icon" id="searchIcon" ng-click="taskCtrl.showCadresList(taskCtrl.assignedToCitizenName)">
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" id="cadreId" class="form-control input required" name="cadreName" ng-model="taskCtrl.assignedToCitizenName" data-val="assignedToCitizenName">
+                            <span class="input-group-addon" ng-click="taskCtrl.showCadresList(taskCtrl.assignedToCitizenName)" style="cursor:pointer;">&#128269;</span>
+                        </div>
                     </div>
                     <div class="col-lg-8 right">
                         <div class="error-class">
@@ -122,8 +124,10 @@
                         <label class="reg-label  label-weight">Prime ID# :</label>
                     </div>
                     <div class="col-lg-8 ">
-                        <input type="text" id="parentId" class="form-control input" name="parentId" ng-model="taskCtrl.user.taskWorkAllocation.taskPrimeCode" placeholder="Search by taskcode / taskname / Description">
-                        <img src="images/searchicon.png" class="cadre-search-icon" id="searchIcon" ng-click="taskCtrl.showPrimeIdList(taskCtrl.user.taskWorkAllocation.taskPrimeCode)">
+                        <div class="input-group">
+                            <input type="text" id="parentId" class="form-control input" name="parentId" ng-model="taskCtrl.user.taskWorkAllocation.taskPrimeCode" placeholder="Search by taskcode / taskname / Description">
+                            <span class="input-group-addon" ng-click="taskCtrl.showPrimeIdList(taskCtrl.user.taskWorkAllocation.taskPrimeCode)" style="cursor:pointer;">&#128269;</span>
+                        </div>
                     </div>
                 </div>
                 <div class="row form-group">
