@@ -1,5 +1,5 @@
 var roleStateMap = {
-    "Admin": [],
+    "Admin": ["Admin"],
     "Citizen": ["Requests","Profile"],
     "Cadre": ["Dashboard", "Tasks", "Calendar","Requests","Profile"],
     "Office Executive": ["Dashboard", "Tasks", "Calendar", "Requests", "Registrants","Profile"],
@@ -9,6 +9,10 @@ var roleStateMap = {
 
 
 var navItemsMaps = {
+    Admin:{
+        name:"Admin",
+        url:"/admin"
+    },
     Dashboard: {
         name: "Dashboard",
         url: "/dashboard"
@@ -37,17 +41,17 @@ var navItemsMaps = {
 
 
  exports.getTopRole= function(appRoles) {
-
         var topRole, rolesArray = [];
         appRoles = appRoles || [];
-
         for (var i = 0; i < appRoles.length; i++) {
             rolesArray.push(appRoles[i].roleName);
         }
 
         if (rolesArray.indexOf("MP") > -1) {
             topRole = "MP";
-        } else if (rolesArray.indexOf("Office Manager") > -1) {
+        }else if(rolesArray.indexOf("Admin") > -1){
+            topRole = "Admin";
+        }else if (rolesArray.indexOf("Office Manager") > -1) {
             topRole = "Office Manager";
         } else if (rolesArray.indexOf("Office Executive") > -1) {
             topRole = "Office Executive";

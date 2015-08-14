@@ -224,6 +224,7 @@ exports.init = function(app, passport, auth) {
     app.get('/profile', auth.user.hasAuthorizationToPage, index.profile);
     app.get('/editprofile', auth.user.hasAuthorizationToPage, index.editprofile);
     app.get('/requests', auth.user.hasAuthorizationToPage, index.requests);
+    app.get('/admin',auth.user.hasAuthorizationToPage,index.admin);
 
     app.get('/setlocale/:locale', function(req, res) {
         res.cookie('locale', req.params.locale);

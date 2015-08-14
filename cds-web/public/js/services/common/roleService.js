@@ -4,7 +4,7 @@ define(['services/serviceModule'], function(serviceModule) {
 
 
             var roleStateMap = {
-                "Admin": [],
+                "Admin": ["Admin"],
                 "Citizen": ["Requests"],
                 "Cadre": ["Dashboard", "Tasks", "Calendar", "Requests"],
                 "Office Executive": ["Dashboard", "Tasks", "Calendar", "Requests", "Registrants"],
@@ -14,7 +14,10 @@ define(['services/serviceModule'], function(serviceModule) {
 
 
             var navItemsMaps = {
-
+                Admin:{
+                    name:"Admin",
+                    url:"/admin"
+                },
                 Dashboard: {
                     name: "Dashboard",
                     url: "/dashboard"
@@ -148,8 +151,12 @@ define(['services/serviceModule'], function(serviceModule) {
                         rolesArray.push(appRoles[i].roleName);
                     }
 
+                    console.log(rolesArray);
+
                     if (rolesArray.indexOf("MP") > -1) {
                         topRole = "MP";
+                    }else if(rolesArray.indexOf("Admin") > -1){
+                        topRole = "Admin";
                     } else if (rolesArray.indexOf("Office Manager") > -1) {
                         topRole = "Office Manager";
                     } else if (rolesArray.indexOf("Office Executive") > -1) {

@@ -35,6 +35,9 @@ require.config({
         "appRequests": "modules/requests/app",
         "configRequests": "modules/requests/config",
 
+        "appAdmin":"modules/admin/app",
+        "configAdmin": "modules/admin/config",
+
         /*Services, Controllers & directives*/
         "angular": 'lib/angular',
         'angularRoute': 'lib/angular-route',

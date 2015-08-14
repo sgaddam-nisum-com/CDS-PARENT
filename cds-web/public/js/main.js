@@ -70,7 +70,15 @@ var routes = {
             "config": "configRequests",
             "moduleName": "CDSREQUESTS"
         }
+    },
+    "/admin":{
+        module:{
+            "app": "appAdmin",
+            "config": "configAdmin",
+            "moduleName": "CDSADMIN"
+        }
     }
+
 };
 
 function getRoute() {
