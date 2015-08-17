@@ -4,7 +4,13 @@
 define(['controllers/controllerModule','jquery'], function (controllerModule,$) {
 
 
-	 controllerModule.controller('homeController', [function(){		
+	 controllerModule.controller('homeController', ["$scope", "$window", "$state", function( $scope, $window, $state ){
+
+	 	$scope.$on('userAuthenticated', function(event, args) {
+		    if(args === "Admin"){
+		    	$window.location.href = "/admin";
+		    }
+		});
 
 	 	 	/*Activity gallery settings*/
 	 	this.activitiesCarouselconfig = {
