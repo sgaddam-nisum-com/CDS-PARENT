@@ -36,15 +36,33 @@ define(['appAdmin'], function(app) {
             })
 
         .state('root.admin', {
-            url: '',
-            views: {
-                'content@': {
-                    templateUrl: 'views/auth/admin/adminHome.html',
-                    controller: "adminController as adminCtrl"
+                url: '',
+                views: {
+                    'content@': {
+                        templateUrl: 'views/auth/admin/adminHome.html',
+                        controller: "adminController as adminCtrl"
+                    }
+                },
+                secured: false
+            })
+            .state('root.admin.usermgmt', {
+                url: '/usermgmt',
+                views: {
+                    'subSection': {
+                        templateUrl: 'views/auth/admin/userManagement.html',
+                        Controller: 'userMgmtController as userMgmtCtrl'
+                    }
                 }
-            },
-            secured: false
-        })
+            })
+            .state('root.admin.servicecenter', {
+                url: '/servicecenter',
+                views: {
+                    'subSection': {
+                        templateUrl: 'views/auth/admin/serviceCenter.html',
+                        Controller: 'serviceCenterMgmtController as serviceCenterMgmtCtrl'
+                    }
+                }
+            })
 
     }]);
 

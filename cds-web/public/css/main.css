@@ -2087,7 +2087,7 @@ body .navigation .top-bar-section ul li:active a {
 }
 
 /* line 8, ../scss/components/_form.scss */
-.active {
+.active-tab {
   background-image: url("../images/left-nav-active-tab.png");
   background-repeat: no-repeat;
   background-position: center;

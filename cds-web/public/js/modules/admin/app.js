@@ -10,6 +10,8 @@ define([
     "controllers/viewTaskController",
     "controllers/headerController",
     "controllers/adminController",
+    "controllers/userMgmtController",
+    "controllers/serviceCenterMgmtController",
     "directives/autoCompleteDirective",
     "directives/navDropdownDirective",
     "directives/datePickerDirective",
