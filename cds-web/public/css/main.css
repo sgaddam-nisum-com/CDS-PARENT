@@ -1577,6 +1577,11 @@ body .navigation .top-bar-section ul li:active a {
   margin-left: 14px;
 }
 
+/* line 559, ../scss/components/_home.scss */
+.wordwrap {
+  word-break: break-all;
+}
+
 /* line 1, ../scss/components/_list.scss */
 .search-filter {
   background: #e7eaeb;
