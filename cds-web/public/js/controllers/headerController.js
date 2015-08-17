@@ -20,9 +20,14 @@ define(['controllers/controllerModule'], function(controllerModule) {
                 }
                 self.isUserAuthenticated = true;
 
+                self.ifAdmin = true;
+
                 $rootScope.userName = resp.data.user.citizen.firstName;
                 $rootScope.appUserIds = resp.data.user.appUserId;
                 var defRole = $rootScope.defRole = roleService.getTopRole(resp.data.user.appRoles);
+
+                (defRole === "Admin") ? self.ifAdmin = false : true;
+
                 self.navItems = roleService.getNavArray(defRole);
                 for (var i = 0; i < self.navItems.length; i++) {
                     self.navItems[i].activeHeader = false;

@@ -1,5 +1,5 @@
 var roleStateMap = {
-    "Admin": ["Admin"],
+    "Admin": ["Admin", "Profile"],
     "Citizen": ["Requests","Profile"],
     "Cadre": ["Dashboard", "Tasks", "Calendar","Requests","Profile"],
     "Office Executive": ["Dashboard", "Tasks", "Calendar", "Requests", "Registrants","Profile"],

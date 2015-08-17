@@ -36,10 +36,12 @@ define(['controllers/controllerModule','jquery','formValidation', 'validators/si
 				if(resp.status == "success"){
 
 					var defRole = roleService.getTopRole(resp.data.user.appRoles);
-					
+					console.log(defRole);
 					if(defRole == "Citizen"){
 						$window.location.href = "/profile";		
-					}else{
+					} else if(defRole == "Admin"){
+						$window.location.href = "/admin";		
+					} else{
 						$window.location.href = "/dashboard";	
 					}
 
