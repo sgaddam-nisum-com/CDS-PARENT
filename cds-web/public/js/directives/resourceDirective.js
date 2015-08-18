@@ -23,7 +23,8 @@ define(['directives/directiveModule'], function(directiveModule) {
                                     setValidity(inputName, false)
                                 } else {
                                     $(self).removeClass("error-field");
-                                    $(self).next().children().html("");                                    
+                                    $(self).next().children().html("");
+                                    $(self).after("<span class='status-message'>" + resp.data.message + "</span>");
                                     setValidity(inputName, true);
                                 }
                             } else {
