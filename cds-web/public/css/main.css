@@ -2286,7 +2286,7 @@ body .navigation .top-bar-section ul li:active a {
 
 /* line 20, ../scss/components/_loader.scss */
 .status-message.error-state {
-  color: #B20E11;
+  color: red;
   background-color: #fff;
 }
 
