@@ -118,8 +118,17 @@
 						                        <tbody>
 						                            <tr>
 						                                <td>1</td>
-						                                <td>B.Tech</td>
-						                                <td>Graduation</td>
+						                                <td>Manabadi</td>
+						                                <td>Manabadi Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Digital India</td>
+						                                <td>Digital India Description</td>
 						                                <td>
 						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
 						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
@@ -133,15 +142,637 @@
 		        			</div>
 				        </div>
 
-				        <div class="tab-pane" id="b">Education</div>
-				        <div class="tab-pane" id="c">Occupation</div>
-				        <div class="tab-pane" id="d">Volunteer Category</div>
-				        <div class="tab-pane" id="e">Performance Grade</div>
-				        <div class="tab-pane" id="f">Position in the party </div>
-				        <div class="tab-pane" id="g">Blood Group</div>
-				        <div class="tab-pane" id="h">Task Category</div>
-				        <div class="tab-pane" id="i">Task Priority</div>
-				        <div class="tab-pane" id="j">Task Status</div>
+				        <div class="tab-pane" id="b"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>SSC</td>
+						                                <td>SSC Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Intermediate</td>
+						                                <td>Intermediate Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div>
+		        		</div>
+				        <div class="tab-pane" id="c"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Agriculture</td>
+						                                <td>Agriculture Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Software Engineer</td>
+						                                <td>Software Engineer Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="d"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Lead</td>
+						                                <td>Lead Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Member</td>
+						                                <td>Member Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="e"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Met Expectations</td>
+						                                <td>Met Expectations Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Good</td>
+						                                <td>Good Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="f"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>President</td>
+						                                <td>President Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Vice President</td>
+						                                <td>Vice President Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="g"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>B+ve</td>
+						                                <td>B+ve Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>A-ve</td>
+						                                <td>A-ve Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="h"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Roads& Building</td>
+						                                <td>Roads& Building Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Accounting</td>
+						                                <td>Accounting Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="i"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Medium</td>
+						                                <td>Medium Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>High</td>
+						                                <td>High Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
+				        <div class="tab-pane" id="j"><div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Open</td>
+						                                <td>Open Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>Completed</td>
+						                                <td>Completed Description</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div></div>
 
 			        </div>
 
