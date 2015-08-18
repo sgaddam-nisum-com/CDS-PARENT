@@ -45,6 +45,15 @@ define(['appAdmin'], function(app) {
                 },
                 secured: false
             })
+            .state('root.admin.dataconfig', {
+                url: '/dataconfig',
+                views: {
+                    'subSection': {
+                        templateUrl: 'views/auth/admin/dataconfig.html',
+                        controller: 'dataconfigController as dataconfigCtrl'
+                    }
+                }
+            })
             .state('root.admin.usermgmt', {
                 url: '/usermgmt',
                 views: {

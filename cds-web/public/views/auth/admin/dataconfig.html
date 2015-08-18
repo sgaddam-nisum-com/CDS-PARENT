@@ -1,0 +1,172 @@
+<style type="text/css">
+	.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+  background-color: #eeeeee;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+  background-color: #16578F;
+  color: #fff;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+  background-color: #16578F;
+  color: #fff;
+}
+
+</style>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12" style="margin: 10px;">
+			<!-- <h1> {{dataconfig}} </h1> -->
+			<!-- <p>Data configuration View</p> -->
+
+			  <div class="row">
+			    <div class="col-lg-3">
+			      <!-- tabs left -->
+			      <div class="tabbable tabs-left">
+
+			        <ul class="nav nav-tabs">
+		        	 	<li class="active"><a href="#a" data-toggle="tab">Areas of interest</a></li>
+			          	<li><a href="#b" data-toggle="tab">Education</a></li>
+			          	<li><a href="#c" data-toggle="tab">Occupation</a></li>
+			          	<li><a href="#d" data-toggle="tab">Volunteer Category</a></li>
+			          	<li><a href="#e" data-toggle="tab">Performance Grade</a></li>
+			          	<li><a href="#f" data-toggle="tab">Position in the party </a></li>
+			          	<li><a href="#g" data-toggle="tab">Blood Group</a></li>
+			          	<li><a href="#h" data-toggle="tab">Task Category</a></li>
+			          	<li><a href="#i" data-toggle="tab">Task Priority</a></li>
+			          	<li><a href="#j" data-toggle="tab">Task Status</a></li>
+			        </ul>
+			    </div></div>
+			    <div class="col-lg-9">
+			        <div class="tab-content">
+
+				        <div class="tab-pane active" id="a">
+		        			<div class="col-lg-8">
+		        				<div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Name:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    <label for="name" class="right">Description:</label>
+					                </div>
+					                <div class="col-sm-6">
+					                    <input type="text" id="name" class="form-control" data-val="userName" name="userName" > 
+					                    <div class="error-class">
+					                        <div class="error-content"></div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="row">
+					                <div class="col-sm-6">
+					                    
+					                </div>
+					                <div class="col-sm-6">
+					                    <button id="submitPersonalInfo" class="btn btn-primary">Save</button>
+					                </div>
+					                <div class="error-class"></div>
+					            </div>
+					            <div class="row">
+					            	<div class="col-sm-12">
+					            		<div class="col-lg-2"></div>
+						                <div class="col-lg-10 col-lg-offset-2">
+						                 	<table class="table table-bordered table-hover">
+						                        <thead>
+						                            <tr>
+						                                <th>#</th>
+						                                <th>Name</th>
+						                                <th>Description</th>
+						                                <th>Action</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <tr>
+						                                <td>1</td>
+						                                <td>B.Tech</td>
+						                                <td>Graduation</td>
+						                                <td>
+						                                    <span class="glyphicon glyphicon-edit edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                    <span class="glyphicon glyphicon-trash edit-child" ng-model="child.relationId" ng-click="familyCtrl.editChild($event, child)" title="Click here to Edit"></span>
+						                                </td>
+						                            </tr>
+						                        </tbody>
+						                    </table>
+						                </div>
+					                </div>
+					            </div>
+		        			</div>
+				        </div>
+
+				        <div class="tab-pane" id="b">Education</div>
+				        <div class="tab-pane" id="c">Occupation</div>
+				        <div class="tab-pane" id="d">Volunteer Category</div>
+				        <div class="tab-pane" id="e">Performance Grade</div>
+				        <div class="tab-pane" id="f">Position in the party </div>
+				        <div class="tab-pane" id="g">Blood Group</div>
+				        <div class="tab-pane" id="h">Task Category</div>
+				        <div class="tab-pane" id="i">Task Priority</div>
+				        <div class="tab-pane" id="j">Task Status</div>
+
+			        </div>
+
+			      </div>
+			      <!-- /tabs -->
+		      	</div>
+		    </div> 
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+		 	 <!-- <tabset class="col-lg-4" vertical="true" justified="false" type="pills">
+			    <tab heading="Static title">Static content</tab>
+			     <tab heading="Static title">Stdfasdfasdatic content</tab>
+			      <tab heading="Static title">Statisdfasdfc co544	ntent</tab>
+			       <tab heading="Static title">Statasdfasdfasdf234234ic sdfcontent</tab>
+			  </tabset> -->

@@ -11,6 +11,7 @@ define([
     "controllers/headerController",
     "controllers/adminController",
     "controllers/userMgmtController",
+    "controllers/admin/dataconfigController",
     "controllers/serviceCenterMgmtController",
     "directives/autoCompleteDirective",
     "directives/navDropdownDirective",

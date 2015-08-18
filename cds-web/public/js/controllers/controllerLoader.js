@@ -13,5 +13,6 @@ define([
     "controllers/viewController",
     "controllers/homeController",
     "controllers/signinController",
-    "controllers/requestController"
+    "controllers/requestController",
+    "controllers/admin/dataconfigController",
 ], function() {});

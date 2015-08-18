@@ -3,36 +3,25 @@ define(['controllers/controllerModule', 'formValidation', 'validators/addtaskVal
     controllerModule.controller('adminController', ["$rootScope", '$state', '$http', "appUrlService", "cdsService", '$scope', '$location',
         function($rootScope, $state, $http, appUrls, cdsService, $scope, $location) {
 
-
             var self = this;
+            
             this.items = [{
-                path: '/usermgmt',
-                title: 'User Management'
-            }, {
-                path: '/servicecenter',
-                title: 'Service Centre Management'
-            }];
+                    path: '/dataconfig',
+                    title: 'Data Configuration'
+                },{
+                    path: '/usermgmt',
+                    title: 'User Management'
+                }, {
+                    path: '/servicecenter',
+                    title: 'Service Centre Management'
+                }];
 
             this.isActive = function(item) {
-                    if (item.path == $location.path()) {
-                        return true;
-                    }
-                    return false;
+                if (item.path == $location.path()) {
+                    return true;
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                return false;
+            }
         }
     ]);
 
